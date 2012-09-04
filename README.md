@@ -20,3 +20,4 @@ This is the candaidate test for ExactTarget UI developers.
 ## Portions of the test which MUST function 100%
 + Small and Medium panels in the "Pulse" window must be able to toggle with a click, only 1 panel can be in "Medium View" at any given time.
 + Each item under the "Interactive Marketing Hub" must have hovers and click states associated with them
++ Clicking help link must load and parse a JSON object (help.json) with help details. Bonis points for help as an overlay dialog
