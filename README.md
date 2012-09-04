@@ -10,9 +10,9 @@ This is the candaidate test for ExactTarget UI developers.
 + Filenames must remain the same as in the original repository.
 + testdata.txt contains the data your code will be run against. You may use it as you wish in your code and/or testing.
 + For browsers, your code should run without errors on the latest of the major browsers.
-++ You get to define 'latest' and 'major', but be prepared to defend your choices.
-++ Yes, you MUST include IE, but only 8 or higher.
++ You get to define 'latest' and 'major', but be prepared to defend your choices.
++ Yes, you MUST include IE, but only 8 or higher.
 + If you really want to geek out, include a meta.txt file that includes the following information:
-* TotalTime: HHmm
-* BrowserTesting: Browser.version Browser.version etc
-* UnitTesst: relative path to your own unit test suite
+  TotalTime: HHmm
+  BrowserTesting: Browser.version Browser.version etc
+  UnitTesst: relative path to your own unit test suite
