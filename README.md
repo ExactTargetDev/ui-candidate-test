@@ -13,6 +13,7 @@ This is the candaidate test for ExactTarget UI developers.
 + You get to define 'latest' and 'major', but be prepared to defend your choices.
 + Yes, you MUST include IE, but only 8 or higher.
 + If you really want to geek out, include a meta.txt file that includes the following information:
+
     TotalTime: HHmm
     BrowserTesting: Browser.version Browser.version etc
     UnitTesst: relative path to your own unit test suite
