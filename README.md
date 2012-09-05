@@ -15,7 +15,9 @@ This is the candaidate test for ExactTarget UI developers.
 + If you really want to geek out, include a meta.txt file that includes the following information:
 
     TotalTime: HHmm
+    
     BrowserTesting: Browser.version Browser.version etc
+    
     UnitTesst: relative path to your own unit test suite
 
 ## Portions of the test which MUST function 100%
