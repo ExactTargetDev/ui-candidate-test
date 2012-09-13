@@ -16,7 +16,7 @@ This is the candaidate test for ExactTarget UI developers.
 
     TotalTime: HHmm
     
-    BrowserTesting: Browser.version Browser.version etc
+    BrowserTesting: Browser.name Browser.version etc
     
     UnitTest: relative path to your own unit test suite
 
