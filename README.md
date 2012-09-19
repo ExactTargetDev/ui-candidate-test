@@ -15,5 +15,13 @@ This is the candaidate test for ExactTarget UI developers.
 + If you really want to geek out, include a meta.txt file that includes the following information:
 
     TotalTime: HHmm
-    BrowserTesting: Browser.version Browser.version etc
-    UnitTesst: relative path to your own unit test suite
+    
+    BrowserTesting: Browser.name Browser.version etc
+    
+    UnitTest: relative path to your own unit test suite
+
+## Portions of the test which MUST function 100%
++ Small and Medium panels in the "Pulse" window must be able to toggle with a click, only 1 panel can be in "Medium View" at any given time.
++ Each item under the "Interactive Marketing Hub" must have hovers and click states associated with them.
++ Clicking help link must load and parse a JSON object (help.json) with help details which are then rendered onscreen. Bonus points for help as an overlay dialog.
+

@@ -1,4 +1,8 @@
-(function () {
+     // Example unit test function
+     function divide( a, b ) {
+        // To see the test pass, uncomment the following line
+        //return a / b;
+     }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
@@ -92,6 +96,3 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
-
-
- }());
