@@ -2,7 +2,7 @@
 This is the candaidate test for ExactTarget UI developers. 
 
 ## Here are the guidelines for the test:
-+ Fork this repository, do your work, commit often with descriptive messages. When finished, send a pull request.
++ Fork this repository, do your work, commit early/often with descriptive messages. When finished, send a pull request.
 + The HTML files have a series of questions/tasks in them.
 + You may use any JavaScript and/or CSS library you wish, or none at all.
 + You may use an external or inline JavaScript file(s).
