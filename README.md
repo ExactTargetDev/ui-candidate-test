@@ -12,13 +12,11 @@ This is the candaidate test for ExactTarget UI developers.
 + For browsers, your code should run without errors on the latest of the major browsers.
 + You get to define 'latest' and 'major', but be prepared to defend your choices.
 + Yes, you MUST include IE, but only 8 or higher.
-+ If you really want to geek out, include a meta.txt file that includes the following information:
-
-    TotalTime: HHmm
-    
-    BrowserTesting: Browser.name Browser.version etc
-    
-    UnitTest: relative path to your own unit test suite
++ Steps which must be done, include a meta.txt file that includes the following information:
+** Start Time: [unix timestamp]
+** TotalTime: HHmm
+** BrowserTesting: Browser.name Browser.version etc
+** UnitTest: relative path to your own unit test suite
 
 ## Portions of the test which MUST function 100%
 + Small and Medium panels in the "Pulse" window must be able to toggle with a click, only 1 panel can be in "Medium View" at any given time.
