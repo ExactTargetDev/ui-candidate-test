@@ -16,6 +16,8 @@ This is the candaidate test for ExactTarget UI developers.
 ## First task which must be done
 + Create a meta.txt file that includes the following information:
 + Start Time: [unix timestamp]
+
+### Bonus points by adding the following to meta.txt file
 + TotalTime: HHmm
 + BrowserTesting: Browser.name Browser.version etc
 + UnitTest: relative path to your own unit test suite
