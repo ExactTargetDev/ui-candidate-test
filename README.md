@@ -27,3 +27,39 @@ This is the candaidate test for ExactTarget UI developers.
 + Each item under the "Interactive Marketing Hub" must have hovers and click states associated with them.
 + Clicking help link must load and parse a JSON object (help.json) with help details which are then rendered onscreen. Bonus points for help as an overlay dialog.
 
+##Authors
+
+**Adam Alexander**
+
++ http://twitter.com/adamalex
++ http://github.com/adamalex
+
+**Matt Beard**
+
++ http://github.com/mbeard
+
+**Bryan Kohlmeier**
+
++ http://github.com/bkohlmeier
+
+**Kevin Parkerson**
+
++ http://github.com/kevinparkerson
+
+**Stephen Williams**
+
++ http://github.com/swilliamset
+
+**Jason Schmidt**
+
++ http://twitter.com/zannalov
++ https://github.com/zannalov
+
+**Benjamin Dean**
+
++ http://twitter.com/bdeanet
++ http://github.com/creatovisguru
+
+**Scott Plumlee**
+
++ http://github.com/plumlee
