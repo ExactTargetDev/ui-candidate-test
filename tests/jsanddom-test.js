@@ -349,6 +349,35 @@ test("Basic", 1, function() {
 });
 
 
+/* EXCLUDE FROM ARRAY ********************************************************/
+
+module("Exclude from array");
+
+test("Basic", 3, function() {
+	// Verify the method exists
+	doesGlobalFunctionExist("removeFruits");
+	
+	var $array1 = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+	var $array2 = ['blackberry', 'raspberry', 'grapes', 'blueberry', 'kumquat'];
+	
+	var $remove1 = ['pear', 'banana'];
+	var $remove2 = ['raspberry', 'grapes', 'kumquat'];
+	
+	var $desired1 = ['apple', 'orange', 'kiwi', 'plum', 'strawberry'];
+	var $desired2 = ['blackberry', 'blueberry'];
+	
+	var $result1 = removeFruits($array1, $remove1);
+	var $result2 = removeFruits($array2, $remove2);
+	
+	var $match1 = areArraysEqual($desired1, $result1);
+	var $match2 = areArraysEqual($desired2, $result2);
+	
+	// assert
+	equal($match1, true, stringify(JSON.stringify($result1), " should match ", JSON.stringify($desired1)));
+	equal($match2, true, stringify(JSON.stringify($result2), " should match ", JSON.stringify($desired2)));
+});
+
+
 
 /* MISC. FUNCTIONS ***********************************************************/
 

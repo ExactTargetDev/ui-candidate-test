@@ -93,12 +93,35 @@ function doFizzBuzz() {
 	}
 }
 
+// took a break here
+
 // You have a master array of strings, where each element is a fruit name.
 // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
 // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
 // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
 function removeFruits(fruits, fruitsToRemove) {
-   // FILL THIS IN
+	// being that in most cases the removal array will be
+	// smaller, we first loop it into a distinct key object
+	// then loop the original just once
+
+	var $distinct = {};
+
+	var $key, $fruit;
+	for ($key in fruitsToRemove) {
+		$fruit = fruitsToRemove[$key];
+		$distinct[$fruit] = true;
+	}
+
+	var $output = [];	
+	for ($key in fruits) {
+		$fruit = fruits[$key];
+		if ($distinct[$fruit]) continue;
+		$output.push($fruit);
+	}
+
+	// it wasn't specified, so I'm assuming we're not
+	// passing by reference
+	return $output;
 }
 
 // Write a function to push either a simple value or an array of values onto a specified array.
