@@ -103,7 +103,7 @@ function isOnlyWhitespace(sourceStr) {
 			return "check";
 		}
 	}
-)(window);
+})(window);
 
 /// double closure (singleton)
 (function(a) { 
@@ -121,7 +121,7 @@ function isOnlyWhitespace(sourceStr) {
 				return "check";
 			}
 		};
-	});
+	})();
 })(window);
 
 
@@ -148,12 +148,86 @@ function isOnlyWhitespace(sourceStr) {
 // .addRow('value1A', 'value1B', 'value1C');
 // .addRow('value2A', 'value2B', 'value2C');
 
+var DataTable = function() {
+	var _columns = [];
+	var _columnsByName = {};
+	var _rows = [];
+	
+	function addColumns() {
+		var $columns = Array.prototype.slice.call(arguments);
+		var $key, $column;
+		for ($key in $columns) {
+			$column = $columns[$key];
+			// cheap extend filter
+			if (_columnsByName[$column] != null) continue;
+			_columnsByName[$column] = true;
+			_columns.push($column);
+		}
+	}
+	
+	function addRow() {
+		var $values = Array.prototype.slice.call(arguments);
+		_rows.push($values);
+	}
+	
+	function getData(debug) {
+		var $output = [];
+		var $columns = _columns;
+		var $rows = _rows;
+		
+		var $key, $row, $column, $data,
+			$i, $ic = $rows.length;
+		for ($i=0; $i<$ic; $i++) {
+			$row = $rows[$i];
+			
+			$data = {};
+			for ($key in $columns) {
+				$column = $columns[$key];
+				$data[$column] = $row[$key];
+			}
+			
+			$output.push($data);
+		}
+		
+		if (debug) {
+			console.log("JSON \"Object\": ", $output);
+			console.log("JSON string: ", JSON.stringify($output));
+		}
+		
+		return $output;
+	}
+	
+	return {
+		addColumns: addColumns,
+		addRow: addRow,
+		getData: getData
+	};
+};
+
+
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
 
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
+
+/*
+// extreme selector minimizing DOM seeking
+1. $("body > #foo > #fizz > a.link") 
+
+// direct path
+2. $("#foo #fizz .link");
+
+// relative seeking irrespective of container types
+3. $(".bar .buzz .link")
+
+// circumstantial: "an anchor link with the class link inside something with the id fizz that's inside a div with the class bar"
+4. $("div.bar #fizz a.link")
+
+// universal
+5. $(".link") 
+*/
 
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
