@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	dataTableTest();
 	div1Answer();
+	listAnswer();
 });
 
 function dataTableTest() {
@@ -11,6 +12,7 @@ function dataTableTest() {
 	$table.addRow(1, 2);
 	var $data = $table.getData(true);
 }
+
 
 
 // within div1, programatically create a
@@ -55,4 +57,30 @@ function div1Answer() {
 			return false;
 		})
 	;
+}
+
+
+
+// Programatically create an array with 5 items.  Create a list item for each item in the array
+// and add the list items to the unordered list with an id of "list1".
+function listAnswer() {
+	var $template = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+	var $items = [];
+	var $string, $i, $ic = 5;
+	for ($i=0; $i<$ic; $i++) {
+		$string = $template.substr(Math.random() * 50, 25);
+		$items.push($string);
+	}
+	
+	// the question's wording assumes a separate loop, so:
+	var $ul = $("#list1");
+	
+	var $key;
+	for ($key in $items) {
+		$("<li>")
+			.text($items[$key])
+			.appendTo($ul)
+		;
+	}
 }
