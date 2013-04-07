@@ -2,6 +2,7 @@ $(document).ready(function() {
 	dataTableTest();
 	div1Answer();
 	listAnswer();
+	checkboxAnswer();
 });
 
 function dataTableTest() {
@@ -83,4 +84,67 @@ function listAnswer() {
 			.appendTo($ul)
 		;
 	}
+}
+
+
+
+// Use javascript to add a list of checkboxes and 2 links
+// to the div with an id of "foobar"
+// When the first link is clicked, all the checkboxes should be checked (i.e. check all)
+// When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+function checkboxAnswer() {
+	var $container = $("#foobar");
+
+	// create checkboxes
+	var $box, $i, $ic = 8;
+	for ($i=0; $i<$ic; $i++) {
+		$box = $("<input>")
+			.attr("type", "checkbox")
+			.attr("name", "box-"+ $i)
+			.val(1)
+		;
+		
+		$("<label>")
+			.append($box)
+			.append("Option "+ $i)
+			.appendTo($container)
+		;
+	}
+	
+	// create links
+	var $div = $("<div>")
+		.appendTo($container)
+	;
+	
+	/// select all
+	$("<a>")
+		.attr("href", "#select-all")
+		.text("select all")
+		.appendTo($div)
+		.click(function(e) {
+			e.preventDefault();
+			$("#foobar input[type=checkbox]")
+				.attr("checked", "checked")
+			;
+			return false;
+		})
+	;
+	
+	/// space between
+	$div.append(" ");
+	
+	/// unselect all
+	$("<a>")
+		.attr("href", "#select-none")
+		.text("select none")
+		.appendTo($div)
+		.click(function(e) {
+			e.preventDefault();
+			$("#foobar input[type=checkbox]")
+				.removeAttr("checked")
+			;
+			return false;
+		})
+	;
 }
