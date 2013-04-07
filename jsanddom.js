@@ -148,6 +148,8 @@ function isOnlyWhitespace(sourceStr) {
 // .addRow('value1A', 'value1B', 'value1C');
 // .addRow('value2A', 'value2B', 'value2C');
 
+// see custom.js: dataTableTest
+
 var DataTable = function() {
 	var _columns = [];
 	var _columnsByName = {};
@@ -205,9 +207,14 @@ var DataTable = function() {
 };
 
 
+
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
+
+// see custom.js: div1Answer
+
+
 
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
