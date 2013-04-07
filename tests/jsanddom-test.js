@@ -334,6 +334,22 @@ test("Basic", 4, function() {
 
 
 
+/* MODULUS TEST **************************************************************/
+
+// no unit testability, just making sure the method exists, then
+// calling the method for the console output
+
+module("Modulus test");
+
+test("Basic", 1, function() {
+	// Verify the method exists
+	doesGlobalFunctionExist("doFizzBuzz");
+	
+	doFizzBuzz();
+});
+
+
+
 /* MISC. FUNCTIONS ***********************************************************/
 
 function doesGlobalFunctionExist(functionName) {
