@@ -98,12 +98,32 @@ function pushOntoArray(array, toPush) {
 
 // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
 function splitListStrUsingComma(sourceStr) {
-   // FILL THIS IN
+	if (sourceStr == null) return [];
+	var $array = sourceStr.split(/\s*,\s*/);
+	if ($array == null) return [];
+	if (!$array.length) return [];
+	return $array;
 }
 
 // Write a function that will take any number of arguments and return their sum
 function sum() {
-   // FILL THIS IN
+	var $arguments = Array.prototype.slice.call(arguments);
+	if ($arguments.length == 0) $arguments = [[]];
+	$numbers = $arguments[0];
+	
+	var $sum = 0;
+	
+	// parsing non-numbers was not specified, therefore:
+	// true = 1, false = 0
+	var $key, $number;
+	for ($key in $numbers) {
+		$number = $numbers[$key];
+		if ($number == null) continue;
+		if (!isFinite($number)) continue;
+		$sum += $number;
+	}
+	
+	return $sum;
 }
 
 // Write a function that will return true if a specified string consists of only whitespace.
@@ -120,6 +140,12 @@ function isOnlyWhitespace(sourceStr) {
 // write an example of a javascript closure
 /// traditional
 (function(a) {
+	// you can put private variables here to make
+	// a singleton, but I prefer to think of this
+	// space as scope-defining only. Later, I 
+	// declare a singleton in what I call a "double
+	// closure" pattern.
+
 	a.closure = {
 		property: "check",
 		method: function() {

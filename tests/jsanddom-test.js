@@ -202,6 +202,47 @@ test("Basic", 4, function() {
 
 
 
+/* SUM ARRAY *****************************************************************/
+
+module("reduce array to sum");
+
+test("Basic", 2, function() {
+	// Verify the method exists
+	doesGlobalFunctionExist("sum");
+	
+	var $numbers = [0, 1, {bob: 4}, 2, 3, false, 4, 5, Math.Infinity, 6, 7, Math.NaN, 8, 9, undefined, true];
+	var $desiredResult = 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + true;
+	var $result = sum($numbers);
+	$description = stringify("The sum of ", JSON.stringify($numbers), " should be ", $desiredResult);
+	
+	// assert
+	equal($result, $desiredResult, $description);
+});
+
+test("Random", 10, function() {
+	var $numbers, $number, $desiredResult, $result, $description;
+	
+	var $j, $i, $ic = 10;
+	for ($i=0; $i<$ic; $i++) {
+		$numbers = [];
+		$desiredResult = 0;
+	
+		for ($j=0; $j<5; $j++) {
+			$number = rand(0, 20);
+			$numbers.push($number);
+			$desiredResult += $number;
+		}
+	
+		var $result = sum($numbers);
+		$description = stringify("The sum of ", JSON.stringify($numbers), " should be ", $desiredResult);
+		
+		// assert
+		equal($result, $desiredResult, $description);
+	}
+});
+
+
+
 /* MISC. FUNCTIONS ***********************************************************/
 
 function doesGlobalFunctionExist(functionName) {
