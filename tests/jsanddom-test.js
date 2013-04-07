@@ -2,10 +2,10 @@
 Unit Test Example
 ********************************/
 
-module("Example Unit Test");
+module("Example Division Test");
 
 // basic sanity test
-test("Example Test", 2, function() {
+test("Basic", 2, function() {
 	// Verify the method exists
 	doesGlobalFunctionExist("divide");
 	
@@ -14,7 +14,7 @@ test("Example Test", 2, function() {
 });
 
 // check random numbers
-test("Random Division Test", 10, function() {
+test("Random", 10, function() {
 	var $numerator, $denominator, $desiredResult, 
 		$result, $description;
 	
@@ -39,7 +39,7 @@ test("Random Division Test", 10, function() {
 /* STRING REVERSAL TESTS *****************************************************/
 
 module("String Reversal Test")
-test("Basic Test", 2, function() {
+test("Basic", 2, function() {
 	// Verify the method exists
 	doesGlobalFunctionExist("reverseString");
 	
@@ -55,7 +55,7 @@ test("Basic Test", 2, function() {
 	equal($result, $desiredResult, $description);
 });
 
-test("Random Strings", 10, function() {
+test("Random", 10, function() {
 	var $length, $strings,
 		$string, $desiredResult,
 		$result, $description
@@ -89,7 +89,7 @@ test("Random Strings", 10, function() {
 
 module("Minimum number");
 
-test("Basic Test", 2, function() {
+test("Basic", 2, function() {
 	// Verify the method exists
 	doesGlobalFunctionExist("findMinValue");
 	
@@ -103,7 +103,7 @@ test("Basic Test", 2, function() {
 });
 
 // only process numbers
-test("Random Tests (No Strings With Numbers)", 10, function() {
+test("Random (No Strings With Numbers)", 10, function() {
 	var $generated, $numbers, $desiredResults, 
 		$result, $description
 	;
@@ -122,7 +122,7 @@ test("Random Tests (No Strings With Numbers)", 10, function() {
 });
 
 // Allow strings such as 20px, 2%, etc
-test("Random Tests (Strings Can Have Numbers)", 10, function() {
+test("Random (Strings Can Have Numbers)", 10, function() {
 	var $generated, $numbers, $desiredResults, 
 		$result, $description
 	;
@@ -137,6 +137,44 @@ test("Random Tests (Strings Can Have Numbers)", 10, function() {
 		
 		// assert
 		equal($result, $desiredResult, $description);
+	}
+});
+
+
+/* DISTINCT VALUES ***********************************************************/
+
+module("Distinct Values");
+
+test("Basic", 2, function() {
+	// Verify the method exists
+	doesGlobalFunctionExist("findDistinctValues");
+	
+	var $obj = {test: 1};
+	var $values = [false, false, 1, 1, "bob", "bob", $obj, $obj];
+	var $desiredResult = [false, 1, "bob", $obj];
+	var $result = findDistinctValues($values);
+	var $matched = areArraysEqual($desiredResult, $result);
+	var $description = stringify(JSON.stringify($result), " should equal \n ", JSON.stringify($desiredResult));
+	
+	// assert
+	equal($matched, true, $description);
+});
+
+test("Random", 10, function() {
+	var $values, $array, $desiredResult,
+		$result, $matched, $description;
+	
+	var $i, $ic = 10;
+	for ($i=0; $i<$ic; $i++) {
+		$values = generateRandomArrayOfNumbersAndStrings(5);
+		$array = $values[0];
+			$desiredResult = $values[1];
+		$result = findDistinctValues($array);
+		$matched = areArraysEqual($desiredResult, $result);
+		$description = stringify(JSON.stringify($result), " should equal \n ", JSON.stringify($desiredResult));
+		
+		// assert
+		equal($matched, true, $description);
 	}
 });
 
@@ -191,9 +229,46 @@ function generateArrayOfRandomNumbers(length, allowStrings) {
 	}
 	
 	if ($minimum == null) $minimum = false;
-	console.log($value);
-		
 	return [$array, $minimum];
+}
+
+function generateRandomArrayOfNumbersAndStrings(length) {
+	var $valuesAsColumns = {};
+	var $distinct = [];
+	var $output = [];
+	
+	var $duplicate, $value, $str,
+		$i, $ic = length;
+	for ($i=0; $i<$ic; $i++) {
+		if (rand(0, 10) > 2 || !$output.length) { // original value
+			$value = randomNumberOrString();
+		
+		} else { // duplicate
+			$value = $output[rand(0, $output.length - 1)];
+		}
+		
+		$str = JSON.stringify($value);
+		if ($valuesAsColumns[$str] == null) {
+			$distinct.push($value);
+			$valuesAsColumns[$str] = true;
+		}
+		
+		$output.push($value);
+	}
+	
+	return [$output, $distinct];
+}
+
+// Objects present a problem in unit testings. My 
+// findDistinctValues correctly filters identical
+// objects but because the random generation will 
+// creates fresh identical objects they will never 
+// match in a simple manner.
+function randomNumberOrString() {
+	// number
+	if (rand(0, 10) > 5) return rand(0, 50);
+	// string
+	return generateRandomStrings(3)[0];
 }
 
 function generateRandomEntry() {
@@ -245,4 +320,11 @@ function rand(min, max) {
 	if (min < 0) max += Math.abs(max);
 	if (min > 0) max -= Math.abs(min);
 	return min + Math.floor(Math.random() * max);
+}
+
+function areArraysEqual(arr1, arr2) {
+	// "cheating" with jQuery
+	var $overlapA = $(arr1).not(arr2);
+	var $overlapB = $(arr2).not(arr1);
+	return (!$overlapA.length && !$overlapB.length);
 }

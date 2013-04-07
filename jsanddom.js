@@ -50,7 +50,26 @@ function findMinValue(values, allowStrings) {
 
 // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
 function findDistinctValues(values) {
-   // FILL THIS IN
+	var $valuesAsColumns = {};
+	var $distinct = [];
+	
+	var $key, $value, str;
+	for ($key in values) {
+		$value = values[$key];
+
+		// who needs empty distinctions?
+		if ($value == null) continue;
+		
+		// convert to JSON string
+		$str = JSON.stringify($value);
+		
+		// check for previous identicals
+		if ($valuesAsColumns[$str] != null) continue;
+		$valuesAsColumns[$str] = true;
+		$distinct.push($value);
+	}
+
+	return $distinct;
 }
 
 // Write a function that logs the numbers from 1 to 100 to the console.
