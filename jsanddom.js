@@ -92,7 +92,40 @@ function isOnlyWhitespace(sourceStr) {
    // FILL THIS IN
 }
 
+
+
 // write an example of a javascript closure
+/// traditional
+(function(a) {
+	a.closure = {
+		property: "check",
+		method: function() {
+			return "check";
+		}
+	}
+)(window);
+
+/// double closure (singleton)
+(function(a) { 
+	// $.fn.singleton, etc
+	a.singleton = (function() {
+		var privateVariable = "check";
+		
+		function privateMethod() {
+			return "check";
+		}
+		
+		return {
+			publicProperty: "check",
+			publicMethod: function() {
+				return "check";
+			}
+		};
+	});
+})(window);
+
+
+
 
 // define a json object that represents a collection of people.
 // each person should have the following properties
@@ -102,7 +135,6 @@ function isOnlyWhitespace(sourceStr) {
 // - state
 // - zip
 // - a collection of phone numbers (home, work, mobile)
-
 
 // Create a javascript object (DataTable) with the following:
 // A private columns property (string array)
