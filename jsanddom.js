@@ -108,7 +108,11 @@ function sum() {
 
 // Write a function that will return true if a specified string consists of only whitespace.
 function isOnlyWhitespace(sourceStr) {
-   // FILL THIS IN
+	// a string with only whitespace collapses to an empty string
+	// when trimmed. We'll use regex since we can't be 100% that
+	// String.trim exists in all browsers
+	var $source = sourceStr.replace(/^\s*|\s*$/g, '');
+	return ($source.length <= 0);
 }
 
 

@@ -180,6 +180,28 @@ test("Random", 10, function() {
 
 
 
+/* IS WHITESPACE ONLY ********************************************************/
+
+module("Whitespace test");
+
+test("Basic", 4, function() {
+	// Verify the method exists
+	doesGlobalFunctionExist("isOnlyWhitespace");
+	
+	var $empytishString = "         ";
+	var $notEmptyString = "test";
+	var $paddedString = "   \t  asdfasdf   ";
+	
+	// assert
+	equal(isOnlyWhitespace($empytishString), true, "A string of spaces is indeed whitespace only...");
+	equal(isOnlyWhitespace($notEmptyString), false, stringify("`", $notEmptyString, "` has no whitespace at all!"));
+	equal(isOnlyWhitespace($paddedString), false, stringify("`"));
+	
+	// no random test needed
+});
+
+
+
 /* MISC. FUNCTIONS ***********************************************************/
 
 function doesGlobalFunctionExist(functionName) {
