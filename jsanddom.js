@@ -98,8 +98,16 @@ function pushOntoArray(array, toPush) {
 
 // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
 function splitListStrUsingComma(sourceStr) {
+	// ensure string sanity
 	if (sourceStr == null) return [];
-	var $array = sourceStr.split(/\s*,\s*/);
+	if (typeof sourceStr != "string") return [];
+	
+	// clean string
+	var $string = sourceStr.replace(/^\s*|\s*$/g, '');
+	if (!$string.length) return [];
+	
+	var $array = $string.split(/\s*,\s*/);
+	
 	if ($array == null) return [];
 	if (!$array.length) return [];
 	return $array;

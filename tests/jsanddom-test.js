@@ -243,6 +243,55 @@ test("Random", 10, function() {
 
 
 
+/* SPLIT STRING **************************************************************/
+
+module("Split string");
+
+test("Basic", 7, function() {
+	// Verify the method exists
+	doesGlobalFunctionExist("splitListStrUsingComma");
+	
+	var $test1 = "test, test , test";
+	var $test2 = "1, 2,, 4";
+	var $test3 = "";
+	var $test4 = ",";
+	var $test5 = {object: true};
+	var $test6 = true;
+	
+	var $desired1 = ["test", "test", "test"];
+	var $desired2 = ["1", "2", "", "4"];
+	var $desired3 = [];
+	var $desired4 = ["", ""];
+	var $desired5 = [];
+	var $desired6 = [];
+	
+	var $result1 = splitListStrUsingComma($test1);
+	var $result2 = splitListStrUsingComma($test2);
+	var $result3 = splitListStrUsingComma($test3);
+	var $result4 = splitListStrUsingComma($test4);
+	var $result5 = splitListStrUsingComma($test5);
+	var $result6 = splitListStrUsingComma($test6);
+	
+	var $matched1 = areArraysEqual($desired1, $result1);
+	var $matched2 = areArraysEqual($desired2, $result2);
+	var $matched3 = areArraysEqual($desired3, $result3);
+	var $matched4 = areArraysEqual($desired4, $result4);
+	var $matched5 = areArraysEqual($desired5, $result5);
+	var $matched6 = areArraysEqual($desired6, $result6);
+	
+	// assert
+	equal($matched1, true, stringify(JSON.stringify($result1), " should match ", JSON.stringify($desired1)));
+	equal($matched2, true, stringify(JSON.stringify($result2), " should match ", JSON.stringify($desired2)));
+	equal($matched3, true, stringify(JSON.stringify($result3), " should match ", JSON.stringify($desired3)));
+	equal($matched4, true, stringify(JSON.stringify($result4), " should match ", JSON.stringify($desired4)));
+	equal($matched5, true, stringify(JSON.stringify($result5), " should match ", JSON.stringify($desired5)));
+	equal($matched6, true, stringify(JSON.stringify($result6), " should match ", JSON.stringify($desired6)));
+
+	// no random on this one either
+});
+
+
+
 /* MISC. FUNCTIONS ***********************************************************/
 
 function doesGlobalFunctionExist(functionName) {
