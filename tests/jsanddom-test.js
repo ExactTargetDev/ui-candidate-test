@@ -292,6 +292,48 @@ test("Basic", 7, function() {
 
 
 
+/* CONCAT ARRAY **************************************************************/
+
+// I just checked the clock... No more over the top randomized unit tests.
+
+module("Concat array");
+
+test("Basic", 4, function() {
+	// Verify the method exists
+	doesGlobalFunctionExist("pushOntoArray");
+	
+	var $array1 = ["chicken wings"];
+	var $array2 = ["wine"];
+	var $array3 = [];
+	
+	var $push1 = ["beer"];
+	var $push2 = "cheese";
+	var $push3 = [1, 2, 3];
+	
+	var $desired1 = ["chicken wings", "beer"];
+	var $desired2 = ["wine", "cheese"];
+	var $desired3 = [1, 2, 3];
+	
+	pushOntoArray($array1, $push1);
+	pushOntoArray($array2, $push2);
+	pushOntoArray($array3, $push3);
+	
+	var $label1 = JSON.stringify($array1);
+	var $label2 = JSON.stringify($array2);
+	var $label3 = JSON.stringify($array3);
+	
+	var $match1 = areArraysEqual($desired1, $array1);
+	var $match2 = areArraysEqual($desired2, $array2);
+	var $match3 = areArraysEqual($desired3, $array3);
+	
+	// assert
+	equal($match1, true, stringify($label1, " should match ", JSON.stringify($desired1)));
+	equal($match2, true, stringify($label2, " should match ", JSON.stringify($desired2)));
+	equal($match3, true, stringify($label3, " should match ", JSON.stringify($desired3)));
+});
+
+
+
 /* MISC. FUNCTIONS ***********************************************************/
 
 function doesGlobalFunctionExist(functionName) {
