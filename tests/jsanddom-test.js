@@ -422,7 +422,7 @@ function generateArrayOfRandomNumbers(length, allowStrings) {
 			$value = parseFloat($value);
 		}
 		if (!isFinite($value)) continue;
-		if (toString.call($value) !== "[object Number]") continue;
+		if (Object.prototype.toString.call($value) !== "[object Number]") continue;
 		if ($minimum != null && $value > $minimum) continue;
 		$minimum = $value;
 	}

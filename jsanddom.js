@@ -14,7 +14,7 @@ function reverseString(str) {
 // Write a function that takes an array of numbers and returns the minimum value
 function findMinValue(values, allowStrings) {
 	// value evaluate nothing
-	if (toString.call(values) !== "[object Array]") {
+	if (Object.prototype.toString.call(values) !== "[object Array]") {
 		return false;
 	}
 	
@@ -29,9 +29,11 @@ function findMinValue(values, allowStrings) {
 			$value = parseFloat($value);
 		}
 		
-		// validate for numberness
+		// validate for numberness		
 		if (!isFinite($value)) continue;
-		if (toString.call($value) !== "[object Number]") continue;
+		if (Object.prototype.toString.call($value) !== "[object Number]") {
+			continue;
+		}
 		
 		// check value
 		if ($minimum != null && $value > $minimum) {
@@ -130,7 +132,7 @@ function removeFruits(fruits, fruitsToRemove) {
 // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
 function pushOntoArray(array, toPush) {
 	// wrap single value into array
-	if (toString.call(toPush) !== "[object Array]") {
+	if (Object.prototype.toString.call(toPush) !== "[object Array]") {
 		toPush = [toPush];
 	}
 	
@@ -151,7 +153,14 @@ function splitListStrUsingComma(sourceStr) {
 	var $string = sourceStr.replace(/^\s*|\s*$/g, '');
 	if (!$string.length) return [];
 	
-	var $array = $string.split(/\s*,\s*/);
+	var $array = $string.split(",");
+	
+	// trim all the values since we still need to 
+	// support IE8
+	var $key;
+	for ($key in $array) {
+		$array[$key] = $array[$key].replace(/^\s*|\s*$/g, '');
+	}
 	
 	if ($array == null) return [];
 	if (!$array.length) return [];
