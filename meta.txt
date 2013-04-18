@@ -1,0 +1,4 @@
+StartTime: 1365337914
+TotalTime: 1015
+BrowserTesting: Chrome 26.0.1410.43, Firefox 19.0.2, Safari 6.0.3, Opera 12.15, IE 8/9
+UnitTest: tests/JsAndDom-UnitTest-Runner.html
