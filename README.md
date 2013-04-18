@@ -2,12 +2,15 @@
 This is the candaidate test for ExactTarget UI developers. 
 
 ## Here are the guidelines for the test:
++ Be sure to read all the bullet points bellow.
 + Fork this repository, do your work, commit early/often with descriptive messages. When finished, send a pull request.
-+ The HTML files have a series of questions/tasks in them.
++ The "JsAndDom.*" (html and js) files have a series of questions/tasks for you to complete.
++ The "UI_CandidateTest_IMH_dashboard.*" files (png and psd) are for you to replicate.
 + You may use any JavaScript and/or CSS library you wish, or none at all.
 + You may use an external or inline JavaScript file(s).
 + You may take as long as you like to complete the coding challenges.
 + Filenames must remain the same as in the original repository.
++ Unit tests could be included in the "tests" folder if you so choose.
 + testdata.txt contains the data your code will be run against. You may use it as you wish in your code and/or testing.
 + For browsers, your code should run without errors on the latest of the major browsers.
 + You get to define 'latest' and 'major', but be prepared to defend your choices.
