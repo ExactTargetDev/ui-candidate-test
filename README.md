@@ -51,6 +51,7 @@ This is the candaidate test for ExactTarget UI developers.
 
 **Stephen Williams**
 
++ http://twitter.com/swilliamset
 + http://github.com/swilliamset
 
 **Jason Schmidt**
