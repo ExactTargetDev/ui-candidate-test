@@ -1,8 +1,673 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Screenshot.html</title>
+  <title>Screenshot.html</title>
+
+  <!-- Load up Bootstrap CSS -->
+  <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
 </head>
+
+<!-- ... and jQuery, and some more Bootstrap -->
+<script src="jquery-1.9.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/bootstrap-modal.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+    // === Handle the selected links on menu ===================================
+
+    // This holds the current selected item on menu (left side of the page).
+    var selectedItem;
+
+    // This adds a listen to click events on the nav-list, which is the menu on
+    // the left side of the page.
+    $("#nav-list li").click(function() {
+        // If there is already an item selected, remove it's "active" class.
+        if(selectedItem) {
+            selectedItem.removeClass("active");
+        }
+
+        // Find out which item was selected this time, then add the
+        // "active" class to the item.
+        selectedItem = $("#nav-list li#" + this.id);
+        selectedItem.addClass("active");
+    });
+
+
+    // === Set the month, year, and dates on the calendar ======================
+
+    var startDateTime = new Date();
+    var monthName = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"]
+
+    // Set the time to midnight this morning.  The 14.4M milliseconds are added to
+    // account for our timezone diff from GMT.
+    var todayMidnight = startDateTime.getTime();
+    todayMidnight = todayMidnight - (todayMidnight % 86400000) + 14400000;
+
+    // Highlight today on the calendar.
+    $("#calendar-table div#" + startDateTime.getDay()).addClass("calendar-day-highlight");
+
+    // Next, use the current date to set the month and year on the calendar.
+    $("#calendar #calendar-month").html(monthName[startDateTime.getMonth()]
+        + " " + (parseInt(startDateTime.getYear(), 10) + 1900));
+
+    // Roll startDateTime back to the first day of this week/
+    startDateTime.setTime(todayMidnight - (86400000 * startDateTime.getDay()));
+
+    // Finally, iterate through the seven days beginning on the first day of this
+    // week. This will set the dates on the calendar to the accurate/current dates.
+    for(var i = 0; i < 7; i++) {
+        // Set the date on the calendar
+        $("#calendar #calendar-table div#" + i + " span#date").html(startDateTime.getDate());
+
+        if(startDateTime.getTime() === todayMidnight) {
+          $("#calendar #calendar-table div#" + i).append($('<div class="calendar-today-box">TODAY</div>'));
+        }
+
+        // Add a day to the startDateTime to get the next day's date.
+        startDateTime.setTime(startDateTime.getTime() + 86400000);
+    }
+
+
+    // === Handle the selected links on menu ===================================
+
+    // This holds the current selected item on menu (left side of the page).
+    var selectedCell = $("div.cell-container div#1.large-cell");
+
+    // This adds a listen to click events on the nav-list, which is the menu on
+    // the left side of the page.
+    $("div.cell-container div").click(function() {
+        // Another div was clicked on in the process, but we only care about the
+        // one with the id!  This is a simple way to filter out the div we
+        // don't care about, which is nested in the id'd div.
+        if(this.id) {
+
+          // Remove the large-cell class for the selected div and replace it
+          // with small-cell.
+          if(selectedCell) {
+              selectedCell.removeClass("large-cell");
+              selectedCell.addClass("small-cell");
+          }
+
+          // Remove the smal-cell class for the selected div and replace it
+          // with large-cell.  Additionally, set the selected div so we'll know
+          // which div to modify next time.
+          selectedCell = $("div.cell-container div#" + this.id + ".small-cell");
+          selectedCell.removeClass("small-cell");
+          selectedCell.addClass("large-cell");
+        }
+    });
+
+
+    // === Subscriber count simulation =========================================
+
+    // This is here just to simulate the real IMH interface.
+
+    var subscriber_number = 3489;
+    var total_subscriber_number = subscriber_number + 39483;
+
+    $("#subscriber-number").html(subscriber_number);
+    $("#total-subscriber-number").html(total_subscriber_number + " total");
+
+    var subscriberCountSimulator = function(steps, delay) {
+        if(steps != 0) {
+            setTimeout(function(){
+              // Every 0-6 seconds, a new subscriber!
+              delay = (Math.floor(Math.random() * 6) * 1000);
+
+              subscriber_number += 1;
+              $("#subscriber-number").html(subscriber_number);
+
+              total_subscriber_number += 1;
+              $("#total-subscriber-number").html(total_subscriber_number + " total");
+
+              subscriberCountSimulator(steps - 1, delay);
+            }, delay);
+        }
+    };
+
+    // // Here we simulate incrementing the count of the number of subscribers.
+    subscriberCountSimulator(20, 1000);
+
+
+    $("#help-link").on("click", function() {
+
+      // The contents of help.json are copied here to avoid cross-domain issues.
+      var help_json = {
+            "help": [
+                {
+                    "title": "What is JSON?",
+                    "URL": "http://en.wikipedia.org/wiki/JSON"
+                },
+                {
+                    "title": "What is ExactTarget?",
+                    "URL": "http://en.wikipedia.org/wiki/ExactTarget"
+                },
+                {
+                    "title": "More info about ExactTarget REST APIs",
+                    "URL": "http://code.exacttarget.com/question/rest-api-authentication"
+                }
+            ]
+        }
+
+        var help_arr = [];
+        for(var i in help_json.help) {
+
+            // This next section is overkill for such a small help JSON object.
+            // However, in practice, building strings is most efficiently done with
+            // arrays, then join the array as a single string when it is needed.
+
+            // Set the title using the <h4> tag
+            help_arr.push('<h4>');
+            help_arr.push(help_json.help[i].title);
+            help_arr.push('</h4>');
+
+            // Set the title using the <h4> tag
+            help_arr.push('<p><a href="');
+            help_arr.push(help_json.help[i].URL);
+            help_arr.push('" target="');
+            help_arr.push(i);
+            help_arr.push('">');
+            help_arr.push(help_json.help[i].URL);
+            help_arr.push('</a></p>');
+        }
+
+        // Write the contents of the help file.
+        $("#modal-body").html(help_arr.join(""));
+        $('#help-modal').modal('show');
+    });
+
+    $("#help-close").on("click", function() {
+        $('#help-modal').modal('hide');
+    });
+
+});
+
+</script>
+
+
+<style>
+
+/**
+ *  In this section, we override the default values from Twitter Bootstrap to
+ *  achieve the look and feel of the provided screenshot.
+ */
+
+.navbar-inverse .navbar-inner {
+  background-color: #58606c;
+  background-image: -moz-linear-gradient(top, #, #58606c);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#58606c), to(#333b47));
+  background-image: -webkit-linear-gradient(top, #58606c, #333b47);
+  background-image: -o-linear-gradient(top, #58606c, #333b47);
+  background-image: linear-gradient(to bottom, #58606c, #333b47);
+  background-repeat: repeat-x;
+  border-color: #252525;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff58606c', endColorstr='#ff333b47', GradientType=0);
+  min-height: 32px;
+  height: 32px;
+}
+
+.navbar .nav > li {
+  color: #ccc;
+  float: left;
+  padding: 6px 2px 10px;
+  font-size: 12px;
+}
+
+.navbar .nav > li > a {
+  padding: 0px;
+  color: #95c1d6;
+}
+
+.nav > li > a {
+  display: block;
+  color: #777;
+  font-size: 13px;
+}
+
+.sidebar-nav {
+  margin-top: 50px;
+}
+
+.orange-sidebar-header {
+
+  background: #ff996b; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmOTk2YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYTk4M2EiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  #ff996b 0%, #ea983a 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff996b), color-stop(100%,#ea983a)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ff996b 0%,#ea983a 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ff996b 0%,#ea983a 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ff996b 0%,#ea983a 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ff996b 0%,#ea983a 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff996b', endColorstr='#ea983a',GradientType=0 ); /* IE6-8 */
+
+  height: 53px;
+  margin: -19px -19px 10px -19px;
+
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+
+}
+
+.nav-list {
+  padding-right: 11px;
+  padding-left: 11px;
+  margin-bottom: -14px;
+  margin-top: -4px;
+}
+
+.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover,
+.nav-list > .active > a:focus {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+
+.nav-list > li > a {
+  padding: 6px 0px 4px 6px;
+}
+
+.nav-list > li > a, .nav-list .nav-header {
+  margin-right: -25px;
+  margin-left: -25px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.icon {
+  height: 27px;
+  width: 26px;
+}
+
+
+/* --- Calendar ------------------------------------------------------------- */
+
+#calendar {
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  -webkit-border-bottom-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  background-color: #f5f5f5;
+  height: 112px;
+  margin-top: 33px;
+}
+
+#calendar #calendar-month {
+  font-size: 11px;
+  color: #888;
+  padding-left: 8px;
+}
+
+#calendar-table {
+  display: table;
+  table-layout: fixed;
+  margin: 0px 8px 20px 8px;
+  color: #777;
+  height: 67px;
+}
+
+#calendar-table #day {
+  font-size: 11px;
+  top: 2px;
+  vertical-align: top;
+  float:left;
+}
+
+#calendar-table #date {
+  font-size: 11px;
+  color: #333;
+  vertical-align: top;
+  float:right;
+}
+
+#calendar-table > div {
+  display: table-cell;
+  width: 2%;
+  margin-bottom: 0;
+  font-size: 12px;
+  margin-top: 6px;
+  vertical-align: top;
+  top: 0px;
+}
+
+#calendar-table #datecell {
+  border-left: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  padding: 2px;
+  margin-bottom: 0;
+  height: 70px;
+  font-size: 12px;
+}
+
+#calendar-table .last {
+  border-right: 1px solid #DDD;
+}
+
+.calendar-day-highlight {
+  background: #f5f5f5; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y1ZjVmNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZWVlZDUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  #f5f5f5 0%, #feeed5 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#feeed5)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #f5f5f5 0%,#feeed5 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #f5f5f5 0%,#feeed5 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #f5f5f5 0%,#feeed5 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #f5f5f5 0%,#feeed5 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#feeed5',GradientType=0 ); /* IE6-8 */
+}
+
+.calendar-today-box {
+  background-color: #F90;
+  margin-top: -1px;
+  height: 18px;
+  color: #FFF;
+  text-align: center;
+}
+
+/* --- Pulse window --------------------------------------------------------- */
+
+#pulse {
+  border: 1px solid #ccc;
+
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+
+  background: #99abbb; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzk5YWJiYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjY1JSIgc3RvcC1jb2xvcj0iI2I2YzVkMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjY2JSIgc3RvcC1jb2xvcj0iI2JkY2NkOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlMWVhZjQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  #99abbb 0%, #b6c5d0 65%, #bdccd9 66%, #e1eaf4 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#99abbb), color-stop(65%,#b6c5d0), color-stop(66%,#bdccd9), color-stop(100%,#e1eaf4)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #99abbb 0%,#b6c5d0 65%,#bdccd9 66%,#e1eaf4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #99abbb 0%,#b6c5d0 65%,#bdccd9 66%,#e1eaf4 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #99abbb 0%,#b6c5d0 65%,#bdccd9 66%,#e1eaf4 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #99abbb 0%,#b6c5d0 65%,#bdccd9 66%,#e1eaf4 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99abbb', endColorstr='#e1eaf4',GradientType=0 ); /* IE6-8 */
+
+  height: 300px;
+  margin-top: 25px;
+}
+
+.cell-container {
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+/* -- large cell box -------------------------------------------------------- */
+
+.large-cell {
+  height: 210px;
+  width: 30%;
+  float: left;
+  margin-left: 2%;
+}
+
+.large-cell .cell-label {
+  margin: 0px auto;
+  color: #ffffff;
+  text-align: center;
+  height: 26px;
+}
+
+.large-cell .cell-box {
+  width: 94%;
+  border: 1px solid #FFF;
+  height: 160px;
+  margin: 0px 3%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  box-shadow: 0 8px 12px -3px #555;
+  display: table;
+
+  background: #f1faff; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YxZmFmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlMmY0ZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  #f1faff 0%, #e2f4ff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1faff), color-stop(100%,#e2f4ff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #f1faff 0%,#e2f4ff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #f1faff 0%,#e2f4ff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #f1faff 0%,#e2f4ff 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #f1faff 0%,#e2f4ff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1faff', endColorstr='#e2f4ff',GradientType=0 ); /* IE6-8 */
+
+  font-size: 20px;
+
+}
+
+.large-cell .cell-box .cell-box-text-area {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.large-cell .cell-box .featured-number {
+  font-size: 26px;
+  color: #000099;
+  letter-spacing: 1px;
+}
+
+.large-cell .cell-box .small-featured-number {
+  font-size: 14px;
+  color: #000099;
+}
+
+/* -- small cell box -------------------------------------------------------- */
+
+.small-cell {
+  margin-top: 35px;
+  height: 160px;
+  width: 20%;
+  float: left;
+  margin-left: 2%;
+}
+
+.small-cell .cell-label {
+  margin: 0px auto;
+  color: #444;
+  text-align: center;
+  height: 24px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.small-cell .cell-box {
+  width: 94%;
+  border: 1px solid #FFF;
+  height: 100px;
+  margin: 0px 3%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  box-shadow: 0 5px 8px -3px #555;
+  font-size: 12px;
+  display: table;
+
+  background: #fafcfc; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZhZmNmYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkZmU4ZjEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  #fafcfc 0%, #dfe8f1 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafcfc), color-stop(100%,#dfe8f1)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #fafcfc 0%,#dfe8f1 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fafcfc 0%,#dfe8f1 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fafcfc 0%,#dfe8f1 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fafcfc 0%,#dfe8f1 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafcfc', endColorstr='#dfe8f1',GradientType=0 ); /* IE6-8 */
+
+}
+
+
+.small-cell .cell-box .cell-box-text-area {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.small-cell .cell-box .featured-number {
+  font-size: 22px;
+  color: #000099;
+  letter-spacing: 1px;
+}
+
+.small-cell .cell-box .small-featured-number {
+  font-size: 12px;
+  color: #000099;
+}
+
+
+</style>
+
+
 <body>
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <div style="float: left;">
+          <img src="screenshot-assets/images/exacttarget-logo.png" style="padding-top: 10px;">
+        </div>
+        <div style="float: right;">
+          <ul class="nav">
+            <li>Welcome andy@andyengle.com</li>
+            <li>|</li>
+            <li><a href="#" id="help-link">Help</a></li>
+            <li>|</li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+
+      <!-- Menu / navigation on the left side -->
+      <div class="span3">
+        <div class="well sidebar-nav">
+
+          <div class="orange-sidebar-header">
+            <img src="screenshot-assets/images/imh-icon.png" style="padding: 11px 0px 0px 6px">
+          </div>
+
+          <ul class="nav nav-list" id="nav-list">
+            <li id="1"><a href="#"><img src="screenshot-assets/images/email-icon.png" class="icon"> ExactTarget Email</a></li>
+            <li id="2"><a href="#"><img src="screenshot-assets/images/phone-icon.png" class="icon"> ExactTarget Mobile</a></li>
+            <li id="3"><a href="#"><img src="screenshot-assets/images/cotweet-icon.png" class="icon"> CoTweet Social</a></li>
+            <li id="4"><a href="#"><img src="screenshot-assets/images/audience-icon.png" class="icon"> Audience Builder</a></li>
+            <li id="5"><a href="#"><img src="screenshot-assets/images/report-icon.png" class="icon"> Report Builder</a></li>
+            <li id="6"><a href="#"><img src="screenshot-assets/images/automation-icon.png" class="icon"> Automation Studio</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- Main content space on the right side -->
+      <div class="span9">
+
+        <!-- The calendar at the top of the page -->
+        <div id="calendar">
+          <div id="calendar-month">month</div>
+          <div id="calendar-table">
+            <div id="0"><div id="datecell"><span id="day">Sun</span><span id="date">1</span></div></div>
+            <div id="1"><div id="datecell"><span id="day">Mon</span><span id="date">2</span></div></div>
+            <div id="2"><div id="datecell"><span id="day">Tue</span><span id="date">3</span></div></div>
+            <div id="3"><div id="datecell"><span id="day">Wed</span><span id="date">4</span></div></div>
+            <div id="4"><div id="datecell"><span id="day">Thu</span><span id="date">5</span></div></div>
+            <div id="5"><div id="datecell"><span id="day">Fri</span><span id="date">6</span></div></div>
+            <div id="6"><div id="datecell" class="last"><span id="day">Sat</span><span id="date">7</span></div></div>
+          </div>
+        </div>
+
+
+        <!-- Next comes the pulse window -->
+        <div id="pulse">
+          <img style="top: 0px; left: 0px;" src="screenshot-assets/images/pulse-image.png">
+          <div class="cell-container">
+            <div id="1" class="large-cell">
+              <div class="cell-label">Email</div>
+              <div class="cell-box">
+                <div class="cell-box-text-area">No emails are scheduled to send today.</div>
+              </div>
+            </div>
+            <div id="2" class="small-cell">
+              <div class="cell-label">Subscribers</div>
+              <div class="cell-box">
+                <div class="cell-box-text-area">
+                  All Subscribers
+                  <br>
+                  <font class="featured-number" id="subscriber-number">0</font>
+                  <br>
+                  Changed today
+                  <br>
+                  <font class="small-featured-number" id="total-subscriber-number">0 total</font>
+                  <br>
+                </div>
+              </div>
+            </div>
+            <div id="3" class="small-cell">
+              <div class="cell-label">Fans</div>
+              <div class="cell-box"><div class="cell-box-text-area">Not Configured<br><font size="-1"><a href="#">learn more...</a></font></div></div>
+            </div>
+            <div id="4" class="small-cell">
+              <div class="cell-label">Followers</div>
+              <div class="cell-box"><div class="cell-box-text-area">Not Configured<br><font size="-1"><a href="#">learn more...</a></font></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- === Help Modal ====================================================== -->
+
+  <div class="modal hide fade" id="help-modal">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>Help</h3>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-footer">
+      <a href="#" class="btn btn-primary" id="help-close">Close</a>
+    </div>
+  </div>
+
 </body>
+
+
 </html>

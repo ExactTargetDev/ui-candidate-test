@@ -1,0 +1,38 @@
+Start Time: 1366071939
+
+
+Total Time: (all times approximate)
+
+    Javascript functions: 2.5 hours
+    Javascript test file: 1 hours
+
+    JsAndDom.html: 1.25 hours
+
+    Building Screenshot.html: Probably a little more than 7 hours, although
+      I didn't really keep close track of time for that file specifically.
+
+
+Browser Testing:
+
+	With Mac:
+
+	- Chrome version 26.0.1410.65
+	- Firefox version 12.0
+	- Safari version 6.0.3
+
+	With Windows (via browserstack.com)
+
+	- IE 9 on Windows 7
+	- IE 10 on Windows 8
+
+
+Why I chose these browsers:
+
+	They're pretty much the latest and greatest as far as browsers go.  I did
+	not include IE 8 because it does not support console logging, which would
+	not support writing console messages for the assigned tasks.
+
+
+UnitTest:
+
+	Used the QUnit testing included with the test.
