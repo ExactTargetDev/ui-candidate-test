@@ -2,24 +2,163 @@
 <html>
 <head>
     <title>JsAndDom</title>
+
+    <script src="jquery-1.9.1.min.js"></script>
+
 </head>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+    // === PART ONE ==============================================================
+
+    // within div1, programatically create a
+    // SELECT element (with multiple items) and a button.
+    // when the button is clicked write out the name and value of the selected item to the console.
+
+    var options = [
+        { "value": "apple", "text": "Apple"},
+        { "value": "blueberry", "text": "Blueberry"},
+        { "value": "strawberry", "text": "Strawberry"},
+        { "value": "nectarine", "text": "Nectarine"}
+    ];
+
+    // Define variables which will point to the select box and button.
+    var div1SelectBox,
+        div1SelectButton;
+
+    // Access the DOM once for $("div1");
+    var div1 = $("#div1");
+
+
+    // Create the select box, then assign it to div1SelectBox;
+    div1SelectBox = div1.append($("<select></select>")
+        .attr("id", "div1-select")).find("#div1-select");
+
+    // Iterate through all the entries in options, appending each option to the
+    // select box and setting the appropriate value and text attributes.
+    $.each(options, function(i){
+        div1SelectBox.append($("<option></option>")
+            .attr("value", options[i].value)
+            .text(options[i].text))
+    });
+
+    // This appends the button and sets it's value.
+    div1SelectButton = div1.append(
+        $("<button>Tell me the value</button>")
+            .attr("id", "div1-button")).find("#div1-button");
+
+    // Finally, listen for clicks on that button and write values and texts to
+    // the console window each time it is clicked.
+    div1SelectButton.on("click", function() {
+        var s = $("#div1-select option:selected");
+        console.log("The user selected button with value: \"" + s.val() + "\" and text \"" + s.text() + "\"");
+    });
+
+
+    // === PART TWO ==============================================================
+
+    // Write 5 different jQuery selectors to retrieve the
+    // sample anchor in the markup below.
+
+    var sa1 = $("#foo #fizz a").text();
+    console.log("selected anchor #1: " + sa1);
+
+    var sa2 = $("#fizz a").text();
+    console.log("selected anchor #2: " + sa2);
+
+    var sa3 = $("#fizz .link").text();
+    console.log("selected anchor #3: " + sa3);
+
+    var sa4 = $(".bar .buzz .link").text();
+    console.log("selected anchor #4: " + sa4);
+
+    var sa5 = $("#foo .buzz .link").text();
+    console.log("selected anchor #5: " + sa5);
+
+
+    // === PART THREE ============================================================
+
+    // Programatically create an array with 5 items.  Create a list item for each item in the array
+    // and add the list items to the unordered list with an id of "list1".
+
+
+    // First, get today's date, then mod is by 86400000 to set it to midnight,
+    // then add 14400000 to account for the timezone offset from GMT, which is
+    // (4 hours // 14400000ms).
+    var todayMidnight = new Date().getTime();
+    todayMidnight = todayMidnight - (todayMidnight % 86400000) + 14400000;
+
+    // Access the DOM once to get list1.
+    var list1 = $("#list1");
+
+    // Showdate is a Date used for calculating times, etc., dates will hold the
+    // dates as strings.
+    var showDate = new Date(); dates = [];
+
+    // Build an array of the last five dates, starting from today:
+    for(var m = 0; m < 5; m++) {
+        showDate.setTime(todayMidnight - (m * 86400000));
+        dates.push(showDate.toDateString());
+    }
+
+    // This should be done in the for loop just above, but here we append each
+    // date to the list1 unordered list.
+    for(var i in dates) {
+        list1.append("<li>" + dates[i] + "</li>");
+    }
+
+
+    // === PART FOUR =============================================================
+
+        // Use javascript to add a list of checkboxes and 2 links
+        // to the div with an id of "foobar"
+        // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
+        // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+    // Access the DOM once to get list1.
+    var foobar = $("#foobar");
+
+    // First, add the five checkboxes
+    for(var m = 1; m <= 5; m++) {
+        foobar.append('<input type="checkbox" id="checkornot" name="checkbox' + m + '" />Checkbox #' + m + '<br>');
+    }
+
+    foobar.append('<br><a href="#" id="checkall">check all boxes</a> / <a href="#" id="uncheckall">uncheck all boxes</a>');
+
+    $("#checkall").on("click", function() {
+        $("#foobar #checkornot").prop("checked", true)
+    });
+
+    $("#uncheckall").on("click", function() {
+        $("#foobar #checkornot").prop("checked", false)
+    });
+
+});
+
+
+</script>
+
+
 <body>
-	<div id="div1">
-	</div>
+    <div id="div1">
+    </div>
 
-	<div id="foo" class="bar" style="margin-top:10px;">
-	  <div id="fizz" class="buzz">
-	    <a class="link" href="#">sample anchor</a>
-	  </div>
-	</div>
+    <div id="foo" class="bar" style="margin-top:10px;">
+        <div id="fizz" class="buzz">
+            <a class="link" href="#">sample anchor</a>
+        </div>
+    </div>
 
-	<div id="baz" style="margin-top:10px;">
-	  <ul id="list1"></ul>
-	</div>
+    <div id="baz" style="margin-top:10px;">
+        <ul id="list1"></ul>
+    </div>
 
-	<div id="foobar" style="margin-top:10px;">
-	</div>
+    <div id="foobar" style="margin-top:10px;">
+    </div>
 
-	<script scr="jsanddome.js" type="text/javascript"></script>
+    <script scr="jsanddome.js" type="text/javascript"></script>
 </body>
 </html>
