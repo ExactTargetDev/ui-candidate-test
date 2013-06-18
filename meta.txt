@@ -1,0 +1,4 @@
+# meta.txt
+
+Author: Stephen J Barker, Sr.
+Start Time: 2013-06-18T15:13:00 -0400
