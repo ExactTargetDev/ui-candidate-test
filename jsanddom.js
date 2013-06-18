@@ -88,7 +88,7 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          //let's make sure they are there and that they are most likely arrays
-         if (fruits && !fruitsToBeRemoved &&
+         if (fruits && fruitsToBeRemoved &&
              (typeof fruits != 'string') &&
              (typeof fruitsToBeRemoved != 'string') &&
              (typeof fruits.length != 'undefined') &&
@@ -113,7 +113,25 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+         //let's make sure array and toPush are there and then
+         //see if array is most likely an array
+         if (array && toPush &&
+             (typeof array != 'string') &&
+             (typeof array.length != 'undefined')) {
+            //if toPush is likely an array...
+            if ((typeof toPush === 'object') &&
+                (typeof toPush.length != 'undefined')) {
+               //loop through and push the elements
+               for (var i = 0; i < toPush.length; i = i + 1) {
+                  array.push(toPush[i]);
+               }
+            } else {//otherwise...
+               //just push toPush
+               array.push(toPush);
+            }
+         }
+         //return array
+         return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
