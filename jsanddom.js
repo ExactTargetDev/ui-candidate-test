@@ -6,18 +6,27 @@
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         if (typeof str === 'string') {
-           var strArr = str.split('');
-           strArr.reverse();
-           return strArr.join('');
-         } else {
-           return str;
+         //if str and it is a string
+         if (str && (typeof str === 'string')) {
+            //split it, reverse it, join it, and return it
+            var strArr = str.split('');
+            strArr.reverse();
+            return strArr.join('');
+         } else {//otherwise...
+            //return str (non string value or undefined)
+            return str;
          }
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+         //if values and it's not a string and it has a length property
+         if (values && (typeof values != 'string') &&
+             (typeof values.length != 'undefined')) {
+           return Math.min.apply(null, values);//applu Math.min to the values
+         } else {//otherwise...
+           return values;//return values (non-array value or undefined)
+         }
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
