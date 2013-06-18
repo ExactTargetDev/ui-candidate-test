@@ -64,7 +64,22 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         //for 100 times
+         for (var i = 1; i < 101; i = i + 1) {
+            //if divisible by 3 and 5 evenly...
+            if ((i % 3) === 0 && (i % 5) === 0) {
+               console.log("FizzBuzz");
+            //if divisible by 3 evenly
+            } else if ((i % 3) === 0) {
+               console.log("Fizz");
+            //if divisible by 5
+            } else if ((i % 5) === 0) {
+               console.log("Fizz");
+            //otherwise...
+            } else {
+               console.log(i);
+            }
+         }
      }
 
      // You have a master array of strings, where each element is a fruit name.
