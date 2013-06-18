@@ -87,7 +87,25 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         //let's make sure they are there and that they are most likely arrays
+         if (fruits && !fruitsToBeRemoved &&
+             (typeof fruits != 'string') &&
+             (typeof fruitsToBeRemoved != 'string') &&
+             (typeof fruits.length != 'undefined') &&
+             (typeof fruitsToBeRemoved.length != 'undefined')) {
+            var index = -1;
+            //for each fruit in fruitsToRemove
+            for (var i = 0; i < fruitsToRemove.length; i = i + 1) {
+               //if the fruit is in the fruits array
+               index = fruits.indexOf(fruitsToRemove[i]);
+               if (index > -1) {
+                  //remove it
+                  fruits.splice(1,1);
+               }
+            }
+         }
+         //return fruits (helps with chaining and graceful error handling)
+         return fruits;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
