@@ -23,15 +23,40 @@
          //if values and it's not a string and it has a length property
          if (values && (typeof values != 'string') &&
              (typeof values.length != 'undefined')) {
-           return Math.min.apply(null, values);//applu Math.min to the values
+            return Math.min.apply(null, values);//applu Math.min to the values
          } else {//otherwise...
-           return values;//return values (non-array value or undefined)
+            return values;//return values (non-array value or undefined)
          }
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+         //if values and it's not a string and it has a length property
+         if (values && (typeof values != 'string') &&
+             (typeof values.length != 'undefined')) {
+            //declare and init vars
+            var distinctArray = [],
+                i = 0,
+                fIndex = -1,
+                lIndex = -1;
+            //for each element in values
+            for (i = 0; i < values.length; i = i + 1) {
+              //get the first index
+              fIndex = values.indexOf(values[i]);
+              //get the last index
+              lIndex = values.lastIndexOf(values[i]);
+              //if they are the same, no duplicates exist
+              if (fIndex === lIndex) {
+                //push the element to the distinctArray
+                distinctArray.push(values[i]);
+              }
+            }
+            //return the distinct array
+            return distinctArray;
+         } else {//otherwise...
+            //return non-array value or undefined
+            return values;
+         }
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
