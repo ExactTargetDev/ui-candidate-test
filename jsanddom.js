@@ -382,7 +382,9 @@
      // and add the list items to the unordered list with an id of "list1".
      
      (function() {
+        //array of values
         var arr = ['One', 2, 'Three', false, undefined];
+        //loop through the values and add a li to list1
         for (var i = 0; i < arr.length; i = i + 1) {
            $('#list1').append('<li>' + arr[i] + '</li>');
         }
@@ -392,3 +394,4 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     
