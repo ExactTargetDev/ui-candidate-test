@@ -182,6 +182,17 @@
      }
 
      // write an example of a javascript closure
+     var closureExample = function(name) {
+        //a little error handling
+        if (typeof name != 'string') throw new Error("Invalid argument. " +
+            "Expected string, but got " + typeof name + ".");
+        //return an object that has a function that can return the name
+        return {
+           'get_name': function() {
+              return name;
+           }
+        }
+     };
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
