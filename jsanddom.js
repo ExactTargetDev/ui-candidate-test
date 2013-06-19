@@ -202,7 +202,38 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+     var jsonObj = [
+        {
+           'first_name': 'John',
+           'last_name': 'Doe',
+           'city': 'Indianapolis',
+           'state': 'Indiana',
+           'zip': '46203',
+           'phone_numbers': [
+              {
+                 'type': 'home',
+                 'country_code': 1,
+                 'area_code': 317,
+                 'exchange': 555,
+                 'line': 1234
+              },
+              {
+                 'type': 'work',
+                 'country_code': 1,
+                 'area_code': 317,
+                 'exchange': 555,
+                 'line': 4321
+              },
+              {
+                 'type': 'mobile',
+                 'country_code': 1,
+                 'area_code': 317,
+                 'exchange': 555,
+                 'line': 9876
+              }
+           ]
+        }
+     ];
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
