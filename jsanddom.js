@@ -155,7 +155,24 @@
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+         //initialize the return value as undefined
+         var s = undefined;
+         for (var i = 0; i < arguments.length; i = i + 1) {
+            //for the purposes of this exercise, ignore anything
+            //that is not a number that can be added
+            if ((typeof arguments[i] === 'number') &&
+                arguments[i] != Infinity &&
+                !isNaN(arguments[i])) {
+               //if s is still undefined set it to zero
+               if (typeof s === 'undefined') {
+                  s = 0;
+               }
+               //add the arg to s
+               s += arguments[i];
+            }
+         }
+         //return the sum or undefined
+         return s;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
