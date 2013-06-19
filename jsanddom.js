@@ -246,6 +246,92 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     
+     // NOTE: the instructions had a little ambiguity in respect to the rows
+     // so I made a command decision and used the following
+     
+     /**
+      * @name DataTable
+      * @constructor
+      *
+      * @classdesc The DataTable class allows the user to create and organize
+      *            table data
+      * @returns {object} DataTable
+      */
+     function DataTable() {
+        //store this in that for context maintenance
+        var that = this,
+            /**
+             * @name DataTable._columns
+             * @private
+             * @type string Array
+             * @desc Array that stores the column data
+             */
+            _columns = [],
+            /**
+             * @name DataTable._rows
+             * @private
+             * @type string Array Array
+             * @desc Array that arrays of row data
+             */
+            _rows = [];
+        /**
+         * @name DataTable.addRows
+         * @public
+         * @type function
+         * @desc A function that adds rows to the object
+         * @param {string} Any number of strings that are the row data
+         * @returns {object DataTable} this instance of DataTable
+         */
+        that.addRow = function() {
+          //row data array
+          var r = [];
+          for (var i = 0; i < arguments.length; i = i + 1) {
+            if (typeof arguments[i] != 'string') {
+               throw new Error("Invalid Argument. Arguments must be " +
+                               "string(s).");
+            }
+            //push all the args to the row data array
+            r.push(arguments[i]);
+          }
+          //push the row data array as a row to _rows
+          _rows.push(r);
+          return that;
+        };
+        /**
+         * @name DataTable.addColumns
+         * @public
+         * @type Function
+         * @desc A function that adds columns to the object
+         * @param {string} Any number of strings that are the column headings
+         * @returns {object DataTable} this instance of DataTable
+         */
+        that.addColumns = function() {
+          for (var i = 0; i < arguments.length; i = i + 1) {
+            if (typeof arguments[i] != 'string') {
+               throw new Error("Invalid Argument. Arguments must be " +
+                               "string(s).");
+            }
+            //push all column args to _columns
+            _columns.push(arguments[i]);
+          }
+          return that;
+        },
+        /**
+         * @name DataTable.getData
+         * @public
+         * @type Function
+         * @desc A function that returns an object representation of this
+         * @returns {object Object} an object with the column and row data
+         */
+        that.getData = function() {
+          //return an object containing the data
+          return {
+             'columns': _columns,
+             'rows': _rows
+          }
+        };
+     }
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
