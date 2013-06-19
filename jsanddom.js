@@ -345,10 +345,10 @@
         var $testSelect = $('<select id="select" name="select"></select>');
         //append four options
         $testSelect.append('<option value="1" selected="selected">' +
-                           'First Value</option>');
-        $testSelect.append('<option value="2">Second Value</option>');
-        $testSelect.append('<option value="3">Third Value</option>');
-        $testSelect.append('<option value="four">Fourth Value</option>');
+                           'First Value</option>',
+                           '<option value="2">Second Value</option>',
+                           '<option value="3">Third Value</option>',
+                           '<option value="four">Fourth Value</option>');
         //create button
         var $displayValBtn = $('<button type="button">Write Selected Item' +
            'To Console</button>');
@@ -364,10 +364,8 @@
            window.console.log('Name "' + name + '" and Value "' + val +
                               '" are currently selected');
         });
-        //append the select element...
-        $('#div1').append($testSelect);
-        //and the button to div1
-        $('#div1').append($displayValBtn);
+        //append the select element and the button to div1
+        $('#div1').append($testSelect, $displayValBtn);
      })();
      
      // Write 5 different jQuery selectors to retrieve the
