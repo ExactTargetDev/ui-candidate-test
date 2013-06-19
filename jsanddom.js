@@ -395,3 +395,40 @@
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
      
+     (function() {
+        //get the div
+        $div = $('#foobar');
+        //add the checkboxes
+        $div.append('<input type="checkbox" name="cb1"/>Checkbox 1<br/>',
+                    '<input type="checkbox" name="cb2"/>Checkbox 2<br/>',
+                    '<input type="checkbox" name="cb3"/>Checkbox 3<br/>',
+                    '<input type="checkbox" name="cb4"/>Checkbox 4<br/>');
+        //create the link elements and a spacer (span) element for separation
+        var link1 = $('<a href="#" id="checkAll">Check All</a>'),
+            link2 = $('<a href="#" id="uncheckAll">Uncheck All</a>'),
+            spacer = $('<span>&nbsp;</span>');
+        //add event handler to link1
+        link1.on('click', function(e) {
+           //prevent default with IE fallback
+           e.preventDefault ? e.preventDefault() : e.returnValue = false;
+           //get all of the unchecked checkboxes
+           var cbs = $('#foobar input:not(:checked)');
+           //loop through and click them
+           for (var i = 0; i < cbs.length; i = i + 1) {
+              cbs[i].click();
+           }
+        });
+        //add event handler to link2
+        link2.on('click', function(e) {
+           //prevent default with IE fallback
+           e.preventDefault ? e.preventDefault() : e.returnValue = false;
+           //get all of the checked checkboxes
+           var cbs = $('#foobar input:checked');
+           //loop through and click them
+           for (var i = 0; i < cbs.length; i = i + 1) {
+              cbs[i].click();
+           }
+        });
+        //add the links and spacer to the div
+        $div.append(link1, spacer, link2);
+     })();
