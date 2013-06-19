@@ -136,7 +136,21 @@
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         //if not undefined and string
+         if ((typeof sourceStr != 'undefined') &&
+             (typeof sourceStr === 'string')) {
+            var rtn = [];
+            //if the string is not empty
+            if (sourceStr.length > 0) {
+               //split with a ',' as the delimeter
+               rtn = sourceStr.split(',');
+            }
+            //return the rtn array
+            return rtn;
+         } else {//otherwise...
+            //return non-string arg or undefined
+            return sourceStr;
+         }
      }
 
      // Write a function that will take any number of arguments and return their sum
