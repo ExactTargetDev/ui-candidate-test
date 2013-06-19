@@ -177,7 +177,8 @@
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         //return a test regexp test on sourceStr
+         return /^(\s)+$/.test(sourceStr);
      }
 
      // write an example of a javascript closure
