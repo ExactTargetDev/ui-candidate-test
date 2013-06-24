@@ -1,3 +1,6 @@
+     // Solutions and implementations by Justin Evans, 2013
+
+
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
