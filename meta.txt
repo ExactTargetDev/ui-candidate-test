@@ -1,4 +1,13 @@
 # meta.txt
 
 Author: Stephen J Barker, Sr.
-Start Time: 2013-06-18T15:13:00 -0400
+Start Time: 2013-06-18T15:13:00 -0400 
+  Unix: 1371586380
+  
+Total Time: ~18 Hours
+Path to tests: tests/jsanddom-test.js
+Browser Testing:
+  MSIE 8/9/10
+  Mozilla Firefox 21
+  Safari 5.1.7
+  Chrome 28/29 (Canary)
