@@ -88,11 +88,11 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          //let's make sure they are there and that they are most likely arrays
-         if (fruits && fruitsToBeRemoved &&
+         if (fruits && fruitsToRemove &&
              (typeof fruits != 'string') &&
-             (typeof fruitsToBeRemoved != 'string') &&
+             (typeof fruitsToRemove != 'string') &&
              (typeof fruits.length != 'undefined') &&
-             (typeof fruitsToBeRemoved.length != 'undefined')) {
+             (typeof fruitsToRemove.length != 'undefined')) {
             var index = -1;
             //for each fruit in fruitsToRemove
             for (var i = 0; i < fruitsToRemove.length; i = i + 1) {
