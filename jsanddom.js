@@ -1,34 +1,82 @@
-     // Solutions and implementations by Justin Evans, 2013
-
-
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
         //return a / b;
      }
 
-     // Write a function that takes a single argument (a string) and returns the string reversed.
-     function reverseString(str) {
-         // FILL THIS IN
-     }
+    // Write a function that takes a single argument (a string) and returns the string reversed.
+    function reverseString(str) {
+        // Split string character to treat as array, reverse (Array method),
+        // then join() with an empty string ('') set as the delimiter.
+        return str.split('').reverse().join('');
+    }
 
-     // Write a function that takes an array of numbers and returns the minimum value
-     function findMinValue(values) {
-         // FILL THIS IN
-     }
+    // This version of reverseString seems more readable, but requires
+    // looping through the "string" argument and constructing a new string
+    // through concatenation.
+    /*
+    function reverseString (str) {
+        var str_rev = '', i=str.length;
+    
+        while ( i > -1 )
+        {
+            str_rev += str.charAt(i--);
+        }
+    
+        return str_rev;
+    }
+    */
+    
 
-     // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
-     function findDistinctValues(values) {
-         // FILL THIS IN
-     }
+    // Write a function that takes an array of numbers and returns the minimum value
+    function findMinValue(values) {
+        // As "values" is expected to be of type "Array", we can use apply with Math.min
+        // to determine the minimum value
+        return Math.min.apply(this, values);
+    }
+
+    // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
+    // Rewrite "indexOf" with better search optimization! -JRE 
+    function findDistinctValues(values) {
+
+        var queue = [];
+        
+        var _is_in_queue = function(value) {
+            if ( queue.indexOf(value) === -1) {
+                return false;
+            }
+            return true;
+        };
+        
+        for (var i=0; i<values.length; ++i) {
+            if (!_is_in_queue(values[i])) {
+                queue.push(values[i]);
+            }
+        }
+        
+        return queue;
+    }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
      // For multiples of three print "Fizz" instead of the number.
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
-     function doFizzBuzz() {
-         // FILL THIS IN
-     }
+    function doFizzBuzz() {
+        
+        for (var i=1;i<101;++i) {
+
+            var a = 'Fizz', b = 'Buzz';
+            
+            console.log(
+                ( i%3===0 && i%5 !=0 ) ? a :
+                    ( i%5===0 && i%3 !=0 ) ? b : 
+                        ( i%15===0) ? a + b : i
+            );
+            
+        }
+        
+        return true;
+    }
 
      // You have a master array of strings, where each element is a fruit name.
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
