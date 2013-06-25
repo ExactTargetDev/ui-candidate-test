@@ -12,3 +12,19 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+
+/* QUnit Tests for "ui-candidate-test" JavaScript */
+
+/************************************************
+ * Unit Test for method reverseString( string ) *
+ * **********************************************/
+
+module( "Reverse String Unit Test");
+test( "Reverse String Test", "esreveR", function (){
+    // function reverseString exists and is of type 'function'
+   equal( typeof reverseString, 'function', 'Must contain function "reverseString"' );
+   
+   ok( reverseString( 'Reverse' ), 'esreveR', 'Expected "esreveR" as the result. The result was: ' + reverseString('esreveR') );
+});
+
+
