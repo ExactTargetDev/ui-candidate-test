@@ -57,25 +57,30 @@
         return queue;
     }
 
-     // Write a function that logs the numbers from 1 to 100 to the console.
-     // For multiples of three print "Fizz" instead of the number.
-     // For multiples of five print "Buzz".
-     // For numbers which are multiples of both three and five print "FizzBuzz".
+    // Write a function that logs the numbers from 1 to 100 to the console.
+    // For multiples of three print "Fizz" instead of the number.
+    // For multiples of five print "Buzz".
+    // For numbers which are multiples of both three and five print "FizzBuzz".
     function doFizzBuzz() {
+        
+        var arr_log = [];
         
         for (var i=1;i<101;++i) {
 
             var a = 'Fizz', b = 'Buzz';
             
-            console.log(
-                ( i%3===0 && i%5 !=0 ) ? a :
-                    ( i%5===0 && i%3 !=0 ) ? b : 
-                        ( i%15===0) ? a + b : i
-            );
+            arr_log.push(
+                    ( i%3===0 && i%5 !=0 ) ? a :
+                        ( i%5===0 && i%3 !=0 ) ? b : 
+                            ( i%(3*5)===0) ? a + b : i
+                            // Note: I chose (3*5) instead of 15 as the multiples could be parameretized
+                );
+            
+            console.log(arr_log[i-1]);
             
         }
         
-        return true;
+        return arr_log;
     }
 
      // You have a master array of strings, where each element is a fruit name.
