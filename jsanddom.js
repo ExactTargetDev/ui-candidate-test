@@ -73,7 +73,7 @@
                     ( i%3===0 && i%5 !=0 ) ? a :
                         ( i%5===0 && i%3 !=0 ) ? b : 
                             ( i%(3*5)===0) ? a + b : i
-                            // Note: I chose (3*5) instead of 15 as the multiples could be parameretized
+                            // Note: I chose (3*5) instead of 15 as the multiples could be parameterized
                 );
             
             console.log(arr_log[i-1]);
@@ -83,31 +83,51 @@
         return arr_log;
     }
 
-     // You have a master array of strings, where each element is a fruit name.
-     // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
-     // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
-     // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
-     function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
-     }
+    // You have a master array of strings, where each element is a fruit name.
+    // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
+    // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
+    // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
+    function removeFruits(fruits, fruitsToRemove) {
+        // FILL THIS IN
+    }
 
-     // Write a function to push either a simple value or an array of values onto a specified array.
-     // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
-     // If toPush is a simple value, it should be pushed onto array as an element.
-     // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
-     function pushOntoArray(array, toPush) {
-         // FILL THIS IN
-     }
+    // Write a function to push either a simple value or an array of values onto a specified array.
+    // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
+    // If toPush is a simple value, it should be pushed onto array as an element.
+    // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
+    function pushOntoArray(array, toPush) {
+        // FILL THIS IN
+        
+        
+        
+        
+    }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         return (sourceStr.length > 0) ? sourceStr.replace(/^\s+|\s+$/g,'').split(/\s{0,},\s{0,}/) : [];
      }
 
-     // Write a function that will take any number of arguments and return their sum
-     function sum() {
-         // FILL THIS IN
-     }
+    // Write a function that will take any number of arguments and return their sum
+    function sum() {
+        
+        if ( arguments.length == 0 ) {
+            return 0;
+        }
+        
+        if ( arguments.length == 1 ) {
+            return arguments[0];
+        }
+        
+        var arr_args = Array.apply(null, arguments);
+        var sum = 0;
+        
+        while ( arr_args.length > 0) {
+            sum += arr_args.shift();
+        }
+        
+        return sum;
+    }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
