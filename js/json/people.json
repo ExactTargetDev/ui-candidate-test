@@ -1,0 +1,26 @@
+[
+    {
+        "first_name": "Justin",
+        "last_name": "Evans",
+        "city": "Bloomington",
+        "state": "Indiana",
+        "zip": "47403-1234",
+        "phone": {
+            "home": "(812) 606-3179",
+            "work": "(812) 555-3179",
+            "mobile": "(812) 272-7143"
+        }
+    },
+    {
+        "first_name": "",
+        "last_name": "",
+        "city": "",
+        "state": "",
+        "zip": "",
+        "phone": {
+            "home": "",
+            "work": "",
+            "mobile": ""
+        }
+    }
+]
