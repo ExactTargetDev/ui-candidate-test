@@ -75,9 +75,6 @@ test( "Find Distinct Values Test", function(){
 module( "Do 'FizzBuzz' Unit Test");
 test ( "Do 'FizzBuzz' Test", function(){
     
-    // Assign 'Fizz' and 'Buzz' to variables
-    var a = 'Fizz', b = 'Buzz';
-    
     // 'doFizzBuzz' exists and is of type 'function'
     equal( typeof doFizzBuzz, 'function', 'Must contain function "doFizzBuzz"');
     
@@ -158,5 +155,30 @@ test ( "Do 'FizzBuzz' Test", function(){
     };
     equal( other_multiples_are_integers, true, 'Expected that multiples of neither 3 nor 5 are Integers. The result was: ' + other_multiples_are_integers);
 
+    
+});
+
+/***********************************************
+ * Unit Test Module for sum( arg1, arg2, ... ) *
+ * *********************************************/
+
+module( "Sum Unit Test");
+test ( "Sum Test", function(){
+    
+    // "sum" must exist and be of type "fuction"
+    equal(typeof sum, 'function', 'Must contain function "sum"');
+    
+    // "sum" can take any number of arguments, so, assuming no arguments are passed,
+    // "sum" should return 0
+    
+    equal( sum(), 0, 'Expected "sum", called with no arguments, returns 0. The result was ' + sum() );
+    
+    // "sum" called with a single argument should simply return the argument
+    
+    equal( sum(4), 4, 'Expected "sum", called with a single argument of 4, to return 4. The result was ' + sum(4) );
+    
+    // "sum" called with 2 or more arguments should return the sum of those arguments
+    
+    equal( sum(0, 1, 1, 2, 3, 5), 12, 'Expected sum of 0, 1, 1, 2, 3, 5 to be 12. The result was ' + sum(0, 1, 1, 2, 3, 5) );
     
 });
