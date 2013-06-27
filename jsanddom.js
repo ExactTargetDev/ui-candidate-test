@@ -88,7 +88,22 @@
     // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
     // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
     function removeFruits(fruits, fruitsToRemove) {
-        // FILL THIS IN
+        // Use Array Loops instead of "indexOf" for performance increase,
+        // And support for browsers IE<9
+        
+        // Iterate through fruitsToRemove
+        for (var i=0; i<fruitsToRemove.length;++i) {
+            // Nested Loop through Fruits to find Matches
+            for (var x=0; x<fruits.length; ++x) {
+                // If a match is found, assign the result to concatenating the
+                // array before and after the matched item to remove
+                if (fruits[x] === fruitsToRemove[i]) {
+                    fruits = fruits.slice(0, x).concat(fruits.slice(x+1));
+                }
+            }
+        }
+        
+        return fruits;
     }
 
     // Write a function to push either a simple value or an array of values onto a specified array.
