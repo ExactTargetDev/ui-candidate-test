@@ -16,11 +16,11 @@
     // through concatenation.
     /*
     function reverseString (str) {
-        var str_rev = '', i=str.length;
+        var str_rev = '';
     
-        while ( i > -1 )
+        for ( var i=str.length; i-- > -1; )
         {
-            str_rev += str.charAt(i--);
+            str_rev += str.charAt(i);
         }
     
         return str_rev;
@@ -36,19 +36,20 @@
     }
 
     // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
-    // Rewrite "indexOf" with better search optimization! -JRE 
     function findDistinctValues(values) {
 
         var queue = [];
         
         var _is_in_queue = function(value) {
-            if ( queue.indexOf(value) === -1) {
-                return false;
+            for ( var i=0; i<queue.length; i++ ) {
+                if (value===queue[i]) {
+                    return true;
+                }
             }
-            return true;
+            return false;
         };
         
-        for (var i=0; i<values.length; ++i) {
+        for (var i=0; i<values.length; i++) {
             if (!_is_in_queue(values[i])) {
                 queue.push(values[i]);
             }
@@ -159,15 +160,32 @@
 
      // write an example of a javascript closure
 
-
-
-
-
-
-
-
-
-
+    // In the following example of a JavaScript closure, we will create a method
+    // that makes use of a closer - in this example, the method will return an array
+    // of functions that substract 0, 1, and 2 respectively (i.e., their indeces)
+    // from the argument supplied to them after creation.
+    
+    function createMultipliers () {
+        
+        var arr_multipliers = [];
+        
+        for (var i=0; i<3; ++i) {
+            (function(index) {
+                arr_multipliers[index] = (function(n){
+                    return index*n;
+                });
+            })(i);
+        }
+        
+        return arr_multipliers;
+    }
+    
+    // Results in the following:
+    
+    // var x = createMultipliers();
+    // console.log( x[0](2) );      = 0
+    // console.log( x[1](2) );      = 2
+    // console.log( x[2](2) );      = 4
 
 
 
