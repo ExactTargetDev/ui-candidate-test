@@ -96,11 +96,19 @@
     // If toPush is a simple value, it should be pushed onto array as an element.
     // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
     function pushOntoArray(array, toPush) {
-        // FILL THIS IN
         
+        if ( Object.prototype.toString.call( toPush ) === '[object Array]' ) {
+            for ( var i=0; i<toPush.length;i++ ) {
+                array.push(toPush[i]);
+            }
+        }
+        else
+        {
+            array.push(toPush);
+        }
         
-        
-        
+        return array;
+
     }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
@@ -110,7 +118,7 @@
 
     // Write a function that will take any number of arguments and return their sum
     function sum() {
-        
+
         if ( arguments.length == 0 ) {
             return 0;
         }
@@ -118,7 +126,7 @@
         if ( arguments.length == 1 ) {
             return arguments[0];
         }
-        
+
         var arr_args = Array.apply(null, arguments);
         var sum = 0;
         
@@ -136,6 +144,18 @@
 
      // write an example of a javascript closure
 
+
+
+
+
+
+
+
+
+
+
+
+
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -145,6 +165,28 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
+    // JSON stucture is located in ./js/json/people.json, and below (assigned to variable "people_json_structure")
+  
+    var people = {
+        "people" : [
+            {
+                "person" : {
+                    "first_name" : "Justin",
+                    "last_name" : "Evans",
+                    "address" : {
+                        "city" : "Bloomington",
+                        "state" : "Indiana",
+                        "zip" : "47403"
+                    },
+                    "phone" : {
+                        "home" : "(812) 606-3179",
+                        "work" : "(812) 555-3179",
+                        "mobile" : "(812) 272-7143"
+                    }
+                }
+            }
+        ]
+    };
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
@@ -157,6 +199,29 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+
+    var DataTable = function(){
+        
+        // Private properties:
+        var rows = [];      // Expects Strings
+        var columns = [];   // Expect Strings
+        
+        // Public Methods
+        function addRows(item) {
+            rows.push(item);
+        };
+        
+        function addColumns(item) {
+            columns.push(item);
+        };
+        
+        function getData() {
+            // Using Rows and Columns, return JSON Object Representation of this DataTable
+        }
+        
+        // Return / Export Public Methods
+        return (addRows, addColumns, getData);
+    };
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
