@@ -158,6 +158,26 @@ test ( "Do 'FizzBuzz' Test", function(){
     
 });
 
+
+/******************************************
+ * Unit Test Module for fruitsToRemove()  *
+ * ****************************************/
+
+module( "Remove Fruits from Array Unit Test");
+test ( "Remove Fruits from Array Test", function(){
+   
+   // "fruitsToRemove must exist and be of type "function"
+   equal(typeof removeFruits, 'function', 'Must contain function "removeFruits"');
+   
+   // Define test array "fruits", and "fruitsToRemove"
+   var fruits = ["banana", "apple", "mango", "orange"];
+   var fruitsToRemove = ["orange", "mango"];
+   
+   deepEqual(removeFruits(fruits, fruitsToRemove), ["banana", "apple"], 'Expected result to be ["banana", "apple"]. The result was ' + removeFruits(fruits, fruitsToRemove) );
+   
+});
+
+
 /***********************************************
  * Unit Test Module for sum( arg1, arg2, ... ) *
  * *********************************************/
