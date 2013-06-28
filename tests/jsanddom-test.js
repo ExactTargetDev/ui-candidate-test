@@ -24,8 +24,8 @@ test( "Reverse String Test", function (){
     // 'reverseString' exists and is of type 'function'
    equal( typeof reverseString, 'function', 'Must contain function "reverseString"' );
    
-   // method 'reverseString' must take argument string "Reverse" and return "esreveR"
-   equal( reverseString( 'Reverse' ), 'esreveR', 'Expected "esreveR" as the result. The result was: ' + reverseString('Reserve') );
+   // method 'reverseString' must take argument string "Subscribers rock" and return "kcor srebircsbuS"
+   equal( reverseString( 'Subscribers rock' ), 'kcor srebircsbuS', 'Expected "kcor srebircsbuS" as the result. The result was: ' + reverseString('Subscribers rock') );
 
 });
 
@@ -38,13 +38,13 @@ test( "Find Minimum Value Test", function(){
    
    // Define array of numerical values to test method against. Note, including
    // numerical values with and without decimal values, and with positive and negative values
-   var test_values = [ 10, 9, 2000, -0.0143, -1.3, 62.37003 ];
+   var test_values = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
    
    // 'findMinValue' exists and is of type 'function'
    equal( typeof findMinValue, 'function', 'Must contain function "findMinValue"' );
    
    // Assert that findMinValues returns lowest number from array, which is -0.0143
-   deepEqual( findMinValue( test_values ), -1.3, 'Expected -1.3 as the result. The result was ' + findMinValue( test_values ) );
+   deepEqual( findMinValue( test_values ), -1.1, 'Expected -1.1 as the result. The result was ' + findMinValue( test_values ) );
    
 });
 
@@ -56,15 +56,15 @@ module( "Find Distinct Values Unit Test");
 test( "Find Distinct Values Test", function(){
    
    // Define array containing both duplicate and unique values
-   var test_values = [ 1, 1, 2, 3, 3, "test", 1, 3, "test", "testing", 5.2 ];
+   var test_values = [ 1, 1, 2, 3, 5, 7 ];
    
    // 'findDistinctValues' exists and is of type 'function'
    equal( typeof findDistinctValues, 'function', 'Must contain function "findDistinctValues"');
    
    // Assert that when passed 'test_values' as an argument, that items from that
    // array only appear once in the returned array
-   deepEqual( findDistinctValues( test_values ), [ 1, 2, 3, "test", "testing", 5.2 ],
-        'Expected Array: [ 1, 2, 3, "test", "testing", 5.2 ] to be returned. The result was ' + findDistinctValues( test_values ) );
+   deepEqual( findDistinctValues( test_values ), [ 1, 2, 3, 5, 7 ],
+        'Expected Array: [ 1, 2, 3, 5, 7 ] to be returned. The result was ' + findDistinctValues( test_values ) );
 
 });
 
@@ -170,13 +170,32 @@ test ( "Remove Fruits from Array Test", function(){
    equal(typeof removeFruits, 'function', 'Must contain function "removeFruits"');
    
    // Define test array "fruits", and "fruitsToRemove"
-   var fruits = ["banana", "apple", "mango", "orange"];
-   var fruitsToRemove = ["orange", "mango"];
+   var fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+   var fruitsToRemove = ['pear', 'banana'];
    
-   deepEqual(removeFruits(fruits, fruitsToRemove), ["banana", "apple"], 'Expected result to be ["banana", "apple"]. The result was ' + removeFruits(fruits, fruitsToRemove) );
+   deepEqual(removeFruits(fruits, fruitsToRemove), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Expected result to be ["apple", "orange", "kiwi", "plum", "strawberry"]. The result was ' + removeFruits(fruits, fruitsToRemove) );
    
 });
 
+
+module( "Push onto Array Unit Test");
+test( "Push onto Array Test", function(){
+    // "pushOntoArray" must exist and be of type "function"
+    equal(typeof pushOntoArray, 'function', 'Must contain function "pushOntoArray"');
+    
+    // Test with "array" = [1, 2, 3, 4, 5]
+    
+    // Test with "toPush" = 6
+    
+    deepEqual(pushOntoArray([1, 2, 3, 4, 5], 6), [1, 2, 3, 4, 5, 6], 'Expected result to be [1, 2, 3, 4, 5, 6]. The result was ' + pushOntoArray([1, 2, 3, 4, 5], 6) );
+    
+    // Test with "toPush" = [7, 8, 9]
+    
+    deepEqual(pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]), [1, 2, 3, 4, 5, 7, 8, 9], 'Expected results to be [1, 2, 3, 4, 5, 6, 7, 8, 9]. The result was ' + pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]) );
+
+});
+
+    
 
 /***********************************************
  * Unit Test Module for sum( arg1, arg2, ... ) *
