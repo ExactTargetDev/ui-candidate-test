@@ -74,7 +74,7 @@
                     ( i%3===0 && i%5 !=0 ) ? a :
                         ( i%5===0 && i%3 !=0 ) ? b : 
                             ( i%(3*5)===0) ? a + b : i
-                            // Note: I chose (3*5) instead of 15 as the multiples could be parameterized
+                            // Note: I chose (3*5) instead of 15 as the multiples could be parameterized into Variables - example of how a method like this could be more abstracted
                 );
             
             console.log(arr_log[i-1]);
@@ -128,9 +128,9 @@
     }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
-     function splitListStrUsingComma(sourceStr) {
-         return (sourceStr.length > 0) ? sourceStr.replace(/^\s+|\s+$/g,'').split(/\s{0,},\s{0,}/) : [];
-     }
+    function splitListStrUsingComma(sourceStr) {
+        return (sourceStr.length > 0) ? sourceStr.replace(/^\s+|\s+$/g,'').split(/\s{0,},\s{0,}/) : [];
+    }
 
     // Write a function that will take any number of arguments and return their sum
     function sum() {
@@ -153,12 +153,19 @@
         return sum;
     }
 
-     // Write a function that will return true if a specified string consists of only whitespace.
-     function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
-     }
+    // Write a function that will return true if a specified string consists of only whitespace.
 
-     // write an example of a javascript closure
+    function isOnlyWhitespace(sourceStr) {
+        return ( /^\s+$/.test(sourceStr) ) ? true : false;
+        // Returns 'true' if sourceStr is only whitespace
+        // Returns 'false' if sourceStr has at least non-whitespace character
+        // Returns 'false' if sourceStr is given an empty string
+        // Returns 'false' if no arguments are provided
+    }
+
+    
+    
+    // write an example of a javascript closure
 
     // In the following example of a JavaScript closure, we will create a method
     // that makes use of a closer - in this example, the method will return an array
@@ -236,8 +243,10 @@
     var DataTable = function(){
         
         // Private properties:
-        var rows = [];      // Expects Strings
-        var columns = [];   // Expect Strings
+        var rows = [];      // Expects Strings 
+        var columns = [];   // Expect Strings  
+        
+        // Row Object: { column : { name : '', row : [0, value] } }
         
         // Public Methods
         function addRows(item) {
