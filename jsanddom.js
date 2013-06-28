@@ -265,6 +265,8 @@
         return (addRows, addColumns, getData);
     };
 
+    // NOTE: The following instructions have been added to JsAndDom.html
+
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
