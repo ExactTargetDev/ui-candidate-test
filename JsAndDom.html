@@ -54,14 +54,14 @@
 	    var sampleAnchorElem4 = $('a:link:first'); // For better performance, use: $('a.link').filter(':first') for first anchor with a link
 	    var sampleAnchorElem5 = $('a.link:contains("sample anchor")');
   
-	    // Test by retrieving non-jQuery extended element from above selectors
-	    
+	    // Log element out by retrieving non-jQuery extended element from above selectors
+	    /*
 	    console.log( sampleAnchorElem1[0] );
 	    console.log( sampleAnchorElem2[0] );
 	    console.log( sampleAnchorElem3[0] );
 	    console.log( sampleAnchorElem4[0] );
 	    console.log( sampleAnchorElem5[0] );
-	    
+	    */
 
 	    // Programatically create an array with 5 items.  Create a list item for each item in the array
 	    // and add the list items to the unordered list with an id of "list1".
@@ -89,6 +89,9 @@
 		.append( $('<li><input id="chk_foobar_4" type="checkbox" class="chk_foobar" /><label for="chk_foobar_4">Check 4</label></li>') )
 		.append( $('<li><input id="chk_foobar_5" type="checkbox" class="chk_foobar" /><label for="chk_foobar_5">Check 5</label></li>') )
 	    ;
+	    
+	    // From the above: <li><input id="chk_foobar_1" type="checkbox" class="chk_foobar" /><label for="chk_foobar_1">Check 1</label></li>
+	    // is a good candidate for utilizing templates
 	    
 	    $('#foobar').append('<p><a href="#" id="anchor_check_all">Check All</a>&nbsp;|&nbsp;<a href="#" id="anchor_uncheck_all">Uncheck All</a></p>');
 	    
