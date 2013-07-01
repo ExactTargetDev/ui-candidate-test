@@ -142,10 +142,10 @@
         if ( arguments.length == 1 ) {
             return arguments[0];
         }
-
-        var arr_args = Array.apply(null, arguments);
-        var sum = 0;
         
+        // Treat arguments as an Array. Initialize variable "sum" to 0
+        var arr_args = Array.apply(null, arguments), sum = 0; 
+
         while ( arr_args.length > 0) {
             sum += arr_args.shift();
         }
