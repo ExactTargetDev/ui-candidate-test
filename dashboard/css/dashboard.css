@@ -1,0 +1,45 @@
+/*
+	dashboard.css
+	2013, Justin Evans
+	ExactTarget UI-Candidate-Test
+
+	Styles specific to "dashboard.html".
+	Inherits from "bootstrap.css"
+*/
+
+/* Dashboard Header */
+
+header {
+
+}
+
+	header h1 {
+		font-size: 18px;
+	}
+
+/* Container / Wrapper */
+
+.content-wrapper {
+
+}
+
+	/* Interactive Marketing Hub Links/App-Launchers */
+	.left-side-bar {
+		width: 181px;
+		padding: 0;
+		margin: 0;
+	}
+
+
+	/* Calendar, Pulse, etc. - these items comprise the main-content section of the page */
+	.main-content {
+
+	}
+
+		.main-content .calendar {
+
+		}
+
+		.main-content .pulse {
+
+		}

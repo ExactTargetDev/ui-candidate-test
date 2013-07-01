@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ExactTarget - Dashboard</title>
+
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/dashboard.css" />
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<!-- include a local copy if CDN fails to load, and so this can run offline -->
+    <script type="text/javascript">
+    	$ || document.write('<script type="text/javascript" src="js/lib/jQuery/jquery-1.8.0.min.js">\x3C/script>');
+    </script>
+
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <!-- include a local copy if CDN fails to load, and so this can run offline -->
+    <script type="text/javascript">
+    	$.fn.modal || document.write('js/lib/bootstrap/bootstrap.min.js">\x3C/script>')
+    </script>
+
+	<script type="text/javascript" src="js/lib/handlebars/handlebars.js"></script>
+
+</head>
+<body>
+
+<header id="header">
+	<h1>ExactTarget</h1>
+</header>
+
+
+<div id="wrapper">
+
+	<aside class="left-side-bar">
+
+		<nav id="app-launcher">
+			<ul id="nav-links" class="with-left-icons size-24x24 nav-list nav">
+				<li><a href="#">ExactTarget Email</a></li>
+				<li><a href="#">CoTweet Social</a></li>
+				<li><a href="#">Audience Builder</a></li>
+				<li><a href="#">Campaigns</a></li>
+				<li><a href="#">Automation Studio</a></li>
+			</ul>
+		</nav>
+
+		<ul id="alt-links" class="with-icons unstyled">
+			<li><a href="#">External Link 1</a></li>
+			<li><a href="#">External Link 2</a></li>
+		</ul>
+
+	</aside>
+
+	<div class="main-content">
+
+		<article id="calendar">
+			<ul id="calendar_items" class="inline"></ul>
+		</article>
+
+		<article id="pulse">
+
+		</article>
+
+	</div>
+
+</div>
+
+
+<footer id="footer">
+
+</footer>
+
+<!-- Include page-specific code -->
+<script type="text/javascript" src="js/dashboard.js"></script>
+
+<!-- Templates -->
+
+<script id="calendar_item_template" type="text/x-handlebars-template">
+	<li>
+		<div class="calendar_month">
+			<span>{{ month }}</span>&nbsp;<span>{{ year }}</span>
+		</div>
+		{{#list_days days}}
+			<div class="calendar_item_date">
+				<span>{{ day_of_week }}</span>
+				<span>{{ day_of_month }}</span>
+			</div>
+			<div>
+				{{#list calendar_items}}
+					<p>{{ item }} <span>{{ time }}</span></p>
+				{{/list}}
+			</div>
+		{{/list_days}}
+	</li>
+</script>
+
+</body>
+</html>
