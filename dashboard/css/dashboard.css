@@ -30,34 +30,50 @@ header {
 		margin: 0;
 	}
 
-		.et-email {
-			background-image: url('../images/dashboard/dash-launcher-email-24x24.png');
+		.left-side-bar a,
+		.left-side-bar a:link,
+		.left-side-bar a:active,
+		.left-side-bar a:visited,
+		.left-side-bar a:hover {
+			display: block;
+			line-height: 18px;
+			height: 28px;
+			background-repeat: no-repeat;
+			padding-left: 30px;
 		}
 
-		.et-mobile {
-			background-image: url('../images/dashboard/dash-launcher-mobile-24x24.png');
-		}
+			.et-email {
+				background-image: url('../images/dashboard/dash-launcher-email-24x24.png');
+			}
 
-		.et-cotweet {
-			background-image: url('../images/dashboard/dash-launcher-cotweet-24x24.png');
-		}
+			.et-mobile {
+				background-image: url('../images/dashboard/dash-launcher-mobile-24x24.png');
+			}
 
-		.et-sites {
-			background-image: url('../images/dashboard/dash-launcher-sites-24x24.png');
-		}
+			.et-cotweet {
+				background-image: url('../images/dashboard/dash-launcher-cotweet-24x24.png');
+			}
 
-		.et-automation-studio {
-			background-image: url('../images/dashboard/dash-launcher-auto-24x24.png');
-		}
+			.et-sites {
+				background-image: url('../images/dashboard/dash-launcher-sites-24x24.png');
+			}
 
-		.et-audience-builder {
-			background-image: url('../images/dashboard/dash-launcher-audience-24x24.png');
-		}
+			.et-automation-studio {
+				background-image: url('../images/dashboard/dash-launcher-auto-24x24.png');
+			}
 
-		.et-report-builder {
-			background-image: url('../images/dashboard/dash-launcher-report-24x24.png');
-		}
+			.et-audience-builder {
+				background-image: url('../images/dashboard/dash-launcher-audience-24x24.png');
+			}
 
+			.et-report-builder {
+				background-image: url('../images/dashboard/dash-launcher-report-24x24.png');
+			}
+
+			.et-partner {
+				background-image: url('../images/dashboard/dash-launcher-partner-24x24.png');
+				background-position: 8px 3px;
+			}
 
 	/* Calendar, Pulse, etc. - these items comprise the main-content section of the page */
 	.main-content {
