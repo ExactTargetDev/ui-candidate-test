@@ -2,24 +2,110 @@
 <html>
 <head>
     <title>JsAndDom</title>
+    <link href="css/jsanddom.css" rel="stylesheet" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <!-- include a local copy if CDN fails to load, and so this can run offline -->
+    
+    
 </head>
 <body>
 	<div id="div1">
 	</div>
 
-	<div id="foo" class="bar" style="margin-top:10px;">
+	<div id="foo" class="bar">
 	  <div id="fizz" class="buzz">
 	    <a class="link" href="#">sample anchor</a>
 	  </div>
 	</div>
 
-	<div id="baz" style="margin-top:10px;">
+	<div id="baz">
 	  <ul id="list1"></ul>
 	</div>
 
-	<div id="foobar" style="margin-top:10px;">
+	<div id="foobar">
 	</div>
 
-	<script scr="jsanddome.js" type="text/javascript"></script>
+	<script src="jsanddom.js" type="text/javascript"></script>
+	<script type="application/x-javascript">//<![CDATA[
+	$(document).ready(function(){
+	    
+	    // within div1, programatically create a
+	    // SELECT element (with multiple items) and a button.
+	    // when the button is clicked write out the name and value of the selected item to the console.
+    
+	    // build <SELECT> element with <OPTION> elements and <BUTTON> to log selected values
+	    $('#div1').append( $('<select id="sel_dynamic" class="select_elem">')  
+		    .append('<option value="1">One</option>')
+		    .append('<option value="2">Two</option>')
+		    .append('<option value="3">Three</option>') )
+		.append('<button id="log_selected_value" name="log_selected_value">Log Selected Value</button>');
+    
+	    // Bind click (in this case, handle clicks by binding and not delegation)
+	    $('#log_selected_value').click(function(){
+		console.log( 'SELECTED name : ' + $('#sel_dynamic option:selected').text() + ', value : ' + $('#sel_dynamic').val() );
+	    });
+
+	    // Write 5 different jQuery selectors to retrieve the
+	    // sample anchor in the markup below.
+
+	    var sampleAnchorElem1 = $('#foo > div > .link'); // ID, Elem, Class ... Not my favorite example
+	    var sampleAnchorElem2 = $('.link[href^=#]');
+	    var sampleAnchorElem3 = $('div.buzz a.link');
+	    var sampleAnchorElem4 = $('a:link:first'); // For better performance, use: $('a.link').filter(':first') for first anchor with a link
+	    var sampleAnchorElem5 = $('a.link:contains("sample anchor")');
+  
+	    // Log element out by retrieving non-jQuery extended element from above selectors
+	    /*
+	    console.log( sampleAnchorElem1[0] );
+	    console.log( sampleAnchorElem2[0] );
+	    console.log( sampleAnchorElem3[0] );
+	    console.log( sampleAnchorElem4[0] );
+	    console.log( sampleAnchorElem5[0] );
+	    */
+
+	    // Programatically create an array with 5 items.  Create a list item for each item in the array
+	    // and add the list items to the unordered list with an id of "list1".
+    
+	    var arr_list_info = [];
+	    for (var i=0; i<5; i++) {
+		arr_list_info[i] = 'Unordered List Item ' + (i + 1);
+	    }
+	    
+	    for (var i=0; i<5; i++) {
+		$('#list1').append( $('<li>').text(arr_list_info[i] ));
+	    }
+    
+	    // Use javascript to add a list of checkboxes and 2 links
+	    // to the div with an id of "foobar"
+	    // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
+	    // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+    
+	    $('#foobar').append( $('<ul id="checkbox_list">') );
+	    
+	    $('#foobar ul#checkbox_list')
+		.append( $('<li><input id="chk_foobar_1" type="checkbox" class="chk_foobar" /><label for="chk_foobar_1">Check 1</label></li>') )
+		.append( $('<li><input id="chk_foobar_2" type="checkbox" class="chk_foobar" /><label for="chk_foobar_2">Check 2</label></li>') )
+		.append( $('<li><input id="chk_foobar_3" type="checkbox" class="chk_foobar" /><label for="chk_foobar_3">Check 3</label></li>') )
+		.append( $('<li><input id="chk_foobar_4" type="checkbox" class="chk_foobar" /><label for="chk_foobar_4">Check 4</label></li>') )
+		.append( $('<li><input id="chk_foobar_5" type="checkbox" class="chk_foobar" /><label for="chk_foobar_5">Check 5</label></li>') )
+	    ;
+	    
+	    // From the above: <li><input id="chk_foobar_1" type="checkbox" class="chk_foobar" /><label for="chk_foobar_1">Check 1</label></li>
+	    // is a good candidate for utilizing templates
+	    
+	    $('#foobar').append('<p><a href="#" id="anchor_check_all">Check All</a>&nbsp;|&nbsp;<a href="#" id="anchor_uncheck_all">Uncheck All</a></p>');
+	    
+	    $('#anchor_check_all').click(function(){
+		$('.chk_foobar').attr('checked', true);
+	    });
+	    
+	    $('#anchor_uncheck_all').click(function(){
+		$('.chk_foobar').attr('checked', false);
+	    });
+	    
+	});
+	
+	//]]>
+    </script>
 </body>
 </html>
