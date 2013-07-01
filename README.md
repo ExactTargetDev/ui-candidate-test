@@ -1,6 +1,9 @@
 # ExactTarget UI Candidates
 This is the candaidate test for ExactTarget UI developers. 
 
+## Note
++I have been asked by Experis to submit what I have even though there are portions of this project I am in the process of completing. Thank you!
+
 ## Here are the guidelines for the test:
 + Be sure to read all the bullet points bellow.
 + Fork this repository, do your work, commit early/often with descriptive messages. When finished, send a pull request.
