@@ -3,12 +3,17 @@ body {
 	font-family: Arial, sans-serif;
 	font-size: 12px;
 	
+	padding-top: 32px;
+	
 	/* for comparison: */
 	/*background: url('../../UI_CandidateTest_IMH_dashboard.png') no-repeat;*/
 }
 
 header {
-	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 	height: 32px;
 	overflow: hidden;
 	/*
@@ -68,6 +73,7 @@ header nav li a {
 
 /* Main body */
 main {
+	display: inline-block;
 	padding: 0px 20px 0 220px;
 }
 /* Side Nav */
@@ -163,13 +169,12 @@ main > nav li.footer  a {
 
 /* calendar */
 #calendar {
-	max-width: 994px;
+	width: 994px;
 	height: 112px;
-	border-radius: 5px;
+	border-radius: 0 0 5px 5px;
 	background-color: #f5f5f5;
 	border: 1px solid #ccc;
 	border-top: 0;
-	width: 100%;
 	
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -177,6 +182,8 @@ main > nav li.footer  a {
 	
 	padding: 0px 9px 9px 9px;
 	position: relative;
+	
+	margin-bottom: 20px;
 }
 
 #calendar .calendar-month {
@@ -292,3 +299,111 @@ main > nav li.footer  a {
 }
 #calendar nav a.calendar-opts { background-position: 0 0; }
 #calendar nav a.calendar-pop { background-position: 0 -29px; }
+
+
+/* Pulse */
+#pulse, #pulse ul, #pulse li {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#pulse {
+	height: 265px;
+	width: 994px;
+	padding-top: 80px;
+	padding-left: 13px;
+	background: transparent 0 0px url('../img/pulse-bkg.png') no-repeat;
+}
+
+/*
+followers: 7f91a3
+310: 34bbf3
+text: 93afc0
+*/
+
+#pulse  h2 {
+	/* "Pulse" is already part of the bkg image. h2 is here for screen readers. */
+	position: absolute;
+	left: -9999em;
+}
+
+#pulse ul, #pulse li {	
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#pulse li {
+	width: 160px;
+	height: 128px;
+	text-align: center;
+	
+	float: left;
+	
+	background: url("../img/pulse-items-bkgs.png") no-repeat scroll -72px -220px transparent;
+}
+#pulse li  + li{
+	margin-left: 12px;
+}
+
+#pulse h3 {
+	font-size: 10px;
+	line-height: 10px;
+	font-weight: normal;
+	color: #7f91a3;
+	margin-bottom: 18px;
+}
+#pulse p {
+	color: #93afc0;
+	margin: 0;
+}
+#pulse p:first-of-type {
+	font-size: 16px;
+	line-height: 18px;
+}
+#pulse p strong {
+	font-size: 32px;
+	color: #34bbf3;
+	display: block;
+	line-height: 36px;
+}
+#pulse p + p {
+	font-size: 11px;
+	line-height: 11px;
+	margin-top: 10px;
+}
+#pulse li > span {
+	font-size: 13px;
+	line-height: 22px;
+	color: #94afc0;
+}
+#pulse li strong small {
+	color: #93afc0;
+	font-size: 20px;
+	line-height: 20px;
+}
+#pulse li.pulse-foursquare {
+	width: 303px;
+	height: 190px;
+	background-position: 0 20px;
+	margin-left: 0;
+	margin-right: -10px;
+	margin-top: -40px;
+}
+#pulse li.pulse-foursquare h3 {
+	margin-top: 0;
+}
+#pulse li.pulse-foursquare p {
+	font-size: 12px;
+	color: #666;
+	line-height: 12px;
+	text-align: right;
+	margin: 0 20px 10px 20px;
+}
+#pulse li.pulse-foursquare p b {
+	float: left;
+}
+#pulse li .pulse-foursquare-map {
+	border: 1px solid #c5d5e0;
+}
