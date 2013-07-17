@@ -71,7 +71,7 @@ main {
 	padding: 0px 20px 0 220px;
 }
 /* Side Nav */
-main nav {
+main > nav {
 	width: 221px;
 	
 	-moz-box-sizing: border-box;
@@ -82,17 +82,17 @@ main nav {
 	position: absolute;
 	left: 0px;
 }
-main nav ul {
+main > nav ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 	padding-top: 52px;
 	background: transparent 0 0 url('../img/side-nav-header.png') no-repeat;
 }
-main nav li {
+main > nav li {
 	background: transparent 0 0 url('../img/side-nav-list-bkg.png') repeat-y;
 }
-main nav a {
+main > nav a {
 	padding-left: 41px;
 	text-decoration:none;
 	font-size: 12px;
@@ -114,7 +114,7 @@ main a.use-nav-icon-aud-builder { background-position: 6px -495px; }
 main a.use-nav-icon-rep-builder { background-position: 6px -595px; }
 main a.use-nav-icon-partner-app { background-position: 6px -690px; }
 
-main nav a:hover {
+main > nav a:hover {
 	/*background-color: rgba(251, 186, 103, .5);
 	color: #000;
 	*/
@@ -122,7 +122,7 @@ main nav a:hover {
 	color: #666;
 }
 
-main nav a.active-page {
+main > nav a.active-page {
 	background-color: rgba(251, 186, 103, .9);
 	color: #000;
 }
@@ -136,23 +136,23 @@ main a.use-nav-icon-aud-builder.active-page { background-position: 6px -1295px; 
 main a.use-nav-icon-rep-builder.active-page { background-position: 6px -1395px; }
 main a.use-nav-icon-partner-app.active-page { background-position: 6px -1490px; }
 
-main nav li.include-sep {
+main > nav li.include-sep {
 	height: 48px;
 	padding-top: 3px;
 }
-main nav li.include-sep::before {
+main > nav li.include-sep::before {
 	content: '';
 	height: 12px;
 	width: 100%;
 	display: block;
 	background: transparent 0 6px url('../img/side-nav-list-bkg.png') repeat-y;
 }
-main nav li.footer {
+main > nav li.footer {
 	padding-top: 2px;
 	background-image: url('../img/side-nav-list-footer.png');
 	height: 33px;
 }
-main nav li.footer  a {
+main > nav li.footer  a {
 	height: 31px;
 	border-radius: 0px 0px 3px 3px;
 	line-height: 32px;
@@ -176,6 +176,7 @@ main nav li.footer  a {
 	box-sizing: border-box;
 	
 	padding: 0px 9px 9px 9px;
+	position: relative;
 }
 
 #calendar .calendar-month {
@@ -190,8 +191,17 @@ main nav li.footer  a {
 	padding: 0;
 }
 
+#calendar::after {
+	content: '';
+	position: absolute;
+	bottom: 4px;
+	right: 5px;
+	width: 9px;
+	height: 5px;
+	background: transparent 0 -60px url('../img/calendar-sprites.png') no-repeat;
+}
+
 #calendar .calendar-container {
-	width: 100%;
 	overflow: hidden;
 	clear: left;
 	height: 93px;
@@ -265,3 +275,20 @@ main nav li.footer  a {
 	background-color: #f8981d;
 	text-align: center;
 }
+
+#calendar nav {
+	float: right;
+	padding-top: 3px;
+}
+
+#calendar nav a {
+	margin-left: 7px;
+	display: inline-block;
+	width: 11px;
+	height: 11px;
+	overflow: hidden;
+	text-indent: -9999em;
+	background: transparent 0 0px url('../img/calendar-sprites.png') no-repeat;
+}
+#calendar nav a.calendar-opts { background-position: 0 0; }
+#calendar nav a.calendar-pop { background-position: 0 -29px; }
