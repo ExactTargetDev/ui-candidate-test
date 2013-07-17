@@ -61,3 +61,62 @@ header nav li a {
 	display: inline-block;
 	text-decoration: none;
 }
+
+
+/* Main body */
+/* Side Nav */
+main nav {
+	width: 221px;
+	
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	
+	padding: 20px;
+	padding: 20px;
+}
+main nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	padding-top: 52px;
+	background: transparent 0 0 url('../img/side-nav-header.png') no-repeat;
+}
+main nav li {
+	background: transparent 0 0 url('../img/side-nav-list-bkg.png') repeat-y;
+	height: 35px;
+}
+main nav a {
+	padding-left: 43px;
+	text-decoration:none;
+	font-size: 11px;
+	color: #888888;
+	display: block;
+	line-height: 35px;
+	margin: 0 2px;
+	height: 35px;
+}
+main nav a:hover {
+	background-color: rgba(251, 186, 103, .5);
+	color: #000;
+}
+main nav li.include-sep {
+	height: 37px;
+}
+main nav li.include-sep::before {
+	content: '';
+	height: 2px;
+	width: 100%;
+	display: block;
+	background: transparent 0 0 url('../img/side-nav-list-footer.png') no-repeat;
+}
+main nav li.footer {
+	padding-top: 2px;
+	background-image: url('../img/side-nav-list-footer.png');
+	height: 33px;
+}
+main nav li.footer  a {
+	height: 31px;
+	border-radius: 0px 0px 3px 3px;
+	line-height: 31px;
+}
