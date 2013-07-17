@@ -345,3 +345,67 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+	 
+	 function addCheckboxPortionOfTest()
+	 {
+		var container = document.getElementById('foobar'),
+			theUL = document.createElement('ul'),
+		
+			checkAllLink = document.createElement('a'),
+			uncheckAllLink = document.createElement('a'),
+			checkLinksClickHandler = function(check, e){
+				e.preventDefault();
+				
+				var chkboxes=theUL.querySelectorAll('input[type=checkbox]');
+				for (var i=0, cnt=chkboxes.length; i < cnt; i++)
+				{
+					if (check)
+						chkboxes[i].setAttribute('checked', true);
+					else
+						chkboxes[i].removeAttribute('checked');
+				}
+			};
+		
+		// require the container to continue
+		if (!container)
+			return;
+		
+		// create a bunch of checkboxes, with <label>s and accompanying text
+		// add them to the newly created <ul>
+		for (var i=1; i <= 10; i++)
+		{
+			var chkbox = document.createElement('input'),
+				label = document.createElement('label'),
+				txt = document.createTextNode( 'Checkbox #' + i ),
+				theLI = document.createElement('li');
+			
+			// set up the checkbox
+			chkbox.setAttribute('type', 'checkbox');
+			chkbox.setAttribute('value', i);
+			chkbox.setAttribute('name', 'chkbox['+i+']');
+			
+			label.appendChild( chkbox );
+			label.appendChild( txt );
+			
+			theLI.appendChild( label );
+			theUL.appendChild( theLI );
+		}
+		
+		// add the ul to the specified div
+		container.appendChild( theUL );
+		
+		// set up the un/check all links
+		checkAllLink.appendChild( document.createTextNode('Check All') );
+		checkAllLink.setAttribute('href', '#');
+		checkAllLink.addEventListener('click', checkLinksClickHandler.bind(checkAllLink, true), false);
+		
+		uncheckAllLink.appendChild( document.createTextNode('Uncheck All') );
+		uncheckAllLink.setAttribute('href', '#');
+		uncheckAllLink.addEventListener('click', checkLinksClickHandler.bind(uncheckAllLink, false), false);
+		
+		// and add them
+		container.appendChild( checkAllLink );
+		container.appendChild( document.createElement('br') );
+		container.appendChild( uncheckAllLink );
+	 }
+	 addCheckboxPortionOfTest();
