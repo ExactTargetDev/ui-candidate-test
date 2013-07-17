@@ -111,9 +111,27 @@ main a.use-nav-icon-rep-builder { background-position: 6px -595px; }
 main a.use-nav-icon-partner-app { background-position: 6px -690px; }
 
 main nav a:hover {
-	background-color: rgba(251, 186, 103, .5);
+	/*background-color: rgba(251, 186, 103, .5);
+	color: #000;
+	*/
+	background-color: rgba(100, 100, 100, .25);
+	color: #666;
+}
+
+main nav a.active-page {
+	background-color: rgba(251, 186, 103, .9);
 	color: #000;
 }
+/* active nav links */
+main a.use-nav-icon-email.active-page           { background-position: 6px -795px; }
+main a.use-nav-icon-mobile.active-page         { background-position: 6px -895px; }
+main a.use-nav-icon-social.active-page         { background-position: 6px -995px; }
+main a.use-nav-icon-sites.active-page            { background-position: 6px -1095px; }
+main a.use-nav-icon-automation.active-page  { background-position: 6px -1195px; }
+main a.use-nav-icon-aud-builder.active-page { background-position: 6px -1295px; }
+main a.use-nav-icon-rep-builder.active-page { background-position: 6px -1395px; }
+main a.use-nav-icon-partner-app.active-page { background-position: 6px -1490px; }
+
 main nav li.include-sep {
 	height: 48px;
 	padding-top: 3px;
