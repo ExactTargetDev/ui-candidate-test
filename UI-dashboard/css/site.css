@@ -4,7 +4,7 @@ body {
 	font-size: 12px;
 	
 	/* for comparison: */
-	background: url('../../UI_CandidateTest_IMH_dashboard.png') no-repeat;
+	/*background: url('../../UI_CandidateTest_IMH_dashboard.png') no-repeat;*/
 }
 
 header {
@@ -194,38 +194,34 @@ main nav li.footer  a {
 	width: 100%;
 	overflow: hidden;
 	clear: left;
+	height: 93px;
 }
 
 #calendar ul {
 	border-left: 1px solid #ddd;
-	border-bottom: 1px solid #fff;
+	border-bottom: 1px solid #ddd;
 	
 	list-style: none;
 	display: inline-block;
-	
-	position: relative;
 	
 	float: left;
 	clear: both;
 	
 	width: 200%;
-	height: 78px;
+	height: 80px;
 }
 
 #calendar li {
 	display: block;
 	width: 139px;
-	height: 78px;
+	height: 80px;
 	
 	color: #999;
 	font-size: 11px;
 	text-align: right;
 	
-	border-width: 0px 1px 1px 1px;
-	border-style: solid;
-	border-bottom-color: #ddd;
-	border-left-color: #fff;
-	border-right-color: #ddd;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #ddd;
 	
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -239,4 +235,33 @@ main nav li.footer  a {
 #calendar li b {
 	float: left;
 	font-weight: normal;
+}
+
+#calendar li.calendar-today {
+	position: relative;
+	/*
+		gradient from ffedd5 (bottom) to ebf1f5 (top)
+	*/
+	background-image: -webkit-linear-gradient(bottom, #ffedd5, #ebf1f5); /* For Chrome and Safari */
+	background-image:    -moz-linear-gradient(bottom, #ffedd5, #ebf1f5); /* For old Fx (3.6 to 15) */
+	background-image:     -ms-linear-gradient(bottom, #ffedd5, #ebf1f5); /* For pre-releases of IE 10*/
+	background-image:      -o-linear-gradient(bottom, #ffedd5, #ebf1f5); /* For old Opera (11.1 to 12.0) */ 
+	
+	background-image: linear-gradient(to top, #ffedd5, #ebf1f5); /* Standard syntax; must be last */	
+}
+#calendar li.calendar-today::before {
+	content: 'TODAY';
+	position: absolute;
+	font-size: 9px;
+	bottom: -14px;
+	margin-left: -5px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	display: block;
+	width: 138px;
+	height: 13px;
+	line-height: 13px;
+	color: #fff;
+	background-color: #f8981d;
+	text-align: center;
 }

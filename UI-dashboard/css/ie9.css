@@ -1,5 +1,9 @@
 /* fix bg gradient */
 header {
 	background-image: none;
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#45525c', EndColorStr='#2a2f33')"; /* IE8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#45525c', EndColorStr='#2a2f33')";
+}
+#calendar li.calendar-today {
+	background-image: none;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ebf1f5', EndColorStr='#ffedd5')";
 }
