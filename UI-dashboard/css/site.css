@@ -116,14 +116,14 @@ main nav a:hover {
 }
 main nav li.include-sep {
 	height: 48px;
+	padding-top: 3px;
 }
 main nav li.include-sep::before {
 	content: '';
-	height: 10px;
+	height: 12px;
 	width: 100%;
 	display: block;
-	/*background: transparent 0 0 url('../img/side-nav-list-footer.png') no-repeat;*/
-	/*background: transparent 0 0 url('../img/side-nav-list-bkg.png') repeat-y;*/
+	background: transparent 0 6px url('../img/side-nav-list-bkg.png') repeat-y;
 }
 main nav li.footer {
 	padding-top: 2px;
