@@ -383,7 +383,7 @@ text: 93afc0
 	font-size: 20px;
 	line-height: 20px;
 }
-#pulse li.pulse-foursquare {
+#pulse li.pulse-active {
 	width: 303px;
 	height: 190px;
 	background-position: 0 20px;
@@ -391,14 +391,18 @@ text: 93afc0
 	margin-right: -10px;
 	margin-top: -40px;
 }
-#pulse li.pulse-foursquare h3 {
+#pulse li.pulse-active h3 {
 	margin-top: 0;
 }
 #pulse li.pulse-foursquare p {
-	font-size: 12px;
+	font-size: 9px;
 	color: #666;
 	line-height: 12px;
 	text-align: right;
+	margin: 0 10px 6px;
+}
+#pulse li.pulse-foursquare.pulse-active p {
+	font-size: 12px;
 	margin: 0 20px 10px 20px;
 }
 #pulse li.pulse-foursquare p b {
@@ -406,4 +410,15 @@ text: 93afc0
 }
 #pulse li .pulse-foursquare-map {
 	border: 1px solid #c5d5e0;
+	border-radius: 5px;
+	margin: 0 10px;
+	height: 54px;
+	display: inline-block;
+}
+#pulse li .pulse-foursquare-map img {
+	height: 100%;
+	width: auto;
+}
+#pulse li.pulse-active .pulse-foursquare-map {
+	height: 120px;
 }
