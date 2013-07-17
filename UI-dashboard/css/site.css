@@ -4,7 +4,7 @@ body {
 	font-size: 12px;
 	
 	/* for comparison: */
-	/*background: url('../../UI_CandidateTest_IMH_dashboard.png') no-repeat;*/
+	background: url('../../UI_CandidateTest_IMH_dashboard.png') no-repeat;
 }
 
 header {
@@ -67,6 +67,9 @@ header nav li a {
 
 
 /* Main body */
+main {
+	padding: 0px 20px 0 220px;
+}
 /* Side Nav */
 main nav {
 	width: 221px;
@@ -76,7 +79,8 @@ main nav {
 	box-sizing: border-box;
 	
 	padding: 20px;
-	padding: 20px;
+	position: absolute;
+	left: 0px;
 }
 main nav ul {
 	list-style: none;
@@ -154,4 +158,85 @@ main nav li.footer  a {
 	line-height: 32px;
 	font-size: 11px;
 	padding-left: 27px;
+}
+
+
+/* calendar */
+#calendar {
+	max-width: 994px;
+	height: 112px;
+	border-radius: 5px;
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	border-top: 0;
+	width: 100%;
+	
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	
+	padding: 0px 9px 9px 9px;
+}
+
+#calendar .calendar-month {
+	float: left;
+	line-height: 18px;
+	color: #99abb6;
+	font-size: 11px;
+}
+
+#calendar ul, #calendar li {
+	margin:0;
+	padding: 0;
+}
+
+#calendar .calendar-container {
+	width: 100%;
+	overflow: hidden;
+	clear: left;
+}
+
+#calendar ul {
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #fff;
+	
+	list-style: none;
+	display: inline-block;
+	
+	position: relative;
+	
+	float: left;
+	clear: both;
+	
+	width: 200%;
+	height: 78px;
+}
+
+#calendar li {
+	display: block;
+	width: 139px;
+	height: 78px;
+	
+	color: #999;
+	font-size: 11px;
+	text-align: right;
+	
+	border-width: 0px 1px 1px 1px;
+	border-style: solid;
+	border-bottom-color: #ddd;
+	border-left-color: #fff;
+	border-right-color: #ddd;
+	
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 5px 0 3px;
+	
+	margin: 0;
+	float: left;
+}
+
+#calendar li b {
+	float: left;
+	font-weight: normal;
 }
