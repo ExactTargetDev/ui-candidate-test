@@ -1,7 +1,10 @@
 body {
-	background: #f1f1f1;
+	background: #fff;
 	font-family: Arial, sans-serif;
 	font-size: 12px;
+	
+	/* for comparison: */
+	/*background: url('../../UI_CandidateTest_IMH_dashboard.png') no-repeat;*/
 }
 
 header {
@@ -84,31 +87,43 @@ main nav ul {
 }
 main nav li {
 	background: transparent 0 0 url('../img/side-nav-list-bkg.png') repeat-y;
-	height: 35px;
 }
 main nav a {
-	padding-left: 43px;
+	padding-left: 41px;
 	text-decoration:none;
-	font-size: 11px;
+	font-size: 12px;
 	color: #888888;
 	display: block;
 	line-height: 35px;
 	margin: 0 2px;
-	height: 35px;
+	height: 33px;
+	
+	background: transparent 6px 5px url('../img/side-nav-icon-sprite.png') repeat-y;
 }
+
+main a.use-nav-icon-email           { background-position: 6px 5px; }
+main a.use-nav-icon-mobile         { background-position: 6px -95px; }
+main a.use-nav-icon-social         { background-position: 6px -195px; }
+main a.use-nav-icon-sites            { background-position: 6px -295px; }
+main a.use-nav-icon-automation  { background-position: 6px -395px; }
+main a.use-nav-icon-aud-builder { background-position: 6px -495px; }
+main a.use-nav-icon-rep-builder { background-position: 6px -595px; }
+main a.use-nav-icon-partner-app { background-position: 6px -690px; }
+
 main nav a:hover {
 	background-color: rgba(251, 186, 103, .5);
 	color: #000;
 }
 main nav li.include-sep {
-	height: 37px;
+	height: 48px;
 }
 main nav li.include-sep::before {
 	content: '';
-	height: 2px;
+	height: 10px;
 	width: 100%;
 	display: block;
-	background: transparent 0 0 url('../img/side-nav-list-footer.png') no-repeat;
+	/*background: transparent 0 0 url('../img/side-nav-list-footer.png') no-repeat;*/
+	/*background: transparent 0 0 url('../img/side-nav-list-bkg.png') repeat-y;*/
 }
 main nav li.footer {
 	padding-top: 2px;
@@ -118,5 +133,7 @@ main nav li.footer {
 main nav li.footer  a {
 	height: 31px;
 	border-radius: 0px 0px 3px 3px;
-	line-height: 31px;
+	line-height: 32px;
+	font-size: 11px;
+	padding-left: 27px;
 }
