@@ -1,2 +1,4 @@
 Start Time: 6:01 AM 7/17/2013
-TotalTime: HHmm
+TotalTime: 12h
+BrowserTesting: IE8+, GoogleChrome Version 28.0.1500.72 m, FireFox v22
+UnitTest: ui-candidate-test\tests\jsanddom-test.js
