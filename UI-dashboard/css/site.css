@@ -49,6 +49,9 @@ header nav * {
 	line-height: 1em;
 	display: inline-block;
 }
+header nav span {
+	margin-right: 0;
+}
 
 header nav ul {
 	padding-left: 0;
