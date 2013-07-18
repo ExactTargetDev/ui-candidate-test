@@ -334,6 +334,10 @@ text: 93afc0
 	padding: 0;
 }
 
+#pulse ul * {
+	cursor: pointer;
+}
+
 #pulse li {
 	width: 160px;
 	height: 128px;
@@ -362,21 +366,36 @@ text: 93afc0
 	font-size: 16px;
 	line-height: 18px;
 }
+#pulse li.pulse-active p:first-of-type {
+	font-size: 32px;
+	line-height: 36px;
+}
 #pulse p strong {
 	font-size: 32px;
 	color: #34bbf3;
 	display: block;
 	line-height: 36px;
 }
+#pulse .pulse-active p strong {
+	font-size: 64px;
+	line-height: 72px;
+}
 #pulse p + p {
 	font-size: 11px;
 	line-height: 11px;
 	margin-top: 10px;
 }
+#pulse .pulse-active p + p {
+	font-size: 22px;
+}
 #pulse li > span {
 	font-size: 13px;
 	line-height: 22px;
 	color: #94afc0;
+}
+#pulse li.pulse-active > span {
+	font-size: 26px;
+	line-height: 44px;
 }
 #pulse li strong small {
 	color: #93afc0;
@@ -387,14 +406,17 @@ text: 93afc0
 	width: 303px;
 	height: 190px;
 	background-position: 0 20px;
-	margin-left: 0;
+	margin-left: -12px;
 	margin-right: -10px;
 	margin-top: -40px;
+}
+#pulse li ~ li.pulse-active {
+	margin-left: 0;
 }
 #pulse li.pulse-active h3 {
 	margin-top: 0;
 }
-#pulse li.pulse-foursquare p {
+#pulse li.pulse-foursquare p:first-of-type {
 	font-size: 9px;
 	color: #666;
 	line-height: 12px;
