@@ -314,6 +314,7 @@ main > nav li.footer  a {
 	padding-top: 80px;
 	padding-left: 13px;
 	background: transparent 0 0px url('../img/pulse-bkg.png') no-repeat;
+	position: relative;
 }
 
 /*
@@ -444,3 +445,23 @@ text: 93afc0
 #pulse li.pulse-active .pulse-foursquare-map {
 	height: 120px;
 }
+
+#pulse nav {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	float: right;
+}
+#pulse nav a {
+	display: inline-block;
+	text-indent: -9999em;
+	width: 13px;
+	height: 14px;
+	overflow: hidden;
+	margin-left: 9px;
+	background: url("../img/pulse-icon-sprites.png") no-repeat scroll 0px 0px transparent;
+}
+#pulse nav a.pulse-opts { background-position: 0px 0px; }
+#pulse nav a.pulse-collapse { background-position: 0px -20px; }
+#pulse nav a.pulse-pop { background-position: 0px -40px; }
+#pulse nav a.pulse-close { background-position: 0px -60px; }
