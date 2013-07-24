@@ -41,8 +41,8 @@ body > article{width: 1200px; margin: 0px auto 32px;}
 body > article > section{width: 996px;}
 .calendar{background:url(../images/calendar.png) top center no-repeat; height: 115px; overflow: hidden;}
 .calendar .monthYear{color:#99abb6; font-size: 11px; padding:5px 0 0 10px; display:inline-block; vertical-align:middle;}
-.calendar .days{overflow: hidden; position: relative; height: 146px;margin: 0 auto; width: 990px}
-.calendar .days ul{position: absolute; text-align:center; width: 1252px; left:-132px;}
+.calendar .days{overflow: hidden; position: relative; height: 146px;margin: 0 auto; width: 990px;height: 96px;}
+.calendar .days ul{position: absolute; text-align:center; width: 1252px; left:-132px; }
 .calendar .days li{display:inline-block; margin: 0;}
 .calendar .days .day{width:137px; height: 80px;border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; border-left: 1px solid #fff; }
 .calendar .days .day .weekday{font-size:11px; color:#999;margin-left:3px;}
@@ -51,7 +51,10 @@ body > article > section{width: 996px;}
 .calendar .days .currentDay{vertical-align:top;}
 .calendar .days .today{overflow:hidden; height: 0px; margin-top:16px; text-align:center; color:#fff; font-family: ArialNarrow, Arial, sans-serif; font-size:10px;background:url(../images/today-bkgd.png) no-repeat top center;} 
 .calendar .days .currentDay .today{overflow:hidden; height: 16px; margin-top:0px; line-height:15px;} 
-
+.calendar .settings{width: 11px; margin-right:5px; display:inline-block;}
+.calendar .popup{width: 11px; display:inline-block;}
+.calendar .icons{margin-right: 10px;}
+.calendar .days .triangle{position: absolute; z-index: 5; bottom:5px; right: 5px;width:9px;}
 /* TRANSITIONS */
 a, li {
 	transition:all 0.3s;
