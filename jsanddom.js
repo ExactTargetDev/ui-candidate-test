@@ -192,17 +192,51 @@
 	table1.addRow('value2A', 'value2B', 'value2C');
 	console.log(table1.getData());
 	
+	$(document).ready(function(){
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
-
+		var sel = '<select id="div1Select"><option value="test-1">Test 1</option><option value="test-2">Test 2</option><option value="test-3">Test 3</option></select><input type="button" value="click" id="div1Click" />';
+		$('#div1').append(sel);
+		$('#div1Click').live('click', function(){
+			var $this = $('#div1Select option:selected');
+			console.log('Name : ' + $this.html() + ' | ' +'Value : ' + $this.val());
+		});
+		
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
-
+		var anchor1 = $('.link');
+		var anchor2 = $('#fix > a:eq(0)');
+		var anchor3 = $('body .bar .link');
+		var anchor4 = $('a[href=#]');
+		var anchor5 = $('#fix.bar a.link');
+		
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+		var myArray = new Array();
+		for(var a = 1; a <=5; a++){
+			myArray.push('Item '+a);
+		}
+		for(var i = 0; i < myArray.length; i++){
+			$('ul#list1').append('<li>' + myArray[i] + '</li>');
+		}
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+		for(var z = 0; z < 10; z++){
+			var temp = '<label><input name="checkbox'+z+'" class="checkme" type="checkbox" /> Checkbox '+z+'</label>';
+			$('#foobar').append(temp);
+		}
+		$('#foobar').append("<a class='checkall' href='#'>Check All</a>");
+		$('#foobar').append("<a class='uncheckall' href='#'>Uncheck All</a>");
+		$('#foobar .checkall').live('click', function(e){
+			e.preventDefault();
+			$('#foobar input').each(function(){$(this).attr('checked', true);})
+		});
+		$('#foobar .uncheckall').live('click', function(e){
+			e.preventDefault();
+			$('#foobar input').each(function(){$(this).attr('checked', false);})
+		});
+	});
