@@ -21,10 +21,10 @@ body > header .accountInfo li:first-child{border-left: none;  }
 body > header .accountInfo a{color:#99cce1; }
 
 /* BODY */
-body > article{width: 1200px; margin: 32px auto;}
-.marketingHub{width:184px;background:url(../images/marketingHub-bkgd-cap.png) no-repeat bottom center; padding-bottom:11px;}
+body > article{width: 1200px; margin: 0px auto 32px;}
+.marketingHub{width:184px;background:url(../images/marketingHub-bkgd-cap.png) no-repeat bottom center; padding-bottom:11px;margin-top:20px}
 .marketingHubHeader{background:url(../images/marketingHubHeader-bkgd.png) no-repeat top center; height: 52px; width: 143px; padding-right: 41px; }
-.greyNav{background:url(../images/marketingHub-bkgd.png) repeat-y top center;}
+.greyNav{background:url(../images/marketingHub-bkgd.png) repeat-y top center;padding-top:1px;}
 .greyNav ul{margin: 8px 0 3px;}
 .greyNav li{margin: 3px 0;}
 .greyNav .hubBreak{width: 179px;margin: 0 0 0 3px;display:inline-block;}
@@ -37,6 +37,21 @@ body > article{width: 1200px; margin: 32px auto;}
 .greyNav li a.audienceBuilder{background-position: 0 -174px;}
 .greyNav li a.reportBuilder{background-position: 0 -207px;}
 .plannerApplications{color:#666;display:inline-block; line-height:13px;font-size: 12px; font-family:Arial, sans-serief;background: url(../images/planner.png) no-repeat left top; padding-left:20px; margin-left:10px; margin-top:5px; }
+
+body > article > section{width: 996px;}
+.calendar{background:url(../images/calendar.png) top center no-repeat; height: 115px; overflow: hidden;}
+.calendar .monthYear{color:#99abb6; font-size: 11px; padding:5px 0 0 10px; display:inline-block; vertical-align:middle;}
+.calendar .days{overflow: hidden; position: relative; height: 146px;margin: 0 auto; width: 990px}
+.calendar .days ul{position: absolute; text-align:center; width: 1252px; left:-132px;}
+.calendar .days li{display:inline-block; margin: 0;}
+.calendar .days .day{width:137px; height: 80px;border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; border-left: 1px solid #fff; }
+.calendar .days .day .weekday{font-size:11px; color:#999;margin-left:3px;}
+.calendar .days .day .date{font-size:11px; color:#666;margin-right:3px;}
+.calendar .days .currentDay .day{background:url(../images/current-day-bkgd.png) no-repeat top center;}
+.calendar .days .currentDay{vertical-align:top;}
+.calendar .days .today{overflow:hidden; height: 0px; margin-top:16px; text-align:center; color:#fff; font-family: ArialNarrow, Arial, sans-serif; font-size:10px;background:url(../images/today-bkgd.png) no-repeat top center;} 
+.calendar .days .currentDay .today{overflow:hidden; height: 16px; margin-top:0px; line-height:15px;} 
+
 /* TRANSITIONS */
 a, li {
 	transition:all 0.3s;
