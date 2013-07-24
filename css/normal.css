@@ -1,0 +1,32 @@
+﻿/* NORMAL */
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.clearfix:after { clear: both; }  
+.clearfix { zoom: 1; }  
+
+/* float helpers */
+.left{float:left;}
+.right{float:right;}
+
+/* HEADER */
+body > header{background:url(../images/header-bkgd.png) repeat-x top left; height: 34px; position:relative; z-index:2;}
+body > header .logo{width: 86px; margin-left: 20px;}
+body > header .logo img{margin-top: 9px;}
+body > header .accountInfo{color:#eeeeee; margin-right:10px; font-size:11px; font-family:Arial, sans-serif; margin-top:8px;}
+body > header .accountInfo ul{display:inline-block;}
+body > header .accountInfo li{display:inline-block; padding: 0px 5px; border-left: #cccccc 1px solid;  }
+body > header .accountInfo li:first-child{border-left: none;  }
+body > header .accountInfo a{color:#99cce1}
+
+/* BODY */
+body > article{width: 1200px; margin: 32px auto;}
+.marketingHub{width:184px;}
+.marketingHubHeader{background:url(../images/marketingHubHeader-bkgd.png) no-repeat top center; height: 52px; width: 143px; padding-right: 41px; }
+
+/* TRANSITIONS */
+a, li {
+	transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	-webkit-transition:all 0.3s;
+	-o-transition:all 0.3s;
+}
