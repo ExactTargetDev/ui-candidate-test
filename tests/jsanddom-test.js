@@ -42,7 +42,7 @@ test( "Find Distinct Values Test", 2, function() {
 module( "Remove Fruits" );
 test( "Remove Fruits Test", 2, function() {
     // Verify the method exists
-    equal( typeof removeFruits, 'function', 'Must contain a findDistinctValues function' ); 
+    equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' ); 
 
     // Make sure the result from the divide function is valid
 	var fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
@@ -53,7 +53,7 @@ test( "Remove Fruits Test", 2, function() {
 module( "Push onto Array" );
 test( "Push onto Array Test", 3, function() {
     // Verify the method exists
-    equal( typeof removeFruits, 'function', 'Must contain a findDistinctValues function' ); 
+    equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' ); 
 
     // Make sure the result from the divide function is valid
 	var array1 = [1, 2, 3, 4, 5];
@@ -64,3 +64,13 @@ test( "Push onto Array Test", 3, function() {
 });
 
 
+module( "Split String" );
+test( "Push onto Array Test", 2, function() {
+    // Verify the method exists
+    equal( typeof splitListStrUsingComma, 'function', 'Must contain a findDistinctValues function' ); 
+
+    // Make sure the result from the divide function is valid
+	var str = 'The, quick, brown, fox jumped over';
+    ok( splitListStrUsingComma( str ), ['The', ' quick', ' brown', ' fox jumped over'], 'Expected "["The", " quick", " brown", " fox jumped over"]" as the result, the result was: ' +  splitListStrUsingComma( str ));
+    
+});
