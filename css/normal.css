@@ -1,4 +1,6 @@
 ﻿/* NORMAL */
+a{text-decoration: none;}
+a:hover{text-decoration: underline;}
 /* let's clear some floats */
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
 .clearfix:after { clear: both; }  
@@ -16,13 +18,25 @@ body > header .accountInfo{color:#eeeeee; margin-right:10px; font-size:11px; fon
 body > header .accountInfo ul{display:inline-block;}
 body > header .accountInfo li{display:inline-block; padding: 0px 5px; border-left: #cccccc 1px solid;  }
 body > header .accountInfo li:first-child{border-left: none;  }
-body > header .accountInfo a{color:#99cce1}
+body > header .accountInfo a{color:#99cce1; }
 
 /* BODY */
 body > article{width: 1200px; margin: 32px auto;}
-.marketingHub{width:184px;}
+.marketingHub{width:184px;background:url(../images/marketingHub-bkgd-cap.png) no-repeat bottom center; padding-bottom:11px;}
 .marketingHubHeader{background:url(../images/marketingHubHeader-bkgd.png) no-repeat top center; height: 52px; width: 143px; padding-right: 41px; }
-
+.greyNav{background:url(../images/marketingHub-bkgd.png) repeat-y top center;}
+.greyNav ul{margin: 8px 0 3px;}
+.greyNav li{margin: 3px 0;}
+.greyNav .hubBreak{width: 179px;margin: 0 0 0 3px;display:inline-block;}
+.greyNav li a{display:inline-block; line-height:26px;font-size: 12px; font-family:Arial, sans-serief; color:#888; height: 26px;background-image:url(../images/marketingHubIcons.png); background-repeat:no-repeat; padding-left: 35px; margin-left: 10px;}
+.greyNav li a.exactTargetMail{background-position: 0 0;}
+.greyNav li a.exactTargetMobile{background-position: 0 -32px;}
+.greyNav li a.coTweetSocial{background-position: 0 -65px;}
+.greyNav li a.exactTargetSites{background-position: 0 -97px;}
+.greyNav li a.automationStudio{background-position: 0 -142px;}
+.greyNav li a.audienceBuilder{background-position: 0 -174px;}
+.greyNav li a.reportBuilder{background-position: 0 -207px;}
+.plannerApplications{color:#666;display:inline-block; line-height:13px;font-size: 12px; font-family:Arial, sans-serief;background: url(../images/planner.png) no-repeat left top; padding-left:20px; margin-left:10px; margin-top:5px; }
 /* TRANSITIONS */
 a, li {
 	transition:all 0.3s;
