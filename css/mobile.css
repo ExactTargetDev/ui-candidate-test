@@ -1,0 +1,26 @@
+/*
+ * TITLE: MOBILE RESPONIVE CSS
+ * AUTHOR: Jeremy Barngrover
+ * DATE: 2013-07-23
+ */
+
+ 
+
+/* TABLETS LANDSCAPE */
+@media screen and (max-width: 1024px) {
+	
+	
+}
+
+/* TABLETS PORTRAIT */
+@media screen and (max-width: 860px) {
+}
+
+/* PHONE LANSCAPE */
+@media screen and (max-width: 640px) {
+	
+}
+
+/* PHONE PORTAIT */
+@media screen and (max-width: 360px) {
+}

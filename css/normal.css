@@ -1,0 +1,87 @@
+﻿/* NORMAL */
+a{text-decoration: none;}
+a:hover{text-decoration: underline;}
+body{position: relative;}
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.clearfix:after { clear: both; }  
+.clearfix { zoom: 1; }  
+
+/* float helpers */
+.left{float:left;}
+.right{float:right;}
+
+/* HEADER */
+body > header{background:url(../images/header-bkgd.png) repeat-x top left; height: 34px; position:relative; z-index:2;}
+body > header .logo{width: 86px; margin-left: 20px;}
+body > header .logo img{margin-top: 9px;}
+body > header .accountInfo{color:#eeeeee; margin-right:10px; font-size:11px; font-family:Arial, sans-serif; margin-top:8px;}
+body > header .accountInfo ul{display:inline-block;}
+body > header .accountInfo li{display:inline-block; padding: 0px 5px; border-left: #cccccc 1px solid;  }
+body > header .accountInfo li:first-child{border-left: none;  }
+body > header .accountInfo a{color:#99cce1; }
+
+/* BODY */
+body > article{width: 1200px; margin: 0px auto 32px;}
+.marketingHub{width:184px;background:url(../images/marketingHub-bkgd-cap.png) no-repeat bottom center; padding-bottom:11px;margin-top:20px}
+.marketingHubHeader{background:url(../images/marketingHubHeader-bkgd.png) no-repeat top center; height: 52px; width: 143px; padding-right: 41px; }
+.greyNav{background:url(../images/marketingHub-bkgd.png) repeat-y top center;padding-top:1px;}
+.greyNav ul{margin: 8px 0 3px;}
+.greyNav li{margin: 3px 0;}
+.greyNav .hubBreak{width: 179px;margin: 0 0 0 3px;display:inline-block;}
+.greyNav li a{display:inline-block; line-height:26px;font-size: 12px; font-family:Arial, sans-serief; color:#888; height: 26px;background-image:url(../images/marketingHubIcons.png); background-repeat:no-repeat; padding-left: 35px; margin-left: 10px;}
+.greyNav li a.exactTargetMail{background-position: 0 0;}
+.greyNav li a.exactTargetMobile{background-position: 0 -32px;}
+.greyNav li a.coTweetSocial{background-position: 0 -65px;}
+.greyNav li a.exactTargetSites{background-position: 0 -97px;}
+.greyNav li a.automationStudio{background-position: 0 -142px;}
+.greyNav li a.audienceBuilder{background-position: 0 -174px;}
+.greyNav li a.reportBuilder{background-position: 0 -207px;}
+.plannerApplications{color:#666;display:inline-block; line-height:13px;font-size: 12px; font-family:Arial, sans-serief;background: url(../images/planner.png) no-repeat left top; padding-left:20px; margin-left:10px; margin-top:5px; }
+.greyNav a:active{color:#333;}
+
+
+body > article > section{width: 996px;}
+.calendar{background:url(../images/calendar.png) top center no-repeat; height: 115px; overflow: hidden;}
+.calendar .monthYear{color:#99abb6; font-size: 11px; padding:5px 0 0 10px; display:inline-block; vertical-align:middle;}
+.calendar .days{overflow: hidden; position: relative; height: 146px;margin: 0 auto; width: 990px;height: 96px;}
+.calendar .days ul{position: absolute; text-align:center; width: 1252px; left:-132px; }
+.calendar .days li{display:inline-block; margin: 0;}
+.calendar .days .day{width:137px; height: 80px;border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; border-left: 1px solid #fff; }
+.calendar .days .day .weekday{font-size:11px; color:#999;margin-left:3px;}
+.calendar .days .day .date{font-size:11px; color:#666;margin-right:3px;}
+.calendar .days .currentDay .day{background:url(../images/current-day-bkgd.png) no-repeat top center;}
+.calendar .days .currentDay{vertical-align:top;}
+.calendar .days .today{overflow:hidden; height: 0px; margin-top:16px; text-align:center; color:#fff; font-family: ArialNarrow, Arial, sans-serif; font-size:10px;background:url(../images/today-bkgd.png) no-repeat top center;} 
+.calendar .days .currentDay .today{overflow:hidden; height: 16px; margin-top:0px; line-height:15px;} 
+.calendar .settings{width: 11px; margin-right:5px; display:inline-block;}
+.calendar .popup{width: 11px; display:inline-block;}
+.calendar .icons{margin-right: 10px;}
+.calendar .days .triangle{position: absolute; z-index: 5; bottom:5px; right: 5px;width:9px;}
+
+.pulse{background: url(../images/pulse-bkgd.png) no-repeat top center; height: 245px; margin:20px auto; padding: 10px 15px;position:relative; overflow: hidden;}
+.pulse .pulseHeadingLogo{width: 51px;margin-left: 15px;}
+.pulse .pulseActions{margin-right: 15px;}
+.pulse .pulseActions .settings{width: 11px; margin-right:5px; display:inline-block;}
+.pulse .pulseActions .popup{width: 11px; margin-right:5px;display:inline-block;}
+.pulse .pulseActions .icon2{width: 11px; margin-right:5px;display:inline-block;}
+.pulse .pulseActions .close{width: 11px; margin-right:5px;display:inline-block;}
+
+.pulse .pulsePanels{position: absolute; width:1500px; }
+.pulse .pulsePanel{width: 172px; margin: 0 0 0 8px; display:inline-block; padding-top:54px; vertical-align:top;cusrsor: pointer;}
+.pulse .pulsePanel:first-child{margin: 0 0 0 0px; }
+.pulse .pulsePanel.bigBox{padding-top:4px; width: 313px;}
+.pulse .pulseHeading{color:#7f91a3; font-size: 11px; display:block; text-align:center; margin-bottom: 10px;}
+.pulse .pulseBox{background:url(../images/pulse-panel.png) no-repeat top center; height: 101px;} 
+.pulse .bigBox .pulseBox{background:url(../images/pulse-panel-big.png) no-repeat center -17px; height: 180px;} 
+
+.overlay{background: rgba(0,0,0,.7);position:absolute; top: 0; left: 0; z-index: 100; width: 100%; height: 100%; display: none;}
+.pageWrap{width: 960px; margin: 60px auto 0;}
+.overlayContent{background: #fff; border: 1px solid #303030; padding: 15px;}
+/* TRANSITIONS */
+a, li {
+	transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	-webkit-transition:all 0.3s;
+	-o-transition:all 0.3s;
+}
