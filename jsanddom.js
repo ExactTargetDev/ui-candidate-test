@@ -1,23 +1,45 @@
-     // Example unit test function
+	 // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+         var holdString = '';
+		 for(var i = str.length; i > 0; i--){
+			holdString += str[i];
+		 }
+		 return holdString;
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+		values.sort(function(a,b){return a-b});
+		return values[0];
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+        var distinctVals = new Array();
+		for(var i = 0; i < values.length; i++){
+			if(distinctVals.indexOf(values[i]) == -1)
+				distinctVals.push(values[i]);
+		}
+		return distinctVals;
      }
+	
+	// GIVE IE8 indexOf function for arrays
+	if (!Array.prototype.indexOf) {
+		Array.prototype.indexOf = function(value, offset){
+			for (var i = (offset || 0), j = this.length; i < j; i++) {
+				if (this[i] === value) { return i; }
+			}
+			return -1;
+		}
+
+	}
+	 
 
      // Write a function that logs the numbers from 1 to 100 to the console.
      // For multiples of three print "Fizz" instead of the number.
@@ -25,6 +47,18 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
+		 var output ='';
+		 for(var i = 1; i <= 100; i++){
+			if(i % 3 == 0)
+				output += 'Fizz';
+			if(i % 5 == 0)
+				output += 'Buzz';
+			if(i % 3 != 0 && i % 5 != 0)
+				output = i;
+			
+			console.log(output);
+			output='';
+		 }
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -33,6 +67,13 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+		 var holdArray = new Array();
+		 for(var i = 0; i < fruits.length; i++){
+			if(fruitsToRemove.indexOf(fruits[i]) == -1)
+				holdArray.push(fruits[i]);
+		 }
+		 return holdArray;
+		 
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
