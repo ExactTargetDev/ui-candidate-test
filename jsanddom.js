@@ -140,11 +140,11 @@
      // - a collection of phone numbers (home, work, mobile)
 	var people = {
 		'people' : [
-			{'firstName' : 'Jeremy', 'lastName' : 'Barngrover', 'city': 'Indianapolis', 'state': 'Indiana', 'zip' : 46268, 'phone'[ {'home': '(317) 555-1235', 'work' : '(317) 555-1236', 'mobile' : '(317) 555-1234'}]},
-			{'firstName' : 'John', 'lastName' : 'Doe', 'city': 'Indianapolis', 'state': 'Indiana', 'zip' : 46268, 'phone'[ {'home': '(317) 555-9235', 'work' : '(317) 555-9236', 'mobile' : '(317) 555-9234'}]}
+			{'firstName' : 'Jeremy', 'lastName' : 'Barngrover', 'city': 'Indianapolis', 'state': 'Indiana', 'zip' : 46268, 'phone':[ {'home': '(317) 555-1235', 'work' : '(317) 555-1236', 'mobile' : '(317) 555-1234'}]},
+			{'firstName' : 'John', 'lastName' : 'Doe', 'city': 'Indianapolis', 'state': 'Indiana', 'zip' : 46268, 'phone':[ {'home': '(317) 555-9235', 'work' : '(317) 555-9236', 'mobile' : '(317) 555-9234'}]}
 		]
 	};
-
+	
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
      // A private rows property (string array)
@@ -156,7 +156,42 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
-
+	function DataTable(){
+		var columns = new Array();
+		var rows = new Array();
+		this.addColumns = function(){
+			for(var a =0; a < arguments.length; a++)
+				columns.push(arguments[a]);
+		}
+		this.addRow = function(){
+			rows.push(arguments);
+		}
+		this.getData = function(){
+			var returnHold = '{"data":[';
+			for(var r = 0; r < rows.length; r++){
+				var row = rows[r];
+				var temp = '{';
+				for(var c = 0; c < columns.length; c++){
+					temp += '"' + columns[c] + '":"' + row[c] + '",';
+				}
+				temp = temp.substring(0,temp.length - 1);
+				temp += '},'
+				returnHold += temp;
+			}
+			returnHold = returnHold.substring(0, returnHold.length -1);
+			returnHold += ']}';			
+			return JSON.parse(returnHold); 
+		}
+		
+	}
+	
+	
+	var table1 = new DataTable();
+	table1.addColumns('column1', 'column2', 'column3');
+	table1.addRow('value1A', 'value1B', 'value1C');
+	table1.addRow('value2A', 'value2B', 'value2C');
+	console.log(table1.getData());
+	
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
