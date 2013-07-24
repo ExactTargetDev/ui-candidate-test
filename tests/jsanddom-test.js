@@ -50,4 +50,17 @@ test( "Remove Fruits Test", 2, function() {
     ok( removeFruits( fruits, fruitsToRemove ), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Expected "["apple", "orange", "kiwi", "plum", "strawberry"]" as the result, the result was: ' +  removeFruits( fruits, fruitsToRemove ));
 });
 
+module( "Push onto Array" );
+test( "Push onto Array Test", 3, function() {
+    // Verify the method exists
+    equal( typeof removeFruits, 'function', 'Must contain a findDistinctValues function' ); 
+
+    // Make sure the result from the divide function is valid
+	var array1 = [1, 2, 3, 4, 5];
+	var array2 = [7, 8, 9];
+	var item = 6;
+    ok( pushOntoArray( array1, item ), [1, 2, 3, 4, 5, 6], 'Expected "[1, 2, 3, 4, 5, 6]" as the result, the result was: ' +  pushOntoArray( array1, item ));
+    ok( pushOntoArray( array1, array2 ), [1, 2, 3, 4, 5, 7, 8, 9], 'Expected "[1, 2, 3, 4, 5, 7, 8, 9]" as the result, the result was: ' +  pushOntoArray( array1, array2));
+});
+
 
