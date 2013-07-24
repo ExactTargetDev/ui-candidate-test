@@ -67,10 +67,21 @@ test( "Push onto Array Test", 3, function() {
 module( "Split String" );
 test( "Push onto Array Test", 2, function() {
     // Verify the method exists
-    equal( typeof splitListStrUsingComma, 'function', 'Must contain a findDistinctValues function' ); 
+    equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' ); 
 
     // Make sure the result from the divide function is valid
 	var str = 'The, quick, brown, fox jumped over';
     ok( splitListStrUsingComma( str ), ['The', ' quick', ' brown', ' fox jumped over'], 'Expected "["The", " quick", " brown", " fox jumped over"]" as the result, the result was: ' +  splitListStrUsingComma( str ));
+    
+});
+
+module( "Sum" );
+test( "Sum Test", 2, function() {
+    // Verify the method exists
+    equal( typeof sum, 'function', 'Must contain a sum function' ); 
+
+    // Make sure the result from the divide function is valid
+	
+    ok( sum( 1, 1, 2, 3, 5, 7 ), 19, 'Expected 19 as the result, the result was: ' +   sum( 1, 1, 2, 3, 5, 7 ));
     
 });
