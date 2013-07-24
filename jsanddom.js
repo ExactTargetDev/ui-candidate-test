@@ -112,10 +112,24 @@
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
+		 var returnVal = true;
+		 var whitespaceRegEx = /(\s)/;
+		 var a = 0
+		
+		 while(a < sourceStr.length && returnVal){
+			returnVal = whitespaceRegEx.test(sourceStr[a]);
+			a++;
+		 }
+		 return returnVal;
      }
 
      // write an example of a javascript closure
-
+	function closureFunc(){
+		var num = 88;
+		var pointer = function(){ alert(num); };
+		return pointer;
+	}
+	
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -124,7 +138,12 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+	var people = {
+		'people' : [
+			{'firstName' : 'Jeremy', 'lastName' : 'Barngrover', 'city': 'Indianapolis', 'state': 'Indiana', 'zip' : 46268, 'phone'[ {'home': '(317) 555-1235', 'work' : '(317) 555-1236', 'mobile' : '(317) 555-1234'}]},
+			{'firstName' : 'John', 'lastName' : 'Doe', 'city': 'Indianapolis', 'state': 'Indiana', 'zip' : 46268, 'phone'[ {'home': '(317) 555-9235', 'work' : '(317) 555-9236', 'mobile' : '(317) 555-9234'}]}
+		]
+	};
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)

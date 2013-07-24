@@ -85,3 +85,15 @@ test( "Sum Test", 2, function() {
     ok( sum( 1, 1, 2, 3, 5, 7 ), 19, 'Expected 19 as the result, the result was: ' +   sum( 1, 1, 2, 3, 5, 7 ));
     
 });
+
+
+module( "Is Only Whitespace" );
+test( "Is Only Whitespace Test", 2, function() {
+    // Verify the method exists
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' ); 
+
+    // Make sure the result from the divide function is valid
+	
+    ok( isOnlyWhitespace( '' ), true, 'Expected true as the result, the result was: ' +   isOnlyWhitespace( '' ));
+    
+});
