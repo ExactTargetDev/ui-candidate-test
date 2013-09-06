@@ -67,3 +67,8 @@ This is the candaidate test for ExactTarget UI developers.
 **Scott Plumlee**
 
 + http://github.com/plumlee
+
+**Stephen Barker**
+
++ http://github.com/sbarkerET
++ http://twitter.com/sbarkerET
