@@ -77,7 +77,19 @@ test('isOnlyWhitespace', 3, function(){
 	ok(!isOnlyWhitespace(one),'passes: returns false, '+one+' contains non whitespace charaters');
 	ok(isOnlyWhitespace(two),'passes: returns true, string of only spaces');
 	ok(isOnlyWhitespace(three),'passes: returns true, string of tabs, line breaks, and spaces');
+});
 
+test('closure',3, function(){
+	var c = new closure();
+	ok(c instanceof closure,'passes: c is an instance of closure()');
+	equal(c.public,'hello','passes: c.public == '+ c.public);
+	equal(typeof _private,'undefined','_private not accessible outside of the closure');
+});
+
+test('JSON people group',3,function(){
+	ok(group.people instanceof Array, 'passes group.people is an instance of an Array');
+	deepEqual(_.keys(group.people[0]),["firstname", "lastname", "city", "state", "zip", "phonenumbers"],'passes person object has the following keys "firstname", "lastname", "city", "state", "zip", "phonenumbers"');
+	ok(group.people[0].phonenumbers instanceof Array,'passes phonenumbers is an instance of an Array');
 });
 
 

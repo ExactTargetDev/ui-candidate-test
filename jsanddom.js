@@ -2,7 +2,7 @@
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
         return a / b;
-     }
+    }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
@@ -11,54 +11,54 @@
             _str+=str.substr(i,1);
         }
         return _str;
-     }
+    }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         return _.min(values);
-     }
+       return _.min(values);
+   }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         return _.uniq(values);
-     }
+       return _.uniq(values);
+   }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
      // For multiples of three print "Fizz" instead of the number.
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         for(var i=1;i<=100;i++){
-            var msg='';
-            if(i%3===0&&i%5===0)msg = 'FizzBuzz';
-            else if(i%3===0)msg = 'Fizz';
-            else if(i%5===0)msg = 'Buzz';
-            else msg = i;
-            console.log(i+msg);
-         }
-     }
+       for(var i=1;i<=100;i++){
+        var msg='';
+        if(i%3===0&&i%5===0)msg = 'FizzBuzz';
+        else if(i%3===0)msg = 'Fizz';
+        else if(i%5===0)msg = 'Buzz';
+        else msg = i;
+        console.log(i+msg);
+    }
+}
 
      // You have a master array of strings, where each element is a fruit name.
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         return _.difference(fruits, fruitsToRemove);
-     }
+       return _.difference(fruits, fruitsToRemove);
+   }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         return array.concat(toPush);
-     }
+       return array.concat(toPush);
+   }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         var split = (sourceStr===''||sourceStr===null)? []:sourceStr.split(',');
-         return split;
-     }
+       var split = (sourceStr===''||sourceStr===null)? []:sourceStr.split(',');
+       return split;
+   }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
@@ -67,14 +67,21 @@
             val+=arguments[i];
         }
         return val;
-     }
+    }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         return sourceStr.match(/^\s*$/g);
-     }
+       return sourceStr.match(/^\s*$/g);
+   }
 
      // write an example of a javascript closure
+     var closure = function(){
+        var _private = 'go away';
+        this.public = 'hello';
+    };
+
+
+
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -84,6 +91,32 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+
+     var group = {people:[{
+            firstname:'matt',
+            lastname:'vrtis',
+            city: 'carmel',
+            state:'IN',
+            zip:'46032',
+            phonenumbers:[
+                {home:'214-867-5309'},
+                {work:'214-867-5309'},
+                {mobile:'214-867-5309'}
+            ]
+        },
+        {firstname:'franklin',
+           lastname:'vrtis',
+            city: 'carmel',
+            state:'IN',
+            zip:'46032',
+            phonenumbers:[
+                {home:'214-867-5309'},
+                {work:'214-867-5309'},
+                {mobile:'214-867-5309'}
+            ]
+        }
+    ]};
+
 
 
      // Create a javascript object (DataTable) with the following:
