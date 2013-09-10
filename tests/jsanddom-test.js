@@ -37,3 +37,22 @@ test( "Find Distinct Values, remove duplicates", 2, function() {
     deepEqual(findDistinctValues(one),[3, 5, 7, 20, 0.18, 01, -1.1, 12, Infinity]  , 'passes: '+findDistinctValues(one).toString()+' are the distinct values in '+one.toString());
     deepEqual(findDistinctValues(two),['apple', 'pear', 'plum']  , 'passes: '+findDistinctValues(two).toString()+' are the distinct values in '+two.toString());
 });
+
+test( "removeFruits", 1, function() {
+	var one = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+	var two = ['pear', 'banana'];
+    deepEqual(removeFruits(one,two),['apple', 'orange', 'kiwi', 'plum', 'strawberry']  , 'passes: '+removeFruits(one,two)+', has had '+two.toString()+' removed from '+one.toString());
+    
+});
+
+test( "pushOntoArray", 2, function() {
+	var one ,three;
+	one = three = [1, 2, 3, 4, 5];
+	var two = 6;
+	var four = [7, 8, 9];
+	deepEqual(pushOntoArray(one,two), [1, 2, 3, 4, 5, 6] , 'passes: integer was successfuly pushed');
+	deepEqual(pushOntoArray(three,four),[1, 2, 3, 4, 5, 7,8,9]  , 'passes: array was successfuly pushed');
+});
+
+
+
