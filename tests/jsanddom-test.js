@@ -30,3 +30,10 @@ test( "return min value", 3, function() {
     equal(findMinValue(two), 1, 'passes: 1 is the lowest value in '+two.toString());
     equal(findMinValue(three), 7, 'passes: 7 is the lowest value in '+three.toString());
 });
+
+test( "Find Distinct Values, remove duplicates", 2, function() {
+	var one = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+	var two = ['apple', 'pear', 'plum','pear', 'plum'];
+    deepEqual(findDistinctValues(one),[3, 5, 7, 20, 0.18, 01, -1.1, 12, Infinity]  , 'passes: '+findDistinctValues(one).toString()+' are the distinct values in '+one.toString());
+    deepEqual(findDistinctValues(two),['apple', 'pear', 'plum']  , 'passes: '+findDistinctValues(two).toString()+' are the distinct values in '+two.toString());
+});
