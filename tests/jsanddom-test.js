@@ -63,11 +63,21 @@ test('splitListStrUsingComma',3, function(){
 	equal(splitListStrUsingComma(three).length,0,'passes: null produces and array with length of 0');
 });
 
-test( "sum", 3, function() {
+test('sum', 3, function() {
 	var two = 6;
 	equal(sum(1, 2, 3, 4, 5),15,'passes: 1+2+3+4+5 = 15');
 	equal(sum(two),6,'passes: 6 = 6');
 	equal(sum(7, 8, 9),24,'passes: 7+8+9 = 24');
+});
+
+test('isOnlyWhitespace', 3, function(){
+	var one = 'aaaaa';
+	var two = '      ';
+	var three = '\n\r\t   ';
+	ok(!isOnlyWhitespace(one),'passes: returns false, '+one+' contains non whitespace charaters');
+	ok(isOnlyWhitespace(two),'passes: returns true, string of only spaces');
+	ok(isOnlyWhitespace(three),'passes: returns true, string of tabs, line breaks, and spaces');
+
 });
 
 
