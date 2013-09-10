@@ -56,12 +56,17 @@
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         var split = (sourceStr===''||sourceStr===null)? []:sourceStr.split(',');
+         return split;
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+        var val = 0;
+        for(var i = 0;i<arguments.length;i++){
+            val+=arguments[i];
+        }
+        return val;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.

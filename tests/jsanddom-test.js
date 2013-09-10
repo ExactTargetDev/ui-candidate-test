@@ -54,5 +54,21 @@ test( "pushOntoArray", 2, function() {
 	deepEqual(pushOntoArray(three,four),[1, 2, 3, 4, 5, 7,8,9]  , 'passes: array was successfuly pushed');
 });
 
+test('splitListStrUsingComma',3, function(){
+	var one = 'The, quick, brown, fox jumped over';
+	var two = '';
+	var three = null;
+	equal(splitListStrUsingComma(one).length,4,'passes: '+one+' produces and array with length of 4');
+	equal(splitListStrUsingComma(two).length,0,'passes: "" produces and array with length of 0');
+	equal(splitListStrUsingComma(three).length,0,'passes: null produces and array with length of 0');
+});
+
+test( "sum", 3, function() {
+	var two = 6;
+	equal(sum(1, 2, 3, 4, 5),15,'passes: 1+2+3+4+5 = 15');
+	equal(sum(two),6,'passes: 6 = 6');
+	equal(sum(7, 8, 9),24,'passes: 7+8+9 = 24');
+});
+
 
 
