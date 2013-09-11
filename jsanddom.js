@@ -116,9 +116,7 @@
             ]
         }
     ]};
-
-
-
+    
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
      // A private rows property (string array)
@@ -130,6 +128,51 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+
+    var DataTable = function(){
+        var _columns = [];
+        var _rows = null;
+        this.getRows = function(){
+            return _rows;
+        };
+        this.setRows = function(rows){
+            _rows = rows;
+        };
+        this.getCols = function(){
+            return _columns;
+        };
+        this.setCols = function(cols){
+            _columns = cols;
+        };
+    };
+    DataTable.prototype.addRow = function(){
+        var _rows = this.getRows(), _columns = this.getCols();
+        if(_rows===null){
+            console.log('DataTable error: add columns first');
+            return false;
+        }
+        _.each(arguments,function(element,index,list){
+            _rows[_columns[index]].push(element);
+        });
+        this.setRows(_rows);
+    };
+    DataTable.prototype.addColumns = function(){
+        var _columns = arguments, _rows = this.getRows();
+        if(_rows===null)_rows = {};
+        _.each(arguments,function(element, index, list){
+            _rows[element] = [];
+        });
+        this.setRows(_rows);
+        this.setCols(_columns);
+    };
+    DataTable.prototype.getData = function(){
+        //json object representation of the DataTable
+        //I am assuiming you want the stringfied version of the JSON object otherwise i would just return the _rows
+        return JSON.stringify(this.getRows());
+    };
+
+
+
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.

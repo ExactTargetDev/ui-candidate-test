@@ -92,5 +92,16 @@ test('JSON people group',3,function(){
 	ok(group.people[0].phonenumbers instanceof Array,'passes phonenumbers is an instance of an Array');
 });
 
+test('DataTable with private variables',3,function(){
+	var _dataTable = new DataTable();
+	ok(!_dataTable.addRow(),'Pass: addRow returns false if no columns have been set');
+	_dataTable.addColumns('column1', 'column2', 'column3');
+	equal(_dataTable.getData(),'{"column1":[],"column2":[],"column3":[]}', 'passes: adds column headers to the hash');
+	_dataTable.addRow('value1A', 'value1B', 'value1C');
+    _dataTable.addRow('value2A', 'value2B', 'value2C');
+    equal(_dataTable.getData(),'{"column1":["value1A","value2A"],"column2":["value1B","value2B"],"column3":["value1C","value2C"]}','pass: stringified hash contains 3 keys with 2 values each');
+
+
+});
 
 
