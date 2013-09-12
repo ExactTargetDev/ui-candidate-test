@@ -1,1 +1,5 @@
 Start Time: 1378847353
+TotalTime: 0630
+
+BrowserTesting: For Screenshot: IE8, Chrome: Version 30.0.1599.28 beta, FireFox 23.0.1, Safari 6.0.5
+UnitTest: For jsAndDom portion /test/jsAndDom-UnitTest-Runner.html

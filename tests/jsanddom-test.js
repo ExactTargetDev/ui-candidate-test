@@ -100,8 +100,22 @@ test('DataTable with private variables',3,function(){
 	_dataTable.addRow('value1A', 'value1B', 'value1C');
     _dataTable.addRow('value2A', 'value2B', 'value2C');
     equal(_dataTable.getData(),'{"column1":["value1A","value2A"],"column2":["value1B","value2B"],"column3":["value1C","value2C"]}','pass: stringified hash contains 3 keys with 2 values each');
-
-
 });
 
+test('Dynamically create select list with options and button',4,function(){
+	var _d1 = $('#qunit-fixture').divOne();
+	equal(_d1.children().length,2,'Pass there were two items created');
+	equal(_d1.find('select').length,1,'pass: One select list was created');
+	equal(_d1.find('input').length,1,'pass: One button was created');
+	$('input',_d1).trigger('click');
+	equal(_d1.log,'The select list with the name of "myselect" has the value of 0','pass: the input cick create a log message');
+
+});
+test('Dynamically create unordered list',4,function(){
+	var _l1 = $('#qunit-fixture').listOne();
+	equal(_l1.find('ul').length,1,'Pass: There was one unordered list created');
+	ok(_l1.list instanceof Array,'Pass: an Array was created');
+	equal(_l1.list.length,5,'Pass: The array contains five items');
+	equal(_l1.find('li').length,5,'Pass: There are five LI elements');
+});
 

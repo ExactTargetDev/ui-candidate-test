@@ -1,8 +1,117 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Screenshot.html</title>
+	<title>Screenshot.html</title>
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.12.0/build/cssnormalize/cssnormalize-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/grids.css">
+	<link rel="stylesheet" href="assets/css/et.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+<![endif]-->
+	<script src="assets/js/et.js"></script>
+
+	<script>
+	$(document).ready(function(){
+		$('.IMH-body a').makeActive();
+		$('.pulse li').pulseScroller();
+		$('.pulse li:first-child').trigger('click');
+		$('.help').getHelp();
+	});
+	</script>
 </head>
 <body>
+	<header class="top">
+		<img src="assets/img/ExactTarget@2x.png" alt="ExactTarget" class="logo" />
+		<nav class="menu">
+			<div>Welcome John!</div>
+			<ul>
+				<li><a href="#">Account</a></li>
+				<li><a href="#" class="borders help">Help</a></li>
+				<li><a href="#">Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="content clear">
+		<div class="left-column">
+			<h2 class="IMH-head clear">
+				<span class="imh-left"><img src="assets/img/IMH.png" alt="" /></span>
+				<span class="imh-right">Interactive Marketing Hub</span>
+			</h2>
+			<div class="IMH-body">
+				<nav>
+					<ul>
+						<li><a href="#"><span><img src="assets/img/email.png" alt=""/></span>ExactTarget Email</a></li>
+						<li><a href="#"><span><img src="assets/img/mobile.png" alt=""/></span>ExactTarget Mobile</a></li>
+						<li><a href="#"><span><img src="assets/img/cotweet.png" alt=""/></span>CoTweet Social</a></li>
+						<li><a href="#"><span><img src="assets/img/sites.png" alt=""/></span>ExactTarget Sites</a></li>
+					</ul>
+				</nav>
+				<nav>
+					<ul>
+						<li><a href="#"><span><img src="assets/img/automation.png" alt=""/></span>Automation Studio</a></li>
+						<li><a href="#"><span><img src="assets/img/audience.png" alt=""/></span>Audience Builder</a></li>
+						<li><a href="#"><span><img src="assets/img/report.png" alt=""/></span>Report Builder</a></li>
+					</ul>
+				</nav>
+				<div><a href="#">Partner Applications</a></div>
+			</div>
+		</div>
+		<div class="main-column">
+			<div class="fancy-calendar-component"><img src="assets/img/calendar-big.png"/></div>
+			<div class="pulse">
+				<ul class="pulse-cards clear">
+					<li>
+						<h3 class="pulse-card-title">Followers</h3>
+						<div class="pulse-card">
+							<div class="pulse-content"><span class="count">310</span>
+								<div class="count-label">added today</div>
+								<div class="count-note">2,393,905 total</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h3 class="pulse-card-title">Fan</h3>
+						<div class="pulse-card">
+							<div class="pulse-content"><span class="count">73</span>
+								<div class="count-label">added today</div>
+								<div class="count-note">91,675 total</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h3 class="pulse-card-title">Subscribers</h3>
+						<div class="pulse-card">
+							<div class="pulse-content">
+								<span class="count">56</span>
+								<div class="count-label">added today</div>
+								<div class="count-note">189,405 total</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h3 class="pulse-card-title">Foursquare</h3>
+						<div class="pulse-card">
+							<div class="pulse-content">
+								<span class="count">1227</span>							
+								<div class="count-label">added today</div>
+							</div>
+						</div>	
+					</li>
+					<li>
+						<h3 class="pulse-card-title">Landing Pages</h3>
+						<div class="pulse-card">
+							<div class="pulse-content">
+								<div class="count-label">Visitors Today</div>
+								<span class="count">397</span><span class="subcount">/ 355</span>
+								<div class="count-note">Soulja Boy V.I.P.</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="showHelp"></div>
 </body>
 </html>
