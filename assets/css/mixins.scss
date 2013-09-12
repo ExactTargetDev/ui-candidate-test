@@ -1,0 +1,59 @@
+@mixin gradient($from, $to) {
+/* fallback/image non-cover color */
+background-color: $from;
+ 
+/* Firefox 3.6+ */
+background-image: -moz-linear-gradient($from, $to);
+ 
+/* Safari 4+, Chrome 1+ */
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+ 
+/* Safari 5.1+, Chrome 10+ */
+background-image: -webkit-linear-gradient($from, $to);
+ 
+/* Opera 11.10+ */
+background-image: -o-linear-gradient($from, $to);
+
+filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+// Example of a whole load of mixins to make round corners 
+// (including individual corners) easy to remember in SASS
+@mixin roundcorners($radius) {
+    -moz-border-radius: $radius;    // firefox
+    -webkit-border-radius: $radius; // safari/chrome
+    border-radius: $radius;         // CSS3, works in IE9
+}
+
+@mixin roundcorner1($radius, $corner: "top-left") {
+    -moz-border-#{$corner}-radius:    $radius ; // firefox
+    -webkit-border-#{$corner}-radius: $radius;  // safari/chrome
+    border-#{$corner}-radius:         $radius;  // CSS3, works in IE9
+}
+@mixin squarecorner1($corner: "top-left") {
+    @include roundcorner1(0px, $corner);
+}
+
+@mixin roundcornerTL($radius:5px) { @include roundcorner1($radius, "top-left");     }
+@mixin roundcornerTR($radius:5px) { @include roundcorner1($radius, "top-right");    }
+@mixin roundcornerBL($radius:5px) { @include roundcorner1($radius, "bottom-left");  }
+@mixin roundcornerBR($radius:5px) { @include roundcorner1($radius, "bottom-right"); }
+@mixin squarecornerTL()           { @include roundcornerTL(0px);     }
+@mixin squarecornerTR()           { @include roundcornerTR(0px);     }
+@mixin squarecornerBL()           { @include roundcornerBL(0px);     }
+@mixin squarecornerBR()           { @include roundcornerBR(0px);     }
+
+// Most simplistic application of above
+.rounded { 
+  @include roundcorners(5px);
+}
+
+.roundedTop { 
+  @include roundcornerTL(5px);
+  @include roundcornerTR(5px);
+}
+@mixin text-shadow($shadow){
+    -webkit-text-shadow: $shadow;
+    -moz-text-shadow: $shadow;
+    -o-text-shadow: $shadow;
+    text-shadow: $shadow;
+}

@@ -1,0 +1,121 @@
+@import "mixins.scss";
+$top-nav-border:#adaeaf;
+$IMH-border:#f8981d;
+$IMH-links:#888888;
+$IMH-bg:#f4f4f5;
+.top{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	min-width:1234px;
+
+	@include gradient(#45525c,#2a2f33);
+	height:32px;
+}
+.top .logo{
+	margin-top:9px;
+	margin-left:20px;
+	height:16px;
+}
+.top{
+	font-size:0.7em;
+	color:#eee;
+}
+.top a{
+	color:#99cce1;
+}
+.top div{float:left;line-height:32px;vertical-align:middle}
+.top nav{float:right;margin-right:3px;}
+.top ul{padding:0;margin:0;float:left}
+.top li{float:left;line-height:32px;vertical-align:middle;}
+.top li a{display:inline-block;padding:0 7px;text-decoration:none;letter-spacing:.06em;line-height:1.2em;}
+// ideally we would use nth-child(); but IE 8 doesn't support it. 
+.top .borders {border-left:1px solid $top-nav-border;border-right:1px solid $top-nav-border}
+.content{margin-top:32px;width:1234px}
+.clear:after{
+  content: "";
+  display: table; 
+  clear: both;
+text-rendering: optimizespeed;
+}
+.left-column{width:221px;float:left;}
+.main-column{float:left;width:1013px;}
+.IMH-head{
+	@include roundcornerTL(5px);
+  	@include roundcornerTR(5px);
+  	@include gradient(#fdbc69,#f8981d);
+	border:1px solid $IMH-border;
+	margin:20px 20px 0 20px;font-size:.85em;
+	height:50px;
+	padding:0px
+}
+.imh-left{width:42px;float:left;}
+.imh-right{width:134px;float:left}
+.IMH-head img{margin-top:14px;margin-left:10px;display:block;float:left}
+.IMH-head .imh-right{
+	width:120px;
+	@include text-shadow(2px 1px #f39d2d);
+	padding-top:10px;color:#fff;font-weight:300;
+}
+.IMH-body{background:$IMH-bg;margin:0 20px;padding-top:3px;
+border:1px solid #e6e6e6;
+border-top:0px;
+	@include roundcornerBL(5px);
+  	@include roundcornerBR(5px);
+}
+.IMH-body a{color:$IMH-links;text-decoration: none;font-size:.75em;display:block;padding-left:44px;}
+.IMH-body img{height: 19px;
+width: 19px;
+padding-left: 4px;
+padding-top: 4px;}
+.IMH-body nav{border:1px solid #fefffd;border-top-width:0px}
+.IMH-body ul{padding:0 0 10px 0;margin:0}
+.IMH-body a span{
+	@include gradient(#8f98a2,#c6ccd1);
+	@include roundcorners(5px);
+	border:1px solid #b2b6bd;
+	display:block;height:25px;width:25px;position:absolute;top:3px;left:10px;}
+.IMH-body li{padding:0;position:relative;line-height:31px;vertical-align:middle;}
+.IMH-body a:hover span{@include gradient(#fdbc69,#f8981d);}
+.IMH-body a.active{color:$IMH-bg;background:$IMH-links}
+.IMH-body a.active span{@include gradient(#fdbc69,#f8981d);}
+.IMH-body div{line-height:31px;vertical-align:middle;}
+.IMH-body a{	@include roundcornerBL(5px);
+  	@include roundcornerBR(5px);}
+
+.pulse{background-image:url('../img/fakepulse.png');height:267px;width:995px;margin-top:18px;position:relative}
+.pulse ul,.pulse li{list-style:none;padding:0;margin:0 6px;float:left}
+.pulse ul{position:absolute;top:85px;left:0}
+
+.pulse-card{height:100px;width:160px;
+	text-align:center;
+	@include roundcorners(5px);
+@include gradient(#dee9f0,#fafcfc);
+		-moz-transition:all .3s ease;
+    	-webkit-transition:all .3s ease;
+    	-o-transition:all .3s ease;
+    	transition:all .3s ease;	
+}
+.pulse-card .pulse-content{padding-top:13px;}
+.pulse-card .count{color:#34bbf3;font-size:2em;}
+.pulse-card .subcount{color:#93afc0;font-size:1.2em}
+.pulse-card .count-label{color:#93afc0;font-size:.8em}
+.pulse-card .count-note{color:#93afc0;font-size:.76em;padding-top:12px;}
+.pulse-card-title{height:20px;text-align:center;color:#7f91a3;font-size:.7em;margin:0}
+
+.pulse-card-md{
+@include roundcorners(5px);
+@include gradient(#def2fe,#eef8fe);}
+
+
+/* popup css */
+
+#showHelp{background:$IMH-bg;position:absolute;top:-500px;border:2px solid #000;@include roundcorners(5px);}
+#showHelp a{color:$IMH-links;text-decoration:none;font-size:.75em;line-height:31px;vertical-align:middle;display:block;padding:5px}
+#showHelp a:hover{color:$IMH-bg;background:$IMH-links}
+#showHelp ul{list-style:none;margin:0;padding:5px}
+
+
+#simplemodal-overlay {background-color:#000;}
+#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}
