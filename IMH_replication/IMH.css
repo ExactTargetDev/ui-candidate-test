@@ -1,0 +1,117 @@
+body,html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	overflow-y: hidden;
+}
+
+.imhHeader  {
+	width:100%;
+	height:30px;
+	background-color: black;
+	position:fixed;
+	top:0;
+	color:white;
+	padding: 5px 5px 0px 0px;
+	
+	/*Gradient*/
+	background-image: linear-gradient(bottom, rgb(43,48,52) 0%, rgb(68,81,91) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(43,48,52) 0%, rgb(68,81,91) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(43,48,52) 0%, rgb(68,81,91) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(43,48,52) 0%, rgb(68,81,91) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(43,48,52) 0%, rgb(68,81,91) 100%);
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(43,48,52)),color-stop(1, rgb(68,81,91)));
+}
+
+.imhHeader .etLabel{
+	font-size: 20px;
+	margin-left: 20px;
+}
+
+.imhHeader .welcomeLabel{
+	float: right;
+	padding-top: 1px;
+	padding-right: 10px;
+}
+.imhHeader .menu{
+	float: right;
+	padding-top: 1px;
+	padding-right: 10px;
+}
+
+.imhHeader .menu .menuItem {
+	color: rgb(127,167,185);	
+}
+
+.imhHeader .menu .menuItem:hover {
+	color: white;
+	cursor: pointer;
+}
+
+.imhHeader .menu .menuSeparetor{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.imhMain {
+	height:100%;
+	overflow-y:scroll;
+	padding-top: 35px;
+}
+
+.imhMain .leftCol {
+	display:inline-block;
+	padding:25px 20px 20px 20px;
+	width:20%;
+	height:100%;
+}
+
+.imhMain .leftCol .menuContainer{
+	height: 60%;
+	
+}
+
+.menuContainer .menuHeader{
+	border-top: 2px rgb(248,152,29) solid;
+	border-left: 2px rgb(248,152,29) solid;
+	border-right: 2px rgb(248,152,29) solid;
+	border-top-left-radius: 4px; 
+	border-top-right-radius: 4px; 
+	color: white;
+	font-size: 20px;
+	padding: 10px;
+	background-color:orange;
+}
+
+.imhMain .menuItemsContainer{
+	background-color: rgb(244,244,244);
+	border-bottom: 2px rgb(230,230,230) solid;
+	border-left: 2px rgb(230,230,230) solid;
+	border-right: 2px rgb(230,230,230) solid;
+	border-bottom-left-radius: 4px; 
+	border-bottom-right-radius: 4px; 
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.imhMain .menuItemsContainer .menuItem{
+	color: rgb(136,136,136);
+	margin-left: 2px;
+	margin-right: 2px;
+	background: url('icon.png');
+	height: 24px;
+	padding-left: 45px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	font-size: 17px;
+	background-repeat: no-repeat;
+	background-position: 10px 7px;
+}
+
+
+.imhMain .menuItemsContainer .menuItem:hover{
+	cursor: pointer;
+	background-color: rgb(197, 197, 197);
+	border-radius: 2px;
+	color: white;
+}
