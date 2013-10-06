@@ -4,13 +4,33 @@
 	<title>IMH</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	
-	<script src="http://code.jquery.com/jquery.js"></script>
-	<script src="imh.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<!-- Load the help file. We can't load this file using ajax with file:// protocol. -->
+	<script type="text/javascript" src="help.json"></script>
+	<script type="text/javascript" src="imh.js"></script>
 	
 	<link rel="stylesheet" href="imh.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 </head>
 <body>
-	<script>testLink()</script>
+	<div class="imhHeader">
+		<span class="etLabel">ExactTarget.</span>
+		<span class="menu">
+			<span class="menuItem" id="accountMenuItem">Account</span>
+			<span class="menuSeparetor">|</span>
+			<span class="menuItem" id="helpMenuItem">Help</span>
+			<span class="menuSeparetor">|</span>
+			<span class="menuItem" id="logoutMenuItem">Logout</span>
+		</span>
+		<span class='welcomeLabel'>Welcome John!</span>
+	</div>
+	<div class="imhMain">
+		<div class="leftCol">
+			<div class="menuContainer">menu</div>
+		</div>
+	</div>
+	<div id="helpDialog" style="display:none;"></div>
 </body>
 </html>
 </html>
