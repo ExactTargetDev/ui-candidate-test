@@ -1,25 +1,49 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
+          String original, reverse="";
+          Scanner in = new Scanner(System.in);
+          original=in.nextLine();
+          int length=original.length();
+          for (int i=length-1;i>=0;i--)
+          reverse=reverse+original.charAt(i);
          // FILL THIS IN
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
+          var arr= new Array();
+          arr[0]=100;
+          arr[1]=5;
+          arr[2]=30;
+          arr.min();
+          System.out.println(min);
          // FILL THIS IN
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
+          var x={}, y=[];
+          array.unique=function();
+          for (int i=0; i<1; i++)
+               if (x.hasOwnProperty([i])){
+                    continue; 
+               }
+               y.push([i]);
+               x[i]=1;
+          return y;
+     
+               }
          // FILL THIS IN
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
+     
      // For multiples of three print "Fizz" instead of the number.
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
