@@ -66,6 +66,51 @@ body,html {
 }
 
 .imhMain .leftCol .menuContainer{
-	height:40%;
+	height: 60%;
+	
+}
+
+.menuContainer .menuHeader{
+	border-top: 2px rgb(248,152,29) solid;
+	border-left: 2px rgb(248,152,29) solid;
+	border-right: 2px rgb(248,152,29) solid;
+	border-top-left-radius: 4px; 
+	border-top-right-radius: 4px; 
+	color: white;
+	font-size: 20px;
+	padding: 10px;
 	background-color:orange;
+}
+
+.imhMain .menuItemsContainer{
+	background-color: rgb(244,244,244);
+	border-bottom: 2px rgb(230,230,230) solid;
+	border-left: 2px rgb(230,230,230) solid;
+	border-right: 2px rgb(230,230,230) solid;
+	border-bottom-left-radius: 4px; 
+	border-bottom-right-radius: 4px; 
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.imhMain .menuItemsContainer .menuItem{
+	color: rgb(136,136,136);
+	margin-left: 2px;
+	margin-right: 2px;
+	background: url('icon.png');
+	height: 24px;
+	padding-left: 45px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	font-size: 17px;
+	background-repeat: no-repeat;
+	background-position: 10px 7px;
+}
+
+
+.imhMain .menuItemsContainer .menuItem:hover{
+	cursor: pointer;
+	background-color: rgb(197, 197, 197);
+	border-radius: 2px;
+	color: white;
 }
