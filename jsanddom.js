@@ -6,16 +6,16 @@
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         var reverse = '';
-		 for(var i = str.length; i > 0; i--){
-			reverse += str[i];
-		 }
-		 return reverse;
+        var reverse = '';
+	for(var i = str.length; i > 0; i--){
+		reverse += str[i];
+	}
+	return reverse;
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+         return Math.min.apply(null, values);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
