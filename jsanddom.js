@@ -52,7 +52,12 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+        var newArray = new Array();
+	for(var i = 0; i < fruits.length; i++){
+		if(fruitsToRemove.indexOf(fruits[i]) == -1)
+		newArray.push(fruits[i]);
+	}
+	return newArray;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -60,22 +65,33 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+     	if(typeof(toPush) == 'array'){
+		for(var i = 0; i < toPush.length; i++){
+			array.push(toPush[i])
+		}
+	}
+	else array.push(toPush);
+
+	return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+     	return sourceStr.split(',');
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+        var sum = 0;
+	for(var a = 0; a < arguments.length; a++){
+		sum += arguments[a];
+	}
+	return sum;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         return (sourceStr.search(/^\s+$/) == 0);
      }
 
      // write an example of a javascript closure
@@ -88,7 +104,10 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+	var people = { "people": [
+	{ "firstName":"John" , "lastName":"Doe", "city":"Chicago", "state":"Illinois", "zip":"36787", 'phone':[ {'home': '(317) 555-1235', 'work' : '(317) 555-1236', 'mobile' : '(317) 555-1234'} ] }, 
+	{ "firstName":"Anna" , "lastName":"Smith", "city":"Indianapolis", "state":"Indiana", "zip":"36787", 'phone':[ {'home': '(317) 555-1235', 'work' : '(317) 555-1236', 'mobile' : '(317) 555-1234'} ] }
+	] }
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
