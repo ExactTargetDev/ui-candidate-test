@@ -29,3 +29,12 @@ test( "Find Min Value Test", 2, function() {
     // Make sure the result from the divide function is valid
     ok( findMinValue( [1, 2, -1, -6, Infinity, 5, 100.0, -6.1, 0, -6, -12] ),  -12, 'Expected -12 as the result, the result was: ' +   findMinValue( [1, 2, -1, -6, Infinity, 5, 100.0, -6.1, 0, -6, -12] ) );
 });
+
+module( "Find Distinct Values" );
+test( "Find Distinct Values Test", 2, function() {
+    // Verify the method exists
+    equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' ); 
+
+    // Make sure the result from the divide function is valid
+    ok( findDistinctValues( [1, 2, 1, -6, Infinity, 5, 100.0, -6.1, 0, -6, -12, -12, Infinity] ), [1, 2, -6, Infinity, 5, 100.0, -6.1, 0, -12], 'Expected "[1, 2, -6, Infinity, 5, 100.0, -6.1, 0, -12]" as the result, the result was: ' +  findDistinctValues( [1, 2, 1, -6, Infinity, 5, 100.0, -6.1, 0, -6, -12, -12, Infinity] ) );
+});
