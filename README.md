@@ -1,6 +1,8 @@
 # ExactTarget UI Candidates
 This is the candaidate test for ExactTarget UI developers. 
 
+Please include "ATTENTION: contacts name or github handle" in your pull request
+
 ## Here are the guidelines for the test:
 + Be sure to read all the bullet points bellow.
 + Fork this repository, do your work, commit early/often with descriptive messages. When finished, send a pull request.
