@@ -249,6 +249,14 @@
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     $(document).ready(function(){
+        console.log( 'Selected anchor: ' + $( '#fizz a' )[0].text );
+        console.log( 'Selected anchor: ' + $( '.buzz a' )[0].text );
+        console.log( 'Selected anchor: ' + $( '#fizz .link' )[0].text );
+        console.log( 'Selected anchor: ' + $( '#fizz [href="#"]' )[0].text );
+        console.log( 'Selected anchor: ' + $( '#foo div a' )[0].text );
+        console.log( 'Selected anchor: ' + $( 'a:contains("sample anchor")' )[0].text );
+     });
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
