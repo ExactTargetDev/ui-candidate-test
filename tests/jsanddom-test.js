@@ -161,3 +161,37 @@ test( "peopleJson Test", function() {
     equal( peopleJson[0].phones.mobile, '00 1 317 1234568', 'Expected "00 1 317 1234568" as the result, the result was: "' + peopleJson[0].phones.mobile + '"' );
     equal( peopleJson[1].phones.mobile, '00 020 8345 6359', 'Expected "00 020 8345 6359" as the result, the result was: "' + peopleJson[1].phones.mobile + '"' );
 });
+
+
+// DataTable
+test( "DataTable Test", function() {
+    // Verify the method exists
+    equal( typeof DataTable, 'function', 'Must contain a DataTable function' );
+
+    var dt = new DataTable();
+
+    equal( typeof dt, 'object', 'Must contain an object' );
+
+    // Check DataTable methods are public
+    equal( typeof dt.addRows, 'function', 'Must contain a addRows function' );
+    equal( typeof dt.addColumns, 'function', 'Must contain a addColumns function' );
+    equal( typeof dt.getData, 'function', 'Must contain a getData function' );
+
+    var expected = { 
+    	'rows': [],
+    	'columns': []
+	};
+
+    deepEqual( dt.getData(), expected, "Expected: " + JSON.stringify( expected ) + " as the result, the result was: " + JSON.stringify( dt.getData() ) );
+
+	dt.addColumns('column1', 'column2', 'column3');
+   	dt.addRows('value1A', 'value1B', 'value1C');
+   	dt.addRows('value2A', 'value2B', 'value2C');
+
+   	var expected = { 
+   		'rows': [ 'value1A', 'value1B', 'value1C', 'value2A', 'value2B', 'value2C' ],
+   		'columns': [ 'column1', 'column2', 'column3' ]
+   	};
+
+   	deepEqual( dt.getData(), expected, "Expected: " + JSON.stringify( expected ) + " as the result, the result was: " + JSON.stringify( dt.getData() ) );
+});
