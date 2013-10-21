@@ -1,2 +1,3 @@
 Start Time: 1382358485672
-End Time for all JsAndDom.html tests: 1382383498829
+End Time for Coding Challenges: 1382383498829
+Total Time for Coding Challenges: 7 hours
