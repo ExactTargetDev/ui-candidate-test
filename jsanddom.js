@@ -261,7 +261,7 @@
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
      $(document).ready(function(){
-        
+
         var listItems = new Array( 'Brown', 'Fox', 'Jumps', 'Over', 'The lazy dog' );
 
         $(listItems).each( function ( index, element ) {
@@ -274,3 +274,60 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     $(document).ready(function(){
+
+        // Using Javascript only
+
+        var checkBoxLabels = new Array( 'Richard', 'Of', 'York', 'Gave', 'Battle', 'In', 'Vain' );
+
+        var foobar = document.getElementById( 'foobar' );
+
+        var checkBox,
+            label,
+            text;
+
+        for (var i = 0; i < checkBoxLabels.length; i++ ) {
+            text = document.createTextNode( checkBoxLabels[ i ] );
+
+            checkBox = document.createElement( 'input' );
+            checkBox.setAttribute( 'name', 'checkBox' + i);
+            checkBox.setAttribute( 'value', checkBoxLabels[i]);
+            checkBox.setAttribute( 'type', 'checkbox' );
+
+            label = document.createElement( 'label' );
+            label.setAttribute( 'style', 'display: block' );
+            label.appendChild( checkBox );
+            label.appendChild( text );
+
+            foobar.appendChild( label );
+        }
+
+        var checkAllLink = document.createElement( 'a' );
+        var uncheckAllLink = document.createElement( 'a' );
+
+        checkAllLink.setAttribute( 'href', '#' );
+        checkAllLink.setAttribute( 'style', 'display: block' );
+        checkAllLink.innerHTML = 'Check All';
+
+        uncheckAllLink.setAttribute( 'href', '#' );
+        uncheckAllLink.setAttribute( 'style', 'display: block' );
+        uncheckAllLink.innerHTML = 'Uncheck All';
+
+        checkAllLink.onclick = function( event ) {
+            for ( i = 0; i < checkBoxLabels.length; i++ ) {
+                document.getElementsByName( 'checkBox' + i )[0].checked = true;
+            }
+            return false;
+        }
+
+        uncheckAllLink.onclick = function( event ) {
+            for ( i = 0; i < checkBoxLabels.length; i++ ) {
+                document.getElementsByName( 'checkBox' + i )[0].checked = false;
+            }
+            return false;
+        }
+
+        foobar.appendChild( checkAllLink );
+        foobar.appendChild( uncheckAllLink );
+
+     });
