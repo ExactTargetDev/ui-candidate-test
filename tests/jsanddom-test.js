@@ -105,4 +105,17 @@ test( "splitListStrUsingComma Test", function() {
     	'Expected [] as the result, the result was: [' + splitListStrUsingComma( "" ) + ']' );
 });
 
+test( "sum Test", function() {
+    // Verify the method exists
+    equal( typeof sum, 'function', 'Must contain a sum function' );
+
+    // Check the sum function works right
+    // Test data is taken from data/testdata.txt:
+    equal( sum( 1, 1, 2, 3, 5, 7 ), 19, 'Expected 19 as the result, the result was: ' + sum( 1, 1, 2, 3, 5, 7 ) );
+    equal( sum( 1, "1", 2, 3, 5, 7 ), "112357", 'Expected "112357" as the result, the result was: ' + sum( 1, "1", 2, 3, 5, 7 ) );
+    equal( sum( 3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12 ), Infinity, 'Expected Infinity as the result, the result was: ' + sum( 3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12 ) );
+    equal( sum( "1", -Infinity ), "01-Infinity", 'Expected "01-Infinity" as the result, the result was: ' + sum( "1", -Infinity ) );
+});
+
+
 
