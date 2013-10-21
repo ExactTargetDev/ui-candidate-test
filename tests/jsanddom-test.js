@@ -24,11 +24,34 @@ test( "reverseString Test", 5, function() {
     equal( reverseString( " 	 	" ), "	 	 ", 'Expected " 	 	" as the result, the result was: ' + reverseString( " 	 	" ) );
 });
 
-test( "reverseString Test", 3, function() {
+test( "findMinValue Test", 3, function() {
     // Verify the method exists
     equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
 
-    // Check the reverseString function works right
+    // Check the findMinValue function works right
     equal( findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ), -1.1, 'Expected "-1.1" as the result, the result was: ' + findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ) );
     equal( findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, -Infinity, 0.18, -1.1, 12] ), -1.1, 'Expected "-Infinity" as the result, the result was: ' + findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, -Infinity, 0.18, -1.1, 12] ) );
+});
+
+test( "findDistinctValues Test", function() {
+    // Verify the method exists
+    equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
+
+    // Check the findDistinctValues function works right
+    function testShortcut(values, expected) {
+    	// Add sorting to arrays being compared to not depend on the order of elements
+    	// For example, both [1, 2] and [2, 1] are arrays containing only distinct values.
+    	var actualSorted = findDistinctValues( values ).sort();
+    	var expectedUnsorted = expected.concat();
+    	expected.sort();
+    	deepEqual( actualSorted, expected.sort(), 'Passed: expected [' + expectedUnsorted + '] as the result, the result was: [' + expected.sort() + '] (order doesn\'t matter)');
+    }
+
+    // Check via shortcut function for readability
+    testShortcut( [1, 1, 2, 3, 5, 7], [1, 2, 3, 5, 7]);
+    testShortcut( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry']);    
+    testShortcut( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, -Infinity, 0.18, -1.1, 12], [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, -Infinity ] );
+    // Test that results don't depend on the order of elements in actual and expected arrays (we take into accout only that values must be distinct)
+    testShortcut( [1, 2], [2, 1] );
+    testShortcut( [3, 3, 5, 7], [5, 7, 3 ] );
 });
