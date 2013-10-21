@@ -4,22 +4,22 @@
     <title>Screenshot.html</title>
 
     <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/ui-candidate-test.css" rel="stylesheet">
 
     <script type="text/javascript" src="js/vendor/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/vendor/bootstrap.js"></script>
-
     <script type="text/javascript" src="js/ui-candidate-test.js"></script>
 </head>
 <body>
 
 	<!-- Start: container-fluid -->
-	<div class="container-fluid">
+	<div class="container-fluid imh">
 
 		<div class="navbar navbar-inverse">
 			<div class="navbar-inner">
 				<a class="brand" href="#">ExactTarget.</a>
 				<ul class="nav pull-right">
-					<li>Welcome John!</li>
+					<li><a href="#" class="username">Welcome John!</a></li>
 					<li><a href="#account">Account</a></li>
 					<li class="divider-vertical"></li>
 					<li><a href="#helpModal" id="showHelpModal" role="button" data-toggle="modal">Help</a></li>
@@ -31,9 +31,10 @@
 
 		<div class="row-fluid main">
 			<!-- Start: Interactive Marketing Hub navigation -->
-			<div class="span3 imh-nav">
-				<header>Interactive Marketing Hub</header>
+			<div class="span2 imh-nav">
 				<nav>
+					<header><i></i><h2>Interactive Marketing Hub<h2></header>
+				
 					<ul class="nav nav-list">
 						<li class="icon email active"><a href="#">ExactTarget Email</a></li>
 						<li class="icon mobile"><a href="#">ExactTarget Mobile</a></li>
