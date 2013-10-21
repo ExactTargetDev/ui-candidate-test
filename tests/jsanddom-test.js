@@ -126,6 +126,11 @@ test( "closureExample Test", function() {
 
     equal( typeof closure.getPrivateProperty, 'function', 'Must contain a closure.getPrivateProperty function' );
     equal( typeof closure.setPrivateProperty, 'function', 'Must contain a closure.setPrivateProperty function' );
+    equal( typeof closure.callPrivateFunction, 'function', 'Must contain a closure.callPrivateFunction function' );
+
+    // Check private fields aren't visible to public
+    equal( typeof closure.privateProperty, 'undefined', 'Must not expose a closure.privateProperty' );
+    equal( typeof closure.privateFunction, 'undefined', 'Must not expose a closure.privateFunction function' );
 
     // Check the closureExample function works right
 
@@ -137,5 +142,9 @@ test( "closureExample Test", function() {
 
 	// Check closure's chnaged private property value via getter:
 	equal( closure.getPrivateProperty(), 'changedPrivateValue', 'Expected "changedPrivateValue" as the result, the result was: ' + closure.getPrivateProperty() );
+
+	// Call closure's private function via public one:
+	equal( closure.callPrivateFunction(), 'changedPrivateValue', 'Expected "changedPrivateValue" as the result, the result was: ' + closure.callPrivateFunction() );
+
 });
 

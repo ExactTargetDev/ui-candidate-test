@@ -108,7 +108,7 @@
 
      // write an example of a javascript closure
      function closureExample() {
-        
+
         var privateProperty = 'privateValue';
 
         function privateFunction() {
@@ -123,9 +123,14 @@
             privateProperty = value;
         }
 
+        function callPrivateFunction () {
+            return privateFunction();
+        }
+
         return { 
             "getPrivateProperty": getterSample,
-            "setPrivateProperty": setterSample
+            "setPrivateProperty": setterSample,
+            "callPrivateFunction": callPrivateFunction
         }
     }
 
