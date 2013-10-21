@@ -23,16 +23,16 @@
          // FILL THIS IN
 
          // Using Underscore.js - uncomment next line to make it work:
-         //return _.uniq(values);
+         return _.uniq(values);
 
-         // In pure JS:
-         var distinct = [];
+         // In pure JS (not working in IE8):
+         /*var distinct = [];
          for (var i = 0; i < values.length; i++) {
             if ( distinct.indexOf(values[i]) == -1 ) {
                 distinct.push(values[i]);
             }
          }
-         return distinct;
+         return distinct; */
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
