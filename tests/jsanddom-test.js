@@ -43,10 +43,15 @@ test( "findDistinctValues Test", function() {
     function testShortcut(values, expected) {
     	// Add sorting to arrays being compared to not depend on the order of elements
     	// For example, both [1, 2] and [2, 1] are arrays containing only distinct values.
-    	var actualSorted = findDistinctValues( values ).sort();
+    	var actual = findDistinctValues( values );
+
+    	var actualUnsorted = actual.concat();
     	var expectedUnsorted = expected.concat();
+
+    	actual.sort();
     	expected.sort();
-    	deepEqual( actualSorted, expected.sort(), 'Passed: expected [' + expectedUnsorted + '] as the result, the result was: [' + expected.sort() + '] (order doesn\'t matter)');
+
+    	deepEqual( actual, expected, 'Passed: expected [' + expectedUnsorted + '] as the result, the result was: [' + actualUnsorted + '] (order doesn\'t matter)');
     }
 
     // Check via shortcut function for readability

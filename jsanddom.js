@@ -21,6 +21,11 @@
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+
+         // Using Underscore.js - uncomment next line to make it work:
+         //return _.uniq(values);
+
+         // In pure JS:
          var distinct = [];
          for (var i = 0; i < values.length; i++) {
             if ( distinct.indexOf(values[i]) == -1 ) {
@@ -55,6 +60,7 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
