@@ -14,6 +14,8 @@
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+         // In pure JS:
+         return values.sort()[0];
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
