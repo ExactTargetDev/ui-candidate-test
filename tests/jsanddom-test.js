@@ -92,3 +92,17 @@ test( "pushOntoArray Test", function() {
     		pushOntoArray( [1, 2, 3, 4, 5], [7, 8, 9] ) + ']');
 });
 
+test( "splitListStrUsingComma Test", function() {
+    // Verify the method exists
+    equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
+
+    // Check the splitListStrUsingComma function works right
+    // Test data is taken from data/testdata.txt:
+    deepEqual( splitListStrUsingComma( "The, quick, brown, fox jumped over" ), [ "The", " quick", " brown", " fox jumped over" ], 
+    	'Expected [The, quick, brown, fox jumped over] as the result, the result was: [' + splitListStrUsingComma( "The, quick, brown, fox jumped over" ) + ']' );
+
+    deepEqual( splitListStrUsingComma( "" ), [], 
+    	'Expected [] as the result, the result was: [' + splitListStrUsingComma( "" ) + ']' );
+});
+
+
