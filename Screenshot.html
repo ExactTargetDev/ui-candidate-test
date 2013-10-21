@@ -3,22 +3,26 @@
 <head>
     <title>Screenshot.html</title>
 
-    <!-- meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet" -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/vendor/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap.js"></script>
+
+    <!-- script type="text/javascript" src="js/ui-candidate-test.js"></script -->
 </head>
 <body>
 
 	<!-- Start: container-fluid -->
 	<div class="container-fluid">
 
-		<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar navbar-inverse">
 			<div class="navbar-inner">
 				<a class="brand" href="#">ExactTarget.</a>
 				<ul class="nav pull-right">
 					<li>Welcome John!</li>
 					<li><a href="#account">Account</a></li>
 					<li class="divider-vertical"></li>
-					<li><a href="#help">Help</a></li>
+					<li><a href="#helpModal" role="button" data-toggle="modal">Help</a></li>
 					<li class="divider-vertical"></li>
 					<li><a href="#logout">Logout</a></li>
 				</ul>
@@ -27,7 +31,7 @@
 
 		<div class="row-fluid main">
 			<!-- Start: Interactive Marketing Hub navigation -->
-			<div class="span3 offset1 imh-nav">
+			<div class="span3 imh-nav">
 				<header>Interactive Marketing Hub</header>
 				<nav>
 					<ul class="nav nav-list">
@@ -48,7 +52,7 @@
 			</div>
 			<!-- End: Interactive Marketing Hub navigation -->
 
-			<section id="content" class="span8 offset1">
+			<section class="span8 offset1">
 				<section id="calendar">
 				</section>
 
@@ -77,9 +81,25 @@
 	</div>
 	<!-- End: container-fluid -->
 
-    <div class="alert alert-info">
-    
-    </div>
+    <!-- Modal -->
+	<div id="helpModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+		
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 
+		<h3 id="myModalLabel">Help</h3>
+
+		</div>
+
+		<div class="modal-body">
+			<p>One fine body…</p>
+		</div>
+
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<button class="btn btn-primary">Save changes</button>
+		</div>
+
+	</div>
 </body>
 </html>
