@@ -63,3 +63,16 @@ test( "findDistinctValues Test", function() {
     testShortcut( [1, 2], [2, 1] );
     testShortcut( [3, 3, 5, 7], [5, 7, 3 ] );
 });
+
+test( "removeFruits Test", function() {
+    // Verify the method exists
+    equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
+
+    // Check the removeFruits function works right
+    // First test is taken from data/testdata.txt:
+    deepEqual(	removeFruits(	['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana'] ), 
+    						['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 
+    	'Expected "[apple,orange,kiwi,plum,strawberry]" as the result, the result was: [' + 
+    		removeFruits( 	['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana'] ) + ']' );
+});
+
