@@ -249,32 +249,32 @@
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
-     $(document).ready(function(){
+     function selectAnchorInFiveWays() {
         console.log( 'Selected anchor: ' + $( '#fizz a' )[0].text );
         console.log( 'Selected anchor: ' + $( '.buzz a' )[0].text );
         console.log( 'Selected anchor: ' + $( '#fizz .link' )[0].text );
         console.log( 'Selected anchor: ' + $( '#fizz [href="#"]' )[0].text );
         console.log( 'Selected anchor: ' + $( '#foo div a' )[0].text );
         console.log( 'Selected anchor: ' + $( 'a:contains("sample anchor")' )[0].text );
-     });
+     }
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
-     $(document).ready(function(){
+     function createListItems(){
 
         var listItems = new Array( 'Brown', 'Fox', 'Jumps', 'Over', 'The lazy dog' );
 
         $(listItems).each( function ( index, element ) {
             $('#list1').append('<li>' + element + '</li>');
         })
-     });
+     }
 
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
-     $(document).ready(function(){
+     function createCheckboxesAndLinks(){
 
         // Using Javascript only
 
@@ -329,5 +329,4 @@
 
         foobar.appendChild( checkAllLink );
         foobar.appendChild( uncheckAllLink );
-
-     });
+     }
