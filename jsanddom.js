@@ -142,7 +142,31 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+    var peopleJson = [
+        {
+            "firstName": "John",
+            "lastName": "Doe",
+            "city": "Indianapolis", 
+            "state": "Indiana",
+            "zip": 46209,
+            "phones": {   
+                "home": "00 1 317 1234561",
+                "work": "00 1 317 1234567",
+                "mobile": "00 1 317 1234568"
+            }
+        }, {
+            "firstName": "Alice",
+            "lastName": "Sinclair",
+            "city": "Kiev", 
+            "state": "Other",
+            "zip": 38000,
+            "phones": {   
+                "home": "00 020 8345 6355",
+                "work": "00 020 8345 6356",
+                "mobile": "00 020 8345 6359"
+            }
+        }
+    ]
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)

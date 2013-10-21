@@ -145,6 +145,19 @@ test( "closureExample Test", function() {
 
 	// Call closure's private function via public one:
 	equal( closure.callPrivateFunction(), 'changedPrivateValue', 'Expected "changedPrivateValue" as the result, the result was: ' + closure.callPrivateFunction() );
-
 });
 
+test( "peopleJson Test", function() {
+    // Verify the method exists
+    equal( typeof peopleJson, 'object', 'Must contain a peopleJson object' );
+
+    // Test SOME values are set correctly:
+    equal( peopleJson[0].firstName, 'John', 'Expected "John" as the result, the result was: "' + peopleJson[0].firstName + '"' );
+    equal( peopleJson[1].firstName, 'Alice', 'Expected "Alice" as the result, the result was: "' + peopleJson[1].firstName + '"' );
+
+    equal( peopleJson[0].zip, 46209, 'Expected 46209 as the result, the result was: "' + peopleJson[0].zip + '"' );
+    equal( peopleJson[1].zip, 38000, 'Expected 38000 as the result, the result was: "' + peopleJson[1].zip + '"' );
+
+    equal( peopleJson[0].phones.mobile, '00 1 317 1234568', 'Expected "00 1 317 1234568" as the result, the result was: "' + peopleJson[0].phones.mobile + '"' );
+    equal( peopleJson[1].phones.mobile, '00 020 8345 6359', 'Expected "00 020 8345 6359" as the result, the result was: "' + peopleJson[1].phones.mobile + '"' );
+});
