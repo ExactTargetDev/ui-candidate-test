@@ -69,10 +69,26 @@ test( "removeFruits Test", function() {
     equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
 
     // Check the removeFruits function works right
-    // First test is taken from data/testdata.txt:
+    // Test data is taken from data/testdata.txt:
     deepEqual(	removeFruits(	['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana'] ), 
     						['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 
     	'Expected "[apple,orange,kiwi,plum,strawberry]" as the result, the result was: [' + 
     		removeFruits( 	['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana'] ) + ']' );
+});
+
+test( "pushOntoArray Test", function() {
+    // Verify the method exists
+    equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' );
+
+    // Check the pushOntoArray function works right
+    // Test data is taken from data/testdata.txt:
+
+    // push simple value of 6
+    deepEqual( pushOntoArray( [1, 2, 3, 4, 5], 6 ), [1, 2, 3, 4, 5, 6], 'Expected "[1,2,3,4,5,6]" as the result, the result was: [' + 
+    		pushOntoArray( [1, 2, 3, 4, 5], 6 ) + ']');
+
+    // push array: [7, 8, 9]
+    deepEqual( pushOntoArray( [1, 2, 3, 4, 5], [7, 8, 9] ), [1, 2, 3, 4, 5, 7, 8, 9], 'Expected "[1,2,3,4,5,7,8,9]" as the result, the result was: [' + 
+    		pushOntoArray( [1, 2, 3, 4, 5], [7, 8, 9] ) + ']');
 });
 

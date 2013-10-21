@@ -72,6 +72,8 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+         array = _.union(array, toPush);
+         return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
