@@ -118,4 +118,24 @@ test( "sum Test", function() {
 });
 
 
+test( "closureExample Test", function() {
+    // Verify the method exists
+    equal( typeof closureExample, 'function', 'Must contain a closureExample function' );
+
+    var closure = closureExample();
+
+    equal( typeof closure.getPrivateProperty, 'function', 'Must contain a closure.getPrivateProperty function' );
+    equal( typeof closure.setPrivateProperty, 'function', 'Must contain a closure.setPrivateProperty function' );
+
+    // Check the closureExample function works right
+
+    // Get closure's private property value via getter:
+    equal( closure.getPrivateProperty(), 'privateValue', 'Expected "privateValue" as the result, the result was: ' + closure.getPrivateProperty() );
+
+    // Change closure's private property via setter:
+	closure.setPrivateProperty('changedPrivateValue');
+
+	// Check closure's chnaged private property value via getter:
+	equal( closure.getPrivateProperty(), 'changedPrivateValue', 'Expected "changedPrivateValue" as the result, the result was: ' + closure.getPrivateProperty() );
+});
 

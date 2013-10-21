@@ -107,6 +107,27 @@
      }
 
      // write an example of a javascript closure
+     function closureExample() {
+        
+        var privateProperty = 'privateValue';
+
+        function privateFunction() {
+            return privateProperty;
+        }
+
+        function getterSample () {
+            return privateProperty;
+        }
+
+        function setterSample (value) {
+            privateProperty = value;
+        }
+
+        return { 
+            "getPrivateProperty": getterSample,
+            "setPrivateProperty": setterSample
+        }
+    }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
