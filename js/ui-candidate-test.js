@@ -23,12 +23,14 @@ $(document).ready(function() {
 	});
 
 	$(".pulse .fisheye").on("click", "li", function(event) {
-		if (currentPulseItem) {
+		if (currentPulseItem && event.currentTarget != currentPulseItem) {
+			$(".pulse .fisheye li.active .medium-content").fadeOut('fast');
 			$(currentPulseItem).toggleClass('active');
+
+			currentPulseItem = event.currentTarget;
+
+			$(event.currentTarget).toggleClass('active');
+			$(".pulse .fisheye li.active .medium-content").fadeIn('fast');
 		}
-
-		currentPulseItem = event.currentTarget;
-
-		$(event.currentTarget).toggleClass('active');
 	});
 })

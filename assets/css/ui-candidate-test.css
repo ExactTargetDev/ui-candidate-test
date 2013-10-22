@@ -85,13 +85,14 @@
 
 /* Fisheye */
 .imh .pulse .fisheye {
-	margin-top: 80px;
+	margin-top: 40px;
 	height: 215px;
 	margin-left: 0;
 	width: 10000px;
 }
 
 .imh .pulse .fisheye li {
+	margin-top: 40px;
 	list-style-type: none;
 	width: 176px;
 	height: 131px;
@@ -102,17 +103,28 @@
 	text-align: center;
 }
 
-.imh .pulse .fisheye li.active {
-	width: 289px;
+.imh .pulse .fisheye li .medium-content { 
+	display: none;
+	background: transparent url(../img/imh-pulse-item-medium-contents.jpg) no-repeat scroll center center;
+	width: 301px;
 	height: 182px;
-	background: transparent url(../img/imh-pulse-item-medium-bg.png) no-repeat scroll 0 0;
+}
+
+.imh .pulse .fisheye li.active {
+	margin-top: 10px;
+	width: 301px;
+	height: 182px;
+	background: transparent url(../img/imh-pulse-item-medium-bg.png) no-repeat scroll 0 center;	
+}
+
+.imh .pulse .fisheye li.active .medium-content { 
+	display: block;
 }
 
 .imh .pulse .fisheye li h4 {
 	color: #7f91a3;
 	font-size: 1em;
 	font-weight: normal;
-
 }
 
 .imh .pulse .fisheye li big {
@@ -132,3 +144,16 @@
 .imh .pulse .fisheye li p.count {
 	font-size: 0.8em;
 }
+
+.imh .pulse .fisheye li.active h4 {
+	display: none;
+}
+
+.imh .pulse .fisheye li.active big {
+	display: none;
+}
+
+.imh .pulse .fisheye li.active p {
+	display: none;
+}
+
