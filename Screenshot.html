@@ -1,8 +1,113 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Screenshot.html</title>
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/ui-candidate-test.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/vendor/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap.js"></script>
+    <script type="text/javascript" src="js/ui-candidate-test.js"></script>
 </head>
 <body>
+
+	<!-- Start: container-fluid -->
+	<div class="container-fluid imh">
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<a class="brand" href="#">ExactTarget.</a>
+				<ul class="nav pull-right">
+					<li><a href="#" class="username">Welcome John!</a></li>
+				
+					<li><a href="#account">Account</a></li>
+
+					<li class="divider-vertical"></li>
+
+					<li><a href="#helpModal" id="showHelpModal" role="button" data-toggle="modal">Help</a></li>
+
+					<li class="divider-vertical"></li>
+
+					<li><a href="#logout">Logout</a></li>
+				</ul>
+				</div>
+		</div>
+
+		<div class="row-fluid main">
+			<!-- Start: Interactive Marketing Hub navigation -->
+			<div class="span2 imh-nav">
+				<nav>
+					<header><i></i><h2>Interactive Marketing Hub<h2></header>
+				
+					<ul class="nav nav-list">
+						<li class="icon email"><a href="#">ExactTarget Email</a></li>
+						<li class="icon mobile"><a href="#">ExactTarget Mobile</a></li>
+						<li class="icon social active"><a href="#">CoTweet Social</a></li>
+						<li class="icon sites "><a href="#">ExactTarget Sites</a></li>
+						<li class="divider"></li>
+
+						<li class="icon automation"><a href="#">Automation Studio</a></li>
+						<li class="icon audience"><a href="#">Audience Builder</a></li>
+						<li class="icon report"><a href="#">Report Builder</a></li>
+						<li class="divider"></li>
+
+						<li class="icon partner"><a href="#partner">Partner Applications</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!-- End: Interactive Marketing Hub navigation -->
+
+			<section class="span9 offset1 content">
+				<section class="calendar">
+				</section>
+
+				<section class="well pulse">
+					<header>Pulse</header>
+					<ul class="header-nav">
+						<li class="icon settings"></li>
+						<li class="icon collapse"></li>
+						<li class="icon maximize"></li>
+						<li class="icon close"><button class="close">&times;</button></li>
+					</ul>
+
+					<ul class="fisheye">
+						<li><h4>Followers</h4><big>310</big><p>added today</p><p class="count">2,393,905 total</p><div class="medium-content"></div></li>
+
+						<li><h4>Fan</h4><big>73</big><p>added today</p><p class="count">91,675 total</p><div class="medium-content"></div></li>
+
+						<li><h4>Subscribers</h4><big>56</big><p>added today</p><p class="count">189,405 total</p><div class="medium-content"></div></li>
+
+						<li class="active"><h4>Foursquare</h4><big>310</big><p>added today</p><p class="count">2,393,905 total</p><div class="medium-content"></div></li>
+
+						<li><h4>Landing Pages</h4><big>397<small>/355</small></big><p>added today</p><p class="count">2,393,905 total</p><div class="medium-content"></div></li>
+
+						<!-- li><h4>First Item Behind the Fold</h4><big>310</big><p>added today</p><p class="count">2,393,905 total</p></li>
+
+						<li><h4>Second hidden item</h4><big>310</big><p>added today</p><p class="count">2,393,905 total</p></li -->
+					</ul>
+				</section>
+			</section>
+		</div>
+
+	</div>
+	<!-- End: container-fluid -->
+
+    <!-- Modal -->
+	<div id="helpModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel">Help</h3>
+		</div>
+
+		<div class="modal-body">
+			<p>Loading help contents...</p>
+		</div>
+
+		<div class="modal-footer">
+			<button class="btn btn-primary" data-dismiss="modal" >Thanks, got it!</button>
+		</div>
+	</div>
+
 </body>
 </html>
