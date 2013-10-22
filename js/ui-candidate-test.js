@@ -1,12 +1,13 @@
 $(document).ready(function() {
 	
-	$('#showHelpModal').click(function(){
-		
+	var currentPulseItem = $('.pulse .fisheye li.active');
+
+	$('#showHelpModal').click(function(){		
 		$.ajax({
 			dataType: "json",
 			url: "data/help.json",
 			success: function( msg ) {
-				
+
 				var helpHtmlCode = '';
 
 				$(msg.help).each(function( index, element ){
@@ -19,5 +20,15 @@ $(document).ready(function() {
 				console.log( "Loading error: " + JSON.stringify( msg ) ) ;
 			}
 		});
+	});
+
+	$(".pulse .fisheye").on("click", "li", function(event) {
+		if (currentPulseItem) {
+			$(currentPulseItem).toggleClass('active');
+		}
+
+		currentPulseItem = event.currentTarget;
+
+		$(event.currentTarget).toggleClass('active');
 	});
 })
