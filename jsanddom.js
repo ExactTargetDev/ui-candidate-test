@@ -30,11 +30,6 @@
         return distinctVals;
      }
 
-    distinctVals = [], n = values.length-1, key;
-
-
-
-distinctVals;
      // Write a function that logs the numbers from 1 to 100 to the console.
      // For multiples of three print "Fizz" instead of the number.
      // For multiples of five print "Buzz".
