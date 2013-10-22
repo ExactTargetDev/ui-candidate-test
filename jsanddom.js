@@ -6,7 +6,7 @@
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         if(!str || )
+        _.str.reverse(str);
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
@@ -16,9 +16,25 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+
+        if(!_.isArray(values)) return;
+
+        var distinctVals = [], n = str.length-1, key;
+        do {
+            key = values[n];
+            if(_.indexOf(distinctVals, key) > 0) continue;
+
+            distinctVals.push(key); 
+        } while(--n);
+
+        return distinctVals;
      }
 
+    distinctVals = [], n = values.length-1, key;
+
+
+
+distinctVals;
      // Write a function that logs the numbers from 1 to 100 to the console.
      // For multiples of three print "Fizz" instead of the number.
      // For multiples of five print "Buzz".
