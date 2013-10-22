@@ -1,4 +1,4 @@
-
+/* Top Navbar Customizations */
 .imh .navbar-inverse .nav > li > a {
 	color: #99cce1;
 	font-size: 0.9em;
@@ -8,6 +8,19 @@
 	color: #eee;
 }
 
+.imh .navbar {
+	margin-bottom: 0;
+}
+
+.imh .imh-nav {
+	margin-top: 20px;
+}
+
+.imh .main {
+	margin-top: 30px;
+}
+
+/* Sidebar styles */
 .imh .imh-nav nav {
 	width: 181px;
 }
@@ -19,7 +32,7 @@
 .imh .imh-nav header {
 	width: 181px;
 	height: 50px;
-	background: url(../img/imh-sidebar-bg-top.png) no-repeat scroll 0 0;
+	background: transparent url(../img/imh-sidebar-bg-top.png) no-repeat scroll 0 0;
 }
 
 .imh .imh-nav header h2 {
@@ -38,4 +51,84 @@
 
 .imh .nav-list > .active > a {
 	background-color: #ddd;
+}
+
+/* Calendar */
+.imh .content .calendar {
+	height: 115px;
+	background: transparent url(../img/imh-calendar-placeholder.png) no-repeat scroll 0 0;
+}
+
+/* Pulse */
+.imh .pulse {
+	padding-top: 10px;
+	margin-top: 20px;
+	background: transparent url(../img/imh-pulse-bg.png) no-repeat scroll 0 0;
+	overflow: hidden;
+	height: 235px;
+}
+
+.imh .pulse header {
+	font-size: 1.5em; 
+	color: #fff;
+	float: left;
+}
+
+.imh .pulse .header-nav {
+	float: right;
+}
+
+.imh .pulse .header-nav li {
+	list-style-type: none;
+	float: left;
+}
+
+/* Fisheye */
+.imh .pulse .fisheye {
+	margin-top: 80px;
+	height: 215px;
+	margin-left: 0;
+	width: 10000px;
+}
+
+.imh .pulse .fisheye li {
+	list-style-type: none;
+	width: 176px;
+	height: 131px;
+	background: transparent url(../img/imh-pulse-item-small-bg.png) no-repeat scroll 0 30px;
+	
+	display: inline-block;
+	float: left;
+	text-align: center;
+}
+
+.imh .pulse .fisheye li.active {
+	width: 289px;
+	height: 182px;
+	background: transparent url(../img/imh-pulse-item-medium-bg.png) no-repeat scroll 0 0;
+}
+
+.imh .pulse .fisheye li h4 {
+	color: #7f91a3;
+	font-size: 1em;
+	font-weight: normal;
+
+}
+
+.imh .pulse .fisheye li big {
+	font-size: 3em;
+	color: #34bbf3;
+	padding-top: 0.2em;
+	padding-bottom: 0.25em;
+	display: block;
+}
+
+.imh .pulse .fisheye li p {
+	color: #93afc0;	
+	font-size: 1.2em;
+	margin-bottom: 0.1em;
+}
+
+.imh .pulse .fisheye li p.count {
+	font-size: 0.8em;
 }
