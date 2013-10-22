@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	
 	var currentPulseItem = $('.pulse .fisheye li.active');
+	$(".pulse .fisheye li.active .medium-content").fadeIn('fast');
 
 	$('#showHelpModal').click(function(){		
 		$.ajax({
@@ -24,7 +25,7 @@ $(document).ready(function() {
 
 	$(".pulse .fisheye").on("click", "li", function(event) {
 		if (currentPulseItem && event.currentTarget != currentPulseItem) {
-			$(".pulse .fisheye li.active .medium-content").fadeOut('fast');
+			$(".pulse .fisheye li.active .medium-content").hide();
 			$(currentPulseItem).toggleClass('active');
 
 			currentPulseItem = event.currentTarget;

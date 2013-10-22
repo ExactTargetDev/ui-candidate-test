@@ -1,4 +1,8 @@
 /* Top Navbar Customizations */
+.imh .brand {
+	padding-left: 2em;
+}
+
 .imh .navbar-inverse .nav > li > a {
 	color: #99cce1;
 	font-size: 0.9em;
@@ -118,7 +122,7 @@
 }
 
 .imh .pulse .fisheye li.active .medium-content { 
-	display: block;
+	
 }
 
 .imh .pulse .fisheye li h4 {
