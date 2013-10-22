@@ -6,7 +6,7 @@
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+         if(!str || )
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
