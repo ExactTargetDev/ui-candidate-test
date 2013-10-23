@@ -12,6 +12,14 @@ function reverseString(str) {
 // Write a function that takes an array of numbers and returns the minimum value
 function findMinValue(values) {
   // FILL THIS IN
+
+  if(!_.isArray(values) || values.length == 0) return null;
+  // Heh.. never hurts..
+  if(values.length == 2) return (values[0] > values[1]) ? values[1] : values[0];
+
+  JHUtils.ascSort(values);
+
+  return values[0];
 }
 
 // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
