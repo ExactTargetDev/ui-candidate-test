@@ -9,11 +9,6 @@
 
   <link href="http://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
   <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-  <style>
-    [ng-cloak] {
-      display: none;
-    }
-  </style>
 
   <noscript>
     <link rel="stylesheet" href="/css/style.min.css" />
@@ -24,7 +19,7 @@
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap-tpls.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
 </head>
-<body ng-cloak>
+<body ng-controller="IMHDashboardController">
 
 
 <div id="wrapper">
@@ -48,11 +43,42 @@
 
   <div role="main" class="container">
 
-  </div>
+    <div id="HubNav">
+      <div id="HubNavTitle">
+      </div>
+      <ul id="HubNavLinksContainer">
+        <li ng-repeat="hubLink in hubLinks">
+          {{hubLink.image}}
+          {{hubLink.title}}
+        </li>
+        <li class="lastHubItem">Partner Applications</li>
+      </ul>
+    </div>
 
-  <footer>
-    
-  </footer>
+    <div id="calendarView">
+      <ul>
+        <li ng-repeat="calendarDay in calendarDays">
+          {{calendarDay.dayAsText}}
+          {{calendarDay.dayAsInt}}
+        </li>
+      </ul>
+    </div>
+
+    <div id="pulseView">
+      <ul id="pulseViewTitleBar">
+        <li><img src="" /></li>
+        <li><img src="" /></li>
+        <li><img src="" /></li>
+        <li><img src="" /></li>
+      </ul>
+      <ul>
+        <li ng-repeat="pulseItem in pulseItems">
+          {{pulseItem.title}}
+          {{pulseItem.details}}
+        </li>
+      </ul>
+    </div>
+  </div>
 <!-- Begin JS Includes -->
 </div>
   <script type="text/javascript">
