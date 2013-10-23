@@ -60,7 +60,7 @@ function doFizzBuzz() {
 // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
 function removeFruits(fruits, fruitsToRemove) {
 
-  if(!_.isArray(fruits) || _.isEmpty(fruits) || !_.isArray(fruitsToRemove) || _.isEmpty(fruitsToRemove)) return;
+  if(!_.isArray(fruits) || fruits.length == 0 || !_.isArray(fruitsToRemove) || fruitsToRemove.length == 0) return;
 
   // Ensure we have a unique list to reduce large list overhead.
   var sortedDistinctFruitsToRemove = JHUtils.ascSort(findDistinctValues(fruitsToRemove)),
@@ -87,28 +87,42 @@ function pushOntoArray(array, toPush) {
   // Make sure toPush isn't an object or empty string (otherwise - nothing to do)
   if(_.isObject || _.str.isBlank(toPush)) return;
 
+  var originalVal, n;
+
   if(!_.isArray(toPush)) {
-    var originalVal = toPush;
+    originalVal = toPush;
     toPush = [originalVal];
-  } else if(_.isEmpty(toPush)) return;
 
+  } else if(toPush.length == 0) {
+    return;
+  }
 
-
+  n = toPush.length - 1;
+  do {
+    array.push(toPush[n]);
+  } while(n--);
 }
 
 // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
 function splitListStrUsingComma(sourceStr) {
   // FILL THIS IN
+  return (_.str.isBlank(sourceStr)) ? [] : str.split(',');
 }
 
 // Write a function that will take any number of arguments and return their sum
 function sum() {
   // FILL THIS IN
+  // Douglas Crockford - Javascript the Good Parts (slightly altered)
+  var i, sum = 0;
+  for(i = 0; i < arguments.length; i += 1) sum += arguments[i];
+
+  return sum;
 }
 
 // Write a function that will return true if a specified string consists of only whitespace.
 function isOnlyWhitespace(sourceStr) {
   // FILL THIS IN
+  return sourceStr.replace(new RegExp(/^\s+|\s+$/g), '').length == 0;
 }
 
 // write an example of a javascript closure

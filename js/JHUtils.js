@@ -13,6 +13,8 @@
   $scope.JHUtils = JHUtils;
 
   JHUtils.ascSort = function(targetArr) {
+
+    if(!_.isArray(targetArr) || targetArr.length == 0) return targetArr;
     var i, j, subject, n = targetArr.length;
 
     if(n < 25) return _.sortBy(targetArr, function(key) { return key; })
@@ -31,6 +33,8 @@
   JHUtils.dataStore = function() {
     var items = [],
     addItem = function(itemValue) {
+      if(!itemValue) return;
+
       var newItem = items[itemValue];
       if(!newItem) {
         newItem = itemValue;
