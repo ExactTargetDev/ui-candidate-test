@@ -1,8 +1,86 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html lang="en" ng-app="uiCandidateTestApp">
 <head>
-    <title>Screenshot.html</title>
+  <title>Screenshot.html (ExactTarget - UI Candidate Test)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="https://github.com/ExactTargetDev/ui-candidate-test" />
+
+  <link href="http://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <style>
+    [ng-cloak] {
+      display: none;
+    }
+  </style>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/style.min.css" />
+  </noscript>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
 </head>
-<body>
+<body ng-cloak>
+
+
+<div id="wrapper">
+  <header class="header">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <div id="logo" class="west">ExactTarget.</div>
+          <div id="welcome" class="east">
+            <span>Welcome John!</span>
+            <ul>
+              <li>Account</li>
+              <li>Help</li>
+              <li>Logout</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div role="main" class="container">
+
+  </div>
+
+  <footer>
+    
+  </footer>
+<!-- Begin JS Includes -->
+</div>
+  <script type="text/javascript">
+  // LessCSS bundle
+  $script('http://cdnjs.cloudflare.com/ajax/libs/less.js/1.4.1/less.min.js', 'lesscss');
+
+  var dependencyList = {
+    underscorejs: [
+      'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js',
+      'http://cdnjs.cloudflare.com/ajax/libs/underscore.string/2.3.3/underscore.string.min.js'
+    ],
+
+    exactTargetjs: ['js/JHUtils.js','js/jsanddom.js']
+  };
+
+
+  $script.ready(['underscorejs','exactTargetjs'], function () {
+    // Instantiate...
+  }, function(depsNotFound) {
+    depsNotFound.forEach(function(dep) {
+      $script(dependencyList[dep], dep)
+    });
+  });
+
+  angular.module('uiCandidateTestApp', ['ui.bootstrap']);
+
+  </script>
+
+<!-- END JS Includes -->
 </body>
 </html>
