@@ -112,9 +112,15 @@ function splitListStrUsingComma(sourceStr) {
 // Write a function that will take any number of arguments and return their sum
 function sum() {
   // FILL THIS IN
-  // Douglas Crockford - Javascript the Good Parts (slightly altered)
-  var i, sum = 0;
-  for(i = 0; i < arguments.length; i += 1) sum += arguments[i];
+
+  var n = arguments.length - 1,
+  result = 0;
+
+  if(n == -1) return result;
+
+  do {
+    result += arguments[n];
+  } while(n--);
 
   return sum;
 }
@@ -126,6 +132,12 @@ function isOnlyWhitespace(sourceStr) {
 }
 
 // write an example of a javascript closure
+var somePublicFunction = function(someValue) {
+
+  var somePrivateFunction = function() {
+    console.log("The value (" + someValue + ") passed into somePublicFunction has been violated via closures");
+  };
+}
 
 // define a json object that represents a collection of people.
 // each person should have the following properties
@@ -136,6 +148,34 @@ function isOnlyWhitespace(sourceStr) {
 // - zip
 // - a collection of phone numbers (home, work, mobile)
 
+// http://jsonlint.com/
+var PeopleCollection = [
+  {
+    "first_name": "Joe",
+    "last_name": "Bob",
+    "city": "Manchester",
+    "state": "KY",
+    "zip": "40962",
+    "phone_numbers": [{
+      "home": "606-598-0000",
+      "work": "606-598-0001",
+      "mobile": "606-598-0002"
+    }]
+  },
+  {
+    "first_name": "Jenny",
+    "last_name": "Anonymous",
+    "city": "Colorado Springs",
+    "state": "CO",
+    "zip": "80909",
+    "phone_numbers": [{
+      "home": "719-867-5309",
+      "work": "",
+      "mobile": ""
+    }]
+  }
+];
+
 
 // Create a javascript object (DataTable) with the following:
 // A private columns property (string array)
@@ -143,11 +183,131 @@ function isOnlyWhitespace(sourceStr) {
 // A public method addRows that adds an item to the rows array
 // A public method addColumns that adds an item to the columns array
 // A public method getData that returns the a json object representation of the DataTable
+
 // Note: the row object should be a hash of the column name and row item value
 // Example:
 // .addColumns('column1', 'column2', 'column3');
 // .addRow('value1A', 'value1B', 'value1C');
 // .addRow('value2A', 'value2B', 'value2C');
+(function() {
+
+  var $scope = this,
+
+  // A private columns property (string array)
+  columns = [],
+
+  // A private rows property (string array)
+  rows = [],
+
+  // The main DataTable 
+  DataTable = function(obj) {
+    if(obj instanceof DataTable) return obj;
+    if (!(this instanceof DataTable)) return new DataTable(obj);
+
+    this.DataTable = obj;
+  },
+
+  // Additional Helpers (Private)
+  DEFAULT_COLUMN_VALUE = 'column',
+  DEFAULT_ROW_VALUE = 'value',
+
+  MAX_COLUMNS = 57,
+
+  MIN_COLUMN_CHAR = "A",
+  MAX_COLUMN_CHAR = "z",
+
+  rowCount = 0,
+
+  createColumnWithName = function(columnName) {
+
+    columnIndex = columns.length+1;
+    if(columnIndex > MAX_COLUMNS) throw "The Maximum Number of Columns have been created!  Cannot Create any new columns...";
+
+    columns.push(columnName);
+  },
+
+  createDefaultColumnAtIndex = function(columnIndex) {
+
+    if(columnIndex < 0) throw "Column Index must be greater than 0!";
+    if(columnIndex > MAX_COLUMNS) throw "The Maximum Number of Columns have been reached!  Cannot Create any new default columns...";
+
+    columnIndex++;
+
+    var columnName = DEFAULT_COLUMN_VALUE + columnIndex;
+    return createColumnWithName(columnName);
+  },
+
+  charFromColumnIndex = function(columnIndex) {
+
+    if(columnIndex < 0 || columnIndex > MAX_COLUMNS) throw "A valid charForColumnIdx for columnIndex (" + columnIndex +") does not exist!";
+
+    var columnCharCode = columnIndex + MIN_COLUMN_CHAR.charCodeAt(0);
+    return String.fromCharCode(columnCharCode);
+  };
+
+
+  $scope.DataTable = DataTable;
+
+  // A public method addColumns that adds an item to the columns array
+  DataTable.addColumns = function() {
+
+    var i, n = arguments.length;
+    if(n == 0) throw "You cannot call addColumns without supplying a column name to add!";
+
+    for(i = 0; i < n; i++) {
+      createColumnWithName(arguments[i]);
+    }
+  };
+
+  // A public method addRows that adds an item to the rows array
+  DataTable.addRows = function() {
+
+    var i, valueRowColumnHash, n = arguments.length, columnIndex;
+
+    if(n == 0) throw "You must provide at least 1 row to use DataTable.addRows!";
+
+    rowCount++;
+    for(columnIndex = 0; columnIndex < n; columnIndex++) {
+
+      if(!columns[columnIndex]) createDefaultColumnAtIndex(columnIndex);
+
+      columnChar = charFromColumnIndex(columnIndex);
+      if(!columnChar) break;
+
+      valueRowColumnHash = arguments[columnIndex] + rowCount + columnChar;
+      rows.push(valueRowColumnHash);
+    }
+  };
+
+  // A public method getData that returns the a json object representation of the DataTable
+  DataTable.getData = function() {
+    var n = columns.length, x = rows.length, i, rowNameLen, hashKey, columnLetter, rowNumber,
+    data = {
+      columns: [],
+      rows: [],
+    };
+
+    for(i = 0; i < x; i++) {
+      hashKey = rows[i].slice(-2);
+      data['rows'].push({
+        column: hashKey.charAt(1),
+        row: hashKey.charAt(0),
+        value: rows[i].replace(hashKey, "")
+      });
+    }
+
+    for(i = 0; i < n; i++) {
+      data['columns'].push({
+        title: columns[i],
+        column: charFromColumnIndex(i)
+      });
+    }
+
+    return data;
+  };
+
+}).call(this);
+
 
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
