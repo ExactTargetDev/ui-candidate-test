@@ -312,14 +312,81 @@ var PeopleCollection = [
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
+(function($) {
+  $(document).ready(function() {
+
+    var getSelectList = function() {
+      var options = ['option1','option2','option3','option4'],
+      SelectList = $("<select />"),
+      OptionInfo = {};
+
+      for(i = 0; i < 4; i++) {
+        OptionInfo = { 
+          value: options[i], 
+          text: 'Option ' + i
+        };
+        $("<option />", OptionInfo).appendTo(SelectList);
+      }
+
+      return SelectList;
+    },
+
+    Div1 = $("#div1"),
+    SelectList = getSelectList().appendTo(Div1),
+    ActionButton = $("<button>Go</button>").on("click", function() {
+      console.log(SelectList.find(":selected").val());
+    }).appendTo(Div1);
+  });
+})(jQuery);
+
+
 
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
+var selectors = [ $("#foo a.link"), $("a.link:first"), $("#foo div a.link"), $("a:first"), $("#foo").find("a.link")];
+
 
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
+(function($) {
+
+  $(document).ready(function() {
+    var listItems = ['listItem 1', 'listItem 2', 'listItem 3', 'listItem 4', 'listItem 5'];
+    ListContainer = $("#list1");
+
+    for(i = 0; i < 5; i++) {
+       ListContainer.append('<li>' + listItems[i] + '</li>');
+    }
+  });
+})(jQuery);
+
+
 
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+(function($) {
+  $(document).ready(function() {
+
+    var i, CheckBox, 
+    CheckAllLink = $('<a name="checkAll" id="checkAll" href="#">check All</a>').on('click', function() {
+      $(".checkboxListItems").each(function(idx, el) {
+        $(this).prop('checked', true);
+      });
+    }),
+
+    UncheckAllLink = $('<a name="uncheckAll" id="uncheckAll" href="#">uncheck All</a>').on('click', function() {
+      $(".checkboxListItems").each(function(idx, el) {
+        $(this).prop('checked', false);
+      });
+    });
+
+    $("#foobar").css({ 'margin-left':'50px'}).append(CheckAllLink, "&nbsp;&nbsp;&nbsp;", UncheckAllLink);
+    for(i = 0; i < 20; i++) {
+      $("#foobar").append($('<div><input type="checkbox" name="checkboxList[]" class="checkboxListItems" value="checkBoxListItem ' + i + '" /> Meh</div>'));
+    }
+
+  });
+})(jQuery);
