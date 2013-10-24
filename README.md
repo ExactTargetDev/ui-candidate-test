@@ -1,7 +1,7 @@
 # ExactTarget UI Candidates
 This is the candaidate test for ExactTarget UI developers. 
 
-Please include "ATTENTION: <ET Contacts Name>" in your pull request
+Please include "ATTENTION: &lt;ET Contacts Name&gt;" in your pull request
 
 ## Here are the guidelines for the test:
 + Be sure to read all the bullet points bellow.
