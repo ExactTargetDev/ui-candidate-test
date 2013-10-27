@@ -1,0 +1,6 @@
+*** meta.txt ***
+
++ Start Time: 1382619600
++ TotalTime: HHmm
++ BrowserTesting: Chrome 30 on Windows 7
++ UnitTest: tests\jsanddom-test.js
