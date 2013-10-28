@@ -23,30 +23,57 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
+
+          <a class="navbar-brand" href="#">
+          		<img src="images/brand-exacttarget.png" alt="ExactTarget." title="Exact Target Brang"></a>
         </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+        <div class="pull-right">
+        	<p class="navbar-text"> Welcome John!
+	        	<a href="#">Account</a> <span class="divider">!</span>
+	        	<a href="#">Help</a> <span class="divider">!</span>
+	        	<a href="#">Logiut</a>
+        	</p>
+        </div><!--/.top-nav -->
       </div>
     </div>
 
 	<div class="container">
-		<header class="starter-template row">
-			<h1 class="col-md-12">Page Header</h1>
-		</header>
-		<section class="row">
-			<aside class="col-md-3">Left-side Menu</aside>
-			<section class="col-md-9">Main content</section>
+
+		<section class="starter-template row">
+			<aside  id="left-sidebar" class="col-md-2">
+				<nav class="panel panel-default">
+					<div class="panel-heading text-left"><span class="imh-sprites icon pull-left"></span><span class="nav-title">Interactive Marketing </span></div>
+					<div class="panel-body text-left">
+						<ul class="list-unstyled">
+							<li><a href="#"><span class="imh-sprites mail pull-left"></span><span class="link-text">ExactTarget Email</span></a></li>
+							<li><a href="#"><span class="imh-sprites mobile pull-left"></span><span class="link-text">ExactTarget Mobile</span></a></li>
+							<li><a href="#"><span class="imh-sprites co pull-left"></span>
+							<span class="link-text">CoTweet Social</span></a></li>
+
+							<li><a href="#"><span class="imh-sprites sites pull-left"></span><span class="link-text">ExactTarget Sites</span></a></li>
+							<li class="divider"></li>
+							<li><a href="#"><span class="imh-sprites automation pull-left"></span><span class="link-text">Automation Studio</span></a></li>
+							<li><a href="#"><span class="imh-sprites audience pull-left"></span><span class="link-text">Audience Builder</span></a></li>	
+
+							<li><a href="#"><span class="imh-sprites report pull-left"></span><span class="link-text">Report Builder</span></a></li>
+							<li class="divider"></li>
+							<li><a href="#"><span class="imh-sprites block-arrow pull-left"></span><span class="link-text">Partner Applications</span></a></li>
+							
+						</ul>
+					</div>
+				</nav>
+
+			</aside>
+			<section id="content" class="col-md-10">	
+				<div id="calendar" class="panel panel-default">
+					<div class="panel-body"></div>
+				</div>
+				<div id="pulse" class="panel panel-default">
+					<div class="panel-body"></div>
+				</div>
+			
+			</section>
+			
 		</section>
 		<footer class="col-md-12">
 			Copyright stuff...
@@ -55,5 +82,5 @@
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="js/boostrap.min.js"></script>
-
+<script src="js/custom-script.js"></script>
 </body>

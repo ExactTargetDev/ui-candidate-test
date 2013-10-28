@@ -1,7 +1,213 @@
+/**
+ ** Orange:		#fba73c
+ ** Blue:	 	#99cce1
+ ** Gray: 		#888
+ ** Light Gray:	#f4f4f5
+**/
+
 body {
   padding-top: 50px;
 }
 .starter-template {
-  padding: 40px 15px;
-  text-align: center;
+	margin-top: 0px;
+  	padding-top: 0px;
+  	text-align: center;
+}
+
+.navbar .navbar-brand {
+	font-weight: lighter;
+	font-family: Arial, sans-serif;
+	color: #fff;
+
+
+}
+
+.navbar .navbar-text  {
+	color: #fff;
+	padding: 0px 15px;
+
+	font-size: 11px;	
+}
+
+.navbar .navbar-text  a {
+	
+	padding: 0px 5px;
+	color: #99cce1;
+
+}
+
+
+#left-sidebar {
+	padding-top: 20px;
+
+}
+#left-sidebar nav div  {
+	padding: 0px 10px;
+	font-size: 12px;
+	color: #888;
+
+}
+
+#left-sidebar .panel-default > .panel-heading {
+	background-image: none;
+	background-color: #fba73c;
+	font-size: 14px;
+	color: #fff;
+	padding: 10px 0px;
+}
+#left-sidebar .panel-default > .panel-body {
+	background-color: #f4f4f5;
+	font-size: 12px;
+	padding: 10px 0px 0px;
+	line-height: 30px;
+
+}
+
+#left-sidebar nav .list-unstyled {
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+#left-sidebar nav li {
+	padding: 0px 0px;
+	margin: 5px 0px;
+}
+#left-sidebar nav a {
+	color: #888;
+	text-decoration: none;
+}
+#left-sidebar nav .nav-title,
+#left-sidebar nav .link-text {
+	display: block;
+	margin-left: 45px;
+
+}
+
+#calendar {
+	background: transparent url('../images/calendar-strip.jpg') top left no-repeat;
+	background-size:cover;
+	height: 105px;
+	
+}
+
+#pulse {
+	background-color: transparent;
+	background-image: 	url('../images/pulse-logo.png'),url('../images/pulse-toolbar.png'), 
+		url('../images/pulse-bkgd.jpg');
+	background-position-x: 5px ;
+	background-position: top left, top right, top center;
+	background-repeat: no-repeat;
+	background-size: auto, auto, cover;
+	height: 245px;
+	position: relative;
+	border-radius: 5px;
+}
+
+.imh-sprites {
+	background: transparent url('../images/imh-sprites.png') no-repeat;
+	width: 40px;
+	height: 30px;
+	display: inline-block;
+	clear: left;	
+}
+
+
+
+
+.imh-sprites.icon {
+ 	background-position: 5px 0px;
+ 	
+}
+
+.imh-sprites.mail {
+ 	background-position: 0px -40px;
+}
+
+.imh-sprites.mobile {
+ 	background-position: 0px -75px;
+}
+
+
+.imh-sprites.co {
+ 	background-position: 0px -110px;
+}
+
+.imh-sprites.sites {
+ 	background-position: 0px -145px;
+}
+
+.imh-sprites.automation {
+ 	background-position: 0px -180px;
+}
+
+.imh-sprites.audience {
+ 	background-position: 0px -215px;
+}
+
+
+.imh-sprites.report {
+ 	background-position: 0px -250px;
+}
+
+.imh-sprites.block-arrow {
+ 	background-position: 0px -280px;
+ 	width: 30px;
+
+}
+
+ .divider {
+	background-color: #fff;
+	border-bottom: 1px solid #e0e0e0;
+	margin: 5px 0px;
+	height:  2px;
+	clear: both;
+}
+
+@media (max-width: 767px) {
+	#left-sidebar nav li:not('divider') {
+		padding: 5px 0px;
+		margin: 5px 0px;
+	}		
+	.imh-sprites.icon {
+	 	background-position: 5px -10px;
+	 	
+	}	
+	
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	#left-sidebar nav li:not('divider'){
+		padding: 5px 0px;
+		margin: 5px 0px;
+	}		
+	.imh-sprites.icon {
+	 	background-position: 5px -10px;
+
+	}
+
+
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	#left-sidebar nav li:not('divider') {
+		padding: 5px 0px;
+		margin: 10px 0px;
+	}	
+
+	#left-sidebar nav .link-text {	
+		line-height: 18px;
+	}
+}
+
+
+@media (max-width: 768px) {
+	.starter-template {
+	  padding-top: 40px;
+	  
+	}
+
 }
