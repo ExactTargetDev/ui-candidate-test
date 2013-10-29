@@ -30,19 +30,22 @@
         <div class="pull-right">
         	<p class="navbar-text"> Welcome John!
 	        	<a href="#">Account</a> <span class="divider">!</span>
-	        	<a href="#">Help</a> <span class="divider">!</span>
+	        	  <!-- Button trigger modal -->
+
+	        	<a id="help" href="#">Help</a> <span class="divider">!</span>
 	        	<a href="#">Logiut</a>
         	</p>
         </div><!--/.top-nav -->
       </div>
-    </div>
+    </div> <!--/.navbar -->
 
-	<div class="container">
+	<div class="container clearfix">
 
 		<section class="starter-template row">
 			<aside  id="left-sidebar" class="col-md-2">
 				<nav class="panel panel-default">
-					<div class="panel-heading text-left"><span class="imh-sprites icon pull-left"></span><span class="nav-title">Interactive Marketing </span></div>
+					<div class="panel-heading text-left"><span class="imh-sprites icon pull-left"></span><span class="nav-title">Interactive Marketing </span>
+					</div> <!--/.panel-heading-->
 					<div class="panel-body text-left">
 						<ul class="list-unstyled">
 							<li><a href="#"><span class="imh-sprites mail pull-left"></span><span class="link-text">ExactTarget Email</span></a></li>
@@ -60,19 +63,56 @@
 							<li><a href="#"><span class="imh-sprites block-arrow pull-left"></span><span class="link-text">Partner Applications</span></a></li>
 							
 						</ul>
-					</div>
+					</div> <!--/.panel-body -->
 				</nav>
 
-			</aside>
+			</aside> <!-- /#left-sidebar -->
 			<section id="content" class="col-md-10">	
-				<div id="calendar" class="panel panel-default">
-					<div class="panel-body"></div>
-				</div>
-				<div id="pulse" class="panel panel-default">
-					<div class="panel-body"></div>
-				</div>
+				<div id="calendar" class="">
+					<div class=""></div>
+				</div><!-- /.calendar -->
+				<div id="pulse" class="clearfix">
+					
+					<div class="imh-panel imh-panel-small">
+						<div class="imh-panel-header">Followers</div>
+						<div class="imh-panel-body"><span class="big-blue">310</span><br />
+							added today<br />
+							<small> 2,393,905 total</small>
+						</div>
+					</div>
+					<div class="imh-panel imh-panel-small">
+						<div class="imh-panel-header">Fan</div>
+						<div class="imh-panel-body"><span class="big-blue">73</span><br />
+							added today<br />
+							<small> 91,675 total</small>
+						</div>
+					</div>
+					<div class="imh-panel imh-panel-small">
+						<div class="imh-panel-header">Subscribers</div>
+						<div class="imh-panel-body"><span class="big-blue">56</span><br />
+							added today<br />
+							<small> 189,405 total</small>
+						</div>
+					</div>
+
+					<div class="imh-panel imh-panel-med">
+						<div class="imh-panel-header">foursquare</div>
+						<div clas="imh-panel-body">
+							<small class="pull-left">Worldwide Checkins</small><small class="pull-right">3,905</small><br />
+							<img src="images/foursquare-map-med.png" alt="Foursquare Map" width="100%"   />					</div>
+					</div>
+					<div class="imh-panel imh-panel-small">
+						<div class="imh-panel-header">Landing Pages</div>
+						<div class="imh-panel-body"><small>Visitors Today</small><br />
+							<span class="big-blue">397</span>/ 355<br />
+							
+							<small> Soulja Boy V.I.P</small>
+						</div>
+					</div>
+
+				</div> <!-- /#pulse -->
 			
-			</section>
+			</section> <!-- /#content -->
 			
 		</section>
 		<footer class="col-md-12">
@@ -80,7 +120,29 @@
 		</footer>
 	</div>
 
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="helpModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Help</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="js/boostrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/custom-script.js"></script>
 </body>

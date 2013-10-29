@@ -82,15 +82,19 @@ body {
 	margin-left: 45px;
 
 }
-
+#content {
+	padding: 0px 0px;
+}
 #calendar {
 	background: transparent url('../images/calendar-strip.jpg') top left no-repeat;
 	background-size:cover;
 	height: 105px;
-	
+	border-radius: 5px;
 }
 
 #pulse {
+	margin: 15px 0px;
+	padding: 15px 0px 15px 10px;
 	background-color: transparent;
 	background-image: 	url('../images/pulse-logo.png'),url('../images/pulse-toolbar.png'), 
 		url('../images/pulse-bkgd.jpg');
@@ -98,11 +102,104 @@ body {
 	background-position: top left, top right, top center;
 	background-repeat: no-repeat;
 	background-size: auto, auto, cover;
-	height: 245px;
-	position: relative;
+	height: 260px;
+	
+ 	position: relative;
 	border-radius: 5px;
+	
 }
 
+#pulse .imh-panel{
+	margin-right: 8px;
+	float: left;
+	position: relative;
+	border-radius: 5px;
+ 	cursor: pointer;
+}
+
+#pulse .imh-panel-small {
+	background: transparent url('../images/pulse-panel-small-bkgd.jpg') top left no-repeat;
+	width: 150px;
+	height: 85px;
+	margin-top: 90px;
+	padding: 5px;
+}
+
+
+#pulse .imh-panel-med {
+ 	
+	background: transparent url('../images/pulse-panel-med-bkgd.jpg') top left no-repeat;
+	width: 280px;
+	height: 165px;
+	margin-top: 42px;
+	padding: 10px;
+	z-index: 2;
+
+}
+
+#pulse .imh-panel-med:last-child, 
+#pulse .imh-panel:last-child,
+#pulse .imh-panel-med-shadow :last-child { 
+	margin-right: 0px;
+	margin-left: 0px;
+}
+#pulse .imh-panel-med-shadow {
+	position: absolute; 
+	width: 302px;
+	height: 19px;
+	margin: 0px;
+	padding: 0px;
+	background: transparent url('../images/pulse-panel-med-shadow.png') top left no-repeat;
+	z-index: 1;
+}
+
+#pulse .imh-panel-med + .imh-panel-small {
+
+}
+
+
+#pulse .imh-panel-header {
+	display: block;
+	position: absolute;
+	top: -40px;
+	padding: 10px;
+	background-color: transparent;	
+	color: #888;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+
+}
+
+
+#pulse .imh-panel-body {
+	font-size: 16pt;
+	line-height: 1em;
+	text-align: center;
+	color: #93afc0;
+	position: relative;
+	top: 0;
+	left: 0;
+
+}
+
+#pulse .imh-panel-med .imh-panel-body{
+
+
+	top: 25%;
+	left: 0;
+}
+
+#pulse .imh-panel-body .big-blue {
+	font-size: 32pt;
+	line-height: 36pt;
+	color: #99cce1;
+}
+
+#pulse .imh-panel-body small {
+	font-size: 11pt;
+}
 .imh-sprites {
 	background: transparent url('../images/imh-sprites.png') no-repeat;
 	width: 40px;
@@ -163,8 +260,33 @@ body {
 	clear: both;
 }
 
+
+#left-sidebar nav .selected {
+	background-color: #99cce1;
+}
+
+#left-sidebar nav .selected .imh-sprites{
+	background-position-x: -70px;
+}
+
+#left-sidebar nav .selected a {
+	color: #fff;
+}
+#left-sidebar nav .hovered {
+	color: #f4f4f4;
+	background-color: #888;
+}
+#left-sidebar nav .hovered .imh-sprites{
+	background-position-x: -35px;
+}
+
+#left-sidebar nav .hovered a {
+	color : #f8f8f8;
+	font-weight: bold;
+}
+
 @media (max-width: 767px) {
-	#left-sidebar nav li:not('divider') {
+	#left-sidebar nav li:not(divider) {
 		padding: 5px 0px;
 		margin: 5px 0px;
 	}		
