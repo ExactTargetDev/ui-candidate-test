@@ -49,10 +49,24 @@ $(document).ready(function(){
 				 + item.URL + '</a></p>';
 		     });
 
-			$('#helpModel .modal-body').html(content);
+			$('#helpModal .modal-body').html(content);
 
-			$('#helpModel').modal('toggle');
-		});
+			$('#helpModal').modal('toggle');
+		}).fail(function( jqxhr, textStatus, error) {
+
+			var content = 'Request Failed: ' + textStatus + ', ' + error;
+
+			$('#helpModal .modal-body').html(content);
+
+			// Invoke help modal
+			$('#helpModal').modal('toggle');
+  });
+	});
+
+
+	// Window resize
+	$( window ).resize(function() {
+	  addDropShadow();
 	});
 
 	// Initialization
@@ -66,17 +80,19 @@ $(document).ready(function(){
 	// Left sidebar navigation
 	function addNavigationEffects(){
 		
-		$('#left-sidebar .panel-body li').hover(function(evt) {
+		
+
+		$('#left-sidebar .panel-body li:not(.divider)').hover(function (evt) {
 			//alert('test');
-
-			$(this).addClass('hovered');
+			if(! $(this).hasClass('selected') ){
+				$(this).addClass('hovered');
+			}
+			
 		}, function(evt) {
-			$(this).removeClass('hovered');
-
+			
+				$(this).removeClass('hovered');
+			
 		});
-
-
-
 	}
 
 
@@ -90,12 +106,23 @@ $(document).ready(function(){
 		// Append shadow div after medium panel
 		$('#pulse .imh-panel-med').after('<div class="imh-panel-med-shadow"></div>');
 
-		var medPanel = $('#pulse .imh-panel-med'); // Reference medium panel
-		var medPanelCoords = medPanel.offset(); // Medium panel top, left coordinations
-		var medPanelWidth =  medPanel.outerWidth(); // Medium panel width
-		var medPanelHeight =  medPanel.outerHeight(); // Mediuam panel height
-		var nudgeTop = -5; // Top coordinate adjustment of shadow 
-		var nudgeLeft = -11; // Left coordinate adjustment of shadow
+		// Reference medium panel
+		var $medPanel = $('#pulse .imh-panel-med'); 
+
+		// Medium panel top, left coordinations
+		var medPanelCoords = $medPanel.offset(); 
+
+		// Medium panel width
+		var medPanelWidth =  $medPanel.outerWidth(); 
+
+		// Mediuam panel height
+		var medPanelHeight =  $medPanel.outerHeight(); 
+
+		// Top coordinate adjustment of shadow 
+		var nudgeTop = -5; 
+
+		// Left coordinate adjustment of shadow
+		var nudgeLeft = -11; 
 
 		// Set shadow coordinates
 		$('.imh-panel-med-shadow').offset({left: medPanelCoords.left + nudgeLeft, 
