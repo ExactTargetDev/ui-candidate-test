@@ -1,20 +1,23 @@
      // Example unit test function
      function divide( a, b ) {
+
         // To see the test pass, uncomment the following line
         return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
+
         // Declare empty string to hold reverse ordered string
-         var strOutput = "";
+         var strOutput = '';
+
          // Test for undefined or empty strings
-         if(str == undefined || str === "" ){
-            return "";
+         if ( str === undefined || str === '' ) {
+            return '';
          }
 
          // iterate through the string characters backwardly
-         for(var i = str.length - 1; i>= 0; i--){
+         for (var i = str.length - 1; i>= 0; i--) {
 
             // Concantenate character at index value to string
             strOutput += str.charAt(i);
@@ -27,13 +30,12 @@
      function findMinValue(values) {
 
          // Check for non-numeric array values
-         for(var i = 0; i < values.length - 1; i++) {
+         for (var i = 0; i < values.length - 1; i++) {
 
             if (! (!isNaN(parseFloat(values[i])) && isFinite(values[i]))  ) {
 
                 // If a non-numeric value is in the array, then throw an error
-                throw "Invalid array, all values must be numeric.";
-
+                throw 'Invalid array, all values must be numeric.';
             }
          }
 
@@ -51,13 +53,13 @@
          var cloneArray = values.slice(0);
 
          // Select an element in the array
-         for(var i = 0;  i < (cloneArray.length - 1) ; i++) {
+         for (var i = 0;  i < (cloneArray.length - 1) ; i++) {
 
             // Searh through other elements in the array, starting from the end
             for (var j = (cloneArray.length - 1); j > i; j--) {
 
                 // Test for same value
-                if (cloneArray[i] === cloneArray[j]) {
+                if ( cloneArray[i] === cloneArray[j] ) {
 
                     // Remove item from array
                     cloneArray.splice(j, 1);    
@@ -80,18 +82,18 @@
 
         // Create an array of objects for the multiples an their text
         var multiples = [
-            {divisor: 3, sometext: "Fizz"},
-            {divisor: 5, sometext: "Buzz"},       
+            {divisor: 3, sometext: 'Fizz'},
+            {divisor: 5, sometext: 'Buzz'},       
         ];
 
  
         // Iterate through number list
-        for(var i = START; i <= END ; i++){
+        for (var i = START; i <= END ; i++) {
             // Create an empty variable for ouput string
-            var ouput = "";
+            var ouput = '';
  
             // iterate through each item of multiples 
-            for(var j= 0; j <= multiples.length - 1; j++ ){
+            for (var j= 0; j <= multiples.length - 1; j++ ) {
 
                 // Check if a number in list is divisible by an item in 'multiples'
                 if(i % multiples[j].divisor == 0) {
@@ -103,7 +105,7 @@
 
             // Check for empty string (which means, list number not divisible 
             // by any divisors in the multiples object)
-            if (ouput == "") {
+            if ( !ouput ) {
                 ouput += i;
             }
 
@@ -121,13 +123,13 @@
        
 
          // Select an element in the array
-         for(var i = fruits.length - 1;  i >= 0  ; i--) {
+         for (var i = fruits.length - 1;  i >= 0  ; i--) {
 
             // Iterate through fruits to remove 
             for (var j = 0; j < fruitsToRemove.length;  j++ ) {
 
                 // Test for same value
-                if (fruits[i] == fruitsToRemove[j]) {
+                if ( fruits[i] === fruitsToRemove[j] ) {
                     
                     // Remove item from array
                     fruits.splice(i, 1);    
@@ -147,16 +149,14 @@
          
 
          // Check datatype of 'toPush'
-         if(Object.prototype.toString.call( toPush ) === '[object Array]'){
+         if (Object.prototype.toString.call( toPush ) === '[object Array]') {
 
             // Iterate through the 'toPush' array
             for(var i = 0; i < toPush.length; i++) {
 
                 // Append 'toPush' elements onto the end of 'array'
                 array.push(toPush[i]);
-
             }
-
 
          } else {
 
@@ -167,16 +167,20 @@
 
      }
 
-     // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
+     // Given a string, sourceStr, write some code that will split this string using 
+     // comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
 
         // Check 'sourceStr' is  empty
-         if(sourceStr != ""){ // if not empty...
+         if ( sourceStr ) { // if not empty...
+
             // Split a comma delimited string into an array
-            return sourceStr.split(",");
+            return sourceStr.split(',');
+
          } else { // if empty...
+
             // return empty array object
-            return new Array();
+            return [];
          }
      }
 
@@ -185,6 +189,7 @@
          var total = 0;
 
          for(var i = 0; i < arguments.length; i++) {
+
             // Check argument value is numeric
             if ( (!isNaN(parseFloat(arguments[i])) && isFinite(arguments[i])) ) {
 
@@ -203,7 +208,6 @@
         var pattern = /\S/m;
 
         return !(pattern.test(sourceStr));
-
      }
 
      // write an example of a javascript closure
@@ -221,10 +225,18 @@
      var multiplesOf5 = outerFunction(5);
 
      // Display factors of multiples
-     console.log("Closure Test -- value1 = 3, value2 = 5: " + multiplesOf3(5)); // Closure Test -- value1 = 3, value2 = 5: 15
-     console.log("Closure Test -- value1 = 3, value2 = 8: " + multiplesOf3(8)); // Closure Test -- value1 = 3, value2 = 8: 24
-     console.log("Closure Test -- value1 = 5, value2 = 6: " + multiplesOf5(6)); // Closure Test -- value1 = 5, value2 = 6: 30
-     console.log("Closure Test -- value1 = 5, value2 = 9: " + multiplesOf5(9)); // Closure Test -- value1 = 5, value2 = 9: 45
+
+     // Closure Test -- value1 = 3, value2 = 5: 15
+     console.log('Closure Test -- value1 = 3, value2 = 5: ' + multiplesOf3(5)); 
+
+     // Closure Test -- value1 = 3, value2 = 8: 24
+     console.log('Closure Test -- value1 = 3, value2 = 8: ' + multiplesOf3(8));
+
+     // Closure Test -- value1 = 5, value2 = 6: 30
+     console.log('Closure Test -- value1 = 5, value2 = 6: ' + multiplesOf5(6)); 
+
+     // Closure Test -- value1 = 5, value2 = 9: 45
+     console.log('Closure Test -- value1 = 5, value2 = 9: ' + multiplesOf5(9)); 
 
 
      // define a json object that represents a collection of people.
@@ -279,7 +291,7 @@
         ]
     };
 
-     console.log("Json Object Test: " + JSON.stringify(collectionObj));
+     console.log('Json Object Test: ' + JSON.stringify(collectionObj));
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
@@ -294,62 +306,72 @@
      // .addRow('value2A', 'value2B', 'value2C');
 
     function DataTable() {
-        var columns = []; // List of column names
-        var rows = []; // List of row objects
+        var _columns = []; // List of column names
+        var _rows = []; // List of row objects
 
         // add new column to data table
-        this.addColumns = function() {
+        this.addColumns = function () {
 
             // Iterate through argument list
             for(var i = 0; i < arguments.length; i++){
 
                 // Add argument element to columns array
-                columns.push(this.addColumns.arguments[i]);
+                _columns.push(this.addColumns.arguments[i]);
             }
-            
+
+            return this;
         };
 
-        // Add new row to data table. The number of arguments in the addRow function must match the number of columns
-        this.addRow = function() {
+        // Add new row to data table. The number of arguments in the addRow 
+        // function must match the number of columns
+        this.addRow = function () {
+
             // Declare a row object to hold hash for column (key), row data (value)
             var rowObj = {};
 
             // Check for existence of elements in the columns array
-            if( columns.length <= 0 ) {
-                throw "DataTable requires at least one column before adding new row.";
+            if ( _columns.length <= 0 ) {
+                throw 'DataTable requires at least one column before adding new row.';
             }
 
             // Check number of arguments matches column count
-            if( columns.length != arguments.length ) {
-                throw "The number of arguments does not match the number of columns.";
+            if ( _columns.length !== arguments.length ) {
+                throw 'The number of arguments does not match the number of columns.';
             }
 
             // Iterate through argument list
-            for(var i = 0; i < arguments.length; i++){
-                // Add argument element to row object with corresponding column name as key
-                rowObj[columns[i]] = this.addRow.arguments[i];
+            for (var i = 0; i < arguments.length; i++) {
 
+                // Add argument element to row object with corresponding column name as key
+                rowObj[_columns[i]] = this.addRow.arguments[i];
             }
 
             // Add row object to array
-            rows.push(rowObj);
+            _rows.push(rowObj);
+
+            return this;
         };
 
         // Returns a JSON object
-        this.getData = function() {
+        this.getData = function () {
 
-
-           return {datatable : rows};
+            // return databale object as JSON
+            return {datatable : _rows};
         };
-    }
-    // Declare DataTable
 
+        return this;
+    }
+
+    // Declare DataTable
     var testDataTable = new DataTable();
 
-    testDataTable.addColumns('col1', 'col2', 'col3');
-    testDataTable.addRow( 'a', 'b', 'c');
-    testDataTable.addRow('d', 'e', 'f');
-    testDataTable.addRow('d', 'e', 'f');
+    // Add table data
+    testDataTable.addColumns('col1', 'col2', 'col3')
+        .addRow( 'a', 'b', 'c')
+        .addRow('d', 'e', 'f')
+        .addRow('g', 'h', 'i')
+        .addRow('j', 'k', 'l');
+
 
     // 
     var tableData = testDataTable.getData();
@@ -360,19 +382,19 @@
      // when the button is clicked write out the name and value of the selected item to the console.
 
      function selectTest() {
-         var div1 = document.getElementById('div1');
+         var $div1 = document.getElementById('div1');
          var selectElem = document.createElement('select');
          var buttonElem = document.createElement('input');
          var numOfItems = 5;
 
 
-         if( typeof(div1) != 'undefined' && div1 != null ){
+         if ( typeof($div1) !== 'undefined' && $div1 !== null ) {
 
              // Setup select element
              selectElem.id = 'itemList';
 
              // Build options
-             for(var i = 1; i <= numOfItems; i++){
+             for(var i = 1; i <= numOfItems; i++) {
                     // Create an 'option' node
                     var optionNode = document.createElement('option');
 
@@ -385,7 +407,7 @@
              }
 
              // Append select element to div
-             div1.appendChild(selectElem);
+             $div1.appendChild(selectElem);
 
              // Setup button
              buttonElem.id = 'btnShowItem';
@@ -394,12 +416,19 @@
 
              // Attach event listener to button
              // Check browser support for adding event listeners
-            if (buttonElem.addEventListener)  // W3C DOM
+            if (buttonElem.addEventListener) {  
+
+                // W3C DOM
                 buttonElem.addEventListener('click', showClicked, false);
-            else if (buttonElem.attachEvent) { // IE DOM
-                buttonElem.attachEvent("onclick", showClicked);
-            }
-            else { // No much to do
+
+            } else if (buttonElem.attachEvent) { 
+
+                // IE DOM
+                buttonElem.attachEvent('onclick', showClicked);
+
+            } else { 
+
+                // No much to do
                 buttonElem['click'] = showClicked;
             }
 
@@ -413,11 +442,11 @@
                 item = selectElem.options[selectElem.selectedIndex];
                 
                 // Display value and text of selected item to console
-                console.log("SELECT Element: Item selected (value, text) - " + item.value + ", " + item.text);
+                console.log('SELECT Element: Item selected (value, text) - ' + item.value + ', ' + item.text);
              }
 
              // Append button to div tag
-             div1.appendChild(buttonElem);
+             $div1.appendChild(buttonElem);
 
         }
     }
@@ -428,30 +457,31 @@
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
-        $( document ).ready(function() {
-            var jquerySelectors = [];
-            var fizz = document.getElementById('fizz');
+        $( document ).ready( function () {
+            var $fizz = document.getElementById('fizz');
+            var $jquerySelectors = [];
+            
 
-            if( typeof(fizz) != 'undefined' && fizz != null ){
+            if( typeof($fizz) !== 'undefined' && $fizz !== null ) {
                 // 5 ways to grab the sample anchor tag, given the html structure: 
 
                 //  a.link
-                jquerySelectors[0] = $('a.link')[0];
+                $jquerySelectors[0] = $('a.link')[0];
 
                 // #fizz a:first
-                jquerySelectors[1] = $('#fizz a:first')[0];
+                $jquerySelectors[1] = $('#fizz a:first')[0];
 
                 // div#fizz.buzz a:first
-                jquerySelectors[2] = $('div#fizz.buzz a:first')[0];
+                $jquerySelectors[2] = $('div#fizz.buzz a:first')[0];
 
                 // #fizz a[class=link]
-                jquerySelectors[3] = $('#fizz a[class=link]')[0];
+                $jquerySelectors[3] = $('#fizz a[class=link]')[0];
 
                 // .buzz > a.link
-                jquerySelectors[4] = $('.buzz > a.link')[0];
+                $jquerySelectors[4] = $('.buzz > a.link')[0];
               
-                for(var i = 0; i < jquerySelectors.length; i++){
-                    console.log('JQUERY selector: ' + jquerySelectors[i].innerHTML );
+                for ( var i = 0; i < $jquerySelectors.length; i++ ) {
+                    console.log('JQUERY selector: ' + $jquerySelectors[i].innerHTML );
                 }
             }
         });
@@ -459,62 +489,68 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
-     function listItemTest(){
+     function listItemTest() {
         // Declare list item array
          var itemList = ['alpha', 'beta', 'gamma', 'delta'];
 
          // Grab unordered list list1
-         var list1 = document.getElementById('list1');
+         var $list1 = document.getElementById('list1');
 
          //Check if list1 exists in the DOM
-         if( typeof(list1) != 'undefined' && list1 != null ){
+         if ( typeof($list1) !== 'undefined' && $list1 !== null ) {
+
             // Iterate through list item array
              for(var i = 0; i < itemList.length; i++){
 
                 // Create a LI node
-                var liElement = document.createElement('li');
+                var $li= document.createElement('li');
 
                 // Inject list item into LI
-                liElement.innerHTML = itemList[i];
+                $li.innerHTML = itemList[i];
 
                 // Append LI as a child node onto list1
-                list1.appendChild(liElement);
-             }
-             
+                $list1.appendChild($li);
+             }            
         }
     }
+
+
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
 
-     $(document).ready(function(){
+     $(document).ready( function () {
+
         // Declare variables
-        var foobar = $('#foobar');
+        var $foobar = $('#foobar');
         var markup = '';
         var TOTAL_CHECKBOXES = 10;
 
         // Create list of check boxes
-        for (var i = 1; i <= TOTAL_CHECKBOXES; i++){
+        for (var i = 1; i <= TOTAL_CHECKBOXES; i++) {
+
+            // Create markup for checkbox
             markup += '<input type="checkbox" id="ch'+ i + '" /> Option # '+ i + '<br />';
 
         }
+
         // Create link tags
         markup += '<a id="checkAll" class="checkboxToggle" href="#">Check All</a> | ';
         markup += '<a id="unCheckAll" class="checkboxToggle" href="#">Uncheck All</a>';
 
         // Append markup to foobar div
-        foobar.append(markup);
+        $foobar.append(markup);
 
         // Setup event handler for checkAll
-        $('#checkAll').click(function(event){
+        $('#checkAll').click( function (event) {
 
            // e = $.event.fix(e);
             // Stop link from loading page
             event.preventDefault();
 
             // Grab all unchecked checkboxes 
-            $('#foobar :checkbox:not(:checked)').each(function(){
+            $('#foobar :checkbox:not(:checked)').each( function () {
 
                 // Set checked property to true
                  this.checked = true;
@@ -522,12 +558,13 @@
         });
 
         // Setup event handler for unCheckAll
-        $('#unCheckAll').click(function(event){
+        $('#unCheckAll').click( function (event) {
+
             // Stop link from loading page
             event.preventDefault();
 
             // Grab all checked checkboxes 
-            $('#foobar :checkbox:checked').each(function(){
+            $('#foobar :checkbox:checked').each( function () {
 
                 // Set checked property to false
                  this.checked = false;
@@ -537,28 +574,35 @@
      }); // end document ready
 
 
-
 // On window load...
 
  // Check browser support for adding event listeners
-if (window.addEventListener)  // W3C DOM
+if ( window.addEventListener ) { 
+
+    // W3C DOM
     window.addEventListener('load', init, false);
-else if (window.attachEvent) { // IE DOM
-    window.attachEvent("load", init);
-}
-else { // No much to do
+
+} else if ( window.attachEvent ) { 
+
+    // IE DOM
+    window.attachEvent('load', init);
+
+} else { 
+
+    // No much to do
     window['load'] = init;
 }
 
-function init(event){
-    // Execute FizzBuzz Test
+// Init functions to execute when windoww loads
+function init(event) {
+
+    // Invoke FizzBuzz Test
     doFizzBuzz();
 
-    // Execute SELECT test
+    // Invoke SELECT test
     selectTest();
 
-    // Execute List item test
+    // Invoke List item test
     listItemTest();
-
-
 }
+

@@ -14,47 +14,50 @@ Please create your tests below...
 ********************************/
 
 // Reverse String Unit Test
-module("Reverse String Unit Test");
+module( 'Reverse String Unit Test' );
 
-test("Reverse String Test",  function() {
+test( 'Reverse String Test',  function () {
     // Verify the method exists
     equal( typeof reverseString, 'function', 'Must contain a reverseString function' ); 
 
     // Valid result when string is undefined
-    equal( reverseString(), "", "Expected an empty string, actual result was " + reverseString() );
+    equal( reverseString(), '', 'Expected an empty string, actual result was ' + reverseString() );
 
 
     // Valid result when string is empty
-    equal( reverseString(), "", "Expected an empty string, actual result was " + reverseString(""));
+    equal( reverseString(), '', 'Expected an empty string, actual result was ' + reverseString(''));
 
      // Valid result when string
     //equal( reverseString("abc"), "cba", 'Expected reveresed string.' );       
-    equal( reverseString("Hello world!"), "!dlrow olleH", "Expected '!dlrow olleH', actual result was " 
-    	+ reverseString("Hello world!") ); 
+    equal( reverseString('Hello world!'), '!dlrow olleH', "Expected '!dlrow olleH', actual result was " 
+    	+ reverseString('Hello world!') ); 
   
 });
 
-test("Reverse String Test With Undefined or Empty String",  function() {
+test( 'Reverse String Test With Undefined or Empty String',  function () {
+
     // Valid result when string is undefined
     equal( reverseString(), "", "Expected an empty string, actual result was " + reverseString() );
 
     // Valid result when string is empty
-    equal( reverseString(), "", "Expected an empty string, actual result was " + reverseString(""));
+    equal( reverseString(), '', 'Expected an empty string, actual result was ' + reverseString(''));
   
 });
 
 
 // Find Min Value Unit Test
-module( "Find Min Value Unit Test" );
-test( "Find Min Value Test",  function() {
+module( 'Find Min Value Unit Test' );
+test( 'Find Min Value Test',  function () {
+
 	var intArray = [3, 8, 9]; 
     // Verify the method exists
     equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' ); 
 
     // Make sure the result from the findMinValue function is valid
-    equal(findMinValue(intArray), 3, "Expected 3, actual result was " +  findMinValue(intArray));
+    equal(findMinValue(intArray), 3, 'Expected 3, actual result was ' +  findMinValue(intArray));
 });
-test( "Find Min Value Test With Invalid Array",  function() {
+
+test( 'Find Min Value Test With Invalid Array',  function () {
 	var intArray = [3, 8, 'nine']; 
 
 
@@ -63,8 +66,8 @@ test( "Find Min Value Test With Invalid Array",  function() {
 });
 
 // Remove Duplicates Test
-module( "Remove Duplicates Unit Test" );
-test("Remove Duplicates",  function() {
+module( 'Remove Duplicates Unit Test' );
+test( 'Remove Duplicates',  function () {
 
     // Verify the method exists
     equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' ); 
@@ -81,19 +84,17 @@ test("Remove Duplicates",  function() {
 	deepEqual( findDistinctValues(['pear', 'apple',  'apple', 'apple', 'grapes']), ['pear', 'apple', 'grapes'], 
 		"Expected ['pear', 'apple', 'grapes'], actual result was " 
 		+ findDistinctValues(['pear', 'apple',  'apple', 'apple', 'grapes']));     
-
-
 });
 
 // Do Fizz Buzz Test
-module( "Do Fizz Buzz Unit Test" );
+module( 'Do Fizz Buzz Unit Test' );
 
 // See Javascript console for results
 //doFizzBuzz() ;
 
 // Remove Fruits Test
 module( "Remove Fruits Unit Test" );
-test( "Remove Fruits Test", 2, function() {
+test( 'Remove Fruits Test', function () {
 
 	var fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
 	var fruitsToRemove = ['pear', 'banana'];
@@ -110,8 +111,8 @@ test( "Remove Fruits Test", 2, function() {
 });
 
 // Push to Array Test
-module( "Push to Array Unit Test" );
-test( "Push to Array Test With Array", function() {
+module( 'Push to Array Unit Test' );
+test( 'Push to Array Test With Array', function () {
 
 	var fruits =  ['pear', 'banana'];   
 	var fruitsToPush = ['pear', 'plum', 'strawberry']
@@ -127,7 +128,7 @@ test( "Push to Array Test With Array", function() {
     deepEqual( fruits, expected , 'Expected ' + expected +  ' as the result, the result was: ' + fruits );
 });	
 
-test( "Push to Array Test With Single Value",  function() {
+test( 'Push to Array Test With Single Value',  function () {
 
 	var fruits =  ['pear', 'banana'];  
 	var fruitToPush = 'grape fruit';
@@ -142,9 +143,9 @@ test( "Push to Array Test With Single Value",  function() {
 
 
 // Split List String Using Comma Test
-module( "Split List String Using Comma Unit Test" );
+module( 'Split List String Using Comma Unit Test' );
 
-test( "Split Non-Empty List String Using Comma", function() {
+test( 'Split Non-Empty List String Using Comma', function () {
 
 	var someString = 'The, quick, brown, fox jumped over';
 	var expected = ['The', ' quick', ' brown', ' fox jumped over'];
@@ -159,7 +160,7 @@ test( "Split Non-Empty List String Using Comma", function() {
      +  ' as the result, the result was: ' + splitListStrUsingComma(someString)  );
 });	
 
-test( "Split Empty List String Using Comma", function() {
+test( 'Split Empty List String Using Comma', function () {
 
 	var someString = '';
 	var expected = [];
@@ -173,10 +174,9 @@ test( "Split Empty List String Using Comma", function() {
 
 
 // SumTest
-module( "SumUnit Unit Test" );
+module( 'SumUnit Unit Test' );
 
-test( "Sum", function() {
-
+test( 'Sum', function () {
 
     // Verify the method exists
     equal( typeof sum, 'function', 'Must contain a sum function' ); 
@@ -184,17 +184,19 @@ test( "Sum", function() {
     // Make sure the result from the sum function is valid
     equal( sum(1, -1, 2, 3, 5, 7) , 17 , 'Expected 17 as the result, the result was: ' + sum(1, -1, 2, 3, 5, 7)  );
 
+    // With floating number..,
     equal( sum(5, 5, 6.5) , 16.5 , 'Expected 16.5 as the result, the result was: ' + sum(5, 5, 6.5)  );
 
+    // With string element...
     equal( sum(5, 'Red beans', 6.5) , 11.5 , 'Expected 11.5 as the result, the result was: ' + sum(5, 5, 6.5)  );
 });	
 
 
 // Is Only White Space
-module( "Is Only White Space Unit Test" );
+module( 'Is Only White Space Unit Test' );
 
 
-test( "Is Only White Space", function() {
+test( 'Is Only White Space', function () {
 
 
 
@@ -205,7 +207,5 @@ test( "Is Only White Space", function() {
     // Make sure the result from the divide function is valid
     ok( isOnlyWhitespace('        '), ' Returns true, string contains only white spaces'  );
 	ok( ! isOnlyWhitespace('        x        '), ' Returns false, string contains non-white space '  );
-
-
-
 });	
+
