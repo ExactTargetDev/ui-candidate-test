@@ -27,3 +27,16 @@ test("Min value", function() {
    equal (findMinValue([1,2,3]), 1);
    equal (findMinValue([1,-2,3]), -2);
 });
+
+test("Distinct values", function() {
+   equal(findDistinctValues(undefined), undefined);
+   equal(findDistinctValues(null), null);
+   var emptyArray = [];
+   equal(findDistinctValues(emptyArray), emptyArray);
+   deepEqual(findDistinctValues([1,1,2]), [1,2]);
+   deepEqual(findDistinctValues([2,1,2,2,1,1,2]), [2,1]);
+});
+
+//test("FizzBuzz", function() {
+   doFizzBuzz();   
+//});
