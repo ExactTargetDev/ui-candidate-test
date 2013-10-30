@@ -12,3 +12,18 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+module("My Tests");
+test("Reverse string", 4, function() {
+    equal(typeof reverseString, 'function', 'Must conatin a reverseString function');
+    ok (reverseString('reverseString'), 'gnirtSesrever', 'Expected gnirtSesrever as the result; actual result: '+reverseString('reverseString'));
+    equal(reverseString(null), null, 'Expected null; actual result: '+reverseString(null));
+    equal(reverseString(undefined), null, 'Expected undefined; actual result: '+reverseString(undefined));
+});
+
+test("Min value", function() {
+   equal (findMinValue(null), null);
+   equal (findMinValue(undefined), undefined);
+   equal (findMinValue([]), null);
+   equal (findMinValue([1,2,3]), 1);
+   equal (findMinValue([1,-2,3]), -2);
+});
