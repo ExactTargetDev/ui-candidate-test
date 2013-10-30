@@ -88,12 +88,22 @@
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+      //  var result;
+      //  if (arguments.length > 0) {
+      //     if (typeof)
+      //  }
+        var result = (arguments.length > 0 && typeof arguments[0] === 'string') ? '' : 0;
+        //((arguments.length > 0) && (typeOf arguments[0] === 'string')) ? result = '' : result = 0;
+         for (var i = 0; i < arguments.length; i++) {
+            result += arguments[i];
+         }
+         return result;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         var r = /\S/g;
+         return !r.test(sourceStr);
      }
 
      // write an example of a javascript closure

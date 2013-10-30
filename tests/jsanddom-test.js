@@ -37,6 +37,15 @@ test("Distinct values", function() {
    deepEqual(findDistinctValues([2,1,2,2,1,1,2]), [2,1]);
 });
 
-//test("FizzBuzz", function() {
-   doFizzBuzz();   
-//});
+//doFizzBuzz();
+
+test("Variable arguments", function() {
+   equal(sum(1, 2, 3), 6);
+   equal(sum(), 0);
+   equal(sum('1', '2', '3'), '123');
+});
+
+test("Whitespace", function() {
+   equal(isOnlyWhitespace('     '), true);
+   equal(isOnlyWhitespace('   1 '), false);
+});
