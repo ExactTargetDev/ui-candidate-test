@@ -49,3 +49,18 @@ test("Whitespace", function() {
    equal(isOnlyWhitespace('     '), true);
    equal(isOnlyWhitespace('   1 '), false);
 });
+
+test("PushArray", function() {
+   deepEqual(pushOntoArray([1,2,3],4),[1,2,3,4]);
+   deepEqual(pushOntoArray([1,2,3],[4,5,6]),[1,2,3,4,5,6]);
+});
+
+test("Split String", function() {
+   // deepEqual(splitListStrUsingComma(null), []);
+   // deepEqual(splitListStrUsingComma(undefined), []);
+   // deepEqual(splitListStrUsingComma(','), []);
+   // deepEqual(splitListStrUsingComma(''), []);
+   // deepEqual(splitListStrUsingComma(',1,2'), ['1','2']);
+   // deepEqual(splitListStrUsingComma('1,2,'), ['1','2']);
+   // deepEqual(splitListStrUsingComma('1,2'), ['1','2']);
+});

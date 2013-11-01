@@ -78,22 +78,40 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+         if( Object.prototype.toString.call(toPush) === '[object Array]' ) {
+            for (var i = 0; i < toPush.length; i++) {
+               array.push(toPush[i]);
+            }
+         } else {
+            array.push(toPush);
+         }
+         return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          // FILL THIS IN
+         /*var splitStr = [];
+         if (sourceStr === null || sourceStr === undefined) {
+            return splitStr;
+         }
+         var index = 0, nextIndex = 0;
+         while (index < sourceStr.length) {
+            nextIndex = sourceStr.substr(index).indexOf(',') + index;
+            if (nextIndex > 0) {
+               splitStr.push(sourceStr.substr(index, nextIndex - 1));
+               index = nextIndex;
+            } 
+            //else {
+               index++;
+            // }
+         }
+         return splitStr;*/
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-      //  var result;
-      //  if (arguments.length > 0) {
-      //     if (typeof)
-      //  }
         var result = (arguments.length > 0 && typeof arguments[0] === 'string') ? '' : 0;
-        //((arguments.length > 0) && (typeOf arguments[0] === 'string')) ? result = '' : result = 0;
          for (var i = 0; i < arguments.length; i++) {
             result += arguments[i];
          }
@@ -116,7 +134,25 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+     var people = [ {
+            "firstname" : "Firstname1",
+            "lastname"  : "Lastname1",
+            "city"      : "Indianapolis",
+            "state"     : "IN",
+            "zip"       : "46231",
+            "phones"    : [
+               { "home" : "3175551231" }, { "work" : "3175552341" }, { "mobile" : "3175553451" }
+            ]
+         }, {
+            "firstname" : "Firstname2",
+            "lastname"  : "Lastname2",
+            "city"      : "Indianapolis",
+            "state"     : "IN",
+            "zip"       : "46232",
+            "phones"    : [
+               { "home" : "3175551232" }, { "work" : "3175552342" }, { "mobile" : "3175553452" }
+            ]
+         } ];
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
@@ -129,18 +165,65 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     /*function DataTable() {
+        function addColumns() {
+           
+        }
+        function addRows() {
+           
+        }
+        function getData() {
+           
+        }
+        var columns = [];
+        var rows = [];
+        var that = this;
+     }*/
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     $('#div1').append('<select/>');
+     for (var i = 1; i <= 5; i++) {
+        $('#div1 select').append('<option value="'+i+'">Value '+i+'</option>');
+     }
+     $('#div1').append('<button>Button</button>').append('<p></p>');
+     $('#div1 button').on('click', function() {
+        var $opt = $('#div1 option:selected');
+       $('#div1 p').text($opt.val() + ':' + $opt.text());
+     });
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     $("a[href='#']");
+     $("a.link");
+     $("#fizz :first-child");
+     $("div > div > a");
+     $(':contains("sample anchor"):last');
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     var list = ["Item 1", 335, "OK", "Cancel", 98765];
+     var $lis = [];
+     for (var i = 0; i < list.length; i++) {
+        $lis.push($("<li>"+list[i]+"</li>"));
+     }
+     $('#list1').append($lis);
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     var $foobar = $('#foobar');
+     for (var i = 1; i <= 5; i++) {
+        $foobar.append("<label><input type='checkbox' value='"+i+"' name='c"+i+"'> Checkbox #"+i);
+     }
+     $foobar.append("<p>").append("<a href='#'>Check All").append(' | <a href="#">Uncheck All');
+     $foobar.find('a:last').on('click', function() {
+        $foobar.find(':checkbox:checked').prop('checked', false);
+       return false;
+     });
+     $foobar.find('a:first').on('click', function() {
+        $foobar.find(':checkbox:not(:checked)').prop('checked', true);
+       return false;
+     });
