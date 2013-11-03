@@ -58,3 +58,8 @@ test('pushOntoArray()', function(){
 // test('splitListStrUsingComma()', function(){
 // 	equal(splitListStrUsingComma('The, quick, brown, fox jumped over'), 'The, quick, brown, fox, jumped, over', 'ET test 1' );
 // });
+
+module('IsOnlyWhiteSpace');
+test('isOnlyWhitespace()', function(){
+	equal(isOnlyWhitespace('     '), true, 'This is only whitespace.');
+});

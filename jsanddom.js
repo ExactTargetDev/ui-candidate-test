@@ -82,10 +82,17 @@
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         return (sourceStr.trim().length == 0);
      }
 
      // write an example of a javascript closure
+     // This example allows you to create a function that will multiply be whatever number you pass in to the function initially,
+     // which can be reused.
+     function multiplyBy(x) {
+        return function(y) { return x * y; };
+     }
+
+     var multBy10 = multiplyBy(10);
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -95,6 +102,19 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+
+     var myJSONobject = {
+                            "firstName" : "Dennis",
+                            "lastName"  : "Reynolds",
+                            "city"      : "Philadelphia",
+                            "state"     : "Pennsylvania",
+                            "zip"       : "55555",
+                            "phones"    : {
+                                            "home" : "555-555-5555",
+                                            "work" : "555-555-5555",
+                                            "mobile" : "555-555-5555"
+                                          }
+                        }
 
 
      // Create a javascript object (DataTable) with the following:
@@ -109,17 +129,63 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+     function DataTable(){
+        var columns = [];
+        var rows = [];
+
+        this.addRows = function(){
+            this.rows.push();
+        }
+
+        this.addColumns = function(){
+
+        }
+
+        this.getData = function(){
+           return JSON.stringify(this);
+        }
+
+     }
+
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     $(document).ready(function(){
+        $('#div1').append('<select id="mySelect"><option value="Number1">Item 1</option><option value="Number2">Item 2</option></selection>');
+        $('#div1').append('<button id="myButton">Click Me</button>');
+        $('#myButton').bind('click', function(){
+            console.log($('#mySelect option:selected').text() + "  " + $('#mySelect').val() );
+        }); 
+     });
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     var myAnchor = $('#fizz > a');
+     var myAnchor = $('#fizz').children().first();
+     var myAnchor = $('a.link');
+     var myAnchor = $('a:first');
+     var myAnchor = $('[href$="#"]');
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     var myArray = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+     $.each(myArray, function(key,val){
+        $('ul#list1').append('<li>' + val + '</li>');
+     });
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     $(document).ready(function($) {
+          $('div#foobar').append('<input type="checkbox" class="checkMe" /><input type="checkbox" class="checkMe" /><input class="checkMe" type="checkbox" />');
+          $('div#foobar').append('<a href="#">Link One</a><a href="#">Link Two</a>');
+
+          $('div#foobar a:first').bind('click', function(){
+                $('input.checkMe').prop('checked', true);
+          });
+         
+         $('div#foobar a:first').next().bind('click', function(){
+                $('input.checkMe').prop('checked', false);
+          });
+     });
