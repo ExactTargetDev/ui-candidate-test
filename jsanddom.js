@@ -39,7 +39,9 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         return fruits.filter(function(v, i){
+            return fruitsToRemove.indexOf(v) == -1;
+        });
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -47,17 +49,35 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+         if(array === null || array === undefined){ array = []; }
+         if(toPush.typeof === 'Object array'){
+             for(var i = 0; i < toPush.length; i++){
+                array.push(toPush[i]);
+             }
+         }
+         else{
+            array.push(toPush);
+         }
+         return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         if (sourceStr.length = 0 || sourceStr === null || sourceStr === undefined) { return ""; }
+         else{
+            var res = sourceStr.split(',');
+            res.forEach(function(i){ if(i.indexOf(',') == -1){ return i.split(' ').join(','); }});
+            return res.join(',');
+         }
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+        var sum = 0;
+        for(var i = 0; i < arguments.length; i++){
+            sum += arguments[i];
+        }
+        return sum;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
