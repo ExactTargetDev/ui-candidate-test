@@ -1,0 +1,20 @@
+.sidenav .nav-header{
+	background: #e98300;
+	color: white;
+	text-transform: none;
+	letter-spacing: .2em;
+	font-size: 1em;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	margin-bottom: 1em;
+}
+	
+.sidenav li > a{
+	color: #333;
+}
+
+.sidenav li > a:hover
+{
+	background: #e98300;
+	color: white;
+}
