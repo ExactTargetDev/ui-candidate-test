@@ -30,14 +30,14 @@ test('findMinValue()', function(){
 
 module('Distinct');
 test('findDistinctValues()', function(){
-	ok(findDistinctValues([1,1,2,3,4,4]),[1,2,3,4], 'Remove the dupes!');
+	deepEqual(findDistinctValues([1,1,2,3,4,4]),[1,2,3,4], 'Remove the dupes!');
 
 });
 
 module('Fruits to Remove');
 test('removeFruits()', function(){
-	ok(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],['pear', 'banana']), 
-					['apple', 'orange', 'kiwi', 'plum'], 'Remove dupe fruits.');
+	deepEqual(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],['pear', 'banana']), 
+					['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Remove fruits, including dupes.');
 });
 
 module('Sum n Numbers');
@@ -47,19 +47,21 @@ test('sum()', function(){
 
 module('Push on to Array');
 test('pushOntoArray()', function(){
-    ok(pushOntoArray([1,2], 3), [1,2,3], 'Add single value to array.');
-    //deepEqual(pushOntoArray([1,2], [3,4]), [1,2,3,4], 'Concat arrays');
-    ok(pushOntoArray(null, 1), [1], 'Add value to null.');
-    ok(pushOntoArray(undefined, [3,3,2]), 'Add array to undefined.');
-    //deepEqual(pushOntoArray([1,2,3,4,5], 6), [1,2,3,4,5,6], 'ET test 1.');
+    deepEqual(pushOntoArray([1,2], 3), [1,2,3], 'Add single value to array.');
+    deepEqual(pushOntoArray([1,2], [3,4]), [1,2,3,4], 'Concat arrays');
+    deepEqual(pushOntoArray(null, 1), [1], 'Add value to null.');
+    deepEqual(pushOntoArray(undefined, [3,3,2]), [3,3,2], 'Add array to undefined.');
+    deepEqual(pushOntoArray([1,2,3,4,5], 6), [1,2,3,4,5,6], 'ET test 1.');
+    deepEqual(pushOntoArray([1,2,3,4,5], [6,7]), [1,2,3,4,5,6,7], 'ET test 2.');
 });
 
-// module('splitListStrUsingComma');
-// test('splitListStrUsingComma()', function(){
-// 	equal(splitListStrUsingComma('The, quick, brown, fox jumped over'), 'The, quick, brown, fox, jumped, over', 'ET test 1' );
-// });
+module('Split String Using Commas');
+test('splitListStrUsingComma()', function(){
+	deepEqual(splitListStrUsingComma('The, quick, brown, fox jumped over'), ['The', 'quick', 'brown', 'fox jumped over'] , 'ET test 1' );
+    deepEqual(splitListStrUsingComma(''), [], 'ET test 2.');
+});
 
 module('IsOnlyWhiteSpace');
 test('isOnlyWhitespace()', function(){
-	equal(isOnlyWhitespace('     '), true, 'This is only whitespace.');
+	equal(isOnlyWhitespace('     '), true, 'This is WHITESPACE!');
 });
