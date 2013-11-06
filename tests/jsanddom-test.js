@@ -12,3 +12,15 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+
+
+test( "Reverse String", 2, function() {
+    // Verify the method exists
+    equal( typeof reverseString, 'function', 'Must contain a reverse function' );
+    
+    var teststr = "My 1st test string";
+    
+    // Make sure the results equal a reverse of the given string and output the string
+    equal(reverseString(teststr),'gnirts tset ts1 yM', 'Expected "gnirts tset ts1 yM" as the results, the result was: ' + reverseString(teststr));
+
+});
