@@ -32,6 +32,23 @@ test( "Find Minimum Value", 2, function() {
     // Array of test data
     var testarray = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
     
+    // Locate the minium value and return
     equal( findMinValue(testarray), '-1.1', 'Expected -1.1 as the results, the result was: ' + findMinValue(testarray) );
     
 });
+
+
+test( "Find Distinct Values ", 2, function() {
+    // Verify the method exists
+    equal( typeof findDistinctValues, 'function', 'Find the distinct values function' );
+    
+    // Array of test data
+    var testarray = [['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],['pear', 'banana']];
+    
+    // Locate the distinct values in the test
+    ok( findDistinctValues(testarray), '["apple","orange","kiwi","plum","strawberry"]', 'Expected ["apple","orange","kiwi","plum","strawberry"] as the results, the result was: ' + findDistinctValues(testarray) );
+    
+});
+
+
+
