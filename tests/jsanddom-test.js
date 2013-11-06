@@ -51,4 +51,9 @@ test( "Find Distinct Values ", 2, function() {
 });
 
 
-
+test( "Do Fizz Buzz", function() {
+    // Verify the method exists
+    equal( typeof doFizzBuzz, 'function', 'Find the multiples of function' );
+    
+    ok(doFizzBuzz(),"FizzBuzz results to console");
+});
