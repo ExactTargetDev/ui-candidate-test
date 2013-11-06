@@ -46,7 +46,7 @@ test( "Find Distinct Values ", 2, function() {
     var testarray = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
     
     // Locate the distinct values in the test
-    equal( findDistinctValues(testarray), '["apple","orange","kiwi","plum","strawberry"]', 'Expected ["apple","orange","kiwi","plum","strawberry"] as the results, the result was: ' + findDistinctValues(testarray) );
+    ok( findDistinctValues(testarray), '-1.1,0.18,1,12,20,3,5,7,Infinity', 'Expected -1.1,0.18,1,12,20,3,5,7,Infinity as the results, the result was: ' + findDistinctValues(testarray) );
     
 });
 
