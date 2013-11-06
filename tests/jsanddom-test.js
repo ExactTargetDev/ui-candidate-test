@@ -121,3 +121,12 @@ test( "Only White Space", function() {
     equal(isOnlyWhitespace(' '),true,'Expected true as the results, the result was: ' + isOnlyWhitespace(' '));
 });
 
+
+test( "Javascript closure", function() {
+    // Verify the method exists
+    equal( typeof noise, 'function', 'Must have closure function' );
+    var mynoise = noise("BANG!!");
+    equal(mynoise(120),"That was a loud BANG!!, it registered almost 120 decibels.","Expected string as the results, the result was: "+mynoise(120))
+    
+});
+

@@ -131,6 +131,13 @@ function typeofconsole(data){
      }
 
      // write an example of a javascript closure
+     function noise(noise){ 
+         var sound = "That was a loud ";
+         function decibels(num){
+             return sound + noise + ", it registered almost " + num + " decibels.";
+         } 
+         return decibels; 
+     }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -140,6 +147,46 @@ function typeofconsole(data){
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     var json = {
+      "response":{
+      "personnel":[
+	     	{
+		        "firstname":"Bob",
+		        "lastname":"Smith",
+		        "city":"Aurora",
+		        "state":"IL",
+		        "zip":"60502",
+		        "phone":[
+		           {
+		           "home":"630-555-9087",
+		           "work":"630-555-2689",
+		           "mobile":"630-555-0056"
+		           }
+		        ]
+ 	         },
+		     {
+		        "firstname":"Matthew",
+		        "lastname":"Wells",
+		        "city":"Downers Grove",
+		        "state":"IL",
+		        "zip":"60515",
+		        "phone":[
+		           {
+		           "home":"630-555-9087",
+		           "work":"630-555-2689",
+		           "mobile":"815-988-7231"
+		           }
+		        ]
+ 	         }
+		
+          ]
+        }
+     }
+     // json.response.personnel[0].xxxxx
+ 
+     
+     
+     
 
 
      // Create a javascript object (DataTable) with the following:
