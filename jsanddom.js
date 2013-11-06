@@ -12,9 +12,11 @@
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+         // Run .Sort on the array and return the first value
+         values = values.sort();
+         return values[0];
+     
      }
-
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
