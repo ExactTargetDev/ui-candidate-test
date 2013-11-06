@@ -265,11 +265,44 @@ function typeofconsole(data){
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     $('body #foo #fizz a');
+     $('body #fizz a');
+     $('#foo #fizz a');
+     $('#fizz a');
+     $('.buzz a');
+
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     var arraytest = function(){
+         var anArray = [];
+	     for(var i=0;i<=4;i++){
+		     anArray.push('<li>'+(3*i)+'</li>');
+	     }
+	     for(var i=0;i<anArray.length;i++){
+		     $('#list1').append(anArray[i])
+	     }
+     }
+     arraytest()
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     var checktest = {
+         create:function(){
+            var html = '<input type="checkbox" name="firstname" value="Matt">My name is Matt<br>';
+            html += '<input type="checkbox" name="firstname" value="Bob">My name is Bob<br>';
+            html += '<input type="checkbox" name="firstname" value="Frank">My name is Frank<br>';
+            html += '<a href="#" onclick="checktest.checkuncheck(true); return false;">Check All</a><br>';
+            html += '<a href="#" onclick="checktest.checkuncheck(false); return false;">UnCheck All</a>';
+	        $('#foobar').html(html);
+	     },
+	     checkuncheck:function(check){
+		     $("#foobar input").each(function(){
+			     $(this).attr('checked', check);
+		     });
+	     }
+     }
+     checktest.create()
+     
