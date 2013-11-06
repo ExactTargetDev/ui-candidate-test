@@ -72,3 +72,14 @@ test( "Remove Fruits ", 2, function() {
     
 });
 
+test( "push Onto Array ", function() {
+    //Original array
+    var array = [1, 2, 3, 4, 5];
+    
+    //Add a single element 
+    ok(pushOntoArray(array,6),"Add a single element");
+    
+    //Add multiple elements from another array
+    ok(pushOntoArray(array,[7, 8, 9]),"Add multiple elements from another array");
+    
+});
