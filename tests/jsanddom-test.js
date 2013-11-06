@@ -112,3 +112,12 @@ test( "The sum of any", function() {
     equal(sum(1, 1, 2, 3, 5, 7),19,'Expected 19 as the results, the result was: ' + sum(1, 1, 2, 3, 5, 7));
 });
 
+
+test( "Only White Space", function() {
+    // Verify the method exists
+    equal( typeof isOnlyWhitespace, 'function', 'Return true function' );
+    
+    // Return true if only whitespace is given
+    equal(isOnlyWhitespace(' '),true,'Expected true as the results, the result was: ' + isOnlyWhitespace(' '));
+});
+
