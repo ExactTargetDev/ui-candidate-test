@@ -72,7 +72,11 @@ test( "Remove Fruits ", 2, function() {
     
 });
 
-test( "push Onto Array ", function() {
+
+test( "push Onto Array", function() {
+    // Verify the method exists
+    equal( typeof pushOntoArray, 'function', 'Push onto an array function' );
+    
     //Original array
     var array = [1, 2, 3, 4, 5];
     
@@ -83,3 +87,21 @@ test( "push Onto Array ", function() {
     ok(pushOntoArray(array,[7, 8, 9]),"Add multiple elements from another array");
     
 });
+
+
+
+test( "split List String Using Comma ", function() {
+    // Verify the method exists
+    equal( typeof splitListStrUsingComma, 'function', 'Split string function' );
+    
+    var testStr = "The, quick, brown, fox jumped over";
+    
+    //Split content by comma 
+    ok(splitListStrUsingComma(testStr),"Split content by comma");
+    
+    //return empty array 
+    ok(splitListStrUsingComma(''),"Return empty array ");
+
+    
+});
+
