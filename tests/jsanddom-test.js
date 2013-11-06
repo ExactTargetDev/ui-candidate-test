@@ -89,7 +89,6 @@ test( "push Onto Array", function() {
 });
 
 
-
 test( "split List String Using Comma ", function() {
     // Verify the method exists
     equal( typeof splitListStrUsingComma, 'function', 'Split string function' );
@@ -102,6 +101,14 @@ test( "split List String Using Comma ", function() {
     //return empty array 
     ok(splitListStrUsingComma(''),"Return empty array ");
 
+});
+
+
+test( "The sum of any", function() {
+    // Verify the method exists
+    equal( typeof sum, 'function', 'Return the sum of the arguments' );
     
+    // Find all numbers and add each to the total
+    equal(sum(1, 1, 2, 3, 5, 7),19,'Expected 19 as the results, the result was: ' + sum(1, 1, 2, 3, 5, 7));
 });
 
