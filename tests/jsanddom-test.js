@@ -130,3 +130,17 @@ test( "Javascript closure", function() {
     
 });
 
+
+test( "DataTable", function() {
+    // Verify the method exists
+    equal( typeof datatable, 'function', 'Must have function' );
+    
+    // Create new object
+    var myObj = new datatable();
+    
+    ok(myObj.addColumns("firstname","lastname","city","state","zip"),'Add Columns: "firstname","lastname","city","state","zip"')
+    ok(myObj.addRow({"firstname":"Matthew","lastname":"wells","city":"Downer Grove","state":"IL","zip":"60515"}),"Add First Row Content")
+    ok(myObj.addRow({"firstname":"Bob","lastname":"Smith","city":"Aurora","state":"IL","zip":"60502"}),"Add Second Row Content")
+    ok(myObj.getData(),"Return the data in a JSON format");
+
+});

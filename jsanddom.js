@@ -201,9 +201,67 @@ function typeofconsole(data){
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+     var datatable = function(){
+	     var row=[];
+	     var columns=[];
+	     var rownum = 0;
+	     this.addRow = function(hash){ 
+	         row[rownum] = [];
+		     for(var i=0;i<=columns.length-1;i++){
+		         row[rownum][columns[i]]=hash[columns[i]];
+		     }
+		     rownum++;
+		     return true;
+	     }
+	     this.addColumns = function(){
+	         for(var i=0;i<=arguments.length-1;i++){
+		         if($.inArray(arguments[i],columns)<0){
+		             columns.push(arguments[i]);
+		         }
+	         }
+	         return true;
+	     }
+	     this.getData = function(){
+              var json = {"response":{"personnel":[
+              ]}};
+              
+		     for(var e=0;e<=row.length-1;e++){
+		         var datarow = json.response.personnel[e] = {}
+		         for(var i=0;i<=columns.length-1;i++){
+		             datarow[columns[i]] = row[e][columns[i]];   
+		         }
+		     }
+		     typeofconsole(json);
+		     return json;
+	     }
+	     
+	     
+     }
+     
+     
+
+
+     
+     
+
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     function createselect(theid){
+         var ele = {"cat":"Cat","dog":"Dog","mouse":"Mouse"};
+
+         var html = '<select id="'+theid+'">';
+         for(var key in ele){
+	          html += '<option value="'+key+'">'+ele[key]+'</option>';
+         }
+         html += '</select>';
+         html += '<input type="button" value="Push" onclick="writetoconsole('+theid+')"  />';
+	     $('#div1').html(html);
+     }
+     
+     function writetoconsole(theid){
+	     typeofconsole($(theid).val())
+     }
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
