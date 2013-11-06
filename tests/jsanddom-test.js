@@ -43,10 +43,10 @@ test( "Find Distinct Values ", 2, function() {
     equal( typeof findDistinctValues, 'function', 'Find the distinct values function' );
     
     // Array of test data
-    var testarray = [['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],['pear', 'banana']];
+    var testarray = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
     
     // Locate the distinct values in the test
-    ok( findDistinctValues(testarray), '["apple","orange","kiwi","plum","strawberry"]', 'Expected ["apple","orange","kiwi","plum","strawberry"] as the results, the result was: ' + findDistinctValues(testarray) );
+    equal( findDistinctValues(testarray), '["apple","orange","kiwi","plum","strawberry"]', 'Expected ["apple","orange","kiwi","plum","strawberry"] as the results, the result was: ' + findDistinctValues(testarray) );
     
 });
 
@@ -56,5 +56,19 @@ test( "Do Fizz Buzz", function() {
     equal( typeof doFizzBuzz, 'function', 'Find the multiples of function' );
     
     ok(doFizzBuzz(),"FizzBuzz results to console");
+});
+
+
+test( "Remove Fruits ", 2, function() {
+    // Verify the method exists
+    equal( typeof removeFruits, 'function', 'Find the distinct values function' );
+    
+    // Array of test data
+    var fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry']
+    var fruitsToRemove = ['pear', 'banana'];
+    
+    // Locate the distinct values in the test
+    ok( removeFruits(fruits, fruitsToRemove), '["apple","orange","kiwi","plum","strawberry"]', 'Expected ["apple","orange","kiwi","plum","strawberry"] as the results, the result was: ' + removeFruits(fruits, fruitsToRemove) );
+    
 });
 

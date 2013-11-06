@@ -20,11 +20,11 @@
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          var distinct = [];
-         // intirate through the first array 
-         for(var i=0;i<values[0].length;i++){
-             // If the same value is not in the first array and is in the second add it to the distinct array 
-             if($.inArray(values[0][i],values[1])<0){
-	            distinct.push(values[0][i]);
+         values = values.sort(); 
+         for(var i=0;i<values.length;i++){
+             //if the first value is not the same as the next add to the array
+             if(values[i]!=values[i+1]){
+	             distinct.push(values[i]);
              }
          }
          console.log(distinct);
@@ -61,7 +61,16 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         var distinct = [];
+         // intirate through the first array 
+         for(var i=0;i<fruits.length;i++){
+             // If the same value is not in the first array and is in the second add it to the distinct array 
+             if($.inArray(fruits[i],fruitsToRemove)<0){
+	            distinct.push(fruits[i]);
+             }
+         }
+         console.log(distinct);
+         return distinct;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
