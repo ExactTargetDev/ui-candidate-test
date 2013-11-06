@@ -1,3 +1,13 @@
+/*Function for IE8-9 and older browsers*/
+function typeofconsole(data){
+     if(typeof console === "undefined"){
+         alert(data);
+     }else{
+         console.log(data);
+     }
+}
+
+
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
@@ -27,7 +37,9 @@
 	             distinct.push(values[i]);
              }
          }
-         console.log(distinct);
+         
+         typeofconsole(distinct);
+         
          return distinct;
      }
 
@@ -39,17 +51,17 @@
          for(var i=1;i<=100;i++){
 	         if(i%3==0||i%5==0){
 	             if(i%3==0&&i%5==0){
-		             console.log("FizzBuzz")
+		             typeofconsole("FizzBuzz")
 	             }else{
 	                 if(i%3==0){
-		                 console.log("Fizz")
+		                 typeofconsole("Fizz")
 	                 }
 	                 if(i%5==0){
-	                     console.log("Buzz");
+	                     typeofconsole("Buzz");
 	                 }
 	             }
 	         }else{
-		         console.log(i);
+		         typeofconsole(i);
 	         }
          }
          return 'FizzBuzz:ok';
@@ -69,7 +81,7 @@
 	            distinct.push(fruits[i]);
              }
          }
-         console.log(distinct);
+         typeofconsole(distinct);
          return distinct;
      }
 
@@ -85,7 +97,7 @@
          }else{
 		     array.push(toPush);
 		 }
-         console.log(array);
+         typeofconsole(array);
          return array;
      }
 
@@ -113,7 +125,7 @@
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          var regex = /^\s+$/
-         console.log(regex.test(sourceStr));
+         typeofconsole(regex.test(sourceStr));
          return regex.test(sourceStr);
          
      }
