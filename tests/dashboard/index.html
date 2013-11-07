@@ -2,6 +2,7 @@
 <html>
 <head>
 	<link type="text/css" rel="stylesheet" href="style.css" media="all" />
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 </head>
 <body>
 <div id="container">
@@ -14,7 +15,74 @@
 		<div class="float_r p10t"><a href="#">Account</a></div>
 		<div class="float_r p10t p5r white">Welcome John!</div>
 	</div>
+	<div class="clearfix 100p ">
+		<div class="float_l">
+			<div class="menu_item menu_head_container m20t">
+				<img class="p10l" src="images/interactive_banner.png" />
+			</div>
+			<div class="menu">
+				<div class="menu_item em"><a href="#">ExactTarget Email</a></div>
+				<div class="menu_item mo"><a href="#">ExactTarget Mobile</a></div>
+				<div class="menu_item so"><a href="#">CoTweet Social</a></div>
+				<div class="menu_item si line"><a href="#">ExactTarget Sites</a></div>
+				<div class="menu_item st"><a href="#">Automation Studio</a></div>
+				<div class="menu_item ab line"><a href="#">Audience Builder</a></div>
+				<div class="menu_item rb"><a href="#">Report Builder</a></div>
+				<div class="menu_item bt"></div>
+			</div>
+		</div>
+		<div class="float_l">
+			<div class="calendar"><img src="images/calendar_img.png" /></div>
+			<div class="pulse m20t">
+				<div class="logo">
+					<div class="settings">
+					    <div>
+					         <img src="images/pulse_settings.png" />
+					    </div>
+					</div>
+					<div id="menu" class="items_cont">
+						<div id="i1" class="float_l items get">
+							<div class="title">Followers</div>
+							<div class="cont"></div>
+						</div>
+						<div id="i2" class="float_l items get">
+							<div class="title">Fans</div>
+							<div class="cont"></div>
+						</div>
+						<div id="i3" class="float_l items get">
+							<div class="title">Subscribers</div>
+							<div class="cont"></div>
+						</div>
+						<div id="i4" class="float_l items get">
+							<div class="title">Foursquare</div>
+							<div class="cont"></div>
+						</div>
+						<div id="i5" class="float_l items get">
+							<div class="title">Landing Pages</div>
+							<div class="cont"></div>
+						</div>
+					</div>
+					<div class="pagintation"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-
+<script type="text/javascript">
+	$("#menu .get").each(function(){
+		$(this).click(function(){
+			changeDisplay($(this).attr("id"));
+		})
+	});
+	function changeDisplay(id){
+		$("#menu .get").each(function(){
+		    $(this).removeClass('items')
+		    $(this).removeClass('lg_items');
+		    $(this).addClass('sm_items');
+		});
+		$('#'+id).addClass('lg_items');
+		
+	}
+</script>
 </body>
 </html>
