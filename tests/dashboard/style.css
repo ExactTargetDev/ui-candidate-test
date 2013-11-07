@@ -111,6 +111,12 @@ a{text-decoration: none;}
     display:block;
 }
 
+.menu_item a:hover{
+    color:#93afbe;
+    padding:10px 0px 7px 40px;
+    display:block;
+}
+
 .menu .line{
 	border-bottom:solid 1px #e1e1e2;
 }
@@ -239,7 +245,171 @@ a{text-decoration: none;}
 }
 
 
-.pagintation{
+
+.today{
+	color:#35bcee;
+}
+
+.items .today{
+	font-size: 2.6em;
+	padding:10px 0px 0px;
+}
+
+.sm_items .today{
+	font-size: 2.6em;
+	padding:10px 0px 0px;
+}
+
+.lg_items .today{
+	font-size: 4.6em;
+	padding:10px 0px 0px;
+}
+
+.description{
+	color:#93afbe;
+	padding:0px 0px 0px;
+}
+
+.items .description{
+    font-size: 1.2em;
+}
+
+.sm_items .description{
+    font-size: 1.2em;
+}
+
+.lg_items .description{
+    font-size: 2.2em;
+}
+
+
+.total{
+	color:#93afbe;
+	padding:12px 0px 0px;
 	
+}
+
+.items .total{
+    font-size: .85em;
+}
+
+.sm_items .total{
+    font-size: .85em;
+}
+
+.lg_items .total{
+    font-size: 1.35em;
+}
+
+
+.description_top{
+	color:#93afbe;
+	padding:10px 0px 0px;
+
+}
+
+.items .description_top{
+	font-size: 1.2em;
+}
+
+.sm_items .description_top{
+	font-size: 1.2em;
+}
+
+.lg_items .description_top{
+	font-size: 2.2em;
+}
+
+
+.today_bottom{
+	color:#35bcee;
+	padding:0px 0px 0px;
+}
+
+.items .today_bottom{
+	font-size: 2.6em;	
+}
+
+.sm_items .today_bottom{
+	font-size: 2.6em;	
+}
+
+.lg_items .today_bottom{
+	font-size: 4.6em;
+}
+
+
+.today_bottom span{
+	font-size: .7em;
+	color:#93afbe;
+}
+
+
+
+.total_top{
+color: #93afbe;
+padding: 8px 0px 0px;
+
+}
+.items .total_top{
+	font-size: .85em;
+}
+.sm_items .total_top{
+	font-size: .85em;
+}
+.lg_items .total_top{
+	font-size: 1.35em;
+}
+
+.map_title{
+	font-size: 1em;
+	padding: 5px 4px 0px 4px;
+	color: #93afbe;
+	text-align: left;
+}
+.items .map_title{
+	font-size: 1em;
+	padding: 5px 4px 6px 4px;
+	color: #93afbe;
+}
+.sm_items .map_title{
+	font-size: .9em;
+	padding: 5px 4px 6px 4px;
+	color: #93afbe;
+}
+.lg_items .map_title{
+	font-size: 1.13em;
+	padding: 8px 6px 10px 6px;
+	color: #666666;
+}
+.map_title span{
+	float:right;
+}
+
+
+.items .map{
+	background: url('images/foursquare_map.png') no-repeat;
+	background-size: 165px 64px;
+	margin: 0 auto;
+	width: 165px;
+	height: 64px;
+}
+.sm_items .map{
+	background: url('images/foursquare_map.png') no-repeat;
+	margin: 0 auto;
+	width: 144px;
+	height: 65px;
+	background-size: 144px 65px;
+}
+.lg_items .map{
+	background: url('images/foursquare_map.png') no-repeat;
+	margin: 0 auto;
+    width: 254px;
+    height: 121px;
+    margin-top:10px;
+}
+
+
+.pagintation{
 	background: url('images/pagination_buttons.png') no-repeat center center;
 }
