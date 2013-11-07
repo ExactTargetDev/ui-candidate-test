@@ -10,11 +10,16 @@
 	    <img class="float_l p10t p10l" src="images/logo.png" />
 	    <div class="float_r p10t p10r"><a href="#">Logout</a></div>
 	    <div class="float_r p10t p5r p5l white">|</div>
-		<div class="float_r p10t"><a href="#">Help</a></div>
+		<div class="float_r p10t"><a href="#" onclick="helpmenu();return false;">Help</a></div>
 		<div class="float_r p10t p5r p5l white">|</div>
 		<div class="float_r p10t"><a href="#">Account</a></div>
 		<div class="float_r p10t p5r white">Welcome John!</div>
+
 	</div>
+	<div id="helpmenu">
+		<div class="mytitle">Help</div>
+		<div id="helpcont"></div>
+    </div>
 	<div class="clearfix 100p ">
 		<div class="float_l">
 			<div class="menu_item menu_head_container m20t">
@@ -101,6 +106,22 @@
 		});
 		$('#'+id).addClass('lg_items');
 		
+	}
+	function helpmenu(){
+	    var helpmenu = $('#helpmenu');
+	    if(helpmenu.is(':hidden')){
+		    helpmenu.show()
+	    }else{
+		    helpmenu.hide()
+	    }
+	    $.getJSON( "json/help.json", function( data ) {
+	        var html = '';
+            for(var i=0;i<=data.help.length-1;i++){
+	            html += '<div class="link"><a href="'+data.help[i].URL+'">'+data.help[i].title+"</div>";
+            }
+            $('#helpcont').html(html);
+            
+        });
 	}
 </script>
 </body>
