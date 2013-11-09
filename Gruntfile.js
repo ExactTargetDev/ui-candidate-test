@@ -59,7 +59,7 @@ module.exports = function(grunt) {
       }
     },
     qunit: {
-      files: ['test/**/*.html']
+      files: ['tests/**/*.html']
     },
     watch: {
       gruntfile: {
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
         files: [
           '{,*/}*.html',
           '{,*/}*.css',
-          'js/{,*/}*.js',
+          '{,*/}*.js',
           'images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
