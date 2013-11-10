@@ -8,11 +8,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
-    banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-      '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-      '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-      ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
+    banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %>\n' + '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' + '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' + ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
     concat: {
       options: {
@@ -48,27 +44,40 @@ module.exports = function(grunt) {
         eqnull: true,
         browser: true,
         globals: {
-          jQuery: true
+          jQuery: true,
+          console: true,
+          asyncTest: false,
+          deepEqual: false,
+          equal: false,
+          expect: false,
+          module: false,
+          notDeepEqual: false,
+          notEqual: false,
+          notStrictEqual: false,
+          ok: false,
+          QUnit: false,
+          raises: false,
+          start: false,
+          stop: false,
+          strictEqual: false,
+          test: false
         }
       },
       gruntfile: {
         src: 'Gruntfile.js'
-      },
-      lib_test: {
-        src: ['lib/**/*.js', 'test/**/*.js']
       }
     },
     qunit: {
-      files: ['tests/**/*.html']
+      files: ['tests/**/*.html'],
     },
     watch: {
       gruntfile: {
         files: ['<%= jshint.gruntfile.src %>'],
         tasks: ['jshint:gruntfile']
       },
-      lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test', 'qunit']
+      javascript: {
+        files: ["tests/*.js", "jsanddom.js"],
+        tasks: "test"
       },
       livereload: {
         options: {
