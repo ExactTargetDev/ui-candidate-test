@@ -12,12 +12,18 @@
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-
+        if(values.length >= 0) {
+            values.sort(function(a,b){ return a-b; });
+            return values[0];
+        }
+        else {
+            return undefined;
+        }
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
