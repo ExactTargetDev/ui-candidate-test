@@ -24,7 +24,7 @@ test( "Reverse a String", 2, function() {
 module( "JS and DOM tests" );
 test( "Find minimum value", 4, function() {
     // Verify the method exists
-    equal( typeof reverseString, 'function', 'Must contain a minimum value function' );
+    equal( typeof findMinValue, 'function', 'Must contain a minimum value function' );
 
     equal( findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ), '-1.1', 'Expected -1.1 as the result, the result was: ' + findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ) );
 
