@@ -350,3 +350,36 @@ $(function(){
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
 
+function createCheckboxList(array) {
+	var container = $('#foobar');
+		newForm = $('<form>'),
+		checkAll = $('<a href="javascript:void(0)" id="selectAll">Select all</a>'),
+		checkNone = $('<a href="javascript:void(0)" id="SelectNone">Select none</a>');
+		selectOptions = $('<div id="selectOptions">').append(checkAll).append(checkNone);
+
+	// add checkboxes
+	for (var i=0; i < array.length; i++) {
+		newForm.append('<input type="checkbox">' + array[i] + '</input>')
+	}
+
+	$(container).append(newForm);
+
+	// add links
+	$(container).append(selectOptions);
+
+	$("#selectOptions a").on("click", function() {
+		if( $(this).attr('id') === 'selectAll' ) {
+			$('#foobar input').prop("checked", true);
+		}
+		else {
+			$('#foobar input').prop("checked", false);
+		}
+	});
+
+}
+
+$(function(){
+	createCheckboxList([1, 2 , 3 , 4 , 5]);
+});
+
+
