@@ -31,7 +31,7 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+
      }
 
      // You have a master array of strings, where each element is a fruit name.
