@@ -44,11 +44,11 @@ else {
 
 // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
 function findDistinctValues(values) {
-// requires jQuery. Thought about using native .filter, but it's JavaScript 1.6 / ECMAScript 5th Edition
+	// requires jQuery. Thought about using native .filter, but it's JavaScript 1.6 / ECMAScript 5th Edition
 
-return $.grep(values, function(el, index) {
-	return index == $.inArray(el, values);
-});
+	return $.grep(values, function(el, index) {
+		return index == $.inArray(el, values);
+	});
 }
 
 // Write a function that logs the numbers from 1 to 100 to the console.
@@ -82,7 +82,19 @@ function doFizzBuzz() {
 // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
 // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
 function removeFruits(fruits, fruitsToRemove) {
+	// would probably want to ignore capitalization when used in production
 
+	for(var i = 0; i < fruitsToRemove.length; i++) {
+		for(var j = 0; j < fruits.length; j++) {
+			if (fruitsToRemove[i] === fruits[j]) {
+				fruits.splice([j], 1);
+
+			}
+		}
+
+	}
+
+	return fruits;
 }
 
 // Write a function to push either a simple value or an array of values onto a specified array.
