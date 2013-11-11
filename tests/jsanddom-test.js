@@ -139,7 +139,7 @@ test( "Illsutrate closure", 3, function() {
 
 });
 
-test( "Data Table", 2, function() {
+test( "Data Table", 3, function() {
     // Verify the method exists
     equal( typeof DataTable, 'function', 'Must contain a datatable function' );
 
@@ -150,11 +150,17 @@ test( "Data Table", 2, function() {
     equal( dataTable.getData() , '[{\"column1\":\"value1A\",\"column2\":\"value1B\",\"column3\":\"value1C\"},{\"column1\":\"value2A\",\"column2\":\"value2B\",\"column3\":\"value2C\"}]',
 		"Expected [{\"column1\":\"value1A\",\"column2\":\"value1B\",\"column3\":\"value1C\"},{\"column1\":\"value2A\",\"column2\":\"value2B\",\"column3\":\"value2C\"}] as the result, the result was: " + dataTable.getData() );
 
+    // add a fourth column
+	dataTable.addColumns('column4');
+	dataTable.addRow('value3A', 'value3B', 'value3C', 'value3D');
+
+    equal( dataTable.getData() , '[{\"column1\":\"value1A\",\"column2\":\"value1B\",\"column3\":\"value1C\"},{\"column1\":\"value2A\",\"column2\":\"value2B\",\"column3\":\"value2C\"},{\"column1\":\"value3A\",\"column2\":\"value3B\",\"column3\":\"value3C\",\"column4\":\"value3D\"}]',
+	"Expected [{\"column1\":\"value1A\",\"column2\":\"value1B\",\"column3\":\"value1C\"},{\"column1\":\"value2A\",\"column2\":\"value2B\",\"column3\":\"value2C\"}] as the result, the result was: " + dataTable.getData() );
+
 });
 
 // console.log(  );
 // console.log( dataTable.addRow('value1A', 'value1B', 'value1C') );
 // console.log( dataTable.addRow('value2A', 'value2B', 'value2C') );
-// console.log( dataTable.addColumns('column4') );
-// console.log( dataTable.addRow('value3A', 'value3B', 'value3C', 'value3D') );
+
 // console.log( dataTable.getData() );

@@ -247,6 +247,8 @@ var people = [
 
 
 // no IE7 support
+// does not define empty cells
+// does not support duplicate column names
 // I'm not sure that a 'string array' is the best way to store a row that's going 
 // to output to JSON. It seems like a hash with column names would be best for _rows.
 
