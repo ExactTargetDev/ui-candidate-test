@@ -1,0 +1,79 @@
+.banner  {	
+	background-color: #424e57;
+	color: #fff;
+
+	padding-top: 10px;
+	padding-bottom: 3px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	.logo {	
+		.fontsize(1.6);
+		float: left;
+		max-width: 200px;
+		margin-bottom: 3px;
+	}
+}
+
+.topMenu {	
+	float: right;
+	min-width: 250px;
+	.fontsize(1.1);
+
+	li {
+		float: left;
+	}
+
+	.intro {
+		float: left;
+	}
+
+	nav {	
+		float: right;
+
+	a {	
+		color: @blueLight;
+		padding-left: 10px;
+		padding-right: 10px;
+		
+		&:hover, &:hover:visited {
+			color: #fff;
+		}
+	}
+
+	& > a {
+		border-right: 1px solid @grayLight;
+	}
+	
+	a:last-child {	
+		border-right: none;
+	}
+
+	}
+}
+
+.bannercontentwrapper {	
+	@media @desktop {
+		padding-bottom: 20px;	
+	}
+}
+
+.bannercontent {	
+	padding-top: 20px;
+	padding-bottom: 20px;
+	.centerblock;
+	
+	@media @desktop {
+		padding: 0;
+		float: right;
+		width: 480px;
+	}
+}
+
+/*------------------------------------------  
+=menu
+------------------------------------------*/
+
+
+
+/* END menu */

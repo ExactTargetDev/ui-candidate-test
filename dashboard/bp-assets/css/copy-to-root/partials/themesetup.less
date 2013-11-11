@@ -1,0 +1,325 @@
+// ------------------------------------------  
+// THEME SETUP
+// -- Variables and site-wide items typically changed only once
+// ------------------------------------------
+
+@import "../wpbp-assets/css/vendor/3L/3L.less";	
+@import "../wpbp-assets/css/modules/mixins.less";
+@import "../wpbp-assets/css/partials/custom-reset.less";
+@import "../modules/mediaqueries.less";
+
+// ------------------------------------------  
+// =COLORS
+// ------------------------------------------*/
+
+@black:	#000;
+@grayDark: #4a4a4a;
+@grayDarker: #2c2c2c;
+@gray: #dbdbdb;
+@grayMedium: #dddddd;
+@grayLight:	#f6f6f8;
+@grayLighter:	#ededed;
+@white:	#fff;
+
+@linkColor:	#000;
+@linkColorHover:	#000;
+
+// ------------------------------------------  
+// =TYPOGRAPHY
+// ------------------------------------------*/
+
+@serifFontFamily: Georgia, "Times New Roman", Times, serif;
+@sansFontFamily: Arial, sans-serif;
+
+@brandFont: Arial, sans-serif;
+@bodyFont: Arial, sans-serif;
+
+// ------------------------------------------  
+// SITEWIDE LAYOUT
+// ------------------------------------------*/
+.btn {	
+		
+}
+
+
+.pagewrapper {
+  position: relative;
+  max-width: 960px;
+
+  margin-left: auto;
+  margin-right: auto;
+  
+  // Fixed width for IE
+	.lt-ie9 & {
+			width: 960px;
+	}
+    
+}
+
+@mobilepadding: 5%;
+@tabletpadding: 15px;
+
+.pagepadding {
+
+	@media screen and (max-width: 600px)  {
+		padding-left: @mobilepadding / 2;
+		padding-right: @mobilepadding / 2;	
+	}
+
+	@media screen and (max-width: 768px)  {
+		padding-left: @tabletpadding;
+		padding-right: @tabletpadding;
+	}	
+
+}
+
+.pagemargin {
+	margin-left: @mobilepadding / 2;
+	margin-right: @mobilepadding / 2;
+
+	@media screen and (max-width: 768px)  {
+		margin-left: @tabletpadding;
+		margin-right: @tabletpadding;
+	}	
+	
+}
+
+/* Hide and show based on media queries */
+.smallscreenonly {
+	@media @desktop { 	
+		display: none;
+	}	
+}
+
+.desktoponly {
+		display: none;
+
+	@media @notDesktop {
+
+	}	
+}
+
+// ------------------------------------------  
+// BODY and hyperlinks
+// ------------------------------------------*/
+
+a,
+a:visited,
+a:visited:focus {
+  color: @linkColor;
+  #3L.transition(all, 0.5s, ease);
+  
+  .no-touch &:hover, .no-touch &:hover:visited {
+	  color: @linkColorHover;
+  }
+
+  &:before, &:before {
+    #3L.transition(all, 0.5s, ease);
+  }
+  
+  &:hover:before, &:hover:visited:before {
+    #3L.transition(all, 0.5s, ease);
+  }
+
+  &:after, &:after {
+    #3L.transition(all, 0.5s, ease);
+  }
+
+  &:hover:after, &:hover:visited:after {
+    #3L.transition(all, 0.5s, ease);
+  }
+  
+  &:active {
+    color: #B3B3A5;
+  }
+  &:link {
+    -webkit-tap-highlight-color: #B3B3A5;
+  }
+
+}
+
+html {
+	font-size: 62.5%; // so that 10px = 1em
+}
+
+body {
+    color: #474747;
+    margin: 0;
+    font-family: @bodyFont;
+    line-height: 1.22;
+    background: @grayLighter repeat 0px 0px;
+		// Always show scroll for Webkit / Blink rendering engines, since they exclude scrollbar widths for media queries. This keeps browsers consistent
+  	overflow-y: scroll;
+}
+
+
+/*------------------------------------------  
+=h1s
+------------------------------------------*/
+
+h1 {
+	font-family: @brandFont;
+  font-weight:normal;
+  color:#111111;
+  .fontsize(2.4);
+  line-height:1;
+  margin-bottom:0.5em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0;
+}
+h2 {
+	font-family: @brandFont;
+  font-weight:normal;
+  color:#111111;
+  .fontsize(1.8);
+  margin-bottom:0.75em;
+  font-weight: 700;
+    padding: 0;
+}
+h3 {
+	font-family: @brandFont;
+  font-weight:normal;
+  color:#111111;
+  .fontsize(1.6);
+  line-height:1;
+  margin-bottom:1em;
+  padding: 0;
+}
+h4 {
+	font-family: @brandFont;
+  font-weight:normal;
+  color:#111111;
+  .fontsize(1.5);
+  line-height:1.25;
+  margin-bottom:1.25em;
+  padding: 0;
+}
+h5 {
+	font-family: @brandFont;
+  font-weight:bold;
+  color:#111111;
+  .fontsize(1.4);
+  margin-bottom:1.5em;
+}
+h6 {
+	font-family: @brandFont;
+  font-weight:bold;
+  color:#111111;
+  .fontsize(1.4);
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration:none;
+}
+
+
+/* END h1s */
+
+
+
+/*------------------------------------------  
+=PRIMARY
+------------------------------------------*/
+
+.wrapper {	
+
+}
+
+.primarywrapper {
+
+}
+
+article .wp-post-image {
+
+}
+
+/* primary content - - - - - - - - - - - - - - - - - - - - -  */
+
+//semantic grid
+@columns: 16;
+@column-width: 60;
+@gutter-width: 30;
+
+@total-width: 100%; // Switch from pixels to percentages
+
+.primary {
+	.pagemargin;
+	
+	.main {
+		.group;
+		
+		.lt-ie8 & {	
+			width: 580px;
+		}
+		
+		iframe {	
+			max-width: 100% !important;	
+		}
+		
+		p {	
+			.fontsize(1.4);	
+		}
+
+		h1 {
+		}
+		
+		h3 {	
+
+		}
+	
+		
+	}
+		
+}
+
+.containerwrapper {	
+
+}
+
+
+.primary {	
+	.container {
+		position: relative;	
+
+	}
+	
+}
+
+
+.home .primary {
+
+
+	.main {	
+		-webkit-transform: translate3d(0, 0, 0);
+
+	}
+
+}
+
+
+article {
+	.fontsize(1.4);
+
+  p {
+    margin:0 0 10px 0;
+    line-height:150%;
+  }
+
+  ul {
+    list-style:square;
+    padding:5px 0 10px 30px;
+    
+    li {
+	    margin-bottom:8px;
+	    }
+  }
+
+}
+
+.main-fullwidth {
+
+}
+
+
+/* END primary */

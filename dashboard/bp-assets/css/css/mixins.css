@@ -1,0 +1,41 @@
+/*------------------------------------------  
+=MIXINS
+------------------------------------------*/
+/************************************
+	For CSS image replacement fade on hover transition, 
+	Span child element fades on and off with mouse over.
+	
+	USAGE: #llama.spriteHoverFade(50px, 50px, '../img/sprites.png', '0px', '0px', '-50px', '0px');
+************************************/
+/* Justify inline block elements for a percentage grid without specifying margins: LESS mixin http://www.barrelny.com/blog/text-align-justify-and-rwd/ */
+.jgroup {
+  text-align: justify;
+  font-size: .01px;
+}
+.jgroup:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+#llama .nofilter {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+#llama .ir {
+  text-indent: -9999px;
+  display: block;
+  font-size: 1px;
+}
+#llama .upper {
+  text-transform: uppercase;
+}
+/************************************
+* Transition
+*
+* @what?: Defines a CSS3 transition
+*
+* @params: property,    default = all
+*          duration,    default = .5s
+*          ease,        default = linear
+*          delay,       default = .0s
+*
+************************************/

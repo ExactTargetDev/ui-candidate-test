@@ -1,0 +1,238 @@
+@import "../vendor/3L/3L.less";	
+
+/*------------------------------------------  
+=RESET
+------------------------------------------*/
+
+/* stops text from floating around (text wrap) around a flaoted image/element */
+.notextwrap {	
+	overflow:hidden;
+}
+
+/* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
+body { 
+	-webkit-backface-visibility: hidden;
+}
+
+// remove italics
+address {
+  font-style: normal;
+}
+
+// Hide visually, but make available for screenreaders and search englines
+.hidden, .visuallyhidden {
+    position: absolute !important;
+    clip: rect(1px1px1px1px);
+    /* IE6, IE7 */
+    clip: rect(1px,1px,1px,1px);
+}
+
+// Overwrite or reverse .hidden
+// Takes one parammeter, that is the position override
+.shown(@position: 'static') {
+    position: ~"@{position}" !important;
+    clip: auto;
+    /* IE6, IE7 */
+    clip: auto;
+}
+
+// Center block element
+.centerblock {	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// same as clearfix 
+// Use .group class (instead of clearfix) on parent to clear nested/float columns.
+.group {
+	zoom:1;	
+	
+	&:before, &:after { 
+		content:""; 
+		display:table; 
+	}
+	
+	&:after{ 
+		clear: both; 
+	}
+}
+
+.clearfix {
+    zoom: 1;
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: left;
+    }
+}
+
+
+
+// add transition to buttons and input fields
+input, button {	
+  #3L.transition('background-color', .5s, ease);
+  
+  .no-touch &:hover, .no-touch &:hover:visited {
+  	#3L.transition('background-color', .5s, ease);
+  }
+}
+
+
+// Prevent "flash of unstyled content" during page load. Fade in opacity with JavaScript.
+.js .fouc {	
+	opacity: 0;
+}
+
+article {
+
+	img {	
+		border: 1px solid #c1c1c1;	
+	}
+
+  p {
+    margin:0 0 10px 0;
+  }
+
+  ul {
+    list-style:square;
+    padding:5px 0 10px 30px;
+    
+    li {
+	    margin-bottom:8px;
+	    }
+  }
+
+}
+
+// to force long words to break
+article {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+// Make media responsive
+.primary {
+	img,
+	figure,
+	embed,
+	object,
+	video {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+	}
+}
+
+// reset ul to no style
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a img {
+	border: none;
+}
+
+address {	
+	font-style: normal;	
+}
+
+nav a {
+	text-decoration: none;
+}
+
+/* http://css-tricks.com/things-it-might-be-funuseful-to-try-the-universal-selector-on/ */
+* {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box; 
+  background-repeat: no-repeat;
+}
+
+blockquote {
+  margin: 10px 10px 10px 10px;
+  font-style: italic;
+}
+
+/* Tables */
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: inherit;
+  margin: 1.5em 10px;
+}
+
+thead {
+  background: #ccc;
+  font-weight: 700;
+}
+
+th {
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
+  padding: .25em 10px;
+}
+
+tbody {
+
+}
+
+// zebra stripes
+tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+td {
+padding: 4px 10px;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+/* Hide for both screenreaders and browsers and hide print only items. See print.less */
+.printonly {
+  display: none;
+  visibility: hidden;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+
+.invisible {
+  visibility: hidden
+}
+
+/* floats  */
+
+.left {
+  float: left
+}
+
+.center {
+  text-align: center
+}
+
+.right {
+  float: right
+}
+
+// Remove ALL margina nd padding in headings, please add in a OOCSS way.
+h1, h2, h3, h4, h5, h6 {	
+	margin: 0;	
+	padding: 0;
+}

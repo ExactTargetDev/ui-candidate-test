@@ -1,0 +1,4 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - -
+	Safe Toggle Slide
+	Show/Hide an element (similar to bootstrap's NavBar JavaScript)
+- - - - - - - - - - - - - - - - - - - - - - - - */(function(e){"use strict";e.fn.safeToggle=function(t){function r(e){e.slideUp(0,function(){e.removeClass("collapsed").slideDown("fast")})}function i(e){e.slideUp("slow",function(){e.addClass("collapsed").slideDown(0)})}var n=e(this);t==="show"&&n.hasClass("collapsed")?r(n):t==="hide"&&!n.hasClass("collapsed")?i(n):typeof t=="undefined"&&!n.hasClass("collapsed")?i(n):typeof t=="undefined"&&n.hasClass("collapsed")&&r(n)}})(jQuery);

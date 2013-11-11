@@ -1,0 +1,151 @@
+/*------------------------------------------  
+=MIXINS
+------------------------------------------*/
+@import "../vendor/3L/3L.less";
+
+
+/************************************
+	For CSS image replacement fade on hover transition, 
+	Span child element fades on and off with mouse over.
+	
+	USAGE: #llama.spriteHoverFade(50px, 50px, '../img/sprites.png', '0px', '0px', '-50px', '0px');
+************************************/
+
+.lastmargin {
+	&:last-child {	
+		margin-right: 0;
+	}
+}
+
+.serif {	
+	font-family: @serifFontFamily;
+}
+
+.sans {	
+	font-family: @sansFontFamily;
+}
+
+/* Justify inline block elements for a percentage grid without specifying margins: LESS mixin http://www.barrelny.com/blog/text-align-justify-and-rwd/ */
+
+.jgroup {
+	text-align: justify;
+	font-size: .01px;
+
+	&:after{
+	    content: '';
+	    display: inline-block;
+	    width: 100%;
+	}
+}
+
+#llama {
+
+	// for SVG icons
+	.icon {	
+		display: inline-block;
+		background-position: 0 .2em;
+		background-repeat: no-repeat;
+		height: 1.2em;
+		width: 1.4em;
+		background-size: contain;
+	}
+
+	.spriteHoverFade(@width: 10px, @height: 10px, @imageURL: '', @offsetX: 0px, @offsetY: 0px, @hoverOffsetX: 50px, @hoverOffsetY: 50px) {
+		background-position: ~"@{offsetX}" ~"@{offsetY}";
+		display: inline-block;
+		position: relative;
+		text-indent: -9999px;
+		width: @width;
+		height: @height;
+		background-image: url("@{imageURL}");
+		background-repeat: no-repeat;
+	
+		span {
+			position: absolute;
+			top: 0; 
+			left: 0; 
+			bottom: 0; 
+			right: 0;
+			background-image: url("@{imageURL}");
+			background-position: ~"@{hoverOffsetX}" ~"@{hoverOffsetY}";
+			#3L.opacity(0);
+			.transition(opacity, 0.5s, ease);
+		}
+	
+		&:hover span {
+			#3L.opacity(1);
+		}
+	
+	}
+
+	// just shorthand
+	.transition(@attribute: all) {	
+		#3L.transition(@attribute 0.5s ease);
+	}
+
+	// run after background gradient to remove MS filter
+	.nofilter {	
+		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);	
+	}
+	
+	// image replace / hide text, used with <a> tags typically
+	.ir {	
+		text-indent: -9999px;
+		display: block;
+		font-size: 1px;	
+	}
+	
+	// rgba from hex and alpha
+	.bg-opacity(@color: @white, @alpha: 1) {
+		background-color: @color;
+		background-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+	}
+	
+	// shorthand for uppercase transform
+	.upper {
+		text-transform: uppercase;
+	}
+	
+	.noflicker {
+		-webkit-transform:translate3d(0,0,0);
+		-webkit-transform-style: translate3d(0,0,0);
+		-o-transform-style: translate3d(0,0,0);
+		transform-style: translate3d(0,0,0);
+	}
+
+}
+
+/************************************
+* Transition
+*
+* @what?: Defines a CSS3 transition
+*
+* @params: property,    default = all
+*          duration,    default = .5s
+*          ease,        default = linear
+*          delay,       default = .0s
+*
+************************************/
+.transition(@property: all, @duration: .5s, @ease: linear, @delay: .0s) {
+  -webkit-transition: @arguments;
+     -moz-transition: @arguments;
+       -o-transition: @arguments;
+          transition: @arguments;
+}
+  
+
+// Use rems with fallback to pixels: 1.6rem fallsback to 16px
+// This is based on an rem equalling 10px;
+.fontsize(@sizeValue){
+  @remValue: @sizeValue;
+  @pxValue: (@sizeValue * 10);
+  font-size: ~"@{pxValue}px"; 
+  font-size: ~"@{remValue}rem";
+}
+
+// Use pixels to generate rems font-size
+.font-size-rems(@px-size){
+	@rem-size: @px-size / @base-font-size;
+	font-size: ~"@{px-size}px";
+	font-size: ~"@{rem-size}rem";
+}

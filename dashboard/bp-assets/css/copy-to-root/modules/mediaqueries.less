@@ -1,0 +1,70 @@
+// ------------------------------------------  
+// MEDIA QUERIES
+// ------------------------------------------*/
+
+// The following are defaults for media queries. Additional custom measurements may be needed for certain elements, although non-content-based breakpoints are quite convenient...
+
+// P = Portrait orientation
+// L = Landscape orientation
+
+// Proportional media queries using ems
+// That is browser base font size: ex. - 16px / 14pt / 1em
+// http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/
+@baseFontSize: 16;
+@bfs: 16;							// shorthand duplicate
+
+// Breakpoints
+// These are em values based off of pixel values
+@phoneValueMax: ( 599 / @bfs ) + 0em;
+@tabletPValue: ( 768 / @bfs ) + 0em;;
+@desktopValue: ( 768 / @bfs ) + 0em;;
+@desktopWideValue: ( 960 / @bfs ) + 0em;
+
+// Modified variables
+// These are derrivative variables so that breakpoints don't overlap.
+// That is, the widest tablet width isn't the same as the smallest desktop width.
+@onePixel: 0.063em;
+@desktopValueMinusOne: @desktopValue - @onePixel;
+@desktopWideValueMinusOne: @desktopWideValue - @onePixel;
+@phoneValueMin: ( 320 / @bfs ) + 0em;;
+@phoneValuePlusOne: (@phoneValueMin + @onePixel);
+@tabletPValueMinusOne: @tabletPValue - @onePixel;
+@tabletPValuePlusOne: @tabletPValue + @onePixel;
+@tabletValueMin: @phoneValueMax + @onePixel;
+
+// Actual queries variables that can be called
+@phone: ~"screen and (max-width: @{phoneValueMax} )";
+@phoneP: ~"screen and (max-width: @{phoneValueMin}";
+@phoneL: ~"screen and (min-width: @{phoneValuePlusOne}) and (max-width: @{phoneValueMax}px)";
+
+@phoneAndTablet: ~"screen and (max-width: @{tabletPValue})";
+@tablet: ~"screen and (min-width: @{tabletValueMin}) and (max-width: @{desktopValueMinusOne})";
+@tabletUp: ~"screen and (min-width: @{tabletValueMin})";
+@tabletP: ~"screen and (min-width: @{tabletValueMin}) and (max-width: @{tabletPValue})";
+@tabletPUp: ~"screen and (min-width: @{tabletPValue})";
+@tabletPDown: ~"screen and (max-width: @{tabletPValueMinusOne})";
+@tabletL: ~"screen and (min-width: @{tabletPValuePlusOne}) and (max-width: 1024px)";
+
+@desktop: ~"screen and (min-width: @{desktopValue})";
+@notDesktop: ~"screen and (max-width: @{desktopValueMinusOne})";
+@desktopWide: ~"screen and (min-width: @{desktopWideValue})";
+@notDesktopWide: ~"screen and (max-width: @{@desktopWideValueMinusOne})";
+
+/* EXAMPLE USE:
+
+ GOOD using variable:
+ @media all and (max-width: @tabletWidth) {
+   body {
+     
+   }
+ }
+ 
+ BETTER with embedded media queries:
+ body {
+ 	@media @tabletWidth {
+ 		background: #000;
+ 	}
+ }
+ 
+Better is subjective. Embedded media queries do increase file size, but we are probably talking about 20 kilobytes per site. With compression, I would prefer a more readable, more object oriented (everything related to an HTML node is next to each other). If the CSS got too large, I would recommend breaking it into separate files and loading it in modules.
+*/
