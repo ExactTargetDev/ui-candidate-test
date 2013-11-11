@@ -152,6 +152,32 @@ function isOnlyWhitespace(sourceStr) {
 
 // write an example of a javascript closure
 
+/**
+ * whoIsAlex
+ *
+ * Has get and setter of private variable identity which is not public due to closure,
+ * but can be set via the public method exposed in return. _identity is within the scope
+ * for the get and set methods, but not within the scope of window.
+ */
+
+var whoIsAlex = (function() {
+	// private variable
+	var _identity = 'A man';
+
+	return {
+		setIdentity: function(newIdentity) {
+			_identity = newIdentity;
+		},
+		getIdentity: function() {
+			return _identity;
+		}
+	};
+})();
+
+console.log( whoIsAlex.getIdentity() );
+whoIsAlex.setIdentity('A legend');
+console.log( whoIsAlex.getIdentity() );
+
 // define a json object that represents a collection of people.
 // each person should have the following properties
 // - first name
