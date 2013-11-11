@@ -102,11 +102,9 @@ function removeFruits(fruits, fruitsToRemove) {
 // If toPush is a simple value, it should be pushed onto array as an element.
 // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
 function pushOntoArray(array, toPush) {
-
-	if (typeof toPush === 'number') {	
+	if (typeof toPush === 'number') {
 		array.push(toPush);
 	}
-
 	// Thought about using native .isArray, but it's JavaScript 1.8.5 / ECMAScript 5th Edition
 	else if (Object.prototype.toString.call( toPush ) === '[object Array]' && toPush.length < 65537 ) {
 		// Hard limit for using apply with an array. See https://bugs.webkit.org/show_bug.cgi?id=80797
@@ -118,12 +116,16 @@ function pushOntoArray(array, toPush) {
 
 // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
 function splitListStrUsingComma(sourceStr) {
- // FILL THIS IN
+	if (sourceStr.length == 0) {
+		return [];
+	}
+	// spaces at the start of array items should probably be trimmed--depending on the application
+	return sourceStr.split(',');
 }
 
 // Write a function that will take any number of arguments and return their sum
 function sum() {
- // FILL THIS IN
+
 }
 
 // Write a function that will return true if a specified string consists of only whitespace.

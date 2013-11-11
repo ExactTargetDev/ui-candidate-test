@@ -89,3 +89,16 @@ test( "Push value or array onto array", 3, function() {
 	deepEqual( pushOntoArray( [1, 2, 3, 4, 5], [7, 8, 9] ), [1, 2, 3, 4, 5, 7, 8, 9],
 		'Expected [1, 2, 3, 4, 5, 7, 8, 9] as the result, the result was: ' + pushOntoArray( [1, 2, 3, 4, 5], [7, 8, 9] ) );
 });
+
+
+test( "Split string using commas", 3, function() {
+    // Verify the method exists
+    equal( typeof splitListStrUsingComma, 'function', 'Must contain a split string using commas function' );
+
+    deepEqual( splitListStrUsingComma( 'The, quick, brown, fox jumped over'), ['The', ' quick', ' brown', ' fox jumped over'],
+		"Expected ['The', 'quick', 'brown', 'fox jumped over'] as the result, the result was: " + splitListStrUsingComma( 'The, quick, brown, fox jumped over') );
+
+	deepEqual( splitListStrUsingComma( '' ), [],
+		'Expected empty string as the result, the result was: ' + splitListStrUsingComma( '' ) );
+});
+
