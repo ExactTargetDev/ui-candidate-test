@@ -77,3 +77,15 @@ test( "Remove fruits", 2, function() {
 		"Expected ['apple', 'orange', 'kiwi', 'plum', 'strawberry'] as the result, the result was: " + 
 	    removeFruits( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana'] ) );
 });
+
+
+test( "Push value or array onto array", 3, function() {
+    // Verify the method exists
+    equal( typeof pushOntoArray, 'function', 'Must contain a remove fruits function' );
+
+    deepEqual( pushOntoArray( [1, 2, 3, 4, 5], 6 ), [1, 2, 3, 4, 5, 6],
+		'Expected [1, 2, 3, 4, 5, 6] as the result, the result was: ' + pushOntoArray( [1, 2, 3, 4, 5], 6 ) );
+
+	deepEqual( pushOntoArray( [1, 2, 3, 4, 5], [7, 8, 9] ), [1, 2, 3, 4, 5, 7, 8, 9],
+		'Expected [1, 2, 3, 4, 5, 7, 8, 9] as the result, the result was: ' + pushOntoArray( [1, 2, 3, 4, 5], [7, 8, 9] ) );
+});
