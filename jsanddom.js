@@ -134,7 +134,15 @@ function sum() {
 
 // Write a function that will return true if a specified string consists of only whitespace.
 function isOnlyWhitespace(sourceStr) {
-	
+	// Thought about using native .trim, but it's JavaScript 1.8.1 / ECMAScript 5th Edition.
+	// The following line replaces empty spaces with '' and then if there is only empty spaces
+	// sourceStr will be falsey.
+	if (!sourceStr.replace(/^\s+|\s+$/g, '')) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 // write an example of a javascript closure

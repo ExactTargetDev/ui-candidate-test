@@ -107,8 +107,20 @@ test( "Take sum of any number of arguments", 2, function() {
     // Verify the method exists
     equal( typeof sum, 'function', 'Must contain a sum function' );
 
-    deepEqual( sum( 1, 1, 2, 3, 5, 7 ), 19,
+    equal( sum( 1, 1, 2, 3, 5, 7 ), 19,
 		"Expected 19 as the result, the result was: " + sum( 1, 1, 2, 3, 5, 7 ) );
 
 });
 
+
+test( "Test if a specified string consists of only whitespace", 3, function() {
+    // Verify the method exists
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a is only whitespace function' );
+
+    equal( isOnlyWhitespace( '            ' ), true,
+		"Expected true as the result, the result was: " + isOnlyWhitespace( '            ' ) );
+
+    equal( isOnlyWhitespace( '    Hi Alex        ' ), false,
+	"Expected true as the result, the result was: " + isOnlyWhitespace( '    Hi Alex        ' ) );
+
+});
