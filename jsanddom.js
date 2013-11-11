@@ -23,7 +23,11 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
+        // requires jQuery. Thought about using native .filter, but it's JavaScript 1.6 / ECMAScript 5th Edition
 
+        return $.grep(values, function(el, index) {
+            return index == $.inArray(el, values);
+        });
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.

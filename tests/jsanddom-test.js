@@ -39,3 +39,23 @@ test( "Find minimum value", 4, function() {
 			'Expected -1.1 as the result, the result was: ' + 
 			findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ) );
 });
+
+test( "Find distinct values (remove duplicates)", 3, function() {
+	// Verify the method exists
+	equal( typeof findDistinctValues, 'function', 'Must contain a distinct value function' );
+
+	// testing for numbers
+	deepEqual( findDistinctValues( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ), 
+		[3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity],
+		'Expected [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity] as the result, the result was: ' + 
+		findDistinctValues( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ) );
+
+	// testing for strings
+	deepEqual( findDistinctValues( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry', 
+									'pear', 'banana', 'banana', 'orange', 'kiwi', 'pear'] ), 
+		['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],
+		'Expected [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity] as the result, the result was: ' + 
+		findDistinctValues( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry', 
+									'pear', 'banana', 'banana', 'orange', 'kiwi', 'pear'] ) );
+
+});
