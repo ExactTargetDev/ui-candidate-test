@@ -102,3 +102,13 @@ test( "Split string using commas", 3, function() {
 		'Expected empty string as the result, the result was: ' + splitListStrUsingComma( '' ) );
 });
 
+
+test( "Take sum of any number of arguments", 2, function() {
+    // Verify the method exists
+    equal( typeof sum, 'function', 'Must contain a sum function' );
+
+    deepEqual( sum( 1, 1, 2, 3, 5, 7 ), 19,
+		"Expected 19 as the result, the result was: " + sum( 1, 1, 2, 3, 5, 7 ) );
+
+});
+

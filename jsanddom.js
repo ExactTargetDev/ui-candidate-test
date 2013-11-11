@@ -125,12 +125,16 @@ function splitListStrUsingComma(sourceStr) {
 
 // Write a function that will take any number of arguments and return their sum
 function sum() {
-
+	var sum = 0;
+	for (var i = 0, j = arguments.length; i < j; i++){
+        sum = sum + arguments[i];
+    }
+    return sum;
 }
 
 // Write a function that will return true if a specified string consists of only whitespace.
 function isOnlyWhitespace(sourceStr) {
- // FILL THIS IN
+	
 }
 
 // write an example of a javascript closure
