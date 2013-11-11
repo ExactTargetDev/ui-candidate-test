@@ -124,3 +124,21 @@ test( "Test if a specified string consists of only whitespace", 3, function() {
 	"Expected true as the result, the result was: " + isOnlyWhitespace( '    Hi Alex        ' ) );
 
 });
+
+
+test( "Illsutrate closure", 3, function() {
+    // Verify the method exists
+    equal( typeof whoIsAlex, 'object', 'Must contain a whoIsAlex object' );
+
+    equal( whoIsAlex.getIdentity(), 'A man',
+		"Expected true as the result, the result was: " + whoIsAlex.getIdentity() );
+
+    ;
+
+	whoIsAlex.setIdentity('A legend');
+	equal( whoIsAlex.getIdentity(), 'A legend',
+		"Expected true as the result, the result was: " + whoIsAlex.getIdentity() );
+
+    ;
+
+});

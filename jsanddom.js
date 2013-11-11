@@ -155,9 +155,9 @@ function isOnlyWhitespace(sourceStr) {
 /**
  * whoIsAlex
  *
- * Has get and setter of private variable identity which is not public due to closure,
- * but can be set via the public method exposed in return. _identity is within the scope
- * for the get and set methods, but not within the scope of window.
+ * Has get and set methods for private variable _identity which is not public due to a function's 
+ * closure, but can be set via the public methods exposed in return. _identity is within the scope
+ * of the get and set methods, but not within the scope of window. 
  */
 
 var whoIsAlex = (function() {
@@ -174,10 +174,6 @@ var whoIsAlex = (function() {
 	};
 })();
 
-console.log( whoIsAlex.getIdentity() );
-whoIsAlex.setIdentity('A legend');
-console.log( whoIsAlex.getIdentity() );
-
 // define a json object that represents a collection of people.
 // each person should have the following properties
 // - first name
@@ -187,6 +183,55 @@ console.log( whoIsAlex.getIdentity() );
 // - zip
 // - a collection of phone numbers (home, work, mobile)
 
+
+// We could do a direct hash with (home, work, mobile), but I implied collection 
+// to be an array for extensibility. Who knows, maybe people will have Google glass
+// phone numbers in the future?
+
+var people = [
+	{
+		"firstName": "Alex",
+		"lastName": " Vernacchia",
+		"city": "Indianapolis",
+		"state": "IN",
+		"zip": "00000",
+		"phoneNumbers": [
+							{
+								"type": "home",
+								"number": "555-555-5555"
+							},
+							{
+								"type": "work",
+								"number": "555-555-5556"
+							},
+							{
+								"type": "mobile",
+								"number": "555-555-5557"
+							}
+		]
+	},
+	{
+		"firstName": "Jeff",
+		"lastName": " Stickel",
+		"city": "Indianapolis",
+		"state": "IN",
+		"zip": "00000",
+		"phoneNumbers": [
+							{
+								"type": "home",
+								"number": "555-555-5558"
+							},
+							{
+								"type": "work",
+								"number": "555-555-55569"
+							},
+							{
+								"type": "mobile",
+								"number": "555-555-5550"
+							}
+		]
+	}
+];
 
 // Create a javascript object (DataTable) with the following:
 // A private columns property (string array)
