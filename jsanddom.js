@@ -294,12 +294,41 @@ var dataTable = new DataTable();
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
+// 
+
+function getSelect() {
+	var container = $('#div1');
+	// a for loop into an hash would be best, if this is supposed to input dynamic values, 
+	// but the prompt doesn't say it has to be generated from a hash
+	$(container).append('<select><option value="volvo">Volvo</option><option value="saab">Saab</option><option value="mercedes">Mercedes</option><option value="audi">Audi</option></select><button>Select</button>');
+
+	container.find('button').on("click", function() {
+		var select = $(container).find('select');
+		console.log( $(select).find(':selected').text() + ': ' + select.val() );
+	});
+
+}
+
+$(function(){
+	getSelect();
+});
+
 
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
+// 
+// 
+// 
+
+console.log( $('#fizz .link') );
+console.log( $('#fizz a') );
+console.log( $('.buzz .link') );
+console.log( $('#fizz.buzz .link') );
+console.log( $('#fizz.buzz a') );
 
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
+// 
 
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
