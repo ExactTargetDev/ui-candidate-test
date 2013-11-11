@@ -26,17 +26,17 @@ test( "Find minimum value", 4, function() {
 	// Verify the method exists
 	equal( typeof findMinValue, 'function', 'Must contain a minimum value function' );
 
-	equal( findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ), '-1.1', 
-			'Expected -1.1 as the result, the result was: ' + 
+	equal( findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ), '-1.1',
+			'Expected -1.1 as the result, the result was: ' +
 			findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ) );
 
 	// empty array
-	equal( findMinValue( [] ), undefined, 
+	equal( findMinValue( [] ), undefined,
 		'Expected undefined as the result, the result was: ' + findMinValue( [] ) );
-	
+
 	// uses negative infinity in input
-	equal( findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, -Infinity, 0.18, -1.1, 12] ), '-Infinity', 
-			'Expected -1.1 as the result, the result was: ' + 
+	equal( findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, -Infinity, 0.18, -1.1, 12] ), '-Infinity',
+			'Expected -1.1 as the result, the result was: ' +
 			findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ) );
 });
 
@@ -45,17 +45,24 @@ test( "Find distinct values (remove duplicates)", 3, function() {
 	equal( typeof findDistinctValues, 'function', 'Must contain a distinct value function' );
 
 	// testing for numbers
-	deepEqual( findDistinctValues( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ), 
+	deepEqual( findDistinctValues( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ),
 		[3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity],
-		'Expected [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity] as the result, the result was: ' + 
+		'Expected [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity] as the result, the result was: ' +
 		findDistinctValues( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ) );
 
 	// testing for strings
-	deepEqual( findDistinctValues( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry', 
-									'pear', 'banana', 'banana', 'orange', 'kiwi', 'pear'] ), 
+	deepEqual( findDistinctValues( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry',
+									'pear', 'banana', 'banana', 'orange', 'kiwi', 'pear'] ),
 		['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],
-		'Expected [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity] as the result, the result was: ' + 
-		findDistinctValues( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry', 
+		'Expected [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity] as the result, the result was: ' +
+		findDistinctValues( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry',
 									'pear', 'banana', 'banana', 'orange', 'kiwi', 'pear'] ) );
 
+});
+
+test( "Output Fizz when 3 and Buzz when 5", 2, function() {
+    // Verify the method exists
+    equal( typeof doFizzBuzz, 'function', 'Must contain a Fizzbuzz function' );
+
+    equal( doFizzBuzz(), '12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz1617Fizz19BuzzFizz2223FizzBuzz26Fizz2829FizzBuzz3132Fizz34BuzzFizz3738FizzBuzz41Fizz4344FizzBuzz4647Fizz49BuzzFizz5253FizzBuzz56Fizz5859FizzBuzz6162Fizz64BuzzFizz6768FizzBuzz71Fizz7374FizzBuzz7677Fizz79BuzzFizz8283FizzBuzz86Fizz8889FizzBuzz9192Fizz94BuzzFizz9798FizzBuzz', 'Expected 12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz1617Fizz19BuzzFizz2223FizzBuzz26Fizz2829FizzBuzz3132Fizz34BuzzFizz3738FizzBuzz41Fizz4344FizzBuzz4647Fizz49BuzzFizz5253FizzBuzz56Fizz5859FizzBuzz6162Fizz64BuzzFizz6768FizzBuzz71Fizz7374FizzBuzz7677Fizz79BuzzFizz8283FizzBuzz86Fizz8889FizzBuzz9192Fizz94BuzzFizz9798FizzBuzz as the result, the result was: ' + doFizzBuzz() ); 
 });
