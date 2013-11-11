@@ -330,7 +330,23 @@ console.log( $('#fizz.buzz a') );
 // and add the list items to the unordered list with an id of "list1".
 // 
 
+function createList(array) {
+	var oldList = $('#baz #list1'), // <ul> tag
+		newlist = $('<ul id="#list1">');
+
+	for (var i=0; i < array.length; i++) {
+		newlist.append('<li>' + array[i] + '</li>')
+	}
+
+	$(oldList).replaceWith(newlist);
+}
+
+$(function(){
+	createList([1, 2 , 3 , 4 , 5]);
+});
+
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
