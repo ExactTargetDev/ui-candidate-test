@@ -69,14 +69,14 @@ function doFizzBuzz() {
 		if (i % 5 === 0) {
 			string = string + 'Buzz';
 		}
-		if (string === '') {	
-			string = i;				
+		if (string === '') {
+			string = i;
 		}
 		console.log(string);
 		allOutput = allOutput + string;
 	}
 
-	return allOutput
+	return allOutput;
 }
 
 // You have a master array of strings, where each element is a fruit name.
@@ -259,7 +259,7 @@ function DataTable() {
 
 	return {
 		addRow: function() {
-			args = Array.prototype.slice.call(arguments, 0)
+			args = Array.prototype.slice.call(arguments, 0);
 			_rows.push(args.join(','));
 		},
 		addColumns: function() {
@@ -283,7 +283,7 @@ function DataTable() {
 
 			return JSON.stringify(rows);
 		},
-		getColumns: function() {	
+		getColumns: function() {
 			return _columns;
 		}
 	};
