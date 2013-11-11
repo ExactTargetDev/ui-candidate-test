@@ -45,6 +45,8 @@ else {
 // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
 function findDistinctValues(values) {
 	// requires jQuery. Thought about using native .filter, but it's JavaScript 1.6 / ECMAScript 5th Edition
+	// but didn't want to mess with a polyfill. lodash or underscore's uniq is probably faster than inArray
+	// but didn't want to include a library for just this one function.
 
 	return $.grep(values, function(el, index) {
 		return index == $.inArray(el, values);
@@ -102,6 +104,9 @@ function removeFruits(fruits, fruitsToRemove) {
 // If toPush is a simple value, it should be pushed onto array as an element.
 // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
 function pushOntoArray(array, toPush) {
+	// This technically returns a new array, but within function scope the array is changed by reference. 
+	// The array will need to be passed in via a parent object reference to truly edit the variable by reference,
+	// since parameters are passed by value and not reference unless within an object.
 	if (typeof toPush === 'number') {
 		array.push(toPush);
 	}
@@ -135,7 +140,7 @@ function sum() {
 // Write a function that will return true if a specified string consists of only whitespace.
 function isOnlyWhitespace(sourceStr) {
 	// Thought about using native .trim, but it's JavaScript 1.8.1 / ECMAScript 5th Edition.
-	// The following line replaces empty spaces with '' and then if there is only empty spaces
+	// The following line replaces empty spaces with '', and then if its an empty string,
 	// sourceStr will be falsey.
 	if (!sourceStr.replace(/^\s+|\s+$/g, '')) {
 		return true;
