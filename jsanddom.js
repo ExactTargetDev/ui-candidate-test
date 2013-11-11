@@ -45,8 +45,8 @@ else {
 // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
 function findDistinctValues(values) {
 	// requires jQuery. Thought about using native .filter, but it's JavaScript 1.6 / ECMAScript 5th Edition
-	// but didn't want to mess with a polyfill. lodash or underscore's uniq is probably faster than inArray
-	// but didn't want to include a library for just this one function.
+	// but didn't want to mess with a polyfill. lodash or underscore's uniq is faster than inArray 
+	// (especially if pre-sorted), but didn't want to include a library for just this one function.
 
 	return $.grep(values, function(el, index) {
 		return index == $.inArray(el, values);
@@ -121,7 +121,7 @@ function pushOntoArray(array, toPush) {
 
 // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
 function splitListStrUsingComma(sourceStr) {
-	if (sourceStr.length == 0) {
+	if (sourceStr.length === 0) {
 		return [];
 	}
 	// spaces at the start of array items should probably be trimmed--depending on the application
@@ -130,11 +130,11 @@ function splitListStrUsingComma(sourceStr) {
 
 // Write a function that will take any number of arguments and return their sum
 function sum() {
-	var sum = 0;
+	var sumOfArguements = 0;
 	for (var i = 0, j = arguments.length; i < j; i++){
-        sum = sum + arguments[i];
+        sumOfArguements = sumOfArguements + arguments[i];
     }
-    return sum;
+    return sumOfArguements;
 }
 
 // Write a function that will return true if a specified string consists of only whitespace.
