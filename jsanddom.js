@@ -335,7 +335,7 @@ function createList(array) {
 		newlist = $('<ul id="#list1">');
 
 	for (var i=0; i < array.length; i++) {
-		newlist.append('<li>' + array[i] + '</li>')
+		newlist.append('<li>' + array[i] + '</li>');
 	}
 
 	$(oldList).replaceWith(newlist);
