@@ -245,6 +245,50 @@ var people = [
 // .addRow('value1A', 'value1B', 'value1C');
 // .addRow('value2A', 'value2B', 'value2C');
 
+
+// no IE7 support
+// I'm not sure that a 'string array' is the best way to store a row that's going 
+// to output to JSON. It seems like a hash with column names would be best for _rows.
+
+function DataTable() {
+	// private variable
+	var _columns = [],
+		_rows = [];
+
+	return {
+		addRow: function() {
+			args = Array.prototype.slice.call(arguments, 0)
+			_rows.push(args.join(','));
+		},
+		addColumns: function() {
+			_columns.push.apply(_columns, arguments);
+		},
+		getData: function() {
+			rows = [];
+			aHashedRow = {};
+			
+			for (var i = 0; i < _rows.length; i++) {
+				aHashedRow = {};	//reset
+				rowSplitIntoColumns = _rows[i].split(',');
+
+				for (var j = 0; j < _columns.length; j++) {
+					aHashedRow[_columns[j]] = rowSplitIntoColumns[j];
+				}
+
+				rows.push(aHashedRow);
+
+			}
+
+			return JSON.stringify(rows);
+		},
+		getColumns: function() {	
+			return _columns;
+		}
+	};
+}
+
+var dataTable = new DataTable();
+
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.

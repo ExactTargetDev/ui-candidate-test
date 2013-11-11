@@ -133,12 +133,28 @@ test( "Illsutrate closure", 3, function() {
     equal( whoIsAlex.getIdentity(), 'A man',
 		"Expected true as the result, the result was: " + whoIsAlex.getIdentity() );
 
-    ;
-
 	whoIsAlex.setIdentity('A legend');
 	equal( whoIsAlex.getIdentity(), 'A legend',
 		"Expected true as the result, the result was: " + whoIsAlex.getIdentity() );
 
-    ;
+});
+
+test( "Data Table", 2, function() {
+    // Verify the method exists
+    equal( typeof DataTable, 'function', 'Must contain a datatable function' );
+
+	dataTable.addColumns('column1', 'column2', 'column3');
+	dataTable.addRow('value1A', 'value1B', 'value1C');
+	dataTable.addRow('value2A', 'value2B', 'value2C');
+
+    equal( dataTable.getData() , '[{\"column1\":\"value1A\",\"column2\":\"value1B\",\"column3\":\"value1C\"},{\"column1\":\"value2A\",\"column2\":\"value2B\",\"column3\":\"value2C\"}]',
+		"Expected [{\"column1\":\"value1A\",\"column2\":\"value1B\",\"column3\":\"value1C\"},{\"column1\":\"value2A\",\"column2\":\"value2B\",\"column3\":\"value2C\"}] as the result, the result was: " + dataTable.getData() );
 
 });
+
+// console.log(  );
+// console.log( dataTable.addRow('value1A', 'value1B', 'value1C') );
+// console.log( dataTable.addRow('value2A', 'value2B', 'value2C') );
+// console.log( dataTable.addColumns('column4') );
+// console.log( dataTable.addRow('value3A', 'value3B', 'value3C', 'value3D') );
+// console.log( dataTable.getData() );
