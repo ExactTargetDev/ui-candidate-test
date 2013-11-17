@@ -1,8 +1,204 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>Screenshot.html</title>
-</head>
-<body>
-</body>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>UI_CandidateTest_IMH_dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+    <link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
+    <link href='fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.22/jquery-ui.min.js"></script> 
+   <script src='lib/jquery-ui.custom.min.js'></script>
+   <script src='fullcalendar/fullcalendar.js'></script>
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+  
+   <script>
+   $(document).ready(function(){
+	   var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+		
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'title',
+				center: 'prev,next today',
+				right: 'basicWeek,basicDay,month,'
+			},
+			editable: true,
+			events: [
+				{
+					title: 'All Day Event',
+					start: new Date(y, m, 1)
+				},
+				{
+					title: 'Click for Google',
+					start: new Date(y, m, 28),
+					end: new Date(y, m, 29),
+					url: 'http://google.com/'
+				}
+			]
+		});
+		
+	   $("#anchorhelp").click(function(){
+		   $.getJSON( "data/help.json", function( data ) {
+			   var lirecords = "";;
+			 // alert(data.help.length);
+			  for (i = 0; i < data.help.length; i++) {
+			    
+			     var record = data.help[i];
+			     var title = record.title;
+			     var URL   = record.URL;
+			     //lirecords += 
+			     lirecords += "<li>" +title+ ":"+URL+ "</li>";
+			   }
+			  document.getElementById("helpList").innerHTML = lirecords;
+			  $("#dialog").dialog("open");
+			  
+			  $("#dialog").dialog({
+				    autoOpen : false,
+				    modal : true,
+				    draggable: false,
+				    title:'Help',
+				    resizable: false,
+				    position: ['center', 'center'],
+				    show: 'blind',
+				    hide: 'blind',
+				    width: '600',
+				    dialogClass: 'ui-dialog-osx',
+				    open : function() {
+					$('.ui-widget-overlay').bind('click', function() {
+					    $('#dialog').dialog('close');
+					})
+				    },
+				    show : {
+					effect : "blind",
+					duration : 500
+				    }
+				});
+	   });
+   });
+	   
+	  
+   });
+   </script>
+   
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Exact Target</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#" class="menuuser">Welcome John</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a id="anchorhelp" href="#">Help</a></li>
+             <li><a href="logout">Logout</a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+    <div class="container">
+<div id="dialog" title="Help">
+						<div class="dialogData">
+								<ul id="helpList"></ul>
+						</div>
+				</div>
+      <div class="row row-offcanvas row-offcanvas-right">
+  
+           <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+          <div class="list-group">
+            <a href="#" class="list-group-item active"><img src="data/et_log.png" alt="visitor_count" class="li_images">Interactive Marketing Hub</a>
+            <a href="#" class="list-group-item"><img src="data/img_mail.png" alt="visitor_count" class="li_images">Exact Target Email</a>
+            <a href="#" class="list-group-item"><img src="data/img_mobile.png" alt="visitor_count" class="li_images">Exact Target Mobile</a>
+            <a href="#" class="list-group-item"><img src="data/co.png" alt="visitor_count" class="li_images">Co Tweet Social</a>
+            <a href="#" class="list-group-item"><img src="data/et_sym.png" alt="visitor_count" class="li_images">Exact Target Sites</a>
+            <a href="#" class="list-group-item"><img src="data/automation_studio.png" alt="visitor_count" class="li_images">Automation Studio</a>
+            <a href="#" class="list-group-item"><img src="data/audience.png" alt="visitor_count" class="li_images">Audience Builder</a>
+            <a href="#" class="list-group-item"><img src="data/report_builder.png" alt="visitor_count" class="li_images">Report Builder</a>
+            <a href="#" class="list-group-item"><img src="data/arrow.png" alt="visitor_count" class="li_images">Partner Application</a>
+          </div>
+        </div><!--/span--> 
+  
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="jumbotron">           	
+				<div id='calendar'></div>
+          </div>
+          	<div class="pulse">
+          	<div>
+		     <div class="pulse_logo">
+		     	<img src="data/pulse.png" alt="pulse logo" id="imgp_log">
+		     	<img src="data/utility_bar.png" alt="utility bar" id="utility_bar">
+             </div>
+		     
+		    </div>
+		    <div class="row gadgets">
+		    <div class="col-md-2 col-md-offset-1 gad_img">Followers</div>
+    		<div class="col-md-2 gad_img">Fans</div>
+   			<div class="col-md-2 gad_img">Subscribers</div>
+   			<div class="col-md-2 gad_img">Four Square</div>
+    		<div class="col-md-2">Landing Pages</div>
+		    
+  			<div class="col-md-2 col-md-offset-1 gad_img"><img src="data/visits.png" alt="visitor_count"  class="gadgets_imgs" id="img_utility_bar"></div>
+    		<div class="col-md-2 gad_img"><img src="data/fans.png" alt="visitor_count" id="img_fans" class="gadgets_imgs"></div>
+   			<div class="col-md-2 gad_img"><img src="data/subscribers.png" alt="visitor_count" id="img_subscribers" class="gadgets_imgs"></div>
+   			<div class="col-md-2 gad_img"><img src="data/foursquare.png" alt="visitor_count" id="img_map" class="gadgets_imgs"></div>
+    		<div class="col-md-2"><img src="data/landing_pages.png" alt="visitor_count" id="img_landing" class="gadgets_imgs"></div>
+    		
+           
+          </div><!--/row-->
+            <div class="gad_nav"><img src="data/gadget_nav.png" alt="pulse logo" id="imgp_log"></div>
+        </div><!--/span-->
+
+
+      </div><!--/row-->
+      </div>
+      <hr>
+
+ 
+
+    </div><!--/.container-->
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="offcanvas.js"></script>
+  </body>
 </html>
