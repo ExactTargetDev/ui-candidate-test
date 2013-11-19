@@ -14,7 +14,6 @@ Please include "ATTENTION: &lt;ET Contacts Name&gt;" in your pull request
 + The "UI_CandidateTest_IMH_dashboard.*" files (png and psd) are for you to replicate.
 + You may use any JavaScript and/or CSS library you wish, or none at all.
 + You may use an external or inline JavaScript file(s).
-+ You may take as long as you like to complete the coding challenges.
 + Filenames must remain the same as in the original repository.
 + Unit tests could be included in the "tests" folder if you so choose.
 + testdata.txt contains the data your code will be run against. You may use it as you wish in your code and/or testing.
