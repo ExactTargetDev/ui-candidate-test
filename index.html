@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!--[if lt IE 9]>
+		<script src="scripts/dist/html5shiv.js"></script>
+		<![endif]-->
+		<title class="nav nav-bar">ExactTarget&copy; Test</title>
+
+		<script src="scripts/jsFiles/jquery-1.10.2.min.js"></script>
+		<script src="scripts/jsFiles/bootstrap.js"></script>
+		<script src="scripts/jsFiles/jqueryUIFilesJS/jquery-ui.js"></script>
+		<script src="scripts/jsFiles/helpModal.js"></script>
+
+		<link rel="stylesheet" href="scripts/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="scripts/css/bootstrap-responsive.min.css"/>
+		<link rel="stylesheet" href="scripts/css/jqueryUIFilesCSS/jquery-ui.css"/>
+		<link rel="stylesheet" href="scripts/css/customCss.css"/>
+		<script>
+			
+				function closeModal() {
+					$(".modalHelpContent").hide();
+				};
+		</script>
+
+	</head>
+
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<span class="navbarTextItem pull-left">ExactTarget&copy;</span>
+				<span class="navbarTextItem pull-right">
+					<ul class="inline">
+						<li class="span1 "  >
+							Welcome
+						</li>
+						<li id="currentUser" class="span1">
+							Userhere
+						</li>
+
+						<li class="divideItem span1">
+							Account
+						</li>
+						<li id="helpDialog" class="span1 divideItem">
+
+							Help
+						</li>
+
+						<li class=" span1">
+							Logout
+						</li>
+
+					</ul></span>
+			</div>
+		</div>
+		<div class="container-fluid container-main">
+			<div class="row-fluid">
+				<div class="span3" id="interactiveHub">
+					<div >
+						<header class="hubHeader">
+							<span class=""> </span>
+							<!-- Look for image. If needed 'pull-right'/float:right.
+							Set to span1 if necessary and wrap in a <span class='row'>
+							to assist in alignment</span>
+							-->
+							Interactive Marketing Hub
+						</header>
+						<div class="nav nav-stacked text-center pull-left ">
+							<!-- set images in custom css file -->
+							<div id="E_T_Email" class="noTextDecoration ui-state-default">
+								<a href="#"  class="noTextDecoration" title="Click To Go To Your ExactTarget Email"  > ExactTarget Email</a>
+							</div>
+							<div id="E_T_Mobile" class="noTextDecoration ui-state-default">
+								<a href="#"  class="noTextDecoration" title="Click To Go To ExactTarget Mobile"  > ExactTarget Mobile</a>
+							</div>
+							<div id="CoTweetSocial" class="noTextDecoration ui-state-default">
+								<a href="#" class="noTextDecoration"  title="Click To Go To CoTweet Social" > CoTweet Social</a>
+							</div>
+							<div id="E_T_Sites" class="noTextDecoration ui-state-default">
+								<a href="#"  class="noTextDecoration"  title="Click To See All ExactTarget Sites"  > ExactTarget Sites</a>
+							</div>
+							<hr class="span1">
+							<div id="Automation_Studio" class="noTextDecoration ui-state-default">
+								<a href="#"  class="noTextDecoration"  title="Click To Go To The Automation Studio"  >Automation Studio</a>
+							</div>
+							<div id="Audience_Builder" class="noTextDecoration ui-state-default">
+								<a href="#"  class="noTextDecoration"  title="Click To Go To The Audience Builder"  >Audience Builder</a>
+							</div>
+							<div id="Report_Builder" class="noTextDecoration ui-state-default">
+								<a href="#"   title="Click To Go To The Report Builder"  >Report Builder</a>
+							</div>
+							<hr class="span1">
+							<div id="Partner_Appliations" class="icon_right_caret noTextDecoration ui-state-default">
+								<a href="#" class="noTextDecoration"  title="Click To Go To Our Partner Applications"  >Partner Applications</a>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+				<div class="span10 customMargins pull-right">
+					<div class="row" id="calendarRow">
+						display calendar for the week
+					</div>
+					<div class="row-fluid" id="pulseContentParent">
+						<!-- 	get pulse image to overlay or set as background, if applicable. Initial thoughts are to fill this area via load() to be able to present
+						data in the same window, reducing network data traffic.
+
+						if this is impractical, whether for security or other reasons, I'll fill it via jQuery, calling doc.ready.
+						-->
+
+						<div class="row">
+							<div class="pulseSegments row text-center " >
+								<div id="FollowersPanel" class="customWidth span2 customBorder panelToToggle">
+
+									<header class="pulseHeader">
+										Followers
+									</header>
+
+									<!-- set margin between these two rows -->
+
+									<div class="pulseBodyElementContainer ">
+										container
+										placeholder
+									</div>
+
+								</div>
+								<div id="fanPanel" class="customWidth span2 customBorder panelToToggle">
+									<header class="pulseHeader">
+										Fan
+									</header>
+									<div class="pulseBodyElementContainer">
+										container
+										placeholder
+									</div>
+								</div>
+								<div id="SubscriberPanel" class="customWidth span2 customBorder panelToToggle">
+									<header class="pulseHeader">
+										Subscribers
+									</header>
+
+									<div class="pulseBodyElementContainer" class="customWidth span2">
+										container
+										placeholder
+									</div>
+								</div>
+								<div id="fourSquarePanel" class="customWidth span2 customBorder panelToToggle">
+									<header class="pulseHeader">
+										foursquare
+									</header>
+
+									<div class="pulseBodyElementContainer" class="customWidth span2">
+										container
+										placeholder
+									</div>
+								</div>
+								<div id="LandingPagesPanel" class="customWidth span2 customBorder panelToToggle">
+									<header class="pulseHeader">
+										Landing Pages
+									</header>
+									<div class="pulseBodyElementContainer">
+										container
+										placeholder
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modalHelpContent offset3 ulNoIcon specialTopMarginSpacing"> </div>
+
+		<script >
+			$(document).ready(function() {
+				console.log("is the document loading properly in IE.");
+				$(document).tooltip();
+				$('.dropdown-toggle').dropdown();
+
+				$("#helpDialog").click(function() {
+
+					$(".modalHelpContent").append(getModalHelpData());
+
+					function getModalHelpData() {
+						var fileName = "data/help.json";
+						var holder = [];
+
+						$.getJSON(fileName, function(data) {
+							var helpCracker = [];
+							for (var i = 0; i <= data.help.length - 1; i++) {
+								helpCracker.push(data.help[i]);
+							}
+							var parsedContent = "<ul class='ulNoIcon '> <li class='ulNoIcon specialTopMarginSpacing'></li>";
+
+							for (var i = 0; i <= helpCracker.length - 1; i++) {
+								var urlToAdd = helpCracker[i].URL;
+								var titleToAdd = helpCracker[i].title;
+								parsedContent += "<li class='ulNoIcon '><a href='" + urlToAdd + "'> " + titleToAdd + "</a></li> ";
+							}
+							parsedContent += "<li></li></ul>";
+							parsedContent += "<div class='btn offset1' + title='Click To Close' onclick='closeModal()'>Close</div'>";
+							$(".modalHelpContent").html(parsedContent);
+
+						});
+					};
+					var heightForModal = window.innerHeight / 1.25;
+					var widthForModal = window.innerWidth / 1.5;
+
+					$(".modalHelpContent").css({
+						'opacity' : 0.4,
+						'position' : 'fixed',
+						'top' : 0,
+						'left' : 0,
+						'background-color' : 'black',
+						'width' : '100%',
+						'height' : heightForModal,
+						'width' : widthForModal,
+						//'height' : '50%',
+						//'margin' : '20%',
+						'z-index' : 5000,
+						'color' : 'white',
+						'line-height' : '2em'
+					});
+					$(".closeModal").css({
+						'z-index' : 5001
+					});
+
+					$(".modalHelpContent").show();
+				});
+				$(".closeModal").click(function() {
+				$(".modalHelpContent").modal("hide");
+			});
+
+				try {
+					$("#calendarRow").load("./Views/calendar.html");
+				} catch(e) {
+					console.log("error loading calendar in Index : " + e.message);
+				}
+
+				$(".panelToToggle").click(function() {
+					console.log("panel was clicked");
+					try {
+
+						var removeActiveItemId = $("#activeScaled");
+						removeActiveItemId.attr("id", "");
+						console.log("should've resized");
+					} catch(e) {
+						console.log("no item is active at this time. " + e.message);
+					}
+					$(this).attr("id", "activeScaled");
+					console.log("id added");
+
+				});
+
+			});
+		</script>
+	</body>
+</html>

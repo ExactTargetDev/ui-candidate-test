@@ -1,0 +1,9 @@
+Start Time:1384588800
+Quite for the night at :1384599900
+Browser testing screenshots are located inside the screenshots folder.
+These include FF, Chrome, and multiple versions of IE.
+
+Started this morning at :1385537520
+Had to stop at: 1384702020
+
+TotalTime: 2404
