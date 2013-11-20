@@ -1,0 +1,176 @@
+/*------------------------------------------  
+=RESET
+------------------------------------------*/
+/* stops text from floating around (text wrap) around a flaoted image/element */
+.notextwrap {
+  overflow: hidden;
+}
+/* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
+body {
+  -webkit-backface-visibility: hidden;
+}
+address {
+  font-style: normal;
+}
+.hidden,
+.visuallyhidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.centerblock {
+  margin-left: auto;
+  margin-right: auto;
+}
+.group {
+  zoom: 1;
+}
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: left;
+}
+input,
+button {
+  -webkit-transition: 'background-color', 0.5s, ease;
+  transition: 'background-color', 0.5s, ease;
+}
+.no-touch input:hover,
+.no-touch button:hover,
+.no-touch input:hover:visited,
+.no-touch button:hover:visited {
+  -webkit-transition: 'background-color', 0.5s, ease;
+  transition: 'background-color', 0.5s, ease;
+}
+.js .fouc {
+  opacity: 0;
+}
+article img {
+  border: 1px solid #c1c1c1;
+}
+article p {
+  margin: 0 0 10px 0;
+}
+article ul {
+  list-style: square;
+  padding: 5px 0 10px 30px;
+}
+article ul li {
+  margin-bottom: 8px;
+}
+article {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+.primary img,
+.primary figure,
+.primary embed,
+.primary object,
+.primary video {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a img {
+  border: none;
+}
+address {
+  font-style: normal;
+}
+nav a {
+  text-decoration: none;
+}
+/* http://css-tricks.com/things-it-might-be-funuseful-to-try-the-universal-selector-on/ */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+blockquote {
+  margin: 10px 10px 10px 10px;
+  font-style: italic;
+}
+/* Tables */
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: inherit;
+  margin: 1.5em 10px;
+}
+thead {
+  background: #ccc;
+  font-weight: 700;
+}
+th {
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
+  padding: .25em 10px;
+}
+tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+td {
+  padding: 4px 10px;
+}
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+.rtl {
+  direction: rtl;
+}
+/* Hide for both screenreaders and browsers and hide print only items. See print.less */
+.printonly {
+  display: none;
+  visibility: hidden;
+}
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+  visibility: hidden;
+}
+/* floats  */
+.left {
+  float: left;
+}
+.center {
+  text-align: center;
+}
+.right {
+  float: right;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,57 @@
+/*  
+Theme Name: 
+Author: Stephen M. James / Well Done Marketing
+Author URI: http://welldonemarketing.com
+*/
+
+/*------------------------------------------  
+=VENDOR IMPORTS
+------------------------------------------*/
+// Normalize Reset
+@import "../wpbp-assets/css/vendor/normalize.less";								
+// Percentage-based grid for columns, http://semantic.gs/
+@import "../wpbp-assets/css/vendor/semantic-grid/grid.less";				
+// Less mixin library https://github.com/mateuszkocz/3
+@import "../wpbp-assets/css/vendor/3L/3L.less";
+// https://github.com/imulus/retinajs
+// @import "wpbp-assets/cssvendor/retina.less";
+// https://github.com/harvesthq/chosen
+// @import "wpbp-assets/cssvendor/chosen/chosen.less";
+//bootstrap
+//@import "../wpbp-assets/css/vendor/bootstrap/bootstrap.less";
+
+// Formidable Forms
+// Don't forget to disable the default Formidable CSS
+@import "../wpbp-assets/css/vendor/formible.less";
+
+
+/*------------------------------------------  
+=!CUSTOM IMPORTS
+------------------------------------------*/
+// Mixins, colors, fonts, media queries, sitewide styles
+@import "partials/themesetup.less";											
+
+// default wordpress content editor classes like .leftalign
+@import "../wpbp-assets/css/wordpress-editor.less";
+
+// BX-Slider carousel styles, more info at http://bxslider.com/
+//@import "partials/bx-slider.less";								
+
+// Small screen menu duplicated in footer
+//@import "partials/smallscreenfooternav.less";	// hide header and scroll to footer nav
+
+//sectional
+@import "partials/socialicons.less";
+@import "partials/forms.less";
+@import "partials/header.less";
+@import "partials/footer.less";
+@import "partials/sidebar.less";
+@import "partials/comments.less";
+
+// blog pages including archive, single, and main feed
+@import "partials/blog.less";
+// Page templates (wrapped in body classes based on template file names, like .home, .page)
+@import "partials/pages.less";
+
+// misc
+@import "partials/misc.less";

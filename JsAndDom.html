@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>JsAndDom</title>
-</head>
-<body>
-	<div id="div1">
-	</div>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<title>JsAndDom</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="bower_components/modernizr/modernizr.js"></script>
+		<style type="text/css">
+			#SelectNone { margin-left: 10px; }
+		</style>
 
-	<div id="foo" class="bar" style="margin-top:10px;">
-	  <div id="fizz" class="buzz">
-	    <a class="link" href="#">sample anchor</a>
-	  </div>
-	</div>
+	</head>
+	<body>
+			<!--[if lt IE 8]>
+	            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	        <![endif]-->
 
-	<div id="baz" style="margin-top:10px;">
-	  <ul id="list1"></ul>
-	</div>
+		<div id="div1">
+		</div>
 
-	<div id="foobar" style="margin-top:10px;">
-	</div>
+		<div id="foo" class="bar" style="margin-top:10px;">
+		  <div id="fizz" class="buzz">
+		    <a class="link" href="#">sample anchor</a>
+		  </div>
+		</div>
 
-	<script src="jsanddom.js" type="text/javascript"></script>
-</body>
+		<div id="baz" style="margin-top:10px;">
+		  <ul id="list1"></ul>
+		</div>
+
+		<div id="foobar" style="margin-top:10px;">
+		</div>
+
+        <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
+		<script src="jsanddom.js" type="text/javascript"></script>
+	</body>
 </html>

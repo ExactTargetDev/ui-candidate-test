@@ -1,0 +1,11 @@
+Start Time: 1384036313
+UnitTest: tests/jsanddom-test.js
+
+No errors thrown for function JS part of test, but not fully tested
+Safari 6
+Chrome 30
+IE 8 on Win7
+IE9 on Win 7
+
+Please note:
+Despite what the directions say, I spent most of my time on the JSAndDom part of the test. I thought this would make the best use of my time, since I have a portfolio of sites that I have built that show my attention to detail and figured you were more worried about my technical depth rather than my UI/UX experience.

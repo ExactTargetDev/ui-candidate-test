@@ -1,0 +1,148 @@
+/* Modular Size typography */
+
+@double_octave: (4 / 1.0);
+@major_twelfth: (3 / 1.0);
+@major_eleventh: (8 / 3.0);
+@major_tenth: (5 / 2.0);
+@octave: (2 / 1.0);
+@major_seventh: (15 / 8.0);
+@minor_seventh: (16 /9.0);
+@major_sixth: (5 / 3.0);
+@minor_sixth: (8 / 5.0);
+@fifth: (3 / 2.0);
+@augmented_forth: (1.41421356237 / 1.0); /* sqrt(2) / 1.0 */
+@fourth: (4 / 3.0);
+@major_third: (5 / 4.0);
+@minor_third: (6 / 5.0);
+@major_second: (9 / 8.0);
+@minor_second: (16 / 15.0);
+@golden_ratio: (1 / 1.618);
+
+
+@base-font-size: 16; // this is the base font
+@important-font-size: 44;
+@font-ratio: 1.618;
+
+
+@base-diff: @important-font-size / @base-font-size;
+@h1: @important-font-size;
+@h2: (@base-diff / (@base-diff - (@base-diff / @font-ratio)));
+@h3: @font-ratio * (@base-diff - (@base-diff / @font-ratio));
+@h4: @font-ratio;
+@h5: (@base-diff - (@base-diff / @font-ratio));
+@h6: 1; //1em
+
+body {
+	font-size: ~"@{base-font-size}px";
+	font-size: ~"@{h4}rem";
+}
+
+h1, h2, h3, h4, h5, h6 {
+// Whatever values you want here
+}
+
+h1 {
+	font-size: ~"@{important-font-size}px";
+	font-size: ~"@{base-diff}rem";
+	font-family: 'Kameron', serif;
+	text-transform: uppercase;
+}
+
+h2 {
+	@h2-local: round(@base-font-size * @h2);
+	font-size: ~"@{h2-local}px";
+	font-size: ~"@{h2}rem";
+	font-family: @brandFont;
+}
+
+h3 {
+	@h3-local: round(@base-font-size * @h3);
+	font-size: ~"@{h3-local}px";
+	font-size: ~"@{h3}rem";
+}
+
+h4 {
+	@h4-local: round(@base-font-size * @h4);
+	font-size: ~"@{h4-local}px";
+	font-size: ~"@{h4}rem";
+}
+
+h5 {
+	@h5-local: round(@base-font-size * @h5);
+	font-size: ~"@{h5-local}px";
+	font-size: ~"@{h5}rem";
+}
+
+h6 {
+	font-size: ~"@{base-font-size}px";
+	font-size: ~"@{h6}rem";
+}
+
+@line-height: 1.231;
+
+//Margins only within articles
+
+article {	
+	h1 {
+		@margin: @line-height * @base-diff * @golden_ratio;
+		@margin-local: round(@base-diff * @golden_ratio);
+		
+		/* margin-top: ~"@{margin-local}px";
+		margin-bottom: ~"@{margin-local}px";
+		margin-top: ~"@{margin}rem";
+		margin-bottom: ~"@{margin}rem"; */
+	}
+		
+	h2 {
+		@margin: @line-height * @h2 * @golden_ratio;
+		@margin-local: round(@h2 * @golden_ratio);
+		
+		/* margin-top: ~"@{margin-local}px";
+		margin-bottom: ~"@{margin-local}px";
+		margin-top: ~"@{margin}rem";
+		margin-bottom: ~"@{margin}rem"; */	
+
+	}
+		
+	h3 {	
+		@margin: @line-height * @h3 * @golden_ratio;
+		@margin-local: round(@h3 * @golden_ratio);
+		
+		/* margin-top: ~"@{margin-local}px";
+		margin-bottom: ~"@{margin-local}px";
+		margin-top: ~"@{margin}rem";
+		margin-bottom: ~"@{margin}rem"; */	
+	}
+	
+	h4 {	
+		@margin: @line-height * @h3 * @golden_ratio;
+		@margin-local: round(@h3 * @golden_ratio);
+		
+		/* margin-top: ~"@{margin-local}px";
+		margin-bottom: ~"@{margin-local}px";
+		margin-top: ~"@{margin}rem";
+		margin-bottom: ~"@{margin}rem"; */	
+	}
+	
+	h5 {	
+		@margin: @line-height * @h5 * @golden_ratio;
+		@margin-local: round(@h5 * @golden_ratio);
+		
+		/* margin-top: ~"@{margin-local}px";
+		margin-bottom: ~"@{margin-local}px";
+		margin-top: ~"@{margin}rem";
+		margin-bottom: ~"@{margin}rem"; */
+		text-transform: uppercase;
+	}
+	
+	h6 {	
+		@margin: @line-height * @h6 * @golden_ratio;
+		@margin-local: round(@h6 * @golden_ratio);
+		
+		text-transform: uppercase;
+		/* margin-top: ~"@{margin-local}px";
+		margin-bottom: ~"@{margin-local}px";
+		margin-top: ~"@{margin}rem";
+		margin-bottom: ~"@{margin}rem"; */	
+	}}
+

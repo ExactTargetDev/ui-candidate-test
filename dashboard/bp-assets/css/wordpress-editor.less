@@ -1,0 +1,89 @@
+/*------------------------------------------  
+=WordPress Defaults and Editor styles
+------------------------------------------*/
+
+/* == WordPress WYSIWYG Editor Styles == */
+
+.entry-content img {
+	margin: 0 0 1.5em 0;
+	border: 1px solid #ccc;
+}
+.alignleft, img.alignleft {
+	margin-right: 1.5em;
+	margin-margin: 1.5em;
+	display: inline;
+	float: left;
+	
+	@media @phone {
+		float: none;
+		margin-right: 0;
+		display: block;
+		.centerblock;
+	}
+}
+.alignright, img.alignright {
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+	display: inline;
+	float: right;
+	
+	@media @phone {
+		float: none;
+		margin-left: 0;
+		display: block;
+		.centerblock;
+	}
+}
+.aligncenter, img.aligncenter {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	clear: both;
+	}
+.alignnone, img.alignnone {
+	/* not sure about this one */
+	}
+.wp-caption {
+	margin-bottom: 1.5em;
+	text-align: center;
+	padding-top: 5px;
+	}
+.wp-caption img {
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+	}
+.wp-caption p.wp-caption-text {
+	line-height: 1.5;
+	font-size: 10px;
+	margin: 0;
+	}
+.wp-smiley {
+	margin: 0 !important;
+	max-height: 1em;
+	}
+blockquote.left {
+	margin-right: 20px;
+	text-align: right;
+	margin-left: 0;
+	width: 33%;
+	float: left;
+	}
+blockquote.right {
+	margin-left: 20px;
+	text-align: left;
+	margin-right: 0;
+	width: 33%;
+	float: right;
+	}
+.gallery dl {}
+.gallery dt {}
+.gallery dd {}
+.gallery dl a {}
+.gallery dl img {}
+.gallery-caption {}
+
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}

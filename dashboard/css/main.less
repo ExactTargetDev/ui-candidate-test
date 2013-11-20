@@ -1,0 +1,38 @@
+/*  
+Theme Name: Exact Target UI Candidate Test
+Author: Stephen M. James 
+Author URI: http://interactivellama.com
+
+PLEASE USE LESS 1.4
+
+*/
+
+/*------------------------------------------  
+=VENDOR IMPORTS
+------------------------------------------*/
+// Normalize Reset
+@import "../bp-assets/css/vendor/normalize.less";                               
+// Percentage-based grid for columns, http://semantic.gs/
+@import "../bp-assets/css/vendor/semantic-grid/grid.less";              
+// Less mixin library https://github.com/mateuszkocz/3
+@import "../bp-assets/css/vendor/3L/3L.less";
+
+/*------------------------------------------  
+=!CUSTOM IMPORTS
+------------------------------------------*/
+// Mixins, colors, fonts, media queries, sitewide styles
+@import "partials/themesetup.less";                                         
+
+// carousel 
+//@import "partials/bx-slider.less";                              
+
+//sectional
+@import "partials/header.less";
+@import "partials/footer.less";
+@import "partials/sidebar.less";
+
+// Page templates (wrapped in body classes based on template file names, like .home, .page)
+@import "partials/pages.less";
+
+// misc
+@import "partials/misc.less";

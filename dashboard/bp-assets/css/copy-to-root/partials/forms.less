@@ -1,0 +1,91 @@
+/*------------------------------------------  
+=forms
+------------------------------------------*/
+
+// Formidable Forms Default
+
+.frm_form_field.frm_right_half, .frm_form_field.frm_last_half, .frm_form_field.frm_right_fourth, .frm_form_field.frm_left_half, .frm_form_field.frm_first_half, .frm_form_field.frm_fourth {	
+
+	@media @phone {
+		float: none;
+		width: 100%;
+	}
+}
+
+.frm_form_field	{	
+	.group;
+		padding-right: 30px;
+		
+		@media @phone {	
+
+			padding-right: 0;
+		}
+	}
+	
+#frm_field_97_container {	
+	padding-right: 0px;
+}
+
+.frm_fullwidth {
+	width: 100%;	
+}
+	
+.frm_radio {	
+	float: left;
+	display: inline-block;
+	width: 25%;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	
+	@media @notDesktop {	
+		width: 33%;	
+	}
+	
+	@media screen and (max-width: 880px) {	
+		width: 49%;	
+	}
+	
+	@media screen and (max-width: 500px) {	
+		width: 100%;	
+	}
+	
+	label {	
+		cursor: pointer;	
+	}
+	
+}
+	
+.frm_checkbox {	
+	float: left;
+	width: 50%;
+	display: inline-block;
+	padding-right: 20px;	
+	
+	@media @notDesktop {	
+		width: 33%;	
+	}
+	
+	@media screen and (max-width: 880px) {	
+		width: 49%;	
+	}
+	
+	@media screen and (max-width: 500px) {	
+		width: 100%;	
+	}
+
+	
+	label {	
+		cursor: pointer;
+	}
+	
+}
+
+.submit input {	
+	.btn;
+}
+	
+#frm_field_133_container .frm_checkbox {	
+	width: 100%;	
+}
+
+// end form
