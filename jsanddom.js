@@ -388,3 +388,89 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+	 
+	 
+	 
+	 
+	// Create first checkbox
+	var checkbox1 = document.createElement("input");
+	checkbox1.type = "checkbox";
+	checkbox1.className = "checkbox";
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(checkbox1);
+	
+	// Create line break
+	var br = document.createElement("br");
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(br);
+	
+	// Create second checkbox
+	var checkbox2 = document.createElement("input");
+	checkbox2.type = "checkbox";
+	checkbox2.className = "checkbox";
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(checkbox2);
+	
+	// Create line break
+	var br = document.createElement("br");
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(br);
+	
+	// Create third checkbox
+	var checkbox3 = document.createElement("input");
+	checkbox3.type = "checkbox";
+	checkbox3.className = "checkbox";
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(checkbox3);
+	
+	// Create line break
+	var br = document.createElement("br");
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(br);
+	
+	// Create first link
+	// TO DO: How do I create an a href tag?
+	var link1 = document.createElement("a");
+	link1.id = "check";
+	var link1text = document.createTextNode("Check");
+	link1.appendChild(link1text);
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(link1);
+	
+	// Create line break
+	var br = document.createElement("br");
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(br);
+	
+	// Create second link
+	var link2 = document.createElement("a");
+	link2.id = "uncheck";
+	var link2text = document.createTextNode("Uncheck");
+	link2.appendChild(link2text);
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(link2);
+	
+	// Put all checkboxes in an array
+	var checkbox_array = document.getElementsByClassName("checkbox");
+	
+	// Add listener to first link
+	var listenerCheck = document.getElementById("check");
+	listenerCheck.addEventListener("click",  function(){
+		for(x = 0; x < checkbox_array.length; x++) {
+			checkbox_array[x].checked = true;
+		}
+	}, false);
+	
+	// Add listener to second link
+	var listenerUncheck = document.getElementById("uncheck");
+	listenerUncheck.addEventListener("click",  function(){
+		for(x = 0; x < checkbox_array.length; x++) {
+			
+			// TO DO 
+			// Set value of checkboxes[x] to checked
+			checkbox_array[x].checked = false;
+		}
+	}, false);
+	
+	
+	
