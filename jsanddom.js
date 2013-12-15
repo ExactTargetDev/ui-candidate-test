@@ -23,6 +23,23 @@
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+		
+		var minimum_value = new Array();
+		
+		minimum_value =  values[0];
+		
+		for(i = 0; i < values.length; i++) {
+		
+			if(values[i] < minimum_value){
+			
+				minimum_value = values[i];
+				
+			}
+			
+		}
+		
+		return minimum_value;
+		
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
