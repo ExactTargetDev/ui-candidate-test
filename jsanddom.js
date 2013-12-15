@@ -244,7 +244,20 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+	
+	var people = {
+		'first_name': '',
+		'last_name': '',
+		'city': '',
+		'state': '',
+		'zip': '',
+		'phone_home': '',
+		'phone_work': '',
+		'phone_mobile': ''
+	};
+	
+	
+	
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
