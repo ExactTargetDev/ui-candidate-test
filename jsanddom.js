@@ -196,6 +196,27 @@
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
+		 
+		is_white_space = "";
+		 
+		if(sourceStr.length > 0){
+			is_white_space = true;
+			for(i = 0; i < sourceStr.length; i++) {
+				if(sourceStr[i] != " "){
+					is_white_space = false;
+				}
+			}
+		}
+		else {
+			// sourceStr isn't even a char long
+			is_white_space = false;
+		}
+		
+		if(is_white_space == true){
+			return true;
+		}
+		
+		
      }
 
      // write an example of a javascript closure
