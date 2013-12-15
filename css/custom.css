@@ -125,13 +125,22 @@
 	
 	#pulse {
 		background-image: url("../img/pulse-bg.png");
-		height: 265px;
+		height: 260px;
 		width: 1000px;
 		float: right;
+		position: relative;
 	}
 	
 	#pulse-logo {
-		display: block;
+		margin-top: 15px;
+		position: absolute;
+		left: 0px;
+	}
+	
+	#pulse-nav-icons {
+		position: absolute;
+		right: 10px;
+		margin-top: 5px;
 	}
 	
 	#pulse h6 {
@@ -144,8 +153,7 @@
 	#pulse > div {
 		float: left;
 		text-align: center;
-		
-		margin-top: 35px;
+		margin-top: 75px;
 	}
 	
 	#pulse .box {
@@ -163,8 +171,8 @@
 	}
 	
 	#pulse .medium {
-		
-		margin-top: 0px;
+		margin-top: 40px;
+		box-shadow: 0px 30px 49px -20px rgba(0, 0, 0, 0.40);
 	}
 	
 	#pulse .medium > div {
@@ -179,6 +187,20 @@
 	
 	#pulse  .box > div > p {
 		margin-bottom: 0px;
+	}
+	
+	#pulse .box > div > p > .title {
+		float: left;
+		width: 150px;
+		color: #666;
+		font-weight: bold;
+	}
+	
+	#pulse .box > div > p > .title-stat {
+		float: right;
+		width: 50px;
+		color: #666;
+		font-weight: bold;
 	}
 	
 	#pulse .large-highlight {
