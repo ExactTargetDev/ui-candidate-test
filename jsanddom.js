@@ -220,6 +220,21 @@
      }
 
      // write an example of a javascript closure
+	 
+	 function add_one(x){
+		var y = x + 1;
+		var inner = function(){ 
+			console.log(y);
+		}
+		// return the function so we can access the local variable 'y'
+		return inner; 
+	 }
+	 
+	 var doit = add_one(5);
+	 
+	 doit();
+	 
+	 
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
