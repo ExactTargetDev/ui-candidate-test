@@ -112,3 +112,81 @@
 		color: #FFF;
 	}
 	
+	/* Calendar */
+	
+	#calendar{
+		margin-top: 50px;
+		height: 115px;
+		width: 1000px;
+		float: right;
+	}
+	
+	/* Pulse */
+	
+	#pulse {
+		background-image: url("../img/pulse-bg.png");
+		height: 265px;
+		width: 1000px;
+		float: right;
+	}
+	
+	#pulse-logo {
+		display: block;
+	}
+	
+	#pulse h6 {
+		margin-left: auto;
+		margin-right: auto;
+		color: #7F91A3;
+		font-size: 11px;
+	}
+	
+	#pulse > div {
+		float: left;
+		text-align: center;
+		
+		margin-top: 35px;
+	}
+	
+	#pulse .box {
+		margin-left: 13px;
+	}
+	
+	#pulse .box > div {
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-khtml-border-radius: 5px;
+		border-radius: 5px;
+		width: 160px;
+		height: 90px;
+		background-image: url("../img/pulse-box-small-bg.png");
+	}
+	
+	#pulse .medium {
+		
+		margin-top: 0px;
+	}
+	
+	#pulse .medium > div {
+		width: 280px;
+		height: 160px;
+		background-image: url("../img/pulse-box-medium-bg.png");
+	}
+	
+	#pulse  .box > div {
+		color: #93AFC0;
+	}
+	
+	#pulse  .box > div > p {
+		margin-bottom: 0px;
+	}
+	
+	#pulse .large-highlight {
+		font-size: 30px;
+		color: #34BBF3;
+	}
+	
+	#followers img {
+		width: 95%;
+	}
+	
