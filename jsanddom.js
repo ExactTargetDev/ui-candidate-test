@@ -137,6 +137,32 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+		 
+		 //  Array.isArray() is not natively available in IE < 9
+		if(!Array.isArray) {
+			Array.isArray = function (vArg) {
+				return Object.prototype.toString.call(vArg) === "[object Array]";
+			};
+		}
+		
+		
+		// Is toPush an array?
+		if(Array.isArray(toPush)){
+			// If so iterate through items and push them onto array
+			for(i = 0; i < toPush.length; i++) {
+				array.push(toPush[i]);
+			}
+		 }
+		 // toPush is not an array
+		 else{
+			// Push toPush onto array
+			array.push(toPush)
+		 }
+		 
+		 
+		 return array;
+		 
+		 
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
