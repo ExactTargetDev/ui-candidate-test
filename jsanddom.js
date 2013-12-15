@@ -45,6 +45,39 @@
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+		
+		
+		var distinct_values = new Array();
+		
+		// Add first item to our new list of distinct values
+		distinct_values = [values[0]];
+		
+		// Loop through old list
+		for(i = 0; i < values.length; i++) {
+			
+			// Assume this item isn't in the new list yet
+			exists = false;
+			
+			// Check this assumption
+			for(x = 0; x < distinct_values.length; x++) {
+			
+				// If the item is in the list, change flag
+				if(values[i] == distinct_values[x]){
+					exists = true;
+				}
+				
+			}
+			
+			// If our original assumption was correct add item to new list
+			if (exists == false){
+				distinct_values[distinct_values.length] = values[i];
+			}
+
+		}
+		
+		return distinct_values;
+		
+		
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
