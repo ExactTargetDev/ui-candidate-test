@@ -112,6 +112,23 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+		 
+		for(i = 0; i < fruitsToRemove.length; i++) {
+			
+			for(x = 0; x < fruits.length; x++) {
+			
+				if(fruits[x] == fruitsToRemove[i]){
+					
+					fruits[x] = "";
+					
+				}
+
+			}
+
+		}
+		
+		return fruits;
+		
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
