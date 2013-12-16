@@ -129,6 +129,11 @@
 		width: 1000px;
 		float: right;
 		position: relative;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-khtml-border-radius: 5px;
+		border-radius: 5px;
+		border: 1px solid #B3BCF8;
 	}
 	
 	#pulse-logo {
@@ -148,6 +153,7 @@
 		margin-right: auto;
 		color: #7F91A3;
 		font-size: 11px;
+		font-weight: bold;
 	}
 	
 	#pulse > div {
@@ -168,6 +174,8 @@
 		width: 160px;
 		height: 90px;
 		background-image: url("../img/pulse-box-small-bg.png");
+		border: 1px solid #d5dee5;
+		box-shadow: 0px 15px 49px -20px rgba(0, 0, 0, 0.40);
 	}
 	
 	#pulse .medium {
@@ -191,21 +199,47 @@
 	
 	#pulse .box > div > p > .title {
 		float: left;
-		width: 150px;
+		width: 100px;
 		color: #666;
+		font-weight: normal;
+		font-size: 10px;
+		
+	}
+	
+	#pulse .medium > div > p > .title {
 		font-weight: bold;
+		font-size: 12px;
+		width: 150px;
 	}
 	
 	#pulse .box > div > p > .title-stat {
 		float: right;
 		width: 50px;
 		color: #666;
+		font-weight: normal;
+		font-size: 10px;
+	}
+	
+	#pulse .medium > div > p > .title-stat {
 		font-weight: bold;
+		font-size: 12px;
 	}
 	
 	#pulse .large-highlight {
 		font-size: 30px;
 		color: #34BBF3;
+	}
+	
+	#pulse .large {
+		font-size: 22px;
+	}
+	
+	#pulse .medium {
+		font-size: 16px;
+	}
+	
+	#pulse .small {
+		font-size: 12px;
 	}
 	
 	#followers img {
