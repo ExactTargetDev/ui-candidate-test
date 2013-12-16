@@ -75,6 +75,48 @@
 		
 		
 		<div id="calendar">
+			
+			<span class="month">September 2010</span>
+			
+			<img src="img/pulse-cal-icons.png" id="pulse-cal-icons">
+			
+			<div style="clear:both;"></div>
+			
+			<div class="cal-item first">
+				<span class="day">Sat</span>
+				<span class="date">11</span>
+			</div>
+			
+			<div class="cal-item">
+				<span class="day">Sun</span>
+				<span class="date">12</span>
+			</div>
+			
+			<div class="cal-item">
+				<span class="day">Mon</span>
+				<span class="date">13</span>
+			</div>
+			
+			<div class="cal-item today">
+				<span class="day">Tue</span>
+				<span class="date">14</span>
+			</div>
+			
+			<div class="cal-item">
+				<span class="day">Wed</span>
+				<span class="date">15</span>
+			</div>
+			
+			<div class="cal-item">
+				<span class="day">Thur</span>
+				<span class="date">16</span>
+			</div>
+			
+			<div class="cal-item">
+				<span class="day">Fri</span>
+				<span class="date">17</span>
+			</div>
+			
 		</div>
 		
 		
@@ -156,18 +198,6 @@
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 			
 		$(document).ready(function() {  
 			
@@ -179,7 +209,7 @@
 					
 					// Create list item
 					var item = document.createElement("li");
-					item.id = "item"
+					item.id = x;
 					
 					// Add list item to modal
 					temporary = document.getElementById("modal-body");
@@ -194,7 +224,7 @@
 					link.innerHTML = json.help[x].title;
 					
 					// Add list item to modal
-					temporary = document.getElementById("item");
+					temporary = document.getElementById(x);
 					temporary.appendChild(link);
 		
 		

@@ -112,15 +112,6 @@
 		color: #FFF;
 	}
 	
-	/* Calendar */
-	
-	#calendar{
-		margin-top: 50px;
-		height: 115px;
-		width: 1000px;
-		float: right;
-	}
-	
 	/* Pulse */
 	
 	#pulse {
@@ -245,4 +236,65 @@
 	#followers img {
 		width: 95%;
 	}
+	
+	/* Calendar */
+	
+	#calendar{
+		margin-top: 30px;
+		height: 130px;
+		width: 1000px;
+		float: right;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-khtml-border-radius: 5px;
+		border-radius: 5px;
+		position: relative;
+		background-color: #F5F5F5;
+		margin-bottom: 15px;
+		color: #888;
+		font-size: 12px;
+	}
+	
+	#pulse-cal-icons {
+		position: absolute;
+		right: 10px;
+		margin-top: 5px;
+	}
+	
+	#calendar .cal-item {
+		width: 140px;
+		height: 105px;
+		float: left;
+		padding: 5px;
+		border-left: 1px solid white;
+		border-right: 1px solid #DDD;
+	}
+	
+	#calendar .today {
+		background: url("../img/cal-today-bg.png");
+	}
+	
+	#calendar .month {
+		width: 200px;
+		float: left;
+		margin-left: 5px;
+		margin-top: 5px;
+	}
+	
+	#calendar .first {
+		margin-left: 5px;
+	}
+	
+	.cal-item .day {
+		float: left;
+		width: 50px;
+	}
+	
+	.cal-item .date {
+		float: right;
+		width: 20px;
+	}
+	
+	
+	
 	
