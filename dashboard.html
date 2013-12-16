@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Bootstrap CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+	<link href="css/custom.css" rel="stylesheet">
+	
+	<script src="data/help.json"></script>
+	
+    <title>Dashboard</title>
+</head>
+<body>
+	
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><img src="img/exact-target-logo.png" id="logo"></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>Welcome John!</li>
+					<li><a href="#">Account</a></li>
+					<li>|</li>
+					<li><a href="#" data-toggle="modal" data-target="#myModal">Help</a></li>
+					<li>|</li>
+					<li><a href="#">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Help</h4>
+			  </div>
+			  <div class="modal-body" id="modal-body">
+			
+			
+			
+			
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			  </div>
+			</div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
+		
+		
+		<div id="nav-left">
+			<ul id="top">
+				<li id="header"><a href="#"><img src="img/hub2.png"><div class="nav-link">Interactive Marketing Hub</div></a></li>
+				<li><a href="#"><img src="img/email.png"><span class="nav-link">ExactTarget Email</span></a></a></li>
+				<li><a href="#"><img src="img/phone.png"><span class="nav-link">ExactTarget Mobile</span></a></li>
+				<li><a href="#"><img src="img/cotweet.png"><span class="nav-link">CoTweet Social</span></a></li>
+				<li><a href="#"><img src="img/sites.png"><span class="nav-link">ExactTarget Sites</span></a></li>
+			</ul>
+			<ul>
+				<li><a href="#"><img src="img/studio.png"><span class="nav-link">Automation Studio</span></a></li>
+				<li><a href="#"><img src="img/audience.png"><span class="nav-link">Audience Builder</span></a></li>
+				<li><a href="#"><img src="img/report.png"><span class="nav-link">Report Builder</span></a></li>
+			</ul>
+			<ul>
+				<li><a href="#"><img src="img/arrow-right.png"><span class="nav-link">Partner Applications</span></a></li>
+			</ul>
+		</div>
+		
+		
+		
+		<div id="calendar">
+			
+			<span class="month">September 2010</span>
+			
+			<img src="img/pulse-cal-icons.png" id="pulse-cal-icons">
+			
+			<div style="clear:both;"></div>
+			
+			<div class="cal-item first">
+				<span class="day">Sat</span>
+				<span class="date">11</span>
+			</div>
+			
+			<div class="cal-item">
+				<span class="day">Sun</span>
+				<span class="date">12</span>
+			</div>
+			
+			<div class="cal-item">
+				<span class="day">Mon</span>
+				<span class="date">13</span>
+			</div>
+			
+			<div class="cal-item today">
+				<span class="day">Tue</span>
+				<span class="date">14</span>
+			</div>
+			
+			<div class="cal-item">
+				<span class="day">Wed</span>
+				<span class="date">15</span>
+			</div>
+			
+			<div class="cal-item">
+				<span class="day">Thur</span>
+				<span class="date">16</span>
+			</div>
+			
+			<div class="cal-item">
+				<span class="day">Fri</span>
+				<span class="date">17</span>
+			</div>
+			
+		</div>
+		
+		
+		
+		<div id="pulse">
+			
+			<img src="img/pulse-logo.png" id="pulse-logo">
+			
+			<img src="img/pulse-nav-icons.png" id="pulse-nav-icons">
+			
+			<div class="box">
+				<h6>Followers</h6>
+				<div id="followers">
+					<p><span class="large-highlight">310</span></p>
+					<p><span class="medium">added today</span></p>
+					<p><span class="small">2,393,905 total</span></p>
+				</div>
+			</div>
+			
+			<div class="box medium">
+				<h6>Fans</h6>
+				<div id="foursquare">
+					<p><span class="large-highlight">73</span></p>
+					<p><span class="medium">added today</span></p>
+					<p><span class="small">91,675 total</span></p>
+				</div>
+			</div>
+			
+			<div class="box">
+				<h6>Subscribers</h6>
+				<div id="followers">
+					<p><span class="large-highlight">56</span></p>
+					<p><span class="medium">added today</span></p>
+					<p><span class="small">189,405 total</span></p>
+				</div>
+			</div>
+			
+			<div class="box">
+				<h6>foursquare</h6>
+				<div id="followers">
+					<p><span class="title">Worldwide Checkins</span><span class="title-stat">3,905</span></p>
+					<img src="img/checkins-map.png">
+				</div>
+			</div>
+			
+			<div class="box">
+				<h6>Landing Pages</h6>
+				<div id="followers">
+					<p><span class="medium">Visitors Today</span></p>
+					<p><span class="large-highlight">397</span> <span class="large">/ 355</span></p>
+					<p><span class="small">Soulja Boy V.I.P.</span></p>
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+
+	<script src="js/scripts.js" type="text/javascript"></script>
+	
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	
+	
+	<script>
+		$(".box").click(function () {
+			
+			$(".box").removeClass('medium');
+			
+			$(this).addClass('medium');
+			
+			console.log(this);
+			
+		});
+		
+		
+		
+		
+		
+		
+			
+		$(document).ready(function() {  
+			
+			$.getJSON( "data/help.json", function( json ) {
+
+				for(x = 0; x < json.help.length; x++) {
+					
+					// TO DO - test this
+					
+					// Create list item
+					var item = document.createElement("li");
+					item.id = x;
+					
+					// Add list item to modal
+					temporary = document.getElementById("modal-body");
+					temporary.appendChild(item);
+					
+					// Create link item
+					var link = document.createElement("a");
+					link.id = "link"
+					link.href = json.help[x].URL;
+					
+					// Add text inside list item
+					link.innerHTML = json.help[x].title;
+					
+					// Add list item to modal
+					temporary = document.getElementById(x);
+					temporary.appendChild(link);
+		
+		
+		
+		
+					// This works, but doesn't include HREF
+					//var item = document.createElement("li");
+					//item.innerHTML = json.help[x].title;
+					
+					//temporary = document.getElementById("modal-body");
+					//temporary.appendChild(item);
+					
+					
+					
+				}
+	
+			});
+
+		});  
+
+	</script>
+
+</body>
+</html>

@@ -1,22 +1,83 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
+		 
+		str_reversed = "";
+		
+		for(i = 0; i <= str.length; i++){
+		
+			str_reversed += str.charAt(str.length - i);
+			
+		}
+		
+		return str_reversed;
+		
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+		
+		var minimum_value = new Array();
+		
+		minimum_value =  values[0];
+		
+		for(i = 0; i < values.length; i++) {
+		
+			if(values[i] < minimum_value){
+			
+				minimum_value = values[i];
+				
+			}
+			
+		}
+		
+		return minimum_value;
+		
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+		
+		
+		var distinct_values = new Array();
+		
+		// Add first item to our new list of distinct values
+		distinct_values = [values[0]];
+		
+		// Loop through old list
+		for(i = 0; i < values.length; i++) {
+			
+			// Assume this item isn't in the new list yet
+			exists = false;
+			
+			// Check this assumption
+			for(x = 0; x < distinct_values.length; x++) {
+			
+				// If the item is in the list, change flag
+				if(values[i] == distinct_values[x]){
+					exists = true;
+				}
+				
+			}
+			
+			// If our original assumption was correct add item to new list
+			if (exists == false){
+				distinct_values[distinct_values.length] = values[i];
+			}
+
+		}
+		
+		return distinct_values;
+		
+		
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -25,6 +86,24 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
+		
+		for(i = 1; i <= 100; i++){
+			if(i%3 == 0){
+				if(i%5 == 0){
+					console.log("FizzBuzz");
+				}
+				else{
+					console.log("Fizz");
+				}
+			}
+			else if (i%5 == 0){
+				console.log("Buzz");
+			}
+			else {
+				console.log(i);
+			}
+		 }
+		 
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -33,6 +112,23 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+		 
+		for(i = 0; i < fruitsToRemove.length; i++) {
+			
+			for(x = 0; x < fruits.length; x++) {
+			
+				if(fruits[x] == fruitsToRemove[i]){
+					
+					fruits[x] = "";
+					
+				}
+
+			}
+
+		}
+		
+		return fruits;
+		
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -41,24 +137,104 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+		 
+		 //  Array.isArray() is not natively available in IE < 9
+		if(!Array.isArray) {
+			Array.isArray = function (vArg) {
+				return Object.prototype.toString.call(vArg) === "[object Array]";
+			};
+		}
+		
+		
+		// Is toPush an array?
+		if(Array.isArray(toPush)){
+			// If so iterate through items and push them onto array
+			for(i = 0; i < toPush.length; i++) {
+				array.push(toPush[i]);
+			}
+		 }
+		 // toPush is not an array
+		 else{
+			// Push toPush onto array
+			array.push(toPush)
+		 }
+		 
+		 
+		 return array;
+		 
+		 
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          // FILL THIS IN
+		 
+		 if(sourceStr == ""){
+			return empty_array = [];
+		 }
+		 else{
+			// Return string as array splitted at the commas
+			return sourceStr.split(",")
+		 }
+		 
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          // FILL THIS IN
+		 
+		result = 0;
+		
+		for(i = 0; i < arguments.length; i++) {
+			result += arguments[i];
+		}
+			
+		return result;
+		
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
+		 
+		is_white_space = "";
+		 
+		if(sourceStr.length > 0){
+			is_white_space = true;
+			for(i = 0; i < sourceStr.length; i++) {
+				if(sourceStr[i] != " "){
+					is_white_space = false;
+				}
+			}
+		}
+		else {
+			// sourceStr isn't even a char long
+			is_white_space = false;
+		}
+		
+		if(is_white_space == true){
+			return true;
+		}
+		
+		
      }
 
      // write an example of a javascript closure
+	 
+	 function add_one(x){
+		var y = x + 1;
+		var inner = function(){ 
+			console.log(y);
+		}
+		// return the function so we can access the local variable 'y'
+		return inner; 
+	 }
+	 
+	 var doit = add_one(5);
+	 
+	 doit();
+	 
+	 
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -68,7 +244,20 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+	
+	var people = {
+		'first_name': '',
+		'last_name': '',
+		'city': '',
+		'state': '',
+		'zip': '',
+		'phone_home': '',
+		'phone_work': '',
+		'phone_mobile': ''
+	};
+	
+	
+	
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
@@ -81,18 +270,207 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+	 
+	 function DataTable () {
+		
+		// private
+		var columns = new Array();
+		var rows = new Array();
+		
+		this.addRows = function (itemToAddToRow) {
+			rows.push(itemToAddToRow);
+		};
+		
+		this.addColumns = function (itemToAddToColumn) {
+			columns.push(itemToAddToColumn);
+		};
+		
+		// privileged method
+		this.getData = function () {
+			 // TO DO - returns a json object representation of the DataTable
+			 
+
+			
+			
+		};
+		
+	 };
+	 
+	 
+	 
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+	 
+	 
+	// Create select box
+	var select = document.createElement("select");
+	select.id = "select";
+	temporary = document.getElementById("div1");
+	temporary.appendChild(select);
+	
+	// Create options for select box
+	var option1 = document.createElement("option");
+	var option2 = document.createElement("option");
+	
+	option1.value = "yes";
+	option1.text = "Yes";
+	option1.id = "option1";
+	option1.name = "name";
+	
+	option2.value = "no";
+	option2.text = "No";
+	option2.id = "option2";
+	option2.name = "name";
+	
+	select.add(option1, null);
+	select.add(option2, null);
+	
+	temporary = document.getElementById("div1");
+	temporary.appendChild(select);
+
+	// Create button for select box
+	var button = document.createElement("input");
+	button.type = "button";
+	button.value = "Click Me";
+	button.id = "button";
+	temporary = document.getElementById("div1");
+	temporary.appendChild(button);
+	
+	
+	// Add listener to button
+	var listener = document.getElementById("button");
+	listener.addEventListener("click",  function(){console.log(
+	
+		document.getElementById("select").value
+		
+	)}, false);
+	
+	
+	 
+	 
+	 
+	 
+	 
+	 
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+	 
+	$( ".link" );
+	$( "#fizz a" );
+	$( "#fizz .link" );
+	$( ".buzz a" );
+	$( ".buzz .link" );
+	
+	
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+	 
+	var sampleArray = ["one","two","three","four","five"];
+
+	for(x = 0; x < sampleArray.length; x++) {
+
+		var item = document.createElement("li");
+		
+		item.innerHTML = sampleArray[x];
+		temporary = document.getElementById("list1");
+		temporary.appendChild(item);
+
+	}
+	
+	
+	
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+	 
+	 
+	 
+	 
+	// Create first checkbox
+	var checkbox1 = document.createElement("input");
+	checkbox1.type = "checkbox";
+	checkbox1.className = "checkbox";
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(checkbox1);
+	
+	// Create line break
+	var br = document.createElement("br");
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(br);
+	
+	// Create second checkbox
+	var checkbox2 = document.createElement("input");
+	checkbox2.type = "checkbox";
+	checkbox2.className = "checkbox";
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(checkbox2);
+	
+	// Create line break
+	var br = document.createElement("br");
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(br);
+	
+	// Create third checkbox
+	var checkbox3 = document.createElement("input");
+	checkbox3.type = "checkbox";
+	checkbox3.className = "checkbox";
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(checkbox3);
+	
+	// Create line break
+	var br = document.createElement("br");
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(br);
+	
+	// Create first link
+	// TO DO: How do I create an a href tag?
+	var link1 = document.createElement("a");
+	link1.id = "check";
+	var link1text = document.createTextNode("Check");
+	link1.appendChild(link1text);
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(link1);
+	
+	// Create line break
+	var br = document.createElement("br");
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(br);
+	
+	// Create second link
+	var link2 = document.createElement("a");
+	link2.id = "uncheck";
+	var link2text = document.createTextNode("Uncheck");
+	link2.appendChild(link2text);
+	temporary = document.getElementById("foobar");
+	temporary.appendChild(link2);
+	
+	// Put all checkboxes in an array
+	var checkbox_array = document.getElementsByClassName("checkbox");
+	
+	// Add listener to first link
+	var listenerCheck = document.getElementById("check");
+	listenerCheck.addEventListener("click",  function(){
+		for(x = 0; x < checkbox_array.length; x++) {
+			checkbox_array[x].checked = true;
+		}
+	}, false);
+	
+	// Add listener to second link
+	var listenerUncheck = document.getElementById("uncheck");
+	listenerUncheck.addEventListener("click",  function(){
+		for(x = 0; x < checkbox_array.length; x++) {
+			
+			// TO DO 
+			// Set value of checkboxes[x] to checked
+			checkbox_array[x].checked = false;
+		}
+	}, false);
+	
+	
+	
