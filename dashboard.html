@@ -7,6 +7,8 @@
     <!-- Custom CSS -->
 	<link href="css/custom.css" rel="stylesheet">
 	
+	<script src="data/help.json"></script>
+	
     <title>Dashboard</title>
 </head>
 <body>
@@ -20,16 +22,38 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li>Welcome John!</li>
 					<li><a href="#">Account</a> | </li>
-					<li><a href="#">Help</a> | </li>
+					<li><a href="#" data-toggle="modal" data-target="#myModal">Help</a> | </li>
 					<li><a href="#">Logout</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	
-	
 	<div class="container">
-	
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Help</h4>
+			  </div>
+			  <div class="modal-body" id="modal-body">
+			
+			
+			
+			
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			  </div>
+			</div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
+		
+		
 		<div id="nav-left">
 			<ul id="top">
 				<li id="header"><a href="#"><img src="img/hub2.png"><div class="nav-link">Interactive Marketing Hub</div></a></li>
@@ -49,8 +73,10 @@
 		</div>
 		
 		
+		
 		<div id="calendar">
 		</div>
+		
 		
 		
 		<div id="pulse">
@@ -111,9 +137,11 @@
 	
 	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
 	
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	
+	
 	<script>
 		$(".box").click(function () {
-			
 			
 			$(".box").removeClass('medium');
 			
@@ -121,8 +149,72 @@
 			
 			console.log(this);
 			
-			
 		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		$(document).ready(function() {  
+			
+			$.getJSON( "data/help.json", function( json ) {
+
+				for(x = 0; x < json.help.length; x++) {
+					
+					// TO DO - test this
+					
+					// Create list item
+					var item = document.createElement("li");
+					item.id = "item"
+					
+					// Add list item to modal
+					temporary = document.getElementById("modal-body");
+					temporary.appendChild(item);
+					
+					// Create link item
+					var link = document.createElement("a");
+					link.id = "link"
+					link.href = json.help[x].URL;
+					
+					// Add text inside list item
+					link.innerHTML = json.help[x].title;
+					
+					// Add list item to modal
+					temporary = document.getElementById("item");
+					temporary.appendChild(link);
+		
+		
+		
+		
+					// This works, but doesn't include HREF
+					//var item = document.createElement("li");
+					//item.innerHTML = json.help[x].title;
+					
+					//temporary = document.getElementById("modal-body");
+					//temporary.appendChild(item);
+					
+					
+					
+				}
+	
+			});
+
+		});  
+
 	</script>
 
 </body>
