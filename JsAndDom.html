@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>JsAndDom</title>
-    <script type="text/javascript" src=" http://code.jquery.com/jquery-1.7.2.min.js" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
     <script type="text/javascript">
 
-             // Example unit test function
+
      function divide( a, b ) {
         if(isNaN(a) || isNaN(b))
         { 
@@ -18,10 +18,10 @@
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          var reversed = str.split("").reverse().join("");
-         alert(reversed);
+         return reversed;
      }
 
-//     reverseString("This is it!");
+ //    reverseString("Subscribers rock!");
 
 
      // Write a function that takes an array of numbers and returns the minimum value
@@ -41,9 +41,9 @@
                     }
              }              
          }
-         alert(minVal);       
+         return minVal;       
      }
- //    var array = new Array(5,4,3);
+ //    var array = new Array(3,5,7,20,.18,01,-1.1,12,Infinity, Infinity, 0.18,-1.1,12);
  //    findMinValue(array);
 
 
@@ -56,12 +56,12 @@
 
            var unique = values.filter( onlyUnique ); // should return [5, 4, 3, 21, 45, 6]
 
-         return(unique);
+         return unique;
      }
 
- //    var testerVals = new Array(5,4,3,21,45,5,6,3);
+//     var testerVals = new Array('apple','banana','orange','kiwi','pear','plum','strawberry','pear','banana');
 
- //    findDistinctValues(testerVals);
+//    findDistinctValues(testerVals);
 
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -93,7 +93,7 @@
                  fruits.splice(j,1);
              }
          }
-   //      alert(fruits);
+   //      return fruits;
      }
 
   //   var fruits = new Array("apple", "orange", "banana", "grapefruit");
@@ -109,12 +109,12 @@
          if(toPush.length)
          for(var i = 0; i < toPush.length; i++){array.push(toPush[i]);}
          else {array.push(toPush);}
-  //       alert(array);
+  //       return array;
      }
 
      var array = new Array(1,2,3);
      var pusher = 4;
-     pushOntoArray(array, pusher);
+//     pushOntoArray(array, pusher);
 
 
 
@@ -122,10 +122,10 @@
      function splitListStrUsingComma(sourceStr) {
         if(sourceStr.length){var splitString = sourceStr.split(" ");}
         else{ var newEmpty = new Array();}
-        alert(splitString);
+        return splitString;
      }
 
-//    var string = ("This is my hand");
+//    var string = ("The quick brown fox jumped over");
 //    splitListStrUsingComma(string);
 
 
@@ -136,10 +136,10 @@
          for(var i = 0; i < arguments.length; i++)
          {
              numTotal += arguments[i];
-//         alert(numTotal);
+//         return numTotal;
          }
      }
-//     sum(5,4,1);
+//     sum(1,2,3,5,7);
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
@@ -149,7 +149,7 @@
          {
               myResult = "true";
          }
-         alert(myResult);
+         return myResult;
      }
 
 
@@ -253,7 +253,7 @@
        thisTable.addRow();
        thisTable.addRow();
        var object = thisTable.getData();
-//       alert(object.rows);
+
 
 
 
@@ -265,7 +265,7 @@
        
        
 
-/*
+
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
@@ -275,14 +275,73 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     //***********************************************************************************
+
+     function makeList()
+     { 
+          var itemArray = ['Bob Dylan', 'Jack White', 'Daniel Johnston', 'Will Oldham', 'Andrew Bird'];
+          for(var i = 0; i < 5; i++)
+          {         
+              $('#list1').each(function(){
+                   $(this).append('<li>');
+                   $(this).find("li:last-child").text(itemArray[i]);
+             });
+          }
+          
+     }
+
+
+ //***********************************************************************************
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
 
-*/
 
+     function insertCheckboxes(){
+           for(var i = 0; i < 5; i++)
+           {   
+               $('#foobar').append('<input class="checkBox" type="checkbox">');
+           }
+     }
+
+     function insertLinks()
+     {
+         for(var i = 0; i < 2; i++)
+         {   
+             $('#foobar').append('&nbsp;<a href="#" class="link" onclick="return false">check</a>&nbsp;');
+
+         }
+         // attach id to links
+         $('#foobar a').first().attr('id','firstLink');
+         $('#foobar a:last-child').attr('id','lastLink');
+       
+     }
+
+   
+
+     $(document).ready(function(){
+ //      makeList();
+ //      insertCheckboxes();
+ //      insertLinks();
+
+          $('#firstLink').click(function(){
+              $('.checkBox').each(function(){
+                  $(this).attr('checked','true');
+               });
+          });
+
+          $('#lastLink').click(function(){
+              $('.checkBox').each(function(){
+                  $(this).removeAttr("checked");
+              });
+          });
+
+     });
+
+    
+       
 
     </script>
 </head>
@@ -305,7 +364,7 @@
 
               $( "select" ).change(function() {
                   $name = $(this).find(":selected").val();
-                  $value = $(this).find(":selected").
+                  $value = $(this).find(":selected");
                   console.log($name);
               });
 
@@ -328,6 +387,6 @@
 	<div id="foobar" style="margin-top:10px;">
 	</div>
 
-	<script src="jsanddom.js" type="text/javascript"></script>
+<!--	<script src="jsanddom.js" type="text/javascript"></script>-->
 </body>
 </html>
