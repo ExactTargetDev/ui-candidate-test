@@ -1,0 +1,193 @@
+<DOCTYPE html>
+
+<head>
+
+<meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<title>Candidate Example</title>
+
+<style>
+
+/*
+body, div, img, h1, h2, h3, h4, h5, h6, p,
+ul, ol, li, dl, dd, dt, blockquote, fieldset,
+legend, label, input, textarea { margin: 0; padding: 0; border: 0; }
+*/
+
+
+body{
+  background-color:#fefffd;
+}
+
+#container { position:relative; float:middle;margin-left:auto;margin-right:auto; width:960px; }
+
+.header { 
+    background-image:url(header.png);position:relative; margin:0 auto; width:960px;
+    background-repeat:no-repeat;
+
+
+
+}
+
+.navBar { 
+
+   position:absolute;
+   top:85px;
+   left:35px;
+   z-index: 0;
+   display:inline;
+
+}
+
+.navBar a { 
+ padding-top:5px;
+}
+
+#mainContent { 
+ /*   background-image:url(mainContentBack.png); */
+    width:900px;
+    padding:0px; 
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px; 
+    color:#3F3D3D; 
+}
+
+a:link    {color:#6F6751;}
+a:visited {color:4D4838;}
+a:hover   {font-size:14px}
+a:active  {color:#9A9485;}
+
+
+table{
+    padding-left:15px;
+    line-height:15px;
+    margin-top:-20px;
+}
+
+table a{
+  font-family:Arial, Helvetica, sans-serif;
+   text-decoration:none; 
+   font-size:12px; 
+   color:#6F6751;
+ }
+
+#mainContent{
+    position:relative;
+    z-index:0;
+
+}
+#nav{
+   position:absolute;
+   left:0;
+   top:0;
+}
+#calendar{
+   position:absolute;
+   right:-60;
+   top:0;
+}
+
+#pulse{
+   position:absolute;
+   top:93;
+   right:-59;
+   z-index:0;
+
+}
+
+#pulseHolder{
+
+   z-index:500;
+   position:absolute;
+   top:160;
+   right:-39;
+}
+
+.bigger{
+    height:16%;
+}
+</style>
+</head>
+<body>
+<div id="container">
+<div class="header">
+
+<img src="candidateSite/header.png" />
+<a href=”#” id="help" onclick="return false" style="position:absolute;top:10px;right:15px;height:15px;width:40px;"></a>
+</div><!–end div “header”–>
+
+
+
+<div id="mainContent">
+
+<img id="nav" src="navBar.png" />
+<img id="calendar" src="calendar.png" />
+<img id="pulse" src="pulse.png" />
+
+    <div class="navBar">
+       <table>
+          <tr><td>
+        <a href=”#” return="false">ExactTarget Email</a><br/><br/>
+          </td></tr><tr><td>
+        <a href=”songs.html”>ExactTarget Mobile</a><br/><br/>
+          </td></tr><tr><td>
+        <a href=”photos.html”>CoTweet Social</a><br/><br/>
+           </td></tr><tr><td>
+        <a href=”videos.html”>ExactTarget Sites</a><br/><br/>
+           </td></tr><tr><td>
+        <a href=”events.html”>Automation Studio</a><br/><br/>
+           </td></tr><tr><td>
+        <a href=”events.html”>Audience Builder</a><br/><br/>
+           </td></tr><tr><td>
+        <a href=”events.html”>Report Builder</a><br/><br/>
+           </td></tr>
+     </table>
+    </div><!–end div “navBar”–>
+
+   <div id="pulseHolder">
+      <img id="followers" class="sizeToggle" src="followers.png" />
+      <img id="fan" class="sizeToggle" src="Fan.png" />
+      <img id="subscribers" class="sizeToggle" src="subscribers.png" />
+      <img id="fourSquare" class="sizeToggle bigger" src="fourSquare.png" />
+      <img id="landingPages" class="sizeToggle" src="landingPages.png" />
+      
+   </div> <!--pulseHolder-->
+<div id="jsonDiv"></div>
+</div><!--end mainContent div-->
+
+
+
+
+</div>
+</body>
+<script type="text/javascript">
+
+        $('.sizeToggle').click(function(){
+             $('.sizeToggle').removeClass('bigger');
+             $(this).toggleClass('bigger');
+        });
+
+        $('.sizeToggle').hover(function(){
+            $(this).css('box-shadow', '2px 2px 5px #888888');
+        }, function(){
+           $(this).css('box-shadow','0px 0px 0px #888888');
+           
+       });    
+
+      $('#help').click(function(){
+          $.getJSON( "help.json", function( data ) {
+          var items = [];
+          $.each( data, function( key, val ) {
+          items.push( "<li id='" + key + "'>" + val +
+           "</li>" );      
+        });
+ 
+        $( "<ul/>", {
+         "class": "my-new-list",
+            html: items.join( "" )
+          }).appendTo( "body" );
+       });  
+    });
+      
+</script>
+</html>
