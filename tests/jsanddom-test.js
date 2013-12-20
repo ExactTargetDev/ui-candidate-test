@@ -36,7 +36,7 @@ test( "findDistinctValues() should return the distinct values in an array", 3, f
 });
 
 module( "FizzBuzz");
-test( "doFizzBuzz() should return proper fizz buzz sequence", 6, function() {
+test( "doFizzBuzz() should return proper fizz buzz sequence", 9, function() {
 	var fizzBuzz = doFizzBuzz();
 	equal(fizzBuzz.length, 99, "There are 1 to 100 in the fizz buzz");
 	equal(fizzBuzz[0], 1);
@@ -44,6 +44,11 @@ test( "doFizzBuzz() should return proper fizz buzz sequence", 6, function() {
 	equal(fizzBuzz[2], "Fizz");
 	equal(fizzBuzz[4], "Buzz");
 	equal(fizzBuzz[14], "FizzBuzz");
+
+	var counts = _.countBy(fizzBuzz, _.identity);
+	equal(counts.Fizz, 27);
+	equal(counts.Buzz, 13);
+	equal(counts.FizzBuzz, 6);
 });
 
 module( "More Arrays" );
@@ -60,4 +65,26 @@ test( "pushOntoArray() should add items to an array", 2, function() {
 
 	combinedArray = pushOntoArray(["Banana", "Carrot", "Tomato"], ["Beet", "Radish"]);
 	deepEqual( combinedArray, ["Banana", "Carrot", "Tomato", "Beet", "Radish"], "The more the merrier: " + combinedArray );
+});
+
+module( "String Split");
+test( "splitListStrUsingComma() should create an array of tokens delimited by a comma", function() {
+	var tokens = splitListStrUsingComma("item1,item2,item3,item4");
+	equal(tokens.length, 4);
+	deepEqual(tokens, ["item1", "item2", "item3", "item4"]);
+});
+test( "splitListStrUsingComma() should return an empty array for empty string input", function() {
+	deepEqual(splitListStrUsingComma(""), []);
+});
+
+module( "Sum");
+test( "sum() should sum any number of elements", 2, function() {
+	equal(sum(1, 2, 3, 4), 10);
+	equal(sum("a", "b", "c", 1, 2, 3), "abc123");
+});
+
+module( "Whitespace");
+test( "isOnlyWhitespace() should return true when there are only whitespace characters", 2, function() {
+	ok( isOnlyWhitespace("            ") );
+	ok( !isOnlyWhitespace("      12     4      ") );
 });

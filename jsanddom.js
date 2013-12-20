@@ -59,21 +59,22 @@
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+        return _.isEmpty(sourceStr) ? [] : _.clone(sourceStr).split(",");
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+        return _.reduce(arguments, function(memo, item) { return memo + item; });
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+        return new RegExp(/^\s+$/).test(sourceStr);
      }
 
      // write an example of a javascript closure
      // pretty much every 2nd parameter to an underscore function above :)
+     // in _.each([1,2,3], function(x) { console.log(x); }) the function argument is a closure and will execute in its own scope.
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -83,36 +84,36 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-    // var jsonPeople = {[
-    //     {
-    //         firstName:  "Brett",
-    //         lastName:   "Timperman",
-    //         address: {
-    //             city:   "Cincinnati",
-    //             state:  "OH",
-    //             zip:    45140
-    //         },
-    //         phoneNumbers: {
-    //             mobile: 5135156738,
-    //             work:   5139846700,
-    //             home:   5135551212 
-    //         }
-    //     },
-    //     {
-    //         firstName:  "John",
-    //         lastName:   "Doe",
-    //         address: {
-    //             city:   "Indianapolis",
-    //             state:  "IN",
-    //             zip:    46210
-    //         },
-    //         phoneNumbers: {
-    //             mobile: 8123454567,
-    //             work:   8123452223,
-    //             home:   8120009999 
-    //         }
-    //     }
-    // ]};
+    var jsonPeople = [
+        {
+            firstName:  "Brett",
+            lastName:   "Timperman",
+            address: {
+                city:   "Cincinnati",
+                state:  "OH",
+                zip:    45140
+            },
+            phoneNumbers: {
+                mobile: 5135156738,
+                work:   5139846700,
+                home:   5135551212 
+            }
+        },
+        {
+            firstName:  "John",
+            lastName:   "Doe",
+            address: {
+                city:   "Indianapolis",
+                state:  "IN",
+                zip:    46210
+            },
+            phoneNumbers: {
+                mobile: 8123454567,
+                work:   8123452223,
+                home:   8120009999 
+            }
+        }
+    ];
 
 
      // Create a javascript object (DataTable) with the following:
