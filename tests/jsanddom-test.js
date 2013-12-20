@@ -19,12 +19,15 @@ test( "reverseString() should return the input string backwards", 1, function() 
 });
 
 module( "Arrays" );
-test( "findMinValue() should return the smallest number in an array", 2, function() {
+test( "findMinValue() should return the smallest number in an array", 3, function() {
 	var smallest = findMinValue([5, 3, 7, 290, -4, 4]);
 	equal( smallest, -4, "The smallest item in the list is " + smallest );
 
 	smallest = findMinValue([900, 42, 360, 100]);
 	equal( smallest, 42, "The answer is " + smallest);
+
+	smallest = findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]);
+	equal( smallest, -1.1, "The answer is " + smallest);	
 });
 test( "findDistinctValues() should return the distinct values in an array", 3, function() {
 	var unique = findDistinctValues([1, 2, 2, 3, 5, 2, 5]);
@@ -85,7 +88,7 @@ test( "sum() should sum any number of elements", 2, function() {
 
 module( "Whitespace");
 test( "isOnlyWhitespace() should return true when there are only whitespace characters", 2, function() {
-	ok( isOnlyWhitespace("            ") );
+	ok( isOnlyWhitespace("   \n  \r       ") );
 	ok( !isOnlyWhitespace("      12     4      ") );
 });
 
