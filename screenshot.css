@@ -95,6 +95,23 @@ div.modal-body ul {
 	list-style: none;
 }
 
+#sidemenu {
+	border: 1px solid #d3d3d3;
+	background-color: #f0f0f0;
+	border-radius: 5px;
+	padding-bottom: 10px;
+}
+
 #sidemenu a {
 	font-size: 11px;
+}
+
+#sidemenu .nav-header {
+	background-color: #FEE8D6;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+#sidemenu a i {
+	margin-right: 12px;
 }
