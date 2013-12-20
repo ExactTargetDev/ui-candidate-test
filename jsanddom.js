@@ -25,7 +25,13 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         var logArray = _.map(_.range(1, 100), function(number) {
+            var fizzBuzz = ( ( number % 3 == 0 ) ? "Fizz" : "" ) + ( (number % 5 == 0) ? "Buzz" : "" );
+            return fizzBuzz.length > 0 ? fizzBuzz : number;
+         });
+
+         _.each(logArray, function(logItem) { console.log(logItem); });
+         return logArray;
      }
 
      // You have a master array of strings, where each element is a fruit name.

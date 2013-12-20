@@ -34,3 +34,14 @@ test( "findDistinctValues() should return the distinct values in an array", 3, f
 	unique = findDistinctValues([123, "123", 1, 1]);
 	deepEqual( unique, [123, "123", 1], "All is equal that should be equal in " + unique);
 });
+
+module( "FizzBuzz");
+test( "doFizzBuzz() should return proper fizz buzz sequence", 6, function() {
+	var fizzBuzz = doFizzBuzz();
+	equal(fizzBuzz.length, 99, "There are 1 to 100 in the fizz buzz");
+	equal(fizzBuzz[0], 1);
+	equal(fizzBuzz[1], 2);
+	equal(fizzBuzz[2], "Fizz");
+	equal(fizzBuzz[4], "Buzz");
+	equal(fizzBuzz[14], "FizzBuzz");
+});
