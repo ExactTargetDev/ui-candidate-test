@@ -61,10 +61,10 @@
 
 					<div id="pulse">
 						<h3>Pulse</h3>
-						<ul>
-							<li ng-repeat="dashboardItem in dashboard" ng-click="selectItem(dashboardItem)">
+						<ul ng-class="{squeezed: dashboardHasSelectedItem()}">
+							<li ng-repeat="dashboardItem in dashboard" ng-click="selectItem(dashboardItem)" ng-class="{selected: dashboardItem.selected}">
 								<p>{{ dashboardItem.title }}</p>
-								<div ng-class="{ selected: dashboardItem.selected, visit: dashboardItem.type == 'visit', add: dashboardItem.type == 'add', checkin: dashboardItem.type == 'checkin'}">
+								<div ng-class="{ visit: dashboardItem.type == 'visit', add: dashboardItem.type == 'add', checkin: dashboardItem.type == 'checkin'}">
 									<h5 ng-show="dashboardItem.type == 'visit'">Visitors Today</h5>
 									<h2>{{ dashboardItem.stat }}</h2><h4 ng-show="dashboardItem.type == 'visit'">/ {{ dashboardItem.max }}</h4>
 									<h5 ng-show="dashboardItem.type == 'add'">added today</h5>

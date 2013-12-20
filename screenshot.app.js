@@ -24,6 +24,10 @@ screenshot.controller('MarketingHubController', ['$scope', '$http', '$modal', fu
 		item.selected = true;
 	};
 
+	$scope.dashboardHasSelectedItem = function () {
+		return _.some($scope.dashboard, function(item) { return item.selected; });
+	};
+
 	$scope.openHelp = function () {
 		var modalInstance = $modal.open({
 			templateUrl: "help_modal.html", 

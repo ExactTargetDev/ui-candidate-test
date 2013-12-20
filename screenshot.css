@@ -50,10 +50,23 @@
 
 #pulse {
 	margin-top: 20px;
+	background-color: #f0f0f0;
+  	background-image: -webkit-gradient(linear, left top, left bottom, from(#d3d3d3), to(#f0f0f0));
+  	background-image: -webkit-linear-gradient(top, #d3d3d3, #f0f0f0);
+  	background-image: -moz-linear-gradient(top, #d3d3d3, #f0f0f0);
+  	background-image: -o-linear-gradient(top, #d3d3d3, #f0f0f0);
+  	background-image:  linear-gradient(to bottom, #d3d3d3, #f0f0f0);
+  	padding-bottom: 30px;
+}
+
+#pulse h2 {
+	color: #87cefa;
 }
 
 #pulse h3 {
-	margin-left: 10px;
+	margin-left: 20px;
+	color: #ffffff;
+	text-shadow: 1px 1px 2px #999999;
 }
 
 #pulse ul li {
@@ -61,11 +74,29 @@
 	margin: 16px;
 }
 
+#pulse ul.squeezed li {
+	margin-left: 14px;
+	margin-right: 14px;
+}
+
+
+#pulse ul.squeezed li.selected {
+	margin-left: 24px;
+	margin-right: 24px;
+}
+
 #pulse ul li > div {
 	width: 150px;
 	height: 85px;
 	border: 1px solid #eeeeee;
 	border-radius: 3px;
+	background-color: #f0f9f9;
+  	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f0f9f9));
+  	background-image: -webkit-linear-gradient(top, #ffffff, #f0f9f9);
+  	background-image: -moz-linear-gradient(top, #ffffff, #f0f9f9);
+  	background-image: -o-linear-gradient(top, #ffffff, #f0f9f9);
+  	background-image:  linear-gradient(to bottom, #ffffff, #f0f9f9);
+  	box-shadow: 0px 3px 5px -1px #d3d3d3;
 }
 
 #pulse p, #pulse h2, #pulse h4, #pulse h5 {
@@ -88,7 +119,19 @@
 }
 
 #pulse .selected {
-	background-color: yellow;
+	transform: scale(1.2,1.2);
+	-webkit-transform: scale(1.2,1.2);
+	-moz-transform: scale(1.2,1.2);
+	-o-transform: scale(1.2,1.2);
+}
+
+#pulse .selected div {
+	background-color: #d0f9ff;
+  	background-image: -webkit-gradient(linear, left top, left bottom, from(#f0f9f9), to(#d0f9ff));
+  	background-image: -webkit-linear-gradient(top, #f0f9f9, #d0f9ff);
+  	background-image: -moz-linear-gradient(top, #f0f9f9, #d0f9ff);
+  	background-image: -o-linear-gradient(top, #f0f9f9, #d0f9ff);
+  	background-image:  linear-gradient(to bottom, #f0f9f9, #d0f9ff);
 }
 
 div.modal-body ul {
@@ -114,4 +157,8 @@ div.modal-body ul {
 
 #sidemenu a i {
 	margin-right: 12px;
+}
+
+.navbar .brand {
+	margin: 0;
 }
