@@ -2,7 +2,90 @@
 <html>
 <head>
     <title>Screenshot.html</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="screenshot.css">
 </head>
-<body>
+<body ng-app="screenshot">
+	<div class="container" ng-controller="MarketingHubController" ng-cloak="ng-cloak">
+		<div class="navbar navbar-fixed-top navbar-inverse">
+			<div class="navbar-inner">
+				<a class="brand" href="#">ExactTarget</a>
+			    <ul class="nav pull-right">
+			    	<li><p class="navbar-text">Welcome John!</p></li>
+		      		<li class="divider"></li>
+		      		<li class="active"><a href="#">Account</a></li>
+		      		<li class="divider"></li>
+		      		<li><a href="#" ng-click="openHelp()">Help</a></li>
+		      		<li class="divider"></li>
+		      		<li><a href="#">Logout</a></li>
+		    	</ul>
+	    	</div>
+		</div>
+
+		<div class="loading" ng-show="dashboardLoading">Loading ...</div>
+
+		<div id="main" class="container-fluid" ng-hide="dashboardLoading">
+  			<div class="row-fluid">
+  				<div class="span2">
+					<ul id="sidemenu" class="nav nav-list">
+						<li class="nav-header">Interactive Marketing Hub</li>
+						<li><a href="#"><i class="icon-envelope"></i>ExactTarget Email</a></li>
+						<li><a href="#"><i class="icon-signal"></i>ExactTarget Mobile</a></li>
+						<li><a href="#"><i class="icon-retweet"></i>CoTweet Social</a></li>
+						<li><a href="#"><i class="icon-globe"></i>ExactTarget Sites</a></li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="icon-cog"></i>Automation Studio</a></li>
+						<li><a href="#"><i class="icon-user"></i>Audience Builder</a></li>
+						<li><a href="#"><i class="icon-briefcase"></i>Report Builder</a></li>
+						<li class="divider"></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle"><i class="icon-chevron-down"></i>Partner Applications</a>
+						  	<ul class="dropdown-menu">
+						    	<li><a href="http://www.github.com">Github</a></li>
+						    	<li><a href="http://www.google.com">Google</a></li>
+						  	</ul>
+						</li>
+					</ul>
+				</div>
+
+				<div class="span10">
+					<div id="calendar">
+						<h6>{{ today | date: 'MMMM yyyy' }}</h6>
+						<ul>
+							<li class="day" ng-repeat="day in week" ng-class="{ today: day.today, last: $last }">
+								<p class="weekday">{{ day.date | date: 'EEE' }}</p>
+								<p class="date">{{ day.date | date: 'd' }}
+							</li>
+						</ul>
+					</div>
+
+					<div id="pulse">
+						<h3>Pulse</h3>
+						<ul ng-class="{squeezed: dashboardHasSelectedItem()}">
+							<li ng-repeat="dashboardItem in dashboard" ng-click="selectItem(dashboardItem)" ng-class="{selected: dashboardItem.selected}">
+								<p>{{ dashboardItem.title }}</p>
+								<div ng-class="{ visit: dashboardItem.type == 'visit', add: dashboardItem.type == 'add', checkin: dashboardItem.type == 'checkin'}">
+									<h5 ng-show="dashboardItem.type == 'visit'">Visitors Today</h5>
+									<h2>{{ dashboardItem.stat }}</h2><h4 ng-show="dashboardItem.type == 'visit'">/ {{ dashboardItem.max }}</h4>
+									<h5 ng-show="dashboardItem.type == 'add'">added today</h5>
+									<h5 ng-show="dashboardItem.type == 'checkin'">Worldwide Checkins</h5>
+									<p ng-show="dashboardItem.type == 'checkin'">Telling the internet where you are</p>
+									<p ng-show="dashboardItem.type == 'add'">{{ dashboardItem.total | number }} total</p>
+									<p ng-show="dashboardItem.type == 'visit'">{{ dashboardItem.status }}</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.7.0/ui-bootstrap-tpls.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script src="http://underscorejs.org/underscore-min.js"></script>
+	<script src="http://momentjs.com/downloads/moment.min.js"></script>
+	<script src="screenshot.app.js"></script>
 </body>
 </html>

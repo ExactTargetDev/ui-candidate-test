@@ -1,0 +1,14 @@
+<div class="modal-header">
+    <h3>Help</h3>
+</div>
+<div class="modal-body">
+	<div class="loading" ng-show="helpLoading">Loading ...</div>
+    <ul ng-hide="helpLoading">
+    	<li ng-repeat="helpItem in help">
+    		<a ng-href="{{helpItem.URL}}">{{ helpItem.title }}</a>
+    	</li>
+    </ul>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+</div>

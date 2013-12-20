@@ -1,22 +1,23 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+        var backwards = _.toArray(str).reverse();
+        return _.reduce(backwards, function(memo, character) { return memo + character; }, "");
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+        return _.min(values);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+        return _.uniq(values);
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,7 +25,13 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         var logArray = _.map(_.range(1, 101), function(number) {
+            var fizzBuzz = ( ( number % 3 == 0 ) ? "Fizz" : "" ) + ( (number % 5 == 0) ? "Buzz" : "" );
+            return fizzBuzz.length > 0 ? fizzBuzz : number;
+         });
+
+         _.each(logArray, function(logItem) { console.log(logItem); });
+         return logArray;
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -32,7 +39,7 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+        return _.difference(fruits, fruitsToRemove);
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -40,25 +47,34 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+        var arr =  _.clone(array);
+        if ( _.isArray(toPush) ) {
+            _.each(toPush, function(item) { arr.push(item); });
+        } else {
+            arr.push(toPush);
+        }
+        
+        return arr;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+        return _.isEmpty(sourceStr) ? [] : _.clone(sourceStr).split(",");
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+        return _.reduce(arguments, function(memo, item) { return memo + item; });
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+        return new RegExp(/^\s+$/).test(sourceStr);
      }
 
      // write an example of a javascript closure
+     // pretty much every 2nd parameter to an underscore function above :)
+     // in _.each([1,2,3], function(x) { console.log(x); }) the function argument is a closure and will execute in its own scope.
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -68,6 +84,36 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+    var jsonPeople = [
+        {
+            firstName:  "Brett",
+            lastName:   "Timperman",
+            address: {
+                city:   "Cincinnati",
+                state:  "OH",
+                zip:    45140
+            },
+            phoneNumbers: {
+                mobile: 5135156738,
+                work:   5139846700,
+                home:   5135551212 
+            }
+        },
+        {
+            firstName:  "John",
+            lastName:   "Doe",
+            address: {
+                city:   "Indianapolis",
+                state:  "IN",
+                zip:    46210
+            },
+            phoneNumbers: {
+                mobile: 8123454567,
+                work:   8123452223,
+                home:   8120009999 
+            }
+        }
+    ];
 
 
      // Create a javascript object (DataTable) with the following:
@@ -81,18 +127,65 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     function DataTable() {
+        var _columns =[];
+        var _rows = [];
+
+        this.addColumns = function() {
+            _.each(arguments, function(arg) { _columns.push(arg); });
+        };
+
+        this.addRows = function() {
+            _.each(arguments, function(arg) { _rows.push(arg); });
+        };
+
+        this.getData = function() {
+            return { "columns": _columns, "rows": _rows };
+        };
+     };
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     function createSelectAndButton() {
+        var selectElement = $("<select id='select1to5' />");
+        _.each(_.range(1,5), function(index) { selectElement.append("<option value='" + index + "'>" + index + "</option>"); });
+
+        var button = $("<button>Select</button>");
+        button.click(function(e) { var selected = $("#select1to5 :selected"); console.log({name: selected.html(), value: selected.val()}); });
+
+        $("#div1").append(selectElement, button);
+     };
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     function getSampleAnchor() {
+        console.log($("a.link"));
+        console.log($("a[href=#]"));
+        console.log($("div#fizz a"));
+        console.log($("div.buzz a"));
+        console.log($("div#foo a"));
+     };
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     function createListItems() {
+        var ul = $("ul#list1");
+        _.each(_.range(1, 6), function(item) { ul.append($("<li>" + item + ") " + String.fromCharCode(96+item) + "</li>")); });
+     };
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     function createCheckboxes() {
+        var div = $("div#foobar");
+        _.each(_.range(1, 10), function(item) { div.append($("<input type='checkbox' >" + item + "</input>")) });
+
+        var a1 = $("<a href='#'>Check All</a>");
+        var a2 = $("<a href='#'>Uncheck All</a>");
+        var setCheckboxes = function(val) { $("div#foobar input[type=checkbox]").prop("checked", val); };
+        a1.click(function() { setCheckboxes(true); });
+        a2.click(function() { setCheckboxes(false); });
+        div.append(a1,a2);
+     };
