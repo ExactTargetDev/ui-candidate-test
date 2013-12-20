@@ -12,3 +12,8 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+module( "String " );
+test( "reverseString() should return the input string backwards", 1, function() {
+	var mirrored = reverseString("Timperman");
+	ok( mirrored, "namrepmiT", "Timperman backwards is " + mirrored );
+});
