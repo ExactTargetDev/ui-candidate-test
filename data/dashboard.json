@@ -4,31 +4,31 @@
             "title": "Followers",
             "stat":  310,
             "total": 2393905,
-            "action": "add"
+            "type": "add"
         },
         {
             "title": "Fan",
             "stat":  73,
             "total": 91675,
-            "action": "add"
+            "type": "add"
         },
         {
             "title": "Subscribers",
             "stat":  56,
             "total": 189405,
-            "action": "add"
+            "type": "add"
         },
         {
             "title": "foursquare",
             "stat":  3905,
-            "action": "checkin"
+            "type": "checkin"
         },
         {
             "title": "Landing Pages",
             "stat":  397,
             "max":   355,
             "status": "Soulja Boy V.I.P.",
-            "action": "visit"
+            "type": "visit"
         }
     ]
 }

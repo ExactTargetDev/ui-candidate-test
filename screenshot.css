@@ -51,3 +51,46 @@
 #pulse {
 	margin-top: 20px;
 }
+
+#pulse h3 {
+	margin-left: 10px;
+}
+
+#pulse ul li {
+	display: inline-block;
+	margin: 16px;
+}
+
+#pulse ul li > div {
+	width: 150px;
+	height: 85px;
+	border: 1px solid #eeeeee;
+	border-radius: 3px;
+}
+
+#pulse p, #pulse h2, #pulse h4, #pulse h5 {
+	text-align: center;
+	margin: auto;
+}
+
+#pulse .visit h2, #pulse .visit h4 {
+	display: inline-block;
+}
+
+#pulse .visit h2 {
+	margin-left: 23px;
+	margin-right: 5px;
+}
+
+#pulse .visit h4 {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#pulse .selected {
+	background-color: yellow;
+}
+
+div.modal-body ul {
+	list-style: none;
+}
