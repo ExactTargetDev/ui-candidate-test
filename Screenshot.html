@@ -76,23 +76,6 @@
 
 	</div>
 
-	<script id="modal_content.html" type="text/ng-template">
-        <div class="modal-header">
-            <h3>Help</h3>
-        </div>
-        <div class="modal-body">
-        	<div class="loading" ng-show="helpLoading">Loading ...</div>
-            <ul ng-hide="helpLoading">
-            	<li ng-repeat="helpItem in help">
-            		<a ng-href="{{helpItem.URL}}">{{ helpItem.title }}</a>
-            	</li>
-            </ul>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="ok()">OK</button>
-        </div>
-    </script>
-
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.7.0/ui-bootstrap-tpls.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>

@@ -26,7 +26,7 @@ screenshot.controller('MarketingHubController', ['$scope', '$http', '$modal', fu
 
 	$scope.openHelp = function () {
 		var modalInstance = $modal.open({
-			templateUrl: "modal_content.html", 
+			templateUrl: "help_modal.html", 
 			controller: 'ModalController',
 			resolve: {}
 		});
