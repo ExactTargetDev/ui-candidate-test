@@ -6,18 +6,18 @@
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-        var backwards = _.toArray('hello').reverse();
+        var backwards = _.toArray(str).reverse();
         return _.reduce(backwards, function(memo, character) { return memo + character; }, "");
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+        return _.min(values);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+        return _.uniq(values);
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
