@@ -25,7 +25,7 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         var logArray = _.map(_.range(1, 100), function(number) {
+         var logArray = _.map(_.range(1, 101), function(number) {
             var fizzBuzz = ( ( number % 3 == 0 ) ? "Fizz" : "" ) + ( (number % 5 == 0) ? "Buzz" : "" );
             return fizzBuzz.length > 0 ? fizzBuzz : number;
          });
@@ -127,18 +127,65 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     function DataTable() {
+        var _columns =[];
+        var _rows = [];
+
+        this.addColumns = function() {
+            _.each(arguments, function(arg) { _columns.push(arg); });
+        };
+
+        this.addRows = function() {
+            _.each(arguments, function(arg) { _rows.push(arg); });
+        };
+
+        this.getData = function() {
+            return { "columns": _columns, "rows": _rows };
+        };
+     };
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     function createSelectAndButton() {
+        var selectElement = $("<select id='select1to5' />");
+        _.each(_.range(1,5), function(index) { selectElement.append("<option value='" + index + "'>" + index + "</option>"); });
+
+        var button = $("<button>Select</button>");
+        button.click(function(e) { var selected = $("#select1to5 :selected"); console.log({name: selected.html(), value: selected.val()}); });
+
+        $("#div1").append(selectElement, button);
+     };
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     function getSampleAnchor() {
+        console.log($("a.link"));
+        console.log($("a[href=#]"));
+        console.log($("div#fizz a"));
+        console.log($("div.buzz a"));
+        console.log($("div#foo a"));
+     };
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     function createListItems() {
+        var ul = $("ul#list1");
+        _.each(_.range(1, 6), function(item) { ul.append($("<li>" + item + ") " + String.fromCharCode(96+item) + "</li>")); });
+     };
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     function createCheckboxes() {
+        var div = $("div#foobar");
+        _.each(_.range(1, 10), function(item) { div.append($("<input type='checkbox' >" + item + "</input>")) });
+
+        var a1 = $("<a href='#'>Check All</a>");
+        var a2 = $("<a href='#'>Uncheck All</a>");
+        var setCheckboxes = function(val) { $("div#foobar input[type=checkbox]").prop("checked", val); };
+        a1.click(function() { setCheckboxes(true); });
+        a2.click(function() { setCheckboxes(false); });
+        div.append(a1,a2);
+     };

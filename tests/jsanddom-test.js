@@ -38,7 +38,7 @@ test( "findDistinctValues() should return the distinct values in an array", 3, f
 module( "FizzBuzz");
 test( "doFizzBuzz() should return proper fizz buzz sequence", 9, function() {
 	var fizzBuzz = doFizzBuzz();
-	equal(fizzBuzz.length, 99, "There are 1 to 100 in the fizz buzz");
+	equal(fizzBuzz.length, 100, "There are 1 to 100 in the fizz buzz");
 	equal(fizzBuzz[0], 1);
 	equal(fizzBuzz[1], 2);
 	equal(fizzBuzz[2], "Fizz");
@@ -47,7 +47,7 @@ test( "doFizzBuzz() should return proper fizz buzz sequence", 9, function() {
 
 	var counts = _.countBy(fizzBuzz, _.identity);
 	equal(counts.Fizz, 27);
-	equal(counts.Buzz, 13);
+	equal(counts.Buzz, 14);
 	equal(counts.FizzBuzz, 6);
 });
 
@@ -87,4 +87,23 @@ module( "Whitespace");
 test( "isOnlyWhitespace() should return true when there are only whitespace characters", 2, function() {
 	ok( isOnlyWhitespace("            ") );
 	ok( !isOnlyWhitespace("      12     4      ") );
+});
+
+module( "DataTable" );
+test( "DataTable() creates a data table object", function() {
+	var dt = new DataTable();
+	dt.addColumns('column1', 'column2', 'column3');
+    dt.addRows('value1A', 'value1B', 'value1C');
+    dt.addRows('value2A', 'value2B', 'value2C');
+
+    deepEqual(dt.getData(), {columns: ["column1", "column2", "column3"], rows: ["value1A", "value1B", "value1C", "value2A", "value2B", "value2C"]});
+    ok(!_.has(dt, "_columns"), "Cannot access private columns property");
+    ok(!_.has(dt, "_rows"), "Cannot access private rows property");
+});
+
+module( "DOM" );
+test( "createSelectAndButton() appends select and button to div1", function() {
+	createSelectAndButton();
+	$("#div1 button").click();
+	equal($("#div1 option").length, 4);
 });
