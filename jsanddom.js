@@ -39,7 +39,7 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+        return _.difference(fruits, fruitsToRemove);
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -47,7 +47,14 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+        var arr =  _.clone(array);
+        if ( _.isArray(toPush) ) {
+            _.each(toPush, function(item) { arr.push(item); });
+        } else {
+            arr.push(toPush);
+        }
+        
+        return arr;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
@@ -66,6 +73,7 @@
      }
 
      // write an example of a javascript closure
+     // pretty much every 2nd parameter to an underscore function above :)
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -75,6 +83,36 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+    // var jsonPeople = {[
+    //     {
+    //         firstName:  "Brett",
+    //         lastName:   "Timperman",
+    //         address: {
+    //             city:   "Cincinnati",
+    //             state:  "OH",
+    //             zip:    45140
+    //         },
+    //         phoneNumbers: {
+    //             mobile: 5135156738,
+    //             work:   5139846700,
+    //             home:   5135551212 
+    //         }
+    //     },
+    //     {
+    //         firstName:  "John",
+    //         lastName:   "Doe",
+    //         address: {
+    //             city:   "Indianapolis",
+    //             state:  "IN",
+    //             zip:    46210
+    //         },
+    //         phoneNumbers: {
+    //             mobile: 8123454567,
+    //             work:   8123452223,
+    //             home:   8120009999 
+    //         }
+    //     }
+    // ]};
 
 
      // Create a javascript object (DataTable) with the following:

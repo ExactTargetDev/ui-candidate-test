@@ -45,3 +45,19 @@ test( "doFizzBuzz() should return proper fizz buzz sequence", 6, function() {
 	equal(fizzBuzz[4], "Buzz");
 	equal(fizzBuzz[14], "FizzBuzz");
 });
+
+module( "More Arrays" );
+test( "removeFruits() should remove the fruits of course", 2, function() {
+	var noFruit = removeFruits(["Banana", "Carrot", "Tomato"], ["Banana", "Tomato"]);
+	deepEqual( noFruit, ["Carrot"], "The carrot stands alone: " + noFruit );
+
+	noFruit = removeFruits(["Apple", "Orange", "Potato", "Celery"], ["Apple", "Orange"]);
+	deepEqual( noFruit, ["Potato", "Celery"], "Only potatos and celery: " + noFruit );
+});
+test( "pushOntoArray() should add items to an array", 2, function() {
+	var combinedArray = pushOntoArray(["Banana", "Carrot", "Tomato"], "Beet");
+	deepEqual( combinedArray, ["Banana", "Carrot", "Tomato", "Beet"], "The beet joins the party: " + combinedArray );
+
+	combinedArray = pushOntoArray(["Banana", "Carrot", "Tomato"], ["Beet", "Radish"]);
+	deepEqual( combinedArray, ["Banana", "Carrot", "Tomato", "Beet", "Radish"], "The more the merrier: " + combinedArray );
+});
