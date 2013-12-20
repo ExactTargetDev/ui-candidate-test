@@ -94,3 +94,7 @@
 div.modal-body ul {
 	list-style: none;
 }
+
+#sidemenu a {
+	font-size: 11px;
+}
