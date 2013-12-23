@@ -1,22 +1,26 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+            return str.split("").reverse().join("");
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+         return Math.min.apply( null, values );
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+        var uniqueValues = [];
+         $.each(values, function(i, el){
+            if($.inArray(el, uniqueValues) === -1) uniqueValues.push(el);
+        });
+         return uniqueValues;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,41 +28,80 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
-     }
+            for(n = 1; n <= 100; n++){
+               if (n % 15 == 0)
+                    console.log("FizzBuzz");
+                else if (n % 3 == 0)
+                    console.log("Fizz");
+                else if (n % 5 == 0)
+                    console.log("Buzz");
+                else
+                    console.log(n);
+                 }
+    }
 
      // You have a master array of strings, where each element is a fruit name.
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+
+         $.each(fruitsToRemove, function(i, fruit){
+            fruits.splice( $.inArray(fruit, fruits), 1 );
+        });
+         console.log( fruits);
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
-     function pushOntoArray(array, toPush) {
-         // FILL THIS IN
-     }
+     function pushOntoArray(_array, toPush) {
+       if (toPush instanceof Array) {
+            _array.push.apply(_array, toPush);
+            console.log("array");
+        } else {
+            _array.push(toPush);
+            console.log("simple value");
+        }
+        return _array;
+    }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+        if (typeof sourceStr !== 'undefined' && sourceStr.length > 0) {
+           return sourceStr.split(",");
+        }
+        else return [];
+         
      }
 
      // Write a function that will take any number of arguments and return their sum
-     function sum() {
-         // FILL THIS IN
+     function sum(args) {
+        var sum = 0;
+         for (var i = 0; i < arguments.length; i++) {
+            sum += +arguments[i];
+          }
+          console.log(sum);
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         if (sourceStr.match(/^\s*$/)) { return true; }
+         else return false;
      }
 
      // write an example of a javascript closure
+
+     function createFunction() {
+        var name = "Hello";
+        return function(){
+            alert(name);
+        };
+    }
+
+    var func = createFunction();
+    func();
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -68,6 +111,56 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+
+     {
+        "people" : [{
+            "firstName": "John",
+            "lastName": "Smith",
+            "city": "San Francisco",
+            "state": "California",
+            "zip" : "94119",
+            "phoneNumbers": [
+                {
+                    "type": "home",
+                    "number": "212 555-1234"
+                },
+                {
+                    "type": "work",
+                    "number": "646 555-4567"
+                },
+                {
+                    "type": "mobile",
+                    "number": "646 555-4522"
+                }
+            ]
+        },
+        {
+            "firstName": "Randy",
+            "lastName": "Smith",
+            "city": "San Francisco",
+            "state": "California",
+            "zip" : "94119",
+            "phoneNumbers": [
+            {
+                "type": "home",
+                "number": "212 555-1234"
+            },
+            {
+                "type": "work",
+                "number": "646 555-4567"
+            },
+            {
+                "type": "mobile",
+                "number": "646 555-4522"
+            }
+            ]
+        }
+
+
+        ]
+
+
+    }
 
 
      // Create a javascript object (DataTable) with the following:
