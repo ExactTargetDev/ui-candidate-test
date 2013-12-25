@@ -96,7 +96,7 @@
      function createFunction() {
         var name = "Hello";
         return function(){
-            console.log(name);
+            window.console && console.log(name);
         };
     }
 
@@ -190,18 +190,18 @@
     $('#div1').html('<select> <option value="volvo">Volvo</option> <option value="saab">Saab</option> <option value="mercedes">Mercedes</option> <option value="audi">Audi</option> </select><button type="button">Click Me!</button>');
       
      $('button').click(function(){
-        console.log($('select').find(":selected").val());
+        window.console && console.log($('select').find(":selected").val());
      }) 
 
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
-    console.log($('a').text());
-    console.log($('.link').text());
-    console.log($('.buzz a').text());
-    console.log($('#fizz a').text());
-    console.log($('#foo').find('a').text());
+    window.console && console.log($('a').text());
+    window.console && console.log($('.link').text());
+    window.console && console.log($('.buzz a').text());
+    window.console && console.log($('#fizz a').text());
+    window.console && console.log($('#foo').find('a').text());
 
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
