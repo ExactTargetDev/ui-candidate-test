@@ -96,7 +96,7 @@
      function createFunction() {
         var name = "Hello";
         return function(){
-            alert(name);
+            console.log(name);
         };
     }
 
@@ -112,26 +112,27 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
-     {
-        "people" : [{
+    {
+        [
+        {
             "firstName": "John",
             "lastName": "Smith",
             "city": "San Francisco",
             "state": "California",
             "zip" : "94119",
             "phoneNumbers": [
-                {
-                    "type": "home",
-                    "number": "212 555-1234"
-                },
-                {
-                    "type": "work",
-                    "number": "646 555-4567"
-                },
-                {
-                    "type": "mobile",
-                    "number": "646 555-4522"
-                }
+            {
+                "type": "home",
+                "number": "212 555-1234"
+            },
+            {
+                "type": "work",
+                "number": "646 555-4567"
+            },
+            {
+                "type": "mobile",
+                "number": "646 555-4522"
+            }
             ]
         },
         {
@@ -155,11 +156,7 @@
             }
             ]
         }
-
-
         ]
-
-
     }
 
 
@@ -175,10 +172,22 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+     function DataTable(){
+        var columns = [];
+        var rows = [];
+        this.addRows = function(row) {
+            rows.push(row);
+        }
+        this.addColumns = function(column) {
+            columns.push(column);
+        }
+     }
+
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
+    $('#div1').html('<select> <option value="volvo">Volvo</option> <option value="saab">Saab</option> <option value="mercedes">Mercedes</option> <option value="audi">Audi</option> </select><button type="button">Click Me!</button>');
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
