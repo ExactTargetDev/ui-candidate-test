@@ -181,6 +181,8 @@
         this.addColumns = function(column) {
             columns.push(column);
         }
+        // TODO: create getData
+
      }
 
      // within div1, programatically create a
