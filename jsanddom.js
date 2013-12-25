@@ -197,6 +197,13 @@
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
+    console.log($('a').text());
+    console.log($('.link').text());
+    console.log($('.buzz a').text());
+    console.log($('#fizz a').text());
+    console.log($('#foo').find('a').text());
+
+
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
 
