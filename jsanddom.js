@@ -188,6 +188,12 @@
      // when the button is clicked write out the name and value of the selected item to the console.
 
     $('#div1').html('<select> <option value="volvo">Volvo</option> <option value="saab">Saab</option> <option value="mercedes">Mercedes</option> <option value="audi">Audi</option> </select><button type="button">Click Me!</button>');
+      
+     $('button').click(function(){
+        console.log($('select').find(":selected").val());
+     }) 
+
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
