@@ -15,7 +15,7 @@
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {	 
-        var min = Math.min.apply(Math, array);
+        var min = Math.min.apply(Math, values);
 		if (min === 'NaN') {
 			throw 'Value contains a non-number.';
 		} else if (min === 'undefined') {
@@ -62,7 +62,12 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-		return $.isArray(toPush) ? array.concat(toPush) : array.push(toPush);
+		if ($.isArray(toPush)) {
+			array = array.concat(toPush);
+		} else {
+			array.push(toPush);
+		}
+		return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
@@ -88,7 +93,7 @@
 	function closureExample() {
 		var abc = 123;
 		function closure() {
-			return abc;
+			return abc; //inner function has access to outter function's variables and can lengthen the life of the variable.
 		}
 	}
 
@@ -154,6 +159,9 @@
 					o.push(r);
 				}			
 				return o;
+			},
+			getMeta: function() {
+				return {colCount:columns.length, rowCount:rows.length}
 			}
 		};
 	 }();
@@ -219,3 +227,7 @@
 	$('#uncheckAll').on('click', function() {
 		$('.chk_group').prop('checked',false);
 	});	
+	
+	 
+	 
+	 
