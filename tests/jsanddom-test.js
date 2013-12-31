@@ -29,7 +29,7 @@ QUnit.consoleData = [];
   var log = console.log;
   console.log = function () {
 	QUnit.consoleData.push(arguments[0]);
-    log.apply(this, Array.prototype.slice.call(arguments));
+    log.apply(this, Array.prototype.slice.call(arguments)); //not working for IE9
   };
 }());
 
@@ -51,10 +51,10 @@ test( "reverseString", function() {
     // Verify the method exists
     equal( typeof reverseString, 'function', 'Function exists' ); 
 
-	var a = ['thequickbrownfox','123','*(&',String.fromCharCode(225)+String.fromCharCode(226)],
-		b = ['xofnworbkciuqeht','321','&(*',String.fromCharCode(226)+String.fromCharCode(225)];
-	for(var i=0;i<a.length;i++) {
-		equal( reverseString(a[i]),b[i],a[i] );
+	var tests = ['thequickbrownfox','123','*(&',String.fromCharCode(225)+String.fromCharCode(226)],
+		answers = ['xofnworbkciuqeht','321','&(*',String.fromCharCode(226)+String.fromCharCode(225)];
+	for(var i=0;i<tests.length;i++) {
+		equal( reverseString(tests[i]),answers[i],tests[i] );
 	}
 });
 
@@ -62,10 +62,10 @@ test( "findMinValue", function() {
     // Verify the method exists
     equal( typeof findMinValue, 'function', 'Function exists' ); 
 
-	var a = [[56345,1341,23,2342,2342,54533,3432]],
-		b = [23];
-	for(var i=0;i<a.length;i++) {
-		equal( findMinValue(a[i]),b[i],a[i] );
+	var tests = [[56345,1341,23,2342,2342,54533,3432]],
+		answers = [23];
+	for(var i=0;i<tests.length;i++) {
+		equal( findMinValue(tests[i]),answers[i],tests[i] );
 	}
 });
 
@@ -74,11 +74,11 @@ test( "findDistinctValues", function() {
     // Verify the method exists
     equal( typeof findDistinctValues, 'function', 'Function exists' ); 
 
-	var a = [[56345,1341,'abc',2342,2342,56345,'abc']],
-		b = [[56345, 1341, 'abc', 2342]];
-	for(var i=0;i<a.length;i++) {
-		var c = findDistinctValues(a[i]);
-		equal( c.compare(b[i]),true,a[i] );
+	var tests = [[56345,1341,'abc',2342,2342,56345,'abc']],
+		answers = [[56345, 1341, 'abc', 2342]];
+	for(var i=0;i<tests.length;i++) {
+		var c = findDistinctValues(tests[i]);
+		equal( c.compare(answers[i]),true,tests[i] );
 	}
 });
 
@@ -87,11 +87,11 @@ test( "doFizzBuzz", function() {
     // Verify the method exists
     equal( typeof doFizzBuzz, 'function', 'Function exists' ); 
 	
-	var a = ['FizzBuzzTest'],
-		b = [[1,2,'Fizz',4,'Buzz','Fizz',7,8,'Fizz','Buzz',11,'Fizz',13,14,'FizzBuzz',16,17,'Fizz',19,'Buzz','Fizz',22,23,'Fizz','Buzz',26,'Fizz',28,29,'FizzBuzz',31,32,'Fizz',34,'Buzz','Fizz',37,38,'Fizz','Buzz',41,'Fizz',43,44,'FizzBuzz',46,47,'Fizz',49,'Buzz','Fizz',52,53,'Fizz','Buzz',56,'Fizz',58,59,'FizzBuzz',61,62,'Fizz',64,'Buzz','Fizz',67,68,'Fizz','Buzz',71,'Fizz',73,74,'FizzBuzz',76,77,'Fizz',79,'Buzz','Fizz',82,83,'Fizz','Buzz',86,'Fizz',88,89,'FizzBuzz',91,92,'Fizz',94,'Buzz','Fizz',97,98,'Fizz','Buzz']];
-	for(var i=0;i<a.length;i++) {
+	var tests = ['FizzBuzzTest'],
+		answers = [[1,2,'Fizz',4,'Buzz','Fizz',7,8,'Fizz','Buzz',11,'Fizz',13,14,'FizzBuzz',16,17,'Fizz',19,'Buzz','Fizz',22,23,'Fizz','Buzz',26,'Fizz',28,29,'FizzBuzz',31,32,'Fizz',34,'Buzz','Fizz',37,38,'Fizz','Buzz',41,'Fizz',43,44,'FizzBuzz',46,47,'Fizz',49,'Buzz','Fizz',52,53,'Fizz','Buzz',56,'Fizz',58,59,'FizzBuzz',61,62,'Fizz',64,'Buzz','Fizz',67,68,'Fizz','Buzz',71,'Fizz',73,74,'FizzBuzz',76,77,'Fizz',79,'Buzz','Fizz',82,83,'Fizz','Buzz',86,'Fizz',88,89,'FizzBuzz',91,92,'Fizz',94,'Buzz','Fizz',97,98,'Fizz','Buzz']];
+	for(var i=0;i<tests.length;i++) {
 		doFizzBuzz();
-		equal( b[i].compare(QUnit.consoleData),true,a[i] );
+		equal( answers[i].compare(QUnit.consoleData),true,tests[i] );
 		QUnit.consoleData = [];
 	}
 });
@@ -101,13 +101,13 @@ test( "removeFruits", function() {
     // Verify the method exists
     equal( typeof removeFruits, 'function', 'Function exists' ); 
 
-	var a = [['one','two','three','four','five']],
+	var tests = [['one','two','three','four','five']],
 		rm = [['two','five']],
-		b = [['one','three','four']];
-	for(var i=0;i<a.length;i++) {
-		var clone = a[i].slice(0),
-			c = removeFruits(clone,rm[i]);
-		equal( c.compare(b[i]),true,a[i] );
+		answers = [['one','three','four']];
+	for(var i=0;i<tests.length;i++) {
+		var clone = tests[i].slice(0),
+			result = removeFruits(clone,rm[i]);
+		equal( result.compare(answers[i]),true,tests[i] );
 	}
 });
 
@@ -129,11 +129,11 @@ test( "splitListStrUsingComma", function() {
     // Verify the method exists
     equal( typeof splitListStrUsingComma, 'function', 'Function exists' ); 
 
-	var a = ['one,two',''],
-		b = [['one','two'],[]];
-	for(var i=0;i<a.length;i++) {
-		var c = splitListStrUsingComma(a[i]);
-		equal( c.compare(b[i]),true,a[i] );
+	var tests = ['one,two',''],
+		answers = [['one','two'],[]];
+	for(var i=0;i<tests.length;i++) {
+		var c = splitListStrUsingComma(tests[i]);
+		equal( c.compare(answers[i]),true,tests[i] );
 	}
 });
 
@@ -159,40 +159,42 @@ test( "isOnlyWhitespace", function() {
 	}
 });
 
-test( "closureExample", function() {
+test( "addColumns", function() {
     // Verify the method exists
-    equal( typeof closureExample, 'function', 'Function exists' ); 
+    equal( typeof DataTable.addColumns, 'function', 'Function exists' ); 
 
-
+	var tests = [['A','B','C'],['D']],
+		answers = [3,4];
+	for(var i=0;i<tests.length;i++) {
+		DataTable.addColumns.apply(this,tests[i]);
+		equal( DataTable.getMeta().colCount,answers[i],tests[i] );
+	}    
 });
 
 test( "addRows", function() {
     // Verify the method exists
-    equal( typeof addRows, 'function', 'Function exists' ); 
-
-
+    equal( typeof DataTable.addRows, 'function', 'Function exists' ); 
+	
+	var tests = [['value1A', 'value1B', 'value1C'],['value2A', 'value2B', 'value2C', 'value2D', 'fakecol']],
+		answers = [1,2];
+	for(var i=0;i<tests.length;i++) {
+		DataTable.addRows.apply(this,tests[i]);
+		equal( DataTable.getMeta().rowCount,answers[i],tests[i] );
+	}	 
 });
 
-test( "addColumns", function() {
-    // Verify the method exists
-    equal( typeof addColumns, 'function', 'Function exists' ); 
+window.setTimeout( 
+	test( "getData", function() {
+		// Verify the method exists
+		equal( typeof DataTable.getData, 'function', 'Function exists' ); 
+
+		var tests = ['2D'],
+			answers = ['value2D'],
+			o = DataTable.getData();
+		for(var i=0;i<tests.length;i++) {
+			equal( o[1][tests[i]],answers[i],tests[i] );
+		}	
+	})
+,500); //let the js engine catch up.
 
 
-});
-
-test( "getData", function() {
-    // Verify the method exists
-    equal( typeof getData, 'function', 'Function exists' ); 
-
-
-});
-
-/*
-test( "functionname", function() {
-    // Verify the method exists
-    equal( typeof functionname, 'function', 'Function exists' ); 
-
-    // Make sure the result from the divide function is valid
-    ok( divide( 4, 2 ), 2, 'Expected 2 as the result, the result was: ' + divide( 4, 2 ) );
-});
-*/
