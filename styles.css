@@ -1,0 +1,253 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: arial;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+}
+.header {
+	background-color: #2a2f33;
+	background: linear-gradient(to bottom, #45525c, #2a2f33 100.0%);
+	color: #fff;
+	padding: 7px 18px;
+}
+.welcome {
+	float: right;
+	width: 500px;
+	text-align: right;
+}
+.welcome a {
+	color: #76c7e8;
+	text-decoration: none;
+}
+.header h4 {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-weight: normal;
+	display: inline-block;
+}
+.welcome a:first-child {
+	margin-left: 5px;
+}
+.sideBar {
+	float: left;
+	width: 175px;
+	margin: 20px 10px 0 10px;
+	background-color: #f4f4f5;
+	border-radius: 5px 5px;
+	box-shadow: 1px 1px #EDEDED;
+}
+.sideBar .unit {
+	border-left: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
+	border-bottom: 1px solid #fff;
+	padding: 5px;
+}
+.sideBar .unit:last-child {
+	border-bottom: 1px solid #e6e6e6;
+	border-bottom-right-radius: 5px 5px;
+	border-bottom-left-radius: 5px 5px;
+}
+.sideBar .unit a {
+	display: inline-block;
+	margin: 5px 10px 10px 10px;
+	vertical-align: super;
+	color: #6c6c6c;
+	text-decoration: none;
+	cursor: pointer;
+}
+.sideBar .unit a:hover {
+	color: #000;
+}
+.sideBar .unit a:last-child {
+	vertical-align: middle;
+}
+.sideBar .unit.marketingHeader {
+	background-color: #fdaf4b;
+	background: linear-gradient(to bottom, #feca87, #fdaf4b 40.0%);
+	border-top-left-radius: 5px 5px;
+	border-top-right-radius: 5px 5px;
+	border-top: 1px solid #fdaf4b;	
+	border-left: 1px solid #fdaf4b;	
+	border-right: 1px solid #fdaf4b;	
+	vertical-align: super;
+}
+.marketingHeader h5 {
+	color: #fff;
+	display: inline-block;
+	line-height: 15px;
+	vertical-align: super;
+	margin: 0;
+	padding: 0;	
+}
+.marketingHeader img {
+	margin: 5px;
+}
+.main {
+	float: left;
+}
+.calendar {
+	background-color: #f5f5f5;
+	color: #96afbd;
+	padding: 3px 10px 0 10px;
+	position: relative;
+	margin: 0 5px 0 5px;
+	border-bottom-right-radius: 6px 6px;
+	border-bottom-left-radius: 6px 6px;	
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	box-shadow: 1px 1px #EDEDED;
+}
+.dayContainer {
+	margin-top: 3px;
+	display: inline-block;
+	font-size: 85%;
+	vertical-align: top;
+}
+.day {
+	width: 140px;
+	height: 80px;
+	padding: 5px 4px;
+	border-left: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+	box-shadow: 1px 1px 0 #fff;
+	color: #727272;
+}
+.day.last-child {
+	border-right: 1px solid #dddddd;
+}
+.day span {
+	float: right;
+}
+.current.day {
+	background-color: #ffeacd;
+	background: linear-gradient(to bottom, #e7f0f6, #ffeacd 100.0%);	
+}
+.today {
+	display: block;
+	background-color: #fba435;
+	color: #fff;
+	font-size: 85%;
+	text-align: center;
+	padding: 2px 5px;
+	border-left: 1px solid #dddddd;	
+	border-right: 1px solid #fba435;	
+}
+.pulse {
+	background-color: #cddae4;
+	background: linear-gradient(to bottom, #bac8d1, #e3edf5 100.0%);
+	margin: 10px 0 0 0;
+	padding: 10px 10px 35px 10px;;
+	color: #fff;
+	border-radius: 6px 6px;
+	border: 1px solid #B6BCBF;
+	box-shadow: 1px 1px #EDEDED;
+}
+.pulse .unit {
+	display: inline-block;	
+	margin: 10px;
+	text-align: center;
+	color: #707982;
+	vertical-align: middle;
+}
+.pulse h4 {
+	font-size: 20px;
+	text-shadow: 1px 1px #999;	
+	margin: 0;
+	padding: 0;	
+}
+.blurb {
+	width: 175px;
+	height: 105px;
+	text-align: center;
+	background-color: #f9fafb;	
+	background: linear-gradient(to bottom, #f9fafb, #dee9f0 100.0%);
+	box-shadow: 0 2px 4px #adb5ba;
+	border-radius: 7px 7px;
+	color: #93afc0;
+	padding: 10px;
+	margin-top: 8px;
+	position: relative;
+	cursor: pointer;
+}
+.blurbLarge {
+	width: 255px;
+	height: 150px;
+	background: linear-gradient(to bottom, #f1faff, #def2fe 100.0%);
+}
+.todaysTotal {
+	color: #23baf8;
+	font-size: 35px;
+	line-height: 40px;
+}
+.total {
+	line-height: 40px;
+}
+.addedToday {
+	font-size: 18px;
+}
+.worldWide, .worldWideTotal {
+	color: #666666;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.worldWide {
+	float: left;
+}
+.worldWideTotal {
+	float: right;
+}
+.map {
+	width: 175px;
+	height: 83.3px;
+}
+.blurbLarge .map {
+	width: 250px;
+	height: 119px;
+}
+.helpDialogContainer {
+	position: absolute;
+	top: 40px;
+	right: 8px;
+	z-index: 10000;
+	background-color: #fff;
+	border: 1px solid #000;
+	max-width: 225px;
+	padding: 20px;
+}
+.helpDialog h2 {
+	font-size: 16px;
+	margin: 15px 0 5px 0;
+	padding: 0;
+}
+.helpDialog h2:first-child {
+	margin-top: -5px;
+}
+#CloseHelp {
+	float: right;
+	margin: -14px -10px 0 0;
+	cursor: pointer;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    z-index: 9999;
+    opacity: 0.7;
+	height: 100%;
+	width: 100%;
+}
+.hide {
+	display: none;
+}
+.clear {
+	clear: both;
+}
