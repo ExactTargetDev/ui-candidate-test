@@ -1,0 +1,114 @@
+header {
+   background-color: #000;
+   margin: 5px;
+}
+#logo, #welcome-msg {
+   color: #fff;
+}
+
+#right-nav a {
+   padding: 5px;
+   margin-left: 5px;
+}
+#left-menu, #calendar, #pulse {
+   background-color: #bdbdbd;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+#calendar {
+   height: 100px;
+   margin-bottom: 20px;
+}
+#pulse{
+   height: 250px;
+   margin-top: 20px;
+}
+#calendar h2, #pulse h2{
+   padding: 5px;
+}
+#left-menu i {
+   padding: 5px;
+   margin: 0 5px;
+}
+#left-menu-heading {
+   padding-top: 20px;
+   min-height: 50px;
+   font-size: 14px;
+   background-color: orange;
+   -moz-border-top-left-radius: 5px;
+   border-top-left-radius: 5px;
+   -moz-border-top-right-radius: 5px;
+   border-top-right-radius: 5px;   
+   color: #fff;
+}
+#left-menu-items {
+   padding-top: 10px;
+}
+#left-menu .divider {
+  *width: 100%;
+  height: 1px;
+  margin: 9px 1px;
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+.navbar {
+   margin-bottom: 0px !important;
+}
+.wrapper {
+   padding: 10px;	
+}
+.image {
+   height: 100%;
+   width: 20%;
+   float: left;
+}
+.text {
+   width: 80%;
+   float: left;
+}
+.nav-pills li:hover {
+   cursor: pointer;
+   background-color: darkgray;
+}
+.nav-pills li.selected {
+   background-color: #7e7e7e;
+}
+#body-wrapper{
+   padding: 0 30px;	
+}
+#sm-md-panes{
+   margin: 0 10px;
+}
+.pane{
+   width: 145px;
+   height: 100px;
+   margin: 0 5px;
+   text-align: center;
+   margin-top: 30px;
+   border: 1px solid #ffffff;
+   background-color: #d3d3d3;
+   float: left;
+}
+.pane.active{
+   width: 205px;
+   height: 150px;
+   margin: 0 5px;
+   text-align: center;
+   margin-top: 10px;
+   border: 1px solid #ffffff;
+   background-color: #d3d3d3;
+   float: left;
+}
+.pane:hover {
+   cursor: pointer;	
+}
+.pane-heading {
+   top: -25px;
+   position: relative;
+}
+.helpLink {
+   margin-bottom: 20px;
+   display: block;
+}

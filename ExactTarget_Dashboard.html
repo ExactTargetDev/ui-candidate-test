@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>ExactTarget Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		var helpData = {
+			"help": [
+				{
+					"title": "What is JSON?",
+					"URL": "http://en.wikipedia.org/wiki/JSON"
+				},
+				{
+					"title": "What is ExactTarget?",
+					"URL": "http://en.wikipedia.org/wiki/ExactTarget"
+				},
+				{
+					"title": "More info about ExactTarget REST APIs",
+					"URL": "http://code.exacttarget.com/question/rest-api-authentication"
+				}
+			]
+		}
+	</script>
+	<script type="text/javascript">
+	$(document).ready(function (){
+		$("#login").click(function (){
+			if($("#welcome-msg").html() == ""){
+				$(this).html("Logout");
+				$("#welcome-msg").html("Welcome Joe!");
+			}
+			else{
+				$(this).html("Login");
+				$("#welcome-msg").html("");
+			}
+		});
+		$(".pane").click(function (){
+			if(!$(this).hasClass("active")){
+				$(".pane").removeClass("active");
+				$(this).addClass("active");
+			}
+		});
+		$(".nav-pills li").click(function (){
+			if(!$(this).hasClass("selected")){
+				$(".nav-pills li").removeClass("selected");
+				$(this).addClass("selected");
+			}
+		});
+		$("#help").click(function (){
+			$("#helpModal").html("");
+			var h = helpData.help;
+			$("<h1>Help</h1>").appendTo("#helpModal");
+			for(var i = 0; i < h.length; i++){
+				$('<a/>', {
+					class: "helpLink",
+					href: h[i].URL,
+					title: h[i].title,
+					text: h[i].title
+				}).appendTo("#helpModal");
+			}
+			$("#helpModal").modal('toggle');
+		});
+	});
+	</script>
+</head>
+<header class="container">
+	<nav>
+	<div class="row-fluid">
+		<a href="/" id="logo" class="wrapper span2">ExactTarget.</a>
+		<div class="wrapper span10 text-right navbar" id="right-nav">
+			<span id="welcome-msg"></span>
+			<a id="account" href="#">Account</a>
+			<span class="divider-vertical"></span>
+			<a id="help" href="#">Help</a>
+			<span class="divider-vertical"></span>
+			<a id="login" href="#">Login</a>
+		</div>
+		<div id="helpModal" class="modal">
+		</div>
+		</div>
+	</nav>
+</header>
+<body>
+<div class="container">
+	<div id="body-wrapper" class="row-fluid">
+		<div id="left-menu" class="span2">
+			<div id="left-menu-heading">
+				<div class="image">
+					<i class="icon-calendar"></i>
+				</div>
+				<div class="text">
+					<span>Interactive Marketing Hub</span>
+				</div>
+			</div>
+			<div id="left-menu-items">
+				<ul class="nav nav-pills nav-stacked">
+					<li><i class="icon-envelope"></i><span>ExactTarget Email</span></li>
+					<li><i class="icon-globe"></i><span>ExactTarget Mobile</span></li>
+					<li><i class="icon-flag"></i><span>CoTweet Social</span></li>
+					<li><i class="icon-road"></i><span>ExactTarget Sites</span></li>
+					<li class="divider"></li>
+					<li><i class="icon-camera"></i><span>Automation Studio</span></li>
+					<li><i class="icon-picture"></i><span>Audience Builder</span></li>
+					<li><i class="icon-music"></i><span>Report Builder</span></li>
+					<li class="divider"></li>
+					<li><i class="icon-chevron-right"></i><span>Partner Applications</span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="span9">
+			<div id="calendar">
+				<h2>Calendar</h2>
+			</div>
+			<div id="pulse">
+				<h2>Pulse</h2>
+				<div id="sm-md-panes">
+					<div id="followers" class="pane">
+						<span class="pane-heading">Followers</span>
+					</div>
+					<div id="fan" class="pane">
+						<span class="pane-heading">Fan</span>
+					</div>
+					<div id="subscribers" class="pane">
+						<span class="pane-heading">Subscribers</span>
+					</div>
+					<div id="foursquare" class="pane active">
+						<span class="pane-heading">Foursquare</span>
+					</div>
+					<div id="landing-pg" class="pane">
+						<span class="pane-heading">Landing Page</span>
+					</div>
+				<div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
