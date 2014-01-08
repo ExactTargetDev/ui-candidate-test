@@ -12,3 +12,55 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+module("My Tests");
+test("Reverse string", 4, function() {
+    equal(typeof reverseString, 'function', 'Must conatin a reverseString function');
+    ok (reverseString('reverseString'), 'gnirtSesrever', 'Expected gnirtSesrever as the result; actual result: '+reverseString('reverseString'));
+    equal(reverseString(null), null, 'Expected null; actual result: '+reverseString(null));
+    equal(reverseString(undefined), null, 'Expected undefined; actual result: '+reverseString(undefined));
+});
+
+test("Min value", function() {
+   equal (findMinValue(null), null);
+   equal (findMinValue(undefined), undefined);
+   equal (findMinValue([]), null);
+   equal (findMinValue([1,2,3]), 1);
+   equal (findMinValue([1,-2,3]), -2);
+});
+
+test("Distinct values", function() {
+   equal(findDistinctValues(undefined), undefined);
+   equal(findDistinctValues(null), null);
+   var emptyArray = [];
+   equal(findDistinctValues(emptyArray), emptyArray);
+   deepEqual(findDistinctValues([1,1,2]), [1,2]);
+   deepEqual(findDistinctValues([2,1,2,2,1,1,2]), [2,1]);
+});
+
+//doFizzBuzz();
+
+test("Variable arguments", function() {
+   equal(sum(1, 2, 3), 6);
+   equal(sum(), 0);
+   equal(sum('1', '2', '3'), '123');
+});
+
+test("Whitespace", function() {
+   equal(isOnlyWhitespace('     '), true);
+   equal(isOnlyWhitespace('   1 '), false);
+});
+
+test("PushArray", function() {
+   deepEqual(pushOntoArray([1,2,3],4),[1,2,3,4]);
+   deepEqual(pushOntoArray([1,2,3],[4,5,6]),[1,2,3,4,5,6]);
+});
+
+test("Split String", function() {
+   // deepEqual(splitListStrUsingComma(null), []);
+   // deepEqual(splitListStrUsingComma(undefined), []);
+   // deepEqual(splitListStrUsingComma(','), []);
+   // deepEqual(splitListStrUsingComma(''), []);
+   // deepEqual(splitListStrUsingComma(',1,2'), ['1','2']);
+   // deepEqual(splitListStrUsingComma('1,2,'), ['1','2']);
+   // deepEqual(splitListStrUsingComma('1,2'), ['1','2']);
+});
