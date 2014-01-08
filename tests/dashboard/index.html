@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="style.css" media="all" />
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+</head>
+<body>
+<div id="container">
+	<div class="header clearfix">
+	    <img class="float_l p10t p10l" src="images/logo.png" />
+	    <div class="float_r p10t p10r"><a href="#">Logout</a></div>
+	    <div class="float_r p10t p5r p5l white">|</div>
+		<div class="float_r p10t"><a href="#" onclick="helpmenu();return false;">Help</a></div>
+		<div class="float_r p10t p5r p5l white">|</div>
+		<div class="float_r p10t"><a href="#">Account</a></div>
+		<div class="float_r p10t p5r white">Welcome John!</div>
+
+	</div>
+	<div id="helpmenu">
+		<div class="mytitle">Help</div>
+		<div id="helpcont"></div>
+    </div>
+	<div class="clearfix 100p ">
+		<div class="float_l">
+			<div class="menu_item menu_head_container m20t">
+				<img class="p10l" src="images/interactive_banner.png" />
+			</div>
+			<div class="menu">
+				<div class="menu_item em"><a href="#">ExactTarget Email</a></div>
+				<div class="menu_item mo"><a href="#">ExactTarget Mobile</a></div>
+				<div class="menu_item so"><a href="#">CoTweet Social</a></div>
+				<div class="menu_item si line"><a href="#">ExactTarget Sites</a></div>
+				<div class="menu_item st"><a href="#">Automation Studio</a></div>
+				<div class="menu_item ab line"><a href="#">Audience Builder</a></div>
+				<div class="menu_item rb"><a href="#">Report Builder</a></div>
+				<div class="menu_item bt"></div>
+			</div>
+		</div>
+		<div class="float_l">
+			<div class="calendar"><img src="images/calendar_img.png" /></div>
+			<div class="pulse m20t">
+				<div class="logo">
+					<div class="settings">
+					    <div>
+					         <img src="images/pulse_settings.png" />
+					    </div>
+					</div>
+					<div id="menu" class="items_cont">
+						<div id="i1" class="float_l items get">
+							<div class="title">Followers</div>
+							<div class="cont">
+								<div class="today">310</div>
+								<div class="description">Added Today</div>
+								<div class="total">2,393,905 total</div>
+							</div>
+						</div>
+						<div id="i2" class="float_l items get">
+							<div class="title">Fans</div>
+							<div class="cont">
+								<div class="today">73</div>
+								<div class="description">Added Today</div>
+								<div class="total">91,675 total</div>
+							</div>
+						</div>
+						<div id="i3" class="float_l items get">
+							<div class="title">Subscribers</div>
+							<div class="cont">
+								<div class="today">56</div>
+								<div class="description">Added Today</div>
+								<div class="total">189,405 total</div>
+							</div>
+						</div>
+						<div id="i4" class="float_l items get">
+							<div class="title">Foursquare</div>
+							<div class="cont">
+								<div class="map_title">Worldwide Checkins<span>3,905</div>
+								<div class="map"></div>	
+							</div>
+						</div>
+						<div id="i5" class="float_l items get">
+							<div class="title">Landing Pages</div>
+							<div class="cont">
+							    <div class="description_top">Visitors Today</div>
+								<div class="today_bottom">397 <span>/ 355<span></div>
+								<div class="total_top">Soulja Boy V.I.P</div>
+							</div>
+						</div>
+					</div>
+					<div class="pagintation"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$("#menu .get").each(function(){
+		$(this).click(function(){
+			changeDisplay($(this).attr("id"));
+		})
+	});
+	function changeDisplay(id){
+		$("#menu .get").each(function(){
+		    $(this).removeClass('items')
+		    $(this).removeClass('lg_items');
+		    $(this).addClass('sm_items');
+		});
+		$('#'+id).addClass('lg_items');
+		
+	}
+	function helpmenu(){
+	    var helpmenu = $('#helpmenu');
+	    if(helpmenu.is(':hidden')){
+		    helpmenu.show()
+	    }else{
+		    helpmenu.hide()
+	    }
+	    $.getJSON( "json/help.json", function( data ) {
+	        var html = '';
+            for(var i=0;i<=data.help.length-1;i++){
+	            html += '<div class="link"><a href="'+data.help[i].URL+'">'+data.help[i].title+"</div>";
+            }
+            $('#helpcont').html(html);
+            
+        });
+	}
+</script>
+</body>
+</html>
