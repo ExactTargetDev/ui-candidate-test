@@ -1,0 +1,160 @@
+.onepcssgrid-1200{
+	position: relative;
+}
+header{
+	background: url(headerBg.jpg);
+	height: 30px;
+	color: white;
+}
+h1{
+	font-size: 1.7em;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	color: black;
+}
+header menu {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+menu li {
+	display: inline;
+	float: left;
+}
+menu li a{
+	margin: 0 5px;
+}
+menu li:after {
+	content: "|";
+}
+menu li:last-child:after {
+	content: "";
+}
+
+ #overlay {
+ 	display: none;
+    position: absolute;
+    left: 45%;
+    top: 45%;
+    padding: 25px; 
+    border: 2px solid black;
+    background-color: #ffffff;
+    z-index: 100;
+ }
+ #fade {
+ 	display: none;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    background-color: black;
+    -moz-opacity: 0.7;
+    opacity: .70;
+    filter: alpha(opacity=70);
+    width: 100%;
+    height: 100%;
+    z-index: 90;
+ }
+.push20 {
+	background-color: yellow;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid;
+	margin: 2% 1% 0 0;
+}
+.main-container {
+	margin: 0 1% 0 0;
+}
+.divider {
+	border-bottom: 1px solid;
+}
+nav {
+	background: url(navBg.jpg);
+}
+nav div {
+	background: url(navHeaderBg.jpg);
+	margin-bottom: 5px;
+}
+nav h2 {
+	font-size: 1.6em;
+}
+nav li {
+	margin: 8px 0;
+}
+.main-container .calendar{
+	height: 100px;
+	background: url(calendarBg.jpg);
+	margin: 0 0 15px 0;
+	-moz-border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+}
+.main-container .calendar-details {
+	margin: 10px 0;
+	background: url(mainBg.jpg);
+	height: 300px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.calendar li{
+	height: 92px;
+	margin: 5px 0 0 0;
+}
+.calendar li:first-child {
+	margin-left: 10px;
+}
+.day {
+	overflow: hidden;
+	border: 1px solid;
+	border-right: 0;
+	height: 85px;
+}
+.calendar li:last-child .day{
+	border-right: 1px solid;	
+}
+.day span:first-child {
+	margin-left: 5px;
+}
+.day span:last-child {
+	float: right;
+	margin-right: 2px;
+}
+.highlighter {
+	height: 7px;
+}
+.highlight {
+	background: url(navHeaderBg.jpg);
+}
+.calendar-details-list{
+	overflow: hidden;
+	padding: 0 10px 0 50px;
+}
+.calendar-details div {
+	background-image: 
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.small {
+	background: url(detailsBg.jpg);
+	margin-top: 150px;
+	width: 15%;
+	height: 80px;
+	padding-top: 10px;
+}
+.medium {
+	width: 25%;
+	height: 150px;
+	margin-top: 100px;
+	padding: 40px 0 0 20px;
+}
+.small li {
+	margin-left: 20px;
+}
