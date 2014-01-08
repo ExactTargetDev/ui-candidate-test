@@ -1,0 +1,37 @@
+*** meta.txt ***
+
++ Name: 
+	Samantha Smith
+
++ Email: 
+	samanthasmith.job@gmail.com
+
++ Start Time: 
+	1382619600 (10/24/2013 8am CT)
+
++ Completed: 
+	10/29/2013
+
++ TotalTime: 
+	50:00 (50 hrs) 
+
++ JavaScript Test: 
+	JsAndDom.html
+
++ IMH Dashboard replication:  
+	imh_dashboard/index.html
+
++ BrowserTesting: 
+	Chrome 30, 
+	FireFox 23.01, 
+	Internet Explorer 8 (standard), 
+	Internet Explorer 9, 
+	Internet Explorer 10,
+	Safari 5.1.7,  
+	Windows 7 operating system
+
++ UnitTest: 
+	tests/JsAndDom-UnitTest-Runner.html
+	tests/jsanddom-test.js
+
+
