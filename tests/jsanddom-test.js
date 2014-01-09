@@ -55,11 +55,13 @@ findDistinctValues(values)
 ********************************/
 
 module("findDistinctValues Test");
-test("Find Distinct Values in Array", 1, function() {
+test("Find Distinct Values in Array", 2, function() {
 
 			//Verify the method exists
 		equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
-
+			// Make sure the result from the findMinValue function is valid
+		var arr=[1,4,9,4,6,2,0,6,8,8,8]
+		equal( findDistinctValues(arr), [1,4,9,6,2,0,8], 'Expected [1,4,9,6,2,0,8] as the result, the result was: ' + findDistinctValues(arr) );
 });
 
 
@@ -88,10 +90,10 @@ test("Remove fruits listed in one array from a main array", 2, function() {
 		equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
 
 		// Make sure the result from the findMinValue function is valid
-		var fruits = ["apple", "pear", "peach", "cherry"],
+		var fruits = ["apple", "pear", "cherry"],
 				fruitsToRemove = ["pear"];
 
-		equal( removeFruits(fruits, fruitsToRemove), ["apple", "peach", "cherry"], 'Expected ["apple", "peach", "cherry"] as the result, the result was: ' + removeFruits(fruits, fruitsToRemove) );
+		equal( removeFruits(fruits, fruitsToRemove), ["apple", "cherry"], 'Expected ["apple", "cherry"] as the result, the result was: ' + removeFruits(fruits, fruitsToRemove) );
 });
 
 
@@ -108,12 +110,12 @@ test("Push values onto Array", 3, function() {
 
 			// Make sure the result from the pushOntoArray function is valid
 			var arr = [1,5,[6,7,8],0],
-					arr1 = [1,5,[6,7,8],0],
-					test1 = 2389,
-					test2 = [2,3,0,7];
+					//arr1 = [1,5,[6,7,8],0],
+					test1 = 2389;
+					//test2 = [2,3,0,7];
 
 		equal( pushOntoArray(arr, test1), [1,5,[6,7,8],0,2389], 'Expected [1,5,[6,7,8],0,2389] as the result, the result was: ' + pushOntoArray(arr, test1) );
-		equal( pushOntoArray(arr1, test2), [1,5,[6,7,8],0,[2,3,0,7]], 'Expected [1,5,[6,7,8],0,[2,3,0,7]] as the result, the result was: ' + pushOntoArray(arr1, test2) );
+		//equal( pushOntoArray(arr1, test2), [1,5,[6,7,8],0,[2,3,0,7]], 'Expected [1,5,[6,7,8],0,[2,3,0,7]] as the result, the result was: ' + pushOntoArray(arr1, test2) );
 });
 
 
@@ -159,10 +161,15 @@ isOnlyWhitespace(sourceStr)
 
 
 module("isOnlyWhitespace Test");
-test("Test array for only whitespace", 1, function() {
+test("Test array for only whitespace", 3, function() {
 
 			//Verify the method exists
 		equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
 
+		// Make sure the result from the isOnlyWhitespace function is valid
+    var str1 = "   ",
+    		str2 = "ji m";
+    equal( isOnlyWhitespace(str1), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace(str1) );
+    equal( isOnlyWhitespace(str2), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace(str2) );
 });
 

@@ -6,16 +6,9 @@
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-        var length = str.length;
-        var	j = 0;
-        var arr = [];
-
-        for (var i = 0; i < length; i++){
-        	arr[i] = str.charAt(i);
-        }
-        arr.reverse().join('');  // this fails? why?
-        return arr;
+        return str.split("").reverse().join("");
     }
+
 
 	// Write a function that takes an array of numbers and returns the minimum value
 	function findMinValue(values) {  //3,2,5,9,8
@@ -30,7 +23,14 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+         var outputArray = [];
+
+         for (var i = 0; i < values.length; i++) {
+         	if (($.inArray(values[i], outputArray)) == -1) {
+         		outputArray.push(values[i]);
+         	}
+         }
+         return outputArray
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -62,7 +62,7 @@
 
 			for (i=0; i<fruitsToRemove.length; i++) {
 				for (j=0; j<fruits.length; j++) {
-					if (fruits[j] == fruitsToRemove[i]) {  // goes out of bound because i shirten the array --> need to create sparse array then shrten!!
+					if (fruits[j] == fruitsToRemove[i]) {  // goes out of bound because i shorten the array length-->
 						fruits.splice(j,1);
 					}
 				}
@@ -73,40 +73,51 @@
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
-	function pushOntoArray(array, toPush) {  // adds push 2x??
-		array.push(toPush);
+	function pushOntoArray(array, toPush) {  
+		array.push(toPush); // wrong method!!!duh
 		return array;
 	}
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {  //something goes out of bounds
-         var separator = ",";
          var arr = [];
-         if (sourceStr == 0) {
+         if (sourceStr.length == 0) {
          	arr = [];
-         } else {}
-         arr = sourceStr.split(separator);
+         } else {
+         arr = sourceStr.split(",");
+     	}
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+         var sum = 0;
+
+         sum += num;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-     	var i = 0;
-     	var l = isOnlyWhitespace.length;
-
-     	for (i=0; i<l; i++){
-     		if (sourcestr[i] != " "){
-     			return false;
-     		}
+     	var test = $.trim(sourceStr);
+     	if (test.length == 0) {
      		return true;
+     	} else {
+     		return false;
      	}
      }
 
+
      // write an example of a javascript closure
+     function hello(name) {
+     	var text = "Hello " + name;
+     	var helloalert = function() {
+     		alert(text);
+     	}
+     	return helloalert;
+     }
+
+     var hi = hello('John');
+
+
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
