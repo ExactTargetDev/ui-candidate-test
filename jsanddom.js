@@ -55,7 +55,18 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         // ftr pear cherry
+         // fruits apple, pear peach cherry 
+		var i=0,
+			j=0;
+
+			for (i=0; i<fruitsToRemove.length; i++) {
+				for (j=0; j<fruits.length; j++) {
+					if (fruits[j] === fruitsToRemove[i]) {
+						fruits.splice(j,1);
+					}
+				}
+			}
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -63,12 +74,22 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+         // Array.prototype.isArray = true;
+
+         if (toPush.isArray){
+         	array.push([toPush]);
+         } else {
+         	array.push(toPush);
+         }
+         return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         var separator = ",";
+         var arr = sourceStr.split(separator);
+         
+
      }
 
      // Write a function that will take any number of arguments and return their sum
@@ -78,7 +99,15 @@
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+     	var i = 0;
+     	var l = isOnlyWhitespace.length;
+
+     	for (i=0; i<l; i++){
+     		if (sourcestr[i] != " "){
+     			return false;
+     		}
+     		return true;
+     	}
      }
 
      // write an example of a javascript closure
