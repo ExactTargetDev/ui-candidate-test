@@ -87,9 +87,11 @@
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          var separator = ",";
-         var arr = sourceStr.split(separator);
-         
-
+         var arr = [];
+         if (sourceStr == 0) {
+         	arr = [];
+         } else {}
+         arr = sourceStr.split(separator);
      }
 
      // Write a function that will take any number of arguments and return their sum
@@ -120,7 +122,20 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+     /* Json object
+    {
+    	"first_name": "value",
+    	"last_name": "value",
+    	"city": "value",
+    	"state": "value",
+    	"zip": "value",
+    	"phone_numbers": [
+    		"home": 1234561234,
+    		"work": 1234561234,
+    		"mobile": "1234561234
+    		] 
+    }
+    */
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
