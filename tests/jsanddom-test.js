@@ -12,3 +12,19 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+
+
+/********************************
+reverseString(str)
+********************************/
+
+module( "reverseString Test" );
+test ("Reverse String", 2, function() {
+
+		//Verify the method exists
+		equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
+
+		// Make sure the result from the reverseString function is valid
+		ok( reverseString( "Hello" ), "olleH", 'Expected "olleH" as the result, tthe result was: ' + reverseString("Hello") );
+});
+
