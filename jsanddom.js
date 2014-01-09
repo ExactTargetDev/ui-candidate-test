@@ -13,16 +13,16 @@
         for (var i = 0; i < length; i++){
         	arr[i] = str.charAt(i);
         }
-        arr.reverse().join();
+        arr.reverse().join('');  // this fails? why?
         return arr;
     }
 
 	// Write a function that takes an array of numbers and returns the minimum value
-	function findMinValue(values) {
+	function findMinValue(values) {  //3,2,5,9,8
 		var minsofar = values[0];
 		for (var i=0; i < values.length; i++) {
-			if (i < minsofar){
-				minsofar = i;
+			if (values[i] < minsofar){
+				minsofar = values[i];
 			}
 		}
 		return minsofar;
@@ -62,7 +62,7 @@
 
 			for (i=0; i<fruitsToRemove.length; i++) {
 				for (j=0; j<fruits.length; j++) {
-					if (fruits[j] === fruitsToRemove[i]) {
+					if (fruits[j] == fruitsToRemove[i]) {  // goes out of bound because i shirten the array --> need to create sparse array then shrten!!
 						fruits.splice(j,1);
 					}
 				}
@@ -73,19 +73,13 @@
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
-     function pushOntoArray(array, toPush) {
-         // Array.prototype.isArray = true;
-
-         if (toPush.isArray){
-         	array.push([toPush]);
-         } else {
-         	array.push(toPush);
-         }
-         return array;
-     }
+	function pushOntoArray(array, toPush) {  // adds push 2x??
+		array.push(toPush);
+		return array;
+	}
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
-     function splitListStrUsingComma(sourceStr) {
+     function splitListStrUsingComma(sourceStr) {  //something goes out of bounds
          var separator = ",";
          var arr = [];
          if (sourceStr == 0) {

@@ -7,7 +7,7 @@ test( "Example Test", 2, function() {
     equal( typeof divide, 'function', 'Must contain a divide function' ); 
 
     // Make sure the result from the divide function is valid
-    ok( divide( 4, 2 ), 2, 'Expected 2 as the result, the result was: ' + divide( 4, 2 ) );
+    equal( divide( 4, 2 ), 2, 'Expected 2 as the result, the result was: ' + divide( 4, 2 ) );
 });
 /********************************
 Please create your tests below...
@@ -25,7 +25,7 @@ test ("Reverse String", 2, function() {
 		equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
 
 		// Make sure the result from the reverseString function is valid
-		ok( reverseString( "Hadoop" ), "poodaH", 'Expected "poodaH" as the result, the result was: ' + reverseString("Hello") );
+		equal( reverseString( "Hadoop" ), "poodaH", 'Expected "poodaH" as the result, the result was: ' + reverseString("Hadoop") );
 });
 
 
@@ -44,9 +44,9 @@ test("Find Minimum Value of array", 4, function() {
 				arr2 = [9,8,7,6,5,4,3,2,1],
 				arr3 = [100,34,68,299,55,9];
 
-		ok( findMinValue(arr1), 1, 'Expected 1 as the result, the result was: ' + findMinValue(arr1) );
-		ok( findMinValue(arr2), 1, 'Expected 1 as the result, the result was: ' + findMinValue(arr2) );
-		ok( findMinValue(arr3), 9, 'Expected 9 as the result, the result was: ' + findMinValue(arr3) );
+		equal( findMinValue(arr1), 1, 'Expected 1 as the result, the result was: ' + findMinValue(arr1) );
+		equal( findMinValue(arr2), 1, 'Expected 1 as the result, the result was: ' + findMinValue(arr2) );
+		equal( findMinValue(arr3), 9, 'Expected 9 as the result, the result was: ' + findMinValue(arr3) );
 });
 
 
@@ -80,12 +80,18 @@ test("Print the integers 1 - 100 to console with a twist", 1, function() {
 removeFruits(fruits, fruitsToRemove)
 ********************************/
 
+
 module("removeFruits Test");
-test("Remove fruits listed in one array from a main array", 1, function() {
+test("Remove fruits listed in one array from a main array", 2, function() {
 
 			//Verify the method exists
 		equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
 
+		// Make sure the result from the findMinValue function is valid
+		var fruits = ["apple", "pear", "peach", "cherry"],
+				fruitsToRemove = ["pear"];
+
+		equal( removeFruits(fruits, fruitsToRemove), ["apple", "peach", "cherry"], 'Expected ["apple", "peach", "cherry"] as the result, the result was: ' + removeFruits(fruits, fruitsToRemove) );
 });
 
 
@@ -95,11 +101,19 @@ pushOntoArray(array, toPush)
 
 
 module("pushOntoArray Test");
-test("Push values onto Array", 1, function() {
+test("Push values onto Array", 3, function() {
 
 			//Verify the method exists
 		equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' );
 
+			// Make sure the result from the pushOntoArray function is valid
+			var arr = [1,5,[6,7,8],0],
+					arr1 = [1,5,[6,7,8],0],
+					test1 = 2389,
+					test2 = [2,3,0,7];
+
+		equal( pushOntoArray(arr, test1), [1,5,[6,7,8],0,2389], 'Expected [1,5,[6,7,8],0,2389] as the result, the result was: ' + pushOntoArray(arr, test1) );
+		equal( pushOntoArray(arr1, test2), [1,5,[6,7,8],0,[2,3,0,7]], 'Expected [1,5,[6,7,8],0,[2,3,0,7]] as the result, the result was: ' + pushOntoArray(arr1, test2) );
 });
 
 
@@ -109,11 +123,16 @@ splitListStrUsingComma(sourceStr)
 
 
 module("splitListStrUsingCommaTest");
-test("Split string into array with comma separator", 1, function() {
+test("Split string into array with comma separator", 3, function() {
 
 			//Verify the method exists
 		equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
 
+			// Make sure the result from the pushOntoArray function is valid
+		var s1 = "Now, is the summer, of our discontent, he said.";
+		var s2 = " ";
+		equal( splitListStrUsingComma(s1), ["Now", "is the summer", "of our discontent", "he said."], 'Expected ["Now", "is the summer", "of our discontent", "he said."] as the result, the result was: ' + splitListStrUsingComma(s1) );
+		equal( splitListStrUsingComma(s2), [], 'Expected [] as the result, the result was: ' + splitListStrUsingComma(s2) );
 });
 
 
