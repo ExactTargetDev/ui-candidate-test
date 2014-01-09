@@ -25,6 +25,6 @@ test ("Reverse String", 2, function() {
 		equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
 
 		// Make sure the result from the reverseString function is valid
-		ok( reverseString( "Hello" ), "olleH", 'Expected "olleH" as the result, tthe result was: ' + reverseString("Hello") );
+		ok( reverseString( "Hadoop" ), "poodaH", 'Expected "poodaH" as the result, the result was: ' + reverseString("Hello") );
 });
 

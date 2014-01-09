@@ -8,22 +8,25 @@
      function reverseString(str) {
         var length = str.length;
         var	j = 0;
-        var arr[];
-        var newstr;
+        var arr = [];
 
-        for (var i = length-1; i >= 0; i--){
-        	arr[j] = str.charAt(i);
-        	j++;
+        for (var i = 0; i < length; i++){
+        	arr[i] = str.charAt(i);
         }
-        newstr = arr.toString();
-        return newstr;
+        arr.reverse().join();
+        return arr;
     }
 
-
 	// Write a function that takes an array of numbers and returns the minimum value
-     function findMinValue(values) {
-         // FILL THIS IN
-     }
+	function findMinValue(values) {
+		var minsofar = values[0];
+		for (var i=0; i < values.length; i++) {
+			if (i < minsofar){
+				minsofar = i;
+			}
+		}
+		return minsofar;
+	}
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
@@ -35,7 +38,16 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         for (var i =1; i <=100; i++){
+         	if (i % 3 == 0){
+         		console.log("Fizz");
+         	}
+         	if (i % 5 == 0){
+         		console.log("Buzz");
+         	} else {
+         		console.log(i);
+         	}
+         }
      }
 
      // You have a master array of strings, where each element is a fruit name.
