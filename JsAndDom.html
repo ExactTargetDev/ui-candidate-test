@@ -19,7 +19,54 @@
 
 	<div id="foobar" style="margin-top:10px;">
 	</div>
-	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+// requirement for #div1
+var myDiv = document.getElementById("div1");
+		//Create array of options to be added
+	var cities = ["Indianapolis","Fishers","Zionsville","Carmel"];
+		//Create and append select list
+	var selectList = document.createElement("select");
+	selectList.setAttribute("id", "mySelect");
+	myDiv.appendChild(selectList);
+		//Create and append the options
+	for (var i = 0; i < cities.length; i++) {
+	    var option = document.createElement("option");
+	    option.setAttribute("value", i);
+	    option.text = cities[i];
+	    selectList.appendChild(option);
+	}
+		// create button
+	var btn = document.createElement("input");
+	btn.setAttribute('name','button');
+	btn.setAttribute('type','button');
+	btn.setAttribute('value','Submit');
+	myDiv.appendChild(btn);
+	// onclick
+	
+	function logit(){
+		console.log(document.getElementById('mySelect').getAttribute('value'));
+	}
+
+	btn.click = logit;
+
+//requirements for jQuery selectors
+
+
+// Requirements for Programatically create an array with 5 items.  Create a list item for each item in the array
+// and add the list items to the unordered list with an id of "list1".
+
+var mylist1 = document.getElementById("list1");
+//create array of list items
+var mylist =["shampoo", "soap", "deoderant", "razor", "loufah"];
+
+
+//Use javascript to add a list of checkboxes and 2 links
+// to the div with an id of "foobar"
+// When the first link is clicked, all the checkboxes should be checked (i.e. check all)
+// When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+	</script>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
 	<script src="jsanddom.js" type="text/javascript"></script>
 </body>
 </html>

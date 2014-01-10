@@ -11,7 +11,7 @@
 
 
 	// Write a function that takes an array of numbers and returns the minimum value
-	function findMinValue(values) {  //3,2,5,9,8
+	function findMinValue(values) {
 		var minsofar = values[0];
 		for (var i=0; i < values.length; i++) {
 			if (values[i] < minsofar){
@@ -39,13 +39,18 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          for (var i =1; i <=100; i++){
-         	if (i % 3 == 0){
-         		console.log("Fizz");
-         	}
-         	if (i % 5 == 0){
-         		console.log("Buzz");
+         	if ((i % 3 == 0) && (i % 5 == 0)){
+         		console.log("FizzBuzz");
          	} else {
-         		console.log(i);
+         		if (i % 3 == 0){
+         		console.log("Fizz");
+         		} else {
+         			if (i % 5 == 0){
+         				console.log("Buzz");
+         			} else {
+         				console.log(i);
+         			}
+         		}
          	}
          }
      }
@@ -73,8 +78,8 @@
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
-	function pushOntoArray(array, toPush) {  
-		array.push(toPush); // wrong method!!!duh
+	function pushOntoArray(array, toPush) { 
+		l = array.push(toPush);
 		return array;
 	}
 
@@ -91,8 +96,11 @@
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          var sum = 0;
-
-         sum += num;
+         var i = 0;
+         for (i = 0; i < arguments.length; i++){
+         	sum += arguments[i];
+         }
+         return sum;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
@@ -157,9 +165,44 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     
+    /*var myDiv = document.getElementById("div1");
+
+		//Create array of options to be added
+	var cities = ["Indianapolis","Fishers","Zionsville","Carmel"];
+
+		//Create and append select list
+	var selectList = document.createElement("select");
+	selectList.setAttribute("id", "mySelect");
+	myDiv.appendChild(selectList);
+
+		//Create and append the options
+	for (var i = 0; i < cities.length; i++) {
+	    var option = document.createElement("option");
+	    option.setAttribute("value", i);
+	    option.text = cities[i];
+	    selectList.appendChild(option);
+	}
+
+		// create button
+	var btn = document.createElement("input");
+	btn.setAttribute('name','button');
+	btn.setAttribute('type','button');
+	btn.setAttribute('value','Submit');
+	myDiv.appendChild(btn);
+	// onclick
+	
+	function logit(){
+		console.log(document.getElementById('mySelect').getAttribute('value'));
+	}
+
+	btn.click = logit;*/
+
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     
+     // 
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
