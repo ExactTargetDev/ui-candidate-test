@@ -162,6 +162,34 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+
+    /*
+    function DataTable() {
+	// private vars
+		this.column = [];
+		this.rows = [];
+
+	}
+		//add item to the rows array
+	DataTable.prototype.addRows = function() {
+		this.row = row.append(item);
+
+	}
+		// add item to coumns array
+	DataTable.protoype.addColumns = function() {
+		this.column = column.append(item);
+	}
+
+	//get data in form of json object
+	DataTable.prototype.getData = function() {
+		
+	}*/
+
+
+
+
+
+
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
