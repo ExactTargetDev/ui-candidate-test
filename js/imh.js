@@ -43,7 +43,7 @@ $(document).ready(function() {
 			$.getJSON("../data/help.json", function (json) {
 					var help = "";
 
-					for (var i = 0 ; i < 3; i++){
+					for (var i = 0 ; i < 3; i++){  // I know this is not correct. I could not get a length directly. console.log gives array objects, I was unable to programatically pull length
 						help += (json.help[i].title);
 						help += "\n";
 						help += (json.help[i].URL);
@@ -53,8 +53,9 @@ $(document).ready(function() {
 		});
  });
 
-
-
+		$("#med").click(function() {
+			$(this).find('img').toggle();
+		});​
 
 
 
