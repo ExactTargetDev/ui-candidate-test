@@ -89,22 +89,22 @@ header ul li:hover > a {
 	margin-top: 20px;
 }
 
+
+
 #imh-hub {
 	border: 1px solid #f4f4f4;
 	border-radius: 5px;
 	margin: 20px 0 0 20px;
 	width: 160px;
 	list-style: none;
-	background-color: #f4f4f4
-
+	background-color: #f4f4f4;
 }
 
 
-
 #imh-hub li {
-	color: #fff;
+	color: #000;
 	font-size:12px;
-		margin-left: auto;
+	margin-left: auto;
 	margin-right: auto;
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -112,10 +112,16 @@ header ul li:hover > a {
 
 #imh-hub a {
 	text-decoration: none;
-	color: #b0b0b0;
+	color: #999999;
 	font-size:12px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 12px;
 	margin-bottom: 12px;
 }
+
+#imh-hub a:hover {
+	background-color: #ff9933;
+	color: #ffff33;
+}
+
