@@ -6,7 +6,7 @@
 
 $(document).ready(function() {
 
-	$( "a").click(function(e) {
+	$( "a" ).click(function(e) {
 		e.preventDefault();
 		var ident = $(this).attr('id');
 		switch (ident) {
@@ -37,7 +37,21 @@ $(document).ready(function() {
 			}
 	});
 
+	$( "#help" ).click(function (e) {
+		e.preventDefault();
 
+			$.getJSON("../data/help.json", function (json) {
+					var help = "";
+
+					for (var i = 0 ; i < 3; i++){
+						help += (json.help[i].title);
+						help += "\n";
+						help += (json.help[i].URL);
+						help += "\n";
+					}
+					alert(help);
+		});
+ });
 
 
 
