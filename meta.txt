@@ -1,0 +1,30 @@
+Start Time: "Thu Jan  9 09:14:02 EST 2014"
+Pause Time: "Thu Jan  9 10:01:31 EST 2014"
+Start Time: "Thu Jan  9 10:15:22 EST 2014"
+Pause Time: "Thu Jan  9 11:37:47 EST 2014"
+Start Time: "Thu Jan  9 12:13:47 EST 2014"
+Pause Time: "Thu Jan  9 15:11:16 EST 2014"
+Start Time: "Thu Jan  9 16:04:33 EST 2014"
+Pause Time: "Thu Jan  9 16:44:23 EST 2014"
+Start Time: "Fri Jan 10 10:54:41 EST 2014"
+Pause Time: "Fri Jan 10 13:46:22 EST 2014"
+Start Time: "Fri Jan 10 14:26:49 EST 2014"
+Pause Time: "Fri Jan 10 15:47:24 EST 2014"
+Start Time: "Fri Jan 10 19:04:43 EST 2014"
+Pause Time: "Fri Jan 10 22:14:16 EST 2014"
+Start Time: "Fri Jan 10 22:48:12 EST 2014"
+Pause Time: "Sat Jan 11 00:56:35 EST 2014"
+Start Time: "Sat Jan 11 01:33:53 EST 2014"
+Stop  Time:	"Sat Jan 11 02:07:53 EST 2014"
+
+Total Time: 15:00
+
+OS X based
+Browsers Used:					Version:
+Chrome									31.0.1650.63
+Opera										18.0.1284.68
+Firefox									26.0
+Safari									Version 6.1 (8537.71)
+
+WIndows 7
+IE											9.0.8112.16421

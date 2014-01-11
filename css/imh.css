@@ -1,0 +1,127 @@
+/* File: imh.css
+ * Author: John T. Ryan
+ * 
+ */
+
+
+body, html {
+	font-family: arial, sans-serif;
+}
+
+/************************
+* Body Styles
+* **********************/
+
+body {
+	background-color: #fefffd;
+	max-width: 1250px;
+	max-height: 800px;
+	margin: 0;
+}
+
+header .width-container {
+	height: 35px;
+	background-color: #000;
+	position: relative;
+}
+
+header #logo {
+	margin-left: 30px;
+	margin-top: 10px;
+}
+header h6 {
+	margin-top: 6px;
+	/*color: #fff;*/
+}
+
+header nav {
+	font-size: 11px;
+	color: #666;
+}
+
+header nav a {
+		color: #5a737e;
+		display: block;
+		text-decoration: none;
+		margin-bottom: 10px;
+		padding: 0 4px 0 4px;
+
+}
+
+header nav ul {	/* selects both top level and submenus */
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+header nav > ul {
+	position: absolute;
+	bottom: 0px;
+	right: 10px;
+}
+
+header nav > ul > li{
+	margin: 0px;
+	padding: 0px;
+	float: right;
+}
+
+header ul li:hover > a {
+	background: #777;
+	color: #eee;
+}
+
+#scrollbar {
+	margin: 0;
+	padding: 0;
+	float: right;
+}
+
+#cal {
+	margin: 0;
+	padding: 0;
+	float: right;
+}
+
+
+#pulse {
+	float:right;
+	margin-top: 20px;
+}
+
+
+
+#imh-hub {
+	border: 1px solid #f4f4f4;
+	border-radius: 5px;
+	margin: 20px 0 0 20px;
+	width: 160px;
+	list-style: none;
+	background-color: #f4f4f4;
+}
+
+
+#imh-hub li {
+	color: #000;
+	font-size:12px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#imh-hub a {
+	text-decoration: none;
+	color: #999999;
+	font-size:12px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+#imh-hub a:hover {
+	background-color: #ff9933;
+	color: #ffff33;
+}
+
