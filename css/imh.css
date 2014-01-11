@@ -1,0 +1,58 @@
+/* File: imh.css
+ * Author: John T. Ryan
+ * 
+ */
+
+
+body, html {
+	font-family: arial, sans-serif;
+}
+
+/************************
+* Body Styles
+* **********************/
+
+body {
+	max-width: 1250px;
+	max-height: 800px;
+	margin: 0;
+}
+
+#et-header {
+
+	height: 35px;
+	background-color: #000;
+}
+
+#et-header #logo {
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
+
+.navi {
+	font-size: 11px;
+
+}
+.navitems {
+	list-style-type: none;
+	display: inline;
+	float:right;
+
+}
+
+#cal {
+
+}
+
+#scroll {
+
+}
+
+#pulse {
+
+}
+
+#imh-hub {
+
+}
