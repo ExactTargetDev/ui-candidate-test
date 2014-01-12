@@ -1,22 +1,41 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
+         var tempString = '';
+         for (var i = str.length - 1; i >= 0; i--){
+	     	tempString += str[i];   
+         }
+         	return tempString;
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+         var small = values [0];
+         for (var i = 0; i = values.length-1; i++){
+	         if(values[i] < small){
+		         small = values[i];
+	         }
+         }
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+         var sorted = values.sort();
+         var result = [];
+         result.push(sorted[0]);
+         for (var i = 1; i < sorted.length-1; i++){
+	         if (sorted[i] != sorted[i-1]){
+		         result.push(sorted[i]);
+	         }
+         }
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -25,6 +44,19 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
+         for (i = 1; i <= MAX; i++){
+	         if(i % 3 == 0 && i % 5 == 0){
+		         println("Fizz Buzz\n");
+		     }
+		     else if(i % 3 == 0){
+			     println("Fizz\n");
+			 }
+			 else if(i % 5 == 0){
+				 println("Buzz\n");
+		     }
+		     else
+		         println(i);
+	    }	
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -56,6 +88,7 @@
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
+        
      }
 
      // write an example of a javascript closure
