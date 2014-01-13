@@ -1,9 +1,10 @@
 Start Time: 1389559901
 Many issues starting with permissions, and took a bit to find my footing in git
 Pause Time: 1389574747
-
+Start Time: 1389628823
 
 
 BrowserTesting: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.73.11 (KHTML, like Gecko) (Coda, like Safari)
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+
 
