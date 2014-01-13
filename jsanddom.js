@@ -81,7 +81,7 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
-     /*function pushOntoArray(array, toPush) {
+     function pushOntoArray(array, toPush) {
          // FILL THIS IN
          if(toString.call(toPush) === "[object Array]"){
          	for(var i = 0; i < array.length; i++){
@@ -93,7 +93,7 @@
          
          return array;
      }
-*/
+
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          // FILL THIS IN
@@ -127,6 +127,7 @@
      }
      var total = add(5);
      total(2);
+     
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -135,12 +136,12 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-     {"people":[
+     /*{"people":[
      	{"firstName": "Joey", "lastName": "Mustaklem", "city": "West Lafayette", "state": "Indiana", "zip": "47906", "phoneNumbers": {"home": "3178736115", "work": "3179896648", "mobile": "3179896648"}}, 
      	{"firstName": "Michael", "lastName": "Example", "city": "San Francisco", "state": "California", "zip": "94102", "phoneNumbers": {"home": "4155551234", "work": "4155550987", "mobile": "4155551111"}}, 
-     	{"firstName": "Dan", "lastName": "Example", "city": "Seattle", "state": "Washington", "zip": "98101", "phoneNumbers": {"home": "2065551234", "work": "2065552345", "mobile": "2065550987"}}, 
-     ]}
-
+     	{"firstName": "Dan", "lastName": "Example", "city": "Seattle", "state": "Washington", "zip": "98101", "phoneNumbers": [{"home": "2065551234", "work": "2065552345", "mobile": "2065550987"}], 
+     ]};
+     */
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
      // A private rows property (string array)
@@ -168,23 +169,20 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
-     	var select = document.createElement("select");
-     	var option; 
-     	option = document.createElement("option");
-     	option.innerHTML = "Example1";
-     	select.appendChild(option);
- 
-     	option = document.createElement("option");
-     	option.innerHTML = "Example2";
-     	select.appendChild(option);
-     	
-     	
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
-     	
+     	$(".link"); $("a.link");
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
-
+     	var options = ["Joey", "Laura", "Jenna", "Chris", "Charlie"];
+     	var list = document.getElementById("list1");
+     	var listItem; 
+     	for (var i = 0; i < options.length; i++){
+     		listItem.createElement("li");
+     		listItem.innerHTML(options[i]);
+	     	list.appendChild(listItem);
+     	}
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
