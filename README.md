@@ -8,7 +8,7 @@ Follow *ALL* of the following rules.
 + Only the first 2 hours will be considered as part of your evaluation.
 + Fork this repository, do your work; commit early/often with descriptive messages. When finished, send a pull request.
 + Comments are encouraged to highlight your rationale for your work; remember you have only 2 hours.
-+ The "JsAndDom.*" (html and js) files have a series of questions/tasks for you to complete.
++ The "uitest.*" (html and js) files have a series of questions/tasks for you to complete.
 + You may use any JavaScript and/or CSS library you wish, or none at all.
 + You may use an external or inline JavaScript file(s).
 + Filenames must remain the same as in the original repository.
