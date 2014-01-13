@@ -17,12 +17,9 @@
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
-         var small = values [0];
-         for (var i = 0; i = values.length-1; i++){
-	         if(values[i] < small){
-		         small = values[i];
-	         }
-         }
+         var newValues = values.sort();
+         var small = newValues[0];
+         return small;
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
@@ -31,11 +28,12 @@
          var sorted = values.sort();
          var result = [];
          result.push(sorted[0]);
-         for (var i = 1; i < sorted.length-1; i++){
+         for (var i = 1; i < sorted.length; i++){
 	         if (sorted[i] != sorted[i-1]){
 		         result.push(sorted[i]);
 	         }
          }
+	return result;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -44,18 +42,18 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
-         for (i = 1; i <= MAX; i++){
+         for (i = 1; i <= 100; i++){
 	         if(i % 3 == 0 && i % 5 == 0){
-		         println("Fizz Buzz\n");
+		         console.log("FizzBuzz\n");
 		     }
 		     else if(i % 3 == 0){
-			     println("Fizz\n");
+			     console.log("Fizz\n");
 			 }
 			 else if(i % 5 == 0){
-				 println("Buzz\n");
+				 console.log("Buzz\n");
 		     }
 		     else
-		         println(i);
+		         console.log(i);
 	    }	
      }
 
@@ -63,36 +61,72 @@
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
-     function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+     function removeFruits(fruits, fruitsToRemove) { 
+     	var results = [];
+         for (var i = 0; i < fruits.length; i++){
+	         var toremove = false;
+		     for (var j = 0; j < fruitsToRemove.length; j++){
+		         if(fruits[i]===fruitsToRemove[j]){
+			         toremove = true;
+			         break;
+		         }
+	         }    
+	         if(!toremove) results.push(fruits[i]);
+         }
+         return results;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
      // If toPush is a simple value, it should be pushed onto array as an element.
+     
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
-     function pushOntoArray(array, toPush) {
+     /*function pushOntoArray(array, toPush) {
          // FILL THIS IN
+         if(toString.call(toPush) === "[object Array]"){
+         	for(var i = 0; i < array.length; i++){
+	         array.push(toPush[i]);
+	         }
+         }
+         else
+         	array.push(toPush);
+         
+         return array;
      }
-
+*/
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          // FILL THIS IN
+	 if(sourceStr == ""){
+		return [];
+	}
+         return sourceStr.split(',');
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          // FILL THIS IN
+         var total = 0;
+         for (var i = 0; i < arguments.length; i++){
+	         total += arguments[i];
+         }
+         return total;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
-        
+         return sourceStr.replace(/ /g, '') === ('');
      }
 
      // write an example of a javascript closure
-
+     function add(x){
+	     return function(y){
+	     	return x + y;
+	     }
+     }
+     var total = add(5);
+     total(2);
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -101,7 +135,11 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+     {"people":[
+     	{"firstName": "Joey", "lastName": "Mustaklem", "city": "West Lafayette", "state": "Indiana", "zip": "47906", "phoneNumbers": {"home": "3178736115", "work": "3179896648", "mobile": "3179896648"}}, 
+     	{"firstName": "Michael", "lastName": "Example", "city": "San Francisco", "state": "California", "zip": "94102", "phoneNumbers": {"home": "4155551234", "work": "4155550987", "mobile": "4155551111"}}, 
+     	{"firstName": "Dan", "lastName": "Example", "city": "Seattle", "state": "Washington", "zip": "98101", "phoneNumbers": {"home": "2065551234", "work": "2065552345", "mobile": "2065550987"}}, 
+     ]}
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
@@ -114,14 +152,36 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
-
+     function DataTable(){
+	     var columns = [];
+	     var rows = [];
+	     this.addRows = function(newRow){
+		     rows.push(newRow);
+	     }
+	     this.addColumns = function(newColumn){
+		     columns.push(newColumn);
+	     }
+	     this.getData() = function(){
+		     return JSON.stringify(this); //converts an object to a JSON string
+	     }
+     }
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
-
+     	var select = document.createElement("select");
+     	var option; 
+     	option = document.createElement("option");
+     	option.innerHTML = "Example1";
+     	select.appendChild(option);
+ 
+     	option = document.createElement("option");
+     	option.innerHTML = "Example2";
+     	select.appendChild(option);
+     	
+     	
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
-
+     	
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
 
