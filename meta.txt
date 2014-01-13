@@ -1,2 +1,3 @@
 Start Time: 1389559901
 Many issues starting with permissions, and took a bit to find my footing in git
+Pause Time: 1389574747
