@@ -118,7 +118,7 @@
          // FILL THIS IN
          return sourceStr.replace(/ /g, '') === ('');
      }
-
+     /*
      // write an example of a javascript closure
      function add(x){
 	     return function(y){
@@ -136,12 +136,18 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-     /*{"people":[
-     	{"firstName": "Joey", "lastName": "Mustaklem", "city": "West Lafayette", "state": "Indiana", "zip": "47906", "phoneNumbers": {"home": "3178736115", "work": "3179896648", "mobile": "3179896648"}}, 
-     	{"firstName": "Michael", "lastName": "Example", "city": "San Francisco", "state": "California", "zip": "94102", "phoneNumbers": {"home": "4155551234", "work": "4155550987", "mobile": "4155551111"}}, 
-     	{"firstName": "Dan", "lastName": "Example", "city": "Seattle", "state": "Washington", "zip": "98101", "phoneNumbers": [{"home": "2065551234", "work": "2065552345", "mobile": "2065550987"}], 
-     ]};
-     */
+     {
+    "things": [
+        {
+            "city": "Indianapolis",
+            "state": "Indiana"
+        },
+        {
+            "city": "West Lafayette",
+            "state": "Indiana"
+        },
+    ]
+    }	
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
      // A private rows property (string array)
@@ -169,10 +175,11 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
-
+     	
+     	
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
-     //	$(".link"); $("a.link"); $("#foo #fizz .link"); $(".bar .buzz .link");
+     	$(".link"); $("a.link"); $("#foo #fizz .link"); $(".bar .buzz .link");
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
      	var options = ["Joey", "Laura", "Jenna", "Chris", "Charlie"];
@@ -210,5 +217,4 @@
      	$("#boxClear").click( function(){
 	     	$("#foobar input[type=checkbox]").removeAttr("checked");
      	});
-     	
-     	
+     */

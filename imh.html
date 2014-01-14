@@ -17,15 +17,40 @@
 			<li> Welcome Joey!</li>
 			<li><a href = "#">Account</a></li>
 			<li> | </li>
-			<li>Help</li>
+			<li><a href = "#" id = "help" onclick = "parseHelp()">Help</a></li>
 			<li> | </li>
 			<li><a href = "#">Logout</a></li>
 		</ul>
 	</div>
 </div>
 
+<div class = "navigation">
+	<div id = "title">
+		<p>Interactive Marketing Hub</p>
+	</div>
+	<div id = "topList">
+		<ul>
+			<li><a href = "#" id = "email" onclick = "alertEmail()">ExactTarget Email</a></li>
+			<li><a href = "#" id = "mobile" onclick = "alertMobile()">ExactTarget Mobile</a></li>
+			<li><a href = "#" id = "social" onclick = "alertSocial()">CoTweet Social</a></li>
+			<li><a href = "#" id = "sites" onclick = "alertSites()">ExactTarget Sites</a></li>
+		</ul>
+	</div>
+	<div id = "bottomList">
+		<ul>
+			<li><a href = "#" id = "studio" onclick = "alertStudio()">Automation Studio</a></li>
+			<li><a href = "#" id = "audBuilder" onclick = "alertaBuilder()">Audience Builder</a></li>
+			<li><a href = "#" id = "repBuilder" onclick = "alertrBuilder()">Report Builder</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class = "pulse">
+	
+</div>
+
 <!-- javascript -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="js/imh.js"></script>
 </body>
 </html>

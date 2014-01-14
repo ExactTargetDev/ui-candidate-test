@@ -22,10 +22,56 @@
 	display: inline;
 	padding-right: 10px;
 }
+
 ul {
 	list-style-type: none;
 	float: right;
 }
+
 li {
 	display: inline-block
 }
+
+.navigation {
+	height: 400px; 
+	width: 120px;
+	background:#F0F0F0;
+    border:1px solid #CCC;
+    top: 100px;
+    padding-left: 20px;
+}
+
+#title {
+	top: 0px;
+	text-align: center;
+	float: left;
+	width: 100%;
+}
+
+#topList {
+	text-align: center;
+	width: 100%;
+	top: 30px;
+}
+
+#topList a:hover {
+	color: green;
+}
+
+#bottomList {
+	text-align: center;
+	width: 100%;
+	bottom: 0px;
+}
+
+#bottomList a:hover {
+	color: green;	
+}
+
+.pulse {
+	width: 500px;
+	height: 200px;
+	background:#F0F0F0;
+    border:1px solid #CCC;
+}
+
