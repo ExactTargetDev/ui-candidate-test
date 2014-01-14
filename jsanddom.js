@@ -172,18 +172,43 @@
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
-     	$(".link"); $("a.link");
+     //	$(".link"); $("a.link"); $("#foo #fizz .link"); $(".bar .buzz .link");
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
      	var options = ["Joey", "Laura", "Jenna", "Chris", "Charlie"];
      	var list = document.getElementById("list1");
      	var listItem; 
      	for (var i = 0; i < options.length; i++){
-     		listItem.createElement("li");
-     		listItem.innerHTML(options[i]);
+     		listItem = document.createElement("li");
+     		listItem.innerHTML = options[i];
 	     	list.appendChild(listItem);
      	}
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     	var foobar = document.getElementById("foobar");
+     	var options = ["Joey", "Laura", "Jenna", "Chris", "Charlie"];
+     	var box; 
+     	for (var i = 0; i < options.length; i++){
+     		box = document.createElement("input");
+     		box.setAttribute("type", "checkbox");
+     		box.innerHTML = options[i];
+	     	foobar.appendChild(box);
+     	}
+     	var fill = document.createElement("a");
+     	fill.setAttribute("id", "boxFill");
+     	fill.innerHTML = "Fill";
+     	var clear = document.createElement("a");
+     	clear.setAttribute("id", "boxClear");
+     	clear.innerHTML = "Clear";
+     	foobar.appendChild(fill);
+     	foobar.appendChild(clear);
+     	$("#boxFill").click( function(){
+	     	$("#foobar input[type=checkbox]").attr("checked", "checked");
+     	});
+     	$("#boxClear").click( function(){
+	     	$("#foobar input[type=checkbox]").removeAttr("checked");
+     	});
+     	
+     	
