@@ -1,0 +1,110 @@
+.header {
+	top: 0px;
+	height: 50px; 
+	width: 100%;
+	background:#F0F0F0;
+    border:1px solid #CCC;
+    display: inline-block;
+}
+
+#logo { 
+	width: 30%; 
+	float: left;
+	height: 50px;
+	display: inline;
+	padding-left: 10px;
+}
+
+#menu {
+	width: 68%;
+	float: left;
+	height: 50px;
+	display: inline;
+	padding-right: 10px;
+}
+
+ul {
+	list-style-type: none;
+	float: right;
+}
+
+li {
+	display: inline-block
+}
+
+.navigation {
+	height: 400px; 
+	width: 180px;
+	background:#F0F0F0;
+    border:1px solid #CCC;
+    margin-top: 60px;
+    margin-left: 50px;
+    float: left;
+}
+
+#title {
+	top: 0px;
+	text-align: center;
+	float: left;
+	width: 100%;
+}
+
+#topList {
+	width: 100%;
+	top: 50px;
+	height: 50%;
+	margin-top: 50px;
+}
+
+#topList a:hover {
+	color: green;
+}
+
+#topList ul {
+	padding-left: 5px;
+	text-align: center;
+}
+
+#bottomList {
+	width: 100%;
+	bottom: 0px;
+	height: 50%;
+}
+
+#bottomList a:hover {
+	color: green;	
+}
+
+#bottomList ul {
+	padding-left: 5px;
+	text-align: center;
+}
+
+.pulse {
+	width: 900px;
+	height: 300px;
+	background:#F0F0F0;
+    border:1px solid #CCC;
+    float: right;
+    margin-right: 150px;
+    margin-top: 100px;
+}
+
+.box {
+	border: solid 1px black;
+	width: 125px; 
+	height: 90px;
+	display: inline-block;
+	margin-top: 90px;
+	margin-left: 40px;
+}
+
+.bigBox {
+	border: solid 1px black;
+	width: 135px; 
+	height: 110px;
+	display: inline-block;
+	margin-top: 90px;
+	margin-left: 30px;
+}
+
