@@ -41,5 +41,8 @@ function parseHelp(){
     });
 }
 
-
+$(".box").click(function(){
+	$(".box").removeClass("bigBox");
+	$(this).toggleClass("bigBox");
+});
 
