@@ -19,9 +19,10 @@ Follow *ALL* of the following rules.
 + Yes, you MUST include IE, but only 8 and higher.
 
 ## First task to be completed
-+ Create a meta.txt file that includes the following information:
-+ Start Time: [timestamp]
-+ This should be your first commit.
++ In the root of the project, create a meta.txt file.
++ In that file, include the following on a single line: Start Time: [timestamp]
++ Commit this file.
++ The 2 hour timer begins after you save and commit your meta.txt file with timestamp.
 
 ### Bonus points by adding the following to meta.txt file
 + TotalTime: HHmm
