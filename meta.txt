@@ -6,8 +6,11 @@ Pause Time: 1389636023
 Start Time: 1389738630
 Pause Time: 1389747630
 Start Time: 1389702630
+Stop Time: 1389729641
 
 BrowserTesting (Taken from QUnit Testing on 2 browsers): Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.73.11 (KHTML, like Gecko) (Coda, like Safari)
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+
+Total Time: 1600
 
 
