@@ -28,6 +28,18 @@ function alertrBuilder(){
 }
 
 function parseHelp(){
-	
+	$.getJSON('js/help.json', function(json, s, x) {
+		var header = document.getElementById("header");
+		var dialog = document.createElement("div");
+		
+    	for(var i = 0; i < json.help.length; i++){
+	    	var help = document.createElement("div");
+	    	help.innerHTML = json.help[i].question+"<br />"+json.help[i].answer+"<br />";
+	    	dialog.appendChild(help);
+    	}
+    	$(dialog).dialog();
+    });
 }
+
+
 

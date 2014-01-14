@@ -2,10 +2,11 @@
     "help": [
         {
             "question": "Where am I?",
-            "answer": "Exact Target Coding Challenge"
+            "answer": "Exact Target Coding Challenge!"
         },
         {
             "question": "How did I get here?",
             "answer": "Because you want a job!"
-        }    ]
+        }    
+     ]
 }

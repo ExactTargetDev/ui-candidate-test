@@ -34,11 +34,12 @@ li {
 
 .navigation {
 	height: 400px; 
-	width: 120px;
+	width: 180px;
 	background:#F0F0F0;
     border:1px solid #CCC;
-    top: 100px;
-    padding-left: 20px;
+    margin-top: 60px;
+    margin-left: 50px;
+    float: left;
 }
 
 #title {
@@ -49,29 +50,43 @@ li {
 }
 
 #topList {
-	text-align: center;
 	width: 100%;
-	top: 30px;
+	top: 50px;
+	height: 50%;
+	margin-top: 50px;
 }
 
 #topList a:hover {
 	color: green;
 }
 
-#bottomList {
+#topList ul {
+	padding-left: 5px;
 	text-align: center;
+}
+
+#bottomList {
 	width: 100%;
 	bottom: 0px;
+	height: 50%;
 }
 
 #bottomList a:hover {
 	color: green;	
 }
 
+#bottomList ul {
+	padding-left: 5px;
+	text-align: center;
+}
+
 .pulse {
-	width: 500px;
-	height: 200px;
+	width: 900px;
+	height: 300px;
 	background:#F0F0F0;
     border:1px solid #CCC;
+    float: right;
+    margin-right: 150px;
+    margin-top: 100px;
 }
 
