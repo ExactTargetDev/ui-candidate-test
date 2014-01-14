@@ -1,0 +1,31 @@
+.header {
+	top: 0px;
+	height: 50px; 
+	width: 100%;
+	background:#F0F0F0;
+    border:1px solid #CCC;
+    display: inline-block;
+}
+
+#logo { 
+	width: 30%; 
+	float: left;
+	height: 50px;
+	display: inline;
+	padding-left: 10px;
+}
+
+#menu {
+	width: 68%;
+	float: left;
+	height: 50px;
+	display: inline;
+	padding-right: 10px;
+}
+ul {
+	list-style-type: none;
+	float: right;
+}
+li {
+	display: inline-block
+}
