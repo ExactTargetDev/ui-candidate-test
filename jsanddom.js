@@ -118,7 +118,7 @@
          // FILL THIS IN
          return sourceStr.replace(/ /g, '') === ('');
      }
-     /*
+     
      // write an example of a javascript closure
      function add(x){
 	     return function(y){
@@ -136,18 +136,33 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     
      {
-    "things": [
+    "things" [
         {
-            "city": "Indianapolis",
-            "state": "Indiana"
-        },
-        {
-            "city": "West Lafayette",
-            "state": "Indiana"
-        },
+            "firstName": "value",
+            "lastName": "value", 
+            "city": "value", 
+            "state": "value", 
+            "zip": "value", 
+            "phoneNumbers": [
+            { 
+            	"type":"home",
+            	"value": "33443322"
+            },
+            { 
+            	"type":"work",
+            	"value": "33443322"
+            }, 
+            { 
+            	"type":"mobile",
+            	"value": "33443322"
+            }
+            ]
+        }
     ]
     }	
+    
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
      // A private rows property (string array)
@@ -175,7 +190,27 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
-     	
+     
+     	var options = ["Volvo", "Mercedes", "VW"];
+     	var div = document.getElementById("div1");
+     	var select = document.createElement("select");
+     	var button = document.createElement("button");
+     	div.appendChild(select);
+     	div.appendChild(button);
+     	var selectOption; 
+     	for (var i = 0; i < options.length; i++){
+	     	selectOption = document.createElement("option");
+	     	selectOption.innerHTML = options[i];
+			select.appendChild(selectOption); 
+			    	
+     	}
+     	button.onclick = function(){
+	    	for (var i = 0; i < select.options.length; i++){ 
+	    		if(select.options[i].selected == true){
+		    		console.log(select.options[i].text);
+	    		} 
+	    	}		
+     	};
      	
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
@@ -217,4 +252,4 @@
      	$("#boxClear").click( function(){
 	     	$("#foobar input[type=checkbox]").removeAttr("checked");
      	});
-     */
+     
