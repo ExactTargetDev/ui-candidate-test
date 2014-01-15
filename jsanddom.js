@@ -16,7 +16,13 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+         uniques = new Array();
+         $.each(values, function(index, val){
+            if($.inArray(val, uniques) === -1) {
+                uniques.push(val);
+            }
+         });
+         return uniques;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -40,15 +46,20 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+         if( toPush.isArray() ){
+             toPush.forEach(function(entry){
+                 pushOntoArray(array, entry);
+             });
+         } else {
+             array.push(toPush);
+         }
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
          if( sourceStr === "") {
              return [];
-         }else{
+         } else {
              return sourceStr.split(",")
          }
      }
@@ -65,6 +76,7 @@
      }
 
      // write an example of a javascript closure
+        // FILL THIS IN
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
