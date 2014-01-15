@@ -1,3 +1,4 @@
+
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
@@ -100,7 +101,7 @@
 
      // write an example of a javascript closure
      function outerMethod(foo) {
-         var transform_foo += 42;
+         var transform_foo = foo + 42;
          function innerMethod(bar) {
              bar = bar % transform_foo;
              return bar;
@@ -173,7 +174,12 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
-     // TO FILL IN
+     $(document).ready(function(){
+         list_array = ['One','Two','Three','Four','Five'];
+         $.each(list_array, function(index, val){
+             $('#list1').append('<li>' + val + '</li>');
+         });
+     });
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
