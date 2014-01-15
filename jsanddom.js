@@ -68,6 +68,34 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     
+     var json_people = { "person": [
+                {
+                    "firstname":"abraham",
+                    "lastname":"lincoln",
+                    "city":"springfield",
+                    "state":"il",
+                    "zip":"62794",
+                    "phonenumbers": [{
+                        "home":"1112223333",
+                        "work":"18005554545"
+                    }]
+                },
+                {
+                    "firstname":"john",
+                    "lastname":"kennedy",
+                    "city":"new york",
+                    "state":"ny",
+                    "zip":"23414",
+                    "phonenumbers": [{
+                        "home":"4312213133",
+                        "work":"18009258545"
+                    }]
+                }
+            ]
+        };
+
+
 
 
      // Create a javascript object (DataTable) with the following:
@@ -88,6 +116,11 @@
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+         $('.link')
+         $('.buzz .link')
+         $('.buzz a')
+         $('#fizz a')
+         $('.bar .buzz .link')
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
