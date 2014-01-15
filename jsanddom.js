@@ -18,7 +18,7 @@
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          uniques = new Array();
-         $.each(values, function(index, val){
+         $.each(values, function(index, val) {
             if($.inArray(val, uniques) === -1) {
                 uniques.push(val);
             }
@@ -31,14 +31,14 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         for( var i=1; i <= 100; i++ ){
+         for( var i=1; i <= 100; i++ ) {
              var print = '';
-             if( i%3 === 0 ){
+             if( i%3 === 0 ) {
                 print += 'Fizz';
              }
-             if( i%5 === 0 ){
+             if( i%5 === 0 ) {
                 print += 'Buzz';
-             } else if ( (i%3 && i%5) ){
+             } else if ( (i%3 && i%5) ) {
                  print = i;
              }
              console.log(print);
@@ -51,7 +51,7 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removefruits(fruits, fruitstoremove) {
-         $(fruits).each(function(index, val){
+         $(fruits).each(function(index, val) {
              if($.inarray(val, fruitstoremove, 0) !== -1) {
                  fruits.splice(index, 1);
              }
@@ -64,8 +64,8 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         if( toPush.isArray() ){
-             toPush.forEach(function(entry){
+         if( toPush.isArray() ) {
+             toPush.forEach(function(entry) {
                  pushOntoArray(array, entry);
              });
          } else {
@@ -85,7 +85,7 @@
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          var sum = 0;
-         if(arguments.length > 0){
+         if(arguments.length > 0) {
              for( var i=0; i<arguments.length; i++ ) {
                  sum += +arguments[i];
              }
@@ -146,7 +146,7 @@
 
 
 
-     $(document).ready(function(){
+     $(document).ready(function() {
 
          // Create a javascript object (DataTable) with the following:
          // A private columns property (string array)
@@ -169,7 +169,7 @@
                                   <option value='red'>Red</option>\
                                </select>\
                                <button>Write Select</button>");
-            $('#div1 button').click(function(){
+            $('#div1 button').click(function() {
                 console.log( $('#div1 select option:selected').text() + ' ' + $('#div1 select').val() );
             });
 
@@ -185,7 +185,7 @@
          // Programatically create an array with 5 items.  Create a list item for each item in the array
          // and add the list items to the unordered list with an id of "list1".
              list_array = ['One','Two','Three','Four','Five'];
-             $.each(list_array, function(index, val){
+             $.each(list_array, function(index, val) {
                  $('#list1').append('<li>' + val + '</li>');
              });
 
@@ -193,6 +193,50 @@
          // to the div with an id of "foobar"
          // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
          // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
-         // TO FILL IN
+
+            var checkbox_list = document.createElement('ul');
+
+            // Create checkboxes in list
+            for( var i=0; i<4; i++) {
+                var checkbox_list_item = document.createElement('li');
+                var checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox_list_item.appendChild(checkbox); 
+                checkbox_list.appendChild(checkbox_list_item);
+            }
+
+            var foobar = document.getElementById('foobar')
+            foobar.appendChild( checkbox_list );
+
+            // Create links to check and uncheck list of checkboxes
+            for( var i=0; i<2; i++) {
+                var anchor = document.createElement('a');
+                anchor.setAttribute('id','anchor' + i);
+
+                if( i==0 ) {
+
+                    anchor.innerHTML = 'Check All <br/>';
+                    anchor.addEventListener("click", function(event) {
+                        event.preventDefault();
+                        to_check = foobar.getElementsByTagName('input');
+                        for( var box=0; box<to_check.length; box++ ) {
+                            to_check[box].checked = true;
+                        }
+
+                    });
+                } else {
+
+                    anchor.innerHTML = 'Uncheck All';
+                    anchor.addEventListener("click", function(event) {
+                        event.preventDefault();
+                        to_check = foobar.getElementsByTagName('input');
+                        for( var box=0; box<to_check.length; box++ ) {
+                            to_check[box].checked = false;
+                        }
+
+                    });
+                }
+                foobar.appendChild(anchor);
+            }
 
      });
