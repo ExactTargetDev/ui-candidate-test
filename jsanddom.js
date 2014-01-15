@@ -146,21 +146,39 @@
 
 
 
+
+     // Create a javascript object (DataTable) with the following:
+     // A private columns property (string array)
+     // A private rows property (string array)
+     // A public method addRows that adds an item to the rows array
+     // A public method addColumns that adds an item to the columns array
+     // A public method getData that returns the a json object representation of the DataTable
+     // Note: the row object should be a hash of the column name and row item value
+     // Example:
+     // .addColumns('column1', 'column2', 'column3');
+     // .addRow('value1A', 'value1B', 'value1C');
+     // .addRow('value2A', 'value2B', 'value2C');
+
+     function DataTable(columns, rows) {
+         this.columns = columns;
+         this.rows = rows;
+     }
+     
+     DataTable.prototype.addColumns = function() {
+         if(arguments.length > 0) {
+             this.columns.push(arguments);
+         }
+     };
+
+     DataTable.prototype.addRow = function() {
+     };
+
+     DataTable.prototype.getData = function() {
+     };
+
+
+
      $(document).ready(function() {
-
-         // Create a javascript object (DataTable) with the following:
-         // A private columns property (string array)
-         // A private rows property (string array)
-         // A public method addRows that adds an item to the rows array
-         // A public method addColumns that adds an item to the columns array
-         // A public method getData that returns the a json object representation of the DataTable
-         // Note: the row object should be a hash of the column name and row item value
-         // Example:
-         // .addColumns('column1', 'column2', 'column3');
-         // .addRow('value1A', 'value1B', 'value1C');
-         // .addRow('value2A', 'value2B', 'value2C');
-         // TO FILL IN
-
          // within div1, programatically create a
          // SELECT element (with multiple items) and a button.
          // when the button is clicked write out the name and value of the selected item to the console.
