@@ -144,9 +144,6 @@
         };
 
 
-
-
-
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
      // A private rows property (string array)
@@ -160,37 +157,35 @@
      // .addRow('value2A', 'value2B', 'value2C');     // value2A value2B value2C
 
      function DataTable(columns, rows) {
-         this.columns = columns;
-         this.rows = [];
+         this.rows = {};
+         this.columns = [];
+     }
 
-         var num_rows = rows.length / columns.length;
+     DataTable.prototype.addColumns = function() {
+         for( var new_col=0; new_col<arguments.length; new_col++ ) {
 
-         // Grab individual row and add (for # of rows)
-         for( var i=0; i<num_rows; i++ ) {
-             var start = i*columns.length;
-             var end = start + columns.length;
-             this.rows = this.addRow(rows.slice(start,end));
+             this.columns.push(arguments[new_col]);
+
+             this.rows[arguments[new_col]] = [];
          }
      }
-     
-     DataTable.prototype.addColumns = function() {
-         if( arguments.length > 0 ) {
-             this.columns.push(arguments);
-         }
-     };
 
      DataTable.prototype.addRow = function() {
          for( var col=0; col<this.columns.length; col++ ) {
-             this.rows[String(this.columns[col])] = arguments[0][col];
+
+             this.rows[this.columns[col]].push(arguments[col]);
          }
      };
 
+
      DataTable.prototype.getData = function() {
-         console.log(JSON.stringify(this.rows));
          return JSON.stringify(this.rows);
      };
 
-     var test_table = new DataTable(['columnA', 'columnB', 'columnC'],['value1A', 'value1B', 'value1C', 'value2A', 'value2B', 'value2C']);
+     var test_table = new DataTable();
+     test_table.addColumns('columnA', 'columnB', 'columnC')
+     test_table.addRow('value1A', 'value1B', 'value1C')
+     test_table.addRow('value2A', 'value2B', 'value2C')
      test_table.getData();
 
 
