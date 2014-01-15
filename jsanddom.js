@@ -154,27 +154,44 @@
      // A public method addColumns that adds an item to the columns array
      // A public method getData that returns the a json object representation of the DataTable
      // Note: the row object should be a hash of the column name and row item value
-     // Example:
-     // .addColumns('column1', 'column2', 'column3');
-     // .addRow('value1A', 'value1B', 'value1C');
-     // .addRow('value2A', 'value2B', 'value2C');
+     // Example:                                      // DataTable
+     // .addColumns('column1', 'column2', 'column3'); // columnA columnB columnC
+     // .addRow('value1A', 'value1B', 'value1C');     // value1A value1B value1C
+     // .addRow('value2A', 'value2B', 'value2C');     // value2A value2B value2C
 
      function DataTable(columns, rows) {
          this.columns = columns;
-         this.rows = rows;
+         this.rows = [];
+
+         var num_rows = rows.length / columns.length;
+
+         // Grab individual row and add (for # of rows)
+         for( var i=0; i<num_rows; i++ ) {
+             var start = i*columns.length;
+             var end = start + columns.length;
+             this.rows = this.addRow(rows.slice(start,end));
+         }
      }
      
      DataTable.prototype.addColumns = function() {
-         if(arguments.length > 0) {
+         if( arguments.length > 0 ) {
              this.columns.push(arguments);
          }
      };
 
      DataTable.prototype.addRow = function() {
+         for( var col=0; col<this.columns.length; col++ ) {
+             this.rows[String(this.columns[col])] = arguments[0][col];
+         }
      };
 
      DataTable.prototype.getData = function() {
+         console.log(JSON.stringify(this.rows));
+         return JSON.stringify(this.rows);
      };
+
+     var test_table = new DataTable(['columnA', 'columnB', 'columnC'],['value1A', 'value1B', 'value1C', 'value2A', 'value2B', 'value2C']);
+     test_table.getData();
 
 
 
