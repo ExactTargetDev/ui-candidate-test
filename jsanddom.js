@@ -146,43 +146,53 @@
 
 
 
-     // Create a javascript object (DataTable) with the following:
-     // A private columns property (string array)
-     // A private rows property (string array)
-     // A public method addRows that adds an item to the rows array
-     // A public method addColumns that adds an item to the columns array
-     // A public method getData that returns the a json object representation of the DataTable
-     // Note: the row object should be a hash of the column name and row item value
-     // Example:
-     // .addColumns('column1', 'column2', 'column3');
-     // .addRow('value1A', 'value1B', 'value1C');
-     // .addRow('value2A', 'value2B', 'value2C');
-     // TO FILL IN
-
-     // within div1, programatically create a
-     // SELECT element (with multiple items) and a button.
-     // when the button is clicked write out the name and value of the selected item to the console.
-     // TO FILL IN
-
-     // Write 5 different jQuery selectors to retrieve the
-     // sample anchor in the markup below.
-         $('.link')
-         $('.buzz .link')
-         $('.buzz a')
-         $('#fizz a')
-         $('.bar .buzz .link')
-
-     // Programatically create an array with 5 items.  Create a list item for each item in the array
-     // and add the list items to the unordered list with an id of "list1".
      $(document).ready(function(){
-         list_array = ['One','Two','Three','Four','Five'];
-         $.each(list_array, function(index, val){
-             $('#list1').append('<li>' + val + '</li>');
-         });
-     });
 
-     // Use javascript to add a list of checkboxes and 2 links
-     // to the div with an id of "foobar"
-     // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
-     // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
-     // TO FILL IN
+         // Create a javascript object (DataTable) with the following:
+         // A private columns property (string array)
+         // A private rows property (string array)
+         // A public method addRows that adds an item to the rows array
+         // A public method addColumns that adds an item to the columns array
+         // A public method getData that returns the a json object representation of the DataTable
+         // Note: the row object should be a hash of the column name and row item value
+         // Example:
+         // .addColumns('column1', 'column2', 'column3');
+         // .addRow('value1A', 'value1B', 'value1C');
+         // .addRow('value2A', 'value2B', 'value2C');
+         // TO FILL IN
+
+         // within div1, programatically create a
+         // SELECT element (with multiple items) and a button.
+         // when the button is clicked write out the name and value of the selected item to the console.
+            $('#div1').append("<select>\
+                                  <option value='blue'>Blue</option>\
+                                  <option value='red'>Red</option>\
+                               </select>\
+                               <button>Write Select</button>");
+            $('#div1 button').click(function(){
+                console.log( $('#div1 select option:selected').text() + ' ' + $('#div1 select').val() );
+            });
+
+
+         // Write 5 different jQuery selectors to retrieve the
+         // sample anchor in the markup below.
+             $('.link')
+             $('.buzz .link')
+             $('.buzz a')
+             $('#fizz a')
+             $('.bar .buzz .link')
+
+         // Programatically create an array with 5 items.  Create a list item for each item in the array
+         // and add the list items to the unordered list with an id of "list1".
+             list_array = ['One','Two','Three','Four','Five'];
+             $.each(list_array, function(index, val){
+                 $('#list1').append('<li>' + val + '</li>');
+             });
+
+         // Use javascript to add a list of checkboxes and 2 links
+         // to the div with an id of "foobar"
+         // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
+         // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+         // TO FILL IN
+
+     });
