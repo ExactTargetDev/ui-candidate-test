@@ -99,7 +99,13 @@
      }
 
      // write an example of a javascript closure
-        // FILL THIS IN
+     function outerMethod(foo) {
+         var transform_foo += 42;
+         function innerMethod(bar) {
+             bar = bar % transform_foo;
+             return bar;
+         }
+     }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -150,10 +156,12 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     // TO FILL IN
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     // TO FILL IN
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
@@ -165,8 +173,10 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     // TO FILL IN
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     // TO FILL IN
