@@ -30,7 +30,19 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         for( var i=1; i <= 100; i++ ){
+             var print = '';
+             if( i%3 === 0 ){
+                print += 'Fizz';
+             }
+             if( i%5 === 0 ){
+                print += 'Buzz';
+             } else if ( (i%3 && i%5) ){
+                 print = i;
+             }
+             console.log(print);
+         }
+
      }
 
      // You have a master array of strings, where each element is a fruit name.
