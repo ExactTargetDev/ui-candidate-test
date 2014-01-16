@@ -12,7 +12,7 @@ body {
 }
 
 .content {
-    width: 1250px;
+    width: 1200px;
     min-height: 34px;
     margin: 0 auto;
     padding: 0 20px;
@@ -22,6 +22,28 @@ body {
     background-image: url(../images/header/header_background.png);
     background-repeat: repeat-x;
     height: 34px;
+    z-index: 42;
+    img {
+        margin-top: 10px;
+    }
+    .account-options {
+        float: right;
+        width: 20%;
+        height: 30px;
+        margin-right: -20px;
+        color: @bg_color;
+        font-size: 12px;
+        text-align: right;
+
+        p {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        a {
+            color: #7fa6b7;
+            text-decoration: none;
+        }
+    }
 }
 
 .sidebar {
@@ -117,16 +139,98 @@ body {
 .main-content {
     .calendar, .pulse {
         float: right;
-        margin-top: 20px;
+        width: 995px;
     }
     .calendar {
+        margin-top: 0;
+        height: 115px;
+        border: 1px solid #cccccc;
+        border-top: 0;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: #ebf1f5;
+        z-index: 0;
+
+        .month {
+            float: left;
+            margin: 2px 0 0 5px;
+            font-size: 12px;
+            color: #99abb6;
+            width: 20%;
+        }
+        .header-right {
+            float: right;
+            margin-right: 10px;
+            img {
+                margin-left: 5px;
+            }
+        }
+        .calendar-inner {
+            float: left;
+            margin: 3px 0 0 10px;
+
+            table {
+                border: 0;
+                tr.days {
+                    border-left: 1px solid #dddddd;
+                    border-right: 1px solid @bg_color;
+                    border-bottom: 1px solid @bg_color;
+
+                    td {
+                        display: inline-block;
+                        margin-left: -4px;
+                        border-left: 1px solid @bg_color;
+                        border-right: 1px solid #dddddd;
+                        border-bottom: 1px solid #dddddd;
+                        width: 133px;
+                        height: 70px;
+
+                        .day, .day_num {
+                            font-size: 10px;
+                            color: #888888;
+                            margin: 0 3px;
+                            vertical-align: top;
+                        }
+                        .day {
+                            float: left;
+                        }
+                        .day_num {
+                            float:right;
+                        }
+
+                    }
+                    td.today {
+                        background-image: url('../images/calendar/today_top_background.png');
+                        background-repeat: no-repeat;
+                    }
+                }
+                tr.bottom {
+                    td {
+                        display: inline-block;
+                        margin-left: -4px;
+                        border-left: 1px solid #ebf1f5;
+                        border-right: 1px solid #ebf1f5;
+                        width: 133px;
+                        height: 15px;
+                    }
+                    td.today {
+                        background-image: url('../images/calendar/today_bottom_background.png');
+                        background-repeat: no-repeat;
+                        font-size: 10px;
+                        color: #fff;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
     }
 
     .pulse {
+        margin-top: 20px;
         border-radius: 5px;
         background-image: url('../images/pulse/pulse_background.png');
         background-repeat: no-repeat;
-        width: 995px;
         height: 265px;
 
         .pulse-header {
@@ -248,6 +352,32 @@ body {
                     }
                 }
             }
+        }
+    }
+}
+.help-modal-outer {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/bg_pixel.png');
+    .help-modal {
+        position: absolute;
+        left: 25%;
+        top: 50px;
+        background-color: @bg_color;
+        width: 995px;
+        min-height: 500px;
+        h2 {
+            font-size: 22px;
+            color: #888888;
+            padding-left: 20px;
+        }
+        .modal-content {
+            color: #888888;
+            padding: 20px;
         }
     }
 }
