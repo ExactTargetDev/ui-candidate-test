@@ -25,6 +25,7 @@ body {
 }
 
 .sidebar {
+    float: left;
     margin: 20px 20px 0 0;
     width: 180px;
     background-color: #f5f5f5;
@@ -114,9 +115,110 @@ body {
 }
 
 .main-content {
+    .calendar, .pulse {
+        float: right;
+        margin-top: 20px;
+    }
     .calendar {
     }
 
     .pulse {
+        border-radius: 5px;
+        background-image: url('../images/pulse/pulse_background.png');
+        background-repeat: no-repeat;
+        width: 995px;
+        height: 265px;
+
+        .pulse-header {
+            h2 {
+                color: white;
+                font-size: 16px;
+                display: inline-block;
+                width: 116px;
+                height: 40px;
+                margin-top: 7px;
+                padding: 0px 0px 0px 18px;
+                background-image: url('../images/pulse/pulse_logo.png');
+                background-repeat: no-repeat;
+                background-position: 0 7px;
+                background-position-x: 0; //IE8
+                background-position-y: 7px; //IE8
+                font-size: 20px;
+                font-weight: 400;
+            }
+            .header-right {
+                float: right;
+                margin: 7px 10px 0 0;
+                img {
+                    margin-left: 5px;
+                }
+            }
+        }
+        .pulse-content {
+            padding: 0 0 0 12px;
+
+            .pulse-box {
+                float: left;
+                width: 172px;
+                height: 101px;
+                margin-top: 40px;
+                background-image: url('../images/pulse/pulse_box_sm.png');
+                background-repeat: no-repeat;
+                text-align: center;
+
+                p {
+                    color: #93afc0;
+                    margin: 0;
+                    width: 98%;
+                }
+                .highlight {
+                    color: #34bbf3;
+                    font-size: 30px;
+                }
+                .footnote {
+                    margin-top: 10px;
+                    font-size: 10px;
+                }
+                p.pulse-label {
+                    margin: -15px 0 10px 0;
+                    width: 98%;
+                    text-align: center;
+                    font-size: 12px;
+                    color: #888888;
+                }
+            }
+
+            .pulse-box.active {
+                width: 313px;
+                height: 197px;
+                margin: -17px -6px 0px -15px;
+                background-image: url('../images/pulse/pulse_box_lg.png');
+                background-repeat: no-repeat;
+                p.pulse-label {
+                    margin-top: 0;
+                }
+                .foursquare-header {
+                    font-size: 10px;
+                    font-weight: 700;
+                    padding: 0 30px;
+
+                    .fs-left {
+                        float: left;
+                        text-align: left;
+                        width: 40%;
+                        color: #888888;
+                    }
+                    .fs-right {
+                        float: right;
+                        text-align: right;
+                        width: 40%;
+                        color: #888888;
+                    }
+                }
+                .map-wrapper {
+                    margin: 30px 0 0 0;
+                }
+            }
+        }
     }
 }
