@@ -1,0 +1,122 @@
+@border_grey: #e6e6e6;
+@bg_color: #fefffd;
+
+body {
+    background-color: @bg_color;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: arial, sans-serif;
+}
+
+.content {
+    width: 1250px;
+    min-height: 34px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    background-image: url(../images/header/header_background.png);
+    background-repeat: repeat-x;
+    height: 34px;
+}
+
+.sidebar {
+    margin: 20px 20px 0 0;
+    width: 180px;
+    background-color: #f5f5f5;
+    border: 1px solid @border_grey;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .sidebar-header {
+        background-image: url('../images/app_launcher_1/interactive_marketing_hub_background.png');
+        background-repeat: no-repeat;
+        width: 183px;
+        height: 53px;
+        margin-left: -2px;
+
+        h2 {
+            color: white;
+            font-size: 16px;
+            display: inline-block;
+            width: 70%;
+            margin: 6px 0 0 5px;
+        }
+        img {
+            margin: 15px 0px 0px 15px;
+        }
+    }
+
+    .app-launcher {
+        border: 1px solid @bg_color;
+        margin-top: 0;
+
+        ul {
+            margin: 10px 0 10px -30px;
+
+            li {
+                list-style-type: none;
+                font-size: 14px;
+
+                a {
+                    color: #888888;
+                    text-decoration: none;
+                    vertical-align: middle;
+                    padding-bottom: 15px;
+                    
+                    .imh-icon {
+                        display: table-cell;
+                        vertical-align: middle;
+                        text-align: center;
+                        width: 26px;
+                        height: 26px;
+                        background-image: url('../images/app_launcher_1/i_background.png');
+                        background-repeat: no-repeat;
+
+                        img {
+                            margin-top: 3px;
+                        }
+                    }
+                    .icon-text {
+                        vertical-align: 6px;
+                        padding-left: 2px;
+                    }
+                }
+                a.imh-links:hover {
+                    font-weight: 700;
+                }
+                a.imh-links:active {
+                    .icon-text {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    .launcher-stacked {
+        border-top: 1px solid @border_grey;
+        ul {
+            li {
+                button {
+                    padding: 0px;
+                }
+                .partner-apps {
+                    padding-top: 10px;
+                }
+            }
+        }
+
+    }
+}
+
+.main-content {
+    .calendar {
+    }
+
+    .pulse {
+    }
+}
