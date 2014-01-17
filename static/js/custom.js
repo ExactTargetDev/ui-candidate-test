@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-    var url = '/data/help.json';
     // Import Help JSON
+    var url = '../../data/help.json';
     $.getJSON( url, function(data) {
-        $('.modal-content').html($.toJSON(data));
+        $('.modal-content').html($.parseJSON(data));
     });
 
     $('.pulse-box').click(function() {
@@ -15,7 +15,6 @@ $(document).ready(function() {
         }
     });
 
-    $('.help-modal-outer').hide();
     $('.open-modal').click(function() {
         $('.help-modal-outer').show();
     });
