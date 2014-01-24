@@ -89,7 +89,7 @@
         for(i=0;i<mysplits.length;i++) {
              mysum=mysum+parseInt(mysplits[i]);
         }
-        alert("Sum is : "+mysum);
+        alert("Sum is : "+mysum); 
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
