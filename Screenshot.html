@@ -1,8 +1,173 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Screenshot.html</title>
+<title>Screenshot.html</title>
+
+<link href='./resources/styles/base.css' type='text/css' rel='stylesheet'>
+<link href='./resources/styles/page.css' type='text/css' rel='stylesheet'>
+<link href='./resources/styles/bootstrap.css' type='text/css' rel='stylesheet'>
+
+<script src='./resources/js/libs/jquery/jquery-1.10.2.js' type='text/javascript'></script>
+<script src='./resources/js/libs/bootstrap/bootstrap.js' type='text/javascript'></script>
+<script src='./resources/js/libs/underscore.js' type='text/javascript'></script>
+
+<script src='./resources/js/util/templatemanager.js' type='text/javascript'></script>
+<script src='./resources/js/util/browser.js' type='text/javascript'></script>
+<script src='./resources/js/util/array.js' type='text/javascript'></script>
+<script src='./resources/js/util/string.js' type='text/javascript'></script>
+<script src='./resources/js/widgets/pulsewidget.js' type='text/javascript'></script>
+<script src='./resources/js/widgets/calendarwidget.js' type='text/javascript'></script>
+<script src='./resources/js/bootstrap.js' type='text/javascript'></script>
 </head>
 <body>
+
+	<div id='header'>
+		<a class='logo'>ExactTarget.</a>
+		<div class='nav nav-right'>
+			<ul>
+				<li>
+					<p class='nav-text'>Welcome John!</p>
+				</li>
+				<li><a href='#' class='nav-link'>Account</a></li>
+				<li><a href='#' class='nav-link js-help'>Help</a></li>
+				<li><a href='#' class='nav-link'>Logout</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id='content'>
+		<div id='imhub' xstyle='border: 1px solid red;'>
+			<ul class='hub-menu'>
+				<li class='hub'>
+					<span class='icon'></span> 
+					<i>Interactive Marketing Hub</i>
+				</li>
+				<li class='email'>
+					<span class='icon'></span>
+					<i>ExactTarget Email</i>
+				</li>
+				<li class='mobile'>
+					<span class='icon'></span>
+					<i>ExactTarget Mobile</i>
+				</li>
+				<li class='cotweet'>
+					<span class='icon'></span>
+					<i>CoTweet Social</i>
+				</li>
+				<li class='sites'>
+					<span class='icon'></span>
+					<i>ExactTarget Sites</i>
+				</li>
+				<li class='automation'>
+					<span class='icon'></span>
+					<i>Automation Studio</i>
+				</li>
+				<li class='audience'>
+					<span class='icon'></span>
+					<i>Audience Builder</i>
+				</li>
+				<li class='report'>
+					<span class='icon'></span>
+					<i>Report Builder</i>
+				</li>
+				<li class='apps'>
+					<span class='icon'></span>
+					<i>Partner Applications</i>
+				</li>
+			</ul>
+		</div>
+
+		<div id='calendar' xstyle='border: 1px solid blue;'>
+			<div class='title-bar'>
+				<span class='month-text'></span>
+				<ul class='options'>
+					<li class='gear'>
+						<span class='icon'></span>
+					</li>
+					<li class='popout'>
+						<span class='icon'></span>
+					</li>
+				</ul>
+			</div>
+			<div class='calendar-display-range'>
+			</div>
+			<div class='selection-bar'>
+				<label class='prev'>
+					<span class='calendar-previous'></span>Previous
+				</label>
+				<span class='mark-today'>TODAY</span>
+				<label class='next'>
+					Next<span class='calendar-next'></span>
+				</label>
+			</div>
+		</div>
+
+		<div id='pulse' xstyle='border: 1px solid yellow;'>
+			<div class='pulse-top'>
+				<span class='pulse-logo'></span>
+				<ul class='options'>
+					<li class='gear'><span class='icon'></span></li>
+					<li class='minimize'><span class='icon'></span></li>
+					<li class='popout'><span class='icon'></span></li>
+					<li class='exit'><span class='icon'></span></li>
+				</ul>
+			</div>
+			<div class='pulse-content'>
+				<div class='info small'>
+					<i class='info-title'>Followers</i>
+					<span class='followers'></span>
+				</div>
+				<div class='info small'>
+					<i class='info-title'>Fan</i>
+					<span class='fan'></span>
+				</div>
+				<div class='info small'>
+					<i class='info-title'>Subscribers</i>
+					<span class='subscribers'></span>
+				</div>
+				<div class='info small'>
+					<i class='info-title'>foursquare</i>
+					<span class='foursquare'></span>
+				</div>
+				<div class='info medium'>
+					<i class='info-title'>Landing Pages</i>
+					<span class='landing'></span>
+				</div>
+			</div>
+			<div class='pulse-footer'>
+				<span class='pulse-loading'></span>
+			</div>
+		</div>
+		
+		<div id='blank' style='height: 4000px;'>
+			<!-- In the PNG screenshot, there is a scroll-bar on the right that does
+			not overlap the header. This blank div is just to increase the height of
+			the page so you can see the scrollbar is on the content, not the body
+			pane -->
+		</div>
+	</div>
+	
+	<!-- Bootstrap modal dialog -->
+	<div class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Help</h4>
+				</div>
+				<div class="modal-body">
+					<p></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class='templates'>
+		<div id='a-date' class='calendar-date template'>
+			<span class='dayName'></span> <span class='day'></span>
+		</div>
+	</div>
+	
 </body>
 </html>
