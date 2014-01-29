@@ -33,3 +33,16 @@ test("doFizzBuzz",function(){
     equal(result.fizz,33,"Expected 33 got "+result.fizz);
     equal(result.buzz,20,"Expected 20 got "+result.buzz);
 });
+test("removeFruits",function(){
+    var fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+    var toRemove = ['pear', 'banana'];
+    var expected = ['apple', 'orange', 'kiwi', 'plum', 'strawberry'];
+    equal(JSON.stringify(removeFruits(fruits,toRemove)),JSON.stringify(expected),"Expected "+expected+" got "+removeFruits(fruits,toRemove));
+
+});
+test("pushOntoArray",function(){
+    var array = [1,2,3,4,5];
+    var toPush = [6,7,['a','b','c'],8,['x','y',['zeta','omega']],9,10];
+    var expected = [1,2,3,4,5,6,7,'a','b','c',8,'x','y','zeta','omega',9,10];
+    equal(JSON.stringify(pushOntoArray(array,toPush)),JSON.stringify(expected),"Expected "+expected+" got "+pushOntoArray(array,toPush));
+});

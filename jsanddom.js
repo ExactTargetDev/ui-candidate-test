@@ -71,7 +71,22 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+
+         var index = 0;
+         for (var i=0;i<fruitsToRemove.length; )
+         {
+             index = fruits.indexOf(fruitsToRemove[i]);
+             if (index != -1)
+             {
+                 fruits.splice(index,1);
+             }
+             else
+                i++;//only increment once we are sure all traces of that fruit are gone
+
+         }
+         return fruits;
+
+
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -79,7 +94,15 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+
+         for (var i=0;i < toPush.length;i++)
+         {
+            if (Array.isArray(toPush[i]))
+                array = pushOntoArray(array,toPush[i]);
+            else
+                array.push(toPush[i]);
+         }
+         return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
