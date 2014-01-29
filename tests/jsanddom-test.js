@@ -12,7 +12,7 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
-module("custom tests");
+module("Basic JS tests");
 test("reverseString",function(){
    equal( reverseString('qwerty'),'ytrewq',"Expected ytrewq got " + reverseString('qwerty'));
 
@@ -65,3 +65,23 @@ test("isOnlyWhitespace",function(){
    equal(isOnlyWhitespace(testStr2),true,"Expected True");
    equal(isOnlyWhitespace(testStr3),true,"Expected True");
 });
+module("Advanced Js tests");
+test("dataTable",function(){
+    var expected = '{"rows":["row1A","row1A"],"columns":["column1","column1"]}';
+   var dt = new DataTable();
+    dt.addColumns('column1','column2');
+    dt.addRows('row1A','row1B');
+    equal(dt.getData(),expected,"Expected "+expected+" got "+dt.getData());
+});
+test("addSelect",function(){
+   addSelect();
+   equal(($('#newSelect').length != 0),true,"Expected element to exist");
+});
+test("doListAdd",function(){
+    doListAdd();
+    equal(($('#li5').length != 0),true,"Expected element to exist");
+});
+test("addCheckbox",function(){
+    addCheckbox();
+    equal(($('#check').length != 0),true,"Expected element to exist");
+})

@@ -126,6 +126,13 @@
      }
 
      // write an example of a javascript closure
+     function closure()
+     {
+        var outer = 1;
+        function insideClosure(inner){
+            return outer + inner;
+        }
+     }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -135,6 +142,32 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     var PeopleCollection = [
+         {
+             'first_name':"Bob",
+             'last_name':"Bobson",
+             'city':"San Francisco",
+             'state':"CA",
+             'zip':95000,
+             'phone_numbers':[
+                 {'type':'work','number':"510-555-1234"},
+                 {'type':'home','number':"510-555-1236"}
+             ]
+         },
+         {
+             'first_name':"Kaycee",
+             'last_name':"Robson",
+             'city':"San Francisco",
+             'state':"CA",
+             'zip':95000,
+             'phone_numbers':[
+                 {'type':'mobile','number':"510-555-7888"},
+                 {'type':'home','number':"510-555-3456"},
+                 {'type':'work','number':"510-555-3236"}
+             ]
+         }
+
+     ];
 
 
      // Create a javascript object (DataTable) with the following:
@@ -148,18 +181,87 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     function DataTable()
+     {
+        var columns = [];
+        var rows = [];
+        var self = this;
+
+        this.addRows = function (item)
+        {
+            for (var i=0;i<arguments.length;i++)
+                rows.push(item);
+        };
+
+        this.addColumns = function (item)
+        {
+            for (var i=0;i<arguments.length;i++)
+                columns.push(item);
+        };
+
+         this.getData = function ()
+         {
+             return JSON.stringify({'rows':rows,'columns':columns});
+         };
+     }
+
+
+
+
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     function addSelect()
+     {
+     $('#div1').append("<select id='newSelect'><option value='a'>One</option><option value='b'>Two</option><option value='c'>Three</option></select><button id='newButton'>Click Me</button>");
+          $('#newButton').click(function()
+          {
+               console.log( $('#newSelect option:selected').text() + '-' + $('#newSelect').val() );
+          });
+     }
+
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     $('#fizz a');
+     $('#fizz .link');
+     $('.buzz a');
+     $('.buzz .link');
+     $('.link');
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     function doListAdd()
+     {
+         var array = [];
+         for (var i=0;i<5;i++)
+            array.push((Math.floor(Math.random()*100)));
+
+        var j = 1;
+        $.each(array, function(index,value)
+        {
+            $('#list1').append('<li id="li'+j+'">'+ value +'</li>');
+            j++;
+        });
+     }
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     function addCheckbox()
+     {
+         $('#foobar').append('<ul>');
+         for(var i=0;i<10;i++)
+             $('#foobar').append('<li><input type="checkbox"></li>');
+
+         $('#foobar').append('</ul><a id="check" style="cursor:pointer">Check all</a> - <a id="uncheck" style="cursor:pointer">Uncheck all</a>');
+         $('#check').click(function(){
+             $('input:checkbox').attr('checked','checked');
+         });
+         $('#uncheck').click(function(){
+             $('input:checkbox').removeAttr('checked');
+         });
+
+     }
