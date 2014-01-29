@@ -46,3 +46,22 @@ test("pushOntoArray",function(){
     var expected = [1,2,3,4,5,6,7,'a','b','c',8,'x','y','zeta','omega',9,10];
     equal(JSON.stringify(pushOntoArray(array,toPush)),JSON.stringify(expected),"Expected "+expected+" got "+pushOntoArray(array,toPush));
 });
+test("splitListStrUsingComma",function(){
+    var str = "hey,there,how,are,you";
+    var expected = ['hey','there','how','are','you'];
+    equal(JSON.stringify(splitListStrUsingComma(str)),JSON.stringify(expected),"Expected "+expected+" got "+splitListStrUsingComma(str));
+    equal(JSON.stringify(splitListStrUsingComma('')),JSON.stringify([]),"Expected [] got ["+splitListStrUsingComma('')+"]");
+});
+test("sum",function(){
+    var expected = 19;
+    equal(sum(1, 1, 2, 3, 5, 7),expected,"Expected "+expected+" got "+sum(1, 1, 2, 3, 5, 7));
+});
+test("isOnlyWhitespace",function(){
+   var testStr1 = "     fdh     ";
+   var testStr2 = "\n\n\n\n\t  ";
+   var testStr3 = "                        ";
+
+   equal(isOnlyWhitespace(testStr1),false,"Expected False");
+   equal(isOnlyWhitespace(testStr2),true,"Expected True");
+   equal(isOnlyWhitespace(testStr3),true,"Expected True");
+});
