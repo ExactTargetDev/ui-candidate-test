@@ -21,4 +21,15 @@ test("findMinValue",function(){
    var arr = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
    equal( findMinValue(arr),-1.1,"Expected -1.1 got "+ findMinValue(arr));
 
-})
+});
+test("findDistinctValues",function(){
+    var arr = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+    var expected = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity];
+    equal( JSON.stringify(findDistinctValues(arr)),JSON.stringify(expected),"Expected ["+expected+"] got ["+findDistinctValues(arr)+"]");
+});
+test("doFizzBuzz",function(){
+
+    var result = doFizzBuzz();
+    equal(result.fizz,33,"Expected 33 got "+result.fizz);
+    equal(result.buzz,20,"Expected 20 got "+result.buzz);
+});
