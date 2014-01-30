@@ -356,9 +356,13 @@ html body{
     margin-right:12px;
     display:block;
     color:#666666;
+    float:left;
 }
-.pulse_expanded_content > span > span {
+.pulse_expanded_content  > a {
     float:right;
+    font-size:14px;
+    margin-right:12px;
+    color:#666666;
 }
 .pulse_expanded_image{
     background: url(assets/sprites.png) -30px -55px;

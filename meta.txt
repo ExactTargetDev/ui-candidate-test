@@ -3,3 +3,9 @@ Start Time:1390954332
 Time Log:
 1/28/14 :: 4:13pm - 7:10pm  JSAndDom
 1/29/14 :: 5:00pm - ??????  Screenshot
+
+Browser Testing:
+Browser --  OS ------ Browser Version
+Chrome - OSX 10.9.1 - 32.0.1700.102
+Safari - OSX 10.9.1 - 7.0.1
+Firefox - OSX 10.9.1 - 26.0
