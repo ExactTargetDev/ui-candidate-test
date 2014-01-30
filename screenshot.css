@@ -1,0 +1,144 @@
+html body{
+    margin:0;
+    border:0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Header ----- */
+
+#header{
+    float: right;
+    width: 100%;
+    height:32px;
+    font-size:12px;
+    font-weight:normal;
+    color:#ffffff;
+    background-image: linear-gradient(to bottom, #45525C 0%, #2A2F32 100%);
+}
+
+.header_text{
+    margin-top:8px;
+    margin-right:5px;
+    float:right;
+}
+
+
+.header_link{
+    color:#7fa6b7;
+    margin-right:2px;
+    margin-left:2px;
+}
+
+
+/* Side Nav --------- */
+
+.side_nav{
+    position:relative;
+    top:30px;
+    left:30px;
+    float:left;
+    min-height:300px;
+    width:180px;
+    background:#f4f4f5;
+    border-radius: 6px;
+    border: 1px solid #e6e6e6;
+}
+
+.icon{
+    background-image:url(assets/sprites.png);
+    position: relative;
+    left:-5px;
+    top:-5px;
+    float:left;
+    height:25px;
+    width:24px;
+}
+
+.icon.email{
+    background-position:0 0;
+}
+
+.icon.mobile{
+    background-position:-24px 0;
+}
+.icon.social{
+    background-position: -48px 0;
+}
+.icon.site{
+    background-position: -72px 0;
+}
+.icon.studio{
+    background-position: -96px 0;
+}
+.icon.abuilder{
+    background-position: -120px 0;
+}
+.icon.rbuilder{
+    background-position: -144px 0;
+}
+
+.partner_icon{
+    background: url(assets/sprites.png) -168px 0;
+    position: relative;
+    left:-5px;
+    top:1px;
+    float:left;
+    height:16px;
+    width:18px;
+}
+
+.marketing_hub_icon{
+    background: url(assets/sprites.png) -287px -54px;
+    height: 26px;
+    width: 28px;
+
+}
+
+.marketing_hub_icon_container{
+    background-image: radial-gradient(circle closest-side at center, #FFFFFF 0%, #FAA333 100%);
+    position: relative;
+    top: 11px;
+    left: 20px;
+    float: left;
+    height: 26px;
+    width: 28px;
+}
+
+
+.side_nav_top{
+    background-color:#faa333;
+    height:50px;
+    width:179px;
+    font-size:14px;
+    border-top-right-radius:6px;
+    border-top-left-radius:6px;
+    color:#ffffff;
+    border: 1px solid #f8981d;
+    border-bottom-color:#c6c6c7;
+}
+
+.side_nav_top > span{
+    padding-top:8px;
+    padding-right:20px;
+    float:right;
+    width:100px;
+}
+
+.side_nav_list > ul{
+    list-style:none;
+    color:#888888;
+    font-size:13px;
+    padding-left:20px;
+}
+
+.side_nav_list > ul > li{
+    margin-bottom:15px;
+}
+
+.side_nav_break{
+    position:relative;
+    left:-20px;
+    width:180px;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #e1e1e2;
+}
