@@ -186,6 +186,7 @@ html body{
     height:80px;
     width:995px;
     overflow-x:scroll;
+    overflow-y:hidden;
     position:absolute;
     top:25px;
     clear:both;
@@ -261,6 +262,7 @@ html body{
     height:250px;
     width:995px;
     overflow-x:scroll;
+    overflow-y:hidden;
     position:absolute;
     top:25px;
     clear:both;

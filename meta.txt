@@ -9,3 +9,4 @@ Browser --  OS ------ Browser Version
 Chrome - OSX 10.9.1 - 32.0.1700.102
 Safari - OSX 10.9.1 - 7.0.1
 Firefox - OSX 10.9.1 - 26.0
+Chrome - Windows 7 SP1 - 32.0.1700.102
