@@ -37,7 +37,19 @@
             });
 
             $('#help_button').click(function(){
+                $('#help_list').empty();
                 $('#modal').modal();
+                $.get('data/help.json',function(data){
+                    if (data == undefined)
+                    {
+                        $('#help_list').append('<li>Unable to fetch help topics</li>');
+                        return;
+                    }
+                    $.each(data.help,function(index,value){
+                        $('#help_list').append('<li><a href="'+value.URL+'">'+value.title+'</li>')
+                    })
+
+                })
             });
 
 
@@ -142,6 +154,9 @@
     </div>
     <div id="modal" style="display:none;">
         <div class="help_header">Help Topics</div>
+        <ul id="help_list" class="help_list">
+
+        </ul>
     </div>
 </body>
 </html>
