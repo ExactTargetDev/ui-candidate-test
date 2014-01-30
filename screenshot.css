@@ -26,8 +26,11 @@ html body{
 .header_link{
     color:#7fa6b7;
     cursor:pointer;
-    margin-right:2px;
-    margin-left:2px;
+    margin: 0 3px 0 3px;
+}
+
+.welcome_msg{
+    margin-right:6px;
 }
 
 .exact_target_logo{
@@ -298,6 +301,7 @@ html body{
     height:168px;
     width:280px;
     margin-top:20px;
+    box-shadow: 3px 7px 5px #888888;
 }
 
 .pulse_expanded_content{
