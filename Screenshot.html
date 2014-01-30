@@ -49,7 +49,9 @@
                         $('#help_list').append('<li><a href="'+value.URL+'">'+value.title+'</li>')
                     })
 
-                })
+                }).fail(function(){
+                            $('#help_list').append('<li>Unable to fetch help topics, file unreachable</li>');
+                        })
             });
 
 

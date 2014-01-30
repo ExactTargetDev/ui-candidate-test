@@ -29,6 +29,14 @@ html body{
     margin: 0 3px 0 3px;
 }
 
+.header_link:hover{
+    color:#6f86a7;
+}
+
+.header_link:active{
+    color:#9fb6d7;
+}
+
 .welcome_msg{
     margin-right:6px;
 }
