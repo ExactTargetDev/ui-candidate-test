@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="screenshot.css"/>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="assets/jquery.simplemodal.1.4.4.min.js"></script>
     <script type="application/javascript">
         $( document ).ready(function() {
 
@@ -36,7 +37,7 @@
             });
 
             $('#help_button').click(function(){
-                $('#modal_container').modal();
+                $('#modal').modal();
             });
 
 
@@ -52,7 +53,7 @@
         <div class="exact_target_logo"></div>
         <div class="header_text">
             <span>Welcom John!</span>
-            <span class="header_link">Account</span>|<span class="header_link">Help</span>|<span class="header_link">Logout</span>
+            <span class="header_link">Account</span>|<span id="help_button" class="header_link">Help</span>|<span class="header_link">Logout</span>
         </div>
     </div>
     <div id="side_nav" class="side_nav">
@@ -138,6 +139,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id="modal" style="display:none;">
+        <div class="help_header">Help Topics</div>
     </div>
 </body>
 </html>

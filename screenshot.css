@@ -265,7 +265,7 @@ html body{
 }
 
 .pulse_icon{
-    background: url(assets/sprites.png) -190px 0px;
+    background: url(assets/sprites.png) -190px 0;
     width: 120px;
     height: 40px;
     top: 10px;
