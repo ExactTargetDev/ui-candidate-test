@@ -1,8 +1,164 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="screenshot.css"/>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="assets/jquery.simplemodal.1.4.4.min.js"></script>
+    <script type="application/javascript">
+        $( document ).ready(function() {
+
+            //Pulse panels
+            $('.pulse_item').click(function(){
+
+                if ($(this).hasClass('active'))
+                    return;//Already the active pulse item
+
+                var oldActive = $('#pulse_box').find('.pulse_item.active');
+                oldActive.find('.pulse_expanded_content').hide();
+                oldActive.animate({
+                    height:"100px",
+                    width:"160px",
+                    'margin-top':"70px"
+                },250,function(){
+                    $(this).removeClass('active');
+                    $(this).find('.pulse_content').fadeIn('100');
+                });
+
+
+                $(this).find('.pulse_content').fadeOut('100');
+                $(this).animate({
+                    height:"168px",
+                    width:"280px",
+                    'margin-top':"20px"
+                },500, function() {
+                    $(this).find('.pulse_expanded_content').fadeIn('50');
+                    $(this).addClass('active');
+                });
+            });
+
+            $('#help_button').click(function(){
+                $('#help_list').empty();
+                $('#modal').modal();
+                $.get('data/help.json',function(data){
+                    if (data == undefined)
+                    {
+                        $('#help_list').append('<li>Unable to fetch help topics</li>');
+                        return;
+                    }
+                    $.each(data.help,function(index,value){
+                        $('#help_list').append('<li><a href="'+value.URL+'">'+value.title+'</li>')
+                    })
+
+                }).fail(function(){
+                            $('#help_list').append('<li>Unable to fetch help topics, file unreachable</li>');
+                        })
+            });
+
+
+
+        });
+
+
+    </script>
     <title>Screenshot.html</title>
 </head>
 <body>
+    <div id="header">
+        <div class="exact_target_logo"></div>
+        <div class="header_text">
+            <span class="welcome_msg">Welcom John!</span>
+            <span class="header_link">Account</span>|<span id="help_button" class="header_link">Help</span>|<span class="header_link">Logout</span>
+        </div>
+    </div>
+    <div id="side_nav" class="side_nav">
+        <div class="side_nav_top"><div class="marketing_hub_icon_container"><div class="marketing_hub_icon"></div></div>
+            <span>Interactive Marketing Hub</span></div>
+        <div class="side_nav_list">
+            <ul>
+                <li><div class="icon email"></div>ExactTarget Email</li>
+                <li><div class="icon mobile"></div>ExactTarget Mobile</li>
+                <li><div class="icon social"></div>CoTweet Social</li>
+                <li><div class="icon site"></div>ExactTarget Site</li>
+                <li class="side_nav_break"></li>
+                <li><div class="icon studio"></div>Automation Studio</li>
+                <li><div class="icon abuilder"></div>Audience Builder</li>
+                <li><div class="icon rbuilder"></div>Report Builder</li>
+                <li class="side_nav_break"></li>
+                <li class="side_nav_smallitem"><div class="partner_icon"></div>Partner Applications</li>
+            </ul>
+        </div>
+    </div>
+    <div id="calendar" class="calendar">
+        <span class="month_text">January 2014</span>
+        <div class="day_scroll">
+            <div class="day_box">
+                <div class="day"><span class="day_ofweek">Mon</span><span class="day_ofmonth">1</span></div>
+                <div class="day"><span class="day_ofweek">Mon</span><span class="day_ofmonth">2</span></div>
+                <div class="day"><span class="day_ofweek">Mon</span><span class="day_ofmonth">3</span></div>
+                <div class="day"><span class="day_ofweek">Mon</span><span class="day_ofmonth">4</span></div>
+                <div class="day today"><span class="day_ofweek">Mon</span><span class="day_ofmonth">5</span><div class="today_block">Today</div></div>
+                <div class="day"><span class="day_ofweek">Mon</span><span class="day_ofmonth">6</span></div>
+                <div class="day"><span class="day_ofweek">Mon</span><span class="day_ofmonth">7</span></div>
+                <div class="day"><span class="day_ofweek">Mon</span><span class="day_ofmonth">8</span></div>
+                <div class="day"><span class="day_ofweek">Mon</span><span class="day_ofmonth">9</span></div>
+                <div class="day"><span class="day_ofweek">Mon</span><span class="day_ofmonth">10</span></div>
+                <div class="day"><span class="day_ofweek">Mon</span><span class="day_ofmonth">11</span></div>
+                <div class="day"><span class="day_ofweek">Mon</span><span class="day_ofmonth">12</span></div>
+            </div>
+        </div>
+    </div>
+    <div id="pulse_box" class="pulse_box">
+        <div class="pulse_icon"></div>
+        <div class="pulse_item_scroll">
+            <div class="pulse_item_container">
+                <div class="pulse_item">
+                    <span class="pulse_title">Followers</span>
+                    <div class="pulse_content"><span class="pulse_main">310</span><span class="pulse_subtext">added today</span><span class="pulse_tinytext">2,393,234 total</span></div>
+                    <div class="pulse_expanded_content"><span>Worldwide Follows</span><a>310</a><div class="pulse_expanded_image"></div></div>
+                </div>
+                <div class="pulse_item">
+                    <span class="pulse_title">Fan</span>
+                    <div class="pulse_content"><span class="pulse_main">73</span><span class="pulse_subtext">added today</span><span class="pulse_tinytext">91,675 total</span></div>
+                    <div class="pulse_expanded_content"><span>Worldwide Fans</span><a>73</a><div class="pulse_expanded_image"></div></div>
+                </div>
+                <div class="pulse_item">
+                    <span class="pulse_title">Subscribers</span>
+                    <div class="pulse_content"><span class="pulse_main">56</span><span class="pulse_subtext">added today</span><span class="pulse_tinytext">189,405 total</span></div>
+                    <div class="pulse_expanded_content"><span>Worldwide Subs</span><a>56</a><div class="pulse_expanded_image"></div></div>
+                </div>
+                <div class="pulse_item active">
+                    <span class="pulse_title">foursquare</span>
+                    <div class="pulse_content"><span class="pulse_main">3,905</span><span class="pulse_subtext">added today</span><span class="pulse_tinytext">65,234 total</span></div>
+                    <div class="pulse_expanded_content"><span>Worldwide Checkins</span><a>3,905</a><div class="pulse_expanded_image"></div></div>
+                </div>
+                <div class="pulse_item">
+                    <span class="pulse_title">Landing Pages</span>
+                    <div class="pulse_content"><span class="pulse_subtext">Visitors Today</span><span class="pulse_main">397<span class="pulse_main_smaller">/355</span></span><span class="pulse_tinytext">Soulja Boy V.I.P.</span></div>
+                    <div class="pulse_expanded_content"><span>Worldwide Visits</span><a>397</a><div class="pulse_expanded_image"></div></div>
+                </div>
+                <div class="pulse_item">
+                    <span class="pulse_title">Cities</span>
+                    <div class="pulse_content"><span class="pulse_main">2,453</span><span class="pulse_subtext">added today</span><span class="pulse_tinytext">87,234 total</span></div>
+                    <div class="pulse_expanded_content"><span>City Map</span><a>XYZ</a><div class="pulse_expanded_image"></div></div>
+                </div>
+                <div class="pulse_item">
+                    <span class="pulse_title">Countries</span>
+                    <div class="pulse_content"><span class="pulse_main">14</span><span class="pulse_subtext">added today</span><span class="pulse_tinytext">54 total</span></div>
+                    <div class="pulse_expanded_content"><span>Country Map</span><a>XYZ</a><div class="pulse_expanded_image"></div></div>
+                </div>
+                <div class="pulse_item">
+                    <span class="pulse_title">Leads</span>
+                    <div class="pulse_content"><span class="pulse_main">646</span><span class="pulse_subtext">created today</span><span class="pulse_tinytext">89,393,234 total</span></div>
+                    <div class="pulse_expanded_content"><span>Worldwide Leads</span><a>646</a><div class="pulse_expanded_image"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal" style="display:none;">
+        <div class="help_header">Help Topics</div>
+        <ul id="help_list" class="help_list">
+
+        </ul>
+    </div>
 </body>
 </html>

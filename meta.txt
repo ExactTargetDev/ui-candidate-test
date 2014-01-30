@@ -1,0 +1,20 @@
+
+Start Time:1390954332
+Time Log:
+1/28/14 :: 4:13pm - 7:10pm  JSAndDom
+1/29/14 :: 5:00pm - 7:50pm  Screenshot
+
+TotalTime: 05:50
+
+Browser Testing:
+Browser --  OS -------- Browser Version
+Chrome   - OSX 10.9.1    - 32.0.1700.102
+Safari   - OSX 10.9.1    - 7.0.1
+Firefox  - OSX 10.9.1    - 26.0
+Chrome   - Windows 7 SP1 - 32.0.1700.102
+IE       - Windows 7 SP1 - 11.0.9600
+
+Known Issues:
+- Today tab of calendar is blocked by windows scrollbars, displays fine on mac
+- If Screenshot.html is opened as file:// as opposed to http:// it will not be able to load help.json through ajax and help will appear blank
+
