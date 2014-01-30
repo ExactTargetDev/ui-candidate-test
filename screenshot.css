@@ -30,6 +30,15 @@ html body{
     margin-left:2px;
 }
 
+.exact_target_logo{
+    background: url(assets/sprites.png) -0px -25px;
+    float: left;
+    height: 25px;
+    width: 90px;
+    margin-left: 15px;
+    margin-top: 2px;
+}
+
 
 /* Side Nav --------- */
 
@@ -231,3 +240,129 @@ html body{
     color:#abbac3;
     font-size:11px;
 }
+
+/* Pulse box ----- */
+
+.pulse_box{
+    width:995px;
+    height:265px;
+    position:relative;
+    left:240px;
+    top:80px;
+    border-radius:6px;
+    border: 1px solid #a8b4bd;
+    background-image: linear-gradient(to top, #E3EDF5 0%, #BAC8D1 100%);
+}
+
+.pulse_item_scroll{
+    height:250px;
+    width:995px;
+    overflow-x:scroll;
+    position:absolute;
+    top:25px;
+    clear:both;
+    white-space:nowrap;
+}
+
+.pulse_icon{
+    background: url(assets/sprites.png) -190px 0px;
+    width: 120px;
+    height: 40px;
+    top: 10px;
+    position: relative;
+}
+
+.pulse_item_container{
+    width:1600px;
+    height:250px;
+    overflow-y:hidden;
+}
+
+.pulse_item{
+    position:relative;
+    margin-left:15px;
+    margin-top:70px;
+    border-radius:8px;
+    height:100px;
+    width:160px;
+    float:left;
+    border: 1px solid #bbbbbb;
+    border-bottom: 3px inset #b4b4b4;
+    color:#c5d4de;
+    font-size:10px;
+    text-align:center;
+    background-image: linear-gradient(to bottom, #F5F8F9 0%, #DEE9F0 100%);
+}
+
+.pulse_item.active{
+    height:168px;
+    width:280px;
+    margin-top:20px;
+}
+
+.pulse_expanded_content{
+    overflow:hidden;
+    display:none;
+}
+
+.pulse_item.active > .pulse_content{
+    display:none;
+}
+
+.pulse_item.active > .pulse_expanded_content{
+    display:block;
+}
+
+.pulse_title{
+    position:relative;
+    top:-15px;
+    font-size:12px;
+    color:#788a95;
+}
+
+.pulse_content > span{
+    display:block;
+}
+.pulse_main{
+    color:#62c9f4;
+
+    font-size:32px;
+}
+.pulse_main_smaller{
+    font-size:26px;
+    display:inline;
+    color:#93afc0;
+}
+.pulse_subtext{
+    color:#93afc0;
+
+    font-size:16px;
+}
+.pulse_tinytext{
+    color:#93afc0;
+
+    font-size:11px;
+    margin-top:8px;
+}
+
+.pulse_expanded_content > span {
+    text-align:left;
+    font-size:14px;
+    margin-left:12px;
+    margin-right:12px;
+    display:block;
+    color:#666666;
+}
+.pulse_expanded_content > span > span {
+    float:right;
+}
+.pulse_expanded_image{
+    background: url(assets/sprites.png) -30px -55px;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 10px;
+    float: left;
+    height: 122px;
+    width: 256px;
+}
+
