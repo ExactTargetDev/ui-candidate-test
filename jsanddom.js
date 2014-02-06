@@ -68,7 +68,10 @@
         if (window.jQuery) {
             $.extend(1, array, toPush);
         } else {
-            // No jQuery
+            for (var key in toPush) {
+                if (toPush.hasOwnProperty(key))
+                    array[key] = toPush[key];
+            }
         }
         return array;
     }
@@ -100,40 +103,44 @@
     }
 
     // write an example of a javascript closure
+    (function($) {
 
-    // define a json object that represents a collection of people.
-    // each person should have the following properties
-    // - first name
-    // - last name
-    // - city
-    // - state
-    // - zip
-    // - a collection of phone numbers (home, work, mobile)
+        console.log('Ractive', Ractive);
 
+        // define a json object that represents a collection of people.
+        // each person should have the following properties
+        // - first name
+        // - last name
+        // - city
+        // - state
+        // - zip
+        // - a collection of phone numbers (home, work, mobile)
 
-    // Create a javascript object (DataTable) with the following:
-    // A private columns property (string array)
-    // A private rows property (string array)
-    // A public method addRows that adds an item to the rows array
-    // A public method addColumns that adds an item to the columns array
-    // A public method getData that returns the a json object representation of the DataTable
-    // Note: the row object should be a hash of the column name and row item value
-    // Example:
-    // .addColumns('column1', 'column2', 'column3');
-    // .addRow('value1A', 'value1B', 'value1C');
-    // .addRow('value2A', 'value2B', 'value2C');
+        // Create a javascript object (DataTable) with the following:
+        // A private columns property (string array)
+        // A private rows property (string array)
+        // A public method addRows that adds an item to the rows array
+        // A public method addColumns that adds an item to the columns array
+        // A public method getData that returns the a json object representation of the DataTable
+        // Note: the row object should be a hash of the column name and row item value
+        // Example:
+        // .addColumns('column1', 'column2', 'column3');
+        // .addRow('value1A', 'value1B', 'value1C');
+        // .addRow('value2A', 'value2B', 'value2C');
 
-    // within div1, programatically create a
-    // SELECT element (with multiple items) and a button.
-    // when the button is clicked write out the name and value of the selected item to the console.
+        // within div1, programatically create a
+        // SELECT element (with multiple items) and a button.
+        // when the button is clicked write out the name and value of the selected item to the console.
 
-    // Write 5 different jQuery selectors to retrieve the
-    // sample anchor in the markup below.
+        // Write 5 different jQuery selectors to retrieve the
+        // sample anchor in the markup below.
 
-    // Programatically create an array with 5 items.  Create a list item for each item in the array
-    // and add the list items to the unordered list with an id of "list1".
+        // Programatically create an array with 5 items.  Create a list item for each item in the array
+        // and add the list items to the unordered list with an id of "list1".
 
-    // Use javascript to add a list of checkboxes and 2 links
-    // to the div with an id of "foobar"
-    // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
-    // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+        // Use javascript to add a list of checkboxes and 2 links
+        // to the div with an id of "foobar"
+        // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
+        // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+        
+    })(jQuery);
