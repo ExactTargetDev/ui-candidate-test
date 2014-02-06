@@ -206,9 +206,10 @@
             $btn = $('<btn type=button/>'),
             $target = $(target);
             if (typeof btnId === 'string')
-                $btn.attr('id', btnId);
+                $btn.attr('id', btnId).addClass('btn').addClass('btn-primary');
 
             $btn.html('Select');
+            $target.append('<br/>');
             $target.append($btn);
 
             // when the button is clicked write out the name and value of the selected item to the console.
@@ -233,13 +234,71 @@
 
         // Write 5 different jQuery selectors to retrieve the
         // sample anchor in the markup below.
+        $('a.link'); // Selector 1
+        $('#fizz a'); // Selector 2
+        $('a.link', '#fizz'); // Selector 3
+        $('.buzz .link'); // Selector 4
+        $('a[href=#]'); // Selector 5
 
         // Programatically create an array with 5 items.  Create a list item for each item in the array
         // and add the list items to the unordered list with an id of "list1".
+        var arr = ['item1', 'item2', 'item3', 'item4', 'item5'];
+
+        $(arr).each(function (key) {
+            var $li = $('<li/>');
+            $li.html(this).attr('id', 'li-' + key);
+            $li.appendTo('#list1');
+        });
 
         // Use javascript to add a list of checkboxes and 2 links
         // to the div with an id of "foobar"
+        function addListItem (target, data) {
+            var
+            $li = $('<li/>'),
+            $input = $('<input/>');
+
+            $input.attr('id', data.id).attr('type', data.type).attr('name', data.name).val(data.value);
+            $li.append($input);
+            $li.append(data.name);
+            $(target).append($li);
+        }
+
+        function addLink (target, data) {
+            var $link = $('<a/>');
+            $link.attr('href', data.href).addClass(data.class).html(data.label);
+            $(target).append($link);
+            $(target).append('<br/>');
+        }
+
+        function checkAll (target) {
+            $('input[type=checkbox]', target).each(function (key) {
+                $(this).attr('checked', true);
+            });
+        }
+
+        function uncheckAll (target) {
+            $('input[type=checkbox]', target).each(function (key) {
+                $(this).attr('checked', false);
+            });
+        }
+
+        var $ul = $('<ul/>');
+        $ul.appendTo('#foobar');
+
+        addLink('#foobar', { href: '#', class: 'checkAll', label: 'Check All' });
+        addLink('#foobar', { href: '#', class: 'uncheckAll', label: 'Uncheck All' });
+        addListItem('#foobar ul', { name: 'checkbox1', id: 'checkbox1', type: 'checkbox', value: 'checkbox1' });
+        addListItem('#foobar ul', { name: 'checkbox2', id: 'checkbox2', type: 'checkbox', value: 'checkbox2' });
+        addListItem('#foobar ul', { name: 'checkbox3', id: 'checkbox3', type: 'checkbox', value: 'checkbox3' });
+
         // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
+        $('.checkAll').on('click', function (e) {
+            checkAll('#foobar ul li');
+        });
+
         // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
-        
+        $('.uncheckAll').on('click', function (e) {
+            uncheckAll('#foobar ul li');
+        });
+
     })(jQuery);
