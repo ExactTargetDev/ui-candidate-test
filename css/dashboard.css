@@ -46,6 +46,12 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 );
 }
 
+.widget {
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
 /*
  * Sidebar
  */
@@ -87,6 +93,72 @@ body {
     background-color: #428bca;
 }
 
+
+/*
+ * Calendar Section Styles
+ */
+
+#month {
+    color: #888;
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 5px;
+}
+
+#calendar {}
+
+#calendar .row {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.day {
+    border: 1px solid #ccc;
+    border-left: none;
+    border-top: none;
+    display:inline-block;
+    margin: 0;
+    padding: 5px;
+    min-height: 75px;
+}
+
+.day:first-of-type {
+    border-left: 1px solid #ccc;
+}
+
+.day .status {
+    color: #fff;
+    background: #fff;
+    display: block;
+}
+
+.day.active .status {
+    background: #fdaf4b;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkYWY0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2Y4OTgxZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top,  #fdaf4b 0%, #f8981d 75%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdaf4b), color-stop(75%,#f8981d));
+    background: -webkit-linear-gradient(top,  #fdaf4b 0%,#f8981d 75%);
+    background: -o-linear-gradient(top,  #fdaf4b 0%,#f8981d 75%);
+    background: -ms-linear-gradient(top,  #fdaf4b 0%,#f8981d 75%);
+    background: linear-gradient(to bottom,  #fdaf4b 0%,#f8981d 75%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 );
+}
+
+.dow, .date {
+    display: inline-block;
+}
+
+.dow:after, .date:after {
+    clear: both;
+}
+
+.dow {
+    float: left;
+}
+
+.date {
+    float: right;
+}
 
 /*
  * Main content
