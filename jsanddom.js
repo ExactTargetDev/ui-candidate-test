@@ -18,6 +18,14 @@
     // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
     function findDistinctValues(values) {
         // FILL THIS IN
+        var unique = {}, distinct = [];
+        for (var i in values) {
+            if (typeof unique[values[i]] === 'undefined') {
+                distinct.push(values[i]);
+            }
+            unique[values[i]] = 0;
+        }
+        return distinct;
     }
 
     // Write a function that logs the numbers from 1 to 100 to the console.
