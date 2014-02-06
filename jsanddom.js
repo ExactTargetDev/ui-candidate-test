@@ -50,7 +50,7 @@
     function removeFruits(fruits, fruitsToRemove) {
         for (var i = 0; i < fruits.length; i++) {
             if (window.jQuery) {
-                if ($.inArray(fruits[i], fruitsToRemove) !== -1) {
+                if (jQuery.inArray(fruits[i], fruitsToRemove) !== -1) {
                     // Is in array
                     fruits.splice(i, 1);
                 }
@@ -66,7 +66,7 @@
     // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
     function pushOntoArray(array, toPush) {
         if (window.jQuery) {
-            $.extend(1, array, toPush);
+            jQuery.extend(1, array, toPush);
         } else {
             for (var key in toPush) {
                 if (toPush.hasOwnProperty(key))
@@ -105,8 +105,6 @@
     // write an example of a javascript closure
     (function($) {
 
-        console.log('Ractive', Ractive);
-
         // define a json object that represents a collection of people.
         // each person should have the following properties
         // - first name
@@ -115,6 +113,29 @@
         // - state
         // - zip
         // - a collection of phone numbers (home, work, mobile)
+        
+        var
+        person = function (data) {
+            var self = this;
+            self.firstName = data.firstName || '';
+            self.lastName = data.lastName || '';
+            self.city = data.city || '';
+            self.state = data.state || '';
+            self.zip = data.zip || 0;
+            self.phone = data.phone || {
+                home: 0,
+                work: 0,
+                mobile: 0
+            };
+        },
+
+        people = {
+            persons: [
+                new person({ firstName: 'Test', lastName: 'User 1', city: 'Indy', state: 'IN', zip: 46268, phone: { home: 5555551111, work: 5555551112, mobile: 5555551113 } }),
+                new person({ firstName: 'Test', lastName: 'User 2', city: 'Fishers', state: 'IN', zip: 46037, phone: { home: 5555551121, work: 5555551122, mobile: 5555551123 } }),
+                new person({ firstName: 'Test', lastName: 'User 3', city: 'Noblesville', phone: { work: 5555551132, mobile: 5555551133 } })
+            ]
+        },
 
         // Create a javascript object (DataTable) with the following:
         // A private columns property (string array)
@@ -127,10 +148,88 @@
         // .addColumns('column1', 'column2', 'column3');
         // .addRow('value1A', 'value1B', 'value1C');
         // .addRow('value2A', 'value2B', 'value2C');
+        
+        DataTable = function () {
+            var
+            self = this,
+            columns = [],
+            rows = [];
+        };
+
+        DataTable.prototype.addRows = function () {
+            for (var i = 0; i < arguments.length; ++i) {
+                if (typeof arguments[i] === 'string') {
+                    var add = {
+                        column: this.columns[i],
+                        value: arguments[i]
+                    };
+                }
+            }
+            this.rows.push(add);
+        }
+
+        DataTable.prototype.addColumns = function () {
+            for (var i = 0; i < arguments.length; ++i) {
+                if (typeof arguments[i] === 'string' && arguments[i] !== '') {
+                    this.columns.push(arguments[i]);
+                }
+            }
+        }
+
+        DataTable.prototype.getData = function () {
+            var self = this, data = [];
+            for (var r = 0; r < this.rows.length; ++r) {
+                var row = this.rows[r];
+                data[r][row.column] = row.value;
+            }
+            console.log('tableData', data);
+            return data;
+        }
 
         // within div1, programatically create a
         // SELECT element (with multiple items) and a button.
-        // when the button is clicked write out the name and value of the selected item to the console.
+        function createSelect (target, options) {
+            var
+            $select = $('<select/>'),
+            $target = $(target);
+            $(options).each(function (key, opt) {
+                var $option = $('<option/>');
+                $option.val(opt.value);
+                $option.html(opt.label);
+                $select.append($option);
+            });
+            $target.append($select);
+        }
+
+        function createButton (target, btnId) {
+            var
+            $btn = $('<btn type=button/>'),
+            $target = $(target);
+            if (typeof btnId === 'string')
+                $btn.attr('id', btnId);
+
+            $btn.html('Select');
+            $target.append($btn);
+
+            // when the button is clicked write out the name and value of the selected item to the console.
+            $btn.on('click', function (e) {
+                var selected = {
+                    value: $('select', $target).val(),
+                    name: $('select option:selected', $target).html()
+                }
+                console.log('Selected', selected);
+            });
+        }
+        
+        createSelect('#div1', [
+            { label: 'Option 1', value: 1 },
+            { label: 'Option 2', value: 2 },
+            { label: 'Option 3', value: 3 },
+            { label: 'Option 4', value: 4 },
+            { label: 'Option 5', value: 5 },
+            { label: 'Option 6', value: 6 }
+        ]);
+        createButton('#div1', 'btn1');
 
         // Write 5 different jQuery selectors to retrieve the
         // sample anchor in the markup below.
