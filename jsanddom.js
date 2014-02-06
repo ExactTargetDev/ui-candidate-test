@@ -103,7 +103,7 @@
     }
 
     // write an example of a javascript closure
-    (function($) {
+    // (function($) {
 
         // define a json object that represents a collection of people.
         // each person should have the following properties
@@ -149,42 +149,52 @@
         // .addRow('value1A', 'value1B', 'value1C');
         // .addRow('value2A', 'value2B', 'value2C');
         
-        DataTable = function () {
+        DataTable = function (params) {
             var
             self = this,
             columns = [],
             rows = [];
+
+            this.addRows = function () {
+                var row = {};
+                for (var i = 0; i < arguments.length; ++i) {
+                    if (typeof arguments[i] === 'string') {
+                        row[columns[i]] = arguments[i];
+                    }
+                }
+                rows.push(row);
+            }
+
+            this.getRows = function () {
+                return rows;
+            }
+
+            this.addColumns = function () {
+                var self = this;
+                for (var i = 0; i < arguments.length; ++i) {
+                    if (typeof arguments[i] === 'string' && arguments[i] !== '') {
+                        columns.push(arguments[i]);
+                        console.log('columns', columns);
+                    }
+                }
+            }
+
+            this.getData = function () {
+                var data = {}, rowData = {};
+                console.log('rows', rows);
+                for (var r = 0; r < rows.length; ++r) {
+                    var row = rows[r];
+                    console.log('row', row);
+                    for (var i = 0; i < columns.length; ++i) {
+                        rowData[columns[i]] = row[columns[i]];
+                    };
+                    data[r] = rowData;
+                }
+                console.log('tableData', data);
+                return data;
+            }
         };
 
-        DataTable.prototype.addRows = function () {
-            for (var i = 0; i < arguments.length; ++i) {
-                if (typeof arguments[i] === 'string') {
-                    var add = {
-                        column: this.columns[i],
-                        value: arguments[i]
-                    };
-                }
-            }
-            this.rows.push(add);
-        }
-
-        DataTable.prototype.addColumns = function () {
-            for (var i = 0; i < arguments.length; ++i) {
-                if (typeof arguments[i] === 'string' && arguments[i] !== '') {
-                    this.columns.push(arguments[i]);
-                }
-            }
-        }
-
-        DataTable.prototype.getData = function () {
-            var self = this, data = [];
-            for (var r = 0; r < this.rows.length; ++r) {
-                var row = this.rows[r];
-                data[r][row.column] = row.value;
-            }
-            console.log('tableData', data);
-            return data;
-        }
 
         // within div1, programatically create a
         // SELECT element (with multiple items) and a button.
@@ -301,4 +311,4 @@
             uncheckAll('#foobar ul li');
         });
 
-    })(jQuery);
+    // })(jQuery);
