@@ -148,10 +148,6 @@ body {
     display: inline-block;
 }
 
-.dow:after, .date:after {
-    clear: both;
-}
-
 .dow {
     float: left;
 }
