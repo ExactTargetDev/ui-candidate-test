@@ -257,7 +257,7 @@
         $(arr).each(function (key) {
             var $li = $('<li/>');
             $li.html(this).attr('id', 'li-' + key);
-            $li.appendTo('#list1');
+            $('#list1').append($li);
         });
 
         // Use javascript to add a list of checkboxes and 2 links
