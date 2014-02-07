@@ -282,13 +282,14 @@
 
         function checkAll (target) {
             $('input[type=checkbox]', target).each(function (key) {
-                $(this).attr('checked', true);
+
+                $(this).prop('checked', true);
             });
         }
 
         function uncheckAll (target) {
             $('input[type=checkbox]', target).each(function (key) {
-                $(this).attr('checked', false);
+                $(this).prop('checked', false);
             });
         }
 
