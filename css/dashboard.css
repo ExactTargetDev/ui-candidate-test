@@ -22,15 +22,6 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-.btn-grey {
-    color: #fff;
-    background-color: #98a1ab;
-    box-shadow: inset 0px -2px 2px 0px rgba(50, 50, 50, 0.75), inset 0px 1px 2px 0px rgba(255, 255, 255, 0.65);
-}
-.btn-grey:hover {
-    color: #fff;
-}
-
 /*
  * Pulse Section
  */
@@ -90,6 +81,7 @@ body {
     display: block;
     padding: 5px;
     text-align: center;
+    min-width: 120px;
     width: 100%;
     height: 100%;
     border-radius: 6px;
@@ -223,12 +215,26 @@ button.settings {
         bottom: 0;
         z-index: 1000;
         display: block;
-        padding: 70px 20px 20px;
+        padding: 70px 10px 20px;
         margin: 20px 10px 0;
+    }
+    .nav-sidebar > li > a {
+        font-size: 12px;
+    }
+    .btn-grey {
+        padding: 2px 4px;
     }
 }
 
 /* Sidebar navigation */
+.btn-grey {
+    color: #fff;
+    background-color: #98a1ab;
+    box-shadow: inset 0px -2px 2px 0px rgba(50, 50, 50, 0.75), inset 0px 1px 2px 0px rgba(255, 255, 255, 0.65);
+}
+.btn-grey:hover {
+    color: #fff;
+}
 .nav-sidebar {
     /*margin-left: -20px;*/
     /* margin-right: -21px; */ /* 20px padding + 1px border */
