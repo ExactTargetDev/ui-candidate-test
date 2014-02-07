@@ -225,6 +225,16 @@ button.settings {
         padding: 2px 4px;
     }
 }
+@media (min-width: 990px) and (max-width: 1178px) {
+    .nav-sidebar > li > a {
+        font-size: 12px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .btn-grey {
+        padding: 2px 4px;
+    }
+}
 
 /* Sidebar navigation */
 .btn-grey {
