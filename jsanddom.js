@@ -103,7 +103,7 @@
     }
 
     // write an example of a javascript closure
-    // (function($) {
+    (function($) {
 
         // define a json object that represents a collection of people.
         // each person should have the following properties
@@ -311,4 +311,4 @@
             uncheckAll('#foobar ul li');
         });
 
-    // })(jQuery);
+    })(jQuery);
