@@ -9,10 +9,12 @@ body {
 
 .nav a {
     color: #99CCE1;
+    cursor: pointer;
 }
 
 .navbar .navbar-nav > li > a {
     color: #99CCE1;
+    cursor: pointer;
 }
 
 .sub-header {
@@ -245,18 +247,45 @@ button.settings {
     color: #fff;
     background-color: #428bca;
 }
-.nav-sidebar > li > a:hover .btn-grey,
-.nav-sidebar > li > a:active .btn-grey {
+.nav-sidebar > .active > a .btn-grey,
+.nav-sidebar > .active > a:hover .btn-grey,
+.nav-sidebar > .active > a:active .btn-grey {
+    /*background-color: #777;*/
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    background: #fdaf4b;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkYWY0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2Y4OTgxZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdaf4b), color-stop(75%,#f8981d));
+    background: -webkit-linear-gradient(top,  #fdaf4b 0%,#f8981d 75%);
+    background: -webkit-linear-gradient(top, #fdaf4b 0%, #f8981d 75%);
+    background: linear-gradient(to bottom,  #fdaf4b 0%,#f8981d 75%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 );
+}
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:active {
+    background-color: #BBC8D1;
+}
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active:hover > a:visited {
+    background-color: #2e6a9b;
+}
+.nav-sidebar > .active > a:visited {
+    background-color: #154b75;
+    /*background-color: #428BCA;*/
+}
+.nav-sidebar > .active > a:visited .btn-grey {}
+
+.nav-sidebar > li:not(.active) > a:hover .btn-grey,
+.nav-sidebar > li:not(.active) > a:active .btn-grey {
     background-color: #777;
 }
-.nav-sidebar > li > a:hover,
-.nav-sidebar > li > a:active {
+.nav-sidebar > li:not(.active) > a:hover,
+.nav-sidebar > li:not(.active) > a:active {
     background-color: #ddd;
 }
-.nav-sidebar > li > a:visited {
+.nav-sidebar > li:not(.active) > a:visited {
     /*background-color: #ccc;*/
 }
-.nav-sidebar > li > a:visited .btn-grey {}
+.nav-sidebar > li:not(.active) > a:visited .btn-grey {}
 
 
 /*
