@@ -21,35 +21,39 @@ Please create your tests below...
     });
 
     test( 'Find Min Value in Array', function () {
-
+        equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
+        strictEqual( findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), -1.1, 'Expected -1.1, got: ' + findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]) );
     });
 
-    test( 'Find Distinct Value in Array', function () {
-        
+    test( 'Find Distinct Values in Array', function () {
+        equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
+        strictEqual( findDistinctValues(['a', 'b', 'c', 'd', 'a', 'b', 'a', 'e']), ['a', 'b', 'c', 'd', 'e'], 'Expected ["a", "b", "c", "d", "e"], got: ' + findDistinctValues(['a', 'b', 'c', 'd', 'a', 'b', 'a', 'e']) );
     });
 
     test( 'Do Fizz Buzz Test', function () {
-        
+        equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' );
     });
 
     test( 'Remove Fruits Test', function () {
-        
+        equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
     });
 
     test( 'Push Value Onto Array', function () {
-        
+        equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' );
     });
 
     test( 'Split List String Using Comma Test', function () {
-        
+        equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
     });
 
     test( 'Find Sum of Unlimited Arguments', function () {
-
+        equal( typeof sum, 'function', 'Must contain a sum function' );
+        strictEqual( sum(1,2,3,4,5), 15, 'Expected 15, got: ' + sum(1,2,3,4,5) );
     });
 
     test( 'String is Only Whitespace Test', function () {
-        
+        equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
+        strictEqual( isOnlyWhitespace('    '), true, 'Expected (boolean) true, got: ' + isOnlyWhitespace('    ') );
     });
 
 });
