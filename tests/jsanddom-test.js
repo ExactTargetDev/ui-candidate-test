@@ -39,16 +39,19 @@ Please create your tests below...
     });
 
     test( 'Push Value Onto Array', function () {
+        var arr = [1, 2, 3, 4, 5];
         equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' );
     });
 
     test( 'Split List String Using Comma Test', function () {
         equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
+        deepEqual( splitListStrUsingComma('Go easy, man'), ['Go easy', ' man'], 'Expected ["Go easy", " man"], got: ' + splitListStrUsingComma('Go easy, man') );
     });
 
     test( 'Find Sum of Unlimited Arguments', function () {
         equal( typeof sum, 'function', 'Must contain a sum function' );
-        strictEqual( sum(1,2,3,4,5), 15, 'Expected 15, got: ' + sum(1,2,3,4,5) );
+        ok( sum(1,2,3,4,5), 15, 'Expected 15, got: ' + sum(1,2,3,4,5) );
+        ok( sum(2,4,5,6,10), 27, 'Expected 27, got: ' + sum(2,4,5,6,10) );
     });
 
     test( 'String is Only Whitespace Test', function () {
