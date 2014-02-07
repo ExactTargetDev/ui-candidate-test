@@ -303,7 +303,7 @@ button.settings {
 
 #calendar .row {
     padding: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 
 .day {
@@ -328,7 +328,7 @@ button.settings {
     background: -o-linear-gradient(top,  #f5f5f5 0%,#f3efe7 50%,#eedec9 100%);
     background: -ms-linear-gradient(top,  #f5f5f5 0%,#f3efe7 50%,#eedec9 100%);
     background: linear-gradient(to bottom,  #f5f5f5 0%,#f3efe7 50%,#eedec9 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f5', endColorstr='#eedec9',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#eedec9',GradientType=0 );
 }
 .day .status {
     color: #fff;
@@ -344,7 +344,7 @@ button.settings {
     background: linear-gradient(to bottom,  #fdaf4b 0%,#f8981d 75%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 );
     position: absolute;
-    bottom: 0;
+    bottom: -20px;
     left: 0;
     right: 0;
     text-align: center;
