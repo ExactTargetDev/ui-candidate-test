@@ -170,6 +170,16 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 );
     box-shadow: inset 0px -1px 3px 0px rgba(50, 50, 50, 0.35) inset 0px 1px 1px 0px rgba(255, 255, 255, 0.85);
 }
+/*@media (min-width: 768px) and (max-width: 1370px) {
+    #app-launcher-head {
+        font-size: 14px;
+    }
+}*/
+@media (min-width: 768px) and (max-width: 1500px) {
+    #app-launcher-head {
+        font-size: 14px;
+    }
+}
 
 .widget {
     border: 1px solid #ccc;
