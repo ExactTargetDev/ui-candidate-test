@@ -1,8 +1,405 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>Screenshot.html</title>
-</head>
-<body>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta name="viewport" content="user-scalable=0,width=device-width,initial-scale=1,maximum-scale=1"> -->
+        <meta name="description" content="UI Candidate Test">
+        <meta name="author" content="Matt Williams">
+
+        <title>Screenshot.html</title>
+
+        <!-- Twitter Bootstrap -->
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Other Styles -->
+        <link href="css/dashboard.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <!--[if gte IE 9]>
+          <style type="text/css">
+            .gradient {
+               filter: none;
+            }
+          </style>
+        <![endif]-->
+    </head>
+    <body>
+
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">ExactTarget</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <div class="navbar-right">
+                        <p class="navbar-text navbar-left">
+                            Welcome, John!
+                        </p>
+                        
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">Account</a></li>
+                            <li><a id="help-link" data-toggle="modal" data-target="#help-modal">Help</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-offset-1 col-sm-3 col-md-2 sidebar">
+                    <div id="app-launcher-head" class="gradient">
+                        <div class="row">
+                            <div class="col-sm-3 col-md-3">
+                                <span class="glyphicon glyphicon-asterisk"></span>
+                            </div>
+                            <div class="col-sm-9 col-md-9">
+                                Interactive Marketing Hub
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="nav nav-sidebar">
+                        <li>
+                            <a href="#" class="nav-btn">
+                                <button class="btn btn-grey" type="button">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                </button>
+                                ExactTarget Email
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-btn" href="#">
+                                <button class="btn btn-grey" type="button">
+                                    <span class="glyphicon glyphicon-phone"></span>
+                                </button>
+                                ExactTarget Mobile
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-btn" href="#">
+                                <button class="btn btn-grey" type="button">
+                                    <span class="glyphicon glyphicon-retweet"></span>
+                                </button>
+                                CoTweet Social
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-btn" href="#">
+                                <button class="btn btn-grey" type="button">
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                </button>
+                                ExactTarget Sites
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-sidebar">
+                        <li>
+                            <a class="nav-btn" href="#">
+                                <button class="btn btn-grey" type="button">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                </button>
+                                Automation Studio
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-btn" href="#">
+                                <button class="btn btn-grey" type="button">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                </button>
+                                Audience Builder
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-btn" href="#">
+                                <button class="btn btn-grey" type="button">
+                                    <span class="glyphicon glyphicon-stats"></span>
+                                </button>
+                                Report Builder
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-sidebar">
+                        <li>
+                            <a href="#" class="nav-btn">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                Partner Applications
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main clearfix">
+                    <div class="row">
+                        <div class="hidden-xs col-sm-12 col-md-12 widget">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12" id="month">
+                                    September 2010
+                                </div>
+                                <div id="calendar" class="col-sm-12 col-md-12">
+                                    <div class="row">
+                                        <div class="day hidden-xs col-sm-2 col-md-2">
+                                            <div class="dow clearfix">Sun</div>
+                                            <div class="date clearfix">12</div>
+                                            <div class="status">Today</div>
+                                        </div>
+                                        <div class="day hidden-xs col-sm-2 col-md-2">
+                                            <div class="dow clearfix">Mon</div>
+                                            <div class="date clearfix">13</div>
+                                            <div class="status">Today</div>
+                                        </div>
+                                        <div class="day hidden-xs col-sm-2 col-md-2 active">
+                                            <div class="dow clearfix">Tues</div>
+                                            <div class="date clearfix">15</div>
+                                            <div class="status">Today</div>
+                                        </div>
+                                        <div class="day hidden-xs col-sm-2 col-md-2">
+                                            <div class="dow clearfix">Wed</div>
+                                            <div class="date clearfix">15</div>
+                                            <div class="status">Today</div>
+                                        </div>
+                                        <div class="day hidden-xs col-sm-2 col-md-2">
+                                            <div class="dow clearfix">Thurs</div>
+                                            <div class="date clearfix">16</div>
+                                            <div class="status">Today</div>
+                                        </div>
+                                        <div class="day hidden-xs col-sm-2 col-md-2">
+                                            <div class="dow clearfix">Fri</div>
+                                            <div class="date clearfix">17</div>
+                                            <div class="status">Today</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div id="pulse" class="row well well-lg">
+                            <!-- <div id="pulse" class="jumbotron"> -->
+                                <button type="button" class="close" aria-hidden="true">&times;</button>
+                                <button type="button" class="settings" aria-hidden="true">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                </button>
+                                <button type="button" class="settings" aria-hidden="true">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                </button>
+                                <button type="button" class="settings" aria-hidden="true">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                </button>
+                                
+                                <div id="pulse-logo" class="col-md-10">
+                                    <h3>Pulse</h3>
+                                </div>
+
+                                <div class="boxes row">
+                                    <div class="pulse-box small col-sm-2 col-md-2">
+                                        <!-- <div class="row"> -->
+                                            <div class="col-sm-12 col-md-12 label">
+                                                Followers
+                                            </div>
+                                            <div class="col-sm-12 col-md-12 box">
+                                                <div class="row">
+                                                    <div class="col-md-12 emphasis">
+                                                        310
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        added today
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <small>2,393,905 total</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!-- </div> -->
+                                    </div>
+                                    <div class="pulse-box small col-sm-2 col-md-2">
+                                        <!-- <div class="row"> -->
+                                            <div class="col-sm-12 col-md-12 label">
+                                                Fans
+                                            </div>
+                                            <div class="col-sm-12 col-md-12 box">
+                                                <div class="row">
+                                                    <div class="col-md-12 emphasis">
+                                                        73
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        added today
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <small>91,675 total</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!-- </div> -->
+                                    </div>
+                                    <div class="pulse-box small col-sm-2 col-md-2">
+                                        <div class="col-sm-12 col-md-12 label">
+                                            Subscribers
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 box">
+                                            <div class="row">
+                                                <div class="col-md-12 emphasis">
+                                                    56
+                                                </div>
+                                                <div class="col-md-12">
+                                                    added today
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <small>189,405 total</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pulse-box large col-sm-2 col-md-2 map">
+                                        <div class="col-sm-12 col-md-12 label">
+                                            foursquare
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 box">
+                                            <div class="row info-label">
+                                                <div class="col-sm-8 col-md-8">
+                                                    <p>Worldwide Checkins</p>
+                                                </div>
+                                                <div class="col-sm-4 col-md-4">
+                                                    <p>3,905</p>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <!-- <div class="row"> -->
+                                                        <div class="col-sm-offset-1 col-md-offset-1 col-sm-10 col-md-10">
+                                                            <!-- <img src="holder.js/200x120/auto/textmode:exact" alt="Checkins Map"> -->
+                                                        </div>
+                                                    <!-- </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pulse-box small col-sm-2 col-md-2">
+                                        <!-- <div class="row"> -->
+                                            <div class="col-sm-12 col-md-12 label">
+                                                Landing Pages
+                                            </div>
+                                            <div class="col-sm-12 col-md-12 box">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        Visitors Today
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <span class="emphasis">397</span> / 355
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <small>Soulja Boy V.I.P.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="help-modal" tabindex="-1" role="dialog" aria-labelledby="help-modal-label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="help-modal-label">Help</h4>
+                    </div>
+                    <div class="modal-body">
+                        <dl>
+                            <dt>What is JSON?</dt>
+                            <dd>
+                                <a href="http://en.wikipedia.org/wiki/JSON">
+                                    en.wikipedia.org/wiki/JSON
+                                </a>
+                            </dd>
+
+                            <dt>What is ExactTarget?</dt>
+                            <dd>
+                                <a href="http://en.wikipedia.org/wiki/ExactTarget">
+                                    en.wikipedia.org/wiki/ExactTarget
+                                </a>
+                            </dd>
+
+                            <dt>More info about ExactTarget REST APIs</dt>
+                            <dd>
+                                <a href="http://code.exacttarget.com/question/rest-api-authentication">
+                                    code.exacttarget.com/question/rest-api-authentication
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        window.jQuery || document.write('<script src="http://code.jquery.com/jquery.js" type="text/javascript"><\/script>');
+        </script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <!-- <script src="vendor/holder.js"></script> -->
+        <script>
+        $(function () {
+
+            /**
+             * Pulse Section Click Functionality
+             */
+            var
+            activate = function (target) {
+                $(target).removeClass('small').addClass('large');
+                    // .removeClass('col-sm-2')
+                    // .removeClass('col-md-2')
+                    // .addClass('col-sm-3')
+                    // .addClass('col-md-3');
+            },
+            deactivate = function (target) {
+                $(target).removeClass('large').addClass('small');
+                    // .removeClass('col-sm-3')
+                    // .removeClass('col-md-3')
+                    // .addClass('col-sm-2')
+                    // .addClass('col-md-2');
+            };
+
+            $('.pulse-box').on({
+                click: function (e) {
+                    $('.pulse-box').each(function () {
+                        deactivate(this);
+                    });
+                    activate(this);
+                }
+            });
+
+
+            /**
+             * Interactive Marketing Hub Functionality
+             */
+            $('.nav-sidebar > li > a').on({
+                click: function (e) {
+                    $('.nav-sidebar > li > a').each(function () {
+                        $(this).parent().removeClass('active');
+                    });
+                    $(this).parent().addClass('active');
+                }
+            });
+
+        });
+        </script>
+    </body>
 </html>
