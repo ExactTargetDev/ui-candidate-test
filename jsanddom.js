@@ -1,4 +1,5 @@
 /*jshint unused:false, devel:true */
+/*global $ */
 'use strict';
 
 // Example unit test function
@@ -124,7 +125,7 @@ function sum() {
 	var total = 0;
 	var i;
 
-	for (var i = 0; i < arguments.length; i++) {
+	for (i = 0; i < arguments.length; i++) {
 		total += arguments[i];
 	}
 
@@ -210,20 +211,109 @@ var peopleWeCallJson = {
 // Note: the row object should be a hash of the column name and row item value
 // Example:
 // .addColumns('column1', 'column2', 'column3');
-// .addRow('value1A', 'value1B', 'value1C');
-// .addRow('value2A', 'value2B', 'value2C');
+// .addRows('value1A', 'value1B', 'value1C');
+// .addRows('value2A', 'value2B', 'value2C');
+function DataTable() {
+	var columns = [];
+	var rows = [];
+
+	this.addColumns = function() {
+		var i;
+
+		for (i = 0; i < arguments.length; i++) {
+			columns.push( arguments[i] );
+		}
+	};
+
+	this.addRows = function() {
+		var i;
+		var cellData;
+
+		for (i = 0; i < arguments.length; i++) {
+			cellData = {
+				columnName: columns[i],
+				value: arguments[i]
+			};
+			rows.push( cellData );
+		}
+	};
+
+	this.getData = function() {
+		return {
+			columns: columns,
+			rows: rows
+		};
+	};
+}
 
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
+$(function() {
+	var options = [];
+	var i;
+	var optionVal;
+	var optionText;
+	var $selected;
+
+	for ( i = 0; i < 11; i++ ) {
+		options.push('<option value="' + Math.pow( 2, i ) + '">2 ^ ' + i + '</option>');
+	}
+
+	$('#div1').append('<select>' + options.join('') + '</select><button>A</button>');
+	$('#div1 button').on('click', function() {
+		$selected = $('#div1 option:selected');
+		optionText = $selected.text();
+		optionVal = $selected.val();
+		console.log(optionText + ' == ' + optionVal);
+	});
+
+});
 
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
+var selectorTests = function() {
+	$('a');
+	$('a.link');
+	$('#fizz .link');
+	$('#foo #fizz a');
+	$('#fizz > a');
+};
 
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
+var listTest = function() {
+	var pArray = [];
+	var alpha = ['a', 'b', 'c', 'd', 'e'];
+	var ulHtml = [];
+	var i, ii;
+	for ( i = 0; i < 5; i++ ) {
+		pArray.push( alpha[i] );
+	}
+
+	$('#list1').append( '<li>' + pArray.join('</li><li>') + '</li>');
+
+};
+
+listTest();
 
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+var checkIt = function() {
+	var listOfCheckbox = '<ul><li><input type="checkbox"></li><li><input type="checkbox"></li><li><input type="checkbox"></li>';
+	var linksList = '<a href="#" class="check">Check All</a><br/><a href="#" class="uncheck">Uncheck All</a>';
+	var $foobar = $('#foobar');
+	$foobar.append(listOfCheckbox + linksList);
+	$foobar.on( 'click', '.check', function() {
+		$foobar.find(':checkbox').prop('checked', 'checked');
+		return false;
+	});
+	$foobar.on( 'click', '.uncheck', function() {
+		$foobar.find(':checkbox').prop('checked', '');
+		return false;
+	});
+};
+
+checkIt();

@@ -1,4 +1,5 @@
-/*global module, test, equal, deepEqual, ok, strictEqual, divide, reverseString, findMinValue, findDestinctValues, removeFruits, pushOntoArray, splitListStrUsingComma, sum */
+/*global module, test, equal, deepEqual, ok, strictEqual, divide, reverseString, findMinValue, findDistinctValues, removeFruits, pushOntoArray, splitListStrUsingComma, sum, isOnlyWhitespace, DataTable */
+/*jshint devel:true*/
 
 'use strict';
 
@@ -81,7 +82,6 @@ test( 'Remove Fruits', function() {
 	var expected2 = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
 	var expected3 = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
 	var expected4 = [];
-	var result1, result2, result3, result4;
 
 	equal( typeof removeFruits, 'function', 'Must contain a remove fruits function' );
 
@@ -110,7 +110,6 @@ test( 'Push Onto Array', function() {
 	var expected2 = [1, 2, 3, 42];
 	var expected3 = [1, 2, 3, 4, 2];
 	var expected4 = [1, 2, 3, 4, 2, 1, 2, 3, 4];
-	var result1, result2, result3, result4;
 
 	equal( typeof pushOntoArray, 'function', 'Must contain a push onto array function' );
 
@@ -208,4 +207,36 @@ test( 'Is Only Whitespace', function() {
 	strictEqual( result3, true, 'All spaces' );
 	strictEqual( result4, false, 'Empty string' );
 	strictEqual( result5, true, 'Escaped whitespace characters' );
+});
+
+module( 'DataTable' );
+test( 'Object creation and manipulation', function() {
+	var expectedOutput = '{"columns":["column1","column2","column3"],"rows":[{"columnName":"column1","value":"value1A"},{"columnName":"column2","value":"value1B"},{"columnName":"column3","value":"value1C"},{"columnName":"column1","value":"value2A"},{"columnName":"column2","value":"value2B"},{"columnName":"column3","value":"value2C"}]}';
+	var testDataTable;
+	var dataTableOutput;
+
+	// make sure function is defined
+	equal( typeof DataTable, 'function', 'DataTable function must exist' );
+
+	// create object
+	testDataTable = new DataTable();
+
+	// make sure public functions exist
+	equal( typeof testDataTable.addRows, 'function', 'addRows function is public' );
+	equal( typeof testDataTable.addColumns, 'function', 'addColumns function is public' );
+	equal( typeof testDataTable.getData, 'function', 'getData function is public' );
+
+	// make sure private properties are private
+	equal( typeof testDataTable.columns, 'undefined', 'columns property is private' );
+	equal( typeof testDataTable.rows, 'undefined', 'rows property is private' );
+
+	// update pritvate properties through public functions
+	testDataTable.addColumns('column1', 'column2', 'column3');
+	testDataTable.addRows('value1A', 'value1B', 'value1C');
+	testDataTable.addRows('value2A', 'value2B', 'value2C');
+
+	// confirm getData function outputs data correctly
+	dataTableOutput = JSON.stringify( testDataTable.getData() );
+	strictEqual( dataTableOutput, expectedOutput, 'DataTable should output proper data format' );
+
 });
