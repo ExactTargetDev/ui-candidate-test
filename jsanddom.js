@@ -104,23 +104,40 @@ function pushOntoArray(array, toPush) {
 	} else {
 		array.push( toPush );
 	}
-
-	
 }
 
 // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
 function splitListStrUsingComma(sourceStr) {
-	// FILL THIS IN
+	var splitString;
+
+	if ( sourceStr === '' ) {
+		splitString = [];
+	} else {
+		splitString = sourceStr.split( ',' );
+	}
+
+	return splitString;
 }
 
 // Write a function that will take any number of arguments and return their sum
 function sum() {
-	// FILL THIS IN
+	var total = 0;
+	var i;
+
+	for (var i = 0; i < arguments.length; i++) {
+		total += arguments[i];
+	}
+
+	return total;
 }
 
 // Write a function that will return true if a specified string consists of only whitespace.
 function isOnlyWhitespace(sourceStr) {
-	// FILL THIS IN
+	if ( sourceStr === '' ) {
+		return false;
+	}
+	
+	return !/\S/.test(sourceStr);
 }
 
 // write an example of a javascript closure

@@ -91,10 +91,10 @@ test( 'Remove Fruits', function() {
 	removeFruits( fruits3, removeFruits3 );
 	removeFruits( fruits4, removeFruits4 );
 
-	deepEqual( fruits1, expected1, 'Fruits should be removed from list' );
-	deepEqual( fruits2, expected2, 'Fruits should be removed from list' );
-	deepEqual( fruits3, expected3, 'Fruits should be removed from list' );
-	deepEqual( fruits4, expected4, 'Fruits should be removed from list' );
+	deepEqual( fruits1, expected1, 'Some fruits should be removed from list' );
+	deepEqual( fruits2, expected2, 'No fruits should be removed from list' );
+	deepEqual( fruits3, expected3, 'No fruits should be removed from list' );
+	deepEqual( fruits4, expected4, 'All fruits should be removed from list' );
 });
 
 test( 'Push Onto Array', function() {
@@ -120,17 +120,17 @@ test( 'Push Onto Array', function() {
 	pushOntoArray( originalArray3, toPush3 );
 	pushOntoArray( originalArray4, toPush4 );
 
-	deepEqual( originalArray1, expected1, 'Items should be pushed onto array' );
-	deepEqual( originalArray2, expected2, 'Items should be pushed onto array' );
-	deepEqual( originalArray3, expected3, 'Items should be pushed onto array' );
-	deepEqual( originalArray4, expected4, 'Items should be pushed onto array using nested arrays' );
+	deepEqual( originalArray1, expected1, 'Simple value should be pushed onto array' );
+	deepEqual( originalArray2, expected2, 'Array with single simple value item should be pushed onto array' );
+	deepEqual( originalArray3, expected3, 'Array with multiple items should be pushed onto array' );
+	deepEqual( originalArray4, expected4, 'Array with nested tems should be pushed onto array' );
 
 });
 
 test( 'Split List String Using Commas', function() {
 	var testString1 = 'The, quick, brown, fox jumped over';
 	var testString2 = '';
-	var expected1 = ['The', 'quick', 'brown', 'fox jumped over'];
+	var expected1 = ['The', ' quick', ' brown', ' fox jumped over'];
 	var expected2 = [];
 	var result1, result2;
 
@@ -140,8 +140,8 @@ test( 'Split List String Using Commas', function() {
 	result1 = splitListStrUsingComma( testString1 );
 	result2 = splitListStrUsingComma( testString2 );
 
-	deepEqual( result1, expected1, 'List string should be split' );
-	deepEqual( result2, expected2, 'List string should be split' );
+	deepEqual( result1, expected1, 'Should split out to array with parts of phrase' );
+	deepEqual( result2, expected2, 'Empty string should return empty array' );
 });
 
 test( 'Sum', function() {
@@ -154,9 +154,9 @@ test( 'Sum', function() {
 	result2 = sum( -144, 144 );
 	result3 = sum( -2, -2 );
 
-	strictEqual( result1, 20, 'parameters should be added up' );
-	strictEqual( result2, 0, 'parameters should be added up' );
-	strictEqual( result3, -4, 'parameters should be added up' );
+	strictEqual( result1, 20, 'Should add up to 20' );
+	strictEqual( result2, 0, 'Should add up to 0' );
+	strictEqual( result3, -4, 'Should add up to -4' );
 });
 
 test( 'Is Only Whitespace', function() {
@@ -203,9 +203,9 @@ test( 'Is Only Whitespace', function() {
 	result4 = isOnlyWhitespace( testString4 );
 	result5 = isOnlyWhitespace( testString5 );
 
-	strictEqual( result1, true, 'Should detect whitespace properly' );
-	strictEqual( result2, false, 'Should detect whitespace properly' );
-	strictEqual( result3, true, 'Should detect whitespace properly' );
-	strictEqual( result4, false, 'Should detect whitespace properly' );
-	strictEqual( result5, true, 'Should detect whitespace properly' );
+	strictEqual( result1, true, 'Should be all unicode whitespace' );
+	strictEqual( result2, false, 'Not all whitespace' );
+	strictEqual( result3, true, 'All spaces' );
+	strictEqual( result4, false, 'Empty string' );
+	strictEqual( result5, true, 'Escaped whitespace characters' );
 });
