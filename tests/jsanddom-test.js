@@ -69,7 +69,10 @@ test( 'Find Distinct Values', function() {
 });
 
 test( 'Remove Fruits', function() {
-	var fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+	var fruits1 = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+	var fruits2 = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+	var fruits3 = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+	var fruits4 = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
 	var removeFruits1 = ['pear', 'banana'];
 	var removeFruits2 = ['watermelon'];
 	var removeFruits3 = [];
@@ -83,28 +86,31 @@ test( 'Remove Fruits', function() {
 	equal( typeof removeFruits, 'function', 'Must contain a remove fruits function' );
 
 	// confirm fruits are removed properly
-	result1 = removeFruits( fruits, removeFruits1 );
-	result2 = removeFruits( fruits, removeFruits2 );
-	result3 = removeFruits( fruits, removeFruits3 );
-	result4 = removeFruits( fruits, removeFruits4 );
+	removeFruits( fruits1, removeFruits1 );
+	removeFruits( fruits2, removeFruits2 );
+	removeFruits( fruits3, removeFruits3 );
+	removeFruits( fruits4, removeFruits4 );
 
-	deepEqual( result1, expected1, 'Expected fruit list doesn\'t match' );
-	deepEqual( result2, expected2, 'Expected fruit list doesn\'t match' );
-	deepEqual( result3, expected3, 'Expected fruit list doesn\'t match' );
-	deepEqual( result4, expected4, 'Expected fruit list doesn\'t match' );
+	deepEqual( fruits1, expected1, 'Fruits should be removed from list' );
+	deepEqual( fruits2, expected2, 'Fruits should be removed from list' );
+	deepEqual( fruits3, expected3, 'Fruits should be removed from list' );
+	deepEqual( fruits4, expected4, 'Fruits should be removed from list' );
 });
 
 test( 'Push Onto Array', function() {
 	var originalArray1 = [1, 2, 3];
 	var originalArray2 = [1, 2, 3];
 	var originalArray3 = [1, 2, 3];
+	var originalArray4 = [1, 2, 3];
 	var toPush1 = 42;
 	var toPush2 = [42];
 	var toPush3 = [4, 2];
+	var toPush4 = [4, 2, [1, 2, 3, 4]];
 	var expected1 = [1, 2, 3, 42];
 	var expected2 = [1, 2, 3, 42];
 	var expected3 = [1, 2, 3, 4, 2];
-	var result1, result2, result3;
+	var expected4 = [1, 2, 3, 4, 2, 1, 2, 3, 4];
+	var result1, result2, result3, result4;
 
 	equal( typeof pushOntoArray, 'function', 'Must contain a push onto array function' );
 
@@ -112,10 +118,12 @@ test( 'Push Onto Array', function() {
 	pushOntoArray( originalArray1, toPush1 );
 	pushOntoArray( originalArray2, toPush2 );
 	pushOntoArray( originalArray3, toPush3 );
+	pushOntoArray( originalArray4, toPush4 );
 
-	deepEqual( originalArray1, expected1, 'Items were not properly pushed onto array' );
-	deepEqual( originalArray2, expected2, 'Items were not properly pushed onto array' );
-	deepEqual( originalArray3, expected3, 'Items were not properly pushed onto array' );
+	deepEqual( originalArray1, expected1, 'Items should be pushed onto array' );
+	deepEqual( originalArray2, expected2, 'Items should be pushed onto array' );
+	deepEqual( originalArray3, expected3, 'Items should be pushed onto array' );
+	deepEqual( originalArray4, expected4, 'Items should be pushed onto array using nested arrays' );
 
 });
 
@@ -132,8 +140,8 @@ test( 'Split List String Using Commas', function() {
 	result1 = splitListStrUsingComma( testString1 );
 	result2 = splitListStrUsingComma( testString2 );
 
-	deepEqual( result1, expected1, 'List string not properly split' );
-	deepEqual( result2, expected2, 'List string not properly split' );
+	deepEqual( result1, expected1, 'List string should be split' );
+	deepEqual( result2, expected2, 'List string should be split' );
 });
 
 test( 'Sum', function() {
@@ -146,9 +154,9 @@ test( 'Sum', function() {
 	result2 = sum( -144, 144 );
 	result3 = sum( -2, -2 );
 
-	strictEqual( result1, 20, 'parameters not properly added up' );
-	strictEqual( result2, 0, 'parameters not properly added up' );
-	strictEqual( result3, -4, 'parameters not properly added up' );
+	strictEqual( result1, 20, 'parameters should be added up' );
+	strictEqual( result2, 0, 'parameters should be added up' );
+	strictEqual( result3, -4, 'parameters should be added up' );
 });
 
 test( 'Is Only Whitespace', function() {
@@ -195,9 +203,9 @@ test( 'Is Only Whitespace', function() {
 	result4 = isOnlyWhitespace( testString4 );
 	result5 = isOnlyWhitespace( testString5 );
 
-	strictEqual( result1, true, 'Didn\'t detect whitespace properly' );
-	strictEqual( result2, false, 'Didn\'t detect whitespace properly' );
-	strictEqual( result3, true, 'Didn\'t detect whitespace properly' );
-	strictEqual( result4, false, 'Didn\'t detect whitespace properly' );
-	strictEqual( result5, true, 'Didn\'t detect whitespace properly' );
+	strictEqual( result1, true, 'Should detect whitespace properly' );
+	strictEqual( result2, false, 'Should detect whitespace properly' );
+	strictEqual( result3, true, 'Should detect whitespace properly' );
+	strictEqual( result4, false, 'Should detect whitespace properly' );
+	strictEqual( result5, true, 'Should detect whitespace properly' );
 });

@@ -84,12 +84,10 @@ function removeFruits(fruits, fruitsToRemove) {
 
 	for (var i = 0; i < fruitsToRemove.length; i++) {
 		removalIndex = fruits.indexOf( fruitsToRemove[i] );
-		console.log( removalIndex );
 		if ( removalIndex !== -1 ) {
 			fruits.splice( removalIndex, 1 );
 		}
 	}
-	return fruits;
 }
 
 // Write a function to push either a simple value or an array of values onto a specified array.
@@ -97,7 +95,17 @@ function removeFruits(fruits, fruitsToRemove) {
 // If toPush is a simple value, it should be pushed onto array as an element.
 // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
 function pushOntoArray(array, toPush) {
-	// FILL THIS IN
+	var i;
+
+	if ( typeof toPush === 'object' ) {
+		for ( i = 0; i < toPush.length; i++ ) {
+			pushOntoArray( array, toPush[i] );
+		}
+	} else {
+		array.push( toPush );
+	}
+
+	
 }
 
 // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
