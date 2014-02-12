@@ -136,11 +136,18 @@ function isOnlyWhitespace(sourceStr) {
 	if ( sourceStr === '' ) {
 		return false;
 	}
-	
+
 	return !/\S/.test(sourceStr);
 }
 
 // write an example of a javascript closure
+function cryMeAClosure(msg) {
+	var yourMessage = 'Your Message Delivered: ' + msg;
+	function crying() {
+		console.log( yourMessage );
+	}
+	setTimeout( crying, 1000);
+}
 
 // define a json object that represents a collection of people.
 // each person should have the following properties
@@ -150,6 +157,48 @@ function isOnlyWhitespace(sourceStr) {
 // - state
 // - zip
 // - a collection of phone numbers (home, work, mobile)
+var peopleWeCallJson = {
+	people: [
+		{
+			firstName: 'Jason',
+			lastName: 'Son',
+			city: 'Puyallup',
+			state: 'WA',
+			zip: 98375,
+			phoneNumbers: [
+				{
+					type: 'home',
+					number: '1234567890'
+				},
+				{
+					type: 'work',
+					number: '5129020000'
+				},
+				{
+					type: 'mobile',
+					number: '2538003000'
+				}
+			]
+		},
+		{
+			firstName: 'Jasons',
+			lastName: 'Deli',
+			city: 'Tampa',
+			state: 'FL',
+			zip: 33618,
+			phoneNumbers: [
+				{
+					type: 'fax',
+					number: '8133413364'
+				},
+				{
+					type: 'work',
+					number: '8133413354'
+				}
+			]
+		}
+	]
+};
 
 
 // Create a javascript object (DataTable) with the following:
