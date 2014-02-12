@@ -80,6 +80,32 @@ function doFizzBuzz() {
 // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
 // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
 // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
+
+// IE8 compatibility https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf#Compatibility
+if (!Array.prototype.indexOf)
+{
+  Array.prototype.indexOf = function(elt /*, from*/)
+  {
+    var len = this.length >>> 0;
+
+    var from = Number(arguments[1]) || 0;
+    from = (from < 0)
+         ? Math.ceil(from)
+         : Math.floor(from);
+    if (from < 0)
+      from += len;
+
+    for (; from < len; from++)
+    {
+      if (from in this &&
+          this[from] === elt)
+        return from;
+    }
+    return -1;
+  };
+}
+
+
 function removeFruits(fruits, fruitsToRemove) {
 	var removalIndex;
 
@@ -133,6 +159,7 @@ function sum() {
 }
 
 // Write a function that will return true if a specified string consists of only whitespace.
+// todo: fails in IE8
 function isOnlyWhitespace(sourceStr) {
 	if ( sourceStr === '' ) {
 		return false;
