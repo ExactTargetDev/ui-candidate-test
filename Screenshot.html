@@ -2,7 +2,106 @@
 <html>
 <head>
     <title>Screenshot.html</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
+	<div class="nav-banner">
+		<img class="home-logo" src="img/home-logo.png" alt="exact target"/>
+		<div class="account-controls">
+			<p>Welcome John! <a href="#">Account</a> | <a href="#" class="help">Help</a> | <a href="#">Logout</a></p>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<div class="app-launcher">
+			<div class="launcher-header"></div>
+			<div class="app-tray">
+				<div class="app">
+					<img src="img/email-app.png"/>
+					<p>ExactTarget Email</p>
+				</div>
+				<div class="app">
+					<img src="img/mobile-app.png"/>
+					<p>ExactTarget Mobile</p>
+				</div>
+				<div class="app">
+					<img src="img/cotweet-app.png"/>
+					<p>CoTweet Social</p>
+				</div>
+				<div class="app current">
+					<img src="img/sites-app.png"/>
+					<p>ExactTarget Sites</p>
+				</div>
+				<div class="partner-separation"></div>
+				<div class="app">
+					<img src="img/animation-app.png"/>
+					<p>Animation Studio</p>
+				</div>
+				<div class="app">
+					<img src="img/audience-app.png"/>
+					<p>Audience Builder</p>
+				</div>
+				<div class="app">
+					<img src="img/report-app.png"/>
+					<p>Report Builder</p>
+				</div>
+				<div class="partner-separation"></div>
+				<div class="partner-apps">
+					<img src="img/partner-app.png" class="partner"/>
+					<p>Partner Applications</p>
+				</div>
+				<div class="app-tray-bottom"></div>
+			</div>
+		</div>
+
+		<div class="app-canvas">
+			<div class="calendar"></div>
+			<div class="pulse">
+				<div class="panel">
+					<p class="title">Followers</p>
+					<div class="data followers"></div>
+				</div>
+				<div class="panel">
+					<p class="title">Fans</p>
+					<div class="data fans"></div>
+				</div>
+				<div class="panel">
+					<p class="title">Subscribers</p>
+					<div class="data subscribers"></div>
+				</div>
+				<div class="panel active">
+					<p class="title">foursquare</p>
+					<div class="data foursquare"></div>
+				</div>
+				<div class="panel">
+					<p class="title">Landing Pages</p>
+					<div class="data landing"></div>
+				</div>
+			</div>
+		</div>
+		<br class="clear"/>
+	</div>
+
+	<div class="modal fade" id="help-modal" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Help Links</h4>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script> 
+	<script src="js/screenshot.js" type="text/javascript"></script> 
 </body>
 </html>

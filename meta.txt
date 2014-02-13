@@ -1,0 +1,14 @@
+Start Time: 1392215099
+
+TotalTime: 1637
+
+BrowserTesting:
+	IE 8
+	IE 9
+	IE 10
+	FF 27
+	Safari 7
+	Chrome 32
+	Chrome 31
+
+UnitTest: tests/JsAndDom-UnitTest-Runner.html
