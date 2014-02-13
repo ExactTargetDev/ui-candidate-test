@@ -1,0 +1,40 @@
+* { font-family: Arial; }
+
+.clear { clear: both; }
+
+.nav-banner { height: 34px; background-image: url('../img/nav-banner.png'); position: relative; }
+.home-logo { position: absolute; top: 10px; left: 20px; }
+.account-controls { position: absolute; top: 10px; right: 20px; font-size: 11px; color: #eeeeee; }
+.account-controls p { margin: 0; }
+.account-controls a { color: #99cce1; text-decoration: none; }
+
+.wrapper { width: 1195px; margin: 0 auto; }
+
+.app-launcher { width: 183px; height: 200px; float: left; margin: 20px 15px 0 0; }
+.launcher-header { height: 52px; background-image: url('../img/app-launcher-banner.png'); background-repeat: no-repeat; }
+.app-tray { background-image: url('../img/app-launcher-background.png'); background-repeat: repeat-y; }
+.app { font-size: 12px; color: #888888; position: relative; height: 33px; cursor: pointer; }
+.app:hover { background-color: #e4e4e5; }
+.app.current { background-color: #d4d4d5; }
+.app img { position: absolute; top: 5px; left: 7px; }
+.app p { position: absolute; top: 11px; left: 45px; margin: 0; }
+.partner-separation { height: 3px; background-image: url('../img/app-launcher-partner-separation.png'); background-repeat: no-repeat; }
+.partner-apps { font-size: 12px; color: #888888; position: relative; height: 26px; cursor: pointer; }
+.partner-apps img { position: absolute; top: 5px; left: 10px; }
+.partner-apps p { position: absolute; top: 4px; left: 45px; margin: 0; }
+.app-tray-bottom { background-image: url('../img/app-launcher-bottom.png'); background-repeat: no-repeat; height: 5px; }
+
+.app-canvas { float: left; }
+.calendar { background-image: url('../img/calendar.png'); background-repeat: no-repeat; width: 996px; height: 114px; margin: -2px 0 0 0; }
+.pulse { background-image: url('../img/pulse.png'); background-repeat: no-repeat; width: 996px; height: 273px; margin: 15px 0 0 0; position: relative; }
+.panel { float: left; width: 170px; height: 130px; margin: 90px 0 0 5px; }
+.panel .title { color: #5e717e; margin: 0 0 2px 0; text-align: center; font-size: 12px; }
+.panel .data { height: 96px; width: 163px; }
+.active.panel { width: 290px; height: 160px; margin: 35px 0 0 0; }
+.active.panel .data { background-image: url('../img/medium-panel.png'); background-repeat: no-repeat; height: 200px; width: 300px; }
+.data.followers { background-image: url('../img/followers.png'); }
+.data.fans { background-image: url('../img/fans.png'); }
+.data.subscribers { background-image: url('../img/subscribers.png'); }
+.data.foursquare { background-image: url('../img/followers.png'); }
+.data.landing { background-image: url('../img/landing-pages.png'); }
+
