@@ -2,29 +2,62 @@
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
         //return a / b;
+           return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
+         
+
          // FILL THIS IN
+         return str.split('').reverse().join('');
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+        
+        return values.sort(function (a, b) {
+             return a - b;
+         });
+
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
-     }
+        
+        var unique = values.filter(function (itm, i, values) {
+             return i == values.indexOf(itm);
 
+         });
+
+         console.log(unique.sort());
+
+
+     }
+    
      // Write a function that logs the numbers from 1 to 100 to the console.
      // For multiples of three print "Fizz" instead of the number.
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
+         
+         for (var i = 1; i <= 100; i++) {
+             if (i % 15 == 0) {
+                 console.log("FizzBuzz");
+             } else if (i % 3 == 0) {
+                 console.log("Fizz");
+             } else if (i % 5 == 0) {
+                 console.log("Buzz");
+             } else {
+                 console.log(i);
+             }
+         }
+
+         
+   
+
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -33,6 +66,17 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+             for (var i = fruits.length - 1; i >= 0; i--) {
+             for (var j = 0; j < fruitsToRemove.length; j++) {
+                 if (fruitsToRemove[j] == fruits[i]) {
+                     fruits.splice(i, 1);
+
+                 }
+             }
+         }
+         return fruits;
+
+
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -41,24 +85,69 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+         var masterArray = new Array (1,2,3,4,5);
+ 
+         var toPush = (prompt('enter a value'));
+ 
+         var single=masterArray.concat(toPush);
+         alert(single);
+
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          // FILL THIS IN
+          console.log(sourceStr);
+         return sourceStr ? sourceStr.split(',') : [];
      }
+     var x = splitListStrUsingComma('');
+     console.log(x);
+
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          // FILL THIS IN
+        var sum, argLen = arguments.length;
+         if (argLen > 0) {
+             sum = 0;
+             for (var i = 0; i < argLen; i++) {
+                 sum += arguments[i];
+             }
+             console.log(argLen + " were passed and their sum is:");
+         } else {
+             sum = "No arguments passed";
+         }
+         console.log(sum);
+
+
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
+         
+          if (!sourceStr.replace(/\s/g, '').length) {
+             return true;
+         }
      }
 
      // write an example of a javascript closure
+    closureExample();
+
+     function closureExample() {
+         var count;
+         for (count = 1; count < 5; count++) {
+             setTimeout(
+             some(count), count * 1000);
+         }
+     }
+
+     function some(count) {
+         return function () {
+             console.log("count = " + count);
+         }
+     }
+
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -68,6 +157,44 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     
+     
+     
+      var people = [{
+         "first_name": "James",
+             "last_name": "Smith",
+             "city": "New York",
+             "state": "NY",
+             "zip": "70454",
+             "phone_nums": [
+             "909-100-1000",
+             "312-332-2133",
+             "234-123-3456"]
+     }, {
+         "first_name": "Peter",
+             "last_name": "Woz",
+             "city": "New Jersey",
+             "state": "NJ",
+             "zip": "90323",
+             "phone_nums": [
+             "908-100-1000",
+             "314-332-2133",
+             "235-123-3456"]
+     }, {
+         "first_name": "Sam",
+             "last_name": "Paul",
+             "city": "Los Angeles",
+             "state": "CA",
+             "zip": "97874",
+             "phone_nums": [
+             "608-100-1000",
+             "614-332-2133",
+             "835-123-3456"]
+     }];
+
+
+
+
 
 
      // Create a javascript object (DataTable) with the following:
@@ -81,18 +208,109 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     
+     
+     
+        function DataTable() {
+         var columns = [];
+         var rows = [];
+
+         this.addRows = function (row) {
+             rows.push(row);
+         }
+         this.addColumns = function (col) {
+             columns.push(col);
+         }
+         this.getData = function () {
+             //returns JSON data.
+         }
+     }
+
+     var grid = new DataTable();
+     grid.addColumns('column1', 'column2', 'column3');
+     grid.addRow('value1A', 'value1B', 'value1C');
+     grid.addRow('value2A', 'value2B', 'value2C');
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     
+     
+  var listbox = '<select id="clothing_options">';
+     listbox += '<option value="reddress">Red Dress</option>';
+     listbox += '<option value="bluedress">Blue Dress</option>';
+     listbox += '<option value="hairpin">Black Hair Pin</option></select>';
+
+     listbox += '<input type="button" value="click" class="butn"/>'
+
+     $('#div1').append(listbox);
+     var data;
+     $('#clothing_options').change(function (ev) {
+
+         data = "value=" + $('#clothing_options option:selected').val() + " " + "text=" + $('#clothing_options option:selected').text();
+
+
+
+
+     });
+
+     $('.butn').click(function () {
+
+         console.log(data);
+
+     });
+
+
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     
+     
+     
+     $(document).ready(function () {
+         $("#fizz a")
+         $("#fizz>a") // Second selector
+         $(".link") // Third Selector
+         $("#foo>#fizz a") // Fourth selector
+         $("#foo>#fizz>a") * /  / / Fifth Selector
+
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     
+      var obj = {
+             one: 1,
+             two: 2,
+             three: 3,
+             four: 4,
+             five: 5
+         };
+         $.each(obj, function (i, v) {
+             $("#list1 li").eq(v - 1).html(v);
+         });
+
+     });
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     
+       function SelectAll() {
+         var checkboxes = document.getElementsByTagName("input");
+         for (i = 0; i < checkboxes.length; i++) {
+             if (checkboxes.item(i).attributes["type"].value == "checkbox") {
+                 checkboxes.item(i).checked = true;
+             }
+         }
+     }
+
+     function deSelectAll() {
+         var checkboxes = document.getElementsByTagName("input");
+         for (i = 0; i < checkboxes.length; i++) {
+             if (checkboxes.item(i).attributes["type"].value == "checkbox") {
+                 checkboxes.item(i).checked = false;
+             }
+         }
+     }
+
