@@ -159,6 +159,7 @@
         , "city": "Desert Rainbow"
         , "state": "Vigilant"
         , "zip": "Cat"
+        , "phoneNumbers":
           { "home": "5554443333"
           , "work": "4443332222"
           , "mobile": "3332221111"
@@ -169,6 +170,7 @@
         , "city": "White Stone"
         , "state": "Confused"
         , "zip": "Ball"
+        , "phoneNumbers":
           { "home": "5554443333"
           , "work": "4443332222"
           , "mobile": "3332221111"
@@ -179,16 +181,44 @@
 
 
      // Create a javascript object (DataTable) with the following:
+     function DataTable () {
      // A private columns property (string array)
+       var columns = [];
      // A private rows property (string array)
+       var rows = [];
      // A public method addRows that adds an item to the rows array
+       this.addRows = function () {
+         var row = [];
+         for (var index = 0; index < arguments.length ; index ++) {
+            row.push(arguments[index]);
+         }
+         rows.push(row);
+         return this;
+       };
      // A public method addColumns that adds an item to the columns array
+       this.addColumns = function () {
+         for (var index = 0; index < arguments.length ; index ++) {
+            columns.push(arguments[index]);
+         }
+         return this;
+       };
      // A public method getData that returns the a json object representation of the DataTable
+       this.getData = function (item) {
+         return rows.map( function (row) {
+           var rowObject = {};
+           columns.forEach( function (item, index) {
+             rowObject[item] = row[index];
+           } );
+           return rowObject;
+         } );
+       };
+     }
      // Note: the row object should be a hash of the column name and row item value
      // Example:
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.

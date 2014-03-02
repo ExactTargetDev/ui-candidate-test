@@ -131,5 +131,25 @@ test( "do closure unit test", 3, function () {
 });
 
 
+module( "DataTable object" );
+//     function DataTable = function () {
+test( "do Data Table unit test", 20, function () {
+     equal( typeof DataTable, 'function', "has a DataTable" );
+     equal( typeof new DataTable, 'object', "returns an object" );
+     deepEqual( new DataTable().getData(), [], 'empty data table is empty' );
+     deepEqual( new DataTable().addRows('value1A', 'value1B', 'value1C').getData(), [{}], 'filled data table with no columns has no fields0' );
+     var dt = new DataTable;
+     deepEqual( dt.getData(), [], 'empty data table is empty' );
+     dt.addColumns('column1', 'column2', 'column3');
+     deepEqual( dt.getData(), [], 'empty data table with columns without data is empty' );
+     dt.addRows('value1A', 'value1B', 'value1C');
+     deepEqual( dt.getData(), [{column1:'value1A', column2:'value1B', column3:'value1C'}], 'data table with data and columns has data form' );
+     dt.addRows('value2A', 'value2B', 'value2C');
+     deepEqual( dt.getData(), [{column1:'value1A', column2:'value1B', column3:'value1C'},{column1:'value2A', column2:'value2B', column3:'value2C'}], 'data table with data and columns has data form, multiple rows' );
+});
+
+
+
+
 
 
