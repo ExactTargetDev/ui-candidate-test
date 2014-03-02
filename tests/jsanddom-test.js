@@ -70,7 +70,7 @@ test( "do remove fruits unit test", 8, function () {
 });
 
 module( "pushOntoArray" );
-//     function removeFruits(fruits, fruitsToRemove) {
+//     function pushOntoArray(array, toPush) {
 test( "do push onto array unit test", 5, function () {
      equal( typeof pushOntoArray, 'function', "can push onto array" );
      var beforeArray = ['apple', 'orange', 'durian', 'tomato']
@@ -82,6 +82,16 @@ test( "do push onto array unit test", 5, function () {
      beforeArray.forEach( function (item) {
        if (item == 'cherry') ok( 1, "new item is present in original array" );
      } );
+});
+
+
+
+module( "splitListStrUsingComma" );
+//     function splitListStrUsingComma(sourceStr) {
+test( "do split list string using comma test", 3, function () {
+     equal( typeof splitListStrUsingComma, 'function', "can split string on comma" );
+     deepEqual( splitListStrUsingComma( '"The time has come," the Walrus said, "To talk of many things: Of shoes--and ships--and sealing-wax-- Of cabbages--and kings--"' ), ['"The time has come','" the Walrus said',' "To talk of many things: Of shoes--and ships--and sealing-wax-- Of cabbages--and kings--"'], "splits on commas when present" );
+     deepEqual( splitListStrUsingComma( 'And why the sea is boiling hot-- And whether pigs have wings."' ), [], "empty array with no commas" );
 });
 
 
