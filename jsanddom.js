@@ -1,22 +1,62 @@
+// array map function that lets array outputs be shorter than inputs by
+// collapsing nulls
+  Array.prototype.mapShort = function(fun /*, thisArg */)
+  {
+    "use strict";
+
+    if (this === void 0 || this === null)
+      throw new TypeError();
+
+    var t = Object(this);
+    var len = t.length >>> 0;
+    if (typeof fun !== "function")
+      throw new TypeError();
+
+    var res = new Array();
+    var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
+    for (var i = 0; i < len; i++)
+    {
+      // NOTE: Absolute correctness would demand Object.defineProperty
+      //       be used.  But this method is fairly new, and failure is
+      //       possible only if Object.prototype or Array.prototype
+      //       has a property |i| (very unlikely), so use a less-correct
+      //       but more portable alternative.
+      if (i in t)
+        var r = fun.call(thisArg, t[i], i, t);
+        if ( r === null ) r;
+        else res.push(r);
+    }
+
+    return res;
+  };
+
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
+         return str.split('').reverse().join('');
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+       var min = values.shift();
+       while (values.length > 0) {
+         if (min > values[0]) min = values.shift();
+         else values.shift();
+       }
+       return min;
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+         var hash = {};
+         values.forEach( function (item) { hash[item] = 1 } );
+         return Object.keys(hash).sort().map( function (str) { return parseFloat(str) } );
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,7 +64,15 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         var soda = Array.apply(0, Array(100)).map(function (x, y) { return y + 1; });  // [1, 2, 3, ...]
+         soda.forEach(function ( value ) {
+           var string = '';
+           if ( 0 == (value % 3) ) string += 'Fizz';
+           if ( 0 == (value % 5) ) string += 'Buzz';
+           if ( string.length == 0 ) string += value;
+           console.log(string);
+         } );
+
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -32,7 +80,12 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         var index = {};
+         fruitsToRemove.forEach( function (item) { index[item] = true } );
+         return fruits.mapShort( function (fruit) {
+           if (index[fruit]) return null;
+           return fruit;
+         } );
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
