@@ -68,3 +68,21 @@ test( "do remove fruits unit test", 8, function () {
      deepEqual( removeFruits(['apple', 'orange', 'durian', 'tomato'], ['durian', 'tomato'] ), ['apple', 'orange'], "will remove multiple disparate" );
      deepEqual( removeFruits(['apple', 'orange', 'durian', 'tomato'], ['cherry'] ), ['apple', 'orange', 'durian', 'tomato'], "won't remove any if no match" );
 });
+
+module( "pushOntoArray" );
+//     function removeFruits(fruits, fruitsToRemove) {
+test( "do push onto array unit test", 5, function () {
+     equal( typeof pushOntoArray, 'function', "can push onto array" );
+     var beforeArray = ['apple', 'orange', 'durian', 'tomato']
+     deepEqual( pushOntoArray( beforeArray , ['cherry'] ), ['apple', 'orange', 'durian', 'tomato', 'cherry'], "adds an array's values onto the original array" );
+     beforeArray.forEach( function (item) {
+       if (item == 'cherry') ok( 1, "new item is present in original array" );
+     } );
+     deepEqual( pushOntoArray(['apple', 'orange', 'durian', 'tomato'], 'cherry' ), ['apple', 'orange', 'durian', 'tomato', 'cherry'], "adds an Simple value's value onto the original array" );
+     beforeArray.forEach( function (item) {
+       if (item == 'cherry') ok( 1, "new item is present in original array" );
+     } );
+});
+
+
+
