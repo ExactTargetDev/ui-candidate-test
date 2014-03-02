@@ -122,3 +122,14 @@ test( "do is only whitespace unit test", 3, function () {
 
 
 
+module( "tellMeLater (closure)" );
+//     function isOnlyWhitespace(sourceStr) {
+test( "do closure unit test", 3, function () {
+     equal( typeof tellMeLater, 'function', "can tellMeLater" );
+     equal( typeof tellMeLater('secret'), 'function', "returns a function" );
+     equal( tellMeLater('secret')(), 'secret', "knows what I told it" );
+});
+
+
+
+

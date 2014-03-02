@@ -123,6 +123,11 @@
      }
 
      // write an example of a javascript closure
+     function tellMeLater (what) {
+       return function () {
+         return what;
+       };
+     }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
