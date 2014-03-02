@@ -95,4 +95,19 @@ test( "do split list string using comma test", 3, function () {
 });
 
 
+module( "sum" );
+//     function sum() {
+test( "do sum unit test", 8, function () {
+     equal( typeof sum, 'function', "can sum" );
+     equal( sum( 1, 2, 3 ), 6 , 'three arguments' );
+     equal( sum( 1, 2, 3, 4, 5, 6 ), 21 , '6 arguments' );
+     equal( sum( 6 ), 6, '1 argument' );
+     equal( sum( ), undefined, '0 arguments' );
+     equal( sum( '' ), '', '0 arguments' );
+     equal( sum( 1, 2, 3, 4, 5, 6, 'dog' ), '21dog' , '7 arguments with string' );
+     equal( sum( 1, 2, 'cat', 4, 5, 6, 'dog' ), '3cat456dog' , '7 arguments with a couple of strings' );
+});
+
+
+
 
