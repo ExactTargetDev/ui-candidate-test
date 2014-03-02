@@ -223,14 +223,85 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     var select = document.createElement('select');
+     var soda = Array.apply(0, Array(10)).map(function (x, y) { return y + 1; });  // [1, 2, 3, ...]
+     soda.forEach( function (item) {
+       var option = select.appendChild(document.createElement('option'));
+       option.setAttribute('value', item);
+       option.appendChild(document.createTextNode('Name of ' + item));
+     } );
+     var div = document.getElementById('div1');
+     div.appendChild(select);
+     var button = document.createElement('button');
+     div.appendChild(button);
+     button.appendChild(document.createTextNode("Read Selection"));
+     button.addEventListener('click', function (e) {
+       console.log("value set to " + select.value);
+       var list = select.getElementsByTagName('option');
+       for (var i = 0; i < list.length; ++i) {
+         if (list[i].getAttribute('value') == select.value) console.log("name is" + list[i].text);
+       }
+     } );
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+// requires jquery making this code untestable under current library choices
+// each would evaluate to the anchor element given the markup
+//$("div div a");
+//$("a.link");
+//$("div#foo div#fizz a.link");
+//$("div#foo.bar div#fizz.buzz a.link");
+//$("div.bar > a");
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+var array = [];
+array.push("an item");
+array.push("another item");
+array.push("yet another item");
+array.push("still another item");
+array.push("finally the last item");
+var list = document.getElementById('list1');
+array.forEach( function (item) {
+  list1.appendChild(document.createElement('li')).appendChild(document.createTextNode(item));
+} );
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
+var div = document.getElementById('foobar');
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
+var all = div.appendChild(document.createElement('a'));
+all.setAttribute('href', '#');
+all.appendChild(document.createTextNode('All'));
+all.addEventListener('click', function (e) {
+  var checkboxes = document.getElementById('checkform').elements;
+  for (var k = 0; k < checkboxes.length; ++k) {
+    if (checkboxes[k].getAttribute('type') == 'checkbox') checkboxes[k].checked = true;
+  }
+} );
+div.appendChild(document.createElement('br'));
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+var none = div.appendChild(document.createElement('a'));
+none.setAttribute('href', '#');
+none.appendChild(document.createTextNode('None'));
+none.addEventListener('click', function (e) {
+  var checkboxes = document.getElementById('checkform').elements;
+  for (var k = 0; k < checkboxes.length; ++k) {
+    if (checkboxes[k].getAttribute('type') == 'checkbox') checkboxes[k].checked = false;
+  }
+} );
+
+var form = div.appendChild(document.createElement('form'));
+form.id = 'checkform';
+var list = form.appendChild(document.createElement('ol'));
+list.id = "checklist";
+var soda = Array.apply(0, Array(10)).map(function (x, y) { return y + 1; });  // [1, 2, 3, ...]
+soda.forEach( function (item) {
+  var checkbox = document.createElement('input');
+  checkbox.setAttribute('type', 'checkbox');
+  checkbox.setAttribute('value', item);
+  checkbox.checked = false;
+  list.appendChild(document.createElement('li')).appendChild(checkbox);
+} );
+
+
