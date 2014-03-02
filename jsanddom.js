@@ -138,6 +138,45 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
+    // WARNING: Assuming that you mean to create a javascript object of pure
+    // properties as can be expressed in json, as the concept of a 'json
+    // object' is rather vague and imprecise.  Its either a javascript object
+    // or a json string, not a json object.
+     var peopleCollection =
+      [ { "first name": "Zane"
+        , "last name": "Underfoot"
+        , "city": "Tumbledown"
+        , "state": "Alert"
+        , "zip": "Squirrel"
+        , "phoneNumbers":
+          { "home": "5554443333"
+          , "work": "4443332222"
+          , "mobile": "3332221111"
+          }
+        }
+      , { "first name": "Banshee"
+        , "last name": "Underfoot"
+        , "city": "Desert Rainbow"
+        , "state": "Vigilant"
+        , "zip": "Cat"
+          { "home": "5554443333"
+          , "work": "4443332222"
+          , "mobile": "3332221111"
+          }
+        }
+      , { "first name": "Akando"
+        , "last name": "Underfoot"
+        , "city": "White Stone"
+        , "state": "Confused"
+        , "zip": "Ball"
+          { "home": "5554443333"
+          , "work": "4443332222"
+          , "mobile": "3332221111"
+          }
+        }
+      ];
+
+
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
