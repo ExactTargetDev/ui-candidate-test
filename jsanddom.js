@@ -231,17 +231,19 @@
        option.appendChild(document.createTextNode('Name of ' + item));
      } );
      var div = document.getElementById('div1');
-     div.appendChild(select);
-     var button = document.createElement('button');
-     div.appendChild(button);
-     button.appendChild(document.createTextNode("Read Selection"));
-     button.addEventListener('click', function (e) {
-       console.log("value set to " + select.value);
-       var list = select.getElementsByTagName('option');
-       for (var i = 0; i < list.length; ++i) {
-         if (list[i].getAttribute('value') == select.value) console.log("name is" + list[i].text);
-       }
-     } );
+     if (div) {
+       div.appendChild(select);
+       var button = document.createElement('button');
+       div.appendChild(button);
+       button.appendChild(document.createTextNode("Read Selection"));
+       button.addEventListener('click', function (e) {
+         console.log("value set to " + select.value);
+         var list = select.getElementsByTagName('option');
+         for (var i = 0; i < list.length; ++i) {
+           if (list[i].getAttribute('value') == select.value) console.log("name is" + list[i].text);
+         }
+       } );
+     }
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
@@ -262,14 +264,17 @@ array.push("yet another item");
 array.push("still another item");
 array.push("finally the last item");
 var list = document.getElementById('list1');
-array.forEach( function (item) {
-  list1.appendChild(document.createElement('li')).appendChild(document.createTextNode(item));
-} );
+if (list) {
+  array.forEach( function (item) {
+    list1.appendChild(document.createElement('li')).appendChild(document.createTextNode(item));
+  } );
+}
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
 var div = document.getElementById('foobar');
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
+if (div) {
 var all = div.appendChild(document.createElement('a'));
 all.setAttribute('href', '#');
 all.appendChild(document.createTextNode('All'));
@@ -303,5 +308,5 @@ soda.forEach( function (item) {
   checkbox.checked = false;
   list.appendChild(document.createElement('li')).appendChild(checkbox);
 } );
-
+}
 

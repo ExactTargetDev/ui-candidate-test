@@ -133,7 +133,7 @@ test( "do closure unit test", 3, function () {
 
 module( "DataTable object" );
 //     function DataTable = function () {
-test( "do Data Table unit test", 20, function () {
+test( "do Data Table unit test", 8, function () {
      equal( typeof DataTable, 'function', "has a DataTable" );
      equal( typeof new DataTable, 'object', "returns an object" );
      deepEqual( new DataTable().getData(), [], 'empty data table is empty' );
