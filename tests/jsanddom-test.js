@@ -111,3 +111,14 @@ test( "do sum unit test", 8, function () {
 
 
 
+module( "isOnlyWhiteSpace" );
+//     function isOnlyWhitespace(sourceStr) {
+test( "do is only whitespace unit test", 3, function () {
+     equal( typeof isOnlyWhitespace, 'function', "can isOnlyWhitespace" );
+     ok( isOnlyWhitespace(' \t\r\n\f'), 'all the whitespace is whitespace' );
+     ok( !isOnlyWhitespace(' \t.\r\n\f'), 'all the whitespace is whitespace, but a period isnt' );
+});
+
+
+
+
