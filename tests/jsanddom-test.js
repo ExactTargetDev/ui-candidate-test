@@ -12,3 +12,8 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+module("String Reverse Unit Test");
+test("String Reverse Test", function(){
+	equal( typeof reverseString, 'function', 'Must contain reverseString function');
+	ok( reverseString("Reid"),"deiR", "Expected deiR as result, test result was: " + reverseString("Reid"));
+});
