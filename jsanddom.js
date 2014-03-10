@@ -13,7 +13,7 @@
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          var minValue = values[0];
-         for(i=1; i<values.length; i++){
+         for(var i = 1; i < values.length; i++){
 	         if(values[i] < minValue){
 		         minValue = values[i];
 	         }
@@ -23,7 +23,13 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+         var tempVals = [];
+         for (var i = 0; i < values.length; i++){
+	         if(tempVals.indexOf(values[i]) == -1){
+		         tempVals.push(values[i]);
+	         }
+         }
+         return tempVals;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
