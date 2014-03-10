@@ -63,3 +63,9 @@ test("Sum Test", 2, function(){
 	equal( typeof sum, 'function', 'Must contain sum function');
 	ok( sum(1, 1, 2, 3, 5, 7), 19, "Expected 19, test result was: " + sum(1, 1, 2, 3, 5, 7));
 });
+
+module("Only White Space Unit Test");
+test("Only White Space Test", 2, function(){
+	equal( typeof isOnlyWhitespace, 'function', 'Must contain isOnlyWhitespace function');
+	ok( isOnlyWhitespace(""), true, 'Expected true, test result was: ' + isOnlyWhitespace(""));
+});
