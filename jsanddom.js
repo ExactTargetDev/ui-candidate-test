@@ -100,7 +100,11 @@
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         if(sourceStr.trim() == ""){
+	         return true;
+         } else {
+	         return false;
+         }
      }
 
      // write an example of a javascript closure
