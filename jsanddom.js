@@ -214,6 +214,22 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     $(document).ready(function (){
+	     $("#div1").append($("<select></select>").attr("id","names"));
+	     $("#div1").append($("<button></button>").attr("id", "output").text('Output to Console'));
+	     options = ['Reid', 'George', 'Sally', 'Sam', 'Henry'];
+		 valueOfOptions = 0;
+	     $.each(options, function(i, option){
+		     $("#names").append("<option value = " + valueOfOptions + ">" + option +"</option>");
+		     valueOfOptions++;
+	     })
+	     $("#output").click(function(){
+	     	$("#names option").each(function(){
+		 		console.log($(this).text() + " has the value of " + $(this).val()); 
+		 	});
+	     });
+	     
+     });
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
