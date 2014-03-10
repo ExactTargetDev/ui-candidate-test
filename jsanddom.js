@@ -266,5 +266,60 @@
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
+     var foobar = document.getElementById("foobar");
+     var list = document.createElement("ol");
+     
+     for (i = 1; i < 4; i++){
+	     var checkbox = document.createElement("input");
+		 checkbox.type = 'checkbox';
+		 checkbox.className = 'check';
+		 checkbox.id = 'cb' + i;
+		 
+		 var label = document.createElement('label');
+		 label.htmlFor = 'cb' + i;
+		 label.appendChild(document.createTextNode('No. ' + i));
+		 
+		  list.appendChild(label);
+		  list.appendChild(checkbox);
+		 
+	 }
+	
+	 var checkAllLink = document.createElement("a");
+	 var checkAllText = document.createTextNode("Check all");
+	 checkAllLink.onclick = checkAll;
+	 checkAllLink.href = "#";
+	 checkAllLink.appendChild(checkAllText);
+	 
+	 var uncheckAllLink = document.createElement("a");
+	 var uncheckAllText = document.createTextNode("Uncheck all");
+	 uncheckAllLink.onclick = uncheckAll;
+	 uncheckAllLink.href = "#";
+	 uncheckAllLink.appendChild(uncheckAllText);
+	 
+	 var br = document.createElement("br");
+	 	 
+	 foobar.appendChild(list);
+	 foobar.appendChild(checkAllLink);
+	 foobar.appendChild(br);
+	 foobar.appendChild(uncheckAllLink);
+	 
+	 function checkAll(){
+		 var boxArr = document.getElementsByTagName("input");
+		 for (var i = 0; i < boxArr.length; i++){
+			 if(boxArr[i].type == "checkbox"){
+			 	boxArr[i].checked = true;
+			 }
+		 }
+	 }
+	 
+	  function uncheckAll(){
+		 var boxArr = document.getElementsByTagName("input");
+		 for (var i = 0; i < boxArr.length; i++){
+			 if(boxArr[i].type == "checkbox"){
+			 	boxArr[i].checked = false;
+			 }
+		 }
+	 }
+	 
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
