@@ -19,8 +19,9 @@ test("String Reverse Test", function(){
 });
 
 module("Minimum Value Unit Test");
-test("Minimum Value Test", 2, function(){
+test("Minimum Value Test", function(){
 	equal( typeof findMinValue, 'function', 'Must contain findMinValue function');
-	ok(findMinValue(), 1, "Expected 1 as result, test result was:" + findMinValue());
+	var x = [3, 4, 6, 1, 2, 9, 7, 4, 5];
+	ok( findMinValue(x), 1, "Expected 1 as result, test result was:" + findMinValue(x));
 	
 });
