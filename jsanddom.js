@@ -248,18 +248,21 @@
 	     $("div:has(div:has(a))").click(function(){
 		    console.log("fifth selector works"); 
 	     });
-      });
-     
-     /*
-<div id="foo" class="bar" style="margin-top:10px;">
-	  <div id="fizz" class="buzz">
-	    <a class="link" href="#">sample anchor</a>
-	  </div>
-	</div>
-*/
+		 
+
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     	var listItems = [];
+     	for (i = 0; i < 5; i++){
+	     	listItems.push(Math.ceil(99*(Math.random())));
+     	}
+     	
+     	$.each(listItems, function(i, item){
+		     $("#list1").append("<li>" + item +"</li>");
+	     })
+	 	
+      }); 
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
