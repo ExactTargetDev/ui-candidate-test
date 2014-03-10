@@ -125,6 +125,45 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     
+     var person = [
+		     {	
+			     "firstName":"Reid", 
+			     "lastName":"Bishop", 
+			     "city":"Winona Lake", 
+			     "state":"IN", 
+			     "zip": 46590, 
+			     "phoneNumbers":{
+			     	"home":5743723035,
+			     	"work":7652855095,
+			     	"cell":5745278811
+				 }
+		     },
+		     {	
+			     "firstName":"John", 
+			     "lastName":"Doe", 
+			     "city":"Fishers", 
+			     "state":"IN", 
+			     "zip": 46037, 
+			     "phoneNumbers":{
+			     	"home":3179920143,
+			     	"work":3173948219,
+			     	"cell":3172430592
+				 }
+		     },
+		     {	
+			     "firstName":"Maggie", 
+			     "lastName":"Smith", 
+			     "city":"Muncie", 
+			     "state":"IN", 
+			     "zip": 47304, 
+			     "phoneNumbers":{
+			     	"home":7652345039,
+			     	"work":7652855095,
+			     	"cell":7652105320
+				 }
+		     }
+	 ];
 
 
      // Create a javascript object (DataTable) with the following:
