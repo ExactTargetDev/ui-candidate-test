@@ -57,3 +57,9 @@ test("Split String Test", 2, function(){
 	equal ( typeof splitListStrUsingComma, 'function', 'Must contain splitListStrUsingComma function');
 	ok ( splitListStrUsingComma('The, quick, brown, fox jumped over'), ['The', 'quick', 'brown', 'fox jumped over'], "Expected ['The', 'quick', 'brown', 'fox jumped over'], test result was: " + splitListStrUsingComma('The, quick, brown, fox jumped over'));
 });
+
+module("Sum Unit Test");
+test("Sum Test", 2, function(){
+	equal( typeof sum, 'function', 'Must contain sum function');
+	ok( sum(1, 1, 2, 3, 5, 7), 19, "Expected 19, test result was: " + sum(1, 1, 2, 3, 5, 7));
+});
