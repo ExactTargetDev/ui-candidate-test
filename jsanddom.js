@@ -108,6 +108,14 @@
      }
 
      // write an example of a javascript closure
+     function helloWorld(name) {
+	     var hello = "Hello World and Hello " + name + "!";
+	     var alertTheWorld = function(){ console.log(hello); }
+	     return alertTheWorld;
+     }
+     
+     log = helloWorld("Reid");
+     log();
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
