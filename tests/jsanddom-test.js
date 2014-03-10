@@ -32,6 +32,7 @@ test("Distinct Values Test", 2, function(){
 	var x = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
 	ok( findDistinctValues(x), [3, 5, 7, 20, 01], "Expected [3, 5, 7, 20, 01], test result was: " + findDistinctValues(x));
 });
+
 module("Remove Fruit Unit Test");
 test("Remove Fruit Test", 2, function(){
 	equal( typeof removeFruits, 'function', 'Must contain removeFruits function');
@@ -39,6 +40,7 @@ test("Remove Fruit Test", 2, function(){
 	var y = ['pear', 'banana'];
 	ok( removeFruits(x, y), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], "Expected ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], test result was: " + removeFruits(x, y));
 });
+
 module("Push Onto Array Unit Test");
 test("Push Onto Array Test", 3, function(){
 	equal( typeof pushOntoArray, 'function', 'Must contain pushOntoArray function');
@@ -48,4 +50,10 @@ test("Push Onto Array Test", 3, function(){
 	ok ( pushOntoArray(x, y), [1, 2, 3, 4, 5, 6], "Expected [1, 2, 3, 4, 5, 6], test result was: " + pushOntoArray(x, y));
 	ok ( pushOntoArray(x, z), [1, 2, 3, 4, 5, 7, 8, 9], "Expected [1, 2, 3, 4, 5, 7, 8, 9], test result was: " + pushOntoArray(x, z));
 
+});
+
+module("Split Strings Using Commas Unit Test");
+test("Split String Test", 2, function(){
+	equal ( typeof splitListStrUsingComma, 'function', 'Must contain splitListStrUsingComma function');
+	ok ( splitListStrUsingComma('The, quick, brown, fox jumped over'), ['The', 'quick', 'brown', 'fox jumped over'], "Expected ['The', 'quick', 'brown', 'fox jumped over'], test result was: " + splitListStrUsingComma('The, quick, brown, fox jumped over'));
 });
