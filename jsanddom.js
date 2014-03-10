@@ -229,10 +229,34 @@
 		 	});
 	     });
 	     
-     });
+    
 
-     // Write 5 different jQuery selectors to retrieve the
-     // sample anchor in the markup below.
+	     // Write 5 different jQuery selectors to retrieve the
+	     // sample anchor in the markup below.
+	     $(".link").click(function(){
+		    console.log("first selector works");
+	     });
+	     $("a").click(function(){
+		     console.log("second selector works");
+	     })
+	     $("#fizz a").click(function(){
+		     console.log("third selector works");
+	     });
+	     $("#foo div a").click(function(){
+		     console.log("fourth selector works");
+	     });
+	     $("div:has(div:has(a))").click(function(){
+		    console.log("fifth selector works"); 
+	     });
+      });
+     
+     /*
+<div id="foo" class="bar" style="margin-top:10px;">
+	  <div id="fizz" class="buzz">
+	    <a class="link" href="#">sample anchor</a>
+	  </div>
+	</div>
+*/
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
