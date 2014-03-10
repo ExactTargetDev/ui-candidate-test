@@ -177,6 +177,39 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     
+     function DataTable(){
+	     columns = ['year', 'month'];
+	     rows = [[2014, 3], [2014, 2]];
+	     this.addColumns = addColumns;
+	     function addColumns(){
+	     	for (var i = 0; i < arguments.length; i++){
+	        	columns.push(arguments[i]);
+			}
+	     }
+	     this.addRows = addRows;
+	     function addRows(rowValues){
+		     rows.push(rowValues);
+	     }
+	     this.getData = getData;
+	     function getData(){
+		     var data = [];
+		     for(var i = 0; i < rows.length; i++){
+		     	for(var j = 0; j < columns.length; j++){
+			     	data.push(columns[j] + "#" + rows[i][j]);
+		     	}
+			 }
+		     json = JSON.stringify(data)
+		     console.log(json);
+		     return json;
+
+	     }
+     }
+     
+     var test = new DataTable();
+     test.addRows([2013,4]);
+     test.getData();
+     
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
