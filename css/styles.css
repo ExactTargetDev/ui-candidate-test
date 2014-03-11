@@ -86,8 +86,11 @@
 }
 .pulse-options{
 	display: inline-block;
+	position: static;
+	float: left;
 	width:13%;
-	margin-left: 4%;
+	margin-left: 4%
+	
 }
 .pulse-option-box{
 	height:40%;
@@ -97,4 +100,6 @@
 }
 #foursquare-img{
 	width:100%;
+	margin: 0;
+	padding: 0;
 }

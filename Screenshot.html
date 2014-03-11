@@ -2,7 +2,7 @@
 	<head>
 		<link rel="stylesheet" href="css/styles.css" type="text/css">
 		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-		<!-- <script src="js/utils" type=text/javascript></script> -->
+		<script src="utils.js" type=text/javascript></script>
 	</head>
 	<body>
 		<div id="header">
@@ -20,18 +20,18 @@
 		<div class="page-content" id = "IMH">
 			<div id = "logo"><img id="logoImg" src="img/imh-logo.png" /></div>
 			<div id = "firstSection">
-				<a class ="imh-links"><img src="img/email.png" /><span>ExactTarget Email</span></a>
-				<a class ="imh-links"><img src="img/mobile.png" /><span>ExactTarget Mobile</span></a>
-				<a class ="imh-links"><img src="img/co.png" /><span>CoTweet Social</span></a>
-				<a class ="imh-links"><img src="img/web.png" /><span>ExactTarget Sites</span></a>
+				<a class ="imh-links" id="email"><img src="img/email.png" /><span>ExactTarget Email</span></a>
+				<a class ="imh-links" id="mobile"><img src="img/mobile.png" /><span>ExactTarget Mobile</span></a>
+				<a class ="imh-links" id="coTweet-social"><img src="img/co.png" /><span>CoTweet Social</span></a>
+				<a class ="imh-links" id="sites"><img src="img/web.png" /><span>ExactTarget Sites</span></a>
 			</div>
 			<div id = "secondSection">
-				<a class ="imh-links"><img src="img/settings.png" /><span>Automation Studio</span></a>
-				<a class ="imh-links"><img src="img/group.png" /><span>Audience Builder</span></a>
-				<a class ="imh-links"><img src="img/data.png" /><span>Report Builder</span></a>
+				<a class ="imh-links" id="automation-stuido"><img src="img/settings.png" /><span>Automation Studio</span></a>
+				<a class ="imh-links" id="audience-builder"><img src="img/group.png" /><span>Audience Builder</span></a>
+				<a class ="imh-links" id="report-builder"><img src="img/data.png" /><span>Report Builder</span></a>
 			</div>
 			<div id = "lastSection">
-				<a class ="imh-links"><img src="img/carrot.png" /><span>Partner Applications</span></a>
+				<a class ="imh-links" id="partner-applications"><img src="img/carrot.png" /><span>Partner Applications</span></a>
 			</div>
 		</div>
 		<div class="page-content" id = "right-side-content">
@@ -43,9 +43,9 @@
 					<div id = "followers">
 						<span>Followers</span>
 						<div class="pulse-option-box">
-							<p> 310 </p>
-							<p> added today </p>
-							<p> 2,393,905 total </p>
+							<span> 310 </span>
+							<span> added today </span>
+							<span> 2,393,905 total </span>
 						</div>
 					</div>
 				</div>
@@ -53,9 +53,9 @@
 					<div id = "fan">
 						<span>Fan</span>
 						<div class="pulse-option-box">
-							<p> 73 </p>
-							<p> added today </p>
-							<p> 91,675 total </p>
+							<span> 73 </span>
+							<span> added today </span>
+							<span> 91,675 total </span>
 						</div>
 					</div>
 				</div>
@@ -63,9 +63,9 @@
 					<div id = "subscribers">
 						<span>Subscribers</span>
 						<div class="pulse-option-box">
-							<p> 56 </p>
-							<p> added today </p>
-							<p> 189,405 total </p>
+							<span> 56 </span>
+							<span> added today </span>
+							<span> 189,405 total </span>
 						</div>
 					</div>
 				</div>
@@ -83,9 +83,9 @@
 					<div id = "landing-pages">
 						<span>Landing Pages</span>
 						<div class ="pulse-option-box">
-							<p> Visitors Today </p>
-							<p> 397/355 </p>
-							<p> Soulja Boy V.I.P </p>
+							<span> Visitors Today </span>
+							<span> 397/355 </span>
+							<span> Soulja Boy V.I.P </span>
 						</div>
 					</div>
 				</div>
