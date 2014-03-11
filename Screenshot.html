@@ -18,35 +18,34 @@
 		</div>
 		
 		<div class="page-content" id = "IMH">
-			<div id = "logo"><img id="logoImg" src="img/imh-logo.png" /></div>
-			<div id = "firstSection">
-				<a class ="imh-links" id="email"><img src="img/email.png" /><span>ExactTarget Email</span></a>
-				<a class ="imh-links" id="mobile"><img src="img/mobile.png" /><span>ExactTarget Mobile</span></a>
-				<a class ="imh-links" id="coTweet-social"><img src="img/co.png" /><span>CoTweet Social</span></a>
-				<a class ="imh-links" id="sites"><img src="img/web.png" /><span>ExactTarget Sites</span></a>
+			<div id = "container-imh">
+				<div id = "logo"><img id="logoImg" src="img/imh-logo.png" /></div>
+				<div id = "firstSection">
+					<a class ="imh-links" id="email"><img src="img/email.png" /><span>ExactTarget Email</span></a>
+					<a class ="imh-links" id="mobile"><img src="img/mobile.png" /><span>ExactTarget Mobile</span></a>
+					<a class ="imh-links" id="coTweet-social"><img src="img/co.png" /><span>CoTweet Social</span></a>
+					<a class ="imh-links" id="sites"><img src="img/web.png" /><span>ExactTarget Sites</span></a>
+				</div>
+				<div id = "secondSection">
+					<a class ="imh-links" id="automation-stuido"><img src="img/settings.png" /><span>Automation Studio</span></a>
+					<a class ="imh-links" id="audience-builder"><img src="img/group.png" /><span>Audience Builder</span></a>
+					<a class ="imh-links" id="report-builder"><img src="img/data.png" /><span>Report Builder</span></a>
+				</div>
+				<div id = "lastSection">
+					<a class ="imh-links" id="partner-applications"><img src="img/carrot.png" /><span>Partner Applications</span></a>
+				</div>
 			</div>
-			<div id = "secondSection">
-				<a class ="imh-links" id="automation-stuido"><img src="img/settings.png" /><span>Automation Studio</span></a>
-				<a class ="imh-links" id="audience-builder"><img src="img/group.png" /><span>Audience Builder</span></a>
-				<a class ="imh-links" id="report-builder"><img src="img/data.png" /><span>Report Builder</span></a>
-			</div>
-			<div id = "lastSection">
-				<a class ="imh-links" id="partner-applications"><img src="img/carrot.png" /><span>Partner Applications</span></a>
-			</div>
-		</div>
-		<div id = "hidden">
-			<span>Hello</span>
 		</div>
 		<div class="page-content" id = "right-side-content">
 			<div id = "calendar"><img id="calendar-img" src ="img/calendar.png" /></div>
 			<div id = "pulse">
-				<img src="img/pulseLogo.png"/>
+				<img id = "pulse-logo-img" src="img/pulseLogo.png"/>
 				<br/>
 				<div class ="pulse-options">
 					<div id = "followers">
-						<span>Followers</span>
+						<span style="margin-left: 25%;">Followers</span>
 						<div class="pulse-option-box">
-							<span> 310 </span>
+							<span class="pulse-blue-num"> 310 </span>
 							<span> added today </span>
 							<span> 2,393,905 total </span>
 						</div>
@@ -54,9 +53,9 @@
 				</div>
 				<div class ="pulse-options">	
 					<div id = "fan">
-						<span>Fan</span>
+						<span style="margin-left: 25%;">Fan</span>
 						<div class="pulse-option-box">
-							<span> 73 </span>
+							<span class="pulse-blue-num"> 73 </span>
 							<span> added today </span>
 							<span> 91,675 total </span>
 						</div>
@@ -64,9 +63,9 @@
 				</div>
 				<div class ="pulse-options">
 					<div id = "subscribers">
-						<span>Subscribers</span>
+						<span style="margin-left: 25%;">Subscribers</span>
 						<div class="pulse-option-box">
-							<span> 56 </span>
+							<span class="pulse-blue-num"> 56 </span>
 							<span> added today </span>
 							<span> 189,405 total </span>
 						</div>
@@ -74,20 +73,24 @@
 				</div>
 				<div class ="pulse-options" id ="medium-view">
 					<div id = "foursquare">
-						<span>foursquare</span>
+						<span style="margin-left: 25%;">foursquare</span>
 						<div class ="pulse-option-box" id = "medium-view-box">
-							<span>Worldwide Checkins</span>
-							<span>3,905</span>
+							<div id="foursquare-span">
+								<span style="float: left;">Worldwide Checkins</span>
+								<span style="float: right;">3,905</span>
+							</div>
 							<img id="foursquare-img" src ="img/foursquare.png" />
 						</div>
 					</div>
 				</div>
 				<div class ="pulse-options">
 					<div id = "landing-pages">
-						<span>Landing Pages</span>
+						<span style="margin-left: 15%;">Landing Pages</span>
 						<div class ="pulse-option-box">
 							<span> Visitors Today </span>
-							<span> 397/355 </span>
+							<div id="landing-span">
+								<span class="pulse-blue-num"> 397 </span><span> / 355 </span>	
+							</div>
 							<span> Soulja Boy V.I.P </span>
 						</div>
 					</div>

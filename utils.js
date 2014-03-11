@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	$("#hidden").hide();
 	$("#help").click(function(){
 		if($("#help-dialog").is(":visible")){
+			$(this).text("Help");
 			$(".help-link").each(function(){
 				$(this).remove()
 			});
@@ -19,6 +19,7 @@ $(document).ready(function(){
 					});
 				});
 			});
+			$(this).text("Close");
 			$("#help-dialog").show();
 		}
 	});
@@ -26,10 +27,20 @@ $(document).ready(function(){
 			alert("The element you clicked has an ID of: " + $(this).attr("id"));
 	});
 	$(".imh-links").mouseover(function(){
-		$("#hidden").show();
+		$(this).css({
+			'opacity': 0.5,
+			'-khtml-opacity': 0.5,
+			'-ms-filter': 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)',
+			'background-color': '#faa12e'
+		});
 	});
 	$(".imh-links").mouseout(function(){
-		$("#hidden").hide();
+		$(this).css({
+			'opacity': 1.0,
+			'-khtml-opacity': 1.0,
+			'-ms-filter': 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)',
+			'background-color': ''
+		});
 	});
 	$(".pulse-option-box").click(function(){
 		$(".pulse-options").each(function(){
