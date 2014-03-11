@@ -51,6 +51,7 @@ html,body{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+	behavior: url(PIE.htc)
 }
 #container-imh{
 	width:100%;
@@ -69,6 +70,7 @@ html,body{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+	behavior: url(PIE.htc)
 }
 
 .imh-links{
@@ -97,6 +99,7 @@ html,body{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+	behavior: url(PIE.htc)
 }
 
 #right-side-content{
@@ -112,29 +115,39 @@ html,body{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+	behavior: url(PIE.htc)
 }
 #pulse-logo-img{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+	behavior: url(PIE.htc)
+	margin-bottom: 5%;
 }
 .pulse-options{
 	display: inline-block;
 	position: static;
 	float: left;
 	width:17%;
-	margin-left: 1%
+	margin-left: 1%;
+	text-align: center;
+	margin-top: 3%;
 	
+}
+
+.pulse-options > div > span{
+	color: 888888;
 }
 
 .pulse-option-box{
 	height:40%;
 	width: 100%;
-	background-color: #f0f4f6;
+	background-color: #ebf1f5;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	text-align: center;
+	behavior: url(PIE.htc)
+	text-align: center; 
 	
 }
 .pulse-option-box span{
@@ -142,7 +155,14 @@ html,body{
 	margin-left: auto;
 	margin-right: auto;
 	color: 888888;
+	margin-bottom: 10%;
+	font-size: 19px;
 }
+
+.small-span-text{
+	font-size: 16px !important;
+}
+
 .pulse-blue-num{
 	color: #34bbf3 !important;
 	margin-left: auto;
@@ -171,6 +191,10 @@ html,body{
 
 #medium-view-box{
 	height:50%;
+	background-color: #e1f3fe;
+	-webkit-box-shadow: 0px 26px 36px -5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 26px 36px -5px rgba(0,0,0,0.75);
+	box-shadow: 0px 26px 36px -5px rgba(0,0,0,0.75);
 }
 
 .help-link{
@@ -199,4 +223,5 @@ html,body{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+	behavior: url(PIE.htc)
 }
