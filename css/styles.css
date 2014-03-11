@@ -1,0 +1,100 @@
+#header{
+	height:4%;
+	background-color: #363f45;
+	margin: 0;
+	width: 100%;
+}
+
+.header-items{
+	display: inline-block;
+}
+
+#right-header{
+	float: left;
+}
+
+#left-header{
+	float: right;
+}
+
+.header-links{
+	color: #99cce1;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.header-text{
+	color: #eeeeee;
+	font-size: 11px;
+}
+
+.page-content{
+	display: inline-block;
+	position: static;
+	float: left;
+}
+
+#IMH{
+	margin-top: 2%;
+	color: #f4f4f5;
+	width: 13.5%;
+	height: 60%;
+	border-width:1px;
+	border-style:solid;
+	border-color: #d2d7cd;
+}
+#calendar {
+	margin-left: 8%;
+}
+
+#logo{
+	width: 100%;
+}
+#logoImg{
+	width: 100%;
+}
+
+.imh-links{
+	display: block;
+}
+#firstSection{
+	border-bottom-color: #d2d7cd;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+#secondSection{
+	border-bottom-color: #d2d7cd;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+#calendar{
+	width:100%;
+}
+#calendar-img{
+	width:100%;
+}
+
+#right-side-content{
+	width:80%;
+}
+#pulse{
+	margin-left: 8%;
+	margin-top:4%;
+	width: 100%;
+	height: 50%;
+	background-color: #c0cdd6;
+}
+.pulse-options{
+	display: inline-block;
+	width:13%;
+	margin-left: 4%;
+}
+.pulse-option-box{
+	height:40%;
+	width: 100%;
+	background-color: #f0f4f6;
+	
+}
+#foursquare-img{
+	width:100%;
+}
