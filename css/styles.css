@@ -99,11 +99,14 @@ html,body{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	behavior: url(PIE.htc)
+	behavior: url(PIE.htc);
 }
 
 #right-side-content{
 	width:80%;
+}
+#right-side-content > div{
+	display: block;
 }
 #pulse{
 	margin-left: 6%;
@@ -115,14 +118,18 @@ html,body{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	behavior: url(PIE.htc)
+	behavior: url(PIE.htc);
 }
-#pulse-logo-img{
+#pulse-header img{
+	display: inline-block;
+	position: static;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	behavior: url(PIE.htc)
-	margin-bottom: 5%;
+	behavior: url(PIE.htc);
+}
+.pulse-options.first{
+	margin-left: -100px !important;
 }
 .pulse-options{
 	display: inline-block;
@@ -131,8 +138,7 @@ html,body{
 	width:17%;
 	margin-left: 1%;
 	text-align: center;
-	margin-top: 3%;
-	
+	margin-top: 6%;
 }
 
 .pulse-options > div > span{
@@ -146,8 +152,9 @@ html,body{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	behavior: url(PIE.htc)
 	text-align: center; 
+	behavior: url(PIE.htc);
+	
 	
 }
 .pulse-option-box span{
@@ -223,5 +230,5 @@ html,body{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	behavior: url(PIE.htc)
+	behavior: url(PIE.htc);
 }
