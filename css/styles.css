@@ -36,7 +36,7 @@
 
 #IMH{
 	margin-top: 2%;
-	color: #f4f4f5;
+	background-color: #f4f4f5;
 	width: 13.5%;
 	height: 60%;
 	border-width:1px;
@@ -102,4 +102,43 @@
 	width:100%;
 	margin: 0;
 	padding: 0;
+}
+#hidden{
+	width: 50px;
+	height: 50px;
+	color: #f3b242;
+	z-index: 400;
+}
+
+#medium-view{
+	width: 20%;
+}
+
+#medium-view-box{
+	height:50%;
+}
+
+.help-link{
+	display: block;
+	position: absolute;
+	margin-left: 1%;
+	z-index: 5002;
+	float:left;
+	text-decoration: none;
+	color:rgb(33,232,70);
+
+}
+
+#help-dialog{
+	display: none;
+	opacity: 0.9;
+	-khtml-opacity: 0.9;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+	height: 20%;
+	width : 30%;
+	color : green;
+	margin-top : 0%;
+	margin-left : 70%;
+	background-color : #2d2d2e;
+	z-index : 5001;
 }
