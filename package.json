@@ -1,0 +1,23 @@
+{
+  "name": "ettest",
+  "version": "1.0.65",
+  "description": "Bens Grunt Task",
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.3",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-nodeunit": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-svgmin": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-shell": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-newer": "*",
+    "matchdep": "~0.3.0",
+    "grunt-grunticon": "^1.0.0"
+  }
+}
