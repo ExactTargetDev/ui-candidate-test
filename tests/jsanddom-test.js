@@ -30,7 +30,7 @@ test( "Find Min Value Test", 2, function() {
 test( "Find Distinct Value Test", 2, function() {
     equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
 	
-	var result = findDistinctValue([1, 2, 3, 3, 4, 4, 4, 5, 6, 7, 8, 9, 0, 2, 6, 1, 7]);
+	var result = findDistinctValues([1, 2, 3, 3, 4, 4, 4, 5, 6, 7, 8, 9, 0, 2, 6, 1, 7]);
 	deepEqual( result, [1, 2, 3, 4, 5, 6, 7, 8, 9, 0], 'Expected [1, 2, 3, 4, 5, 6, 7, 8, 9, 0], the result was: ' + result );
 });
 
