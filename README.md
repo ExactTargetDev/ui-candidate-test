@@ -1,6 +1,6 @@
 # ExactTarget UI Candidates 
 
-This is the candaidate test for ExactTarget UI developers.
+This is the candidate test for ExactTarget UI developers.
 
 Read *ALL* bullet points.
 
@@ -8,7 +8,7 @@ Please include "ATTENTION: &lt;ET Contacts Name&gt;" in your pull request
 
 ## Here are the guidelines for the test:
 + Be sure to read all the bullet points bellow.
-+ Please take no longer than 48 hours from first commit (see meta.txt bellow) unless otherwise requested.
++ Please take no longer than 48 hours from first commit (see meta.txt below) unless otherwise requested.
 + Fork this repository, do your work, commit early/often with descriptive messages. When finished, send a pull request.
 + The "JsAndDom.*" (html and js) files have a series of questions/tasks for you to complete.
 + The "UI_CandidateTest_IMH_dashboard.*" files (png and psd) are for you to replicate.
