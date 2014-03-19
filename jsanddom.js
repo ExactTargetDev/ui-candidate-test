@@ -9,14 +9,12 @@
         return str.split("").reverse().join("");
      }
 
-     // Write a function that takes an array of numbers and returns the minimum value
-     function findMinValue(values) {
-        var min = null;
-		for(var i = 0; i < values.length; i++) {
-			if(min === null || values[i] < min) min = values[i];
-		}
-		return min;
-     }
+    // Write a function that takes an array of numbers and returns the minimum value
+    function findMinValue(values) {
+		return values.reduce(function(a, b) {
+			return a < b ? a : b;
+		});
+    }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
