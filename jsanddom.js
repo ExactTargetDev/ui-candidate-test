@@ -190,3 +190,18 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+	$(myArray).each(function( i, a ) {
+		var $div = $("#foobar"),
+		    $label = $("<label>").css("display","block").text(a),
+		    $chk = $('<input type="checkbox" name="author" value="' + a + '">');
+		$label.append( $chk ).appendTo( $div );
+	});
+	$('<a href="#">').text("select all").css("margin-right","10px").click(function() {
+		$("input[name=author]").attr("checked", "checked");
+		return false;
+	}).appendTo( $("#foobar") );
+	
+	$('<a href="#">').text("select none").click(function() {
+		$("input[name=author]").attr("checked", null);
+		return false;
+	}).appendTo( $("#foobar") );
