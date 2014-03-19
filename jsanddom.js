@@ -83,6 +83,14 @@
     }
 
      // write an example of a javascript closure
+	 function doStuff() {
+		var name = "Michael";
+		return {
+			log: function() { console.log(name); }
+		}
+	 }
+	 doStuff().log();
+	 console.log("doStuff.name is undefined: " + (doStuff().name === undefined));
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -92,6 +100,22 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+	 var people = [
+		{ "firstName": "Daffy",
+		  "lastName": "Duck",
+		  "city": "Indianapolis",
+		  "state": "IN",
+		  "zip": "46204",
+		  "phone": { "home": "317-555-1234", "work": "317-555-3322", "mobile": "" }
+		},
+		{ "firstName": "Wile",
+		  "lastName": "Coyote",
+		  "city": "Acmeville",
+		  "state": "UT",
+		  "zip": "66789",
+		  "phone": { "home": "", "work": "1-800-ROCKETS", "mobile": "1-800-555-BEEP" }
+		}
+	 ];
 
 
      // Create a javascript object (DataTable) with the following:
@@ -105,6 +129,28 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+	function DataTable() {
+		var columns = [],
+		    rows = [];
+		this.addColumns = function() {
+			columns.push.apply(columns, [].slice.call(arguments));
+		};
+		this.addRow = function() {
+			var row = {};
+			for(var i = 0; i < Math.min( columns.length, arguments.length); i++) {
+				row[columns[i]] = arguments[i];
+			};
+			rows.push( row );
+		};
+		this.getData = function() {
+			return JSON.stringify(rows);
+		};
+	};
+	var dt = new DataTable();
+	dt.addColumns('column1', 'column2', 'column3');
+    dt.addRow('value1A', 'value1B', 'value1C');
+    dt.addRow('value2A', 'value2B', 'value2C');
+	console.log(dt.getData());
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
