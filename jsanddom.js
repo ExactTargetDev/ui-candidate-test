@@ -47,9 +47,11 @@
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
-     function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
-     }
+    function removeFruits(fruits, fruitsToRemove) {
+		var re = new RegExp(fruitsToRemove.join(',|') + ',', 'g');
+	
+		return fruits = fruits.join().replace(re, '').split(',');
+    }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
