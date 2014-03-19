@@ -1,3 +1,24 @@
 Start Time: 1395126915
 
-Added a grunt utility
+I have a grunt utility installed in the root of the folder.
+
+It is a simple utility that minifies css / js and creates a css sprite in different versions for all images located in the images directory.
+
+if you would like to run the process follow these instructions. (if you have grunt installed skip to #3)
+
+1. Download node.js from their website
+2. install grunt globally from the command line as administrator. (npm install -g grunt-cli)
+3. navigate to the root directory of the project (ex. c:/ui-candidate-test)
+4. run the following from the CMD: npm install (this installs all packages required for grunt to run)
+5. type grunt and see it go
+
+I have completed all of the screenshot.html but was not able to complete all of the jsanddom portion of the assesment due to time constraints between work and family and the 48 hour max.
+(work 9-7 or more every day)
+I know realize I should have done this over a weekend when I had more time to work on this.
+
+Total time spent on test - 19320
+
+Browsers Testing:
+IE8+
+Chrome
+Firefox

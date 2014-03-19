@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <title>ExactTarget Interactive Marketing Hub</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/website.min.css">
     <script src="js/ext/modernizr.custom.70807.js"></script>
     <!--[if gte IE 9]>
@@ -10,18 +11,30 @@
         .gradient {
             filter: none;
         }
-
-        /*filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
-    M11=1.5320888862379554, M12=-1.2855752193730787,
-    M21=1.2855752193730796, M22=1.5320888862379558);*/
     </style>
+
     <![endif]-->
-    		<script>
-			/* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
-window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.createElementNS||!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||window.opera&&-1===navigator.userAgent.indexOf("Chrome")),o=function(o){var r=t.document.createElement("link"),a=t.document.getElementsByTagName("script")[0];r.rel="stylesheet",r.href=e[o&&n?0:o?1:2],a.parentNode.insertBefore(r,a)},r=new t.Image;r.onerror=function(){o(!1)},r.onload=function(){o(1===r.width&&1===r.height)},r.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
-			grunticon(["css/s.data.svg.css", "css/s.data.png.css", "css/s.fallback.css"]);
-		</script>
-	<noscript><link href="css/s.fallback.css" rel="stylesheet"></noscript>
+    <script src="js/ext/respond.src.js"></script>
+    <script>
+        /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+        window.grunticon = function (e) {
+            if (e && 3 === e.length) {
+                var t = window, n = !(!t.document.createElementNS || !t.document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect || !document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1") || window.opera && -1 === navigator.userAgent.indexOf("Chrome")), o = function (o) {
+                    var r = t.document.createElement("link"), a = t.document.getElementsByTagName("script")[0];
+                    r.rel = "stylesheet", r.href = e[o && n ? 0 : o ? 1 : 2], a.parentNode.insertBefore(r, a)
+                }, r = new t.Image;
+                r.onerror = function () {
+                    o(!1)
+                }, r.onload = function () {
+                    o(1 === r.width && 1 === r.height)
+                }, r.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+            }
+        };
+        grunticon(["css/s.data.svg.css", "css/s.data.png.css", "css/s.fallback.css"]);
+    </script>
+    <noscript>
+        <link href="css/s.fallback.css" rel="stylesheet">
+    </noscript>
 </head>
 <body>
 <header class="gradient">
@@ -40,7 +53,8 @@ window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.cr
                                 <div class="modal-dialog modal-sm">
                                     <div class="modal-content">
                                         <div class="modal-body">
-                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">&times;</button>
                                             <div>
                                                 <ul></ul>
                                             </div>
@@ -112,7 +126,7 @@ window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.cr
                 </li>
                 <hr>
                 <li>
-                    <div class="imh-icon-bg center-container is-table">
+                    <div class="imh-icon-bg gradient center-container is-table">
                         <div class="table-cell">
                             <div class="center-block">
                                 <i class="automation-icon"></i>
@@ -122,7 +136,7 @@ window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.cr
                     <span>Automation Studio</span>
                 </li>
                 <li>
-                    <div class="imh-icon-bg center-container is-table">
+                    <div class="imh-icon-bg gradient center-container is-table">
                         <div class="table-cell">
                             <div class="center-block">
                                 <i class="audience-icon"></i>
@@ -132,7 +146,7 @@ window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.cr
                     <span>Audience Builder</span>
                 </li>
                 <li>
-                    <div class="imh-icon-bg center-container is-table">
+                    <div class="imh-icon-bg gradient center-container is-table">
                         <div class="table-cell">
                             <div class="center-block">
                                 <i class="builder-icon"></i>
@@ -143,7 +157,7 @@ window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.cr
                 </li>
                 <hr>
                 <li>
-                    <div class="partner-app center-container is-table">
+                    <div class="partner-app gradient center-container is-table">
                         <div class="table-cell">
                             <div class="center-block">
                                 <i class="arrow-right"></i>
@@ -189,12 +203,12 @@ window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.cr
 
                         <p class="pull-right">13</p>
                     </li>
-                    <li class="active">
+                    <li class="active gradient">
                         <p class="pull-left">Tue</p>
 
                         <p class="pull-right">14</p>
 
-                        <div>
+                        <div class="gradient">
                             <p>TODAY</p>
                         </div>
                     </li>
@@ -228,7 +242,7 @@ window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.cr
 
     </div>
     <div class="clearfix"></div>
-    <div class="pulse">
+    <div class="pulse gradient">
         <div class="pulse-logo"></div>
         <div class="pull-right pulse-icon-set">
             <i class="gear-icon"></i>
@@ -241,7 +255,7 @@ window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.cr
             <li>
                 <p class="exterior-text">Followers</p>
 
-                <div class="slider-content">
+                <div class="slider-content gradient">
                     <p class="title">310</p>
 
                     <p class="added">added today</p>
@@ -252,7 +266,7 @@ window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.cr
             <li>
                 <p class="exterior-text">Fan</p>
 
-                <div class="slider-content">
+                <div class="slider-content gradient">
                     <p class="title">73</p>
 
                     <p class="added">added today</p>
@@ -263,7 +277,7 @@ window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.cr
             <li>
                 <p class="exterior-text">Subscribers</p>
 
-                <div class="slider-content">
+                <div class="slider-content gradient">
                     <p class="title">56</p>
 
                     <p class="added">added today</p>
@@ -274,7 +288,7 @@ window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.cr
             <li>
                 <p class="exterior-text">foursquare</p>
 
-                <div class="slider-content" style="padding: 0">
+                <div class="slider-content gradient" style="padding: 0">
                     <div style="width: 100%;padding: 5px 10px">
                         <span class="pull-left small bold">Worldwide Checkins</span>
                         <span class="pull-right small bold">3,905</span>
@@ -285,7 +299,7 @@ window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.cr
             <li>
                 <p class="exterior-text">Landing Pages</p>
 
-                <div class="slider-content">
+                <div class="slider-content gradient">
                     <p class="total" style="padding-bottom: 5px">Visitors Today</p>
 
                     <p class="added"><span class="title">397</span> / 355</p>

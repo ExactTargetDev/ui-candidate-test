@@ -72,7 +72,7 @@ module.exports = function (grunt) {
                 }
             },
             css: {
-                src: ['<%=buildTempFolder%>/<%=cssDir%>/bootstrap.css', '<%=buildTempFolder%>/<%=cssDir%>/site.css'],
+                src: ['<%=buildTempFolder%>/<%=cssDir%>/site.css'],
                 dest: '<%=buildTempFolder%>/<%=cssDir%>/website.css'
             }
         },
