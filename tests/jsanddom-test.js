@@ -78,10 +78,10 @@ test( "Push Onto Array Test (Array)", 3, function() {
 test( "Split List Test", 3, function() {
     equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
 	
-	strictEqual( splitListStrUsingComma(''), [], 'Expected [], the result was: ' + splitListStrUsingComma('') );
+	deepEqual( splitListStrUsingComma(''), [], 'Expected [], the result was: ' + splitListStrUsingComma('') );
 	
 	var result = splitListStrUsingComma('one,two,three,four,five');
-	strictEqual( result, ['one', 'two', 'three', 'four', 'five'], "Expected ['one', 'two', 'three', 'four', 'five'], the result was: " + result );
+	deepEqual( result, ['one', 'two', 'three', 'four', 'five'], "Expected ['one', 'two', 'three', 'four', 'five'], the result was: " + result );
 });
 
 test( "Sum Test", function() {
