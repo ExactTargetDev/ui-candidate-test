@@ -155,12 +155,36 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+	$("<select/>")
+	    .attr("id", "superhero")
+		.append( $("<option>Batman</option>").val("batman") )
+	    .append( $("<option>Superman</option>").val("superman") )
+		.append( $("<option>Storm</option>").val("storm") )
+		.appendTo( $("#div1") );
+	$('<button type="button">Select</button>').click(function() {
+		var $s = $("#superhero"),
+		    el = $s.get(0),
+			opt = el.options[el.selectedIndex];
+		console.log( opt.value + ": " + opt.text );
+	}).appendTo( $("#div1") );
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+	function printOuterHtml( $elem ) {
+		console.log( $elem.clone().wrap('<div>').parent().html() );
+	};
+	printOuterHtml( $("#foo a") );
+	printOuterHtml( $("#fizz a") );
+	printOuterHtml( $(".bar .buzz .link") );
+	printOuterHtml( $("a.link") );
+	printOuterHtml( $("a[href=#]") );
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+	var myArray = [ "Gary Gygax", "Dave Arneson", "Monte Cook", "Bruce Cordell", "James Jacobs" ];
+	$(myArray).each(function( i, a ) {
+		$("<li>").text(a).appendTo( $("#list1") );
+	});
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
