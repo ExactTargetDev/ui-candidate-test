@@ -11,6 +11,7 @@
         .gradient {
             filter: none;
         }
+
         /*filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
     M11=1.5320888862379554, M12=-1.2855752193730787,
     M21=1.2855752193730796, M22=1.5320888862379558);*/
@@ -28,219 +29,270 @@
                     <ul class="inline white pull-right">
                         <li><a>Logout</a></li>
                         <li class="normal">|</li>
-                        <li><a>Help</a></li>
+                        <li><a data-toggle="modal" data-target=".helpModal">Help</a>
+
+                            <div id="helpModal" role="dialog" class="modal fade helpModal" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <div>
+                                                <ul></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                         <li class="normal">|</li>
                         <li><a>Account</a></li>
                         <li>Welcome John!</li>
                     </ul>
+
                 </div>
             </div>
         </div>
     </div>
 </header>
 <div class="container">
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="in-mkg-hub gradient">
-                <div class="header gradient">
-                    <i class="pull-left imh-logo"></i>
+<div class="row">
+<div class="col-lg-3">
+    <div class="in-mkg-hub gradient">
+        <div class="header gradient">
+            <i class="pull-left imh-logo"></i>
 
-                    <p>Interactive<br>Marketing Hub</p>
-                </div>
-                <div class="content">
-                    <ul>
-                        <li>
-                            <div class="imh-icon-bg gradient center-container is-table">
-                                <div class="table-cell">
-                                    <div class="center-block">
-                                        <i class="email-icon"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <span>ExactTarget Email</span>
-                        </li>
-                        <li>
-                            <div class="imh-icon-bg gradient center-container is-table">
-                                <div class="table-cell">
-                                    <div class="center-block">
-                                        <i class="mobile-icon"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <span>ExactTarget Mobile</span>
-                        </li>
-                        <li>
-                            <div class="imh-icon-bg gradient center-container is-table">
-                                <div class="table-cell">
-                                    <div class="center-block">
-                                        <i class="cotweet-icon"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <span>CoTweet Social</span>
-                        </li>
-                        <li>
-                            <div class="imh-icon-bg gradient center-container is-table">
-                                <div class="table-cell">
-                                    <div class="center-block">
-                                        <i class="etsites-icon"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <span>ExactTarget Sites</span>
-                        </li>
-                        <li>
-                            <div class="imh-icon-bg center-container is-table">
-                                <div class="table-cell">
-                                    <div class="center-block">
-                                        <i class="automation-icon"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <span>Automation Studio</span>
-                        </li>
-                        <li>
-                            <div class="imh-icon-bg center-container is-table">
-                                <div class="table-cell">
-                                    <div class="center-block">
-                                        <i class="audience-icon"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <span>Audience Builder</span>
-                        </li>
-                        <li>
-                            <div class="imh-icon-bg center-container is-table">
-                                <div class="table-cell">
-                                    <div class="center-block">
-                                        <i class="builder-icon"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <span>Report Builder</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <p>Interactive<br>Marketing Hub</p>
         </div>
-        <div class="col-lg-13">
-            <div class="calendar">
-                <p class="light-blue month-year pull-left">September 2010</p>
-
-                <div class="pull-right cal-icon-set">
-                    <i class="gear-icon"></i>
-                    <i class="pop-icon"></i>
-                </div>
-                <div class="clearfix"></div>
-                <div class="day-wrapper">
-                    <div class="day-container">
-                        <ul class="day">
-                            <li>
-                                <p class="pull-left">Fri</p>
-
-                                <p class="pull-right">10</p>
-                            </li>
-                            <li>
-                                <p class="pull-left">Sat</p>
-
-                                <p class="pull-right">11</p>
-                            </li>
-                            <li>
-                                <p class="pull-left">Sun</p>
-
-                                <p class="pull-right">12</p>
-                            </li>
-                            <li>
-                                <p class="pull-left">Mon</p>
-
-                                <p class="pull-right">13</p>
-                            </li>
-                            <li class="active">
-                                <p class="pull-left">Tue</p>
-
-                                <p class="pull-right">14</p>
-
-                                <div>
-                                    <p>TODAY</p>
-                                </div>
-                            </li>
-                            <li>
-                                <p class="pull-left">Wed</p>
-
-                                <p class="pull-right">15</p>
-                            </li>
-                            <li>
-                                <p class="pull-left">Thu</p>
-
-                                <p class="pull-right">16</p>
-                            </li>
-                            <li>
-                                <p class="pull-left">Fri</p>
-
-                                <p class="pull-right">17</p>
-                            </li>
-                            <li>
-                                <p class="pull-left">Sat</p>
-
-                                <p class="pull-right">18</p>
-                            </li>
-                        </ul>
+        <div class="content">
+            <ul id="inh-list">
+                <li>
+                    <div class="imh-icon-bg gradient center-container is-table">
+                        <div class="table-cell">
+                            <div class="center-block">
+                                <i class="email-icon"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="clearfix"></div>
-                    <div class="pull-right">
-                        <i class="triangle-up-icon"></i>
+                    <span>ExactTarget Email</span>
+                </li>
+                <li>
+                    <div class="imh-icon-bg gradient center-container is-table">
+                        <div class="table-cell">
+                            <div class="center-block">
+                                <i class="mobile-icon"></i>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <span>ExactTarget Mobile</span>
+                </li>
+                <li>
+                    <div class="imh-icon-bg gradient center-container is-table">
+                        <div class="table-cell">
+                            <div class="center-block">
+                                <i class="cotweet-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <span>CoTweet Social</span>
+                </li>
+                <li>
+                    <div class="imh-icon-bg gradient center-container is-table">
+                        <div class="table-cell">
+                            <div class="center-block">
+                                <i class="etsites-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <span>ExactTarget Sites</span>
+                </li>
+                <hr>
+                <li>
+                    <div class="imh-icon-bg center-container is-table">
+                        <div class="table-cell">
+                            <div class="center-block">
+                                <i class="automation-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <span>Automation Studio</span>
+                </li>
+                <li>
+                    <div class="imh-icon-bg center-container is-table">
+                        <div class="table-cell">
+                            <div class="center-block">
+                                <i class="audience-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <span>Audience Builder</span>
+                </li>
+                <li>
+                    <div class="imh-icon-bg center-container is-table">
+                        <div class="table-cell">
+                            <div class="center-block">
+                                <i class="builder-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <span>Report Builder</span>
+                </li>
+                <hr>
+                <li>
+                    <div class="partner-app center-container is-table">
+                        <div class="table-cell">
+                            <div class="center-block">
+                                <i class="arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <span style="font-size: .9em">Partner Applications</span>
+                </li>
+            </ul>
 
-            </div>
-            <div class="clearfix"></div>
-            <div class="pulse">
-                <ul id="pulse-slider">
-                    <li>
-                        <p class="exterior-text">Followers</p>
-                        <div class="slider-content">
-                            <p class="title">310</p>
-                            <p class="added">added today</p>
-                            <p class="total">2,393,905 total</p>
-                        </div>
-                    </li>
-                     <li>
-                        <p class="exterior-text">Fan</p>
-                        <div class="slider-content">
-                            <p class="title">73</p>
-                            <p class="added">added today</p>
-                            <p class="total">91,675 total</p>
-                        </div>
-                    </li>
-                     <li>
-                        <p class="exterior-text">Subscribers</p>
-                        <div class="slider-content">
-                            <p class="title">56</p>
-                            <p class="added">added today</p>
-                            <p class="total">2189,405 total</p>
-                        </div>
-                    </li>
-                     <li>
-                        <p class="exterior-text">Followers</p>
-                        <div class="slider-content">
-                            <p class="title">310</p>
-                            <p class="added">added today</p>
-                            <p class="total">2,393,905 total</p>
-                        </div>
-                    </li>
-                    <li>
-                        <p class="exterior-text">Landing Pages</p>
-                        <div class="slider-content">
-                            <p class="title">310</p>
-                            <p class="added">added today</p>
-                            <p class="total">2,393,905 total</p>
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
         </div>
     </div>
+</div>
+<div class="col-lg-13">
+    <div class="calendar">
+        <p class="light-blue month-year pull-left">September 2010</p>
+
+        <div class="pull-right cal-icon-set">
+            <i class="gear-icon"></i>
+            <i class="pop-icon"></i>
+        </div>
+        <div class="clearfix"></div>
+        <div class="day-wrapper">
+            <div class="day-container">
+                <ul class="day">
+                    <li>
+                        <p class="pull-left">Fri</p>
+
+                        <p class="pull-right">10</p>
+                    </li>
+                    <li>
+                        <p class="pull-left">Sat</p>
+
+                        <p class="pull-right">11</p>
+                    </li>
+                    <li>
+                        <p class="pull-left">Sun</p>
+
+                        <p class="pull-right">12</p>
+                    </li>
+                    <li>
+                        <p class="pull-left">Mon</p>
+
+                        <p class="pull-right">13</p>
+                    </li>
+                    <li class="active">
+                        <p class="pull-left">Tue</p>
+
+                        <p class="pull-right">14</p>
+
+                        <div>
+                            <p>TODAY</p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="pull-left">Wed</p>
+
+                        <p class="pull-right">15</p>
+                    </li>
+                    <li>
+                        <p class="pull-left">Thu</p>
+
+                        <p class="pull-right">16</p>
+                    </li>
+                    <li>
+                        <p class="pull-left">Fri</p>
+
+                        <p class="pull-right">17</p>
+                    </li>
+                    <li>
+                        <p class="pull-left">Sat</p>
+
+                        <p class="pull-right">18</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+            <div class="pull-right">
+                <i class="triangle-up-icon"></i>
+            </div>
+        </div>
+
+    </div>
+    <div class="clearfix"></div>
+    <div class="pulse">
+        <div class="pulse-logo"></div>
+        <div class="pull-right pulse-icon-set">
+            <i class="gear-icon"></i>
+            <i class="tab-icon"></i>
+            <i class="pop-icon"></i>
+            <i class="x-icon"></i>
+        </div>
+        <div class="clearfix"></div>
+        <ul id="pulse-slider">
+            <li>
+                <p class="exterior-text">Followers</p>
+
+                <div class="slider-content">
+                    <p class="title">310</p>
+
+                    <p class="added">added today</p>
+
+                    <p class="total">2,393,905 total</p>
+                </div>
+            </li>
+            <li>
+                <p class="exterior-text">Fan</p>
+
+                <div class="slider-content">
+                    <p class="title">73</p>
+
+                    <p class="added">added today</p>
+
+                    <p class="total">91,675 total</p>
+                </div>
+            </li>
+            <li>
+                <p class="exterior-text">Subscribers</p>
+
+                <div class="slider-content">
+                    <p class="title">56</p>
+
+                    <p class="added">added today</p>
+
+                    <p class="total">189,405 total</p>
+                </div>
+            </li>
+            <li>
+                <p class="exterior-text">foursquare</p>
+
+                <div class="slider-content" style="padding: 0">
+                    <div style="width: 100%;padding: 5px 10px">
+                        <span class="pull-left small bold">Worldwide Checkins</span>
+                        <span class="pull-right small bold">3,905</span>
+                        <img class="map-image" src="images/map.png"/>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p class="exterior-text">Landing Pages</p>
+
+                <div class="slider-content">
+                    <p class="total" style="padding-bottom: 5px">Visitors Today</p>
+
+                    <p class="added"><span class="title">397</span> / 355</p>
+
+                    <p class="total">Soulja Boy V.I.P.</p>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+</div>
 </div>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
