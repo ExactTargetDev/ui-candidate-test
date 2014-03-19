@@ -50,16 +50,22 @@
     function removeFruits(fruits, fruitsToRemove) {
 		var re = new RegExp(fruitsToRemove.join(',|') + ',', 'g');
 	
-		return fruits = fruits.join().replace(re, '').split(',');
+		return fruits.join().replace(re, '').split(',');
     }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
-     function pushOntoArray(array, toPush) {
-         // FILL THIS IN
-     }
+    function pushOntoArray(array, toPush) {
+		if(toPush instanceof Array) {
+			array.push.apply(array, toPush);
+		} else {
+			array.push(toPush);
+		}
+
+		return array;
+    }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
