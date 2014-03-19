@@ -74,7 +74,9 @@
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+		return [].slice.call(arguments).reduce(function(a, b) {
+			return a + b;
+		});
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
