@@ -34,15 +34,16 @@ test( "Find Distinct Value Test", 2, function() {
 	deepEqual( result, [1, 2, 3, 4, 5, 6, 7, 8, 9, 0], 'Expected [1, 2, 3, 4, 5, 6, 7, 8, 9, 0], the result was: ' + result );
 });
 
-test( "Fizz Buzz Test", 5, function() {
+test( "Fizz Buzz Test", 6, function() {
     equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' );
 	
-	var spy = sinon.spy(console.log);
+	var spy = sinon.spy(console, "log");
 	doFizzBuzz();
-	strictEqual( spy.callCount, 47, 'Expected 47, the result was: ' + spy.callCount );
-	ok( spy.getCall(1).calledWithExactly('Fizz'), 'Expected "Fizz", called with: ' + spy.getCall(1).args );
-	ok( spy.getCall(2).calledWithExactly('Buzz'), 'Expected "Buzz", called with: ' + spy.getCall(2).args );
-	ok( spy.getCall(7).calledWithExactly('FizzBuzz'), 'Expected "FizzBuzz", called with: ' + spy.getCall(7).args );
+	strictEqual( spy.callCount, 100, 'Expected 100, the result was: ' + spy.callCount );
+	ok( spy.getCall(0).calledWithExactly(1), 'Expected 1, called with: ' + spy.getCall(0).args );
+	ok( spy.getCall(2).calledWithExactly('Fizz'), 'Expected "Fizz", called with: ' + spy.getCall(2).args );
+	ok( spy.getCall(4).calledWithExactly('Buzz'), 'Expected "Buzz", called with: ' + spy.getCall(4).args );
+	ok( spy.getCall(14).calledWithExactly('FizzBuzz'), 'Expected "FizzBuzz", called with: ' + spy.getCall(14).args );
 });
 
 test( "Remove Fruit Test", 2, function() {
