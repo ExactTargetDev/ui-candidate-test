@@ -150,7 +150,6 @@ header ul.inline li {
 }
 
 .imh-logo {
-    background-image: url('../images/imh-icon.png');
     width: 51px;
     height: 51px
 }
@@ -287,14 +286,12 @@ header ul.inline li {
 }
 
 #inh-list .active .arrow-right {
-    background-image: url('../images/arrow-right-white.png');
     width: 5px;
     height: 7px;
     left: 2px;
     position: relative;
 }
 .arrow-right {
-    background-image: url('../images/arrow-right.png');
     width: 5px;
     height: 7px;
     left: 2px;
@@ -302,34 +299,29 @@ header ul.inline li {
 }
 
 .email-icon {
-    background-image: url('../images/email-icon.png');
     width: 16px;
     height: 13px;
 }
 
 .mobile-icon {
-    background-image: url('../images/mobile-icon.png');
     width: 13px;
     height: 17px;
     left: 2px;
 }
 
 .cotweet-icon {
-    background-image: url('../images/cotweet-icon.png');
     width: 18px;
     height: 11px;
     left: -1px;
 }
 
 .etsites-icon {
-    background-image: url('../images/etsites-logo.png');
     width: 18px;
     height: 17px;
     top: 2px;
 }
 
 .automation-icon {
-    background-image: url('../images/automation-icon.png');
     width: 20px;
     height: 19px;
     top: 1px;
@@ -337,7 +329,6 @@ header ul.inline li {
 }
 
 .audience-icon {
-    background-image: url('../images/audience-icon.png');
     width: 18px;
     height: 14px;
     left: -1px;
@@ -345,7 +336,6 @@ header ul.inline li {
 }
 
 .builder-icon {
-    background-image: url('../images/builder-icon.png');
     width: 21px;
     height: 16px;
     left: -2px;
@@ -452,35 +442,30 @@ ul.day li.active div p {
 }
 
 .gear-icon {
-    background-image: url('../images/gear-icon.png');
     width: 15px;
     height: 15px;
     display: inline-block;
 }
 
 .pop-icon {
-    background-image: url('../images/pop-icon.png');
     width: 15px;
     height: 15px;
     display: inline-block;
 }
 
 .tab-icon {
-    background-image: url('../images/tab-icon.png');
     width: 15px;
     height: 15px;
     display: inline-block;
 }
 
 .x-icon {
-    background-image: url('../images/x-icon.png');
     width: 15px;
     height: 15px;
     display: inline-block;
 }
 
 .triangle-up-icon {
-    background-image: url('../images/triangle-up.png');
     width: 9px;
     height: 5px;
     display: inline-block;
@@ -506,7 +491,6 @@ ul.day li.active div p {
 }
 
 .pulse-logo {
-    background-image: url('../images/pulse-logo.png');
     width: 107px;
     height: 39px;
     margin-top: 10px;

@@ -41,4 +41,5 @@ $(document).ready(function ($) {
     }).error(function () {
             console.log('error');
         });
+    console.log(test);
 });
