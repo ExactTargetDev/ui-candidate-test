@@ -1,6 +1,6 @@
 # ExactTarget UI Candidates 
 
-This is the candaidate test for ExactTarget UI developers.
+This is the candidate test for ExactTarget UI developers.
 
 Read *ALL* bullet points.
 
