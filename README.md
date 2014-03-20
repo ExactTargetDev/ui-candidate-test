@@ -57,8 +57,8 @@ Please include "ATTENTION: &lt;ET Contacts Name&gt;" in your pull request
 
 **Stephen Williams**
 
-+ http://twitter.com/swilliamset
-+ http://github.com/swilliamset
++ http://twitter.com/swilliamsui
++ http://github.com/swilliamsui
 
 **Jason Schmidt**
 
