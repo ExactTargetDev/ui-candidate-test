@@ -1,0 +1,52 @@
+#inh-list .active .arrow-right,
+.site-sprite-arrow-right-white { background-image: url('../images/png-fallback/arrow-right-white.png'); background-repeat: no-repeat; }
+
+.arrow-right,
+.site-sprite-arrow-right { background-image: url('../images/png-fallback/arrow-right.png'); background-repeat: no-repeat; }
+
+.audience-icon,
+.site-sprite-audience-icon { background-image: url('../images/png-fallback/audience-icon.png'); background-repeat: no-repeat; }
+
+.automation-icon,
+.site-sprite-automation-icon { background-image: url('../images/png-fallback/automation-icon.png'); background-repeat: no-repeat; }
+
+.builder-icon,
+.site-sprite-builder-icon { background-image: url('../images/png-fallback/builder-icon.png'); background-repeat: no-repeat; }
+
+.cotweet-icon,
+.site-sprite-cotweet-icon { background-image: url('../images/png-fallback/cotweet-icon.png'); background-repeat: no-repeat; }
+
+.email-icon,
+.site-sprite-email-icon { background-image: url('../images/png-fallback/email-icon.png'); background-repeat: no-repeat; }
+
+.site-sprite-et-logo { background-image: url('../images/png-fallback/et-logo.png'); background-repeat: no-repeat; }
+
+.etsites-icon,
+.site-sprite-etsites-logo { background-image: url('../images/png-fallback/etsites-logo.png'); background-repeat: no-repeat; }
+
+.gear-icon,
+.site-sprite-gear-icon { background-image: url('../images/png-fallback/gear-icon.png'); background-repeat: no-repeat; }
+
+.imh-logo,
+.site-sprite-imh-icon { background-image: url('../images/png-fallback/imh-icon.png'); background-repeat: no-repeat; }
+
+.site-sprite-map { background-image: url('../images/png-fallback/map.png'); background-repeat: no-repeat; }
+
+.mobile-icon,
+.site-sprite-mobile-icon { background-image: url('../images/png-fallback/mobile-icon.png'); background-repeat: no-repeat; }
+
+.pop-icon,
+.site-sprite-pop-icon { background-image: url('../images/png-fallback/pop-icon.png'); background-repeat: no-repeat; }
+
+.pulse-logo,
+.site-sprite-pulse-logo { background-image: url('../images/png-fallback/pulse-logo.png'); background-repeat: no-repeat; }
+
+.tab-icon,
+.site-sprite-tab-icon { background-image: url('../images/png-fallback/tab-icon.png'); background-repeat: no-repeat; }
+
+.triangle-up-icon,
+.site-sprite-triangle-up { background-image: url('../images/png-fallback/triangle-up.png'); background-repeat: no-repeat; }
+
+.x-icon,
+.site-sprite-x-icon { background-image: url('../images/png-fallback/x-icon.png'); background-repeat: no-repeat; }
+
