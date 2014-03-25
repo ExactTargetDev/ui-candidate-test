@@ -1,0 +1,9 @@
+.button {width:175px; cursor:pointer; color:#FFFFFF; float:left; padding:3px; position:absolute; left:28px; height:30px}
+#button-one {top:110px;}
+#button-two {top:146px;}
+#button-three {top:178px;}
+#button-four {top:210px;}
+#button-five {top:255px;}
+#button-six {top:287px;}
+#button-seven {top:319px;}
+#button-help {width:30px; cursor:pointer; color:#FFFFFF; float:left; padding:3px; position:absolute; top:13px; left:1170px; height:15px}
