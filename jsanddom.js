@@ -52,7 +52,7 @@
 			else if (i % 5 == 0) strFizzBuzz += " Buzz";
 			else strFizzBuzz += (i == 1) ? i : " " + i;
 		}
-		console.log(strFizzBuzz);
+		console.log(strFizzBuzz);  //compromise? we good?
 		return strFizzBuzz;
 		
      }
@@ -62,7 +62,14 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         for (i = 0; i < fruitsToRemove.length ; i++) {
+			do {
+				var foundIndex = fruits.indexOf(fruitsToRemove[i]);
+				if (foundIndex != -1) fruits.splice(foundIndex, 1);
+			}
+			while (foundIndex != -1);
+		 }
+		 return fruits;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
