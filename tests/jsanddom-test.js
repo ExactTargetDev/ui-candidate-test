@@ -12,3 +12,12 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+
+module( "nmhai3's unit testing" );
+
+test( "reverseString of exacttarget should return tegrattcaxe", function() {
+	equal( typeof reverseString, 'function', 'reverseString function must exist' );
+	
+	equal( reverseString("exacttarget"),  "tegrattcaxe");
+});
+
