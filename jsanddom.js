@@ -126,6 +126,16 @@
      }
 
      // write an example of a javascript closure
+	 
+	 var namespacingViaClosure = (function() {
+		function privateMethod() { return "private" }
+		return {
+			publicMethod: function() { return "public"; },
+			publicMethodCallingPrivateMethod: function() { return privateMethod(); }
+		}
+	 })();
+
+	 
 
      // define a json object that represents a collection of people.
      // each person should have the following properties

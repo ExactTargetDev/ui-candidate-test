@@ -85,3 +85,15 @@ test( "isOnlyWhitespace testing", function() {
 	ok( isOnlyWhitespace(tab), "tab only");
 	ok( isOnlyWhitespace(tabAndWord) === false, "tab and word");
 });
+
+test( "namespacingViaClosure testing", function() {
+	equal( typeof namespacingViaClosure, 'object', 'namespacingViaClosure namespace must exist' );
+	
+	ok( namespacingViaClosure.privateMethod == undefined );
+	equal( namespacingViaClosure.publicMethod(), "public");
+	equal( namespacingViaClosure.publicMethodCallingPrivateMethod(), "private");
+	
+});
+
+
+
