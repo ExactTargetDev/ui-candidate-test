@@ -21,3 +21,8 @@ test( "reverseString of exacttarget should return tegrattcaxe", function() {
 	equal( reverseString("exacttarget"),  "tegrattcaxe", "passed!");
 });
 
+test( "findMinValue of 1 2 3 should return 1", function() {
+	equal( typeof findMinValue, 'function', 'findMinValue function must exist' );
+	equal( findMinValue([1,2,3]), 1, "passed!");
+});
+
