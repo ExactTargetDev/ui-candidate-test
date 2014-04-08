@@ -6,7 +6,12 @@
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-		return 'tegrattcaxe';
+	 
+		var reverse = '';
+		for (i = str.length - 1; i >= 0; i--)
+			reverse += str[i];
+			
+		return reverse;
      }
 
      // Write a function that takes an array of numbers and returns the minimum value

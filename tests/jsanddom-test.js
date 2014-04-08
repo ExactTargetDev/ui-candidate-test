@@ -18,6 +18,6 @@ module( "nmhai3's unit testing" );
 test( "reverseString of exacttarget should return tegrattcaxe", function() {
 	equal( typeof reverseString, 'function', 'reverseString function must exist' );
 	
-	equal( reverseString("exacttarget"),  "tegrattcaxe");
+	equal( reverseString("exacttarget"),  "tegrattcaxe", "passed!");
 });
 
