@@ -47,3 +47,14 @@ test( "removeFruits testing", function() {
 	var expected = ["orange","mango","cherry","banana"]
 	deepEqual(removeFruits(fruits, fruitsToRemove), expected);
 });
+
+test( "pushOntoArray testing", function() {
+	equal( typeof pushOntoArray, 'function', 'pushOntoArray function must exist' );
+
+	var dogs = ["rin tin tin", "yeller", "clifford"];
+	var myDog = "lucy";
+	var moreDogs = ["benji", "shadow", "scooby"];
+	
+	deepEqual( pushOntoArray(dogs, myDog), ["rin tin tin", "yeller", "clifford", "lucy"], "pushing string to array" );
+	deepEqual( pushOntoArray(dogs, moreDogs), ["rin tin tin", "yeller", "clifford", "lucy", "benji", "shadow", "scooby"], "pushing array onto array");
+});
