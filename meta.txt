@@ -1,0 +1,3 @@
+Start Time: 1396967666
+BrowserTesting: Chrome 33.0.1750.154
+UnitTest: tests\jsanddom-test.js
