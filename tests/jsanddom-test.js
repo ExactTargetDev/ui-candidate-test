@@ -64,3 +64,24 @@ test( "splitListStrUsingComma testing", function() {
 	var sauces = "leet,pwn,fail";
 	deepEqual( splitListStrUsingComma(sauces), ["leet", "pwn", "fail"]);
 });
+
+test( "sum testing", function() {
+	equal( typeof sum, 'function', 'sum function must exist' );
+	equal( sum(1,2,3), 6, "1 2 3");
+	equal( sum(2, Math.PI), 2 + Math.PI, "2 and Pi");
+	equal( sum(1,1,.50,.50,.25,.10,.10,.05), 3.50, "$3.50");
+});
+
+test( "isOnlyWhitespace testing", function() {
+	equal( typeof isOnlyWhitespace, 'function', 'isOnlyWhitespace function must exist' );
+	
+	var space = " ";
+	var spaceAndWord = " word";
+	var tab = "	";
+	var tabAndWord = "	word";
+	
+	ok( isOnlyWhitespace(space), "space only");
+	ok( isOnlyWhitespace(spaceAndWord) === false, "space and word");
+	ok( isOnlyWhitespace(tab), "tab only");
+	ok( isOnlyWhitespace(tabAndWord) === false, "tab and word");
+});

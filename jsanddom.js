@@ -92,7 +92,7 @@
          
 		 //return sourceStr.split(",");  	//honestly, this would work for me
 											//i prefer to leverage the time and sweat of past developers before me,
-											//but let's insult them with my version of the wheel
+											//and i hope i don't insult them with my version of the 'wheel'.
 											
 		var strArray = []
 		if (sourceStr.length == 0) return strArray;
@@ -111,12 +111,18 @@
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
-     }
+		var sum = 0;
+		for (i = 0; i < arguments.length; i++ ) {
+			sum += arguments[i];
+		}
+		return sum;
+			
+	 }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         var regex = /\S+/;
+		 return !regex.test(sourceStr);
      }
 
      // write an example of a javascript closure
