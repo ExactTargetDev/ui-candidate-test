@@ -58,3 +58,9 @@ test( "pushOntoArray testing", function() {
 	deepEqual( pushOntoArray(dogs, myDog), ["rin tin tin", "yeller", "clifford", "lucy"], "pushing string to array" );
 	deepEqual( pushOntoArray(dogs, moreDogs), ["rin tin tin", "yeller", "clifford", "lucy", "benji", "shadow", "scooby"], "pushing array onto array");
 });
+
+test( "splitListStrUsingComma testing", function() {
+	equal( typeof splitListStrUsingComma, 'function', 'splitListStrUsingComma function must exist' );
+	var sauces = "leet,pwn,fail";
+	deepEqual( splitListStrUsingComma(sauces), ["leet", "pwn", "fail"]);
+});
