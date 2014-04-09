@@ -125,6 +125,20 @@ test( "peopleCollection object testing", function() {
 	
 });
 
-
+test( "DataTable object testing", function() {
+	equal( typeof DataTable, "function", 'DataTable object must exists');
+	
+	throws( function() { DataTable().data; }, "assert that accessing the data publicly throws an error" );
+	
+ 	var dt = new DataTable()
+		.addColumns("column1", "column2", "column3")
+		.addRows("value1A", "value1B", "value1C")
+		.addRows("value2A", "value2B", "value2C")
+		.addRows("value3A", "value3B", "value3C");
+	
+	var expectedJSON = '{"columns":["column1","column2","column3"],"rows":[["value1A","value1B","value1C"],["value2A","value2B","value2C"],["value3A","value3B","value3C"]]}';
+	deepEqual( dt.getData(), expectedJSON, "getData returns expected json string" );
+	
+});
 
 
