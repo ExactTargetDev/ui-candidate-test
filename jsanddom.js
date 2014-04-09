@@ -17,17 +17,26 @@
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
 		
+		//pure js
+		/*
 		var min = values[0];
 		for (i = 0; i < values.length; i++) {
 			if (values[i] < min) min = values[i];
 		}
 			
 		return min;
+		*/
+		
+		//underscore.js
+		return _.min(values);
 		
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
+		 
+		//pure js
+		/*
 		var distinct = [];
 		
 		for (i = 0; i < values.length; i++) {
@@ -35,6 +44,10 @@
 		}
 		
 		return distinct;
+		*/
+		
+		//underscore.js
+		return _.uniq(values);
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
