@@ -309,9 +309,46 @@
 
 	var foobar = document.getElementById("foobar");
 	if (foobar !== null) {
+		var form = document.createElement("form");
+		
 		for (var i = 0; i < 10; i++) {
+			var checkbox = document.createElement("input");
+			checkbox.setAttribute("type", "checkbox");
+			form.appendChild(checkbox);
 			
+			var label = document.createElement("label");
+			label.appendChild(document.createTextNode("checkbox #" + i));
+			form.appendChild(label);
 		}
+		
+		foobar.appendChild(form);
+		
+		
+		var lnkCheckAll = document.createElement("a");
+		lnkCheckAll.setAttribute("href", "#");
+		lnkCheckAll.appendChild(document.createTextNode("check all"))
+		lnkCheckAll.onclick = function() {
+			var checkboxes = foobar.getElementsByTagName("input");
+			for (var i = 0; i < checkboxes.length; i++) {
+				if (!checkboxes[i].checked) checkboxes[i].checked = true;
+			}
+		}
+		foobar.appendChild(lnkCheckAll);
+		
+		foobar.appendChild(document.createElement("br"));
+		
+		var lnkUncheckAll = document.createElement("a");
+		lnkUncheckAll.setAttribute("href", "#");
+		lnkUncheckAll.appendChild(document.createTextNode("uncheck all"))
+		lnkUncheckAll.onclick = function() {
+			var checkboxes = foobar.getElementsByTagName("input");
+			for (var i = 0; i < checkboxes.length; i++) {
+				if (checkboxes[i].checked) checkboxes[i].checked = false;
+			}
+		}
+		foobar.appendChild(lnkUncheckAll);
+		
 	}
+	
 
 	
