@@ -136,7 +136,6 @@
 	 })();
 
 	 
-
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -145,8 +144,59 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
-
+	 
+	 var peopleCollection = 
+	 {
+		people: 
+		[
+			{
+				firstName: "bob",
+				lastName: "saget",
+				city: "Los Angeles",
+				state: "CA",
+				zip: "12345",
+				phone: 
+				[
+					{
+						type: "home",
+						number: "111-222-3333"
+					},
+					{
+						type: "mobile",
+						number: "111-222-4444"
+					},
+					{
+						type: "work",
+						number: "111-222-5555"
+					}				
+				]
+			},
+			{
+				firstName: "johnny",
+				lastName: "cash",
+				city: "Nashville",
+				state: "TN",
+				zip: "55555",
+				phone: 
+				[
+					{
+						type: "home",
+						number: "555-222-3333"
+					},
+					{
+						type: "mobile",
+						number: "555-222-4444"
+					},
+					{
+						type: "work",
+						number: "555-222-5555"
+					}			
+				]
+			}
+		]
+		 
+	 }
+	 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
      // A private rows property (string array)

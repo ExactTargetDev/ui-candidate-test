@@ -95,5 +95,36 @@ test( "namespacingViaClosure testing", function() {
 	
 });
 
+test( "peopleCollection object testing", function() {
+	equal( typeof peopleCollection, "object", 'peopleCollection object must exists');
+	
+	
+	equal( peopleCollection.people[0].firstName, "bob");
+	equal( peopleCollection.people[0].lastName, "saget");
+	equal( peopleCollection.people[0].city, "Los Angeles");
+	equal( peopleCollection.people[0].state, "CA");
+	equal( peopleCollection.people[0].zip, "12345");
+	equal( peopleCollection.people[0].phone[0].type, "home");
+	equal( peopleCollection.people[0].phone[0].number, "111-222-3333");
+	equal( peopleCollection.people[0].phone[1].type, "mobile");
+	equal( peopleCollection.people[0].phone[1].number, "111-222-4444");
+	equal( peopleCollection.people[0].phone[2].type, "work");
+	equal( peopleCollection.people[0].phone[2].number, "111-222-5555");
+	
+	equal( peopleCollection.people[1].firstName, "johnny");
+	equal( peopleCollection.people[1].lastName, "cash");
+	equal( peopleCollection.people[1].city, "Nashville");
+	equal( peopleCollection.people[1].state, "TN");
+	equal( peopleCollection.people[1].zip, "55555");
+	equal( peopleCollection.people[1].phone[0].type, "home");
+	equal( peopleCollection.people[1].phone[0].number, "555-222-3333");
+	equal( peopleCollection.people[1].phone[1].type, "mobile");
+	equal( peopleCollection.people[1].phone[1].number, "555-222-4444");
+	equal( peopleCollection.people[1].phone[2].type, "work");
+	equal( peopleCollection.people[1].phone[2].number, "555-222-5555");
+	
+});
+
+
 
 
