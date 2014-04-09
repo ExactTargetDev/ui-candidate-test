@@ -243,30 +243,51 @@
      // when the button is clicked write out the name and value of the selected item to the console.
 	
 	var div1 = document.getElementById("div1");
+	if (div1 !== null) {
+		
+		var select = document.createElement("select");
+		for (var i = 1; i <= 10; i++) {
+			var option = document.createElement("option");
+			var text = document.createTextNode("name" + i);
+			option.appendChild(text);
+			option.setAttribute("value", "value" + i)
+			select.appendChild(option);
+		}
+		div1.appendChild(select);
+		
+		var button = document.createElement("input");
+		button.setAttribute("type", "button");
+		button.setAttribute("value", "click me");
+		button.onclick = function() {
+			var selectedOption = select.options[select.selectedIndex];
+			console.log("selected value: " + selectedOption.value + " selected name: " + selectedOption.text);
+		}
+		div1.appendChild(button);
 	
-	var select = document.createElement("select");
-	for (var i = 1; i <= 10; i++) {
-		var option = document.createElement("option");
-		var text = document.createTextNode("name" + i);
-		option.appendChild(text);
-		option.setAttribute("value", "value" + i)
-		select.appendChild(option);
 	}
-	div1.appendChild(select);
-	
-	var button = document.createElement("input");
-	button.setAttribute("type", "button");
-	button.setAttribute("value", "click me");
-	button.onclick = function() {
-		var selectedOption = select.options[select.selectedIndex];
-		console.log("selected value: " + selectedOption.value + " selected name: " + selectedOption.text);
-	}
-	div1.appendChild(button);
-	
-	 
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+	 
+	(function($) {
+		$(function() {
+			console.log($('a'));
+			console.log($('div#foo div#fizz a'));
+			console.log($('div#foo div.buzz a'));
+			console.log($('div.bar div#fizz a'));
+			console.log($('div.bar div.buzz a'));
+			console.log($('div#foo div#fizz a.link'));
+			console.log($('div#foo div.buzz a.link'));
+			console.log($('div.bar div#fizz a.link'));
+			console.log($('div.bar div.buzz a.link'));
+			console.log($('a.link'));
+			console.log($('a:contains("sample anchor")'));
+			console.log($('a[name^="sample"]'));
+			console.log($('a[href="#"]'));
+			console.log($('body > div:nth-child(2) a.link'));
+			console.log($('body > div:nth-of-type(2) a.link'));  //ok, i'm done.
+		});
+	})(jQuery);
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
