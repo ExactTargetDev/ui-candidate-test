@@ -8,7 +8,7 @@
      function reverseString(str) {
 	 
 		var reverse = '';
-		for (i = str.length - 1; i >= 0; i--)
+		for (var i = str.length - 1; i >= 0; i--)
 			reverse += str[i];
 			
 		return reverse;
@@ -20,7 +20,7 @@
 		//pure js
 		/*
 		var min = values[0];
-		for (i = 0; i < values.length; i++) {
+		for (var i = 0; i < values.length; i++) {
 			if (values[i] < min) min = values[i];
 		}
 			
@@ -39,7 +39,7 @@
 		/*
 		var distinct = [];
 		
-		for (i = 0; i < values.length; i++) {
+		for (var i = 0; i < values.length; i++) {
 			if (distinct.indexOf(values[i]) === -1) distinct.push(values[i])
 		}
 		
@@ -59,11 +59,11 @@
 		//changing the requirement, sorry!
 		
 		var strFizzBuzz = '';
-		for (i = 1; i <= 100; i++) {
-			if (i % 3 == 0 && i % 5 == 0) strFizzBuzz += " FizzBuzz";
-			else if (i % 3 == 0) strFizzBuzz += " Fizz";
-			else if (i % 5 == 0) strFizzBuzz += " Buzz";
-			else strFizzBuzz += (i == 1) ? i : " " + i;
+		for (var i = 1; i <= 100; i++) {
+			if (i % 3 === 0 && i % 5 === 0) strFizzBuzz += " FizzBuzz";
+			else if (i % 3 === 0) strFizzBuzz += " Fizz";
+			else if (i % 5 === 0) strFizzBuzz += " Buzz";
+			else strFizzBuzz += (i === 1) ? i : " " + i;
 		}
 		console.log(strFizzBuzz);  //compromise? we good?
 		return strFizzBuzz;
@@ -75,12 +75,12 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         for (i = 0; i < fruitsToRemove.length ; i++) {
+         for (var i = 0; i < fruitsToRemove.length ; i++) {
 			do {
 				var foundIndex = fruits.indexOf(fruitsToRemove[i]);
-				if (foundIndex != -1) fruits.splice(foundIndex, 1);
+				if (foundIndex !== -1) fruits.splice(foundIndex, 1);
 			}
-			while (foundIndex != -1);
+			while (foundIndex !== -1);
 		 }
 		 return fruits;
      }
@@ -91,7 +91,7 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
 		if (Array.isArray(toPush)) {
-			for (i = 0; i < toPush.length; i++)
+			for (var i = 0; i < toPush.length; i++)
 				array.push(toPush[i]);
 		}
 		else {
@@ -125,7 +125,7 @@
      // Write a function that will take any number of arguments and return their sum
      function sum() {
 		var sum = 0;
-		for (i = 0; i < arguments.length; i++ ) {
+		for (var i = 0; i < arguments.length; i++ ) {
 			sum += arguments[i];
 		}
 		return sum;
@@ -141,7 +141,7 @@
      // write an example of a javascript closure
 	 
 	 var namespacingViaClosure = (function() {
-		function privateMethod() { return "private" }
+		function privateMethod() { return "private"; }
 		return {
 			publicMethod: function() { return "public"; },
 			publicMethodCallingPrivateMethod: function() { return privateMethod(); }
@@ -362,6 +362,7 @@
 		foobar.appendChild(lnkUncheckAll);
 		
 	}
+
 	
 
 	

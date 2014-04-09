@@ -13,6 +13,9 @@ test( "Example Test", 2, function() {
 Please create your tests below...
 ********************************/
 
+//this is the first time I've ever used qunit, forgive me if i'm not following stardard practices and good conventions.
+//for unit testing, my world before has only been mstests with the moq framework.
+
 module( "nmhai3's unit testing" );
 
 test( "reverseString of exacttarget should return tegrattcaxe", function() {
