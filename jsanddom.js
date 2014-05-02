@@ -84,12 +84,18 @@
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          // FILL THIS IN
+        return '' === sourceStr ? [] : sourceStr.split(',');
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          // FILL THIS IN
-     }
+          var res = 0;
+	  for (var i = 0; i < arguments.length; i++) {
+	        res += parseInt(arguments[i]);
+	     }
+		    return res;
+	     }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
@@ -97,7 +103,15 @@
      }
 
      // write an example of a javascript closure
-
+	 function doClosure() {
+		var name = "Michael Butcher";
+		return {
+			log: function() { console.log(name); }
+		}
+	 }
+	 doStuff().log();
+	 console.log("doClosure.name is undefined: " + (doClosure().name === undefined));
+	 
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -106,6 +120,25 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+
+	var people = [
+		{ "firstName": "Daffy",
+		  "lastName": "Duck",
+		  "city": "Indianapolis",
+		  "state": "IN",
+		  "zip": "46204",
+		  "phone": { "home": "317-555-1234", "work": "317-555-3322", "mobile": "" }
+		},
+		{ "firstName": "Wile",
+		  "lastName": "Coyote",
+		  "city": "Acmeville",
+		  "state": "UT",
+		  "zip": "66789",
+		  "phone": { "home": "", "work": "1-800-ROCKETS", "mobile": "1-800-555-BEEP" }
+		}
+	 ];
+
+
 
 
      // Create a javascript object (DataTable) with the following:
