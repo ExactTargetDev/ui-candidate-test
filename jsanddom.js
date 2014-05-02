@@ -1,22 +1,35 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
+         return str.split('').reverse().join('');
+         
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+          return Math.min.apply(null, values);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+    
+                 var distinct = [];
+                 values.forEach(function (x) {
+                   var key = fn(x);
+                   if (!unique[key]) {
+                     distinct.push(key);
+                     unique[key] = true;
+                   }
+                 });
+                 return distinct;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -25,6 +38,17 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
+         for(var i = 1; i <= 100; i++) {
+			if(i % 3 === 0 && i % 5 === 0) {
+				console.log("FizzBuzz");
+			} else if(i % 3 === 0) {
+				console.log("Fizz");
+			} else if(i % 5 === 0) {
+				console.log("Buzz");
+			} else {
+				console.log(i);
+			}
+		}
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -33,6 +57,20 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+         
+         var Array1 = fruits;
+	 var Array2 = fruitsToRemove;
+		 
+		for (var i = 0; i<Array2.length; i++) {
+			var arrlen = Array1.length;
+			for (var j = 0; j<arrlen; j++) {
+				if (Array2[i] == Array1[j]) {
+					Array1 = Array1.slice(0, j).concat(Array1.slice(j+1, arrlen));
+				}//if close
+			}//for close
+		}//for close
+		return(Array1);
+         
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -41,17 +79,30 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+         if(toPush instanceof Array) {
+			array.push.apply(array, toPush);
+		} else {
+			array.push(toPush);
+		}
+
+		return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          // FILL THIS IN
+        return '' === sourceStr ? [] : sourceStr.split(',');
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          // FILL THIS IN
-     }
+          var res = 0;
+	  for (var i = 0; i < arguments.length; i++) {
+	        res += parseInt(arguments[i]);
+	     }
+		    return res;
+	     }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
@@ -59,7 +110,15 @@
      }
 
      // write an example of a javascript closure
-
+	 function doClosure() {
+		var name = "Michael Butcher";
+		return {
+			log: function() { console.log(name); }
+		}
+	 }
+	 doStuff().log();
+	 console.log("doClosure.name is undefined: " + (doClosure().name === undefined));
+	 
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -68,6 +127,25 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+
+	var people = [
+		{ "firstName": "Daffy",
+		  "lastName": "Duck",
+		  "city": "Indianapolis",
+		  "state": "IN",
+		  "zip": "46204",
+		  "phone": { "home": "317-555-1234", "work": "317-555-3322", "mobile": "" }
+		},
+		{ "firstName": "Wile",
+		  "lastName": "Coyote",
+		  "city": "Acmeville",
+		  "state": "UT",
+		  "zip": "66789",
+		  "phone": { "home": "", "work": "1-800-ROCKETS", "mobile": "1-800-555-BEEP" }
+		}
+	 ];
+
+
 
 
      // Create a javascript object (DataTable) with the following:
