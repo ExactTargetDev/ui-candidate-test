@@ -57,6 +57,20 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+         
+         var Array1 = fruits;
+	 var Array2 = fruitsToRemove;
+		 
+		for (var i = 0; i<Array2.length; i++) {
+			var arrlen = Array1.length;
+			for (var j = 0; j<arrlen; j++) {
+				if (Array2[i] == Array1[j]) {
+					Array1 = Array1.slice(0, j).concat(Array1.slice(j+1, arrlen));
+				}//if close
+			}//for close
+		}//for close
+		return(Array1);
+         
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
