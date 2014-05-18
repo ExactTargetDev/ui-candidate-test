@@ -7,8 +7,10 @@ Read *ALL* bullet points.
 Please include "ATTENTION: &lt;ET Contacts Name&gt;" in your pull request
 
 ## Here are the guidelines for the test:
-+ Be sure to read all the bullet points bellow.
++ Be sure to read all the bullet points below.
 + Please take no longer than 48 hours from first commit (see meta.txt bellow) unless otherwise requested.
++ Any method you write MUST have an associated unit test.
++ All tests MUST pass.
 + Fork this repository, do your work, commit early/often with descriptive messages. When finished, send a pull request.
 + The "JsAndDom.*" (html and js) files have a series of questions/tasks for you to complete.
 + The "UI_CandidateTest_IMH_dashboard.*" files (png and psd) are for you to replicate.
