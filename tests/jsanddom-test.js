@@ -45,13 +45,28 @@ test( 'Finding the distinct values in an array', 4, function() {
   deepEqual( values, [1,2,2,2,2,3], 'Must not modify input array' );
 });
 
-test( 'Logging fizzbuzz to console', 3, function() {
+test( 'Logging fizzbuzz to console', 7, function() {
   // Verify the method exists
   equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' );
 
-  var cons = sinon.spy(console.log);
   // Make sure the result from the function is valid
   ok( !doFizzBuzz(), 'Expected no returned result, the result was: ' + doFizzBuzz() );
-  doFizBuzz();
-  ok( cons.called, 'Expected console.log to have been called.' );
+
+  // test to see if console.log was called the correct number of times
+  var cons = sinon.spy(console, 'log');
+  doFizzBuzz();
+  equal( cons.callCount, 100, 'Expected console.log to have been called exactly 100 times.' );
+
+  // tests results of fizzbuzz calls
+  var fizzBuzzThree = console.log.getCall(2); // 2nd index = 3
+  equal( fizzBuzzThree.args[0], 'Fizz', 'Expected 3 to be replaced with "Fizz"' );
+
+  var fizzBuzzFive = console.log.getCall(4); // 4th index = 5
+  equal( fizzBuzzFive.args[0], 'Buzz', 'Expected 5 to be replaced with "Buzz"' );
+
+  var fizzBuzzFifteen = console.log.getCall(14); // 14th index = 15
+  equal( fizzBuzzFifteen.args[0], 'FizzBuzz', 'Expected 15 to be replaced with "FizzBuzz"' );
+  
+  var fizzBuzzSeven = console.log.getCall(6); // 6th index = 7
+  equal( fizzBuzzSeven.args[0], 7, 'Expected 7 to be unaltered' );
 });
