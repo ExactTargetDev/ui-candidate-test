@@ -45,7 +45,7 @@ test( 'Finding the distinct values in an array', 4, function() {
   deepEqual( values, [1,2,2,2,2,3], 'Must not modify input array' );
 });
 
-test( 'Logging fizzbuzz to console', 7, function() {
+test( 'Logging FizzBuzz to console', 7, function() {
   // Verify the method exists
   equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' );
 
@@ -66,7 +66,15 @@ test( 'Logging fizzbuzz to console', 7, function() {
 
   var fizzBuzzFifteen = console.log.getCall(14); // 14th index = 15
   equal( fizzBuzzFifteen.args[0], 'FizzBuzz', 'Expected 15 to be replaced with "FizzBuzz"' );
-  
+
   var fizzBuzzSeven = console.log.getCall(6); // 6th index = 7
   equal( fizzBuzzSeven.args[0], 7, 'Expected 7 to be unaltered' );
+});
+
+test( 'Take 2 arrays and remove all elements in the first found in the second', 2, function() {
+  // Verify the method exists
+  equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
+
+  // Make sure the result from the function is valid
+  deepEqual( removeFruits( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana'] ), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Expected [\'apple\', \'orange\', \'kiwi\', \'plum\', \'strawberry\'] as the result, the result was: ' + removeFruits( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana'] ) );
 });

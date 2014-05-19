@@ -67,7 +67,15 @@
   // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
   // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
   function removeFruits(fruits, fruitsToRemove) {
-    // FILL THIS IN
+    // almost the same as findDistinctValues
+    for (var i = 0; i < fruits.length; i++) {
+      if(fruitsToRemove.indexOf(fruits[i]) !== -1) {
+        fruits.splice(i, 1);
+        i--;
+      }
+    }
+
+    return fruits;
   }
 
   // Write a function to push either a simple value or an array of values onto a specified array.
