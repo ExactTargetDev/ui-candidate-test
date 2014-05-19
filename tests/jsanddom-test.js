@@ -42,5 +42,16 @@ test( 'Finding the distinct values in an array', 4, function() {
   // Make sure input array is not modified
   var values = [1,2,2,2,2,3];
   findDistinctValues( values );
-  equal( values.length, 6, 'Must not modify input array' );
+  deepEqual( values, [1,2,2,2,2,3], 'Must not modify input array' );
+});
+
+test( 'Logging fizzbuzz to console', 3, function() {
+  // Verify the method exists
+  equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' );
+
+  var cons = sinon.spy(console.log);
+  // Make sure the result from the function is valid
+  ok( !doFizzBuzz(), 'Expected no returned result, the result was: ' + doFizzBuzz() );
+  doFizBuzz();
+  ok( cons.called, 'Expected console.log to have been called.' );
 });
