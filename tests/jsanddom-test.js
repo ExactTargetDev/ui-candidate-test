@@ -22,11 +22,25 @@ test( 'Reverseing a string', 2, function() {
   ok( reverseString( 'Banana' ), 'ananaB', 'Expected ananaB as the result, the result was: ' + reverseString( 'Banana' ) );
 });
 
-test( 'Finding the minimum value', 3, function() {
+test( 'Finding the minimum value of an array', 3, function() {
   // Verify the method exists
   equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
 
   // Make sure the result from the function is valid
   ok( findMinValue( [3,2,4,1,5] ), 1, 'Expected 1 as the result, the result was: ' + findMinValue( [3,2,4,1,5] ) );
   ok( findMinValue( [0,1,2,3,-6,-7] ), -7, 'Expected -7 as the result, the result was: ' + findMinValue( [0,1,2,3,-6,-7] ) );
+});
+
+test( 'Finding the distinct values in an array', 4, function() {
+  // Verify the method exists
+  equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
+
+  // Make sure the result from the function is valid
+  ok( findDistinctValues( [3,2,4,1,5] ), [3,2,4,1,5], 'Expected [3,2,4,1,5] as the result, the result was: ' + findDistinctValues( [3,2,4,1,5] ) );
+  ok( findDistinctValues( [1,1,1,1,1,1] ), [1], 'Expected [1] as the result, the result was: ' + findDistinctValues( [0,1,2,3,-6,-7] ) );
+
+  // Make sure input array is not modified
+  var values = [1,2,2,2,2,3];
+  findDistinctValues( values );
+  equal( values.length, 6, 'Must not modify input array' );
 });
