@@ -98,10 +98,12 @@ test( 'Split a string to an array at it\'s commas', 4, function() {
   deepEqual( splitListStrUsingComma( 'Fhqwhgads' ), ['Fhqwhgads'], 'Expected [\'Fhqwhgads\'] as the result, the result was: ' + splitListStrUsingComma( 'Fhqwhgads' ) );
 });
 
-test( 'Split a string to an array at it\'s commas', 2, function() {
+test( 'Test if a string contains ONLY whitespace', 4, function() {
   // Verify the method exists
-  equal( typeof sum, 'function', 'Must contain a sum function' );
+  equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
 
   // Make sure the result from the function is valid
-  equal( sum( 1, 2, 3 ), 6, 'Expected 6 as the result, the result was: ' + sum( 1, 2, 3 ) );
+  equal( isOnlyWhitespace( 'hello' ), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace( 'hello' ) );
+  equal( isOnlyWhitespace( 'h e l l o' ), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace( 'h e l l o' ) );
+  equal( isOnlyWhitespace( '         ' ), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace( '         ' ) );
 });
