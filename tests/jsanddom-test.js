@@ -97,3 +97,11 @@ test( 'Split a string to an array at it\'s commas', 4, function() {
   deepEqual( splitListStrUsingComma( '' ), [], 'Expected [] as the result, the result was: ' + splitListStrUsingComma( '' ) );
   deepEqual( splitListStrUsingComma( 'Fhqwhgads' ), ['Fhqwhgads'], 'Expected [\'Fhqwhgads\'] as the result, the result was: ' + splitListStrUsingComma( 'Fhqwhgads' ) );
 });
+
+test( 'Split a string to an array at it\'s commas', 2, function() {
+  // Verify the method exists
+  equal( typeof sum, 'function', 'Must contain a sum function' );
+
+  // Make sure the result from the function is valid
+  equal( sum( 1, 2, 3 ), 6, 'Expected 6 as the result, the result was: ' + sum( 1, 2, 3 ) );
+});
