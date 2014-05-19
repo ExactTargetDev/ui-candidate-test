@@ -13,7 +13,8 @@
 
 	// Write a function that takes an array of numbers and returns the minimum value
 	function findMinValue(values) {
-		// FILL THIS IN
+		// apply takes an array of arguments as a second argument so 'values' can be passed into Math.min which takes only numbers
+		return Math.min.apply(false, values);
 	}
 
 	// Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
