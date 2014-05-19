@@ -78,3 +78,12 @@ test( 'Take 2 arrays and remove all elements in the first found in the second', 
   // Make sure the result from the function is valid
   deepEqual( removeFruits( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana'] ), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Expected [\'apple\', \'orange\', \'kiwi\', \'plum\', \'strawberry\'] as the result, the result was: ' + removeFruits( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana'] ) );
 });
+
+test( 'Push element or another array onto the end of an array', 3, function() {
+  // Verify the method exists
+  equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' );
+
+  // Make sure the result from the function is valid
+  deepEqual( pushOntoArray( [1, 2, 3, 4], 5 ), [1, 2, 3, 4, 5], 'Expected [1, 2, 3, 4, 5] as the result, the result was: ' + pushOntoArray( [1, 2, 3, 4], 5 ) );
+  deepEqual( pushOntoArray( [1, 2, 3, 4], [5, 6, 7, 8] ), [1, 2, 3, 4, 5, 6, 7, 8], 'Expected [1, 2, 3, 4, 5, 6, 7, 8] as the result, the result was: ' + pushOntoArray( [1, 2, 3, 4], [5, 6, 7, 8] ) );
+});
