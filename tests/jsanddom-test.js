@@ -87,3 +87,13 @@ test( 'Push element or another array onto the end of an array', 3, function() {
   deepEqual( pushOntoArray( [1, 2, 3, 4], 5 ), [1, 2, 3, 4, 5], 'Expected [1, 2, 3, 4, 5] as the result, the result was: ' + pushOntoArray( [1, 2, 3, 4], 5 ) );
   deepEqual( pushOntoArray( [1, 2, 3, 4], [5, 6, 7, 8] ), [1, 2, 3, 4, 5, 6, 7, 8], 'Expected [1, 2, 3, 4, 5, 6, 7, 8] as the result, the result was: ' + pushOntoArray( [1, 2, 3, 4], [5, 6, 7, 8] ) );
 });
+
+test( 'Split a string to an array at it\'s commas', 4, function() {
+  // Verify the method exists
+  equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
+
+  // Make sure the result from the function is valid
+  deepEqual( splitListStrUsingComma( 'The, quick, brown, fox jumped over' ), ['The', 'quick', 'brown', 'fox jumped over'], 'Expected [\'The\', \'quick\', \'brown\', \'fox jumped over\'] as the result, the result was: ' + splitListStrUsingComma( 'The, quick, brown, fox jumped over' ) );
+  deepEqual( splitListStrUsingComma( '' ), [], 'Expected [] as the result, the result was: ' + splitListStrUsingComma( '' ) );
+  deepEqual( splitListStrUsingComma( 'Fhqwhgads' ), ['Fhqwhgads'], 'Expected [\'Fhqwhgads\'] as the result, the result was: ' + splitListStrUsingComma( 'Fhqwhgads' ) );
+});

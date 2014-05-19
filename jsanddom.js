@@ -84,6 +84,7 @@
   // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
   function pushOntoArray(array, toPush) {
 
+    // typeof [] === "object", must use Array.isArray to test
     if (Array.isArray(toPush)) {
       // concat is non-mutative so the result needs to be explicitly assigned
       array = array.concat(toPush);
@@ -96,7 +97,13 @@
 
   // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
   function splitListStrUsingComma(sourceStr) {
-    // FILL THIS IN
+    // '' == false
+    if (sourceStr) {
+      return sourceStr.split(', ');
+    }
+
+    // the only real exception
+    return [];
   }
 
   // Write a function that will take any number of arguments and return their sum
