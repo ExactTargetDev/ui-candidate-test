@@ -1,22 +1,138 @@
+/* COLORS
+orange:    #f8981d;
+white-ish: #fefffd;
+blue-gray: #c0cdd6;
+text-gray: #888;
+text-blue: #99cce1;
+*/
+
 body {
   margin: 0;
   background-color: #fefffd;
   font-size: 16px;
+  font-family: Helvetica, "Helvetica-neue", Arial, sans-serif;
 }
 
+/* HEADER */
+
 header {
-  background: #2a2f32; /* Old browsers */
-  background: -moz-linear-gradient(top, #2a2f32 0%, #45525c 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2a2f32), color-stop(100%,#45525c)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #2a2f32 0%,#45525c 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #2a2f32 0%,#45525c 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #2a2f32 0%,#45525c 100%); /* IE10+ */
-  background: linear-gradient(to bottom, #2a2f32 0%,#45525c 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a2f32', endColorstr='#45525c',GradientType=0 ); /* IE6-9 */
+  background: #45525c; /* Old browsers */
+  background: -moz-linear-gradient(top, #45525c 0%, #2a2f32 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45525c), color-stop(100%,#2a2f32)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #45525c 0%,#2a2f32 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #45525c 0%,#2a2f32 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #45525c 0%,#2a2f32 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #45525c 0%,#2a2f32 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45525c', endColorstr='#2a2f32',GradientType=0 ); /* IE6-9 */
   /*height: 32px;*/
   width: 100%;
   color: #fff;
-  font-family: Helvetica, "Helvetica-neue", Arial, sans-serif;
   padding: 16px;
   line-height: 0;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  font-weight: 200;
+}
+
+.logo {
+  font-size: 1.125rem;
+  line-height: 0;
+}
+
+header nav {
+  text-align: right;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+header a {
+  text-decoration: none;
+  color: #99cce1;
+}
+
+/* DASHBOARD CONTROLS */
+
+#container {
+  width: 100%;
+}
+
+section {
+  width: 100%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+/* MENU SIDEBAR */
+
+#sidebar {
+  margin: 20px;
+  border-radius: 5px;
+  width: 15%;
+  background-color: #f4f4f5;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
+}
+
+.nav-header {
+  background: #fcd3a1; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fcd3a1 0%, #fdaf4b 6%, #f8981d 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcd3a1), color-stop(6%,#fdaf4b), color-stop(100%,#f8981d)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #fcd3a1 0%,#fdaf4b 6%,#f8981d 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fcd3a1 0%,#fdaf4b 6%,#f8981d 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fcd3a1 0%,#fdaf4b 6%,#f8981d 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fcd3a1 0%,#fdaf4b 6%,#f8981d 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcd3a1', endColorstr='#f8981d',GradientType=0 ); /* IE6-9 */
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 0 2px #f8981d;
+  border: 2px solid #f8981d;
+  border-bottom: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#sidebar nav {
+  border: 1px solid #aaa;
+  border-top: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#sidebar section {
+  padding: 10px;
+}
+
+#sidebar a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.75rem;
+  display: block;
+  padding: 3px;
+  height: 24px;
+  display: block;
+  position: relative;
+}
+
+#sidebar span {
+  position: relative;
+  line-height: 0;
+  top: 25%;
+}
+
+.nav-sprite {
+  background-image: url("navsprites.png");
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  float: left;
+  clear: none;
+  margin-right: 12px;
+}
+
+.imh-logo {
+  width: 36px;
+  height: 36px;
+  background-position: -26px 0;
 }
