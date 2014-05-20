@@ -83,7 +83,7 @@ test( "Split List Str Using Comma", 2, function() {
     // Verify the method exists
     equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' ); 
 
-    // Make sure the result from the function is valid. Test adding a single item.
+    // Make sure the result from the function is valid.
     deepEqual( splitListStrUsingComma('The, quick, brown, fox jumped over'), ['The', 'quick', 'brown', 'fox jumped over'], 
       'Expected [\'The\', \'quick\', \'brown\', \'fox jumped over\'] as the result, the result was: ' + 
       splitListStrUsingComma('The, quick, brown, fox jumped over') );
@@ -94,6 +94,24 @@ test( "Sum", 2, function() {
     // Verify the method exists
     equal( typeof sum, 'function', 'Must contain a sum function' ); 
 
-    // Make sure the result from the function is valid. Test adding a single item.
+    // Make sure the result from the function is valid.
     equal( sum(1, 2, 3, 4, 5), 15, 'Expected 15 as the result, the result was: ' + sum(1, 2, 3, 4, 5) );
+});
+
+module( "Only Whitespace" );
+test( "Only Whitespace", 5, function() {
+    // Verify the method exists
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' ); 
+
+    // Make sure the result from the function is valid.
+    equal( isOnlyWhitespace(' '), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace(' ') );
+
+    // Make sure the result from the function is valid.
+    equal( isOnlyWhitespace(' abc '), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace(' abc ') );
+
+    // Make sure the result from the function is valid.
+    equal( isOnlyWhitespace('abc '), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace('abc ') );
+
+    // Make sure the result from the function is valid.
+    equal( isOnlyWhitespace('    '), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace('    ') );            
 });
