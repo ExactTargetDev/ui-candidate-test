@@ -6,12 +6,15 @@ function divide( a, b ) {
 
 // Write a function that takes a single argument (a string) and returns the string reversed.
 function reverseString(str) {
-   return str.split('').reverse().join('');
+  return str.split('').reverse().join('');
 }
 
 // Write a function that takes an array of numbers and returns the minimum value
 function findMinValue(values) {
-   // FILL THIS IN
+  var result = values.sort(function(a,b){
+    return a - b;
+  });
+  return result[0];
 }
 
 // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
