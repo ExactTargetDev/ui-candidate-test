@@ -21,3 +21,12 @@ test( "Reverse String", 2, function() {
     equal( reverseString( 'Subscribers rock' ), 'kcor srebircsbuS', 'Expected kcor srebircsbuS as the result, the result was: ' 
       + reverseString('Subscribers rock') );
 });
+
+module( "Find Min Value" );
+test( "Find Minimum Value", 2, function() {
+    // Verify the method exists
+    equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' ); 
+
+    // Make sure the result from the function is valid
+    equal( findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ), -1.1, 'Expected -1.1 as the result, the result was: ' + findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]) );
+});
