@@ -153,6 +153,25 @@
   // - zip
   // - a collection of phone numbers (home, work, mobile)
 
+  var people =  {people: [
+                  {
+                    first: 'Eric',
+                    last: 'Hannum',
+                    city: 'San Francisco',
+                    state: 'CA',
+                    zip: 94903,
+                    phone: {
+                      home: null, // because JSON can't hold undefined
+                      work: null,
+                      mobile: 4156867166
+                    }
+                  },
+                  {
+                    // ...
+                  }
+                ]
+              };
+
 
   // Create a javascript object (DataTable) with the following:
   // A private columns property (string array)
