@@ -147,6 +147,46 @@ function greeting(person){
 // - state
 // - zip
 // - a collection of phone numbers (home, work, mobile)
+{
+  "people": [
+    {
+      "firstName": "Ben",
+      "lastName": "Stone",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94107"
+      "phone": [
+        { "home": "917-650-0327"},
+        { "work": "212-224-3599"},
+        { "mobile": "955-555-5454" }
+      ]
+    },
+    {
+      "firstName": "Alyssa",
+      "lastName": "Stone",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94107"
+      "phone": [
+        { "home": "646-650-6464"},
+        { "work": "212-224-3590"},
+        { "mobile": "875-555-5454" }
+      ]
+    },
+    {
+      "firstName": "Sharon",
+      "lastName": "Stone",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "87902"
+      "phone": [
+        { "home": "456-650-4567"},
+        { "work": "123-456-7890"},
+        { "mobile": "888-555-5432" }
+      ]
+    },
+  ]
+}
 
 
 // Create a javascript object (DataTable) with the following:
