@@ -213,7 +213,7 @@
       // pads out the rows, if needed, to fill columns
       args.length = columns.length;
 
-      this.rows.push(args);
+      rows.push(args);
     };
 
     this.getData = function () {
@@ -221,16 +221,14 @@
 
       for (var i = 0; i < rows.length; i++) {
         result[i] = {};
-        for (var j = 0; j < column.length; j++) {
-          result[i][column[j]] = rows[i][j];
+        for (var j = 0; j < columns.length; j++) {
+          result[i][columns[j]] = rows[i][j];
         }
       }
 
       return result;
     };
   };
-
-  var DataTable = new DataTableConstructor();
 
   // within div1, programatically create a
   // SELECT element (with multiple items) and a button.

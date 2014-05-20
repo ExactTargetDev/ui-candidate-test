@@ -117,7 +117,7 @@ DataTable tests
 
 module( 'DataTable Method Tests' );
 
-test( 'Build a data table JSON object', 3, function() {
+test( 'Build a data table JSON object', 6, function() {
   var DataTable = new DataTableConstructor();
 
   // Verify the methods exist
@@ -126,5 +126,12 @@ test( 'Build a data table JSON object', 3, function() {
   equal( typeof DataTable.getData, 'function', 'Must contain an getData method' );
 
   // Make sure the result from the function is valid
-  // equal( isOnlyWhitespace( 'hello' ), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace( 'hello' ) );
+  DataTable.addColumns('name', 'city', 'state');
+  deepEqual( DataTable.getData(), {}, 'Expected {} as the result, the result was: ' + JSON.stringify(DataTable.getData()) );
+
+  DataTable.addRow('Spiderman', 'New York', 'NY');
+  deepEqual( DataTable.getData(), {'0':{name:'Spiderman', city:'New York', state:'NY'}}, 'Expected {\'0\':{name:\'Spiderman\', city:\'New York\', state:\'NY\'}} as the result, the result was: ' + JSON.stringify(DataTable.getData()) );
+
+  DataTable.addRow('Strong Bad', 'Strongbadia', 'Free Country USA');
+  deepEqual( DataTable.getData(), {'0':{name:'Spiderman', city:'New York', state:'NY'}, '1':{name:'Strong Bad', city:'Strongbadia', state:'Free Country USA'}}, 'Expected... something very long as the result, the result was: ' + JSON.stringify(DataTable.getData()) );
 });
