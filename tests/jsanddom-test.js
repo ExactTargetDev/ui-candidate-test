@@ -63,3 +63,19 @@ test( "Remove Fruits", 2, function() {
       'Expected [\'apple\', \'orange\', \'kiwi\', \'plum\', \'strawberry\'] as the result, the result was: ' + removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']) );
    
 });
+
+module( "Push to Array" );
+test( "Push to Array", 3, function() {
+    // Verify the method exists
+    equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' ); 
+
+    // Make sure the result from the function is valid. Test adding a single item.
+    deepEqual( pushOntoArray(['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'banana'), ['apple', 'orange', 'kiwi', 'plum', 'strawberry', 'banana'], 
+      'Expected [\'apple\', \'orange\', \'kiwi\', \'plum\', \'strawberry\', \'banana\'] as the result, the result was: ' + pushOntoArray(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], 'banana') );
+
+    // Make sure the result from the function is valid. Test adding an array of items.
+    deepEqual( pushOntoArray(['apple', 'orange', 'kiwi', 'plum', 'strawberry'], ['banana', 'pear']), ['apple', 'orange', 'kiwi', 'plum', 'strawberry', 'banana', 'pear'], 
+      'Expected [\'apple\', \'orange\', \'kiwi\', \'plum\', \'strawberry\', \'banana\', \'pear\'] as the result, the result was: ' + pushOntoArray(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['banana', 'pear']) );    
+});
+
+
