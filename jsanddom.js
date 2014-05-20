@@ -127,6 +127,23 @@
 
   // write an example of a javascript closure
 
+  // The underscore _.after method which calls a callback only after it has been called n times:
+
+  var after = function (n, func) {
+    return function () {
+      if (--n < 1) {
+        return func.apply(this, arguments);
+      }
+    };
+  };
+
+  // ex: var threeCount = after(3, function(){ alert('threeCount called 3 times!') });
+
+  // the 'n' variable remains accessable to the returned function
+  // because they are both inside the closure created by invoking
+  // the after function.
+
+
   // define a json object that represents a collection of people.
   // each person should have the following properties
   // - first name
