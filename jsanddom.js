@@ -185,6 +185,29 @@
   // .addRow('value1A', 'value1B', 'value1C');
   // .addRow('value2A', 'value2B', 'value2C');
 
+  var DataTableConstructor = function () {
+    var columns = [];
+    var rows = [];
+
+    this.addColumns = function () {
+      // because arguments isn't REALLY an array...
+      var args = Array.prototype.slice.call(arguments);
+
+      columns = columns.concat(args);
+      console.log(columns);
+    };
+
+    this.addRow = function (row) {
+      
+    };
+
+    this.getData = function () {
+
+    };
+  };
+
+  var DataTable = new DataTableConstructor();
+
   // within div1, programatically create a
   // SELECT element (with multiple items) and a button.
   // when the button is clicked write out the name and value of the selected item to the console.

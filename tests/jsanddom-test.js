@@ -49,7 +49,7 @@ test( 'Logging FizzBuzz to console', 7, function() {
   // Verify the method exists
   equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' );
 
-  // Make sure the result from the function is valid
+  // Make sure the return value from the function is valid
   ok( !doFizzBuzz(), 'Expected no returned result, the result was: ' + doFizzBuzz() );
 
   // test to see if console.log was called the correct number of times
@@ -69,6 +69,9 @@ test( 'Logging FizzBuzz to console', 7, function() {
 
   var fizzBuzzSeven = console.log.getCall(6); // 6th index = 7
   equal( fizzBuzzSeven.args[0], 7, 'Expected 7 to be unaltered' );
+
+  //removes the spy from console.log
+  console.log.restore();
 });
 
 test( 'Take 2 arrays and remove all elements in the first found in the second', 2, function() {
