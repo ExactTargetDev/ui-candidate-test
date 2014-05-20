@@ -185,10 +185,13 @@
   // .addRow('value1A', 'value1B', 'value1C');
   // .addRow('value2A', 'value2B', 'value2C');
 
-  var DataTableConstructor = function () {
+  var DataTable = function () {
+
+    // private variables
     var columns = [];
     var rows = [];
 
+    // public methods that retain access to private variables
     this.addColumns = function () {
       // because arguments isn't REALLY an array...
       var args = Array.prototype.slice.call(arguments);
@@ -230,9 +233,26 @@
     };
   };
 
+  // i'm just going to put this here:
+  $(document).ready(function(){
   // within div1, programatically create a
   // SELECT element (with multiple items) and a button.
   // when the button is clicked write out the name and value of the selected item to the console.
+
+  $('#div1').append('<select id="dropdown">' +
+                      '<option name="flamingo" value="pink">Flamingo</option>' +
+                      '<option name="banana" value="yellow">Banana</option>' +
+                      '<option name="motorcycle" value="green">Motorcycle</option>' +
+                      '<option name="moon" value="cheese">The Moon</option>' +
+                    '</select>'+
+                    '<button class="selectOption">Select</button>');
+
+  $('.selectOption').click(function(e){
+    var name = $('#dropdown').find(":selected").attr('name');
+    var value = $('#dropdown').find(":selected").val();
+
+    console.log(name + ': ' + value);
+  });
 
   // Write 5 different jQuery selectors to retrieve the
   // sample anchor in the markup below.
@@ -244,3 +264,4 @@
   // to the div with an id of "foobar"
   // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
   // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+  });

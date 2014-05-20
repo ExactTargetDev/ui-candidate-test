@@ -118,20 +118,20 @@ DataTable tests
 module( 'DataTable Method Tests' );
 
 test( 'Build a data table JSON object', 6, function() {
-  var DataTable = new DataTableConstructor();
+  var dataTable = new DataTable();
 
   // Verify the methods exist
-  equal( typeof DataTable.addColumns, 'function', 'Must contain an addColumns method' );
-  equal( typeof DataTable.addRow, 'function', 'Must contain an addRow method' );
-  equal( typeof DataTable.getData, 'function', 'Must contain an getData method' );
+  equal( typeof dataTable.addColumns, 'function', 'Must contain an addColumns method' );
+  equal( typeof dataTable.addRow, 'function', 'Must contain an addRow method' );
+  equal( typeof dataTable.getData, 'function', 'Must contain an getData method' );
 
   // Make sure the result from the function is valid
-  DataTable.addColumns('name', 'city', 'state');
-  deepEqual( DataTable.getData(), {}, 'Expected {} as the result, the result was: ' + JSON.stringify(DataTable.getData()) );
+  dataTable.addColumns('name', 'city', 'state');
+  deepEqual( dataTable.getData(), {}, 'Expected {} as the result, the result was: ' + JSON.stringify(dataTable.getData()) );
 
-  DataTable.addRow('Spiderman', 'New York', 'NY');
-  deepEqual( DataTable.getData(), {'0':{name:'Spiderman', city:'New York', state:'NY'}}, 'Expected {\'0\':{name:\'Spiderman\', city:\'New York\', state:\'NY\'}} as the result, the result was: ' + JSON.stringify(DataTable.getData()) );
+  dataTable.addRow('Spiderman', 'New York', 'NY');
+  deepEqual( dataTable.getData(), {'0':{name:'Spiderman', city:'New York', state:'NY'}}, 'Expected {\'0\':{name:\'Spiderman\', city:\'New York\', state:\'NY\'}} as the result, the result was: ' + JSON.stringify(dataTable.getData()) );
 
-  DataTable.addRow('Strong Bad', 'Strongbadia', 'Free Country USA');
-  deepEqual( DataTable.getData(), {'0':{name:'Spiderman', city:'New York', state:'NY'}, '1':{name:'Strong Bad', city:'Strongbadia', state:'Free Country USA'}}, 'Expected... something very long as the result, the result was: ' + JSON.stringify(DataTable.getData()) );
+  dataTable.addRow('Strong Bad', 'Strongbadia');
+  deepEqual( dataTable.getData(), {'0':{name:'Spiderman', city:'New York', state:'NY'}, '1':{name:'Strong Bad', city:'Strongbadia', state:undefined}}, 'Expected... something very long as the result, the result was: ' + JSON.stringify(dataTable.getData()) );
 });
