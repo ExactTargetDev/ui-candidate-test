@@ -42,3 +42,13 @@ test( "Find Distinct Values", 3, function() {
     // Make sure the result from the function is valid (strings)
     deepEqual( findDistinctValues( ['apple', 'banana', 'orange', 'banana', 'pear', 'apple', 'strawberry'] ), ['apple', 'banana', 'orange', 'pear', 'strawberry'], 'Expected ["apple", "banana", "orange", "pear", "strawberry"] as the result, the result was: ' + findDistinctValues(['apple', 'banana', 'orange', 'banana', 'pear', 'apple', 'strawberry']) );    
 });
+
+module( "FizzBuzz" );
+test( "FizzBuzz", 2, function() {
+    // Verify the method exists
+    equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' ); 
+
+    // Make sure the result from the function is valid (first 15 numbers as a string).
+    equal( doFizzBuzz(15), '1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz', 'Expected  1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz as the result, the result was: ' + doFizzBuzz(15) );
+   
+});
