@@ -131,3 +131,18 @@ test( "JSON", 1, function() {
     // Make sure the result from the function is valid.
     equal( data.people[0].state, 'CA', 'Expected CA as the result, the result was: ' + data.people[0].state );            
 });
+
+module( "JSON Data Table" );
+test( "JSON Data Table", 1, function() {
+
+    // Make sure the result from the function is the correct JSON object.
+    equal( DataTable.getData(),
+      '{"row0":[{"column1":"value1A"},{"column2":"value1B"},{"column3":"value1C"}],"row1":[{"column1":"value2A"},{"column2":"value2B"},{"column3":"value2C"}]}', 
+      'Expected {"row0":[{"column1":"value1A"},{"column2":"value1B"},{"column3":"value1C"}],"row1":[{"column1":"value2A"},{"column2":"value2B"},{"column3":"value2C"}]} as the result, the result was: ' 
+      + DataTable.getData() );            
+});
+
+
+
+
+
