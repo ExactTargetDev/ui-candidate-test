@@ -224,7 +224,6 @@ var DataTable = (function(){
   };
 
   var getData = function(){
-    console.log(columns, rows);
     var tableObj = {};
 
     for(var i = 0; i < rows.length; i++){  
@@ -253,6 +252,40 @@ DataTable.addRow('value2A', 'value2B', 'value2C');
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
+
+function createEls(){
+  var div = document.getElementById('div1');
+  var select = document.createElement('select');
+
+  div.appendChild(select);
+
+  for(var i = 1; i <= 10; i++){
+    var el = document.createElement('option');
+    el.text = 'Option ' + i;
+    el.value = i;
+    select.appendChild(el);
+  }
+
+  var button = document.createElement('button');
+  if(button.addEventListener){
+    button.addEventListener('click', showOption);
+  }else{
+    button.attachEvent('onclick', showOption);
+  }
+
+  var buttonText = document.createTextNode('Disply Option Text');
+  button.appendChild(buttonText);
+
+  div.appendChild(button);
+}
+
+function showOption(){
+  var select = document.querySelector('#div1 select');
+  var options = select.options;
+  var selected = select.selectedIndex;
+  console.log('Value:', options[selected].value, 'Text:', options[selected].text);
+};
+
 
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
