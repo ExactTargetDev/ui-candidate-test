@@ -298,9 +298,32 @@ var $anchor = $('.buzz > a');
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
 
+function createList(){
+  var items = [];
+  var list = document.getElementById('list1');
 
+  for(var i = 1; i <= 5; i++){
+    items.push('Item ' + i);
+  }
+
+  for(var i = 0; i < items.length; i++){
+    var item = document.createElement('li');
+    var itemText = document.createTextNode(items[i]);
+    item.appendChild(itemText);
+    list.appendChild(item);
+  }
+}
 
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+
+
+// BS-> To enable functions to be called in JsAndDom.html without being called in the testing suite
+function initAll(){
+  createEls();
+  createList();
+}
+
