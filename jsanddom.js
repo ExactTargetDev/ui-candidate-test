@@ -101,7 +101,14 @@ function pushOntoArray(array, toPush) {
 
 // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
 function splitListStrUsingComma(sourceStr) {
-
+  if(sourceStr === ''){
+    return [];
+  }else{
+    var result = sourceStr.split(',');
+    return result.map(function(item){
+      return item.trim();
+    });
+  }
 }
 
 // Write a function that will take any number of arguments and return their sum
