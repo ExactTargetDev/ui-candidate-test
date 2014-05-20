@@ -78,4 +78,14 @@ test( "Push to Array", 3, function() {
       'Expected [\'apple\', \'orange\', \'kiwi\', \'plum\', \'strawberry\', \'banana\', \'pear\'] as the result, the result was: ' + pushOntoArray(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['banana', 'pear']) );    
 });
 
+module( "Split List Str Using Comma" );
+test( "Split List Str Using Comma", 2, function() {
+    // Verify the method exists
+    equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' ); 
+
+    // Make sure the result from the function is valid. Test adding a single item.
+    deepEqual( splitListStrUsingComma('The, quick, brown, fox jumped over'), ['The', 'quick', 'brown', 'fox jumped over'], 
+      'Expected [\'The\', \'quick\', \'brown\', \'fox jumped over\'] as the result, the result was: ' + 
+      splitListStrUsingComma('The, quick, brown, fox jumped over') );
+});
 
