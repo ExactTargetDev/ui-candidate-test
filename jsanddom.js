@@ -121,7 +121,13 @@ function sum() {
 
 // Write a function that will return true if a specified string consists of only whitespace.
 function isOnlyWhitespace(sourceStr) {
-   // FILL THIS IN
+  var re = /\s/;
+  for(var i = 0; i < sourceStr.length; i++){
+    if(re.test(sourceStr[i]) === false){
+      return false;
+    }
+  }
+  return true;
 }
 
 // write an example of a javascript closure
