@@ -113,7 +113,10 @@ function splitListStrUsingComma(sourceStr) {
 
 // Write a function that will take any number of arguments and return their sum
 function sum() {
-   // FILL THIS IN
+  var args = Array.prototype.slice.call(arguments);
+  return args.reduce(function(previousVal, currentVal){
+    return previousVal + currentVal
+  })
 }
 
 // Write a function that will return true if a specified string consists of only whitespace.
