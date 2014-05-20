@@ -115,3 +115,16 @@ test( 'Test if a string contains ONLY whitespace', 4, function() {
 DataTable tests
 ********************************/
 
+module( 'DataTable Method Tests' );
+
+test( 'Build a data table JSON object', 3, function() {
+  var DataTable = new DataTableConstructor();
+
+  // Verify the methods exist
+  equal( typeof DataTable.addColumns, 'function', 'Must contain an addColumns method' );
+  equal( typeof DataTable.addRow, 'function', 'Must contain an addRow method' );
+  equal( typeof DataTable.getData, 'function', 'Must contain an getData method' );
+
+  // Make sure the result from the function is valid
+  // equal( isOnlyWhitespace( 'hello' ), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace( 'hello' ) );
+});

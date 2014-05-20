@@ -217,7 +217,16 @@
     };
 
     this.getData = function () {
+      var result = {};
 
+      for (var i = 0; i < rows.length; i++) {
+        result[i] = {};
+        for (var j = 0; j < column.length; j++) {
+          result[i][column[j]] = rows[i][j];
+        }
+      }
+
+      return result;
     };
   };
 
