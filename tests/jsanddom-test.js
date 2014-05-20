@@ -125,3 +125,9 @@ test( "JS Closure", 2, function() {
     equal( greeting('Ben Stone'), 'Hello, Ben Stone', 'Expected Hello, Ben Stone as the result, the result was: ' + greeting('Ben Stone') );            
 });
 
+module( "JSON" );
+test( "JSON", 1, function() {
+
+    // Make sure the result from the function is valid.
+    equal( data.people[0].state, 'CA', 'Expected CA as the result, the result was: ' + data.people[0].state );            
+});
