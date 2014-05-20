@@ -89,3 +89,11 @@ test( "Split List Str Using Comma", 2, function() {
       splitListStrUsingComma('The, quick, brown, fox jumped over') );
 });
 
+module( "Sum" );
+test( "Sum", 2, function() {
+    // Verify the method exists
+    equal( typeof sum, 'function', 'Must contain a sum function' ); 
+
+    // Make sure the result from the function is valid. Test adding a single item.
+    equal( sum(1, 2, 3, 4, 5), 15, 'Expected 15 as the result, the result was: ' + sum(1, 2, 3, 4, 5) );
+});
