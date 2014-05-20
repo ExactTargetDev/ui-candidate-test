@@ -365,7 +365,7 @@ function uncheckAll(){
   }
 }
 
-// BS-> To enable functions to be called in JsAndDom.html without being called in the testing suite
+// To enable functions to be called in JsAndDom.html without being called in the testing suite
 function initAll(){
   createEls();
   createList();
