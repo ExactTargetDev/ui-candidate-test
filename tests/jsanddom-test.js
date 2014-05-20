@@ -52,3 +52,14 @@ test( "FizzBuzz", 2, function() {
     equal( doFizzBuzz(15), '1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz', 'Expected  1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz as the result, the result was: ' + doFizzBuzz(15) );
    
 });
+
+module( "Remove Fruits" );
+test( "Remove Fruits", 2, function() {
+    // Verify the method exists
+    equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' ); 
+
+    // Make sure the result from the function is valid
+    deepEqual( removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 
+      'Expected [\'apple\', \'orange\', \'kiwi\', \'plum\', \'strawberry\'] as the result, the result was: ' + removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']) );
+   
+});
