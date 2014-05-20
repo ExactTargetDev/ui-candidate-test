@@ -318,12 +318,57 @@ function createList(){
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+function addCheckboxes(){
+  var div = document.getElementById('foobar');
+  var list = document.createElement('ul');
+  div.appendChild(list);
 
+  for(var i = 1; i <= 5; i++){
+    var item = document.createElement('li');
+    var checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    item.appendChild(checkbox);
+    list.appendChild(item);
+  }
 
+  var link1 = document.createElement('a');
+  link1.addEventListener('click', checkAll);
+  var link1Text = document.createTextNode('Check All Boxes');
+  link1.appendChild(link1Text);
+  link1.id = 'check';
+  link1.style.cursor = 'pointer';
+  link1.style.display = 'block';
+
+  var link2 = document.createElement('a');
+  link2.addEventListener('click', uncheckAll);
+  var link2Text = document.createTextNode('Uncheck All Boxes');
+  link2.appendChild(link2Text);
+  link2.id = 'uncheck';
+  link2.style.cursor = 'pointer';
+  link1.style.display = 'block';
+
+  div.appendChild(link1);
+  div.appendChild(link2);
+}
+
+function checkAll(){
+  var checkboxes = document.querySelectorAll('#foobar input');
+  for(var i = 0; i < checkboxes.length; i++){
+    checkboxes[i].checked = true;
+  }
+}
+
+function uncheckAll(){
+  var checkboxes = document.querySelectorAll('#foobar input');
+  for(var i = 0; i < checkboxes.length; i++){
+    checkboxes[i].checked = false;
+  }
+}
 
 // BS-> To enable functions to be called in JsAndDom.html without being called in the testing suite
 function initAll(){
   createEls();
   createList();
+  addCheckboxes();
 }
 
