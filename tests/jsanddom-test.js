@@ -110,3 +110,8 @@ test( 'Test if a string contains ONLY whitespace', 4, function() {
   equal( isOnlyWhitespace( 'h e l l o' ), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace( 'h e l l o' ) );
   equal( isOnlyWhitespace( '         ' ), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace( '         ' ) );
 });
+
+/********************************
+DataTable tests
+********************************/
+

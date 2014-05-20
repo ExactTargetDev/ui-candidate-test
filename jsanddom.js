@@ -194,11 +194,26 @@
       var args = Array.prototype.slice.call(arguments);
 
       columns = columns.concat(args);
-      console.log(columns);
+
+      // pads out existing rows to fit to new columns
+      for (var i = 0; i < rows.length; i++) {
+        rows[i].length = columns.length;
+      }
     };
 
-    this.addRow = function (row) {
-      
+    this.addRow = function () {
+      if (!columns.length) {
+        throw new Error('Table has no columns');
+      } else if (arguments.length > columns.length) {
+        throw new Error('The table only has ' + columns.length + 'columns. Add more columns to support ' + arguments.length + ' rows.');
+      }
+
+      var args = Array.prototype.slice.call(arguments);
+
+      // pads out the rows, if needed, to fill columns
+      args.length = columns.length;
+
+      this.rows.push(args);
     };
 
     this.getData = function () {
