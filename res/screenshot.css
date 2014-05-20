@@ -4,6 +4,7 @@ white-ish: #fefffd;
 blue-gray: #c0cdd6;
 text-gray: #888;
 text-blue: #99cce1;
+bkg-gray:  #f4f4f5;
 */
 
 body {
@@ -36,6 +37,7 @@ header {
 }
 
 .logo {
+  /* font-family: ?????; */
   font-size: 1.125rem;
   line-height: 0;
 }
@@ -55,6 +57,7 @@ header a {
 
 #container {
   width: 100%;
+  position: relative;
 }
 
 section {
@@ -73,6 +76,7 @@ section {
   background-color: #f4f4f5;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
+  display: inline-block;
 }
 
 .nav-header {
@@ -190,3 +194,58 @@ section {
 .report {
   background-position: 0 -144px;
 }
+
+/* CALENDAR */
+
+#dashboard {
+  display: inline-block;
+  width: 80%;
+  position: absolute;
+  top: 0;
+}
+
+#calendar {
+  background: #f4f4f5;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 100%;
+  border: 1px solid #ddd;
+  color: #888;
+  font-size: .75em;
+}
+
+.month {
+  margin: 12px;
+}
+
+.days {
+  width: 100%;
+  overflow: hidden;
+  height: 110px;
+  /*background: red;*/
+  padding: 10px;
+  font-size: 0;
+  white-space: nowrap;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.day {
+  font-size: 0.75rem;
+  width: 140px;
+  height: 100%;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  display: inline-block;
+  padding: 5px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+ }
+
+ .date {
+  float: right;
+  color: #333;
+ }
