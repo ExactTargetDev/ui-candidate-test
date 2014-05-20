@@ -145,8 +145,8 @@ test( "JSON Data Table", 1, function() {
 module( "Show Option Element" );
 test( "Show Option Element", 1, function() {
 
-    $("body").append("<div id='div1'></div>");
-    createEls();
+    // $("body").append("<div id='div1'></div>");
+    // createEls();
 
     // Verify the method exists
     equal( typeof showOption, 'function', 'Must contain a showOption function' );     
