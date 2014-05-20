@@ -115,3 +115,13 @@ test( "Only Whitespace", 5, function() {
     // Make sure the result from the function is valid.
     equal( isOnlyWhitespace('    '), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace('    ') );            
 });
+
+module( "JS Closure" );
+test( "JS Closure", 1, function() {
+    // Verify the method exists
+    // equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' ); 
+
+    // Make sure the result from the function is valid.
+    equal( greeting('Ben Stone'), 'Hello, Ben Stone', 'Expected Hello, Ben Stone as the result, the result was: ' + greeting('Ben Stone') );            
+});
+
