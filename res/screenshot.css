@@ -88,13 +88,18 @@ section {
   color: #fff;
   text-shadow: 0 0 2px #f8981d;
   border: 2px solid #f8981d;
-  border-bottom: 0;
+  border-bottom: 0 !important;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
+.nav-footer {
+  padding-top: 6px !important;
+  padding-bottom: 0 !important;
+}
+
 #sidebar nav {
-  border: 1px solid #aaa;
+  border: 1px solid #ddd;
   border-top: 0;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -102,6 +107,8 @@ section {
 
 #sidebar section {
   padding: 10px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #fff;
 }
 
 #sidebar a {
@@ -121,6 +128,25 @@ section {
   top: 25%;
 }
 
+.arrow {
+  font-weight: 800;
+  width: 12px;
+  height: 12px;
+  background-image: url("navsprites.png");
+  background-position: -25px -47px;
+}
+
+.arrow-button {
+  width: 15px;
+  height: 16px;
+  text-align: left;
+  padding: 0;
+  float: left;
+  margin-right: 12px;
+}
+
+/* Navbar Sprites */
+
 .nav-sprite {
   background-image: url("navsprites.png");
   background-repeat: no-repeat;
@@ -135,4 +161,32 @@ section {
   width: 36px;
   height: 36px;
   background-position: -26px 0;
+}
+
+.email {
+  background-position: 0 0;
+}
+
+.mobile {
+  background-position: 0 -24px;
+}
+
+.social {
+  background-position: 0 -48px;
+}
+
+.sites {
+  background-position: 0 -96px;
+}
+
+.automation {
+  background-position: 0 -120px;
+}
+
+.audience {
+  background-position: 0 -72px;
+}
+
+.report {
+  background-position: 0 -144px;
 }
