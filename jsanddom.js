@@ -33,21 +33,41 @@ function findDistinctValues(values) {
 // For multiples of five print "Buzz".
 // For numbers which are multiples of both three and five print "FizzBuzz".
 
-function doFizzBuzz() {
+// This version of the function is to enable a unit test to be written 
+function doFizzBuzz(max) {
   var counter = 1;
-  while(counter <= 100){
+  var result = '';
+  while(counter <= max){
     if(counter % 15 === 0){
-      console.log('FizzBuzz');
+      result += 'FizzBuzz ';
     }else if(counter % 5 === 0){
-      console.log('Buzz');
+      result += 'Buzz ';
     }else if(counter % 3 === 0){
-      console.log('Fizz');
+      result += 'Fizz ';
     }else {
-      console.log(counter);
+      result += counter + " ";
     }
     counter++
   }
+  return result.trim(); 
 }
+
+// This version answers the specification written 
+// function doFizzBuzz() {
+//   var counter = 1;
+//   while(counter <= 100){
+//     if(counter % 15 === 0){
+//       console.log('FizzBuzz');
+//     }else if(counter % 5 === 0){
+//       console.log('Buzz');
+//     }else if(counter % 3 === 0){
+//       console.log('Fizz');
+//     }else {
+//       console.log(counter);
+//     }
+//     counter++
+//   }
+// }
 
 
 // You have a master array of strings, where each element is a fruit name.
