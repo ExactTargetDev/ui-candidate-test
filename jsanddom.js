@@ -147,14 +147,15 @@ function greeting(person){
 // - state
 // - zip
 // - a collection of phone numbers (home, work, mobile)
-{
+
+var data = {
   "people": [
     {
       "firstName": "Ben",
       "lastName": "Stone",
       "city": "San Francisco",
       "state": "CA",
-      "zip": "94107"
+      "zip": "94107",
       "phone": [
         { "home": "917-650-0327"},
         { "work": "212-224-3599"},
@@ -166,7 +167,7 @@ function greeting(person){
       "lastName": "Stone",
       "city": "San Francisco",
       "state": "CA",
-      "zip": "94107"
+      "zip": "94107",
       "phone": [
         { "home": "646-650-6464"},
         { "work": "212-224-3590"},
@@ -178,7 +179,7 @@ function greeting(person){
       "lastName": "Stone",
       "city": "Los Angeles",
       "state": "CA",
-      "zip": "87902"
+      "zip": "87902",
       "phone": [
         { "home": "456-650-4567"},
         { "work": "123-456-7890"},
@@ -186,8 +187,7 @@ function greeting(person){
       ]
     },
   ]
-}
-
+};
 
 // Create a javascript object (DataTable) with the following:
 // A private columns property (string array)
@@ -200,6 +200,55 @@ function greeting(person){
 // .addColumns('column1', 'column2', 'column3');
 // .addRow('value1A', 'value1B', 'value1C');
 // .addRow('value2A', 'value2B', 'value2C');
+
+var DataTable = (function(){
+  var columns = [];
+  var rows = [];
+
+  var addRow = function(){
+    var args = Array.prototype.slice.call(arguments);
+    var row = [];
+    for(var i = 0; i < args.length; i++){
+      row.push(args[i]);
+    }
+    rows.push(row);
+  };
+
+  var addColumns = function(){
+    var args = Array.prototype.slice.call(arguments);
+    var col = [];
+    for(var i = 0; i < args.length; i++){
+      col.push(args[i]);
+    }
+    columns.push(col);
+  };
+
+  var getData = function(){
+    console.log(columns, rows);
+    var tableObj = {};
+
+    for(var i = 0; i < rows.length; i++){  
+      tableObj['row' + i] = [];
+      for(var j = 0; j < rows[i].length; j++){  
+        var obj = {};                
+        obj[columns[0][j]] = rows[i][j];
+        tableObj['row' + i].push(obj);
+      }
+    }
+    return JSON.stringify(tableObj);
+  };    
+
+  return {
+    addRow: addRow,
+    addColumns: addColumns,
+    getData: getData
+  }
+}());
+
+DataTable.addColumns('column1', 'column2', 'column3');
+DataTable.addRow('value1A', 'value1B', 'value1C');
+DataTable.addRow('value2A', 'value2B', 'value2C');
+
 
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
