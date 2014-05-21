@@ -22,7 +22,8 @@ $(document).ready(function(){
 
   });
 
-  $('.help button').on('click', function(){
+  $('.close').on('click', function(e){
+    e.preventDefault();
     $('.help').addClass('hidden');
     $('header, .calendar, aside, .pulse').not('.help').removeClass('fade');
   })
