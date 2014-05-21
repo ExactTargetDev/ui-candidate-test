@@ -24,5 +24,24 @@ $('.help').click(function(){
 });
 
 var parseHelp = function (data) {
-  // todo: this
+  $('body').append( '<div class="help-popup"><div class="help-menu"></div></div>' );
+
+  var contents = '';
+
+  contents += '<h3 class="close-help">Close Pop-Up</h3>';
+  contents += '<h1>' + data.help.header + '</h1>';
+  contents += '<h3>' + data.help.subhead + '</h3>';
+  contents += '<ul>';
+  for (var i = 0; i < data.help.topics.length; i++) {
+    contents += '<li><a href="#">' + data.help.topics[i] + '</a></li>';
+  }
+  contents += '</ul>';
+  contents += '<p>' + data.help.body + '</p>';
+
+  $('.help-menu').append(contents);
+
+  $('.close-help').click(function(e){
+    $('.close-help').off('click');
+    $('.help-popup').remove();
+  });
 };

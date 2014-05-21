@@ -1,7 +1,7 @@
 {
   "help":{
     "header": "Welcome to the help screen!",
-    "subhead": "Click a help topic to see more information. None of this functionality has been added so for the full help experience, you're just going to have to imagine it.",
+    "subhead": "Click a help topic to see more information. You won't get any.",
     "topics": [
       "Clicking Boxes: A Beginner's Guide",
       "Navigating the Fake Help Interface",
