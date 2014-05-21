@@ -24,6 +24,7 @@ $(document).ready(function(){
 
   $('.close').on('click', function(e){
     e.preventDefault();
+    $('.questions ul').remove();
     $('.help').addClass('hidden');
     $('header, .calendar, aside, .pulse').not('.help').removeClass('fade');
   })
