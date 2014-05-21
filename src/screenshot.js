@@ -16,7 +16,7 @@ $('.help').click(function(){
   $.ajax({
     method: 'GET',
     dataType: 'JSON',
-    url: 'src/help.json',
+    url: 'data/help.json',
     success: function (data) {
       parseHelp(data);
     }
@@ -29,14 +29,11 @@ var parseHelp = function (data) {
   var contents = '';
 
   contents += '<h3 class="close-help">Close Pop-Up</h3>';
-  contents += '<h1>' + data.help.header + '</h1>';
-  contents += '<h3>' + data.help.subhead + '</h3>';
-  contents += '<ul>';
-  for (var i = 0; i < data.help.topics.length; i++) {
-    contents += '<li><a href="#">' + data.help.topics[i] + '</a></li>';
+  contents += '<h1>Need help?</h1>';
+
+  for (var i = 0; i < data.help.length; i++) {
+    contents += '<a href="' + data.help[i].URL + '"><h3>' + data.help[i].title + '</h3></a>'
   }
-  contents += '</ul>';
-  contents += '<p>' + data.help.body + '</p>';
 
   $('.help-menu').append(contents);
 
