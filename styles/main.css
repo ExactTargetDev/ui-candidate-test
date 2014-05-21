@@ -19,6 +19,7 @@ header {
   background-image: linear-gradient(#45525c, #2a2f32);
   padding: 10px 0;
   font-size: 0.6875rem;
+  box-shadow: 1px 0px 5px #000;
 }
 header h1 {
   background: url(../assets/logo.png) no-repeat;
@@ -46,3 +47,50 @@ nav li:last-child {
 nav li a {
   color: #99cce1;
 }
+
+/* Marketing Hub */
+aside {
+  float: left;
+  margin-top: 20px;
+  width: 180px;
+  background: #f4f4f5;
+  color: #888888;
+  /* Gradient */
+}
+aside h2 {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(0,0,0,.1);
+  padding: 12px 0 12px 55px;
+  border: 1px solid #f7971d;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25), inset 0 1px 3px rgba(255,255,255,.5);
+  background-image: url(../assets/imh-icon.png), linear-gradient(#f7971d 0%, #fdaf4b 75.24%, #fdaf4b 100%);
+  background-repeat: no-repeat, repeat;
+}
+aside li {
+
+}
+
+.email {
+  display: block;
+  background: url(../assets/email-icon.png) left center no-repeat;
+  padding: 20px 0 20px 35px;
+
+}
+
+/* Calendar */
+.calendar {
+  width: 995px;
+  border: 1px solid green;
+  float: right;
+}
+
+
+/* Pulse */
+.pulse {
+  width: 995px;
+  border: 1px solid blue;
+  float: right;
+}
+
