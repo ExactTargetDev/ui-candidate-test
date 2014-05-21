@@ -32,7 +32,7 @@ $(document).ready(function(){
 // widget expansion
 $('.widget').on('click', function(){
 
-  var $widgets = $('.pulse > div');
+  var $widgets = $('.pulse > div').not($(this));
 
   $widgets.each(function(i) {
     if($(this).hasClass('expand')){
@@ -43,13 +43,11 @@ $('.widget').on('click', function(){
 
   $(this).toggleClass('expand', 'widget');
   
-  if($(this).hasClass('expand')){
+  if($(this).hasClass('expand')){ 
     $(this).css({ top: '-=25', left: '-=35'});
   }else{
     $(this).css({top: '+=25', left: '+=35'});
   }
-
-
 });
 
 
