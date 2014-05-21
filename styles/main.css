@@ -185,11 +185,13 @@ aside ul:last-child a {
 /* Pulse */
 .pulse {
   width: 995px;
+  height: 250px;
   border-radius: 5px;
   float: right;
   margin-top: 20px;
   box-shadow: inset 0 0 5px rgba(0,0,0,.12);
   background-image: linear-gradient(#bac7d1 0%, #e2edf5 88.72%, #d1dde5 100%);
+  position: relative;
 
 }
 .pulse h2 {
@@ -199,12 +201,11 @@ aside ul:last-child a {
   padding: 5px 0 5px 10px; 
 }
 .widget {
-  width: 158px;
+  width: 160px;
   height: 95px;
-  float: left;
   margin-bottom: 60px;
-  margin-left: 20px;
   cursor: pointer;
+  position: absolute;
 }
 .details {
   border: 1px solid #d1dee7;
@@ -212,22 +213,46 @@ aside ul:last-child a {
   background-image: linear-gradient( #eff3f6 0%, #eff3f6 36%,  #dce8f0 100%);  
   border-radius: 3px;
   margin-top: 6px;
+  width: 100%;
+  height: 95%;
+}
+.followers {
+  top: 50px;
+  left: 18px;
+}
+.fans {
+  top: 50px;
+  left: 214px;
+}
+.subscribers {
+  top: 50px;
+  left: 410px;
+}
+.foursquare {
+  top: 50px;
+  left: 606px;
+}
+.landing {
+  top: 50px;
+  left: 802px;
+}
+.expand {
+  width: 196px;
+  height: 145px; 
+  margin: 0 18px 60px 18px;
+  cursor: pointer;
+  position: absolute;
 }
 .widget h3 {
   text-align: center;
   color: #7e91a3;
   font-size: 0.6875rem;
 }
-
-/*.expanded h3 {
+.expand h3 {
+  text-align: center;
   color: #5d717d;
   font-size: 0.75rem;
 }
-.expanded {
-  width: 280px;
-  height: 165px;
-}*/
-
 .focus-num {
   color: #34bbf3;
   font-size: 2rem;
