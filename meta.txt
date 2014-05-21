@@ -1,1 +1,5 @@
-Start Time: 1400547562
+Start Time: 1400547562 (UTC)
+
+End Time: 1400713869 (UTC)
+
+Browser Testing: Internet Explorer 10, 9, 8, (Windows), FireFox (Latest) (Windows / Mac), Chrome (Latest) (Windows/ Mac), Safari (Mac) 
