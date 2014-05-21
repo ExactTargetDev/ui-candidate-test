@@ -1,64 +1,333 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
-
-     // Write a function that takes a single argument (a string) and returns the string reversed.
+    /**
+     * @method reverseString
+     * Purpose Write a function that takes a single argument (a string) and returns the string reversed.
+     * @param {Object} str
+     * @author Luc Martin
+     * @version 1.0
+     */
      function reverseString(str) {
-         // FILL THIS IN
+         // init return string
+         var ret = '';
+         
+         // Iterate through each letter of the string
+         for(var n = 0; n < str.length; n++){
+             // reverse
+             ret += str[n];
+         }
+         return ret;
      }
 
-     // Write a function that takes an array of numbers and returns the minimum value
+     /**
+      * @method findMinValue
+      * Purpose Write a function that takes an array of numbers and returns the minimum value
+      * @param {Object} values
+      * @author Luc Martin
+      * @version 1.0
+      */
      function findMinValue(values) {
-         // FILL THIS IN
+         
+         // init return value
+         var minValue = undefined;
+         
+         // iterate through the array
+         for(var n = 0; n< values.length; n++){
+             
+             //single element
+             var val = values[n];
+             
+             // test if the element is a valid Number
+             if(typeof val === 'number'){
+                 
+                 // Evaluate if the init value is set
+                 // Evaluate if the new value is smaller than the precedent values
+                 // set the new value if true
+                 minValue = (typeof minValue == 'undefined') ? val : (val < minValue) ? val : minValue;
+             }
+
+         }
+         return minValue;
      }
 
-     // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
+     /**
+      * @method findDistinctValues
+      * Purpose Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
+      * @param {Object} values
+      * 
+      * @author Luc Martin
+      * @version 1.0
+      */
      function findDistinctValues(values) {
-         // FILL THIS IN
+         
+         // init return array
+         var ret = [];
+        
+        // Iterate through all values
+         for(var n = 0; n< values.length; n++){
+             
+             // single value
+             var val = values[n];
+             
+             // test if the new value is in the return array
+             if(ret.indexOf(val) == -1 ){
+                 
+                 // debug
+                 console.log('PUSHING VALUES '+val)
+                 
+                 // if test is positive push into the ret array
+                 ret.push(val);
+             }
+         }
+         
+         // feedback to the console
+         console.log(ret);
+         
+         // return for testing
+         return ret;
      }
-
-     // Write a function that logs the numbers from 1 to 100 to the console.
-     // For multiples of three print "Fizz" instead of the number.
-     // For multiples of five print "Buzz".
-     // For numbers which are multiples of both three and five print "FizzBuzz".
+    
+     /**
+      * @method doFizzBuzz
+      * Purpose Write a function that logs the numbers from 1 to 100 to the console.
+      * For multiples of three print "Fizz" instead of the number.
+      * For multiples of five print "Buzz".
+      * For numbers which are multiples of both three and five print "FizzBuzz".
+      * 
+      * @author Luc Martin
+      * @version 1.0
+      */
      function doFizzBuzz() {
-         // FILL THIS IN
+         
+         // return string for tests
+         var retAr = '';
+         
+         // iterate through numbers from 1 - 100
+         for(var n = 1; n <= 100 ; n++ ){
+             
+             // new clean var for return
+             var ret = '';
+             
+             // Modulus 3 is Fizz
+             if(n % 3 == 0 ){
+                 ret += 'Fizz';
+             }
+             
+             // Modulus 5 is Buzz
+             if(n % 5 == 0){
+                 ret += 'Buzz';
+             }
+             
+             // No modulus is the number itself
+             if(ret == ''){
+                 ret = n;
+             }
+             
+             // set the return array
+             retAr += ret;
+             
+             // feedback to console
+             console.log(ret);
+
+         }
+         
+         // feedback final product
+         console.log(retAr);
+         
+         // return for testing
+         return retAr
      }
 
-     // You have a master array of strings, where each element is a fruit name.
-     // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
-     // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
-     // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
+     /**
+      * @method removeFruits
+      * Purpose You have a master array of strings, where each element is a fruit name.
+      * You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
+      * For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
+      * Write the function that will remove the values contained in fruitsToRemove from the array fruits.
+      * @param {Object} fruits
+      * @param {Object} fruitsToRemove
+      * 
+      * @author Luc Martin
+      * @version 1.0      
+      */
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         
+         // Iterate through array
+         for(var n = 0; n < fruitsToRemove.length; n++){
+             
+             // single item to remove from the master
+             var toRemove = fruitsToRemove[n];
+             
+             // test if the remove item is in the master and get the index
+             var index = fruits.indexOf(toRemove)
+             
+             // test
+             if( index !== -1){
+                
+                 // Splice the array from value
+                 fruits.splice(index, 1);
+             }
+         }
+         
+         // return 
+         return fruits;
      }
 
-     // Write a function to push either a simple value or an array of values onto a specified array.
-     // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
-     // If toPush is a simple value, it should be pushed onto array as an element.
-     // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
+     /**
+      * @method pushOntoArray
+      * Purpose Write a function to push either a simple value or an array of values onto a specified array.
+      * For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
+      * If toPush is a simple value, it should be pushed onto array as an element.
+      *If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
+      *
+      * @param {Object} array
+      * @param {Object} toPush
+      * 
+      * @author Luc Martin
+      * @version 1.0      
+      */
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+         
+        // debug
+        console.log( toPush.length);
+        
+        // iterate through array
+        for(var n = 0; n < toPush.length; n++){
+            
+            // single item
+            var item = toPush[n];
+            
+            // feedback
+            console.log("PUSHING TO ARRAY ",typeof item);
+            
+            // test if the item is an Object
+            if(typeof item !== 'object'){
+                
+                // push if Item is a number
+                array.push(item)
+            
+            // it's an Object, one more round
+            //TODO use a recursion for that following job
+            }else{
+                // second iteration (assuming that there is only one level nested array  possible)
+                for(var m = 0 ; m < item.length; m++){
+                    
+                    // push
+                    array.push(item[m]);
+                }
+            }
+        }
+        return array;
      }
 
-     // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
+     /**
+      * @method splitListStrUsingComma
+      * @param String sourceStr
+      * 
+      * Purpose Given a string, sourceStr, write some code that will split this string using comma as your delimiter, 
+      * and producing an empty array if the string is empty.
+      * 
+      * @author Luc Martin
+      * @version 1.0
+      */
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         console.log('spsplitListStrUsingComma ???????? ')
+         // test if we get a string and if the string is not empty
+         if(typeof sourceStr == 'undefined' || sourceStr.length == 0){
+             // empty or undefined, return
+             return [];
+         }
+         // Init the array
+         var splitted = [];
+         // split using coma
+         splitted = sourceStr.split(',');
+         
+         // double check if we get a result
+         if (splitted.length == 0){
+             // if the array is empty, return empty array
+             return [];
+         }
+         console.log('splitListStrUsingComma >>>>> ',splitted);
+         // return splitted array
+         return splitted;
      }
 
-     // Write a function that will take any number of arguments and return their sum
+     /**
+      * @method sum
+      * Purpose: Write a function that will take any number of arguments and return their sum
+      * 
+      * @author Luc Martin
+      * @version 1.0
+      */
      function sum() {
-         // FILL THIS IN
+         var total = 0;
+         for(var n = 0; n<arguments.length; n++){
+             var item = arguments[n];
+             if(!isNaN(item)){
+                 total += item;
+             }
+         }
+         return total;
      }
 
-     // Write a function that will return true if a specified string consists of only whitespace.
+      /**
+      * @method isOnlyWhitespace
+      * Purpose: Write a function that will return true if a specified string consists of only whitespace.
+      * 
+      * @author Luc Martin
+      * @version 1.0
+      */
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         
+         if(sourceStr.length == 0) {
+             return  false 
+         }
+         // Strip from all white spaces
+         var stripped = sourceStr.replace(/^\s+|\s+$/g, '');
+         
+         // test if string is empty
+         if(stripped.length == 0){
+             // empty is return true
+             return true
+         }
+         
+         // not empty
+         return false;
      }
-
-     // write an example of a javascript closure
+     
+     /**
+      * @Object cookieMonsterClosure -- self executing function w closure
+      * Purpose write an example of a javascript closure
+      * 
+      * @author Luc Martin
+      * @version 1.0
+      */
+     var cookieMonsterClosure = (function(){
+         
+         // closure
+         var monster = [];
+         
+         function privateFeedTheMonster(cookie){
+             if(typeof cookie == 'undefined'){
+                 return;
+             }
+             monster.push(cookie);
+             if(monster.length > 1){
+                 console.log('Monster is a closure and it likes cookies '+monster)
+             }
+             
+         }
+         return {
+             'feedTheMonster' : function(cookie){
+                 privateFeedTheMonster(cookie);
+                 return monster;
+             }
+         }
+     })()
+     
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -68,7 +337,45 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+     
+     var singlePerson = {
+            'first name' : '',
+            'last name' : '',
+            'city' : '',
+            'state' : '',
+            'zip' : '',
+            'phone' : {
+               'home' : '', 
+               'work' : '', 
+               'mobile' : '' 
+            }
+     };
+     var bunchOPeople = {
+        'James_T_Kirk' : {
+            'first name' : 'James',
+            'last name' : 'Kirk',
+            'city' : 'San Francisco',
+            'state' : 'California',
+            'zip' : '94507',
+            'phone' : {
+               'home' : '1 425 235 2488', 
+               'work' : 'No phone in the Enterprise', 
+               'mobile' : 'Use Telecommunicator please' 
+            }
+        },
+        'Bruce_Lee' : {
+            'first name' : 'Bruce',
+            'last name' : 'Lee',
+            'city' : 'Oakland',
+            'state' : 'California',
+            'zip' : '94507',
+            'phone' : {
+               'home' : '1 425 235 0099', 
+               'work' : '1 415 123 4567', 
+               'mobile' : '1 415 123 4567' 
+            }
+        }
+    };
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
