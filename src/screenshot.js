@@ -23,6 +23,8 @@ $('.help').click(function(){
   });
 });
 
+// reads help.json data and assembles help menu popup
+
 var parseHelp = function (data) {
   $('body').append( '<div class="help-popup"><div class="help-menu"></div></div>' );
 
@@ -32,7 +34,7 @@ var parseHelp = function (data) {
   contents += '<h1>Need help?</h1>';
 
   for (var i = 0; i < data.help.length; i++) {
-    contents += '<a href="' + data.help[i].URL + '"><h3>' + data.help[i].title + '</h3></a>'
+    contents += '<a href="' + data.help[i].URL + '"><h3>' + data.help[i].title + '</h3></a>';
   }
 
   $('.help-menu').append(contents);
@@ -43,6 +45,8 @@ var parseHelp = function (data) {
   });
 };
 
+// Automatically populates and labels the calendar
+
 var today = new Date();
 
 for (var i = -1; i < 10; i++) {
@@ -52,7 +56,7 @@ for (var i = -1; i < 10; i++) {
             '<span class="date">' +
             (today.getDate() + i) +
             '</span>' +
-          '</div>')
+          '</div>');
   $('.days').append(date);
   if (i === 0) {
     date.addClass('today');
