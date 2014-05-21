@@ -45,3 +45,20 @@ var parseHelp = function (data) {
     $('.help-popup').remove();
   });
 };
+
+var today = new Date();
+
+for (var i = -1; i < 10; i++) {
+  var date = $('' +
+          '<div class="day">' +
+            '<span>' + new Date((new Date()).setDate(today.getDate()+i)).toString().split(' ')[0] + '</span>' +
+            '<span class="date">' +
+            (today.getDate() + i) +
+            '</span>' +
+          '</div>')
+  $('.days').append(date);
+  if (i === 0) {
+    date.addClass('today');
+    date.append('<div class="today-marker">TODAY</div>');
+  }
+}
