@@ -519,7 +519,7 @@ section {
 .pip {
   width: 4px;
   height: 3px;
-  background: #888;
+  background: #bbb;
   margin: 2px;
   float: left;
 
@@ -529,7 +529,7 @@ section {
 
 .pip-box {
   display: inline-block;
-  border: 1px solid #888;
+  border: 1px solid #bbb;
   padding: 2px;
   border-radius: 3px;
 }
