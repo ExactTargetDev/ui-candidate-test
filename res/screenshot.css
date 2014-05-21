@@ -1,0 +1,546 @@
+/* COLORS
+orange:    #f8981d;
+white-ish: #fefffd;
+blue-gray: #c0cdd6;
+text-gray: #888;
+text-blue: #99cce1;
+bkg-gray:  #f4f4f5;
+teal:      #34bbf3;
+light-blue:#93afc0;
+*/
+
+body {
+  margin: 0;
+  background-color: #fefffd;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+
+header {
+  background: #45525c; /* Old browsers */
+  background: -moz-linear-gradient(top, #45525c 0%, #2a2f32 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45525c), color-stop(100%,#2a2f32)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #45525c 0%,#2a2f32 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #45525c 0%,#2a2f32 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #45525c 0%,#2a2f32 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #45525c 0%,#2a2f32 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45525c', endColorstr='#2a2f32',GradientType=0 ); /* IE6-9 */
+  /*height: 32px;*/
+  width: 100%;
+  color: #fff;
+  padding: 16px;
+  line-height: 0;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  font-weight: 200;
+}
+
+.logo {
+  /* font-family: ?????; */
+  font-size: 1.125rem;
+  line-height: 0;
+}
+
+header nav {
+  text-align: right;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+header a {
+  text-decoration: none;
+  color: #99cce1;
+}
+
+/* DASHBOARD CONTROLS */
+
+#container {
+  width: 100%;
+  position: relative;
+}
+
+section {
+  width: 100%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.orange {
+  color: #f8981d !important;
+}
+
+/* MENU SIDEBAR */
+
+#sidebar {
+  margin: 20px;
+  border-radius: 5px;
+  width: 15%;
+  background-color: #f4f4f5;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
+  display: inline-block;
+}
+
+.nav-header {
+  background: #fcd3a1; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fcd3a1 0%, #fdaf4b 6%, #f8981d 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcd3a1), color-stop(6%,#fdaf4b), color-stop(100%,#f8981d)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #fcd3a1 0%,#fdaf4b 6%,#f8981d 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fcd3a1 0%,#fdaf4b 6%,#f8981d 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fcd3a1 0%,#fdaf4b 6%,#f8981d 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fcd3a1 0%,#fdaf4b 6%,#f8981d 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcd3a1', endColorstr='#f8981d',GradientType=0 ); /* IE6-9 */
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 0 2px #f8981d;
+  border: 2px solid #f8981d;
+  border-bottom: 0 !important;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.nav-footer {
+  padding-top: 6px !important;
+  padding-bottom: 0 !important;
+}
+
+#sidebar nav {
+  border: 1px solid #ddd;
+  border-top: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#sidebar section {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #fff;
+}
+
+#sidebar a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.75rem;
+  display: block;
+  padding: 3px;
+  height: 24px;
+  display: block;
+  position: relative;
+}
+
+#sidebar a:hover {
+  color: #34bbf3;
+}
+
+#sidebar span {
+  position: relative;
+  line-height: 0;
+  top: 25%;
+}
+
+.arrow {
+  font-weight: 800;
+  width: 12px;
+  height: 12px;
+  background-image: url("navsprites.png");
+  background-position: -25px -47px;
+}
+
+.arrow-button {
+  width: 15px;
+  height: 16px;
+  text-align: left;
+  padding: 0;
+  float: left;
+  margin-right: 12px;
+}
+
+/* Navbar Sprites */
+
+.nav-sprite {
+  background-image: url("navsprites.png");
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  float: left;
+  clear: none;
+  margin-right: 12px;
+}
+
+.imh-logo {
+  width: 36px;
+  height: 36px;
+  background-position: -26px 0;
+}
+
+.email {
+  background-position: 0 0;
+}
+
+.mobile {
+  background-position: 0 -24px;
+}
+
+.social {
+  background-position: 0 -48px;
+}
+
+.sites {
+  background-position: 0 -96px;
+}
+
+.automation {
+  background-position: 0 -120px;
+}
+
+.audience {
+  background-position: 0 -72px;
+}
+
+.report {
+  background-position: 0 -144px;
+}
+
+/* CALENDAR */
+
+#dashboard {
+  display: inline-block;
+  width: 80%;
+  position: absolute;
+  top: 0;
+}
+
+#calendar {
+  background: #f4f4f5;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 100%;
+  border: 1px solid #ddd;
+  color: #888;
+  font-size: .75em;
+}
+
+.month {
+  margin: 12px;
+}
+
+.days {
+  width: 100%;
+  overflow-y: hidden;
+  height: 110px;
+  /*background: red;*/
+  padding: 10px;
+  font-size: 0;
+  white-space: nowrap;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.day {
+  font-size: 0.75rem;
+  width: 140px;
+  height: 100%;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  display: inline-block;
+  padding: 5px;
+  position: relative;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.date {
+  float: right;
+  color: #555;
+}
+
+.today {
+  background: #f4f4f5; /* Old browsers */
+  background: -moz-linear-gradient(top, #f4f4f5 28%, #ffedd5 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(28%,#f4f4f5), color-stop(100%,#ffedd5)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f4f4f5 28%,#ffedd5 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f4f4f5 28%,#ffedd5 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #f4f4f5 28%,#ffedd5 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #f4f4f5 28%,#ffedd5 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f5', endColorstr='#ffedd5',GradientType=0 ); /* IE6-9 */
+}
+
+.today-marker {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  left: 0;
+  bottom: -11px;
+  text-align: center;
+  font-size: 0.60rem;
+  background: #f8981d;
+  color: #fff;
+}
+
+/* PULSE INTERFACE */
+
+#pulse {
+  margin-top: 20px;
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+
+  background: #bac8d1; /* Old browsers */
+  background: -moz-linear-gradient(top, #bac8d1 0%, #e3edf5 90%, #d2dee6 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bac8d1), color-stop(90%,#e3edf5), color-stop(100%,#d2dee6)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #bac8d1 0%,#e3edf5 90%,#d2dee6 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #bac8d1 0%,#e3edf5 90%,#d2dee6 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #bac8d1 0%,#e3edf5 90%,#d2dee6 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #bac8d1 0%,#e3edf5 90%,#d2dee6 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bac8d1', endColorstr='#d2dee6',GradientType=0 ); /* IE6-9 */
+
+  position: relative;
+}
+
+#pulse .logo {
+  font-size: 1.4rem;
+  color: #fefffd;
+  font-weight: 200;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+  background-image: url("navsprites.png");
+  background-position: -26px -56px;
+  width: 98px;
+  height: 40px;
+  padding-left: 16px;
+  padding-top: 18px;
+}
+
+#pulse .buttons {
+  position: absolute;
+  top: 16px;
+  right: 10px;
+}
+
+#pulse .buttons * {
+  background-image: url("navsprites.png");
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.gear {
+  background-position: -66px 0;
+}
+
+.stack {
+  background-position: -86px 0;
+}
+
+.popup {
+  background-position: -106px 0;
+}
+
+.ecks {
+  background-position: -126px 0;
+}
+
+/* Pulse Boxes */
+
+#boxes {
+  position: absolute;
+  width: 100%;
+  height: 120px;
+  /*background: red;*/
+  top: 120px;
+  font-size: 0;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.box {
+  font-size: .75rem;
+  color: #93afc0;
+  width: 160px;
+  height: 105px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-left: 12px;
+  position: relative;
+  float: left;
+  top: 0;
+  text-align: center;
+
+  background: #f9f9f9; /* Old browsers */
+  background: -moz-linear-gradient(top, #f9f9f9 30%, #e2ecf4 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#f9f9f9), color-stop(100%,#e2ecf4)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f9f9f9 30%,#e2ecf4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f9f9f9 30%,#e2ecf4 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #f9f9f9 30%,#e2ecf4 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #f9f9f9 30%,#e2ecf4 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#e2ecf4',GradientType=0 ); /* IE6-9 */
+
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.box > span {
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.medium {
+  width: 280px;
+  height: 180px;
+  top: -50px;
+  background: #e1f3fe;
+}
+
+.box-title {
+  position: relative;
+  top: -24px;
+  color: #888;
+  display: block;
+}
+
+.number {
+  color: #34bbf3;
+  font-size: 2rem;
+  display: block;
+  position: relative;
+  left: 0;
+}
+
+.other-number {
+  font-size: .75em;
+  color: #93afc0;
+}
+
+.note {
+  font-size: 1rem;
+  display: block;
+  position: relative;
+  right: 0;
+  bottom: 0;
+}
+
+.total {
+  font-size: .75rem;
+  display: block;
+  margin-top: 10px;
+}
+
+.data {
+  opacity: 0;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  height: 0px;
+  width: 120px;
+  overflow: hidden;
+
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+/* Medium (selected) Boxes */
+
+.medium .total {
+  opacity: 0;
+}
+
+.medium .number {
+  position: relative;
+  left: 90px;
+  color: #888;
+  font-size: 1rem;
+}
+
+.medium .note {
+  position: relative;
+  right: 55px;
+  bottom: 18px;
+  color: #888;
+  font-size: 1rem;
+}
+
+.medium .data {
+  opacity: 1;
+  width: 240px;
+  height: 120px;
+}
+
+/* HELP MENU */
+
+.help-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.help-menu {
+  padding: 30px;
+  position: relative;
+  border-radius: 10px;
+  background-color: #fefffd;
+  width: 40%;
+  min-width: 480px;
+  top: 10%;
+  margin: 0 auto;
+  color: #333;
+}
+
+.close-help {
+  text-align: right;
+  margin: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #f8981d;
+}
+
+/* PAGINATION DOTS */
+
+#pagination {
+  margin: 0 auto;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+}
+
+.pip {
+  width: 4px;
+  height: 3px;
+  background: #bbb;
+  margin: 2px;
+  float: left;
+
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.pip-box {
+  display: inline-block;
+  border: 1px solid #bbb;
+  padding: 2px;
+  border-radius: 3px;
+}
+
+.pip-space {
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+.pip-medium {
+  margin-top: 1px;
+  width: 7px;
+  height: 5px;
+}
