@@ -163,7 +163,7 @@ aside ul:last-child a {
 }
 .today-flag {
   box-sizing: border-box;
-  width: 14.25%;
+  width: 14.15%;
   margin: 0 auto;
   box-shadow: -1px 0 2px rgba(0,0,0,.25);
   background-image: linear-gradient( #fdaf4b 0%, #fdaf4b 75.24%, #f7971d 100%);
@@ -269,12 +269,19 @@ aside ul:last-child a {
   font-size: 2rem;
   margin-top: 7px;
 }
+.expand .focus-num {
+  font-size: 2.5rem;
+}
 .details span {
   display: block;
   text-align: center;
 }
 .metric {
   margin-top: 5px;
+}
+.expand .metric {
+  margin-top: 10px;
+  font-size: 1.5rem;
 }
 .metric,
 .total,
@@ -285,6 +292,10 @@ aside ul:last-child a {
   font-size: 0.6875rem;
   margin-top: 12px;
   margin-bottom: 6px;
+}
+.expand .total {
+  font-size: 0.875rem;
+  margin-top: 18px;
 }
 .out-of {
   font-size: 1.25rem;
