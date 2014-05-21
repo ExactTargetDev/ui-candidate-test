@@ -67,7 +67,7 @@ aside {
   font-size: 0.875rem;
   border: 1px solid #e5e5e5;
   box-shadow: 0 1px 1px rgba(0,0,0,.1), inset 0 0 0 1px #fff;
-  background-image: linear-gradient(bottom, #f3f3f5 0%, #f3f3f5 100%);
+  background-color: #f3f3f5;
   border-radius: 5px;
 }
 aside h2 {
@@ -78,6 +78,9 @@ aside h2 {
   padding: 12px 0 12px 45px;
   border: 1px solid #f7971d;
   box-shadow: 0 1px 2px rgba(0,0,0,.25), inset 0 1px 3px rgba(255,255,255,.5);
+  background-image: url(../assets/imh-icon.png), -moz-linear-gradient(top, #f7971d 0%, #fdaf4b 75.24%, #fdaf4b 100%);
+  background-image: url(../assets/imh-icon.png), -webkit-linear-gradient(top, #f7971d 0%, #fdaf4b 75.24%, #fdaf4b 100%);
+  background-image: url(../assets/imh-icon.png), -o-linear-gradient(top, #f7971d 0%, #fdaf4b 75.24%, #fdaf4b 100%);
   background-image: url(../assets/imh-icon.png), linear-gradient(#f7971d 0%, #fdaf4b 75.24%, #fdaf4b 100%);
   background-repeat: no-repeat, repeat;
   border-radius: 5px 5px 0 0;
@@ -166,6 +169,10 @@ aside ul:last-child a {
   width: 14.15%;
   margin: 0 auto;
   box-shadow: -1px 0 2px rgba(0,0,0,.25);
+  background-color: #fdaf4b;
+  background-image: -moz-linear-gradient(top, #fdaf4b 0%, #fdaf4b 75.24%, #f7971d 100%);
+  background-image: -webkit-linear-gradient(top, #fdaf4b 0%, #fdaf4b 75.24%, #f7971d 100%);
+  background-image: -o-linear-gradient(top, #fdaf4b 0%, #fdaf4b 75.24%, #f7971d 100%);
   background-image: linear-gradient( #fdaf4b 0%, #fdaf4b 75.24%, #f7971d 100%);
 }
 .today-flag span{
@@ -178,6 +185,10 @@ aside ul:last-child a {
   text-transform: uppercase;
 }
 .today {
+  background-color: #ffecd5;
+  background-image: -moz-linear-gradient(top, #f4f4f4 0%, #ebf1f5 30.96%,  #ffecd5 100%);
+  background-image: -webkit-linear-gradient(top, #f4f4f4 0%, #ebf1f5 30.96%,  #ffecd5 100%);
+  background-image: -o-linear-gradient(top, #f4f4f4 0%, #ebf1f5 30.96%,  #ffecd5 100%);  
   background-image: linear-gradient( #f4f4f4 0%, #ebf1f5 30.96%,  #ffecd5 100%);
 }
 .day {
@@ -199,9 +210,12 @@ aside ul:last-child a {
   float: right;
   margin-top: 20px;
   box-shadow: inset 0 0 5px rgba(0,0,0,.12);
+  background-color: #e2edf5;
+  background-image: -moz-linear-gradient(top, #bac7d1 0%, #e2edf5 88.72%, #d1dde5 100%);
+  background-image: -webkit-linear-gradient(top, #bac7d1 0%, #e2edf5 88.72%, #d1dde5 100%);
+  background-image: -o-linear-gradient(top, #bac7d1 0%, #e2edf5 88.72%, #d1dde5 100%);
   background-image: linear-gradient(#bac7d1 0%, #e2edf5 88.72%, #d1dde5 100%);
   position: relative;
-
 }
 .pulse h2 {
   color: #fff;
@@ -219,14 +233,16 @@ aside ul:last-child a {
 .details {
   border: 1px solid #d1dee7;
   box-shadow: 0 1px 2px rgba(0,0,0,.1), inset 0 4px 8px rgba(255,255,255,.75);
+  background-color: #eff3f6;
+  background-image: -moz-linear-gradient(top, #eff3f6 0%, #eff3f6 36%,  #dce8f0 100%);
+  background-image: -webkit-linear-gradient(top, #eff3f6 0%, #eff3f6 36%,  #dce8f0 100%);
+  background-image: -o-linear-gradient(top, #eff3f6 0%, #eff3f6 36%,  #dce8f0 100%);
   background-image: linear-gradient( #eff3f6 0%, #eff3f6 36%,  #dce8f0 100%);  
   border-radius: 3px;
   margin-top: 6px;
   width: 100%;
   height: 95%;
 }
-
-/* 18, 214, 410, 606, 802 */
 .followers {
   top: 50px;
   left: 23px;
