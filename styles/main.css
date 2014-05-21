@@ -179,14 +179,63 @@ aside ul:last-child a {
   padding-right: 2px;
 }
 
-
-
-
 /* Pulse */
 .pulse {
   width: 995px;
-  border: 1px solid blue;
+  border-radius: 5px;
   float: right;
   margin-top: 20px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,.12);
+  background-image: linear-gradient(#bac7d1 0%, #e2edf5 88.72%, #d1dde5 100%);
+
 }
+.pulse h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  text-shadow: 0 1px 1px rgba(88,139,172,.6);
+  padding: 5px 0 5px 10px; 
+}
+.widget {
+  width: 158px;
+  height: 95px;
+  float: left;
+}
+.details {
+  border: 1px solid #d1dee7; /* stroke */
+  box-shadow: 0 1px 2px rgba(0,0,0,.1), inset 0 4px 8px rgba(255,255,255,.75); /* drop shadow and inner shadow */
+  background-image: linear-gradient( #eff3f6 0%, #eff3f6 36%,  #dce8f0 100%); /* color overlay + gradient overlay */  
+  border-radius: 3px;
+}
+.widget h3 {
+  text-align: center;
+  color: #7e91a3;
+  font-size: 0.6875rem;
+}
+.expanded h3 {
+  color: #5d717d;
+  font-size: 0.75rem;
+}
+.expanded {
+  width: 280px;
+  height: 165px;
+}
+.focus-num {
+  color: #34bbf3;
+  font-size: 2rem;
+}
+.metric,
+.total,
+.out-of {
+  color: #93afc0; 
+}
+.total {
+  font-size: 0.6875rem;
+}
+.out-of {
+  font-size: 1.25rem;
+}
+
+
+
+
 
