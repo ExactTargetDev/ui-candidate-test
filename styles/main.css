@@ -77,6 +77,9 @@ aside li a {
   color: #878787;
   padding-left: 45px;
 }
+aside li a:hover {
+  color: #34bbf3;;
+}
 aside li {
   display: block;
   padding: 12px 0;
@@ -204,9 +207,9 @@ aside ul:last-child a {
   cursor: pointer;
 }
 .details {
-  border: 1px solid #d1dee7; /* stroke */
-  box-shadow: 0 1px 2px rgba(0,0,0,.1), inset 0 4px 8px rgba(255,255,255,.75); /* drop shadow and inner shadow */
-  background-image: linear-gradient( #eff3f6 0%, #eff3f6 36%,  #dce8f0 100%); /* color overlay + gradient overlay */  
+  border: 1px solid #d1dee7;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1), inset 0 4px 8px rgba(255,255,255,.75);
+  background-image: linear-gradient( #eff3f6 0%, #eff3f6 36%,  #dce8f0 100%);  
   border-radius: 3px;
   margin-top: 6px;
 }
@@ -215,14 +218,16 @@ aside ul:last-child a {
   color: #7e91a3;
   font-size: 0.6875rem;
 }
-.expanded h3 {
+
+/*.expanded h3 {
   color: #5d717d;
   font-size: 0.75rem;
 }
 .expanded {
   width: 280px;
   height: 165px;
-}
+}*/
+
 .focus-num {
   color: #34bbf3;
   font-size: 2rem;
