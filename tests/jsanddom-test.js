@@ -165,19 +165,19 @@ test( "cookieMonsterClosure", 3, function() {
 });
 
 /********************************
-@module Test isOnlyWhitespace(sourceStr)
+@module Test Json Object
 @version 1.0
 @author Luc Martin
 ********************************/
 
-module( "Example Unit Test closure" );
+module( "Example Unit Test Json" );
 test( "cookieMonsterClosure", 3, function() {
     // Verify the method exists
-    equal( typeof cookieMonsterClosure.feedTheMonster, 'function', "function that will Test closure" );
+    equal( typeof bunchOPeople, 'object', "A Bunch Of Persons" );
 
     // Make sure the result from the function is valid
-    equal( cookieMonsterClosure.feedTheMonster('goodCookie'), 'goodCookie', 'Expected: goodCookie Result is : ' + cookieMonsterClosure.feedTheMonster());
+    equal( bunchOPeople.James_T_Kirk['first name'], 'James', 'Expected: James Result is : ' + bunchOPeople.James_T_Kirk['first name']);
     
     // Make sure the result from the function is valid
-    equal( cookieMonsterClosure.feedTheMonster('BadBadMonster'), "goodCookie,BadBadMonster", 'Expected: ["goodCookie","BadBadMonster"] Result is : ' + cookieMonsterClosure.feedTheMonster());
+    equal( bunchOPeople.Bruce_Lee['first name'], 'Bruce', 'Expected: Bruce Result is : ' + bunchOPeople.Bruce_Lee['first name']);
 });
