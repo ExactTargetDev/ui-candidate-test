@@ -7,7 +7,7 @@ a {
   text-decoration: none;
 }
 .wrapper {
-  width: 1195px;
+  max-width: 1195px;
   margin: 0 auto;
 }
 /* Header */
@@ -118,9 +118,68 @@ aside ul:last-child a {
 /* Calendar */
 .calendar {
   width: 995px;
-  border: 1px solid green;
   float: right;
+  border: 1px solid #cbcbcb;
+  border-radius: 0 0 5px 5px;
+  background-color: #f4f4f4;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1); 
 }
+.calendar h2,
+.calendar span {
+  color: #99abb6;
+  font-size: 0.6875rem;
+}
+.calendar h2 {
+  padding-left: 4px;
+  margin: 2px 0;
+}
+.week-container {
+  width: 99%;
+  margin: 0 auto;
+}
+.date-container {
+  box-sizing: border-box;
+  height: 76px;
+  width: 14.285%;
+  float: left;
+  padding: 3px 2px;
+  border-left: 1px solid #cbcbcb;
+  border-bottom: 1px solid #cbcbcb;
+}
+.date-container:last-child {
+  border-right: 1px solid #cbcbcb;
+}
+.today-flag {
+  box-sizing: border-box;
+  width: 14.25%;
+  margin: 0 auto;
+  box-shadow: -1px 0 2px rgba(0,0,0,.25);
+  background-image: linear-gradient( #fdaf4b 0%, #fdaf4b 75.24%, #f7971d 100%);
+}
+.today-flag span{
+  display: block;
+  text-align: center;
+  padding: 4px 0;
+  color: #fff;
+  font-size: 0.625rem;
+  font-weight: bold;  
+  text-transform: uppercase;
+}
+.today {
+  background-image: linear-gradient( #f4f4f4 0%, #ebf1f5 30.96%,  #ffecd5 100%);
+}
+.day {
+  color: #999;
+  float: left;
+  padding-left: 2px;
+}
+.date {
+  color: #656565;
+  float: right;
+  padding-right: 2px;
+}
+
+
 
 
 /* Pulse */
@@ -128,5 +187,6 @@ aside ul:last-child a {
   width: 995px;
   border: 1px solid blue;
   float: right;
+  margin-top: 20px;
 }
 
