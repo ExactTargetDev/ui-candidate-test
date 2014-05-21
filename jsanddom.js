@@ -351,7 +351,7 @@
             }
      };
      var bunchOPeople = {
-        'James T Kirk' : {
+        'James_T_Kirk' : {
             'first name' : 'James',
             'last name' : 'Kirk',
             'city' : 'San Francisco',
@@ -363,7 +363,7 @@
                'mobile' : 'Use Telecommunicator please' 
             }
         },
-        'Bruce Lee' : {
+        'Bruce_Lee' : {
             'first name' : 'Bruce',
             'last name' : 'Lee',
             'city' : 'Oakland',
