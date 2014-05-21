@@ -384,13 +384,13 @@ section {
   background: linear-gradient(to bottom, #f9f9f9 30%,#e2ecf4 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#e2ecf4',GradientType=0 ); /* IE6-9 */
 
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
 .box > span {
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
 .medium {
@@ -443,9 +443,10 @@ section {
   background: #fff;
   height: 0px;
   width: 120px;
+  overflow: hidden;
 
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
 /* Medium (selected) Boxes */
@@ -504,4 +505,42 @@ section {
   font-size: 1.2rem;
   cursor: pointer;
   color: #f8981d;
+}
+
+/* PAGINATION DOTS */
+
+#pagination {
+  margin: 0 auto;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+}
+
+.dot {
+  width: 4px;
+  height: 3px;
+  background: #888;
+  margin: 2px;
+  float: left;
+
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.dot-box {
+  display: inline-block;
+  border: 1px solid #888;
+  padding: 2px;
+  border-radius: 3px;
+}
+
+.dot-space {
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+.dot-medium {
+  margin-top: 1px;
+  width: 7px;
+  height: 5px;
 }
