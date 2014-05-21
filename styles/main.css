@@ -199,12 +199,16 @@ aside ul:last-child a {
   width: 158px;
   height: 95px;
   float: left;
+  margin-bottom: 60px;
+  margin-left: 20px;
+  cursor: pointer;
 }
 .details {
   border: 1px solid #d1dee7; /* stroke */
   box-shadow: 0 1px 2px rgba(0,0,0,.1), inset 0 4px 8px rgba(255,255,255,.75); /* drop shadow and inner shadow */
   background-image: linear-gradient( #eff3f6 0%, #eff3f6 36%,  #dce8f0 100%); /* color overlay + gradient overlay */  
   border-radius: 3px;
+  margin-top: 6px;
 }
 .widget h3 {
   text-align: center;
@@ -222,7 +226,17 @@ aside ul:last-child a {
 .focus-num {
   color: #34bbf3;
   font-size: 2rem;
+  margin-top: 7px;
 }
+.details span {
+  display: block;
+  text-align: center;
+}
+.metric {
+  margin-top: 5px;
+}
+
+
 .metric,
 .total,
 .out-of {
@@ -230,9 +244,24 @@ aside ul:last-child a {
 }
 .total {
   font-size: 0.6875rem;
+  margin-top: 12px;
+  margin-bottom: 6px;
 }
 .out-of {
   font-size: 1.25rem;
+}
+.landing .metric {
+  font-size: 0.8125rem;
+}
+.landing .focus-num,
+.landing .out-of {
+  display: inline;
+}
+.landing .results {
+  margin-top: 10px;
+}
+.landing .total {
+  clear: both;
 }
 
 
