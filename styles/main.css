@@ -1,0 +1,370 @@
+body {
+  background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333; 
+}
+a {
+  text-decoration: none;
+}
+.wrapper {
+  max-width: 1195px;
+  margin: 0 auto;
+  position: relative;
+}
+.hidden {
+  display: none;
+}
+
+/* Header */
+header {
+  background-color: #2a2f32;
+  background-image: -moz-linear-gradient(top, #45525c, #2a2f32);
+  background-image: -webkit-linear-gradient(top, #45525c, #2a2f32);
+  background-image: -o-linear-gradient(top, #45525c, #2a2f32);
+  background-image: linear-gradient(#45525c, #2a2f32);
+  padding: 10px 0;
+  font-size: 0.6875rem;
+  box-shadow: 1px 0px 5px #000;
+}
+header h1 {
+  background: url(../assets/logo.png) no-repeat;
+  text-indent: -999em;
+  float: left;
+  width: 86px;
+  height: 16px;
+}
+nav {
+  float: right;
+}
+nav li {
+  display: inline-block;
+  padding: 0 5px;
+  border-right: 1px solid #cccccc;
+  float: left;
+}
+nav li:first-child {
+  color: #eee;
+  border: none;
+}
+nav li:last-child {
+  border: none;
+}
+nav li a {
+  color: #99cce1;
+}
+nav li a:hover {
+  color: #e5e5e5;
+}
+
+/* Marketing Hub */
+aside {
+  float: left;
+  margin-top: 20px;
+  width: 180px;
+  background: #f4f4f5;
+  color: #888888;
+  font-size: 0.875rem;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1), inset 0 0 0 1px #fff;
+  background-color: #f3f3f5;
+  border-radius: 5px;
+}
+aside h2 {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(0,0,0,.1);
+  padding: 12px 0 12px 45px;
+  border: 1px solid #f7971d;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25), inset 0 1px 3px rgba(255,255,255,.5);
+  background-image: url(../assets/imh-icon.png), -moz-linear-gradient(top, #f7971d 0%, #fdaf4b 75.24%, #fdaf4b 100%);
+  background-image: url(../assets/imh-icon.png), -webkit-linear-gradient(top, #f7971d 0%, #fdaf4b 75.24%, #fdaf4b 100%);
+  background-image: url(../assets/imh-icon.png), -o-linear-gradient(top, #f7971d 0%, #fdaf4b 75.24%, #fdaf4b 100%);
+  background-image: url(../assets/imh-icon.png), linear-gradient(#f7971d 0%, #fdaf4b 75.24%, #fdaf4b 100%);
+  background-repeat: no-repeat, repeat;
+  border-radius: 5px 5px 0 0;
+}
+aside li a {
+  color: #878787;
+  padding-left: 45px;
+}
+aside li a:hover {
+  color: #34bbf3;;
+}
+aside li {
+  display: block;
+  padding: 12px 0;
+}
+aside ul:nth-child(2) {
+  border-bottom: 1px solid #e5e5e5;
+}
+aside ul:last-child {
+  border-top: 1px solid #e5e5e5;
+}
+aside ul:last-child a {
+  font-size: 0.6875rem;
+}
+.email {
+  background: url(../assets/email-icon.png) 12px center no-repeat;
+}
+.mobile {
+  background: url(../assets/mobile-icon.png) 12px center no-repeat;
+}
+.coTweet {
+  background: url(../assets/coTweet-icon.png) 12px center no-repeat;
+}
+.sites {
+  background: url(../assets/sites-icon.png) 12px center no-repeat;
+}
+.automation {
+  background: url(../assets/automation-icon.png) 12px center no-repeat;
+}
+.audience {
+  background: url(../assets/audience-icon.png) 12px center no-repeat;
+}
+.report {
+  background: url(../assets/report-icon.png) 12px center no-repeat;
+}
+.partner {
+  background: url(../assets/partner-icon.png) 12px center no-repeat;
+}
+
+/* Calendar */
+.calendar {
+  width: 995px;
+  float: right;
+  border: 1px solid #cbcbcb;
+  border-radius: 0 0 5px 5px;
+  background-color: #f4f4f4;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1); 
+}
+.calendar h2,
+.calendar span {
+  color: #99abb6;
+  font-size: 0.6875rem;
+}
+.calendar h2 {
+  padding-left: 4px;
+  margin: 2px 0;
+}
+.week-container {
+  width: 99%;
+  margin: 0 auto;
+}
+.date-container {
+  box-sizing: border-box;
+  height: 76px;
+  width: 14.285%;
+  float: left;
+  padding: 3px 2px;
+  border-left: 1px solid #cbcbcb;
+  border-bottom: 1px solid #cbcbcb;
+}
+.date-container:last-child {
+  border-right: 1px solid #cbcbcb;
+}
+.today-flag {
+  box-sizing: border-box;
+  width: 14.15%;
+  margin: 0 auto;
+  box-shadow: -1px 0 2px rgba(0,0,0,.25);
+  background-color: #fdaf4b;
+  background-image: -moz-linear-gradient(top, #fdaf4b 0%, #fdaf4b 75.24%, #f7971d 100%);
+  background-image: -webkit-linear-gradient(top, #fdaf4b 0%, #fdaf4b 75.24%, #f7971d 100%);
+  background-image: -o-linear-gradient(top, #fdaf4b 0%, #fdaf4b 75.24%, #f7971d 100%);
+  background-image: linear-gradient( #fdaf4b 0%, #fdaf4b 75.24%, #f7971d 100%);
+}
+.today-flag span{
+  display: block;
+  text-align: center;
+  padding: 4px 0;
+  color: #fff;
+  font-size: 0.625rem;
+  font-weight: bold;  
+  text-transform: uppercase;
+}
+.today {
+  background-color: #ffecd5;
+  background-image: -moz-linear-gradient(top, #f4f4f4 0%, #ebf1f5 30.96%,  #ffecd5 100%);
+  background-image: -webkit-linear-gradient(top, #f4f4f4 0%, #ebf1f5 30.96%,  #ffecd5 100%);
+  background-image: -o-linear-gradient(top, #f4f4f4 0%, #ebf1f5 30.96%,  #ffecd5 100%);  
+  background-image: linear-gradient( #f4f4f4 0%, #ebf1f5 30.96%,  #ffecd5 100%);
+}
+.day {
+  color: #999;
+  float: left;
+  padding-left: 2px;
+}
+.date {
+  color: #656565;
+  float: right;
+  padding-right: 2px;
+}
+
+/* Pulse */
+.pulse {
+  width: 995px;
+  height: 250px;
+  border-radius: 5px;
+  float: right;
+  margin-top: 20px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,.12);
+  background-color: #e2edf5;
+  background-image: -moz-linear-gradient(top, #bac7d1 0%, #e2edf5 88.72%, #d1dde5 100%);
+  background-image: -webkit-linear-gradient(top, #bac7d1 0%, #e2edf5 88.72%, #d1dde5 100%);
+  background-image: -o-linear-gradient(top, #bac7d1 0%, #e2edf5 88.72%, #d1dde5 100%);
+  background-image: linear-gradient(#bac7d1 0%, #e2edf5 88.72%, #d1dde5 100%);
+  position: relative;
+}
+.pulse h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  text-shadow: 0 1px 1px rgba(88,139,172,.6);
+  padding: 5px 0 5px 10px; 
+}
+.widget {
+  width: 160px;
+  height: 95px;
+  margin-bottom: 60px;
+  cursor: pointer;
+  position: absolute;
+}
+.details {
+  border: 1px solid #d1dee7;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1), inset 0 4px 8px rgba(255,255,255,.75);
+  background-color: #eff3f6;
+  background-image: -moz-linear-gradient(top, #eff3f6 0%, #eff3f6 36%,  #dce8f0 100%);
+  background-image: -webkit-linear-gradient(top, #eff3f6 0%, #eff3f6 36%,  #dce8f0 100%);
+  background-image: -o-linear-gradient(top, #eff3f6 0%, #eff3f6 36%,  #dce8f0 100%);
+  background-image: linear-gradient( #eff3f6 0%, #eff3f6 36%,  #dce8f0 100%);  
+  border-radius: 3px;
+  margin-top: 6px;
+  width: 100%;
+  height: 95%;
+}
+.followers {
+  top: 50px;
+  left: 23px;
+}
+.fans {
+  top: 50px;
+  left: 219px;
+}
+.subscribers {
+  top: 50px;
+  left: 415px;
+}
+.foursquare {
+  top: 50px;
+  left: 611px;
+}
+.landing {
+  top: 50px;
+  left: 807px;
+}
+.expand {
+  width: 196px;
+  height: 145px; 
+  margin: 0 18px 60px 18px;
+  cursor: pointer;
+  position: absolute;
+}
+.widget h3 {
+  text-align: center;
+  color: #7e91a3;
+  font-size: 0.6875rem;
+}
+.expand h3 {
+  text-align: center;
+  color: #5d717d;
+  font-size: 0.75rem;
+}
+.focus-num {
+  color: #34bbf3;
+  font-size: 2rem;
+  margin-top: 7px;
+}
+.expand .focus-num {
+  font-size: 2.5rem;
+}
+.details span {
+  display: block;
+  text-align: center;
+}
+.metric {
+  margin-top: 5px;
+}
+.expand .metric {
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+.metric,
+.total,
+.out-of {
+  color: #93afc0; 
+}
+.total {
+  font-size: 0.6875rem;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+.expand .total {
+  font-size: 0.875rem;
+  margin-top: 18px;
+}
+.out-of {
+  font-size: 1.25rem;
+}
+.landing .metric {
+  font-size: 0.8125rem;
+}
+.landing .focus-num,
+.landing .out-of {
+  display: inline;
+}
+.landing .results {
+  margin-top: 10px;
+}
+.landing .total {
+  clear: both;
+}
+
+/* Help Dialogue */
+.help {
+  width: 250px;
+  height: 175px;
+  margin: 0 auto;
+  background: #fff;
+  color: #878787;
+  position: absolute;
+  z-index: 100;
+  top: 200px;
+  left: 472px;
+  padding: 12px;
+}
+.help h2 {
+  text-align: center;
+  margin-top: 8px
+}
+.questions {
+  margin-top: 20px;
+}
+.questions li {
+  margin-top: 7px;
+}
+.help a {
+  font-size: 0.8125rem;
+  color: #34bbf3;
+}
+.help a:hover {
+  opacity: 0.75;
+}
+.help .close {
+  color: #fdaf4b;
+  margin-top: 24px;
+  display: block;
+}
+.fade {
+  opacity: 0.1;
+}
+
+

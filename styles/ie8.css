@@ -1,0 +1,44 @@
+aside h2 {
+  background: #fdaf4b url(../assets/imh-icon.png) no-repeat;
+}
+
+header,
+.calendar h2,
+.calendar span,
+.today-flag span,
+.widget h3,
+.total,
+.partner a  {
+  font-size: 11px;
+}
+.expand h3 {
+  font-size: 12px;
+}
+.landing .metric,
+.help a {
+  font-size: 13px;
+}
+aside,
+.expand .total {
+  font-size: 14px;
+}
+.pulse h2,
+.out-of {
+  font-size: 20px; 
+}
+.expand .metric {
+  font-size: 24px;
+}
+.focus-num {
+  font-size: 32px;
+}
+.expand .focus-num {
+  font-size: 40px;
+}
+
+
+
+
+
+
+

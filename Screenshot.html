@@ -1,8 +1,146 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Screenshot.html</title>
+  <title>Screenshot.html</title>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <!--[if IE 9]>
+  <link rel="stylesheet" type="text/css" href="styles/ie9.css">
+  <![endif]-->  
+  <!--[if lte IE 8]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/ie8.css" />
+  <![endif]-->
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>
+  <header class="group">
+    <div class="wrapper">
+      <h1>ExactTarget</h1>
+      <nav>
+        <ul>
+          <li>Welcome John!</li>
+          <li><a href="">Account</a></li>
+          <li><a href="" class="help-link">Help</a></li>
+          <li><a href="">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <aside>
+      <h2>Interactive Marketing Hub</h2>
+      <ul>
+        <li class="email"><a href="">ExactTarget Email</a></li>
+        <li class="mobile"><a href="">ExactTarget Mobile</a></li>
+        <li class="coTweet"><a href="">CoTweet Social</a></li>
+        <li class="sites"><a href="">ExactTarget Sites</a></li>
+      </ul>
+      <ul>  
+        <li class="automation"><a href="">Automation Studio</a></li>
+        <li class="audience"><a href="">Audience Builder</a></li>
+        <li class="report"><a href="">Report Builder</a></li>
+      </ul>
+      <ul>
+        <li class="partner"><a href="">Partner Applications</a></li>
+      </ul>
+    </aside>
+
+    <section class="help hidden">
+      <h2>Help</h2> 
+      <div class="questions"></div>
+      <a href="#" class="close">Close</a>
+    </section>
+
+    <section class="calendar">
+      <h2>September 2010</h2>
+      <div class="week-container group">
+        <div class="date-container">
+          <span class='day'>Sat</span>
+          <span class='date'>11</span>
+        </div>
+        <div class="date-container">
+          <span class="day">Sun</span>
+          <span class='date'>12</span>
+        </div>
+        <div class="date-container">
+          <span class="day">Mon</span>
+          <span class='date'>13</span>
+        </div>
+        <div class="date-container today">
+          <span class="day">Tue</span>
+          <span class='date'>14</span>
+        </div>
+        <div class="date-container">
+          <span class="day">Wed</span>
+          <span class='date'>15</span>
+        </div>
+        <div class="date-container">
+          <span class="day">Thu</span>
+          <span class='date'>16</span>
+        </div>
+        <div class="date-container">
+          <span class="day">Fri</span>
+          <span class='date'>17</span>
+        </div>
+      </div>  
+      <div class="today-flag">
+        <span>Today</span>
+      </div>
+    </section>
+
+    <section class="pulse group">
+      <h2>Pulse</h2>
+  
+      <div class="widget followers">
+        <h3>Followers</h3>
+        <div class="details">
+          <span class="focus-num">310</span>
+          <span class="metric">added today</span>
+          <span class="total">2,393,905 total</span>
+        </div>
+      </div>
+
+      <div class="widget fans">
+        <h3>Fans</h3>
+        <div class="details">
+          <span class="focus-num">73</span>
+          <span class="metric">added today</span>
+          <span class="total">91,675 total</span>
+        </div>
+      </div>
+      
+      <div class="widget subscribers">
+        <h3>Subscribers</h3>
+        <div class="details">
+          <span class="focus-num">56</span>
+          <span class="metric">added today</span>
+          <span class="total">189,405 total</span>
+        </div>
+      </div>
+      
+      <div class="widget foursquare">
+        <h3>foursquare</h3>
+        <div class="details">
+          <span class="focus-num">2,212</span>
+          <span class="metric">checkins today</span>
+          <span class="total">3,905 total</span>
+        </div>
+      </div>
+      
+      <div class="widget landing">
+        <h3>Landing Pages</h3>
+        <div class="details">
+          <span class="metric">Visitors Today</span>
+          <span class="results"><span class="focus-num">397</span><span class="out-of"> / 355</span></span>
+          <span class="total">Soulja Boy V.I.P.</span>
+        </div>
+      </div>                        
+  
+    </section>
+  </div>
+  <script src="scripts/script.js"></script>
+  <script src="data/help.json"></script>
 </body>
 </html>
