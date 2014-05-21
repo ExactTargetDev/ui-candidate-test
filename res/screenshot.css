@@ -362,7 +362,7 @@ section {
   transition: all .6s;
 }
 
-.box span {
+.box > span {
   -webkit-transition: all .6s;
   transition: all .6s;
 }
