@@ -282,8 +282,20 @@
       */
      function isOnlyWhitespace(sourceStr) {
          
-         var ret = (sourceStr.length == 0) ? false : (sourceStr.strip().length > 0) ? false : true;
-         return ret;
+         if(sourceStr.length == 0) {
+             return  false 
+         }
+         // Strip from all white spaces
+         var stripped = sourceStr.replace(/^\s+|\s+$/g, '');
+         
+         // test if string is empty
+         if(stripped.length == 0){
+             // empty is return true
+             return true
+         }
+         
+         // not empty
+         return false;
      }
      
      /**
@@ -299,14 +311,19 @@
          var monster = [];
          
          function privateFeedTheMonster(cookie){
+             if(typeof cookie == 'undefined'){
+                 return;
+             }
              monster.push(cookie);
              if(monster.length > 1){
-                 console.log('Monster is a closure and it likes cookies')
+                 console.log('Monster is a closure and it likes cookies '+monster)
              }
+             
          }
          return {
              'feedTheMonster' : function(cookie){
                  privateFeedTheMonster(cookie);
+                 return monster;
              }
          }
      })()

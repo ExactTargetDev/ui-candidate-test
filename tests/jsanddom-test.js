@@ -125,5 +125,59 @@ test( "SUM", 2, function() {
     equal( typeof sum, 'function', "function that will take any number of arguments and return their sum" );
 
     // Make sure the result from the function is valid
-    equal( sum(1,2,3,5), 11, 'Sum Expected: 11 Result is : ' + splitListStrUsingComma(1,2,3,5));
+    equal( sum(1,2,3,5), 11, 'Sum Expected: 11 Result is : ' + sum(1,2,3,5));
+});
+
+/********************************
+@module Test isOnlyWhitespace(sourceStr)
+@version 1.0
+@author Luc Martin
+********************************/
+
+module( "Example Unit Test if a string has only white spaces" );
+test( "isOnlyWhitespace", 3, function() {
+    // Verify the method exists
+    equal( typeof isOnlyWhitespace, 'function', "function that will Test if a string has only white spaces" );
+
+    // Make sure the result from the function is valid
+    equal( isOnlyWhitespace('       '), true, 'Expected: true Result is : ' + isOnlyWhitespace('       '));
+    
+    // Make sure the result from the function is valid
+    equal( isOnlyWhitespace('   hu hu hu '), false, 'Expected: true Result is : ' + isOnlyWhitespace('   hu hu hu '));
+});
+
+/********************************
+@module Test isOnlyWhitespace(sourceStr)
+@version 1.0
+@author Luc Martin
+********************************/
+
+module( "Example Unit Test cookieMonsterClosure.feedTheMonster" );
+test( "cookieMonsterClosure", 3, function() {
+    // Verify the method exists
+    equal( typeof cookieMonsterClosure.feedTheMonster, 'function', "function that will Test closure" );
+
+    // Make sure the result from the function is valid
+    equal( cookieMonsterClosure.feedTheMonster('goodCookie'), 'goodCookie', 'Expected: goodCookie Result is : ' + cookieMonsterClosure.feedTheMonster());
+    
+    // Make sure the result from the function is valid
+    equal( cookieMonsterClosure.feedTheMonster('BadBadMonster'), "goodCookie,BadBadMonster", 'Expected: ["goodCookie","BadBadMonster"] Result is : ' + cookieMonsterClosure.feedTheMonster());
+});
+
+/********************************
+@module Test isOnlyWhitespace(sourceStr)
+@version 1.0
+@author Luc Martin
+********************************/
+
+module( "Example Unit Test closure" );
+test( "cookieMonsterClosure", 3, function() {
+    // Verify the method exists
+    equal( typeof cookieMonsterClosure.feedTheMonster, 'function', "function that will Test closure" );
+
+    // Make sure the result from the function is valid
+    equal( cookieMonsterClosure.feedTheMonster('goodCookie'), 'goodCookie', 'Expected: goodCookie Result is : ' + cookieMonsterClosure.feedTheMonster());
+    
+    // Make sure the result from the function is valid
+    equal( cookieMonsterClosure.feedTheMonster('BadBadMonster'), "goodCookie,BadBadMonster", 'Expected: ["goodCookie","BadBadMonster"] Result is : ' + cookieMonsterClosure.feedTheMonster());
 });
