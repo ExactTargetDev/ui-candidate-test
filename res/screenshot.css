@@ -5,13 +5,15 @@ blue-gray: #c0cdd6;
 text-gray: #888;
 text-blue: #99cce1;
 bkg-gray:  #f4f4f5;
+teal:      #34bbf3;
+light-blue:#93afc0;
 */
 
 body {
   margin: 0;
   background-color: #fefffd;
   font-size: 16px;
-  font-family: Helvetica, "Helvetica-neue", Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 /* HEADER */
@@ -124,6 +126,14 @@ section {
   height: 24px;
   display: block;
   position: relative;
+}
+
+#sidebar a:hover {
+  color: #34bbf3;
+}
+
+#sidebar a:active {
+  color: #000;
 }
 
 #sidebar span {
@@ -327,7 +337,8 @@ section {
 }
 
 .box {
-  font-size: .75em;
+  font-size: .75rem;
+  color: #93afc0;
   width: 160px;
   height: 105px;
   border: 1px solid #ddd;
@@ -336,6 +347,7 @@ section {
   position: relative;
   float: left;
   top: 0;
+  text-align: center;
 
   background: #f9f9f9; /* Old browsers */
   background: -moz-linear-gradient(top, #f9f9f9 30%, #e2ecf4 100%); /* FF3.6+ */
@@ -350,8 +362,87 @@ section {
   transition: all .6s;
 }
 
+.box span {
+  -webkit-transition: all .6s;
+  transition: all .6s;
+}
+
 .medium {
   width: 280px;
   height: 180px;
   top: -50px;
+  background: #e1f3fe;
+}
+
+.box-title {
+  position: relative;
+  top: -24px;
+  color: #888;
+  display: block;
+}
+
+.number {
+  color: #34bbf3;
+  font-size: 2rem;
+  display: block;
+  position: relative;
+  left: 0;
+}
+
+.other-number {
+  font-size: .75em;
+  color: #93afc0;
+}
+
+.note {
+  font-size: 1rem;
+  display: block;
+  position: relative;
+  right: 0;
+  bottom: 0;
+}
+
+.total {
+  font-size: .75rem;
+  display: block;
+  margin-top: 10px;
+}
+
+.data {
+  opacity: 0;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  height: 0px;
+  width: 120px;
+
+  -webkit-transition: all .6s;
+  transition: all .6s;
+}
+
+.medium .total {
+  opacity: 0;
+}
+
+.medium .number {
+  position: relative;
+  left: 90px;
+  color: #888;
+  font-size: 1rem;
+}
+
+.medium .note {
+  position: relative;
+  right: 55px;
+  bottom: 18px;
+  color: #888;
+  font-size: 1rem;
+}
+
+.medium .data {
+  opacity: 1;
+  width: 240px;
+  height: 120px;
 }
