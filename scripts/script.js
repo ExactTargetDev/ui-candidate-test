@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+  // help dialogue
   $('.help-link').on('click', function(e){
     e.preventDefault();
     $('.help').removeClass('hidden');
@@ -19,7 +19,6 @@ $(document).ready(function(){
     }
 
     $list.appendTo($('.questions'));
-
   });
 
   $('.close').on('click', function(e){
@@ -28,21 +27,29 @@ $(document).ready(function(){
     $('.help').addClass('hidden');
     $('header, .calendar, aside, .pulse').not('.help').removeClass('fade');
   })
-
 });
 
-
+// widget expansion
 $('.widget').on('click', function(){
 
-  if($(this).hasClass('widget')){
-    $(this).addClass('expand').removeClass('widget');
-    $(this).css('top', '-=25');
-    $(this).css('left', '-=25');
+  var $widgets = $('.pulse > div');
+
+  $widgets.each(function(i) {
+    if($(this).hasClass('expand')){
+      $(this).removeClass('expand');
+      $(this).css({top: '+=25', left: '+=35'});
+    }
+  })
+
+  $(this).toggleClass('expand', 'widget');
+  
+  if($(this).hasClass('expand')){
+    $(this).css({ top: '-=25', left: '-=35'});
   }else{
-    $(this).removeClass('expand').addClass('widget');
-    $(this).css('top', '+=25');
-    $(this).css('left', '+=25');
+    $(this).css({top: '+=25', left: '+=35'});
   }
+
+
 });
 
 
