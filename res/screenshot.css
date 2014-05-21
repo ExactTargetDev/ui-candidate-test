@@ -69,6 +69,10 @@ section {
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+.orange {
+  color: #f8981d !important;
+}
+
 /* MENU SIDEBAR */
 
 #sidebar {
@@ -130,10 +134,6 @@ section {
 
 #sidebar a:hover {
   color: #34bbf3;
-}
-
-#sidebar a:active {
-  color: #000;
 }
 
 #sidebar span {
@@ -358,13 +358,13 @@ section {
   background: linear-gradient(to bottom, #f9f9f9 30%,#e2ecf4 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#e2ecf4',GradientType=0 ); /* IE6-9 */
 
-  -webkit-transition: all .6s;
-  transition: all .6s;
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
 .box > span {
-  -webkit-transition: all .6s;
-  transition: all .6s;
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
 .medium {
@@ -418,9 +418,11 @@ section {
   height: 0px;
   width: 120px;
 
-  -webkit-transition: all .6s;
-  transition: all .6s;
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
+
+/* Medium (selected) Boxes */
 
 .medium .total {
   opacity: 0;
