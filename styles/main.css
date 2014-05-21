@@ -55,28 +55,64 @@ aside {
   width: 180px;
   background: #f4f4f5;
   color: #888888;
-  /* Gradient */
+  font-size: 0.875rem;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1), inset 0 0 0 1px #fff;
+  background-image: linear-gradient(bottom, #f3f3f5 0%, #f3f3f5 100%);
+  border-radius: 5px;
 }
 aside h2 {
   color: #fff;
   font-size: 0.875rem;
   font-weight: bold;
   text-shadow: 0 1px 1px rgba(0,0,0,.1);
-  padding: 12px 0 12px 55px;
+  padding: 12px 0 12px 45px;
   border: 1px solid #f7971d;
   box-shadow: 0 1px 2px rgba(0,0,0,.25), inset 0 1px 3px rgba(255,255,255,.5);
   background-image: url(../assets/imh-icon.png), linear-gradient(#f7971d 0%, #fdaf4b 75.24%, #fdaf4b 100%);
   background-repeat: no-repeat, repeat;
+  border-radius: 5px 5px 0 0;
+}
+aside li a {
+  color: #878787;
+  padding-left: 45px;
 }
 aside li {
-
-}
-
-.email {
   display: block;
-  background: url(../assets/email-icon.png) left center no-repeat;
-  padding: 20px 0 20px 35px;
-
+  padding: 12px 0;
+}
+aside ul:nth-child(2) {
+  border-bottom: 1px solid #e5e5e5;
+}
+aside ul:last-child {
+  border-top: 1px solid #e5e5e5;
+}
+aside ul:last-child a {
+  font-size: 0.6875rem;
+}
+.email {
+  background: url(../assets/email-icon.png) 12px center no-repeat;
+}
+.mobile {
+  background: url(../assets/mobile-icon.png) 12px center no-repeat;
+}
+.coTweet {
+  background: url(../assets/coTweet-icon.png) 12px center no-repeat;
+}
+.sites {
+  background: url(../assets/sites-icon.png) 12px center no-repeat;
+}
+.automation {
+  background: url(../assets/automation-icon.png) 12px center no-repeat;
+}
+.audience {
+  background: url(../assets/audience-icon.png) 12px center no-repeat;
+}
+.report {
+  background: url(../assets/report-icon.png) 12px center no-repeat;
+}
+.partner {
+  background: url(../assets/partner-icon.png) 12px center no-repeat;
 }
 
 /* Calendar */
