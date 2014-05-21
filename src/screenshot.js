@@ -1,6 +1,10 @@
 $('#boxes').on('click', '.box', function (e) {
   $('#boxes').children().not($(this)).removeClass('medium');
   $(this).toggleClass('medium');
+
+  //var boxIndex = $('#boxes').indexOf($(this));
+  $('.pip-box').children().removeClass('pip-medium');
+  $($('.pip-box').children()[$(this).index()]).addClass('pip-medium');
 });
 
 $('#sidebar').on('click', 'a', function (e) {

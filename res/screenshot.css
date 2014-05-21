@@ -516,7 +516,7 @@ section {
   left: 50%;
 }
 
-.dot {
+.pip {
   width: 4px;
   height: 3px;
   background: #888;
@@ -527,19 +527,19 @@ section {
   transition: all .4s;
 }
 
-.dot-box {
+.pip-box {
   display: inline-block;
   border: 1px solid #888;
   padding: 2px;
   border-radius: 3px;
 }
 
-.dot-space {
+.pip-space {
   display: inline-block;
   margin-bottom: 3px;
 }
 
-.dot-medium {
+.pip-medium {
   margin-top: 1px;
   width: 7px;
   height: 5px;
