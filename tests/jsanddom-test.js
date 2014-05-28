@@ -17,5 +17,9 @@ test("reverseString", function() {
 });
 
 test("findMinValue", function() {
-  equal(findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), -1.1, "Should return minimum value")
+  equal(findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), -1.1, "Should return minimum value");
+});
+
+test("findDistinctValues", function() {
+  deepEqual(findDistinctValues([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity], "Should return unique values");
 });
