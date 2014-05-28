@@ -22,9 +22,11 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
+       var hashSet = {};
        var uniques = [];
        for ( var i = 0; i < values.length; i++ ) {
-         if ( uniques.indexOf( values[i] ) === -1 ) {
+         if (!hashSet[values[i]]) {
+           hashSet[values[i]] = true;
            uniques.push( values[i] );
          }
        }
