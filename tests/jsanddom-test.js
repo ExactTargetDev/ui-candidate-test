@@ -12,3 +12,6 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+test("reverseString", function() {
+  equal(reverseString("Subscribers rock"), "kcor srebircsbuS", "String should be reversed");
+});
