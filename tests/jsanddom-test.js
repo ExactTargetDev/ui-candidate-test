@@ -27,3 +27,7 @@ test("findDistinctValues", function() {
 test("fizzBuzzHelper", function() {
   deepEqual(fizzBuzzHelper(15), [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"], "Should return 'Fizz' for multiples of 3, 'Buzz' for multiples of 5, and 'FizzBuzz' for multiples of both 3 and 5");
 });
+
+test("removeFruits", function() {
+  deepEqual(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], "Array should not contain 'pear' or 'banana'");
+});
