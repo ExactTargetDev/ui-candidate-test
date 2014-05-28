@@ -31,3 +31,8 @@ test("fizzBuzzHelper", function() {
 test("removeFruits", function() {
   deepEqual(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], "Array should not contain 'pear' or 'banana'");
 });
+
+test("pushOntoArray", function() {
+  deepEqual(pushOntoArray([1,2,3,4,5], 6), [1,2,3,4,5,6], "Should add a single value to array");
+  deepEqual(pushOntoArray([1,2,3,4,5], [7,8,9]), [1,2,3,4,5,7,8,9], "Should add a array's elements to array");
+});
