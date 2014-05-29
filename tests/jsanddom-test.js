@@ -49,3 +49,8 @@ test("splitListStrUsingComma", function() {
 test("sum", function() {
   equal(sum(1, 1, 2, 3, 5, 7), 19, "Should return sum of arguments");
 });
+
+test("isOnlyWhitespace", function() {
+  ok(isOnlyWhitespace('\t \n '), "Should return true if string contains only whitespace");
+  equal(isOnlyWhitespace('   test   '), false, "Should return false if string containers nonwhitespace character");
+});
