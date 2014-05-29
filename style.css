@@ -3,15 +3,36 @@ html, body, nav, ul {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: steelblue;
+}
+
 .nav {
   width: 100%;
-  background-color: black;
+  height: 32px;
+  background-image: linear-gradient(#555, black);
   color: white;
   overflow: hidden;
+  line-height: 32px;
+  font-family: arial;
+}
+
+.nav .company {
+  float: left;
+  font-size: 1.1em;
+  margin: 0 18px;
+}
+
+.nav ul {
+  float: right;
+  font-size: 0.7em;
+  margin: 0 10px;
 }
 
 .nav li {
   display: inline;
+  margin: 4px;
 }
 
 .marketing-hub {
