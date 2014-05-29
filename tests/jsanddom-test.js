@@ -39,3 +39,9 @@ test("pushOntoArray", function() {
   pushOntoArray(array, [7,8,9]);
   deepEqual(array, [1,2,3,4,5,6,7,8,9], "Should add a array's elements to array");
 });
+
+test("splitListStrUsingComma", function() {
+  var splitStrings = splitListStrUsingComma('The, quick, brown, fox jumped over');
+  deepEqual(splitStrings, ['The', ' quick', ' brown', ' fox jumped over'], "Should split on comma");
+  deepEqual(splitListStrUsingComma(''), [], "Should return empty array for empty string");
+});
