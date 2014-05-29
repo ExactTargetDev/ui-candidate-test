@@ -12,6 +12,7 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+module( "Utility Functions" );
 test("reverseString", function() {
   equal(reverseString("Subscribers rock"), "kcor srebircsbuS", "String should be reversed");
 });
@@ -53,4 +54,33 @@ test("sum", function() {
 test("isOnlyWhitespace", function() {
   ok(isOnlyWhitespace('\t \n '), "Should return true if string contains only whitespace");
   equal(isOnlyWhitespace('   test   '), false, "Should return false if string containers nonwhitespace character");
+});
+
+module( "DataTable" );
+test("getData", function() {
+  var dt = new DataTable();
+  deepEqual(dt.getData(), [], "new DataTable should have empty data");
+  dt.addColumns('column1', 'column2', 'column3');
+  dt.addRow('value1A', 'value1B', 'value1C');
+  deepEqual(dt.getData(), [
+    { 
+      'column1' : 'value1A',
+      'column2' : 'value1B',
+      'column3' : 'value1C'
+    }
+  ], "Should return one row");
+
+  dt.addRow('value2A', 'value2B', 'value2C');
+  deepEqual(dt.getData(), [
+    { 
+      'column1' : 'value1A',
+      'column2' : 'value1B',
+      'column3' : 'value1C'
+    },
+    {
+      'column1' : 'value2A',
+      'column2' : 'value2B',
+      'column3' : 'value2C'
+    }
+  ], "Should return two rows");
 });
