@@ -242,3 +242,25 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     (function() {
+       var $foobar = $('#foobar');
+       for ( var i = 0; i < 3; i++ ) {
+         $foobar.append('<input type="checkbox">Choice' + i);
+       }
+
+       var $checkAll = $('<a href="">Check All</a>');
+       $checkAll.click(function(evt) {
+         evt.preventDefault();
+         $foobar.find('input').prop('checked', true);
+       });
+
+       var $uncheckAll = $('<a href="">Uncheck All</a>');
+       $uncheckAll.click(function(evt) {
+         evt.preventDefault();
+         $foobar.find('input').prop('checked', false);
+       });
+
+       $foobar
+         .append($checkAll)
+         .append($uncheckAll);
+     }());
