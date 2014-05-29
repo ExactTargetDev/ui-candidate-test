@@ -115,6 +115,18 @@
      }
 
      // write an example of a javascript closure
+     // In this example `closedOverVar` is defined in the outer function, 
+     // but even after this function returns, the inner function will still
+     // have access to that variable. Successive calls to closerIncrement
+     // returns the value of closedOverVar incremented by 1, revealing that
+     // closures store variables by reference.
+     var closureIncrement = (function() {
+       var closedOverVar = 0;
+       return function() {
+         closedOverVar += 1;
+         return closedOverVar;
+       }
+     }());
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
