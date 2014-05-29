@@ -45,3 +45,7 @@ test("splitListStrUsingComma", function() {
   deepEqual(splitStrings, ['The', ' quick', ' brown', ' fox jumped over'], "Should split on comma");
   deepEqual(splitListStrUsingComma(''), [], "Should return empty array for empty string");
 });
+
+test("sum", function() {
+  equal(sum(1, 1, 2, 3, 5, 7), 19, "Should return sum of arguments");
+});
