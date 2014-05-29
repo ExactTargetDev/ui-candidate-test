@@ -1,0 +1,38 @@
+html, body, nav, ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  width: 100%;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}
+
+.nav li {
+  display: inline;
+}
+
+.marketing-hub {
+  float: left;
+}
+
+.calendar {
+  float: right;
+}
+
+.day {
+  display: inline-block;
+}
+
+.pulse {
+  float: right;
+  clear: right;
+}
+
+.panel {
+  display: inline-block;
+}
+
+
