@@ -217,9 +217,26 @@
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     // traversal is faster than selectors!
+     $('a');
+     $('.link');
+     $('#fizz').find('.link');
+     $('#fizz').children('.link');
+     $('#foo').find('.link');
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     (function() {
+       var i;
+       var items = [];
+       for ( i = 0; i < 5; i++ ) {
+         items.push('item' + i);
+       }
+       var $list1 = $('#list1');
+       for ( i = 0; i < items.length; i++ ) {
+         $list1.append('<li>' + items[i] + '</li>');
+       }
+     }());
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
