@@ -136,7 +136,30 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+     [{
+       'first': 'allen',
+       'last': 'kim',
+       'city': 'san francisco',
+       'state': 'california',
+       'zip': '94103',
+       'phoneNumbers': {
+         'home': '555-5555',
+         'work': '666-6666',
+         'mobile': '777-7777'
+       }
+     },
+     {
+       'first': 'tom',
+       'last': 'jones',
+       'city': 'san francisco',
+       'state': 'california',
+       'zip': '94103',
+       'phoneNumbers': {
+         'home': '111-1111',
+         'work': '222-2222',
+         'mobile': '333-3333'
+       }
+     }]
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
