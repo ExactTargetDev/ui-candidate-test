@@ -33,6 +33,9 @@ test("removeFruits", function() {
 });
 
 test("pushOntoArray", function() {
-  deepEqual(pushOntoArray([1,2,3,4,5], 6), [1,2,3,4,5,6], "Should add a single value to array");
-  deepEqual(pushOntoArray([1,2,3,4,5], [7,8,9]), [1,2,3,4,5,7,8,9], "Should add a array's elements to array");
+  var array = [1,2,3,4,5];
+  pushOntoArray(array, 6);
+  deepEqual(array, [1,2,3,4,5,6], "Should add a single value to array");
+  pushOntoArray(array, [7,8,9]);
+  deepEqual(array, [1,2,3,4,5,6,7,8,9], "Should add a array's elements to array");
 });

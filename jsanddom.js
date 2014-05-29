@@ -84,11 +84,11 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
        if ( toPush instanceof Array ) {
-         return array.concat(toPush);
+         for ( var i = 0; i < toPush.length; i++ ){
+           array.push(toPush[i]);
+         }
        } else {
-         var arrayDup = array.slice();
-         arrayDup.push(toPush);
-         return arrayDup;
+         array.push(toPush);
        }
      }
 
