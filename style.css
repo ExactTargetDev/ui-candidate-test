@@ -1,4 +1,4 @@
-html, body, nav, ul, hr {
+html, body, nav, ul, hr, p {
   margin: 0;
   padding: 0;
   font-family: arial;
@@ -7,6 +7,22 @@ html, body, nav, ul, hr {
 a {
   text-decoration: none;
   color: #99cce1;
+}
+
+.split * {
+  float: right;
+}
+
+.split *:first-child {
+  float: left;
+}
+
+.clearfix:after { 
+  content: "."; 
+  visibility: hidden; 
+  display: block; 
+  height: 0; 
+  clear: both;
 }
 
 /* sprites */
@@ -84,6 +100,10 @@ a {
   background-position: -63px -649px; width: 12px; height: 12px;
 }
 
+.map-sprite {
+  background-position: 0 -124px; width: 252px; height: 121px;
+}
+
 /* nav */
 .nav {
   width: 100%;
@@ -159,6 +179,8 @@ a {
   margin-left: 210px;
   font-size: 0.7em;
   padding: 0 2px 10px 10px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .calendar .icons {
@@ -169,11 +191,6 @@ a {
 .calendar-header {
   color: #99abb6;
   padding: 4px 0;
-}
-
-.day-container {
-  white-space: nowrap;
-  text-align: center;
 }
 
 .day {
@@ -213,14 +230,6 @@ a {
   border: thin solid #ddd;
 }
 
-.day-name {
-  float: left;
-}
-
-.day-number {
-  float: right;
-}
-
 /* pulse */
 .pulse {
   margin-left: 210px;
@@ -228,6 +237,8 @@ a {
   border-radius: 5px;
   padding: 10px 5px 10px 10px;
   position: relative;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .pulse .pulse-icon-sprite {
@@ -236,9 +247,13 @@ a {
   left: 0;
 }
 
-.pulse .icons {
+.pulse-controls .icons {
   float: right;
   margin-right: 10px;
+}
+
+.map-sprite {
+  margin: 0 auto;
 }
 
 .pulse-header {
@@ -248,8 +263,14 @@ a {
 }
 
 .panel {
-  display: inline-block;
   text-align: center;
+  margin: 5px;
+  position: relative;
+  top: 9px;
+}
+
+.panel-active {
+  position: static;
 }
 
 .panel-header {
@@ -260,10 +281,26 @@ a {
 
 .panel-body {
   width: 150px;
+  box-shadow: 1px 1px 4px #aaa;
   border-radius: 4px;
   background-image: linear-gradient(#f0f4f6, #e1ebf2);
   padding: 6px;
   color: #93afc0;
+}
+
+.panel-active .panel-body {
+  position: static;
+  width: 265px;
+  height: 150px;
+  background-image: none;
+  background-color: #eff9ff;
+}
+
+.panel-active-header {
+  font-size: 0.75em;
+  font-weight: bold;
+  color: #666;
+  padding: 6px;
 }
 
 .panel-count {
