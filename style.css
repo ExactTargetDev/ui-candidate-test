@@ -14,6 +14,10 @@ a {
   background: url(sprites.png) no-repeat top left;
 }
 
+.logo-sprite {
+  background-position: 0 -796px; width: 86px; height: 17px;
+}
+
 .hub-sprite {
   background-position: 0 -295px; width: 23px; height: 23px;
   float: left;
@@ -71,10 +75,9 @@ a {
   line-height: 32px;
 }
 
-.nav .company {
+.nav .logo-sprite {
   float: left;
-  font-size: 1.1em;
-  margin: 0 18px;
+  margin: 8px 18px;
 }
 
 .nav ul {
@@ -175,6 +178,7 @@ a {
 .pulse-header {
   font-size: 1.2em;
   color: white;
+  -webkit-font-smoothing:antialiased;
 }
 
 .panel {
