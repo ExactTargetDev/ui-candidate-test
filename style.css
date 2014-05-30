@@ -171,6 +171,11 @@ a {
   padding: 4px 0;
 }
 
+.day-container {
+  white-space: nowrap;
+  text-align: center;
+}
+
 .day {
   display: inline-block;
   width: 135px;
@@ -178,7 +183,34 @@ a {
   border-bottom: thin solid #ddd;
   border-left: thin solid #ddd;
   color: #999999;
+  position: relative;
+}
+
+.day-header{
   padding: 0 5px;
+}
+
+.day-active {
+  position: absolute;
+  width: 100%;
+  height: 94px;
+}
+
+.day-highlight {
+  width: 100%;
+  height: 80px;
+  background-image: linear-gradient(#c5e5f6, orange);
+  opacity: 0.2;
+}
+
+.day-label {
+  width: 100%;
+  height: 13px;
+  margin-left: -1px;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  border: thin solid #ddd;
 }
 
 .day-name {
