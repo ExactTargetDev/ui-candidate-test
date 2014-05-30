@@ -9,6 +9,10 @@ a {
   color: #99cce1;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .split * {
   float: right;
 }
@@ -23,6 +27,11 @@ a {
   display: block; 
   height: 0; 
   clear: both;
+}
+
+.container {
+  max-width: 1205px;
+  margin: 0 auto;
 }
 
 /* sprites */
