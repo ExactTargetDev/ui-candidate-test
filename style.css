@@ -98,11 +98,47 @@ a {
   float: right;
 }
 
+/* pulse */
 .pulse {
-  float: right;
-  clear: right;
+  margin-left: 210px;
+  background-image: linear-gradient(#bcc9d3, #e3edf5);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.pulse-header {
+  font-size: 1.2em;
+  color: white;
 }
 
 .panel {
   display: inline-block;
+  text-align: center;
+}
+
+.panel-header {
+  font-size: 0.70em;
+  padding: 7px;
+  color: #7f91a3;
+}
+
+.panel-body {
+  width: 150px;
+  border-radius: 4px;
+  background-image: linear-gradient(#f0f4f6, #e1ebf2);
+  padding: 6px;
+  color: #93afc0;
+}
+
+.panel-count {
+  color: #34bbf3;
+  font-size: 2em;
+}
+
+.panel-text {
+}
+
+.panel-subtext {
+  font-size: 0.7em;
+  padding: 10px 0 5px  0;
 }
