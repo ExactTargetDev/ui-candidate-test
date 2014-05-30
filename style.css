@@ -30,7 +30,7 @@ ul {
 }
 
 .container {
-  max-width: 1205px;
+  max-width: 1235px;
   margin: 0 auto;
 }
 
@@ -148,6 +148,7 @@ ul {
   font-size: 0.75em;
   color: #888888;
   float: left;
+  margin: 20px;
 }
 
 .marketing-hub .icons {
@@ -241,10 +242,10 @@ ul {
 
 /* pulse */
 .pulse {
-  margin-left: 210px;
+  margin: 20px 0 0 210px;
   background-image: linear-gradient(#bcc9d3, #e3edf5);
   border-radius: 5px;
-  padding: 10px 5px 10px 10px;
+  padding: 8px 5px 10px 10px;
   position: relative;
   white-space: nowrap;
   overflow: hidden;
@@ -273,7 +274,7 @@ ul {
 
 .panel {
   text-align: center;
-  margin: 5px;
+  margin: 4px;
   position: relative;
   top: 9px;
 }
@@ -289,7 +290,7 @@ ul {
 }
 
 .panel-body {
-  width: 150px;
+  width: 147px;
   box-shadow: 1px 1px 4px #aaa;
   border-radius: 4px;
   background-image: linear-gradient(#f0f4f6, #e1ebf2);
