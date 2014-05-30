@@ -14,12 +14,6 @@ a {
   background: url(sprites.png) no-repeat top left;
 }
 
-.marketing-hub .icons {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 4px 8px;;
-}
-
 .hub-sprite {
   background-position: 0 -295px; width: 23px; height: 23px;
   float: left;
@@ -57,6 +51,15 @@ a {
 .partner-sprite {
   background-position: 0 0; width: 13px; height: 13px;
 }
+
+.cal-settings-sprite {
+  background-position: 0 -63px; width: 14px; height: 11px;
+}
+
+.cal-window-sprite {
+  background-position: -18px -63px; width: 14px; height: 11px;
+}
+
 
 /* nav */
 .nav {
@@ -96,6 +99,12 @@ a {
   float: left;
 }
 
+.marketing-hub .icons {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 4px 8px;;
+}
+
 .marketing-hub ul {
   padding: 6px 0;
 }
@@ -124,11 +133,16 @@ a {
   border: thin solid #ddd;
   margin-left: 210px;
   font-size: 0.7em;
-  padding: 0 10px 10px 10px;
+  padding: 0 2px 10px 10px;
+}
+
+.calendar .icons {
+  float: right;
+  margin: 0 2px;
 }
 
 .calendar-header {
-  color: #b9cce1;
+  color: #99abb6;
   padding: 4px 0;
 }
 
@@ -139,6 +153,7 @@ a {
   border-bottom: thin solid #ddd;
   border-left: thin solid #ddd;
   color: #999999;
+  padding: 0 5px;
 }
 
 .day-name {
