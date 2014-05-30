@@ -64,6 +64,10 @@ a {
   background-position: -18px -63px; width: 14px; height: 11px;
 }
 
+.pulse-icon-sprite {
+  background-position: 0 -711px; width: 113px; height: 35px; 
+}
+
 
 /* nav */
 .nav {
@@ -173,6 +177,13 @@ a {
   background-image: linear-gradient(#bcc9d3, #e3edf5);
   border-radius: 5px;
   padding: 10px;
+  position: relative;
+}
+
+.pulse .pulse-icon-sprite {
+  position: absolute;
+  top: 17px;
+  left: 0;
 }
 
 .pulse-header {
