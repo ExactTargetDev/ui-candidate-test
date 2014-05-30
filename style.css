@@ -39,12 +39,12 @@ a {
 /* marketing-hub */
 .marketing-hub {
   width: 200px;
-  float: left;
   background-color: #f4f4f4;
   border-radius: 5px;
   border: thin solid #ddd;
   font-size: 0.75em;
   color: #888888;
+  float: left;
 }
 
 .marketing-hub hr {
@@ -66,12 +66,36 @@ a {
   padding: 12px;
 }
 
+/* calendar */
 .calendar {
-  float: right;
+  background-color: #f4f4f4;
+  border-radius: 0 0 3px 3px;
+  border: thin solid #ddd;
+  margin-left: 210px;
+  font-size: 0.7em;
+  padding: 0 10px 10px 10px;
+}
+
+.calendar-header {
+  color: #b9cce1;
+  padding: 4px 0;
 }
 
 .day {
   display: inline-block;
+  width: 135px;
+  height: 80px;
+  border-bottom: thin solid #ddd;
+  border-left: thin solid #ddd;
+  color: #999999;
+}
+
+.day-name {
+  float: left;
+}
+
+.day-number {
+  float: right;
 }
 
 .pulse {
