@@ -128,14 +128,17 @@ a {
 }
 
 .marketing-hub ul {
-  padding: 6px 0;
+  border-bottom: thin solid #ddd;
 }
 
-.marketing-hub hr {
-  height: 1px;
-  background-color: #ddd;
-  border: 0 none;
-  margin: 6px 0;
+.marketing-hub li {
+  padding: 4px;
+}
+
+.marketing-hub li:hover {
+  background-color: #fba73c;
+  color: white;
+  cursor: pointer;
 }
 
 .hub-header {
