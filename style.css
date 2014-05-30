@@ -68,6 +68,21 @@ a {
   background-position: 0 -711px; width: 113px; height: 35px; 
 }
 
+.pulse-settings-sprite {
+  background-position: 0 -649px; width: 12px; height: 12px;
+}
+
+.pulse-file-sprite {
+  background-position: -22px -649px; width: 12px; height: 12px;
+}
+
+.pulse-window-sprite {
+  background-position: -43px -649px; width: 12px; height: 12px;
+}
+
+.pulse-close-sprite {
+  background-position: -63px -649px; width: 12px; height: 12px;
+}
 
 /* nav */
 .nav {
@@ -176,7 +191,7 @@ a {
   margin-left: 210px;
   background-image: linear-gradient(#bcc9d3, #e3edf5);
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px 5px 10px 10px;
   position: relative;
 }
 
@@ -184,6 +199,11 @@ a {
   position: absolute;
   top: 17px;
   left: 0;
+}
+
+.pulse .icons {
+  float: right;
+  margin-right: 10px;
 }
 
 .pulse-header {
