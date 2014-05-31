@@ -15,22 +15,25 @@ Please create your tests below...
 
 test('reverseString', function () {
 	expect(3);
+
 	equal(typeof reverseString, 'function', 'Must contain a reverseString function');
 	ok( reverseString('creatovisguru'), 'urugsivotaerc', 'Expecting a reversed string: ' + reverseString('creatovisguru'));
 	ok( reverseString('Subscribers rock'), 'kcor srebircsbuS', 'Expecting a reversed string: ' + reverseString('Subscribers rock'));
 });
 
 test('findMinValue', function () {
-	expect(2);
 	var testArr = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+	expect(2);
+
 	equal(typeof findMinValue, 'function', 'Must contain a findMinValue function');
 	equal( findMinValue(testArr), -1.1, 'Expecting min value: ' + findMinValue(testArr));
 });
 
 test('findDistinctValues', function () {
-	expect(2);
 	var testArr = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
 	var resultArr = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity];
+	expect(2);
+
 	equal(typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function');
 	deepEqual( findDistinctValues(testArr), resultArr, 'Expecting distinct values: ' + findDistinctValues(testArr));
 });
@@ -39,5 +42,14 @@ test('doFizzBuzz', function () {
 	expect(2);
 
 	equal(typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function');
-	deepEqual( doFizzBuzz(15), '12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz', 'Expecting fizzbuzzlike string: ' + doFizzBuzz(15));
+	equal( doFizzBuzz(15), '12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz', 'Expecting fizzbuzzlike string: ' + doFizzBuzz(15));
+});
+
+test('removeFruits', function () {
+	var fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+	var fruitsToRemove = ['pear', 'banana','notindurr'];
+	expect(2);
+
+	equal(typeof removeFruits, 'function', 'Must contain a removeFruits function');
+	deepEqual( removeFruits(fruits, fruitsToRemove), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Expecting array with removed fruits: ' + removeFruits(fruits, fruitsToRemove));
 });
