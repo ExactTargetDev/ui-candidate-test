@@ -90,3 +90,29 @@ test('isOnlyWhitespace', function () {
 	equal( isOnlyWhitespace(''), true, 'Expecting true');
 	equal( isOnlyWhitespace('          '), true, 'Expecting true');
 });
+
+test('closure', function () {
+	expect(5);
+
+	equal(typeof EC, 'object', 'Make sure module exists');
+	equal(typeof EC.getDatingProfile, 'function', 'Make sure publicly defined fn is there');
+	equal( EC.getDatingProfile(), 'I like: computers, and dislike: humans, just kidding.', 'Expecting a bad joke');
+	equal( EC.likes, undefined, 'Expecting undefined when addressing a priv variable');
+	equal( EC.dislikes, undefined, 'Expecting undefined when addressing a priv variable');
+});
+
+test('json', function () {
+	var success = true;
+	expect(4);
+
+	equal(typeof json, 'object', 'Make sure json exists');
+	try {
+		JSON.stringify(json);
+	} catch (err){
+		success = false;
+	}
+
+	equal(success, true, 'Expecting stringify to succeed = well formatted json');
+	equal(json.people.length, 4, 'Expecting 4 people')
+	equal(json.people[0].firstName, 'Ted', 'Expecting first person to be named Ted');
+});

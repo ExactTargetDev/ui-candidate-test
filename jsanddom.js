@@ -56,6 +56,7 @@
             }
         }
         return out;
+        console.log(out);
     }
 
     // You have a master array of strings, where each element is a fruit name.
@@ -117,6 +118,19 @@
 
      // write an example of a javascript closure
 
+     var EC = (function (){
+        var likes = 'computers'; //priv
+        var dislikes = 'humans'; //priv
+        var getDatingProfile = function (){
+            var badJoke = 'I like: ' + likes + ', and dislike: ' + dislikes + ', just kidding.';
+            console.log(badJoke);
+            return badJoke;
+        }
+        return {
+            getDatingProfile: getDatingProfile, //pub
+        }
+     })()
+
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -125,7 +139,58 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+     var json = {
+        people: [
+            {
+                firstName: 'Ted',
+                lastName: 'Bed',
+                city: 'Houston',
+                state: 'Texas',
+                zip: 07928,
+                phone: {
+                    home: 9739021923,
+                    work: 1231234234,
+                    mobile: 34234234234
+                }
+            },
+            {
+                firstName: 'Red',
+                lastName: 'Fed',
+                city: 'Chatham',
+                state: 'New Jersey',
+                zip: 234234,
+                phone: {
+                    home: 2342342342,
+                    work: 6575675567,
+                    mobile: 453453453
+                }
+            },
+            {
+                firstName: 'Ned',
+                lastName: 'Wed',
+                city: 'Anchorage',
+                state: 'Alaska',
+                zip: 23123,
+                phone: {
+                    home: 2323434656,
+                    work: 5345345345,
+                    mobile: 657567567
+                }
+            },
+            {
+                firstName: 'Bahama',
+                lastName: 'Mama',
+                city: 'Potato',
+                state: 'Idaho',
+                zip: 11111,
+                phone: {
+                    home: 9594948383,
+                    work: 5435345345,
+                    mobile: 3454756767
+                }
+            }
+        ]
+    }
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
