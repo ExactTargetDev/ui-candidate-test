@@ -251,9 +251,27 @@
         }
     })();
 
-     // within div1, programatically create a
-     // SELECT element (with multiple items) and a button.
-     // when the button is clicked write out the name and value of the selected item to the console.
+    // within div1, programatically create a
+    // SELECT element (with multiple items) and a button.
+    // when the button is clicked write out the name and value of the selected item to the console.
+    $(document).ready(function (){
+
+        var selectEl = '<select id="item-list"' + 
+                        '<option name="steak">Steak</option>' + 
+                        '<option name="salad">Salad</option>' + 
+                        '<option name="fruit">Fruit</option>' + 
+                        '<option name="sweet">Sweet</option>' + 
+                        '<option name="coffee">Coffee</option>' + 
+                        '</select>';
+        var buttonEl = '<button id="select-button">Select</button>';
+        $('#div1').append(selectEl);
+        $('#div1').append(buttonEl);
+        $('#select-button').click(function (){
+            var name = $('#item-list').find(':selected').attr('name');
+            var value = $('#item-list').get(0).value;
+            console.log('Name: ' + name + ', Value: ' + value);
+        });
+    })
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
