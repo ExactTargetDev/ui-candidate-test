@@ -1,0 +1,9 @@
+#nav {
+	list-style: none;
+	float:right;
+	padding:0;
+}
+
+#nav li {
+	display: inline;
+}
