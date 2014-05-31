@@ -36,13 +36,27 @@
         return distinct;
     }
 
-     // Write a function that logs the numbers from 1 to 100 to the console.
-     // For multiples of three print "Fizz" instead of the number.
-     // For multiples of five print "Buzz".
-     // For numbers which are multiples of both three and five print "FizzBuzz".
-     function doFizzBuzz() {
-         // FILL THIS IN
-     }
+    // Write a function that logs the numbers from 1 to 100 to the console.
+    // For multiples of three print "Fizz" instead of the number.
+    // For multiples of five print "Buzz".
+    // For numbers which are multiples of both three and five print "FizzBuzz".
+    function doFizzBuzz(max) {
+        var out = '';
+        max = max === undefined ? 100 : max; //make testable
+
+        for(var i = 1; i < max + 1; i++){
+            if (i % 3 == 0){
+                out += 'Fizz';
+            } 
+            if (i % 5 == 0){
+                out += 'Buzz';
+            }
+            if (i % 3 != 0 && i % 5 != 0){
+                out += i;
+            }
+        }
+        return out;
+    }
 
      // You have a master array of strings, where each element is a fruit name.
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.

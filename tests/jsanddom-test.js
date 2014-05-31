@@ -32,5 +32,12 @@ test('findDistinctValues', function () {
 	var testArr = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
 	var resultArr = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity];
 	equal(typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function');
-	deepEqual( findDistinctValues(testArr), resultArr, 'Expecting min value: ' + findDistinctValues(testArr));
+	deepEqual( findDistinctValues(testArr), resultArr, 'Expecting distinct values: ' + findDistinctValues(testArr));
+});
+
+test('doFizzBuzz', function () {
+	expect(2);
+
+	equal(typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function');
+	deepEqual( doFizzBuzz(15), '12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz', 'Expecting fizzbuzzlike string: ' + doFizzBuzz(15));
 });
