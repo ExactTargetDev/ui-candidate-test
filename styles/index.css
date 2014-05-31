@@ -2,8 +2,42 @@
 	list-style: none;
 	float:right;
 	padding:0;
+	margin: 12px 0;
 }
 
 #nav li {
 	display: inline;
+	color: white;
+	padding: 0 7px;
+	border-right: 1px solid #73797d;
+}
+
+#nav li a {
+	color: #93c3d7;
+	text-decoration: none;
+}
+
+#nav li:first-child {
+	border: none;
+}
+
+#nav li:last-child {
+	border: none;
+	margin-right: 10px;
+}
+
+header {
+	height: 40px;
+	width: 100%;
+	background:#3f4b53;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3f4b53), color-stop(100%, #23272a));
+}
+
+header h1 {
+	color: white;
+	font-size: 1.125rem;
+	font-family: sans-serif;
+	float: left;
+	font-weight: 100;
+	margin: 10px 0 0 20px;
 }
