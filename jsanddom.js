@@ -252,9 +252,9 @@
     })();
 
     $(document).ready(function (){
-    // within div1, programatically create a
-    // SELECT element (with multiple items) and a button.
-    // when the button is clicked write out the name and value of the selected item to the console.
+        // within div1, programatically create a
+        // SELECT element (with multiple items) and a button.
+        // when the button is clicked write out the name and value of the selected item to the console.
 
         var selectEl = '<select id="item-list"' + 
                         '<option name="steak">Steak</option>' + 
@@ -264,6 +264,7 @@
                         '<option name="coffee">Coffee</option>' + 
                         '</select>';
         var buttonEl = '<button id="select-button">Select</button>';
+
         $('#div1').append(selectEl);
         $('#div1').append(buttonEl);
         $('#select-button').click(function (){
@@ -272,17 +273,25 @@
             console.log('Name: ' + name + ', Value: ' + value);
         });
 
-    // Write 5 different jQuery selectors to retrieve the
-    // sample anchor in the markup below.
+        // Write 5 different jQuery selectors to retrieve the
+        // sample anchor in the markup below.
 
-    $('a');
-    $('.link');
-    $('#fizz').find('a');
-    $('#fizz').children();
-    $('#foo').find('a');
+        $('a');
+        $('.link');
+        $('#fizz').find('a');
+        $('#fizz').children();
+        $('#foo').find('a');
 
     // Programatically create an array with 5 items.  Create a list item for each item in the array
     // and add the list items to the unordered list with an id of "list1".
+
+    var itemList = ['DogFishHead', 'BrooklynBrew', 'Pyramid', 'FlyingFish', 'Imperial'];
+
+    while (itemList.length > 0){
+        $('#list1').append(
+            '<li>' + itemList.shift() + '</li>'
+        );
+    }
 
     // Use javascript to add a list of checkboxes and 2 links
     // to the div with an id of "foobar"
