@@ -11,9 +11,9 @@
     // Write a function that takes an array of numbers and returns the minimum value
     function findMinValue(values) {        
         //assuming all inputs are numbers otherwise we need a check TODO: add if time
-        //if its just one time through we can iterate, but for the future maybe consider a sort, this way doesn't modify origin arr
+        //if its just one time through we can iterate, but for the future maybe consider a sort, does not modify origin arr
         var min;
-        for(var i =0, length = values.length; i < length; i++) {
+        for(var i = 0, length = values.length; i < length; i++) {
             if (min === undefined || values[i] < min){
                 min = values[i];
             }
@@ -21,10 +21,20 @@
         return min;
     }
 
-     // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
-     function findDistinctValues(values) {
-         // FILL THIS IN
-     }
+    // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
+    function findDistinctValues(values) {
+        //assuming all inputs are numbers otherwise we need a check TODO: add if time
+        //does not modify original input
+        var distinct = []; 
+
+        for(var i =0, length = values.length; i < length; i++) {
+            if (distinct.indexOf(values[i]) > -1){
+                continue;
+            }
+            distinct.push(values[i]);
+        }
+        return distinct;
+    }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
      // For multiples of three print "Fizz" instead of the number.

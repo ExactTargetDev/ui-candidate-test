@@ -13,17 +13,24 @@ test( "Example Test", 2, function() {
 Please create your tests below...
 ********************************/
 
-test('Reverse String', function () {
+test('reverseString', function () {
 	expect(3);
 	equal(typeof reverseString, 'function', 'Must contain a reverseString function');
 	ok( reverseString('creatovisguru'), 'urugsivotaerc', 'Expecting a reversed string: ' + reverseString('creatovisguru'));
 	ok( reverseString('Subscribers rock'), 'kcor srebircsbuS', 'Expecting a reversed string: ' + reverseString('Subscribers rock'));
 });
 
-test('Find Min Value', function () {
+test('findMinValue', function () {
 	expect(2);
 	var testArr = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
 	equal(typeof findMinValue, 'function', 'Must contain a findMinValue function');
 	equal( findMinValue(testArr), -1.1, 'Expecting min value: ' + findMinValue(testArr));
 });
 
+test('findDistinctValues', function () {
+	expect(2);
+	var testArr = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+	var resultArr = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity];
+	equal(typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function');
+	deepEqual( findDistinctValues(testArr), resultArr, 'Expecting min value: ' + findDistinctValues(testArr));
+});
