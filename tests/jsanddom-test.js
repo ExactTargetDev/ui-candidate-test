@@ -19,3 +19,11 @@ test('Reverse String', function () {
 	ok( reverseString('creatovisguru'), 'urugsivotaerc', 'Expecting a reversed string: ' + reverseString('creatovisguru'));
 	ok( reverseString('Subscribers rock'), 'kcor srebircsbuS', 'Expecting a reversed string: ' + reverseString('Subscribers rock'));
 });
+
+test('Find Min Value', function () {
+	expect(2);
+	var testArr = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+	equal(typeof findMinValue, 'function', 'Must contain a findMinValue function');
+	equal( findMinValue(testArr), -1.1, 'Expecting min value: ' + findMinValue(testArr));
+});
+

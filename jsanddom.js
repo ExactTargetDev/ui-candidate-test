@@ -1,19 +1,25 @@
-     // Example unit test function
-     function divide( a, b ) {
-        // To see the test pass, uncomment the following line
+    // Example unit test function
+    function divide( a, b ) {
         return a / b;
-     }
+    }
 
-     // Write a function that takes a single argument (a string) and returns the string reversed.
-     function reverseString(str) {
-         // FILL THIS IN
-         return str.split('').reverse().join('');
-     }
+    // Write a function that takes a single argument (a string) and returns the string reversed.
+    function reverseString(str) {
+        return str.split('').reverse().join('');
+    }
 
-     // Write a function that takes an array of numbers and returns the minimum value
-     function findMinValue(values) {
-         // FILL THIS IN
-     }
+    // Write a function that takes an array of numbers and returns the minimum value
+    function findMinValue(values) {        
+        //assuming all inputs are numbers otherwise we need a check TODO: add if time
+        //if its just one time through we can iterate, but for the future maybe consider a sort, this way doesn't modify origin arr
+        var min;
+        for(var i =0, length = values.length; i < length; i++) {
+            if (min === undefined || values[i] < min){
+                min = values[i];
+            }
+        }
+        return min;
+    }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
