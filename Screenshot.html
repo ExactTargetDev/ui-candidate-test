@@ -10,7 +10,7 @@
       <ul>
         <li class="welcome">Welcome John!</li>
         <li><a href="">Account</a></li> |
-        <li><a href="">Help</a></li> |
+        <li><a href="" class="help">Help</a></li> |
         <li><a href="">Logout</a></li>
       </ul>
     </div>
@@ -230,7 +230,20 @@
         </div>
       </div>
     </div>
+    <div id="help-container"></div>
+    <script id="helpTempl" type="text/template">
+      <div class="help-dialog">
+        <a href="" class="close-help">close</a>
+        <% _(help).each(function(question) { %>
+          <p>
+            <%= question.title %> <br>
+            <a href=""><%= question.URL %></a>
+          </p><br>
+        <% }) %>
+      </div>
+    </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

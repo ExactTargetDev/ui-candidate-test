@@ -22,6 +22,15 @@ $(function() {
   });
 
   $.getJSON("data/help.json", function(json) {
-    console.log(json);
+    $('.help').click(function(evt) {
+      evt.preventDefault();
+      var compiled = _.template($('#helpTempl').html());
+      $('#help-container').append(compiled(json));
+    });
+  });
+
+  $('#help-container').on('click', '.close-help', function(evt) {
+    evt.preventDefault();
+    $('#help-container').empty();
   });
 });

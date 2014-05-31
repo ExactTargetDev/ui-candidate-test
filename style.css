@@ -285,6 +285,7 @@ table {
   position: relative;
   top: 9px;
   cursor: pointer;
+  transition: all 1s ease;
 }
 
 .panel-active {
@@ -336,4 +337,19 @@ table {
 .panel-subtext {
   font-size: 0.7em;
   padding: 10px 0 5px  0;
+}
+
+/* help */
+.help-dialog {
+  position: absolute;
+  top: 40px;
+  right: 8px;
+  background-color: white;
+  border: thin solid #ddd;
+  border-radius: 3px;
+  padding: 7px;
+}
+
+.close-help {
+  float: right;
 }
