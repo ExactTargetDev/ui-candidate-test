@@ -282,20 +282,41 @@
         $('#fizz').children();
         $('#foo').find('a');
 
-    // Programatically create an array with 5 items.  Create a list item for each item in the array
-    // and add the list items to the unordered list with an id of "list1".
+        // Programatically create an array with 5 items.  Create a list item for each item in the array
+        // and add the list items to the unordered list with an id of "list1".
 
-    var itemList = ['DogFishHead', 'BrooklynBrew', 'Pyramid', 'FlyingFish', 'Imperial'];
+        var itemList = ['DogFishHead', 'BrooklynBrew', 'Pyramid', 'FlyingFish', 'Imperial'];
 
-    while (itemList.length > 0){
-        $('#list1').append(
-            '<li>' + itemList.shift() + '</li>'
-        );
-    }
+        while (itemList.length > 0){
+            $('#list1').append(
+                '<li>' + itemList.shift() + '</li>'
+            );
+        }
 
-    // Use javascript to add a list of checkboxes and 2 links
-    // to the div with an id of "foobar"
-    // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
-    // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+        // Use javascript to add a list of checkboxes and 2 links
+        // to the div with an id of "foobar"
+        // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
+        // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+        itemList = ['DogFishHead', 'BrooklynBrew', 'Pyramid', 'FlyingFish', 'Imperial'];
+
+        var checkList = '<ul id="list">' + 
+                        '<a id="all" href="#">Select All</a>' + 
+                        '<a id="none" href="#" style="margin-left: 5px;">Select None</a>' + 
+                        '</ul>';
+
+        $('#foobar').append(checkList);
+        while (itemList.length > 0){
+            $('#list').append(
+                '<li><input type="checkbox">' + itemList.shift() + '</input></li>'
+            );
+        }
+
+        $('#all').click(function (){
+            $('#list input').prop('checked', true);
+        });
+
+        $('#none').click(function (){
+            $('#list input').prop('checked', false);
+        });
     });
 
