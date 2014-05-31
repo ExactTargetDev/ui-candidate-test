@@ -74,3 +74,10 @@ test('splitListStrUsingComma', function () {
 	deepEqual( splitListStrUsingComma(testString), ['The', 'quick', 'brown', 'fox jumped over'], 'Expecting trimmed elements');
 	deepEqual( splitListStrUsingComma(empty), [], 'Expecting empty array');
 });
+
+test('sum', function () {
+	expect(2);
+
+	equal(typeof sum, 'function', 'Must contain a sum function');
+	equal( sum(1, 1, 2, 3, 5, 7), 19, 'Expecting a sum of 19');
+});

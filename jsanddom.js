@@ -101,7 +101,12 @@
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+         var args = Array.prototype.slice.call(arguments);
+         var sum = 0;
+         while (args.length > 0){
+            sum += args.shift();
+         }
+         return sum;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
