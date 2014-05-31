@@ -88,10 +88,16 @@
         return array;
     }
 
-     // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
-     function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
-     }
+    // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
+    function splitListStrUsingComma(sourceStr) {
+        if (sourceStr === ''){
+            return [];
+        }
+        var splitString = sourceStr.split(',');
+        return splitString.map(function (item){
+            return item.trim();
+        });
+    }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {

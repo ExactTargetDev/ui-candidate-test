@@ -62,5 +62,15 @@ test('pushOntoArray', function () {
 
 	equal(typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function');
 	deepEqual( pushOntoArray(originArray, singleEl), [1, 2, 3, 4, 5, 6], 'Expecting single element pushed');
-	deepEqual( pushOntoArray(originArray, arrayToPush), [1, 2, 3, 4, 5, 6, 7, 8, 9], 'Expectin array elements pushed');
+	deepEqual( pushOntoArray(originArray, arrayToPush), [1, 2, 3, 4, 5, 6, 7, 8, 9], 'Expecting array elements pushed');
+});
+
+test('splitListStrUsingComma', function () {
+	var testString = 'The, quick, brown, fox jumped over';
+	var empty = '';
+	expect(3);
+
+	equal(typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function');
+	deepEqual( splitListStrUsingComma(testString), ['The', 'quick', 'brown', 'fox jumped over'], 'Expecting trimmed elements');
+	deepEqual( splitListStrUsingComma(empty), [], 'Expecting empty array');
 });
