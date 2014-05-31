@@ -2,7 +2,7 @@
 	list-style: none;
 	float:right;
 	padding:0;
-	margin: 12px 0;
+	margin: 10px 0;
 }
 
 #nav li {
@@ -29,7 +29,7 @@
 header {
 	height: 40px;
 	width: 100%;
-	background:#3f4b53;
+	background: #3f4b53;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3f4b53), color-stop(100%, #23272a));
 }
 
