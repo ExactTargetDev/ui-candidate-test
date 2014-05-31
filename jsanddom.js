@@ -226,7 +226,7 @@
             var args = Array.prototype.slice.call(arguments);
 
             if (args.length > columns.length){
-                throw new Error('Number of items attempted to be add to row exceeds current number of columns.')
+                throw new Error('Number of items attempted to be added to row exceeds current number of columns.');
             }
 
             rows.push(args);
@@ -251,10 +251,10 @@
         }
     })();
 
+    $(document).ready(function (){
     // within div1, programatically create a
     // SELECT element (with multiple items) and a button.
     // when the button is clicked write out the name and value of the selected item to the console.
-    $(document).ready(function (){
 
         var selectEl = '<select id="item-list"' + 
                         '<option name="steak">Steak</option>' + 
@@ -271,15 +271,22 @@
             var value = $('#item-list').get(0).value;
             console.log('Name: ' + name + ', Value: ' + value);
         });
-    })
 
-     // Write 5 different jQuery selectors to retrieve the
-     // sample anchor in the markup below.
+    // Write 5 different jQuery selectors to retrieve the
+    // sample anchor in the markup below.
 
-     // Programatically create an array with 5 items.  Create a list item for each item in the array
-     // and add the list items to the unordered list with an id of "list1".
+    $('a');
+    $('.link');
+    $('#fizz').find('a');
+    $('#fizz').children();
+    $('#foo').find('a');
 
-     // Use javascript to add a list of checkboxes and 2 links
-     // to the div with an id of "foobar"
-     // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
-     // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+    // Programatically create an array with 5 items.  Create a list item for each item in the array
+    // and add the list items to the unordered list with an id of "list1".
+
+    // Use javascript to add a list of checkboxes and 2 links
+    // to the div with an id of "foobar"
+    // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
+    // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+    });
+
