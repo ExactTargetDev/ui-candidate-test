@@ -81,3 +81,12 @@ test('sum', function () {
 	equal(typeof sum, 'function', 'Must contain a sum function');
 	equal( sum(1, 1, 2, 3, 5, 7), 19, 'Expecting a sum of 19');
 });
+
+test('isOnlyWhitespace', function () {
+	expect(4);
+
+	equal(typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function');
+	equal( isOnlyWhitespace('clearlythisisa string ya know'), false, 'Expecting false');
+	equal( isOnlyWhitespace(''), true, 'Expecting true');
+	equal( isOnlyWhitespace('          '), true, 'Expecting true');
+});

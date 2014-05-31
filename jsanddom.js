@@ -99,20 +99,21 @@
         });
     }
 
-     // Write a function that will take any number of arguments and return their sum
-     function sum() {
-         var args = Array.prototype.slice.call(arguments);
-         var sum = 0;
-         while (args.length > 0){
+    // Write a function that will take any number of arguments and return their sum
+    function sum() {
+        var args = Array.prototype.slice.call(arguments);
+        var sum = 0;
+        while (args.length > 0){
             sum += args.shift();
-         }
-         return sum;
-     }
+        }
+        return sum;
+    }
 
-     // Write a function that will return true if a specified string consists of only whitespace.
-     function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
-     }
+    // Write a function that will return true if a specified string consists of only whitespace.
+    function isOnlyWhitespace(sourceStr) {
+        var result = sourceStr.replace(/\s/g, '');
+        return result.length == 0;
+    }
 
      // write an example of a javascript closure
 
