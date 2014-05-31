@@ -53,3 +53,14 @@ test('removeFruits', function () {
 	equal(typeof removeFruits, 'function', 'Must contain a removeFruits function');
 	deepEqual( removeFruits(fruits, fruitsToRemove), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Expecting array with removed fruits: ' + removeFruits(fruits, fruitsToRemove));
 });
+
+test('pushOntoArray', function () {
+	var originArray = [1, 2, 3, 4, 5];
+	var singleEl = 6;
+	var arrayToPush = [7, 8, 9];
+	expect(3);
+
+	equal(typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function');
+	deepEqual( pushOntoArray(originArray, singleEl), [1, 2, 3, 4, 5, 6], 'Expecting single element pushed');
+	deepEqual( pushOntoArray(originArray, arrayToPush), [1, 2, 3, 4, 5, 6, 7, 8, 9], 'Expectin array elements pushed');
+});
