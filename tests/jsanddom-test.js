@@ -12,3 +12,10 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+
+test('Reverse String', function () {
+	expect(3);
+	equal(typeof reverseString, 'function', 'Must contain a reverseString function');
+	ok( reverseString('creatovisguru'), 'urugsivotaerc', 'Expecting a reversed string: ' + reverseString('creatovisguru'));
+	ok( reverseString('Subscribers rock'), 'kcor srebircsbuS', 'Expecting a reversed string: ' + reverseString('Subscribers rock'));
+});
