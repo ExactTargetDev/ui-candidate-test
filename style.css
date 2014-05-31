@@ -1,0 +1,355 @@
+html, body, nav, ul, hr, p {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+
+a {
+  text-decoration: none;
+  color: #99cce1;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.split * {
+  float: right;
+}
+
+.split *:first-child {
+  float: left;
+}
+
+.clearfix:after { 
+  content: "."; 
+  visibility: hidden; 
+  display: block; 
+  height: 0; 
+  clear: both;
+}
+
+.container {
+  max-width: 1255px;
+  margin: 0 auto;
+}
+
+/* sprites */
+.icons {
+  background: url(sprites.png) no-repeat top left;
+}
+
+.logo-sprite {
+  background-position: 0 -796px; width: 86px; height: 17px;
+}
+
+.hub-sprite {
+  background-position: 0 -295px; width: 23px; height: 23px;
+  float: left;
+  margin: 4px 10px 4px 4px;
+}
+
+.email-sprite {
+  background-position: 0 -368px; width: 24px; height: 24px;
+}
+
+.mobile-sprite {
+  background-position: 0 -400px; width: 24px; height: 24px;
+}
+
+.social-sprite {
+  background-position: 0 -433px; width: 24px; height: 24px;
+}
+
+.sites-sprite {
+  background-position: 0 -465px; width: 24px; height: 24px;
+}
+
+.automation-sprite {
+  background-position: 0 -510px; width: 24px; height: 24px;
+}
+
+.audience-sprite {
+  background-position: 0 -542px; width: 24px; height: 24px;
+}
+
+.report-sprite {
+  background-position: 0 -575px; width: 24px; height: 24px;
+}
+
+.partner-sprite {
+  background-position: 0 0; width: 13px; height: 13px;
+}
+
+.cal-settings-sprite {
+  background-position: 0 -63px; width: 14px; height: 11px;
+}
+
+.cal-window-sprite {
+  background-position: -18px -63px; width: 14px; height: 11px;
+}
+
+.pulse-icon-sprite {
+  background-position: 0 -711px; width: 113px; height: 35px; 
+}
+
+.pulse-settings-sprite {
+  background-position: 0 -649px; width: 12px; height: 12px;
+}
+
+.pulse-file-sprite {
+  background-position: -22px -649px; width: 12px; height: 12px;
+}
+
+.pulse-window-sprite {
+  background-position: -43px -649px; width: 12px; height: 12px;
+}
+
+.pulse-close-sprite {
+  background-position: -63px -649px; width: 12px; height: 12px;
+}
+
+.map-sprite {
+  background-position: 0 -124px; width: 252px; height: 121px;
+}
+
+/* nav */
+.nav {
+  width: 100%;
+  height: 32px;
+  background-image: linear-gradient(#44515a, #2d3337);
+  color: white;
+  overflow: hidden;
+  line-height: 32px;
+}
+
+.nav .logo-sprite {
+  float: left;
+  margin: 8px 18px;
+}
+
+.nav ul {
+  float: right;
+  font-size: 0.7em;
+  margin: 0 10px;
+}
+
+.nav li {
+  display: inline;
+  margin: 4px;
+}
+
+/* marketing-hub */
+.marketing-hub {
+  width: 200px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  border: thin solid #ddd;
+  font-size: 0.75em;
+  color: #888888;
+  float: left;
+  margin: 20px;
+}
+
+.marketing-hub .icons {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 4px 8px;;
+}
+
+.marketing-hub ul {
+  border-bottom: thin solid #ddd;
+}
+
+.marketing-hub li {
+  padding: 4px;
+}
+
+.marketing-hub li:hover, .marketing-hub .hub-active {
+  background-color: #fba73c;
+  color: white;
+  cursor: pointer;
+}
+
+.hub-header {
+  background-color: #fba73c;
+  font-size: 1.2em;
+  color: white;
+  border: thin solid #f8981d;
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: inset 0 1px 5px white;
+  padding: 8px 30px 8px 8px;
+}
+
+/* calendar */
+.calendar {
+  background-color: #f4f4f4;
+  border-radius: 0 0 3px 3px;
+  border: thin solid #ddd;
+  margin: 0 20px 0 210px;
+  font-size: 0.7em;
+  padding: 0 2px 10px 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.calendar .icons {
+  float: right;
+  margin: 0 2px;
+}
+
+.calendar-header {
+  color: #99abb6;
+  padding: 4px 0;
+}
+
+.day {
+  display: inline-block;
+  margin-left: -3px;
+  width: 135px;
+  height: 80px;
+  border-bottom: thin solid #ddd;
+  border-left: thin solid #ddd;
+  color: #999999;
+  position: relative;
+}
+
+.day-header{
+  padding: 0 5px;
+}
+
+.day-active {
+  position: absolute;
+  width: 100%;
+  height: 94px;
+}
+
+.day-highlight {
+  width: 100%;
+  height: 80px;
+  background-image: linear-gradient(#c5e5f6, orange);
+  opacity: 0.2;
+}
+
+.day-label {
+  width: 100%;
+  height: 13px;
+  margin-left: -1px;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  border: thin solid #ddd;
+  font-size: 0.9em;
+}
+
+/* pulse */
+.pulse {
+  margin: 20px 20px 0 210px;
+  background-image: linear-gradient(#bcc9d3, #e3edf5);
+  border-radius: 5px;
+  padding: 8px 5px 30px 10px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  box-shadow: inset 0 0 6px #aaa;
+}
+
+.pulse .pulse-icon-sprite {
+  position: absolute;
+  top: 17px;
+  left: 0;
+}
+
+.pulse-controls .icons {
+  float: right;
+  margin-right: 10px;
+}
+
+.map-sprite {
+  margin: 0 auto;
+}
+
+.pulse-header {
+  font-size: 1.2em;
+  color: white;
+  -webkit-font-smoothing:antialiased;
+}
+
+table {
+  margin: 0 auto;
+}
+
+.panel {
+  text-align: center;
+  margin: 4px;
+  position: relative;
+  top: 9px;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+
+.panel-active {
+  position: static;
+}
+
+.panel-header {
+  font-size: 0.70em;
+  padding: 7px;
+  color: #7f91a3;
+}
+
+.panel-body {
+  width: 147px;
+  box-shadow: 1px 1px 4px #aaa;
+  border-radius: 4px;
+  background-image: linear-gradient(#f0f4f6, #e1ebf2);
+  padding: 6px;
+  color: #93afc0;
+}
+
+.panel-active .panel-body {
+  position: static;
+  width: 265px;
+  height: 150px;
+  background-image: none;
+  background-color: #eff9ff;
+}
+
+.panel-active-header {
+  font-size: 0.75em;
+  font-weight: bold;
+  color: #666;
+  padding: 6px;
+}
+
+.panel-content-active {
+  display: none;
+}
+
+.panel-count {
+  color: #34bbf3;
+  font-size: 2em;
+}
+
+.panel-text {
+}
+
+.panel-subtext {
+  font-size: 0.7em;
+  padding: 10px 0 5px  0;
+}
+
+/* help */
+.help-dialog {
+  position: absolute;
+  top: 40px;
+  right: 8px;
+  background-color: white;
+  border: thin solid #ddd;
+  border-radius: 3px;
+  padding: 7px;
+}
+
+.close-help {
+  float: right;
+}
