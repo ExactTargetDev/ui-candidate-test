@@ -192,17 +192,64 @@
         ]
     }
 
-     // Create a javascript object (DataTable) with the following:
-     // A private columns property (string array)
-     // A private rows property (string array)
-     // A public method addRows that adds an item to the rows array
-     // A public method addColumns that adds an item to the columns array
-     // A public method getData that returns the a json object representation of the DataTable
-     // Note: the row object should be a hash of the column name and row item value
-     // Example:
-     // .addColumns('column1', 'column2', 'column3');
-     // .addRow('value1A', 'value1B', 'value1C');
-     // .addRow('value2A', 'value2B', 'value2C');
+    // Create a javascript object (DataTable) with the following:
+    // A private columns property (string array)
+    // A private rows property (string array)
+    // A public method addRows that adds an item to the rows array
+    // A public method addColumns that adds an item to the columns array
+    // A public method getData that returns the a json object representation of the DataTable
+    // Note: the row object should be a hash of the column name and row item value
+    // Example:
+    // .addColumns('column1', 'column2', 'column3');
+    // .addRow('value1A', 'value1B', 'value1C');
+    // .addRow('value2A', 'value2B', 'value2C');
+
+    // table should look like:
+    // {
+    //      column
+    // }
+
+    var DataTable = (function () {
+        var columns = [];
+        var rows = [];
+
+        // add any number of columns to the table
+        var addColumns = function (){
+            var args = Array.prototype.slice.call(arguments);
+            while (args.length > 0){
+                columns.push(args.shift());
+            }
+        }
+
+        // add all arguments as a single row in the table
+        var addRows = function (){
+            var args = Array.prototype.slice.call(arguments);
+
+            if (args.length > columns.length){
+                throw new Error('Number of items attempted to be add to row exceeds current number of columns.')
+            }
+
+            rows.push(args);
+        }
+        
+        var getData = function (){
+            var table = {};
+
+            for (var i = 0, rowsLength = rows.length; i < rowsLength; i++){ //for each row
+                table['Row' + (i + 1)] = {}; // 1 based index
+                for (var j = 0, columnsLength = columns.length; j < columnsLength; j++){
+                    table['Row' + (i + 1)][columns[j]] = rows[i][j];
+                }
+            }
+            return table;
+        }
+
+        return {
+            addColumns: addColumns,
+            addRows: addRows,
+            getData: getData
+        }
+    })();
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.

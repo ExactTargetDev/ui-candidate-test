@@ -113,6 +113,28 @@ test('json', function () {
 	}
 
 	equal(success, true, 'Expecting stringify to succeed = well formatted json');
-	equal(json.people.length, 4, 'Expecting 4 people')
+	equal(json.people.length, 4, 'Expecting 4 people');
 	equal(json.people[0].firstName, 'Ted', 'Expecting first person to be named Ted');
+});
+
+test('datatable', function () {
+	expect(11);
+
+	equal(typeof DataTable, 'object', 'Make sure json exists');
+	equal(typeof DataTable.addColumns, 'function', 'Make sure publicly defined fn is there');
+	equal(typeof DataTable.addRows, 'function', 'Make sure publicly defined fn is there');
+	equal(typeof DataTable.getData, 'function', 'Make sure publicly defined fn is there');
+	equal( EC.columns, undefined, 'Expecting undefined when addressing a priv variable');
+	equal( EC.rows, undefined, 'Expecting undefined when addressing a priv variable');
+	DataTable.addColumns('Name', 'Craft', 'Likes', 'Dislikes');
+	DataTable.addRows('Joe', 'Farmer', 'Potatoes', 'City Slickers');
+	DataTable.addRows('Foe', 'Fighter', 'Winning', 'Losing');
+	DataTable.addRows('Roe', 'Fisher', 'Shiny Things', 'Being Eaten');
+	var table = DataTable.getData();
+	equal(Object.keys(table).length, 3, 'Number of rows should be 3');
+	equal(table.Row1.Name, 'Joe', 'His name is Joe');
+	equal(table.Row1.Craft, 'Farmer', 'His name is Joe');
+	equal(table.Row1.Likes, 'Potatoes', 'His name is Joe');
+	equal(table.Row1.Dislikes, 'City Slickers', 'His name is Joe');
+
 });
