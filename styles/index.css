@@ -195,7 +195,7 @@ header h1 {
 	margin: 0 0 0 10px;
 }
 
-#week-container div.day-container:last-child{
+#week-container div.day-container:nth-last-child(2){
 	border-right: 1px solid #E2DCDC;
 }
 
@@ -225,7 +225,7 @@ header h1 {
 	background-color: #fba435;
 	margin: 0 auto;
 	height: 110px;
-	background-image: -moz-linear-gradient(top, #ebf1f5 0%, #fba435 50%, #fba435 100%);
+	background-image: -moz-linear-gradient(top, #ebf1f5 0%, #fba435 95%, #fba435 100%);
 	background-image: -webkit-linear-gradient(top, #ebf1f5 0%, #fba435 95%, #fba435 100%);
 }
 
@@ -237,4 +237,24 @@ header h1 {
 	font-size: .8em;
 }
 
+.tool-sprites {
+	background-image: url("images/tool-sprites.png");
+	background-repeat: no-repeat;
+}
+
+.preferences {
+	background-position: -10px 0px;
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	left: 96.7%;
+}
+
+.expand {
+	background-position: -50px 0px;
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	left: 97.6%;
+}
 /*End Calendar*/
