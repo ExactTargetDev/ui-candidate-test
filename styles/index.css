@@ -1,4 +1,6 @@
-
+*{
+	font-family:sans-serif;
+}
 /*Begin Header*/
 #nav {
 	list-style: none;
@@ -12,6 +14,9 @@
 	color: white;
 	padding: 0 7px;
 	border-right: 1px solid #73797d;
+	font-family: sans-serif;
+	font-weight: 100;
+	font-size: .8em;
 }
 
 #nav li a {
@@ -53,7 +58,7 @@ header h1 {
 	width: 24px;
 	height: 24px;
 	float: left;
-	margin:5px 5px;
+	margin: 5px 15px 0 3px;
 }
 
 .nav-sprites {
@@ -109,6 +114,7 @@ header h1 {
 	width: 12%;
 	border-radius: 5px;
 	background-color: #f4f4f5;
+	float: left;
 }
 
 #contact-container {
@@ -149,7 +155,7 @@ header h1 {
 	text-decoration: none;
 	padding: 5px;
 	height: 24px;
-	display: block;
+	display: inline-block;
 	font-family: sans-serif;
 	font-weight:100;
 }
@@ -166,3 +172,69 @@ header h1 {
 	font-size: .8em;
 }
 /*End Sidebar*/
+
+/*Begin Calendar*/
+#month {
+	padding: 3px 0 0 10px;
+	font-family:sans-serif;
+	font-weight: 100;
+	font-size: .87em;
+}
+
+#calendar{
+	width: 85%;
+	height: 130px;
+	float: left;
+	border: 1px solid #cbcbcb;
+	border-radius: 5px;
+	background-color: #f4f4f5;
+	color: gray;
+}
+
+#week-container div:first-child{
+	margin: 0 0 0 10px;
+}
+
+#week-container div.day-container:last-child{
+	border-right: 1px solid #E2DCDC;
+}
+
+.day-container {
+	float: left;
+	width: 14.03%;
+	height: 90px;
+	border-left: 1px solid #E2DCDC;
+	border-bottom: 1px solid #E2DCDC;
+}
+
+.day{
+	float:left;
+	font-weight: 100;
+	font-size: .8em;
+}
+
+.date {
+	float:right;
+	padding: 0 5px;
+	font-weight: 100;
+	font-size: .8em;
+}
+
+.today-marker {
+	width: 13.9%;
+	background-color: #fba435;
+	margin: 0 auto;
+	height: 110px;
+	background-image: -moz-linear-gradient(top, #ebf1f5 0%, #fba435 50%, #fba435 100%);
+	background-image: -webkit-linear-gradient(top, #ebf1f5 0%, #fba435 95%, #fba435 100%);
+}
+
+.today-marker div {
+	color: white;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: 100;
+	font-size: .8em;
+}
+
+/*End Calendar*/
