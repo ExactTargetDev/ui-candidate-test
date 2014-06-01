@@ -1,6 +1,11 @@
 *{
 	font-family:sans-serif;
 }
+
+.colored {
+	color: red;
+}
+
 /*Begin Header*/
 #nav {
 	list-style: none;
