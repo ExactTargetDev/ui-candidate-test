@@ -1,8 +1,180 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Screenshot.html</title>
+	<title>Screenshot.html</title>
+	<link rel="stylesheet" href="styles/index.css">
+	<script src="data/help.json"></script>
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.min.js"></script>
+	<![endif]-->
+	<script src="js/jquery.1.11.1.js"></script>
+	<script src="js/index.js"></script>
 </head>
 <body>
+	<header>
+		<h1>ExactTarget.</h1>
+		<nav>
+			<ul id="nav">
+				<li>Welcome Eric!</li>
+				<li><a href="#">Account</a></li>
+				<li><a href="#" id="help">Help</a></li>
+				<li><a href="#">Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div id="container">
+		<div id="hub">
+			<div id="imh-container">
+				<div class="imh"></div>
+				<div>Interactive <br> Marketing Hub</div>
+			</div>
+			<nav id="contact-container">
+				<a href= "#et-email">
+					<div class="nav-sprites email"></div>
+					<span>ExactTarget Email</span>
+				</a>
+				<a href= "#et-mobile">
+					<div class="nav-sprites mobile"></div>
+					<span>ExactTarget Mobile</span>
+				</a>
+				<a href= "#et-social">
+					<div class="nav-sprites social"></div>
+					<span>CoTweet Social</span>
+				</a>
+				<a href= "#et-sites">
+					<div class="nav-sprites sites"></div>
+					<span>ExactTarget Sites</span>
+				</a>
+			</nav>
+			<nav id="app-container">
+				<a href= "#et-studio">
+					<div class="nav-sprites studio"></div>
+					<span>Automation Studio</span>
+				</a>
+				<a href= "#et-audience">
+					<div class="nav-sprites audience"></div>
+					<span class="nav-text">Audience Builder</span>
+				</a>
+				<a href= "#et-report">
+					<div class="nav-sprites report"></div>
+					<span>Report Builder</span>
+				</a>
+			</nav>
+			<nav id="partner-container">
+				<a href= "#et-partners">
+					<div class="nav-sprites arrow"></div>
+					<span>Partner Applications</span>
+				</a>
+			</nav>
+		</div>
+
+		<div id="calendar">
+			<a class="tool-sprites preferences"></a>
+			<a class="tool-sprites expand"></a>
+			<div id="month">May 2014</div>
+			<div id="week-container">
+				<div class="day-container">
+					<div class="day">Sat</div>
+					<div class="date">11</div>
+				</div>
+				<div class="day-container">
+					<div class="day">Sun</div>
+					<div class="date">12</div>
+				</div>
+				<div class="day-container">
+					<div class="day">Mon</div>
+					<div class="date">13</div>
+				</div>
+				<div class="day-container today">
+					<div class="day">Tue</div>
+					<div class="date">14</div>
+				</div>
+				<div class="day-container">
+					<div class="day">Wed</div>
+					<div class="date">15</div>
+				</div>
+				<div class="day-container">
+					<div class="day">Thurs</div>
+					<div class="date">16</div>
+				</div>
+				<div class="day-container">
+					<div class="day">Fri</div>
+					<div class="date">17</div>
+				</div>
+				<div class="today-marker">
+					<div>TODAY</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="pulse">
+			<a class="tool-sprites pulse-preferences"></a>
+			<a class="tool-sprites pulse-move"></a>
+			<a class="tool-sprites pulse-expand"></a>
+			<a class="tool-sprites pulse-close"></a>
+			<h2 id="pulse-title">Pulse</h2>
+			<div class="pulse-logo"></div>
+
+			<div class="panel">
+				<h3>Followers</h3>
+				<div class="stats">
+					<div class="added">310</div>
+					<div class="text">added Today</div>
+					<div class="total">2,393,905 total</div>
+				</div>
+			</div>
+
+			<div class="panel">
+				<h3>Fans</h3>
+				<div class="stats">
+					<div class="added">73</div>
+					<div class="text">added Today</div>
+					<div class="total">91,675 total</div>
+				</div>
+			</div>
+
+			<div class="panel">
+				<h3>Subscribers</h3>
+				<div class="stats">
+					<div class="added">56</div>
+					<div class="text">added Today</div>
+					<div class="total">2,393,905</div>
+				</div>
+			</div>
+
+			<div class="panel medium-panel">
+				<h3>Foursquare</h3>
+				<div class="stats medium">
+					<div class="checkin">Worldwide Checkins</div>
+					<div class="checkin-added">3,905</div>
+					<img src="styles/images/map.png" class="map" width="100%" max-width="100%"></img>
+				</div>
+			</div>
+
+			<div class="panel">
+				<h3>Landing Pages</h3>
+				<div class="stats">
+					<div class="text">Visitors Today</div>
+					<div class="span-container">
+					<span class="added">397</span>
+					<span class="added-secondary"> / 355</span>
+				</div>
+					<div class="artist">Soulja Boy V.I.P.</div>
+				</div>
+			</div>
+
+			<div class="pagination">
+
+			</div>
+		</div>
+
+		<div id="help-overlay">
+			<div>
+				<a id="help-close">X</a>
+				<p></p>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
