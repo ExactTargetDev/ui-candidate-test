@@ -185,6 +185,8 @@ header h1 {
 	width: 85%;
 	height: 130px;
 	float: left;
+	color: #34bbf3;
+	color: #34bbf3;
 	border: 1px solid #cbcbcb;
 	border-radius: 5px;
 	background-color: #f4f4f5;
@@ -258,3 +260,149 @@ header h1 {
 	left: 97.6%;
 }
 /*End Calendar*/
+
+/*Begin Pulse*/
+#pulse {
+	width: 85%;
+	margin: 20px 0 0 0;
+	height: 350px;
+	float: left;
+	border: 1px solid #cbcbcb;
+	border-radius: 5px;
+	background-color: #bbc9d2;
+	color: gray;
+}
+
+.pulse-logo {
+	background-image: url("images/pulse-logo.png");
+	background-repeat: no-repeat;
+	width: 250px;
+	height: 50px;
+	position: absolute;
+	left: 275px;
+	top: 210px;
+}
+
+.map {
+	background-image: url("images/map.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	height: 250px;
+	border-radius: 5px;
+	margin: 20px 0 0 0;
+}
+
+.panel h3 {
+	text-align: center;
+	font-weight: 100;
+	font-size: .9em;
+	margin: 0 0 5px 0 ;
+}
+
+#pulse h2 {
+	color: white;
+	margin: 5px 0 0 11px;
+	font-weight: 100;
+}
+
+.panel {
+	width: 17%;
+	float: left;
+	margin: 70px 0 0 0;
+}
+
+.medium-panel {
+	width: 30%;
+	margin: 0 0 0 0;
+}
+
+.medium {
+	height: 230px;
+}
+
+.stats {
+	width: 15;
+	padding: 10px;
+	border: 1px solid #cbcbcb;
+	border-radius: 5px;
+	background-color: #f0f4f6;
+	margin: 0 15px 0 15px;
+	box-shadow: 3px 3px 1px gray;
+}
+
+.map-container {
+	padding: 10px;
+	border: 1px solid #cbcbcb;
+	border-radius: 5px;
+	background-color: #f0f4f6;
+}
+
+.checkin {
+	float:left;
+	font-weight: bold;
+}
+
+.checkin-added {
+	float:right;
+	font-weight: bold;
+}
+
+.stats div {
+	text-align: center;
+}
+
+.added {
+	color: #34bbf3;
+	font-size: 2.3em;
+}
+
+.added-secondary {
+	color: #9db6c6;
+}
+
+.artist {
+	color: #9db6c6;
+}
+
+.total {
+	margin: 10px 0 0 0;
+	color: #9db6c6;
+}
+
+.text {
+	color: #9db6c6;
+}
+
+.pulse-preferences {
+	background-position: -10px 0px;
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	left: 94.6%;
+}
+
+.pulse-move {
+	background-position: -30px 0px;
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	left: 95.6%;
+}
+
+.pulse-expand {
+	background-position: -50px 0px;
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	left: 96.6%;
+}
+
+.pulse-close {
+	background-position: -70px 0px;
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	left: 97.6%;
+}
+
+/*End Pulse*/
