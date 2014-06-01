@@ -47,20 +47,84 @@ header h1 {
 /*End Header*/
 
 /*Begin Sidebar*/
-.imh-logo {
+.imh {
 	background-image: url("images/imh-logo.png");
 	background-repeat: no-repeat;
-	width: 30px;
-	height:30px;
-	float:left;
+	width: 24px;
+	height: 24px;
+	float: left;
 	margin:5px 5px;
+}
+
+.nav-sprites {
+	background-image: url("images/nav-sprites.png");
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
+	float: left;
+	margin: 0 5px;
+}
+
+.email {
+	background-position: 0 0;
+}
+
+.mobile {
+	background-position: 0px -32px;
+}
+
+.social {
+	background-position: 0px -64px;
+}
+
+.sites {
+	background-position: 0px -96px;
+}
+
+.studio {
+	background-position: 0px -140px;
+}
+
+.audience {
+	background-position: 0px -172px;
+}
+
+.report {
+	background-position: 0px -204px;
+}
+
+.arrow {
+	background-image:url("images/arrow.png");
+	background-repeat: no-repeat;
+	height: 16px;
+	width: 16px;
+	float:left;
+	margin: 0 5px;
+	position: relative;
+	top: 25%;
 }
 
 #hub {
 	margin: 25px;
 	width: 12%;
 	border-radius: 5px;
-	background-color: #aaaaaa;
+	background-color: #f4f4f5;
+}
+
+#contact-container {
+	border: 2px solid #e6e6e6;
+}
+
+#app-container {
+	border-left: 2px solid #e6e6e6;
+	border-right: 2px solid #e6e6e6;
+	border-bottom: 2px solid #e6e6e6;
+}
+
+#partner-container {
+	border-left: 2px solid #e6e6e6;
+	border-right: 2px solid #e6e6e6;
+	border-bottom: 2px solid #e6e6e6;
 }
 
 #imh-container {
@@ -69,7 +133,36 @@ header h1 {
 	background-color: #fba435; /*Orange*/
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+	font-family: sans-serif;
 	color: white;
 	padding: 12px;
+	border: 2px solid #f8981d; 
+}
+
+#hub span {
+	position: relative;
+	top: 25%;
+}
+
+#hub a {
+	color: gray;
+	text-decoration: none;
+	padding: 5px;
+	height: 24px;
+	display: block;
+	font-family: sans-serif;
+	font-weight:100;
+}
+
+#hub a:hover {
+	color: #2FA8DB;
+}
+
+#hub a:last-child{
+	margin-bottom: 5px;
+}
+
+#partner-container a{
+	font-size: .8em;
 }
 /*End Sidebar*/
