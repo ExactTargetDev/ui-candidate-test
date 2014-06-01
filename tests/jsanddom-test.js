@@ -131,7 +131,13 @@ test('datatable', function () {
 	DataTable.addRows('Foe', 'Fighter', 'Winning', 'Losing');
 	DataTable.addRows('Roe', 'Fisher', 'Shiny Things', 'Being Eaten');
 	var table = DataTable.getData();
-	equal(Object.keys(table).length, 3, 'Number of rows should be 3');
+	var count = 0;
+	for(var i in table){
+		if (table.hasOwnProperty(i)){
+			count++;
+		}
+	}
+	equal(count, 3, 'Number of rows should be 3');
 	equal(table.Row1.Name, 'Joe', 'His name is Joe');
 	equal(table.Row1.Craft, 'Farmer', 'His name is Joe');
 	equal(table.Row1.Likes, 'Potatoes', 'His name is Joe');

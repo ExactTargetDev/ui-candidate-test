@@ -55,8 +55,10 @@
                 out += i;
             }
         }
+        if (console){
+            console.log(out);
+        }
         return out;
-        console.log(out);
     }
 
     // You have a master array of strings, where each element is a fruit name.
@@ -91,13 +93,15 @@
 
     // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
     function splitListStrUsingComma(sourceStr) {
+        var output = [];
         if (sourceStr === ''){
-            return [];
+            return output;
         }
         var splitString = sourceStr.split(',');
-        return splitString.map(function (item){
-            return item.trim();
-        });
+        while (splitString.length > 0){
+            output.push(splitString.shift().trim());
+        }
+        return output;
     }
 
     // Write a function that will take any number of arguments and return their sum
@@ -123,7 +127,9 @@
         var dislikes = 'humans'; //priv
         var getDatingProfile = function (){
             var badJoke = 'I like: ' + likes + ', and dislike: ' + dislikes + ', just kidding.';
-            console.log(badJoke);
+            if (console){
+                console.log(badJoke);
+            }
             return badJoke;
         }
         return {
@@ -252,6 +258,17 @@
     })();
 
     $(document).ready(function (){
+        // fix ie8 lack of indexOf
+        if (!Array.prototype.indexOf){
+            Array.prototype.indexOf = function(obj, start) {
+                for (var i = (start || 0), j = this.length; i < j; i++) {
+                    if (this[i] === obj) { 
+                        return i; 
+                    }
+                }
+                return -1;
+            }
+        }
         // within div1, programatically create a
         // SELECT element (with multiple items) and a button.
         // when the button is clicked write out the name and value of the selected item to the console.
