@@ -1,7 +1,19 @@
 $(document).ready(function (){
-	$('#help').click(function (e){
-		e.preventDefault();
+	function overlayToggle() {
+		var dialog = $('#help-overlay');
+		dialog.css('visibility', (dialog.css('visibility') == "visible") ? "hidden" : "visible");
+	}
 
+	$('#help').click(function (e){
+		var help1 = '<a target="blank" href="' + jsonData.help[0].URL + '">' + jsonData.help[0].title + '</a><br><br>';
+		var help2 = '<a target="blank" href="' + jsonData.help[1].URL + '">' + jsonData.help[1].title + '</a><br><br>';
+		var help3 = '<a target="blank" href="' + jsonData.help[2].URL + '">' + jsonData.help[2].title + '</a><br><br>';
+		$('#help-overlay p').html(help1 + help2 + help3);
+		overlayToggle();
+	});
+
+	$('#help-close').click(function (){
+		overlayToggle();
 	});
 
 
