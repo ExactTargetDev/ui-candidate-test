@@ -55,9 +55,7 @@
                 out += i;
             }
         }
-        if (console){
-            console.log(out);
-        }
+        console.log(out);
         return out;
     }
 
@@ -127,9 +125,7 @@
         var dislikes = 'humans'; //priv
         var getDatingProfile = function (){
             var badJoke = 'I like: ' + likes + ', and dislike: ' + dislikes + ', just kidding.';
-            if (console){
-                console.log(badJoke);
-            }
+            console.log(badJoke);
             return badJoke;
         }
         return {
@@ -258,7 +254,7 @@
     })();
 
     $(document).ready(function (){
-        // fix ie8 lack of indexOf
+        // begin fix ie8 stuff
         if (!Array.prototype.indexOf){
             Array.prototype.indexOf = function(obj, start) {
                 for (var i = (start || 0), j = this.length; i < j; i++) {
@@ -269,6 +265,20 @@
                 return -1;
             }
         }
+
+        if(!String.prototype.trim) {
+            String.prototype.trim = function() {
+                return this.replace(/^\s+|\s+$/g, ''); 
+            }
+        }
+
+        if (!window.console) {
+            console = {
+                log: function() {}
+            };
+        }
+        // end fix ie8 stuff
+
         // within div1, programatically create a
         // SELECT element (with multiple items) and a button.
         // when the button is clicked write out the name and value of the selected item to the console.
