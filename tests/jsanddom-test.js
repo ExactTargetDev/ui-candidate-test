@@ -81,3 +81,12 @@ test( "split a string with commas", 2, function() {
     // Make sure the result from the function is valid
     ok( splitListStrUsingComma(test), ["The", " quick", " brown", " fox jumped over"], 'Expected ["The", " quick", " brown", " fox jumped over"] as the result, the result was: ' + splitListStrUsingComma(test) );
 });
+
+module( "add all arguments" );
+test( "add all arguments", 2, function() {
+    // Verify the method exists
+    equal( typeof String, 'function', 'add all the arguments to a function and return the sum' ); 
+    
+    // Make sure the result from the function is valid
+    ok( sum(1, 1, 2, 3, 5, 7), 19, 'Expected 19 as the result, the result was: ' + sum(1, 1, 2, 3, 5, 7) );
+});
