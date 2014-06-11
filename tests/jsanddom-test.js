@@ -71,3 +71,13 @@ test( "push to array", 2, function() {
     // Make sure the result from the function is valid
     ok( pushOntoArray(array, toPush), [1, 2, 3, 4, 5, 7, 8, 9], 'Expected [1, 2, 3, 4, 5, 7, 8, 9] as the result, the result was: ' + pushOntoArray(array, toPush) );
 });
+
+module( "split a string with commas" );
+test( "split a string with commas", 2, function() {
+    // Verify the method exists
+    equal( typeof String, 'function', 'must split a comma delimited string into an array' ); 
+    
+    var test='The, quick, brown, fox jumped over';
+    // Make sure the result from the function is valid
+    ok( splitListStrUsingComma(test), ["The", " quick", " brown", " fox jumped over"], 'Expected ["The", " quick", " brown", " fox jumped over"] as the result, the result was: ' + splitListStrUsingComma(test) );
+});
