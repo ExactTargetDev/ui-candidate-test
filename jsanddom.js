@@ -53,7 +53,24 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+        var fruitString,
+        length,
+        newFruit = [],
+        i;
+        length  = fruitsToRemove.length;
+        fruitString = fruits.join();
+        for (i = 0; i < length; i = i + 1) {
+            fruitString = fruitString.replace(fruitsToRemove[i], "");
+            fruitString = fruitString.replace(",,", ",");
+        }
+        newFruit = fruitString.split(",");
+        if (newFruit[newFruit.length - 1] === "") {
+            newFruit.pop();
+        }
+        if (newFruit[0] === "") {
+            newFruit.shift();
+        }
+        return newFruit;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.

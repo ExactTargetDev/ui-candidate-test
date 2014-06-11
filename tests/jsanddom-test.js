@@ -49,3 +49,14 @@ test( "modulo function for fizz buzz", 2, function() {
     // Make sure the result from the function is valid
     ok( doFizzBuzz(), '1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz,16,17,Fizz,19,Buzz,', 'Expected 1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz,16,17,Fizz,19,Buzz, as the result, the result was: ' + doFizzBuzz() );
 });
+
+module( "remove some fruit from all fruit" );
+test( "remove some fruit from all fruit", 2, function() {
+    // Verify the method exists
+    equal( typeof String, 'function', 'must remove user defined items from an array' ); 
+        
+    var allFruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry']
+    var someFruits = ['pear', 'banana']
+    // Make sure the result from the function is valid
+    ok( removeFruits(allFruits, someFruits), ["apple", "orange", "kiwi", "plum", "strawberry"], 'Expected ["apple", "orange", "kiwi", "plum", "strawberry"] as the result, the result was: ' + removeFruits(allFruits, someFruits) );
+});
