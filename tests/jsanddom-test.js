@@ -27,6 +27,17 @@ test( "Find Min Number Test", 2, function() {
     equal( typeof Number, 'function', 'Must find the smallest number' ); 
         
     var nums = [12, 5, 7, 16];
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the function is valid
     ok( findMinValue(nums), 5, 'Expected 5 as the result, the result was: ' + findMinValue(nums) );
 });
+
+module( "Find Unique values in array" );
+test( "Find Unique values in array", 2, function() {
+    // Verify the method exists
+    equal( typeof String, 'function', 'Must find unique values in an array' ); 
+        
+    var values = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+    // Make sure the result from the function is valid
+    ok( findDistinctValues(values), [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity], 'Expected [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity] as the result, the result was: ' + findDistinctValues(values) );
+});
+

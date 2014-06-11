@@ -16,7 +16,15 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+
+        var arrDistinct = new Array();
+
+        $(values).each(function(index, item) {
+            if ($.inArray(item, arrDistinct) == -1)
+                arrDistinct.push(item);
+        });
+        return arrDistinct;
+        
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
