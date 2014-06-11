@@ -12,3 +12,11 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+module( "Reverse String Test" );
+test( "Reverse String Test", 2, function() {
+    // Verify the method exists
+    equal( typeof String, 'function', 'Must reverse a string' ); 
+
+    // Make sure the result from the divide function is valid
+    ok( reverseString("Subscribers rock"), "kcor srebircsbuS", 'Expected dkcor srebircsbuS as the result, the result was: ' + reverseString( "Subscribers rock") );
+});
