@@ -60,3 +60,14 @@ test( "remove some fruit from all fruit", 2, function() {
     // Make sure the result from the function is valid
     ok( removeFruits(allFruits, someFruits), ["apple", "orange", "kiwi", "plum", "strawberry"], 'Expected ["apple", "orange", "kiwi", "plum", "strawberry"] as the result, the result was: ' + removeFruits(allFruits, someFruits) );
 });
+
+module( "push to array" );
+test( "push to array", 2, function() {
+    // Verify the method exists
+    equal( typeof String, 'function', 'must push numbers and arrays to an already existing array' ); 
+    
+    var array=[1, 2, 3, 4, 5];
+    var toPush = [7, 8, 9];
+    // Make sure the result from the function is valid
+    ok( pushOntoArray(array, toPush), [1, 2, 3, 4, 5, 7, 8, 9], 'Expected [1, 2, 3, 4, 5, 7, 8, 9] as the result, the result was: ' + pushOntoArray(array, toPush) );
+});
