@@ -20,3 +20,13 @@ test( "Reverse String Test", 2, function() {
     // Make sure the result from the divide function is valid
     ok( reverseString("Subscribers rock"), "kcor srebircsbuS", 'Expected dkcor srebircsbuS as the result, the result was: ' + reverseString( "Subscribers rock") );
 });
+
+module( "Find Min Number Test" );
+test( "Find Min Number Test", 2, function() {
+    // Verify the method exists
+    equal( typeof Number, 'function', 'Must find the smallest number' ); 
+        
+    var nums = [12, 5, 7, 16];
+    // Make sure the result from the divide function is valid
+    ok( findMinValue(nums), 5, 'Expected 5 as the result, the result was: ' + findMinValue(nums) );
+});
