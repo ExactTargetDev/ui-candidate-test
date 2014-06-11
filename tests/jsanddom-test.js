@@ -41,3 +41,11 @@ test( "Find Unique values in array", 2, function() {
     ok( findDistinctValues(values), [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity], 'Expected [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity] as the result, the result was: ' + findDistinctValues(values) );
 });
 
+module( "modulo function for fizz buzz" );
+test( "modulo function for fizz buzz", 2, function() {
+    // Verify the method exists
+    equal( typeof String, 'function', 'must write fizz for multiples of 3, buzz for 5, and fizzbuzz for 3 and 5' ); 
+        
+    // Make sure the result from the function is valid
+    ok( doFizzBuzz(), '1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz,16,17,Fizz,19,Buzz,', 'Expected 1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz,16,17,Fizz,19,Buzz, as the result, the result was: ' + doFizzBuzz() );
+});
