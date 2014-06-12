@@ -132,6 +132,15 @@
 
      // write an example of a javascript closure
 
+     function foo(x) {
+        var tmp = 3;
+        function bar(y) {
+            alert(x + y + (++tmp)); // will alert 16
+        }
+        bar(10);
+     }
+     foo(2);
+
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -140,6 +149,19 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+
+     var people = {
+           "first name": "Bo",
+           "last name" : "Frank",
+           "city" : "Seattle",
+           "state" : "WA",
+           "zip" : "98105",
+           "phone":{
+               "home" : "",
+               "work" : "",
+               "mobile" : "206-235-5455"
+           }
+       };
 
 
      // Create a javascript object (DataTable) with the following:
