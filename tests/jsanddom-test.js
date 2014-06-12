@@ -90,3 +90,12 @@ test( "add all arguments", 2, function() {
     // Make sure the result from the function is valid
     ok( sum(1, 1, 2, 3, 5, 7), 19, 'Expected 19 as the result, the result was: ' + sum(1, 1, 2, 3, 5, 7) );
 });
+
+module( "white space string filter" );
+test( "white space string filter", 2, function() {
+    // Verify the method exists
+    equal( typeof String, 'function', 'must return true if string has only whitespace' ); 
+    
+    // Make sure the result from the function is valid
+    ok( isOnlyWhitespace(" "), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace(" ") );
+});
