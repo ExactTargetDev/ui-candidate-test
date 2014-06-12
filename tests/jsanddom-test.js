@@ -99,3 +99,21 @@ test( "white space string filter", 2, function() {
     // Make sure the result from the function is valid
     ok( isOnlyWhitespace(" "), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace(" ") );
 });
+
+module( "adding columns to DataTable" );
+test( "adding columns to DataTable", 2, function() {
+    // Verify the method exists
+    equal( typeof String, 'function', 'must return the array with added items' ); 
+    
+    // Make sure the result from the function is valid
+    ok( addColumns("column1","column2","column3"), '[["columns",["column1","column2","column3"]],["rows",[]]]', 'Expected [[\"columns\",[\"column1\",\"column2\",\"column3\"]],[\"rows\",[]]] as the result, the result was: ' + addColumns("column1","column2","column3"));
+});
+
+module( "adding rows to DataTable" );
+test( "adding rows to DataTable", 2, function() {
+    // Verify the method exists
+    equal( typeof String, 'function', 'must return the array with added items' ); 
+    
+    // Make sure the result from the function is valid
+    ok( addRows("row1","row2","row3"), '[["columns",[]],["rows",["row1","row2","row3"]]]', 'Expected [[\"columns\",[]],[\"rows\",[\"row1\",\"row2\",\"row3\"]]] as the result, the result was: ' + addRows("row1","row2","row3"));
+});

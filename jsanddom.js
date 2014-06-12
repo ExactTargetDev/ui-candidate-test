@@ -176,6 +176,28 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+    var DataTable = [['columns',[]],['rows',[]]];
+
+    function addColumns(){
+        for(var i = 0; i < arguments.length; i++){
+            DataTable[0][1].push(arguments[i]);
+        }
+        return getData(DataTable);
+    }
+
+    function addRows(){
+        for(var i = 0; i < arguments.length; i++){
+            DataTable[1][1].push(arguments[i]);
+        }
+        return getData(DataTable);
+    }
+
+    function getData(data){
+        return JSON.stringify(data);
+    }
+
+
+
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
@@ -191,4 +213,5 @@
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
 
-     var DataTable = [['columns','rows']];
+    
+
