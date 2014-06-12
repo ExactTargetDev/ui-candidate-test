@@ -241,5 +241,28 @@
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
 
-    
+    var residence = document.getElementById('foobar');
 
+    var check_value = new Array( )
+    check_value[0] = "Check All"
+    check_value[1] = "White Center"
+    check_value[2] = "Roosevelt"
+    check_value[3] = "Sand Point"
+    check_value[4] = "Phinney"
+    check_value[5] = "Northgate"
+    check_value[6] = "South Park"
+    check_value[7] = "Columbia City"
+
+    for(var count in check_value)
+    {
+        var hood=document.createElement("input");   
+        hood.type="checkbox";
+        hood.id="ptworkinfo" + count;
+        hood.setAttribute("width","100");
+        hood.value=(check_value[count]);
+        residence.appendChild(hood);
+        var boxLabel=document.createElement("label");
+        boxLabel.innerHTML=(check_value[count]+"<br>");
+        residence.appendChild(boxLabel);
+    }
+    
