@@ -202,8 +202,27 @@
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
+        
+
+    $("#div1").html(''+
+        '<select id="selector">'+
+            '<option value="daewoo">Daewoo!</option>'+
+            '<option value="kia">Kia</option>'+
+            '<option value="hyundai">Hyundai</option>'+
+            '<option value="protomotors">Protomotors</option>'+
+        '</select>'+
+        '<input type="button" value="click me" onclick="getCar()" />'+
+        ''
+    );
+
+    function getCar(){
+        console.log($("#selector").val());
+    }
+
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
