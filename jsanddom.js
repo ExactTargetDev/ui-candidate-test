@@ -244,45 +244,48 @@
      //I'm assuming pure javascript is requested, not jQuery
 
     var residence = document.getElementById('foobar');
+    var check_value = new Array( );
+    if (residence) renderBoxes(check_value);
+    
+    function renderBoxes(check_value){
+    
+        check_value[0] = "White Center"
+        check_value[1] = "Roosevelt"
+        check_value[2] = "Sand Point"
+        check_value[3] = "Phinney"
+        check_value[4] = "Northgate"
+        check_value[5] = "South Park"
+        check_value[6] = "Columbia City"
 
-    var check_value = new Array( )
-    check_value[0] = "White Center"
-    check_value[1] = "Roosevelt"
-    check_value[2] = "Sand Point"
-    check_value[3] = "Phinney"
-    check_value[4] = "Northgate"
-    check_value[5] = "South Park"
-    check_value[6] = "Columbia City"
+        for(var count=0;count<check_value.length;count++)
+        {
+            var hood=document.createElement("input");   
+            hood.type="checkbox";
+            hood.id="ptworkinfo" + count;
+            //hood.setAttribute("onclick","checkAll()");
+            hood.value=(check_value[count]);
+            residence.appendChild(hood);
+            var boxLabel=document.createElement("label");
+            boxLabel.innerHTML=(check_value[count]+"<br>");
+            residence.appendChild(boxLabel);
+        }
 
-    for(var count in check_value)
-    {
-        var hood=document.createElement("input");   
-        hood.type="checkbox";
-        hood.id="ptworkinfo" + count;
-        //hood.setAttribute("onclick","checkAll()");
-        hood.value=(check_value[count]);
-        residence.appendChild(hood);
-        var boxLabel=document.createElement("label");
-        boxLabel.innerHTML=(check_value[count]+"<br>");
-        residence.appendChild(boxLabel);
+        var linkCheckAll = document.createElement("a");
+        var linkCheckNone = document.createElement("a");
+
+        linkCheckAll.innerHTML="Check All <br>";
+        linkCheckNone.innerHTML=" Check None";
+
+        linkCheckAll.setAttribute("onclick","checkAll()");
+        linkCheckNone.setAttribute("onclick","checkNone()");
+
+        linkCheckAll.setAttribute("style","cursor:pointer");
+        linkCheckNone.setAttribute("style","cursor:pointer");
+
+        residence.appendChild(linkCheckAll);
+        residence.appendChild(linkCheckNone);
+ 
     }
-
-    var linkCheckAll = document.createElement("a");
-    var linkCheckNone = document.createElement("a");
-
-    linkCheckAll.innerHTML="Check All <br>";
-    linkCheckNone.innerHTML=" Check None";
-
-    linkCheckAll.setAttribute("onclick","checkAll()");
-    linkCheckNone.setAttribute("onclick","checkNone()");
-
-    linkCheckAll.setAttribute("style","cursor:pointer");
-    linkCheckNone.setAttribute("style","cursor:pointer");
-
-    residence.appendChild(linkCheckAll);
-    residence.appendChild(linkCheckNone);
-
-
     function checkAll(){
         for(var i=0;i<check_value.length;i++){
             eval("ptworkinfo"+[i]).setAttribute("checked","checked");
@@ -293,5 +296,4 @@
         for(var i=0;i<check_value.length;i++){ 
             eval("ptworkinfo"+[i]).removeAttribute("checked");
         }
-    }  
-    
+    } 
