@@ -258,11 +258,19 @@
         var hood=document.createElement("input");   
         hood.type="checkbox";
         hood.id="ptworkinfo" + count;
-        hood.setAttribute("width","100");
+        hood.setAttribute("onclick","checkAll()");
         hood.value=(check_value[count]);
         residence.appendChild(hood);
         var boxLabel=document.createElement("label");
         boxLabel.innerHTML=(check_value[count]+"<br>");
         residence.appendChild(boxLabel);
     }
+
+    function checkAll(){
+        for(var i=0;i<check_value.length;i++){
+            eval("ptworkinfo"+[i]).setAttribute("checked","checked");
+        }
+    }
+
+  
     
