@@ -135,7 +135,7 @@
      function foo(x) {
         var tmp = 3;
         function bar(y) {
-            alert(x + y + (++tmp)); // will alert 16
+            console.log(x + y + (++tmp)); // will log at 16
         }
         bar(10);
      }
@@ -190,3 +190,5 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+     var DataTable = [['columns','rows']];
