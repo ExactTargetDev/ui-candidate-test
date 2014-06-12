@@ -1,22 +1,30 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+         return str.split("").reverse().join("");
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+         return Math.min.apply(Math, values);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+
+        var arrDistinct = new Array();
+
+        $(values).each(function(index, item) {
+            if ($.inArray(item, arrDistinct) == -1)
+                arrDistinct.push(item);
+        });
+        return arrDistinct;
+        
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,7 +32,20 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+        var result="";
+        for (var i=1; i <= 20; i++)
+        {
+            if (i % 15 == 0)
+                result +="FizzBuzz,";
+            else if (i % 3 == 0)
+                result +="Fizz,";
+            else if (i % 5 == 0)
+                result +="Buzz,";
+            else
+                result +=i+",";
+        }
+        console.log(result);
+        return result;
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -32,7 +53,24 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+        var fruitString,
+        length,
+        newFruit = [],
+        i;
+        length  = fruitsToRemove.length;
+        fruitString = fruits.join();
+        for (i = 0; i < length; i = i + 1) {
+            fruitString = fruitString.replace(fruitsToRemove[i], "");
+            fruitString = fruitString.replace(",,", ",");
+        }
+        newFruit = fruitString.split(",");
+        if (newFruit[newFruit.length - 1] === "") {
+            newFruit.pop();
+        }
+        if (newFruit[0] === "") {
+            newFruit.shift();
+        }
+        return newFruit;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -40,25 +78,68 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+        var i,
+        isArray = function (value) {
+            return value &&
+                typeof value === 'object' &&
+                typeof value.length === 'number' &&
+                typeof value.splice === 'function' &&
+                !(value.propertyIsEnumerable('length'));
+        };
+        if (isArray(toPush)) {
+            for (i = 0; i < toPush.length; i = i + 1) {
+                array.push(toPush[i]);
+            }
+        } else {
+            array.push(toPush);
+        }
+        return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+
+        var list;
+        
+        if(sourceStr == "")
+            list = [];
+        else
+            list = sourceStr.split(',');
+
+        return list;
+     
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+        
+        var total = 0;
+        
+        for(var i = 0; i < arguments.length; i++){
+           total += parseInt(arguments[i]);
+        }
+        
+        return total;
+     
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         if (!sourceStr.replace(/\s/g, '').length) {
+            return true;
+         }
      }
 
      // write an example of a javascript closure
+
+     function foo(x) {
+        var tmp = 3;
+        function bar(y) {
+            console.log(x + y + (++tmp)); // will log at 16
+        }
+        bar(10);
+     }
+     foo(2);
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -68,6 +149,19 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+
+     var people = {
+           "first name": "Bo",
+           "last name" : "Frank",
+           "city" : "Seattle",
+           "state" : "WA",
+           "zip" : "98105",
+           "phone":{
+               "home" : "",
+               "work" : "",
+               "mobile" : "206-235-5455"
+           }
+       };
 
 
      // Create a javascript object (DataTable) with the following:
@@ -82,17 +176,124 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+    var DataTable = [['columns',[]],['rows',[]]];
+
+    function addColumns(){
+        for(var i = 0; i < arguments.length; i++){
+            DataTable[0][1].push(arguments[i]);
+        }
+        return getData(DataTable);
+    }
+
+    function addRows(){
+        for(var i = 0; i < arguments.length; i++){
+            DataTable[1][1].push(arguments[i]);
+        }
+        return getData(DataTable);
+    }
+
+    function getData(data){
+        return JSON.stringify(data);
+    }
+
+
+
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
+        
+
+    $("#div1").html(''+
+        '<select id="selector">'+
+            '<option value="daewoo">Daewoo!</option>'+
+            '<option value="kia">Kia</option>'+
+            '<option value="hyundai">Hyundai</option>'+
+            '<option value="protomotors">Protomotors</option>'+
+        '</select>'+
+        '<input type="button" value="click me" onclick="getCar()" />'+
+        ''
+    );
+
+    function getCar(){
+        console.log($("#selector").val()+" "+$("#selector").find(":selected").text());
+    }
+
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+
+    $(".link");
+    $("#fizz a");
+    $("#fizz:nth-child(1)");
+    $("#fizz:eq(0)");
+    $("a").html("sample anchor");
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
 
+    var myArray = ["Greenlake","Eastlake","Westlake","Lakeview","Hmm, maybe even Bellevue"];
+    for(var i=0;i<myArray.length;i++){
+        $("#list1").append("<li>"+myArray[i]+"</li>");
+    }
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+     //I'm assuming pure javascript is requested, not jQuery
+
+    var residence = document.getElementById('foobar');
+    var check_value = new Array( );
+    if (residence) renderBoxes(check_value);
+    
+    function renderBoxes(check_value){
+    
+        check_value[0] = "White Center"
+        check_value[1] = "Roosevelt"
+        check_value[2] = "Sand Point"
+        check_value[3] = "Phinney"
+        check_value[4] = "Northgate"
+        check_value[5] = "South Park"
+        check_value[6] = "Columbia City"
+
+        for(var count=0;count<check_value.length;count++)
+        {
+            var hood=document.createElement("input");   
+            hood.type="checkbox";
+            hood.id="ptworkinfo" + count;
+            //hood.setAttribute("onclick","checkAll()");
+            hood.value=(check_value[count]);
+            residence.appendChild(hood);
+            var boxLabel=document.createElement("label");
+            boxLabel.innerHTML=(check_value[count]+"<br>");
+            residence.appendChild(boxLabel);
+        }
+
+        var linkCheckAll = document.createElement("a");
+        var linkCheckNone = document.createElement("a");
+
+        linkCheckAll.innerHTML="Check All <br>";
+        linkCheckNone.innerHTML=" Check None";
+
+        linkCheckAll.setAttribute("onclick","checkAll()");
+        linkCheckNone.setAttribute("onclick","checkNone()");
+
+        linkCheckAll.setAttribute("style","cursor:pointer");
+        linkCheckNone.setAttribute("style","cursor:pointer");
+
+        residence.appendChild(linkCheckAll);
+        residence.appendChild(linkCheckNone);
+ 
+    }
+    function checkAll(){
+        for(var i=0;i<check_value.length;i++){
+            eval("ptworkinfo"+[i]).setAttribute("checked","checked");
+        }
+    }
+
+    function checkNone(){
+        for(var i=0;i<check_value.length;i++){ 
+            eval("ptworkinfo"+[i]).removeAttribute("checked");
+        }
+    } 
