@@ -216,7 +216,7 @@
     );
 
     function getCar(){
-        console.log($("#selector").val());
+        console.log($("#selector").val()+" "+$("#selector").find(":selected").text());
     }
 
 
