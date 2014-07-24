@@ -49,14 +49,14 @@ test("findDistinctValues()", 2, function(assert) {
 
 test("doFizzBuzz()", 1, function(assert) {
     // Verify the method exists
-    assert.equal(typeof reverseString, 'function', 'Must contain a doFizzBuzz function');
+    assert.equal(typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function');
 
     doFizzBuzz();
 });
 
 test("removeFruits()", 2, function(assert) {
     // Verify the method exists
-    assert.equal(typeof findDistinctValues, 'function', 'Must contain a removeFruits function');
+    assert.equal(typeof removeFruits, 'function', 'Must contain a removeFruits function');
 
     testVal = ['Boysenberry', 'Dragonfruit', 'Huckleberry', 'Lychee', 'Purple Mangosteen'];
     var removeVals = ['Lychee', 'Purple Mangosteen'];
@@ -68,7 +68,7 @@ test("removeFruits()", 2, function(assert) {
 
 test("pushOntoArray()", 3, function(assert) {
     // Verify the method exists
-    assert.equal(typeof reverseString, 'function', 'Must contain a pushOntoArray function');
+    assert.equal(typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function');
 
     var initialArr = ['Ingress', 'Captain', 'Potato', 4], toPush = 'FAJITAS';
     expectedVal = ['Ingress', 'Captain', 'Potato', 4, 'FAJITAS'];
@@ -86,7 +86,7 @@ test("pushOntoArray()", 3, function(assert) {
 
 test("splitListStrUsingComma()", 3, function(assert) {
     // Verify the method exists
-    assert.equal(typeof findDistinctValues, 'function', 'Must contain a splitListStrUsingComma function');
+    assert.equal(typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function');
 
     testVal = 'The, quick, brown, fox jumped over';
     expectedVal = ['The', 'quick', 'brown', 'fox jumped over'];
@@ -103,7 +103,7 @@ test("splitListStrUsingComma()", 3, function(assert) {
 
 test("sum()", 4, function(assert) {
     // Verify the method exists
-    assert.equal(typeof reverseString, 'function', 'Must contain a sum function');
+    assert.equal(typeof sum, 'function', 'Must contain a sum function');
 
     expectedVal = 6;
     result = sum(1, 2, 3);
@@ -123,7 +123,7 @@ test("sum()", 4, function(assert) {
 
 test("isOnlyWhitespace()", 3, function(assert) {
     // Verify the method exists
-    assert.equal(typeof reverseString, 'function', 'Must contain a isOnlyWhitespace function');
+    assert.equal(typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function');
 
     testVal = 'Hello There!';
     expectedVal = false;
