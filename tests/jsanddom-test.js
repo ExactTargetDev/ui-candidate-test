@@ -138,3 +138,94 @@ test("isOnlyWhitespace()", 3, function(assert) {
     // Make sure the result from the isOnlyWhitespace function is valid
     assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 });
+
+test("doubleNumberClosure()", 2, function(assert) {
+    // Verify the method exists
+    assert.equal(typeof doubleNumberClosure, 'function', 'Must contain a doubleNumberClosure function');
+
+    expectedVal = 25;
+    result = doubleNumberClosure(5);
+    // Make sure the result from the subtractClosure function is valid
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+});
+
+test("test JSON PersonObj", 8, function(assert) {
+    // Verify the method exists
+    assert.equal(typeof PersonObj, 'function', 'Must contain a PersonObj function');
+
+    var person = new PersonObj();
+
+    // Test set using values using strings
+    person.set('firstName', 'Brett');
+    expectedVal = 'Brett';
+
+    assert.equal(person.firstName, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+    // Test set using a simple object
+    var data = {
+        firstName: 'Brett',
+        lastName: 'Bretterson'
+    };
+
+    // reset person
+    person = new PersonObj();
+    person.set(data);
+
+    expectedVal = 'Brett';
+    result = person.firstName;
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+    expectedVal = 'Bretterson';
+    result = person.lastName;
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+    // Test set using a nested Object
+    data = {
+        firstName: 'Brett',
+        phoneNumbers: {
+            home: '123-456-7890'
+        }
+    };
+
+    // reset person
+    person = new PersonObj();
+    person.set(data);
+
+    expectedVal = 'Brett';
+    result = person.firstName;
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+    expectedVal = '123-456-7890';
+    result = person.phoneNumbers.home;
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+    // Make sure mobile (which should exist and be undefined) did not get removed
+    expectedVal = true;
+    result = _.has(person.phoneNumbers, 'mobile');
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+    expectedVal = undefined;
+    result = person.phoneNumbers.mobile;
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+});
+
+test("test JSON PeopleCollection", 3, function(assert) {
+    // Verify the method exists
+    assert.equal(typeof PeopleCollection, 'function', 'Must contain a PeopleCollection function');
+
+    // set up a PersonObj first
+    var person = new PersonObj();
+    person.set('firstName', 'Brett');
+
+    var peopleCollection = new PeopleCollection();
+    peopleCollection.add(person);
+
+    expectedVal = 1;
+    result = peopleCollection.length();
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+    peopleCollection.remove(person);
+    expectedVal = 0;
+    result = peopleCollection.length();
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+});

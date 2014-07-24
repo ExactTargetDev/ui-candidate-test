@@ -98,6 +98,12 @@ function isOnlyWhitespace (sourceStr) {
 }
 
 // write an example of a javascript closure
+function doubleNumberClosure(num) {
+    function double() {
+        return num * num;
+    }
+    return double();
+}
 
 // define a json object that represents a collection of people.
 // each person should have the following properties
@@ -107,7 +113,110 @@ function isOnlyWhitespace (sourceStr) {
 // - state
 // - zip
 // - a collection of phone numbers (home, work, mobile)
+var PersonObj = function() {
+    return {
+        firstName: undefined,
+        lastName: undefined,
+        city: undefined,
+        state: undefined,
+        zip: undefined,
+        phoneNumbers: {
+            home: undefined,
+            work: undefined,
+            mobile: undefined
+        },
 
+        /**
+         * Sets values on the PersonObj
+         *
+         * @param {Object|String} prop Can pass in a single property string to set or can pass in a whole object
+         * @param {String} [data] Optional if passing in a whole Object for `prop`
+         */
+        set: function(prop, data) {
+            if(_.isObject(prop)) {
+                _.each(prop, function(val, key) {
+                    this._set(key, val);
+                }, this)
+            } else {
+                this._set(prop, data);
+            }
+        },
+
+        /**
+         * Actually sets a specific property of the Object with the given value
+         *
+         * @param {String} prop The property to set
+         * @param {*} data The value to set
+         * @param {String} [nestedKey] For recursion, if trying to set complex objects, nestedKey will hold
+         *                             the value normally found on `prop` and `prop` will hold the property
+         *                             inside that inner object.
+         * @private
+         */
+        _set: function(prop, data, nestedKey) {
+            // Check if the property exists on this Object
+            var propExists = false;
+            if(nestedKey) {
+                propExists = _.has(this[nestedKey], prop);
+            } else {
+                propExists = _.has(this, prop);
+            }
+
+            if(propExists) {
+                // Check to see if we're trying to set an Object of data
+                if(_.isObject(data)) {
+                    // handle our "phoneNumbers" Object
+                    _.each(data, function(val, key) {
+                        this._set(key, val, prop);
+                    }, this)
+                } else {
+                    if(nestedKey) {
+                        this[nestedKey][prop] = data;
+                    } else {
+                        this[prop] = data;
+                    }
+                }
+            } else {
+                console.error('PersonObj::_set: trying to set non-existant property ' + prop);
+            }
+        }
+    }
+};
+
+var PeopleCollection = function() {
+    return {
+        people: [],
+        /**
+         * Adds a PersonObj to the collection
+         *
+         * @param {PersonObj} personObj A single PersonObj to add to the collection
+         */
+        add: function(personObj) {
+            this.people.push(personObj);
+        },
+
+        /**
+         * Removes a PersonObj from the collection
+         *
+         * @param {PersonObj} personObj
+         */
+        remove: function(personObj) {
+            var index = this.people.indexOf(personObj);
+            if(index !== -1) {
+                this.people.splice(index, 1);
+                console.log(personObj.firstName + ' was removed');
+            }
+        },
+
+        /**
+         * Returns the length of the people Array
+         *
+         * @returns {int} The length of the people Array
+         */
+        length: function() {
+            return this.people.length;
+        }
+    }
+};
 
 // Create a javascript object (DataTable) with the following:
 // A private columns property (string array)
