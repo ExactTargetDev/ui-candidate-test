@@ -40,6 +40,10 @@ ul {
 #left-nav {
   width: 180px;
 }
+#left-nav .nav-text {
+  font-family: Arial;
+  font-size: 0.75em;
+}
 .pull-right {
   float: right;
 }
