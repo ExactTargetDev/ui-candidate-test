@@ -1,7 +1,10 @@
 /********************************
-Unit Test Example
-********************************/
+ Unit Test Example
+ ********************************/
 module("Travis Hubbard's Testathon");
+var testVal,
+    expectedVal,
+    result;
 
 test( "divide()", 2, function(assert) {
     // Verify the method exists
@@ -11,8 +14,8 @@ test( "divide()", 2, function(assert) {
     assert.ok(divide( 4, 2 ), 2, 'Expected 2 as the result, the result was: ' + divide(4, 2));
 });
 /********************************
-Please create your tests below...
-********************************/
+ Please create your tests below...
+ ********************************/
 test( "reverseString()", 2, function(assert) {
     // Verify the method exists
     assert.equal(typeof reverseString, 'function', 'Must contain a reverseString function');
@@ -78,11 +81,73 @@ test( "pushOntoArray()", 3, function(assert) {
     // Make sure the result from the divide function is valid
     assert.deepEqual(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 
-    initialArr = ['Ingress', 'Captain', 'Potato', 4],
-        toPush = ['FAJITAS', 'salsa', 'SunKing Osiris'];
+    initialArr = ['Ingress', 'Captain', 'Potato', 4];
+    toPush = ['FAJITAS', 'salsa', 'SunKing Osiris'];
     expectedVal = ['Ingress', 'Captain', 'Potato', 4, 'FAJITAS', 'salsa', 'SunKing Osiris'];
     result = pushOntoArray(initialArr, toPush);
     // Make sure the result from the divide function is valid
     assert.deepEqual(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+});
+
+
+test( "splitListStrUsingComma()", 3, function(assert) {
+    // Verify the method exists
+    assert.equal(typeof findDistinctValues, 'function', 'Must contain a splitListStrUsingComma function');
+
+    testVal = 'The, quick, brown, fox jumped over';
+    expectedVal = ['The', 'quick', 'brown', 'fox jumped over'];
+    result = splitListStrUsingComma(testVal);
+    // Make sure the result from the divide function is valid
+    assert.deepEqual(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+    testVal = '';
+    expectedVal = [''];
+    result = reverseString(testVal);
+    // Make sure the result from the divide function is valid
+    assert.deepEqual(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+
+
+});
+
+test( "sum()", 4, function(assert) {
+    // Verify the method exists
+    assert.equal(typeof reverseString, 'function', 'Must contain a sum function');
+
+    expectedVal = 6;
+    result = sum(1, 2, 3);
+    // Make sure the result from the divide function is valid
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+    expectedVal = -40;
+    result = sum(10, -50);
+    // Make sure the result from the divide function is valid
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+
+    expectedVal = 10;
+    result = sum(10);
+    // Make sure the result from the divide function is valid
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+
+});
+
+test( "isOnlyWhitespace()", 3, function(assert) {
+    // Verify the method exists
+    assert.equal(typeof reverseString, 'function', 'Must contain a isOnlyWhitespace function');
+
+    testVal = 'Hello There!';
+    expectedVal = false;
+    result = isOnlyWhitespace(testVal);
+    // Make sure the result from the divide function is valid
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
+
+    testVal = '       ';
+    expectedVal = true;
+    result = isOnlyWhitespace(testVal);
+    // Make sure the result from the divide function is valid
+    assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 
 });
