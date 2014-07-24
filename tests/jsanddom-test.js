@@ -21,7 +21,7 @@ test("reverseString()", 2, function(assert) {
     testVal = 'AbcDeFg';
     expectedVal = 'gFeDcbA';
     result = reverseString(testVal);
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the reverseString function is valid
     assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 });
 
@@ -32,7 +32,7 @@ test("findMinValue()", 2, function(assert) {
     testVal = [8, 4, 165.3, 9, 2];
     expectedVal = 2;
     result = findMinValue(testVal);
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the findMinValue function is valid
     assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 });
 
@@ -43,7 +43,7 @@ test("findDistinctValues()", 2, function(assert) {
     testVal = [1, 2, 4, 3, 2, 1];
     expectedVal = [1, 2, 4, 3];
     result = findDistinctValues(testVal);
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the findDistinctValues function is valid
     assert.deepEqual(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 });
 
@@ -62,7 +62,7 @@ test("removeFruits()", 2, function(assert) {
     var removeVals = ['Lychee', 'Purple Mangosteen'];
     expectedVal = ['Boysenberry', 'Dragonfruit', 'Huckleberry'];
     result = removeFruits(testVal, removeVals);
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the removeFruits function is valid
     assert.deepEqual(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 });
 
@@ -74,14 +74,14 @@ test("pushOntoArray()", 3, function(assert) {
         toPush = 'FAJITAS';
     expectedVal = ['Ingress', 'Captain', 'Potato', 4, 'FAJITAS'];
     result = pushOntoArray(initialArr, toPush);
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the pushOntoArray function is valid
     assert.deepEqual(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 
     initialArr = ['Ingress', 'Captain', 'Potato', 4];
     toPush = ['FAJITAS', 'salsa', 'SunKing Osiris'];
     expectedVal = ['Ingress', 'Captain', 'Potato', 4, 'FAJITAS', 'salsa', 'SunKing Osiris'];
     result = pushOntoArray(initialArr, toPush);
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the pushOntoArray function is valid
     assert.deepEqual(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 });
 
@@ -92,13 +92,13 @@ test("splitListStrUsingComma()", 3, function(assert) {
     testVal = 'The, quick, brown, fox jumped over';
     expectedVal = ['The', ' quick', ' brown', ' fox jumped over'];
     result = splitListStrUsingComma(testVal);
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the splitListStrUsingComma function is valid
     assert.deepEqual(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 
     testVal = '';
     expectedVal = [];
     result = splitListStrUsingComma(testVal);
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the splitListStrUsingComma function is valid
     assert.deepEqual(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 });
 
@@ -108,17 +108,17 @@ test("sum()", 4, function(assert) {
 
     expectedVal = 6;
     result = sum(1, 2, 3);
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the sum function is valid
     assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 
     expectedVal = -40;
     result = sum(10, -50);
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the sum function is valid
     assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 
     expectedVal = 10;
     result = sum(10);
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the sum function is valid
     assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 });
 
@@ -129,12 +129,12 @@ test("isOnlyWhitespace()", 3, function(assert) {
     testVal = 'Hello There!';
     expectedVal = false;
     result = isOnlyWhitespace(testVal);
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the isOnlyWhitespace function is valid
     assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 
     testVal = '       ';
     expectedVal = true;
     result = isOnlyWhitespace(testVal);
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the isOnlyWhitespace function is valid
     assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 });
