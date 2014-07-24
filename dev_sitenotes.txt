@@ -11,3 +11,9 @@ topright link color:
 
 left-nav white background:
 F4F4F5
+
+
+pulse gradient
+    BAC8D1
+e3edf5
+d2dee6

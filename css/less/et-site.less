@@ -1,3 +1,27 @@
+/* vars */
+/* gradient colors */
+@headerTopColor: #2A2F32;
+@headerBottomColor: #45525C;
+@pulseTopColor: #BAC8D1;
+@pulseMidColor: #E3EDF5;
+@pulseBottomColor: #D2DEE6;
+@pulseBorderColor: #A8B4BD;
+@orangeTopColor: #FECA87;
+@orangeBottomColor: #F8981D;
+@leftNavBkgdColor: #F4F4F5;
+/* borders */
+@borderRadius: 10px;
+@leftNavBorderColor: #E6E6E6;
+
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: Arial;
+}
+
 ul {
   list-style-type: none;
 }
@@ -6,13 +30,13 @@ ul {
   height: 32px;
 
   /* For Safari 5.1 to 6.0 */
-  background: -webkit-linear-gradient(#45525C, #2A2F32);
+  background: -webkit-linear-gradient(@headerTopColor, @headerBottomColor);
   /* For Opera 11.1 to 12.0 */
-  background: -o-linear-gradient(#45525C, #2A2F32);
+  background: -o-linear-gradient(@headerTopColor, @headerBottomColor);
   /* For Firefox 3.6 to 15 */
-  background: -moz-linear-gradient(#45525C, #2A2F32);
+  background: -moz-linear-gradient(@headerTopColor, @headerBottomColor);
   /* Standard syntax (must be last) */
-  background: linear-gradient(#45525C, #2A2F32);
+  background: linear-gradient(@headerTopColor, @headerBottomColor);
 
   div {
     display: inline-block;
@@ -47,12 +71,109 @@ ul {
   }
 }
 
+#content {
+  width: 1200px;
+  display: inline-block;
+}
+
 #left-nav {
   width: 180px;
+  margin: 20px;
+  float: left;
+
+  background-color: @leftNavBkgdColor;
+  border: 2px solid;
+  border-radius: @borderRadius;
+  border-color: @leftNavBorderColor;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 7px;
+    }
+  }
 
   .nav-text {
     font-family: Arial;
     font-size: 0.75em;
+  }
+
+  .heading {
+    height: 60px;
+    .icon-hub {
+      float: left;
+      margin-top: 5px;
+    }
+    .hub-text {
+      float: left;
+      margin-top: 15px;
+      font-size: 0.90em;
+    }
+    /* Old browsers */
+    background: @orangeBottomColor;
+    /* FF3.6+ */
+    background: -moz-linear-gradient(top, @orangeTopColor 0%, @orangeBottomColor 15%);
+    /* Chrome,Safari4+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @orangeTopColor),
+      color-stop(15%, @orangeBottomColor));
+    /* Chrome10+,Safari5.1+ */
+    background: -webkit-linear-gradient(top,  @orangeTopColor 0%, @orangeBottomColor 15%);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top,  @orangeTopColor 0%, @orangeBottomColor 15%);
+    /* IE10+ */
+    background: -ms-linear-gradient(top,  @orangeTopColor 0%, @orangeBottomColor 15%);
+    /* W3C */
+    background: linear-gradient(to bottom,  @orangeTopColor 0%, @orangeBottomColor 15%);
+    /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@orangeTopColor',
+      endColorstr='@orangeBottomColor', GradientType=0);
+
+    .nav-text {
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+  }
+
+
+}
+
+#main {
+  width: 800px;
+  margin: 0 auto;
+  float: left;
+
+  #pulse-container {
+    height: 265px;
+    width: 990px;
+    margin: 20px 0px;
+    /* Old browsers */
+    background: @pulseTopColor;
+    /* FF3.6+ */
+    background: -moz-linear-gradient(top, @pulseTopColor 0%, @pulseMidColor 80%, @pulseBottomColor 100%);
+    /* Chrome,Safari4+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@pulseTopColor),
+      color-stop(80%,@pulseMidColor), color-stop(100%,@pulseBottomColor));
+    /* Chrome10+,Safari5.1+ */
+    background: -webkit-linear-gradient(top,  @pulseTopColor 0%,@pulseMidColor 80%,@pulseBottomColor 100%);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top,  @pulseTopColor 0%,@pulseMidColor 80%,@pulseBottomColor 100%);
+    /* IE10+ */
+    background: -ms-linear-gradient(top,  @pulseTopColor 0%,@pulseMidColor 80%,@pulseBottomColor 100%);
+    /* W3C */
+    background: linear-gradient(to bottom,  @pulseTopColor 0%,@pulseMidColor 80%,@pulseBottomColor 100%);
+    /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@pulseTopColor',
+      endColorstr='@pulseBottomColor', GradientType=0);
+
+    border: 2px solid;
+    border-radius: @borderRadius;
+    border-color: @pulseBorderColor;
+
+    .pulse-title {
+      margin-top: 10px;
+    }
   }
 }
 

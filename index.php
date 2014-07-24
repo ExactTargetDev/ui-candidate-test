@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/et-site.css">
     <link rel="stylesheet" type="text/css" href="css/et-spritesheet.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script type="text/javascript" src="libs/jquery.js"></script>
     <script type="text/javascript" src="libs/underscore.js"></script>
     <script type="text/javascript" src="libs/backbone.js"></script>
@@ -22,14 +23,15 @@
                 </ul>
             </div>
         </div>
+
         <div id="content">
+
             <div id="left-nav">
+                <div class="heading">
+                    <span class="sprite-et-spritesheet et-spritesheet-icon-hub icon-hub"></span>
+                    <span class="nav-text hub-text">Interactive<br />Marketing Hub</span>
+                </div>
                 <ul>
-                    <li class="heading">
-                        <span class="sprite-et-spritesheet et-spritesheet-icon-hub"></span>
-                        <span class="nav-text">Interactive Marketing Hub</span>
-                    </li>
-                    <li class="spacer"><hr /></li>
                     <li>
                         <span class="sprite-et-spritesheet et-spritesheet-icon-email"></span>
                         <span class="nav-text">ExactTarget Email</span>
@@ -66,8 +68,24 @@
                         <span class="nav-text">Partner Applications</span>
                     </li>
                 </ul>
+
             </div>
+
+            <div id="main">
+                <div id="calendar-container">
+                    <div id="calendar">
+                        <img src="images/tmpCalendarPH.jpg" alt="temporary placeholder for the calendar widget"/>
+                    </div>
+                </div>
+                <div id="pulse-container">
+                    <span class="sprite-et-spritesheet et-spritesheet-pulse-title pulse-title"></span>
+                    &nbsp;
+                </div>
+            </div>
+
+
         </div>
+
     </div>
 
 </body>
