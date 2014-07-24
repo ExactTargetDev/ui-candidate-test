@@ -1,0 +1,3 @@
+header gradient:
+    2A2F32
+    45525C
