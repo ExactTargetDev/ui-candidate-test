@@ -70,7 +70,8 @@ test("pushOntoArray()", 3, function(assert) {
     // Verify the method exists
     assert.equal(typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function');
 
-    var initialArr = ['Ingress', 'Captain', 'Potato', 4], toPush = 'FAJITAS';
+    var initialArr = ['Ingress', 'Captain', 'Potato', 4],
+        toPush = 'FAJITAS';
     expectedVal = ['Ingress', 'Captain', 'Potato', 4, 'FAJITAS'];
     result = pushOntoArray(initialArr, toPush);
     // Make sure the result from the divide function is valid
