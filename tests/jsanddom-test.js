@@ -90,14 +90,14 @@ test("splitListStrUsingComma()", 3, function(assert) {
     assert.equal(typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function');
 
     testVal = 'The, quick, brown, fox jumped over';
-    expectedVal = ['The', 'quick', 'brown', 'fox jumped over'];
+    expectedVal = ['The', ' quick', ' brown', ' fox jumped over'];
     result = splitListStrUsingComma(testVal);
     // Make sure the result from the divide function is valid
     assert.deepEqual(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 
     testVal = '';
-    expectedVal = [''];
-    result = reverseString(testVal);
+    expectedVal = [];
+    result = splitListStrUsingComma(testVal);
     // Make sure the result from the divide function is valid
     assert.deepEqual(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 });
