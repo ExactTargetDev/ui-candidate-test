@@ -1,3 +1,9 @@
 header gradient:
     2A2F32
     45525C
+
+topright link color:
+    99CCE1
+#428bca
+
+#009ddc
