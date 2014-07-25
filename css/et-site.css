@@ -1,0 +1,293 @@
+/* vars */
+/* gradient colors */
+/* borders */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: Arial;
+}
+ul {
+  list-style-type: none;
+}
+#et-app {
+  width: 1218px;
+}
+#header {
+  height: 32px;
+  /* For Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(#2a2f32, #45525c);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(#2a2f32, #45525c);
+  /* For Firefox 3.6 to 15 */
+  background: -moz-linear-gradient(#2a2f32, #45525c);
+  /* Standard syntax (must be last) */
+  background: linear-gradient(#2a2f32, #45525c);
+}
+#header div {
+  display: inline-block;
+}
+#header .account-menu {
+  padding: 8px 0 8px 20px;
+}
+#header .account-menu ul {
+  display: inline;
+  -webkit-padding-start: 0px;
+  -moz-padding-start: 0px;
+}
+#header .account-menu ul li {
+  float: left;
+  color: #FFFFFF;
+  padding-right: 5px;
+  font-size: 0.75em;
+}
+#header .account-menu ul li a {
+  color: #009DDC;
+}
+#header .logo {
+  width: 200px;
+  padding: 8px 0 8px 20px;
+  color: #FFFFFF;
+}
+#content {
+  width: 1200px;
+  display: inline-block;
+}
+#left-nav {
+  width: 180px;
+  margin: 20px;
+  float: left;
+  background-color: #f4f4f5;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: #e6e6e6;
+}
+#left-nav a {
+  text-decoration: none;
+  color: #000000;
+}
+#left-nav li:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+#left-nav #left-nav-list {
+  margin: 0;
+  padding: 0;
+}
+#left-nav #left-nav-list li {
+  margin: 7px;
+}
+#left-nav .sprite-et-spritesheet {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+#left-nav .nav-text {
+  font-family: Arial;
+  font-size: 0.75em;
+}
+#left-nav .heading {
+  height: 60px;
+  /* Old browsers */
+  background: #f8981d;
+  /* FF3.6+ */
+  background: -moz-linear-gradient(top, #feca87 0%, #f8981d 15%);
+  /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #feca87), color-stop(15%, #f8981d));
+  /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient(top, #feca87 0%, #f8981d 15%);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #feca87 0%, #f8981d 15%);
+  /* IE10+ */
+  background: -ms-linear-gradient(top, #feca87 0%, #f8981d 15%);
+  /* W3C */
+  background: linear-gradient(to bottom, #feca87 0%, #f8981d 15%);
+  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@orangeTopColor', endColorstr='@orangeBottomColor', GradientType=0);
+}
+#left-nav .heading .icon-hub {
+  float: left;
+  margin-top: 5px;
+}
+#left-nav .heading .hub-text {
+  float: left;
+  margin-top: 15px;
+  font-size: 0.90em;
+}
+#left-nav .heading .nav-text {
+  font-weight: bold;
+  color: #FFFFFF;
+}
+#main {
+  width: 800px;
+  margin: 0 auto;
+  float: left;
+}
+#main #pulse-container {
+  height: 265px;
+  width: 990px;
+  margin: 20px 0px;
+  /* Old browsers */
+  background: #bac8d1;
+  /* FF3.6+ */
+  background: -moz-linear-gradient(top, #bac8d1 0%, #e3edf5 80%, #d2dee6 100%);
+  /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bac8d1), color-stop(80%, #e3edf5), color-stop(100%, #d2dee6));
+  /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient(top, #bac8d1 0%, #e3edf5 80%, #d2dee6 100%);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #bac8d1 0%, #e3edf5 80%, #d2dee6 100%);
+  /* IE10+ */
+  background: -ms-linear-gradient(top, #bac8d1 0%, #e3edf5 80%, #d2dee6 100%);
+  /* W3C */
+  background: linear-gradient(to bottom, #bac8d1 0%, #e3edf5 80%, #d2dee6 100%);
+  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@pulseTopColor', endColorstr='@pulseBottomColor', GradientType=0);
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: #a8b4bd;
+}
+#main #pulse-container .pulse-title {
+  margin-top: 10px;
+}
+#main #pulse-container #pulse-content .pulse-panel {
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: #a8b4bd;
+  text-align: center;
+  float: left;
+  /* For Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(#f9f9f9, #d3e1ec);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(#f9f9f9, #d3e1ec);
+  /* For Firefox 3.6 to 15 */
+  background: -moz-linear-gradient(#f9f9f9, #d3e1ec);
+  /* Standard syntax (must be last) */
+  background: linear-gradient(#f9f9f9, #d3e1ec);
+}
+#main #pulse-container #pulse-content .pulse-panel h5 {
+  color: #7f91a3;
+  margin-top: -25px;
+}
+#main #pulse-container #pulse-content .pulse-panel span {
+  display: block;
+  color: #93afc0;
+}
+#main #pulse-container #pulse-content .pulse-panel .top-number {
+  font-size: 2em;
+  color: #34bbf3;
+}
+#main #pulse-container #pulse-content .pulse-panel .added-today {
+  font-size: 1.1em;
+}
+#main #pulse-container #pulse-content .pulse-panel .total {
+  font-size: 0.75em;
+  margin-top: 5px;
+}
+#main #pulse-container #pulse-content .small-panel {
+  height: 95px;
+  width: 150px;
+  margin: 60px 10px 0px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+#main #pulse-container #pulse-content .small-panel .foursquare-black {
+  font-size: 0.55em;
+  font-weight: bold;
+  color: #000000;
+  padding: 0px 8px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+#main #pulse-container #pulse-content .small-panel img {
+  width: 140px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+#main #pulse-container #pulse-content .med-panel {
+  height: 165px;
+  width: 275px;
+  margin: 0px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+#main #pulse-container #pulse-content .med-panel .foursquare-black {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #000000;
+  padding: 0px 12px 8px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+#main #pulse-container #pulse-content .med-panel img {
+  width: 250px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+#popup {
+  position: absolute;
+  background-color: #f4f4f5;
+  width: 500px;
+  height: 300px;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: #a8b4bd;
+  /* For Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(#d2dee6, #bac8d1);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(#d2dee6, #bac8d1);
+  /* For Firefox 3.6 to 15 */
+  background: -moz-linear-gradient(#d2dee6, #bac8d1);
+  /* Standard syntax (must be last) */
+  background: linear-gradient(#d2dee6, #bac8d1);
+}
+#popup ul {
+  list-style-type: circle;
+}
+#popup ul li {
+  margin: 10px 0px;
+}
+#popup h2 {
+  padding-left: 20px;
+  border-bottom: 2px solid;
+}
+#popup .close-icon {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+}
+.popup-hidden {
+  visibility: hidden;
+  top: -300px;
+  left: 30%;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+.popup-visible {
+  top: 20%;
+  left: 30%;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}

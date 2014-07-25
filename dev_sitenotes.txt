@@ -1,0 +1,19 @@
+header gradient:
+    2A2F32
+    45525C
+
+topright link color:
+    99CCE1
+#428bca
+
+#009ddc
+
+
+left-nav white background:
+F4F4F5
+
+
+pulse gradient
+    BAC8D1
+e3edf5
+d2dee6
