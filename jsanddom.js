@@ -346,92 +346,106 @@ var DataTable = function() {
     }
 }
 
+// DEV - ADDED FOR EASIER DEV
+var logToConsole = window.location.pathname.indexOf('tests/') !== -1;
+
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
-$(function() {
-    function addSelectElement() {
-        var $el = $('#div1'),
-            $selectEl,
-            $buttonEl,
-            $outputEl,
-            dataProvider = [
-                'Game Dev',
-                'Video Games',
-                'Kitties'
-            ];
+function addSelectElement() {
+    var $el = $('#div1'),
+        $selectEl,
+        $buttonEl,
+        $outputEl,
+        dataProvider = [
+            'Game Dev',
+            'Video Games',
+            'Kitties'
+        ];
 
-        if($el) {
-            $selectEl = $('<select id="mySelect"></select>');
+    if($el) {
+        $selectEl = $('<select id="mySelect"></select>');
 
-            _.each(dataProvider, function(item) {
-                $selectEl.append('<option>' + item + '</option>');
-            }, this);
+        _.each(dataProvider, function(item) {
+            $selectEl.append('<option>' + item + '</option>');
+        }, this);
 
-            // add event listener to select
-            $selectEl.on('change', onSelectChanged);
+        // add event listener to select
+        $selectEl.on('change', onSelectChanged);
 
-            // add a button and click event listener
-            $buttonEl = $('<button id="myButton">Select Value</button>')
-                .data('selectedVal', dataProvider[0])
-                .on('click', onSelectButtonClicked);
+        // add a button and click event listener
+        $buttonEl = $('<button id="myButton">Select Value</button>')
+            .data('selectedVal', dataProvider[0])
+            .on('click', onSelectButtonClicked);
 
-            // add an output span
-            $outputEl = $('<span id="myOutput"></span>')
+        // add an output span
+        $outputEl = $('<span id="myOutput"></span>')
 
-            $el.append($selectEl);
-            $el.append($buttonEl);
-            $el.append($outputEl);
+        $el.append($selectEl);
+        $el.append($buttonEl);
+        $el.append($outputEl);
 
-            updateSelectedVal(dataProvider[0]);
-        }
+        updateSelectedVal(dataProvider[0]);
     }
+}
 
-    function onSelectButtonClicked(event) {
-        // get the selected value from the button
-        updateSelectedVal($(this).data('selectedVal'));
+function onSelectButtonClicked(event) {
+    // get the selected value from the button
+    updateSelectedVal($(this).data('selectedVal'));
+}
+
+function onSelectChanged(event) {
+    var $btn = $('#myButton');
+    if($btn) {
+        $btn.data('selectedVal', this.value)
     }
+}
 
-    function onSelectChanged(event) {
-        var $btn = $('#myButton');
-        if($btn) {
-            $btn.data('selectedVal', this.value)
-        }
+function updateSelectedVal(val) {
+    var $outputEl = $('#myOutput');
+    if($outputEl) {
+        $outputEl.html("Selected Value: " + val);
     }
+}
 
-    function updateSelectedVal(val) {
-        var $outputEl = $('#myOutput');
-        if($outputEl) {
-            $outputEl.html("Selected Value: " + val);
-        }
-    }
+addSelectElement();
 
-    addSelectElement();
-});
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
-$(function() {
-    // would be most efficient to have an id attrib on the anchor
 
+function selectLink() {
+    // would be most efficient to have an id attrib on the anchor
     var $link = $('#fizz .link');
-    console.log('$link 1: ', $link);
+    if(logToConsole) {
+        console.log('$link 1: ', $link.selector);
+    }
 
     $link = $('#fizz a');
-    console.log('$link 2: ', $link);
+    if(logToConsole) {
+        console.log('$link 2: ', $link.selector);
+    }
 
     $link = $('#foo a');
-    console.log('$link 3: ', $link);
+    if(logToConsole) {
+        console.log('$link 3: ', $link.selector);
+    }
 
     $link = $('.buzz .link');
-    console.log('$link 4: ', $link);
+    if(logToConsole) {
+        console.log('$link 4: ', $link.selector);
+    }
 
     $link = $('a');
-    console.log('$link 5: ', $link);
-});
+    if(logToConsole) {
+        console.log('$link 5: ', $link.selector);
+    }
+}
+
+selectLink();
 
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
-$(function() {
+function createList1Items() {
     var $ul = $('#list1');
     if($ul) {
         var dataProvider = [
@@ -448,61 +462,61 @@ $(function() {
             $ul.append($li);
         }, this);
     }
-});
+}
+
+createList1Items();
 
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
-$(function() {
-    function addCheckboxes() {
-        var $footer = $('#foobar');
-        if($footer) {
-            var dataProvider = [
-                    'Marinara',
-                    'Cheese',
-                    'Pepperoni',
-                    'Bacon',
-                    'More Bacon'
-                ],
-                $chkbox,
-                $ul = $('<ul></ul>'),
-                $link;
+function addCheckboxes() {
+    var $footer = $('#foobar');
+    if($footer) {
+        var dataProvider = [
+                'Marinara',
+                'Cheese',
+                'Pepperoni',
+                'Bacon',
+                'More Bacon'
+            ],
+            $chkbox,
+            $ul = $('<ul></ul>'),
+            $link;
 
-            $link = $('<a href="javascript:void(0)" id="checkAll">Check All</a>')
-                .on('click', onCheckAllClicked);
-            $footer.append($link);
+        $link = $('<a href="javascript:void(0)" id="checkAll">Check All</a>')
+            .on('click', onCheckAllClicked);
+        $footer.append($link);
 
-            $footer.append($('<br />'));
+        $footer.append($('<br />'));
 
-            $link = $('<a href="javascript:void(0)" id="checkNone">Clear</a>')
-                .on('click', onCheckNoneClicked);
-            $footer.append($link);
+        $link = $('<a href="javascript:void(0)" id="checkNone">Clear</a>')
+            .on('click', onCheckNoneClicked);
+        $footer.append($link);
 
-            $footer.append($ul);
+        $footer.append($ul);
 
-            _.each(dataProvider, function(item) {
-                $chkbox = $('<li><input type="checkbox" class="pizzaCheckbox"> ' + item + '</li>');
-                $ul.append($chkbox);
-            }, this);
-        }
+        _.each(dataProvider, function(item) {
+            $chkbox = $('<li><input type="checkbox" class="pizzaCheckbox"> ' + item + '</li>');
+            $ul.append($chkbox);
+        }, this);
     }
+}
 
-    function onCheckAllClicked(event) {
-        $('.pizzaCheckbox').each(function(index, el) {
-            toggleEl(el, true);
-        });
-    }
+function onCheckAllClicked(event) {
+    $('.pizzaCheckbox').each(function(index, el) {
+        toggleEl(el, true);
+    });
+}
 
-    function onCheckNoneClicked(event) {
-        $('.pizzaCheckbox').each(function(index, el) {
-            toggleEl(el, false);
-        });
-    }
+function onCheckNoneClicked(event) {
+    $('.pizzaCheckbox').each(function(index, el) {
+        toggleEl(el, false);
+    });
+}
 
-    function toggleEl(el, isChecked) {
-        el.checked = isChecked;
-    }
+function toggleEl(el, isChecked) {
+    el.checked = isChecked;
+}
 
-    addCheckboxes();
-});
+addCheckboxes();
