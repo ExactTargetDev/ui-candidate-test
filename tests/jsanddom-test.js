@@ -279,3 +279,26 @@ test("test JSON DataTable", 14, function(assert) {
     assert.equal(dataTable.colNameToId('Lots of Data'), expectedVal, 'Lots of Data should column ID: LotsOfData');
 
 });
+
+
+test("test select section", 4, function(assert) {
+    assert.equal(typeof addSelectElement, 'function', 'Must contain an addSelectElement function');
+    assert.equal(typeof onSelectButtonClicked, 'function', 'Must contain an onSelectButtonClicked function');
+    assert.equal(typeof onSelectChanged, 'function', 'Must contain an addSelectElement function');
+    assert.equal(typeof updateSelectedVal, 'function', 'Must contain an updateSelectedVal function');
+
+    // more tests
+
+    assert.equal(typeof selectLink, 'function', 'Must contain a selectLink function');
+
+    // more tests
+
+    assert.equal(typeof createList1Items, 'function', 'Must contain a createList1Items function');
+
+    // more tests
+
+    assert.equal(typeof addCheckboxes, 'function', 'Must contain an addCheckboxes function');
+    assert.equal(typeof onCheckAllClicked, 'function', 'Must contain an onCheckAllClicked function');
+    assert.equal(typeof onCheckNoneClicked, 'function', 'Must contain an onCheckNoneClicked function');
+    assert.equal(typeof toggleEl, 'function', 'Must contain a toggleEl function');
+});
