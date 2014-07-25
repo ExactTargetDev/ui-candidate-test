@@ -296,6 +296,57 @@ ul {
   }
 }
 
+#popup {
+  position: absolute;
+  background-color: @leftNavBkgdColor;
+  width: 500px;
+  height: 300px;
+  border: 2px solid;
+  border-radius: @borderRadius;
+  border-color: @pulseBorderColor;
+
+  /* For Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(@pulseBottomColor, @pulseTopColor);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(@pulseBottomColor, @pulseTopColor);
+  /* For Firefox 3.6 to 15 */
+  background: -moz-linear-gradient(@pulseBottomColor, @pulseTopColor);
+  /* Standard syntax (must be last) */
+  background: linear-gradient(@pulseBottomColor, @pulseTopColor);
+
+  ul {
+    list-style-type: circle;
+
+    li {
+      margin: 10px 0px;
+    }
+  }
+
+  h2 {
+    padding-left: 20px;
+    border-bottom: 2px solid;
+  }
+}
+
+.popup-hidden {
+  visibility: hidden;
+  top: -300px;
+  left:30%;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+
+.popup-visible {
+  top: 20%;
+  left:30%;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+
 .pull-right {
   float: right;
 }

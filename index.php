@@ -13,6 +13,10 @@
 <body>
 
 <div id="et-app">
+    <div id="popup" class="popup-hidden">
+        <h2 class="help-title">Help</h2>
+        <div id="help-content"></div>
+    </div>
     <div id="header">
         <div class="logo pull-left">
             <span class="logo-text">ExactTarget.</span>
@@ -20,9 +24,9 @@
         <div class="account-menu pull-right">
             <ul>
                 <li class="welcome">Welcome John!</li>
-                <li><a href="account">Account</a></li>
-                <li><a href="help">Help</a></li>
-                <li><a href="logout">Logout</a></li>
+                <li><a href="#account" id="account-link">Account</a></li>
+                <li><a href="#help" id="help-link">Help</a></li>
+                <li><a href="#logout" id="logout-link">Logout</a></li>
             </ul>
         </div>
     </div>

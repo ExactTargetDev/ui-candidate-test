@@ -8,6 +8,9 @@ $(function() {
     function startApp() {
         buildNavList();
         buildPulsePanels();
+        buildHelpPanel();
+
+        $('#help-link').on('click', onHelpClicked)
     }
 
     /**
@@ -229,5 +232,43 @@ $(function() {
         });
     }
 
+    function onHelpClicked(event) {
+        event.preventDefault();
+        console.log("display help");
+        var $popupEl = $('#popup');
+        if($popupEl.hasClass('popup-hidden')) {
+            $popupEl.removeClass('popup-hidden').addClass('popup-visible');
+        } else {
+            $popupEl.removeClass('popup-visible').addClass('popup-hidden');
+        }
+
+    }
+
+    function buildHelpPanel() {
+        var fetchHelpData = function(url) {
+            $.get(url, createHelpPanel)
+        }
+        fetchHelpData('data/help.json');
+    }
+
+    function createHelpPanel(data) {
+        var $help = $('#help-content');
+        if($help) {
+            var $ul = $('<ul></ul>'),
+                $li,
+                $a;
+            _.each(data.help, function(item) {
+                $a = $('<a></a>');
+                $a.attr('href', item.URL).html(item.title);
+
+                $li = $('<li></li>');
+                $li.append($a);
+
+                $ul.append($li);
+            }, this);
+
+            $help.append($ul);
+        }
+    }
     startApp();
 });
