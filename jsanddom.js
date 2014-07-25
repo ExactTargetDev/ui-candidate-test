@@ -350,17 +350,16 @@ var DataTable = function() {
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
 $(function() {
-    var dataProvider = [
-        'Game Dev',
-        'Video Games',
-        'Kitties'
-    ];
-
     function addSelectElement() {
         var $el = $('#div1'),
             $selectEl,
             $buttonEl,
-            $outputEl;
+            $outputEl,
+            dataProvider = [
+                'Game Dev',
+                'Video Games',
+                'Kitties'
+            ];
 
         if($el) {
             $selectEl = $('<select id="mySelect"></select>');
@@ -432,6 +431,24 @@ $(function() {
 
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
+$(function() {
+    var $ul = $('#list1');
+    if($ul) {
+        var dataProvider = [
+                'List Item 1',
+                'List Item 2',
+                'List Item 3',
+                'List Item 4',
+                'List Item 5'
+            ],
+            $li;
+
+        _.each(dataProvider, function(item) {
+            $li = $('<li>' + item + '</li>');
+            $ul.append($li);
+        }, this);
+    }
+});
 
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
