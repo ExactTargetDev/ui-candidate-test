@@ -346,12 +346,69 @@ var DataTable = function() {
     }
 }
 
-
-
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
+$(function() {
+    var dataProvider = [
+        'Game Dev',
+        'Video Games',
+        'Kitties'
+    ];
 
+    function addSelectElement() {
+        var $el = $('#div1'),
+            $selectEl,
+            $buttonEl,
+            $outputEl;
+
+        if($el) {
+            $selectEl = $('<select id="mySelect"></select>');
+
+            _.each(dataProvider, function(item) {
+                $selectEl.append('<option>' + item + '</option>');
+            }, this);
+
+            // add event listener to select
+            $selectEl.on('change', onSelectChanged);
+
+            // add a button and click event listener
+            $buttonEl = $('<button id="myButton">Select Value</button>')
+                .data('selectedVal', dataProvider[0])
+                .on('click', onSelectButtonClicked);
+
+            // add an output span
+            $outputEl = $('<span id="myOutput"></span>')
+
+            $el.append($selectEl);
+            $el.append($buttonEl);
+            $el.append($outputEl);
+
+            updateSelectedVal(dataProvider[0]);
+        }
+    }
+
+    function onSelectButtonClicked(event) {
+        // get the selected value from the button
+        updateSelectedVal($(this).data('selectedVal'));
+    }
+
+    function onSelectChanged(event) {
+        var $btn = $('#myButton');
+        if($btn) {
+            $btn.data('selectedVal', this.value)
+        }
+    }
+
+    function updateSelectedVal(val) {
+        var $outputEl = $('#myOutput');
+        if($outputEl) {
+            $outputEl.html("Selected Value: " + val);
+        }
+    }
+
+    addSelectElement();
+});
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
 
