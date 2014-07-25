@@ -229,6 +229,124 @@ var PeopleCollection = function() {
 // .addColumns('column1', 'column2', 'column3');
 // .addRow('value1A', 'value1B', 'value1C');
 // .addRow('value2A', 'value2B', 'value2C');
+var DataTable = function() {
+    return {
+        _columns: [],
+        _rows: [],
+        _columnIds: [],
+
+        /**
+         * Adds args passed in as a single row's data
+         */
+        addRows: function() {
+            var colLen = this._columns.length;
+            if(colLen === 0) {
+                console.error("DataTable::addRows: No Columns specified. Please use addColumns() "
+                + "first to add columns before adding row data")
+                return;
+            }
+
+            if(colLen < arguments.length) {
+                console.error("DataTable::addRows: Sent more row data than there are columns");
+                return;
+            }
+
+            var index = 0,
+                colId,
+                data = [];
+
+            _.each(arguments, function(rowData) {
+                colId = this._columnIds[index++];
+                data.push(colId + '_' + rowData);
+
+            }, this);
+
+            this._rows.push(data);
+        },
+
+        /**
+         * Adds args passed in as columns
+         */
+        addColumns: function() {
+            var id;
+            _.each(arguments, function(colName) {
+                if(!this.columnExists(colName)) {
+                    id = this.colNameToId(colName);
+                    this._columns.push(colName);
+                    this._columnIds.push(id);
+                } else {
+                    console.warn('DataTable::addColumns: Trying to add a column that already exists: ' + col);
+                }
+            }, this);
+        },
+
+        /**
+         * Returns all table rows and columns as a JSON object
+         *
+         * @returns {{columns: *, rows: *}}
+         */
+        getData: function() {
+            return {
+                columns: this._columns,
+                rows: this.getRowValues()
+            };
+        },
+
+        /**
+         * Splits the value off of a row cell's data and returns just the values
+         * for that row
+         *
+         * @returns {Array}
+         */
+        getRowValues: function() {
+            var rows = [],
+                rowData,
+                tmp;
+            _.each(this._rows, function(rowArr) {
+                rowData = [];
+                _.each(rowArr, function(row) {
+                    // split the value off the row data
+                    tmp = row.split('_');
+                    rowData.push(tmp[1]);
+                }, this);
+                rows.push(rowData);
+            }, this);
+            return rows;
+        },
+
+        /**
+         * Public getter to return the _columns data
+         *
+         * @returns {*}
+         */
+        getColumns: function() {
+            return this._columns;
+        },
+
+        /**
+         * Boolean to see if a column name exists already
+         *
+         * @param {String} colName The name of the column to check
+         * @returns {boolean} True if the column already exists
+         */
+        columnExists: function(colName) {
+            return (this._columns.indexOf(colName) !== -1)
+        },
+
+        /**
+         * Turns a column name into a camelCased ID
+         *
+         * @param {String} colName The name of the column to turn into an ID
+         * @returns {String} The column name as an ID with no spaces/_/etc
+         * @private
+         */
+        colNameToId: function(colName) {
+            return S(colName).camelize().s;
+        }
+    }
+}
+
+
 
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.

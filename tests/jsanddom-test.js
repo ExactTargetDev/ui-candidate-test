@@ -229,3 +229,53 @@ test("test JSON PeopleCollection", 3, function(assert) {
     result = peopleCollection.length();
     assert.equal(result, expectedVal, 'Expected ' + expectedVal + ' as the result, the result was: ' + result);
 });
+
+test("test JSON DataTable", 14, function(assert) {
+    // Verify the method exists
+    assert.equal(typeof DataTable, 'function', 'Must contain a DataTable function');
+
+    var dataTable = new DataTable(),
+        columns = ['Name', 'Date', 'Burritos Eaten'],
+        row1 = ['Travis', '7/24/2014', 94];
+
+    // Test should return before adding anything because there are no columns
+    dataTable.addRows(row1)
+    assert.equal(dataTable._rows.length, 0, 'No rows should be added yet');
+
+    dataTable.addColumns('Name', 'Date', 'Burritos Eaten');
+    assert.equal(dataTable._columns.length, 3, '3 columns should have been created')
+
+    dataTable.addRows('Travis', '7/24/2014', 94, 'BADBADBAD!')
+    assert.equal(dataTable._rows.length, 0, 'No rows should be added yet because more args were '
+        + 'passed in than there are columns');
+
+    dataTable.addRows('Travis', '7/24/2014', 94)
+    assert.equal(dataTable._rows.length, 1, '1 set of row data should be entered');
+    assert.equal(dataTable._rows[0][0], 'Name_Travis', 'First entry in first row should be Name_Travis');
+    assert.equal(dataTable._rows[0][2], 'BurritosEaten_94', 'Burritos Eaten key should be formed correctly');
+
+    expectedVal = {
+        columns: ['Name', 'Date', 'Burritos Eaten'],
+        rows: [['Travis', '7/24/2014', '94']]
+    };
+    assert.deepEqual(dataTable.getData(), expectedVal, 'Data should be returned as a JSON Object with correct data');
+
+    expectedVal = [['Travis', '7/24/2014', '94']];
+    assert.deepEqual(dataTable.getRowValues(), expectedVal, 'Row data should be returned as an Array with correct data');
+
+    expectedVal = ['Name', 'Date', 'Burritos Eaten'];
+    assert.deepEqual(dataTable.getColumns(), expectedVal, 'Columns should be returned as an Array with correct data');
+
+    expectedVal = true;
+    assert.equal(dataTable.columnExists('Name'), expectedVal, 'Name should be in column data');
+
+    expectedVal = false;
+    assert.equal(dataTable.columnExists('BADBAD'), expectedVal, 'BADBAD should not be in column data');
+
+    expectedVal = 'pasta';
+    assert.equal(dataTable.colNameToId('pasta'), expectedVal, 'pasta should column ID: pasta');
+
+    expectedVal = 'LotsOfData';
+    assert.equal(dataTable.colNameToId('Lots of Data'), expectedVal, 'Lots of Data should column ID: LotsOfData');
+
+});
