@@ -84,13 +84,26 @@ ul {
   border-radius: @borderRadius;
   border-color: @leftNavBorderColor;
 
-  ul {
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+  li:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  }
+
+  #left-nav-list {
     margin: 0;
     padding: 0;
 
     li {
       margin: 7px;
     }
+  }
+
+  .sprite-et-spritesheet {
+    vertical-align: middle;
+    margin-right: 5px;
   }
 
   .nav-text {

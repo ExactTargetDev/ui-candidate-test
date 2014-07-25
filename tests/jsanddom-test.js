@@ -280,7 +280,6 @@ test("test JSON DataTable", 14, function(assert) {
 
 });
 
-
 test("test select section", 4, function(assert) {
     assert.equal(typeof addSelectElement, 'function', 'Must contain an addSelectElement function');
     assert.equal(typeof onSelectButtonClicked, 'function', 'Must contain an onSelectButtonClicked function');

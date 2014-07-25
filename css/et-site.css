@@ -60,12 +60,23 @@ ul {
   border-radius: 10px;
   border-color: #e6e6e6;
 }
-#left-nav ul {
+#left-nav a {
+  text-decoration: none;
+  color: #000000;
+}
+#left-nav li:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+#left-nav #left-nav-list {
   margin: 0;
   padding: 0;
 }
-#left-nav ul li {
+#left-nav #left-nav-list li {
   margin: 7px;
+}
+#left-nav .sprite-et-spritesheet {
+  vertical-align: middle;
+  margin-right: 5px;
 }
 #left-nav .nav-text {
   font-family: Arial;

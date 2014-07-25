@@ -415,30 +415,38 @@ addSelectElement();
 
 function selectLink() {
     // would be most efficient to have an id attrib on the anchor
-    var $link = $('#fizz .link');
+    var links = [],
+        $link = $('#fizz .link');
+    links.push($link);
     if(logToConsole) {
         console.log('$link 1: ', $link.selector);
     }
 
     $link = $('#fizz a');
+    links.push($link);
     if(logToConsole) {
         console.log('$link 2: ', $link.selector);
     }
 
     $link = $('#foo a');
+    links.push($link);
     if(logToConsole) {
         console.log('$link 3: ', $link.selector);
     }
 
     $link = $('.buzz .link');
+    links.push($link);
     if(logToConsole) {
         console.log('$link 4: ', $link.selector);
     }
 
     $link = $('a');
+    links.push($link);
     if(logToConsole) {
         console.log('$link 5: ', $link.selector);
     }
+
+    return links;
 }
 
 selectLink();
