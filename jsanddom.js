@@ -454,3 +454,55 @@ $(function() {
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+$(function() {
+    function addCheckboxes() {
+        var $footer = $('#foobar');
+        if($footer) {
+            var dataProvider = [
+                    'Marinara',
+                    'Cheese',
+                    'Pepperoni',
+                    'Bacon',
+                    'More Bacon'
+                ],
+                $chkbox,
+                $ul = $('<ul></ul>'),
+                $link;
+
+            $link = $('<a href="javascript:void(0)" id="checkAll">Check All</a>')
+                .on('click', onCheckAllClicked);
+            $footer.append($link);
+
+            $footer.append($('<br />'));
+
+            $link = $('<a href="javascript:void(0)" id="checkNone">Clear</a>')
+                .on('click', onCheckNoneClicked);
+            $footer.append($link);
+
+            $footer.append($ul);
+
+            _.each(dataProvider, function(item) {
+                $chkbox = $('<li><input type="checkbox" class="pizzaCheckbox"> ' + item + '</li>');
+                $ul.append($chkbox);
+            }, this);
+        }
+    }
+
+    function onCheckAllClicked(event) {
+        $('.pizzaCheckbox').each(function(index, el) {
+            toggleEl(el, true);
+        });
+    }
+
+    function onCheckNoneClicked(event) {
+        $('.pizzaCheckbox').each(function(index, el) {
+            toggleEl(el, false);
+        });
+    }
+
+    function toggleEl(el, isChecked) {
+        el.checked = isChecked;
+    }
+
+    addCheckboxes();
+});
