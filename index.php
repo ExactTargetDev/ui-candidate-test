@@ -43,8 +43,11 @@
                 </div>
             </div>
             <div id="pulse-container">
-                <span class="sprite-et-spritesheet et-spritesheet-pulse-title pulse-title"></span>
-                &nbsp;
+                <div id="pulse-header">
+                    <span class="sprite-et-spritesheet et-spritesheet-pulse-title pulse-title"></span>
+                </div>
+                <div id="pulse-content">
+                </div>
             </div>
         </div>
     </div>
