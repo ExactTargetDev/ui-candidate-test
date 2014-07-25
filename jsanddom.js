@@ -411,6 +411,24 @@ $(function() {
 });
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
+$(function() {
+    // would be most efficient to have an id attrib on the anchor
+
+    var $link = $('#fizz .link');
+    console.log('$link 1: ', $link);
+
+    $link = $('#fizz a');
+    console.log('$link 2: ', $link);
+
+    $link = $('#foo a');
+    console.log('$link 3: ', $link);
+
+    $link = $('.buzz .link');
+    console.log('$link 4: ', $link);
+
+    $link = $('a');
+    console.log('$link 5: ', $link);
+});
 
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
