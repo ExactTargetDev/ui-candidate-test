@@ -97,6 +97,11 @@ $(function() {
         return $panel;
     }
 
+    /**
+     * Creates the HTML for the regular Pulse Panels
+     * @param data
+     * @returns {*|jQuery|HTMLElement}
+     */
     function createRegularPanel(data) {
         var $panel = $('<div class="pulse-panel"></div>'),
             $h5 = $('<h5></h5>'),
@@ -132,6 +137,11 @@ $(function() {
         return $panel;
     }
 
+    /**
+     * Creates the HTML for the FourSquare Pulse Panel
+     * @param data
+     * @returns {*|jQuery|HTMLElement}
+     */
     function createFoursquarePanel(data) {
         var $panel = $('<div class="pulse-panel"></div>'),
             $h5 = $('<h5></h5>'),
@@ -166,6 +176,12 @@ $(function() {
         return $panel;
     }
 
+    /**
+     * Creates the HTML for the Landing Pulse Panel
+     *
+     * @param data
+     * @returns {*|jQuery|HTMLElement}
+     */
     function createLandingPanel(data) {
         var $panel = $('<div class="pulse-panel"></div>'),
             $h5 = $('<h5></h5>'),
@@ -232,18 +248,26 @@ $(function() {
         });
     }
 
+    /**
+     * Event handler for when the Help link is clicked
+     *
+     * @param event
+     */
     function onHelpClicked(event) {
         event.preventDefault();
         console.log("display help");
         var $popupEl = $('#popup');
         if($popupEl.hasClass('popup-hidden')) {
-            $popupEl.removeClass('popup-hidden').addClass('popup-visible');
+            showPopup();
         } else {
-            $popupEl.removeClass('popup-visible').addClass('popup-hidden');
+            hidePopup();
         }
-
     }
 
+    /**
+     * Fetches the help.json data and calls createHelpPanel
+     * to build the Help Panel
+     */
     function buildHelpPanel() {
         var fetchHelpData = function(url) {
             $.get(url, createHelpPanel)
@@ -251,6 +275,11 @@ $(function() {
         fetchHelpData('data/help.json');
     }
 
+    /**
+     * Generates the HTML for the Help Panel
+     *
+     * @param data
+     */
     function createHelpPanel(data) {
         var $help = $('#help-content');
         if($help) {
@@ -270,5 +299,36 @@ $(function() {
             $help.append($ul);
         }
     }
+
+    /**
+     * Makes the Help Popup... pop...up...
+     */
+    function showPopup() {
+        var $popupEl = $('#popup');
+        if($popupEl) {
+            $popupEl.find('.close-icon').on('click', onCloseHelp);
+            $popupEl.removeClass('popup-hidden').addClass('popup-visible');
+        }
+    }
+
+    /**
+     * Hides the Help Popup
+     */
+    function hidePopup() {
+        var $popupEl = $('#popup');
+        if($popupEl) {
+            $popupEl.find('.close-icon').off('click', onCloseHelp);
+            $popupEl.removeClass('popup-visible').addClass('popup-hidden');
+        }
+    }
+
+    /**
+     * Event handler for the Help popup's X close icon
+     * Closes the Help Popup
+     */
+    function onCloseHelp() {
+        hidePopup();
+    }
+
     startApp();
 });

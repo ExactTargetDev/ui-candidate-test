@@ -15,6 +15,7 @@
 <div id="et-app">
     <div id="popup" class="popup-hidden">
         <h2 class="help-title">Help</h2>
+        <span class="close-icon sprite-et-spritesheet et-spritesheet-closeX"></span>
         <div id="help-content"></div>
     </div>
     <div id="header">
