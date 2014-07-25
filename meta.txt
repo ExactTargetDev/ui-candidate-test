@@ -1,1 +1,11 @@
 Start Time: 1406145600
+BrowserTesting:
+    MacOSX 10.9.4
+        Chrome v. 36.0.1985.125 - OK
+        FireFox v. 30 - OK
+        FireFox v. 31 - OK
+        Safari v. 7.0.5 (9537.77.4) - OK
+    Win7 Stack
+        IE 10 - OK
+        IE 9 - Needs Work!
+        IE 8 - Needs Work!
