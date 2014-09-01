@@ -20,7 +20,7 @@ test("reverseString function", function(){
 	equal( typeof reverseString, 'function', 'reverseString() calls reverseString function' );
     
     // verify the result from the reverseString funtion is valid
-	equal( reverseString( 'The, quick, brown, fox jumped over' ), "revo depmuj xof ,nworb ,kciuq ,ehT", "Expected: revo depmuj xof ,nworb ,kciuq ,ehT, the result was: " +  reverseString( 'The, quick, brown, fox jumped over' ) );
+	equal( reverseString( 'Subscribers rock' ), "kcor srebircsbuS", "Expected: 'kcor srebircsbuS' the result was: " +  reverseString( 'Subscribers rock' ) );
 });
 
 test( "findMinValue function", function() {
