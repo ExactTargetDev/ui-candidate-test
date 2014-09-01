@@ -11,7 +11,8 @@
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+         // Math.min() returns the smallest of zero or more numbers
+         return Math.min.apply(Math, values);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
@@ -24,8 +25,30 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         var result = "";
+         var stringForTesting = "";
+         for ( var i = 1; i < 101; i++ ){
+            
+            result = ""; // clear it
+
+            if( i % 3 === 0 % 3 && i % 5 === 0 ){
+                result = result + "FizzBuzz";
+            }
+            else if (0 === i % 3){
+                result = result + "Fizz";
+            }
+            else if (0 === i % 5){
+                result = result + "Buzz";
+            }
+            else{
+                result = i;
+            }
+            console.log(result);
+            stringForTesting = stringForTesting + result;
+         }
+         return stringForTesting;
      }
+
 
      // You have a master array of strings, where each element is a fruit name.
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
@@ -40,7 +63,14 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+         if (typeof toPush === 'number') {
+            array.push(toPush);
+            return array;
+        } else {
+            // NOTE:  can't use '.concat() because it returns a new array'
+            // I decided to import UnderscoreJS into the project here because it makes the code much more concise and easier to read :)
+            return _.union(array, toPush);
+        }
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
