@@ -64,5 +64,17 @@ test( "pushOntoArray function", function() {
 
 	// verify pushing an array onto the target array
 	deepEqual( pushOntoArray( [1, 2, 3, 4, 5], [7, 8, 9] ), [1, 2, 3, 4, 5, 7, 8, 9], 'Expected: [1, 2, 3, 4, 5, 7, 8, 9], the result was: ' + pushOntoArray( [1, 2, 3, 4, 5], [7, 8, 9] ) );
+});
 
+test( "splitListStrUsingComma function", function(){
+	expect(3);
+
+	// verify splitListStrUsingComma() exists
+	equal( typeof splitListStrUsingComma, 'function', 'splitListStrUsingComma() is a function' );
+
+	// verify if the argument is an empty string, it will return an empty array
+	deepEqual( splitListStrUsingComma(''), [], 'Expected: [], the results was: ' + splitListStrUsingComma('') );
+
+	// verify the string is split correctly
+	deepEqual( splitListStrUsingComma('The, quick, brown, fox jumped over'), ["The", " quick", " brown", " fox jumped over"], 'Expected: ["The", " quick", " brown", " fox jumped over"], the result was ' + splitListStrUsingComma('The, quick, brown, fox jumped over') );
 });
