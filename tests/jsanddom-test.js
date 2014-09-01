@@ -12,3 +12,16 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+module( "Sam Kligerman's Unit Tests ");
+
+test("reverseString function", 2, function(){
+	// verify reverseString() exists
+	equal( typeof reverseString, 'function', 'reverseString() calls reverseString function' );
+	
+	var result = reverseString('The, quick, brown, fox jumped over', function(str) {
+		return reverseString();
+	});
+     
+	equal(result, "revo depmuj xof ,nworb ,kciuq ,ehT", "string successfully reversed" );
+
+});
