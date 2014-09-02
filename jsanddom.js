@@ -17,7 +17,8 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+         // using UnderscoreJS uniq function (http://underscorejs.org/#uniq)
+         return _.uniq(values);
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -98,7 +99,7 @@
 
      // write an example of a javascript closure
 
-     /*
+     /*  EXPLANTATION OF MY CLOSURE
          1) whatIsExactTargetsFavoriteColor creates a local variable, color, and a function, runClosure().
          2) runClosure() is only available within the whatIsExactTargetsFavoriteColor function.
          3) However, runClosure() has access to the variables in the outer function
@@ -119,6 +120,43 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     var people = 
+    [
+        {
+            "first name": "Fox",
+            "last name": "Mulder",
+            "city": "Seattle",
+            "state": "WA",
+            "zip": 60035,
+            "phone numbers": [
+                {
+                    "type": "home",
+                    "number": "345-555-1124"
+                },
+                {
+                    "type": "mobile",
+                    "number": "345-555-1124"
+                }
+            ]
+        },
+        {
+            "first name": "Dana",
+            "last name": "Scully",
+            "city": "Portland",
+            "state": "OR",
+            "zip": 87565,
+            "phone numbers": [
+                {
+                    "type": "work",
+                    "number": "345-555-1234"
+                },
+                {
+                    "type": "home",
+                    "number": "345-555-0098"
+                }
+            ]
+        }
+    ];
 
 
      // Create a javascript object (DataTable) with the following:

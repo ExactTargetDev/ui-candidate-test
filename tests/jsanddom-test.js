@@ -13,7 +13,7 @@ test( "Example Test", 2, function() {
 Please create your tests below...
 ********************************/
 module( "Sam's Unit Tests");
-test("reverseString function", function(){
+test("reverseString function", function() {
 	expect(2);
 	
 	// verify reverseString() exists
@@ -33,7 +33,17 @@ test( "findMinValue function", function() {
 	equal( findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), -1.1, 'Expected: -1.1, the result was: ' + findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]) );
 });
 
-test( "doFizzBuzz function", function(){
+test( "findDistinctValues function", function() {
+	expect(2);
+
+	// verify findDistinctValues() exists
+	equal( typeof findDistinctValues, 'function', 'findDistinctValues() is a function');
+
+	// verify the result removes distinct values from an array
+	deepEqual( findDistinctValues([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity], 'Expected: [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity], the result was: ' + findDistinctValues([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]));
+})
+
+test( "doFizzBuzz function", function() {
 	expect(2);
 
 	// verify doFizzBuzz exists
