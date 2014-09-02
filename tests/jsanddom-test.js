@@ -73,8 +73,18 @@ test( "splitListStrUsingComma function", function(){
 	equal( typeof splitListStrUsingComma, 'function', 'splitListStrUsingComma() is a function' );
 
 	// verify if the argument is an empty string, it will return an empty array
-	deepEqual( splitListStrUsingComma(''), [], 'Expected: [], the results was: ' + splitListStrUsingComma('') );
+	deepEqual( splitListStrUsingComma(''), [], 'Expected: [], the result was: ' + splitListStrUsingComma('') );
 
 	// verify the string is split correctly
 	deepEqual( splitListStrUsingComma('The, quick, brown, fox jumped over'), ["The", " quick", " brown", " fox jumped over"], 'Expected: ["The", " quick", " brown", " fox jumped over"], the result was ' + splitListStrUsingComma('The, quick, brown, fox jumped over') );
+});
+
+test( "sum function", function() {
+	expect(2);
+
+	// verify sum() exists
+	equal( typeof sum, 'function', 'sum() is a function' );
+
+	// verify the method will take any number of arguments
+	equal( sum(1, 1, 2, 3, 5, 7), 19, 'Expected: 19, the result was ' + sum(1, 1, 2, 3, 5, 7) );
 });
