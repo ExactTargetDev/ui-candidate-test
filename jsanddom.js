@@ -98,6 +98,19 @@
 
      // write an example of a javascript closure
 
+     /*
+         1) whatIsExactTargetsFavoriteColor creates a local variable, color, and a function, runClosure().
+         2) runClosure() is only available within the whatIsExactTargetsFavoriteColor function.
+         3) However, runClosure() has access to the variables in the outer function
+     */
+     function whatIsExactTargetsFavoriteColor(){
+        var color = "orange!";
+        function runClosure(){
+            alert(color);
+        }
+        return runClosure;
+     }
+
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
