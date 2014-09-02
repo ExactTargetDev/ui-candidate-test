@@ -1,22 +1,52 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+         return str.split('').reverse().join('');
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+         var min;
+         for(var i = 0; i < values.length; i++){
+             if(min === undefined){
+                 min = values[i];
+             }else{
+                 if(min < values[i]){
+                     min = values[i];
+                 }
+             }
+         }
+         return min;
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+         var arry;
+
+         for(var i = 0; i < values.length; i++){
+             if(arry === undefined){
+                 arry = values[i];
+             }else{
+                 (function(){
+                    var exist = false;
+                    for(var x = 0; x < arry.length; x++){
+                        if(values[i] === arry[x]){
+                            exist = true;
+                            break;
+                        }
+                    }
+                    if(exist === false){
+                        arry.push(values[i]);
+                    }
+                }());
+             }
+         }
+         return arry;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,7 +54,18 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         for(var i = 1; i < 100; i++){
+             if(i % 3 === 0){
+                 console.log('Fizz');
+             }else if(i % 5 === 0){
+                 console.log('Buzz');
+             } else if(i % 3 === 0 && i % 5 === 0){
+                 console.log('FizzBuzz');
+             }
+             else{
+                 console.log(i);
+             }
+         }
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -32,7 +73,20 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         var remove = (function(element){
+             for(var x = 0; i < fruits.length; i++){
+                 if(element === fruits[x]){
+                     return x;
+                 }
+             }
+                return 0;
+         });
+         for(var i = 0; i < fruitsToRemove.length; i++){
+           if(remove !== 0){
+               fruits.splice(remove, 1);
+           }
+        }
+         return fruits;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -40,25 +94,58 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+        for(var i = 0; i < toPush.length; i++){
+            if(Object.isArray(toPush[i])){
+                for(var x = 0; x < toPush[i].length; x++){
+                    array.push(toPush[i][x]);
+                }
+            }else{
+                array.push(toPush[i]);
+            }
+
+        }
+         return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+        var arry;
+         if(sourceStr === Object.empty()){
+            return arry;
+        }else{
+             for(var i = 0; i < sourceStr.length; i++){
+                 arry.push(sourceStr[i]);
+             }
+         }
+         return arry.join(',');
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+        var results;
+         for(var i = 0; i < arguments.length; i++){
+            results += arguments[i];
+        }
+         return results;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+        var results = 0;
+         for(var i = 0; i < sourceStr.length; i++){
+             if(sourceStr[i] === str.charAt(32)){
+                 results += 1;
+             }
+         }
+         if(results === sourceStr.length){
+             return true;
+         }
      }
 
      // write an example of a javascript closure
+
+
+
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -68,6 +155,58 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     var people = [{
+         firstName: 'Cindy',
+         lastName: 'Star',
+         city: 'Woodstock',
+         state: 'IL',
+         zip: '46072',
+         phone: {
+             home: '555-789-5464',
+             work: '555-789-5464',
+             mobile: '555-789-5464'
+
+         }
+     },{
+         firstName: 'Bill',
+         lastName: 'Star',
+         city: 'Storm',
+         state: 'IL',
+         zip: '46072',
+         phone: {
+             home: '555-789-5464',
+             work: '555-789-5464',
+             mobile: '555-789-5464'
+
+         }
+     },
+         {
+             firstName: 'JD',
+             lastName: 'Windstorm',
+             city: 'Lilly',
+             state: 'IL',
+             zip: '46072',
+             phone: {
+                 home: '555-789-5464',
+                 work: '555-789-5464',
+                 mobile: '555-789-5464'
+
+             }
+         },
+         {
+             firstName: 'Lucy',
+             lastName: 'Liu',
+             city: 'Carmel',
+             state: 'IN',
+             zip: '46062',
+             phone: {
+                 home: '555-789-5464',
+                 work: '555-789-5464',
+                 mobile: '555-789-5464'
+
+             }
+         }];
+
 
 
      // Create a javascript object (DataTable) with the following:
@@ -86,6 +225,10 @@
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
+
+
+
+     
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
