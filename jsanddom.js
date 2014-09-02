@@ -174,6 +174,31 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     $(document).ready(function(){
+        var arrColors = [
+            { val: "#FF0000", text: "red"},
+            { val: "#FFFFFF", text: "white"},
+            { val: "#0000FF", text: "blue"},
+            { val: "#00FF00", text: "green"}
+        ];
+        var $div1 = $("#div1");
+        var sel = $("<select id='select1'>").appendTo( $($div1) );
+
+        // loop thru the array and build the <option>
+        $(arrColors).each(function(){
+            sel.append($('<option>').attr('value',this.val).text(this.text));
+        });
+
+        // create the button
+        $( $div1 ).append("<button id='btn1'>Pick a color</button>");
+
+        // create the click event. Using .on because the click event is attached to the button after the page is loaded.
+        $('body').on('click', '#btn1', function(e){
+            e.preventDefault();
+            console.log("you selected: " + $('#select1 option:selected').text() + " | " + $('#select1 option:selected').val());
+        });
+
+     });
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
@@ -185,6 +210,7 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
