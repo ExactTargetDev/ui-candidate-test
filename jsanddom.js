@@ -85,7 +85,7 @@
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          var x = 0;
-         for( var i = 0; i < arguments.length; i++ ){
+         for( var i = 0; i < arguments.length; i++ ){  // *arguments* is a local variable available within all functions
             x += arguments[i];
          }
          return x;
@@ -93,7 +93,7 @@
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         return (sourceStr.trim().length )< 1;
      }
 
      // write an example of a javascript closure

@@ -88,3 +88,16 @@ test( "sum function", function() {
 	// verify the method will take any number of arguments
 	equal( sum(1, 1, 2, 3, 5, 7), 19, 'Expected: 19, the result was ' + sum(1, 1, 2, 3, 5, 7) );
 });
+
+test( "isOnlyWhitespace", function() {
+	expect(3);
+
+	// verify isOnlyWhitespace() exists
+	equal( typeof sum, 'function', 'isOnlyWhitespace() is a function' );
+
+	// verify returns TRUE if string contains ONLY whitepace
+	ok( isOnlyWhitespace('   '), true, 'Expected: true, the result was ' + isOnlyWhitespace('   ') );
+
+	// verify returns FALSE if string contains whitepace. NOTE: using  *!* the not operator
+	ok( !isOnlyWhitespace('  sam i am  '), false, 'Expected: false, the result was ' + isOnlyWhitespace('  sam i am  ') );
+});
