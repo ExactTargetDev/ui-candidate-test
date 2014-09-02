@@ -11,12 +11,12 @@
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         var min;
+         var min = undefined;;
          for(var i = 0; i < values.length; i++){
              if(min === undefined){
                  min = values[i];
              }else{
-                 if(min < values[i]){
+                 if(min > values[i]){
                      min = values[i];
                  }
              }
@@ -26,55 +26,64 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         var arry;
+         var array = [];
 
          for(var i = 0; i < values.length; i++){
-             if(arry === undefined){
-                 arry = values[i];
+             if(array === undefined){
+                 array = values[i];
              }else{
                  (function(){
                     var exist = false;
-                    for(var x = 0; x < arry.length; x++){
-                        if(values[i] === arry[x]){
+                    for(var x = 0; x < array.length; x++){
+                        if(values[i] === array[x]){
                             exist = true;
                             break;
                         }
                     }
                     if(exist === false){
-                        arry.push(values[i]);
+                        array.push(values[i]);
                     }
                 }());
              }
          }
-         return arry;
+         return array;
      }
+
 
      // Write a function that logs the numbers from 1 to 100 to the console.
      // For multiples of three print "Fizz" instead of the number.
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         for(var i = 1; i < 100; i++){
-             if(i % 3 === 0){
-                 console.log('Fizz');
-             }else if(i % 5 === 0){
-                 console.log('Buzz');
-             } else if(i % 3 === 0 && i % 5 === 0){
+
+         var array = []; // used for testing....it's easier to test an array
+         for(var i = 1; i < 101; i++){
+
+             if(i % 3 === 0 && i % 5 === 0){
+                 array.push('FizzBuzz');
                  console.log('FizzBuzz');
+             }else if(i % 3 === 0){
+                 array.push('Fizz');
+                 console.log('Fizz');
+             }
+             if(i % 5 === 0){
+                 array.push('Buzz');
+                 console.log('Buzz');
              }
              else{
+                 array.push(i);
                  console.log(i);
              }
          }
+         return array; // I will remove this if I find a way to test the console but running short on time
      }
-
      // You have a master array of strings, where each element is a fruit name.
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          var remove = (function(element){
-             for(var x = 0; i < fruits.length; i++){
+             for(var x = 0; x < fruits.length; x++){
                  if(element === fruits[x]){
                      return x;
                  }
@@ -82,8 +91,8 @@
                 return 0;
          });
          for(var i = 0; i < fruitsToRemove.length; i++){
-           if(remove !== 0){
-               fruits.splice(remove, 1);
+           if(remove(fruitsToRemove[i]) !== 0){
+               fruits.splice(remove(fruitsToRemove[i]), 1);
            }
         }
          return fruits;
@@ -95,7 +104,7 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
         for(var i = 0; i < toPush.length; i++){
-            if(Object.isArray(toPush[i])){
+            if(Array.isArray(toPush[i])){
                 for(var x = 0; x < toPush[i].length; x++){
                     array.push(toPush[i][x]);
                 }
@@ -109,20 +118,21 @@
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-        var arry;
-         if(sourceStr === Object.empty()){
-            return arry;
+        var array = [];
+         if(!sourceStr){
+            return array;
         }else{
              for(var i = 0; i < sourceStr.length; i++){
-                 arry.push(sourceStr[i]);
+                 array.push(sourceStr[i]);
              }
          }
-         return arry.join(',');
+         return array.join(',');
      }
+
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-        var results;
+        var results = 0;
          for(var i = 0; i < arguments.length; i++){
             results += arguments[i];
         }
@@ -133,12 +143,14 @@
      function isOnlyWhitespace(sourceStr) {
         var results = 0;
          for(var i = 0; i < sourceStr.length; i++){
-             if(sourceStr[i] === str.charAt(32)){
+             if(sourceStr[i] ===  String.fromCharCode(32)){
                  results += 1;
              }
          }
          if(results === sourceStr.length){
              return true;
+         }else{
+             return false;
          }
      }
 
@@ -228,7 +240,7 @@
 
 
 
-     
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
