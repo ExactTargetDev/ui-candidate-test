@@ -1,1 +1,13 @@
 Start Time: 1409589484 (UTC)
+End Time:
+Total Time:
+
+Browsers Tested: 
+ - Chrome 37
+ - Firefox for Mac 31
+ - IE 11
+ - IE 10
+ - IE 9
+ - IE 8
+
+ I couldn't open the .PSD file, so I didn't save out the images
