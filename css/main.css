@@ -46,11 +46,13 @@ a:link{
     background-image: url('../images/UI_CandidateTest_IMH_dashboard_01.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .black {
     height: 40px;
-    width: 40%;
+
     background-image: url('../images/header_bg.jpg');
     background-size: 100% 100%;
 }
@@ -76,4 +78,16 @@ a:link{
     background-image: url('../images/UI_CandidateTest_IMH_dashboard_01.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+
+
+.removeMarginPadding {
+    margin: 0;
+    padding: 0;
+}
+
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
 }

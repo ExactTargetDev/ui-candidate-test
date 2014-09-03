@@ -156,6 +156,13 @@
 
      // write an example of a javascript closure
 
+    var add = (function(){
+        var counter = 0;
+        return function(){return counter +=1; }
+    })();
+     add();
+     add();
+     add(); // counter is 3
 
 
 
@@ -235,19 +242,15 @@
 
 
      function DataTables() {
-        var dt = {
-
-        };
         var columns = [];
         var rows = [];
 
         this.addRow = function(rowName){
-            rows.push(rowName);
-        };
-        this.addColumns = function(columnName){
-            columns.push(columnName);
-        };
-         return dt;
+             rows.push(rowName);
+         };
+         this.addColumns = function(columnName){
+             columns.push(columnName);
+         };
      }
 
      // within div1, programatically create a
