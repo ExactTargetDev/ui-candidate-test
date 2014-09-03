@@ -210,28 +210,64 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
-     function createSportsArray(){
+     $(document).ready(function() {
+        function createSportsArray(){
         
-        // create empty array
-        var sports = [];
+            // create empty array
+            var sports = [];
 
-        // fill the array with items
-        sports[0] = "Football";
-        sports[1] = "Soccer";
-        sports[2] = "Lacrosse";
-        sports[3] = "Basketball";
-        sports[4] = "Baseball";
+            // fill the array with items
+            sports[0] = "Football";
+            sports[1] = "Soccer";
+            sports[2] = "Lacrosse";
+            sports[3] = "Basketball";
+            sports[4] = "Baseball";
 
-        // create a <ul>
-        var $ulList = $('<ul id="list1">').appendTo( $('body') );
+            // create a <ul>
+            var $ulList = $('<ul id="list1">').appendTo( $('body') );
 
-        // loop thru the array and append <li> with the array value
-        $.each( sports, function(i, value) {
-            $('<li>').appendTo( $($ulList) ).text(value);
-        });
-     }
+            // loop thru the array and append <li> with the array value
+            $.each( sports, function(i, value) {
+                $('<li>').appendTo( $($ulList) ).text(value);
+            });
+         }
+         createSportsArray();
+     });
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     $(document).ready(function() {
+        var $foobar = $('#foobar');
+        
+        // using Google's javascript style guide for creating multiline strings for readabilty. Though this string isn't ideal...
+        // I'm wrapping my checkbox in a LABEL for better usabilty. 
+        $('<ul>' +
+            '<li>' +
+                '<label><input class="chx" type="checkbox" name="Froyo" value="Froyo">Froyo</label> ' +
+            '</li>' +
+            '<li>' +
+                '<label><input class="chx" type="checkbox" name="Gingerbread" value="Gingerbread">Gingerbread</label>' +
+            '</li>' +
+            '<li>' +
+                '<label><input class="chx" type="checkbox" name="Jelly Bean" value="Jelly Bean">Jelly Bean</label>' +
+            '</li>' +
+           '<ul>' +
+           '<br /><a href="#" id="selectAll">Select All</a> ' +
+           '<a href="#" id="selectNone">Select None</a>').appendTo( $foobar );
+
+        // add click handler
+        $('body').on('click', '#selectNone', function(e){
+            e.preventDefault();
+            $('.chx').prop('checked', false);
+        });
+
+        // add click handler
+        $('body').on('click', '#selectAll', function(e){
+            e.preventDefault();
+            $('.chx').prop('checked', true);
+        });
+     });
+     
+
