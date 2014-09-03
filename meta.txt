@@ -1,6 +1,5 @@
 Start Time: 1409589484 (UTC)
-End Time:
-Total Time:
+Total Time: ~0830
 
 Browsers Tested: 
  - Chrome 37
@@ -10,4 +9,6 @@ Browsers Tested:
  - IE 9
  - IE 8
 
- I couldn't open the .PSD file, so I didn't save out the images
+ I didn't have time to finish the dashboard, but hopefully my work overall is a good representation of HTML/CSS/JS. Looking forward to speaking with you!
+
+ -Sam Kligerman
