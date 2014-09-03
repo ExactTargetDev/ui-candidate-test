@@ -94,7 +94,9 @@
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         return (sourceStr.trim().length )< 1;
+        
+        // first tried using .trim() but it's not native to IE8, so using $.trim instead
+         return $.trim(sourceStr).length < 1;
      }
 
      // write an example of a javascript closure
