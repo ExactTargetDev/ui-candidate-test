@@ -233,6 +233,23 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+
+     function DataTables() {
+        var dt = {
+
+        };
+        var columns = [];
+        var rows = [];
+
+        this.addRow = function(rowName){
+            rows.push(rowName);
+        };
+        this.addColumns = function(columnName){
+            columns.push(columnName);
+        };
+         return dt;
+     }
+
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
@@ -244,8 +261,26 @@
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
+     $('a.link');
+     $('a').filter(function(){
+         return !$(this).attr('href');
+     });
+     $("a[href$='#']");
+
+
+
+
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+
+    (function(){
+        var array = [];
+         for(var i = 1; i <= 5; i++){
+             array.push("<li id='" + i + "'></li>");
+         }
+
+        return "<ul>" + array + "</ul>";
+     }());
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
