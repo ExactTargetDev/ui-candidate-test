@@ -1,0 +1,74 @@
+/* -------------------------------------------------------------------
+	TABLE OF CONTENTS
+----------------------------------------------------------------------
+	1 -- CSS for mobile & tablet
+	2 -- CSS for mobile view
+	3 -- CSS for tablet views & smaller screens
+----------------------------------------------------------------------
+------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------
+1. CSS for mobile & tablet
+------------------------------------------------------------------- */
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 1024px) {
+	.month {
+		margin: 0 0 15px 0;
+	}
+
+	.day i,
+	.day b {
+		position: static;
+		display: block;
+		text-align: center;
+	}
+	
+	.panel {
+		position: static;
+		float: none;
+		margin: 0 0 10px 0;
+	}
+	
+	.panel.small {
+		width:100%;
+		min-height: inherit;
+	}
+	
+	.panel.medium {
+		width:100%;
+		min-height: inherit;
+	}
+	
+	.panel .contents {
+		height: auto;
+		min-height: inherit;
+	}
+	
+	.panel img {
+		width: auto;
+	}
+}
+
+
+/* -------------------------------------------------------------------
+2. CSS for mobile view
+------------------------------------------------------------------- */
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 767px) {	
+	.month {
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+	}
+}
+
+
+/* -------------------------------------------------------------------
+3 -- CSS for tablet views & smaller screens
+------------------------------------------------------------------- */
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) {
+
+}
