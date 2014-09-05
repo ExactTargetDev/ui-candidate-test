@@ -1655,6 +1655,7 @@ main {
 
 .panel img {
 	display: block;
+	clear: both;
 	width: auto;
 	margin: 0 auto;
 }
