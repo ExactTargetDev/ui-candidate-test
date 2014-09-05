@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="site/css/normalize.css" />
 		<link rel="stylesheet" href="site/css/layout.css" />
 		<link rel="stylesheet" href="site/css/responsive.css" />
+		<link rel="stylesheet" href="site/css/colorbox.css" />
 		
 		<!-- Font Awesome Iconography -->
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -34,7 +35,7 @@
 				Welcome, John!
 				<ul>
 					<li><a href="#">Account</a></li>
-					<li><a href="#">Help</a></li>
+					<li><a href="#inline_content" class="inline">Help</a></li>
 					<li><a href="#">Logout</a></li>
 				</ul>
 			</nav>
@@ -132,7 +133,8 @@
 						<footer>
 							<nav>
 								<ul>
-									<li><a href="#"><i class="fa fa-caret-up"></i><span>Collapse</span></a></li>
+									<li class="up"><a href="#"><i class="fa fa-caret-up"></i><span>Collapse</span></a></li>
+									<li class="down"><a href="#"><i class="fa fa-caret-down"></i><span>Slide Down</span></a></li>
 								</ul>
 							</nav>
 						</footer>
@@ -198,8 +200,8 @@
 								</header>
 								<div class="contents">
 									<section>
-										<span>Worldwide Checkins</span>
-										<span>3,905</span>
+										<span class="lft">Worldwide Checkins</span>
+										<span class="rgt">3,905</span>
 										<div class="map">
 											<!-- pull in foursquare module, image placeholder for now-->
 											<img src="site/img/map.png" />
@@ -242,19 +244,76 @@
 			</div>		
 		</main>
 		
+		<!-- This contains the hidden content for inline calls -->
+		<div style='display:none'>
+			<div id='inline_content' style='padding:10px; background:#fff;'>
+			<p><strong>HELP!</strong></p>
+			<div class="data"></div>
+			<p>Sorry, had trouble pulling in the JSON values.</p>
+			</div>
+		</div>
+		
 		
 		<script src="site/js/jquery.js"></script>
 		<script src="site/js/foundation.min.js"></script>
-
+		<script src="site/js/jquery.colorbox.js"></script>
+		
 		<script>
 			$(document).foundation();	
 			
-			$(document).ready(function(e){
-				$( ".nav nav a" ).click(function() {
+			$(document).ready(function(){
+				//hide down arrow
+				$(".down").hide();
+				
+				//set click state on main nav
+				$( ".nav nav a" ).click(function(e) {
 				  $( ".nav nav a").removeClass('active');
 				  $(this).addClass('active');
 				  e.preventDefault();
 				});
+				
+				//show and hide calendar toggle arrow
+				$( ".up" ).click(function(e) {
+				  $(".month header, .week").slideUp();
+				  $(".up").hide();
+				  $(".down").show();
+				  e.preventDefault();
+				});
+				
+				$( ".down" ).click(function(e) {
+				  $(".month header, .week").slideDown();
+				  $(".down").hide();
+				  $(".up").show();
+				  e.preventDefault();
+				});
+				
+				//toggle panels
+				$( ".panel" ).click(function(e) {
+				  $(".panel").removeClass('medium').addClass('small');
+				  $(this).removeClass('small').addClass('medium');
+				  e.preventDefault();
+				});
+				
+				//colorbox modal
+				$(".inline").colorbox({inline:true, width:"50%"});
+				
+				//pull in json data
+				$(".data").empty();
+				// make the AJAX request
+		        $.getJSON( "data/help.json", function( data ) {
+				  var items = [];
+				  
+				  $.each( data, function( key, val ) {
+				    items.push( "<li id='" + key + "'>" + val + "</li>" );
+				  });
+				 
+				  $( "<ul/>", {
+				    "class": "my-new-list",
+				    html: items.join( "" )
+				  }).appendTo( ".data" );
+				});
+				
+				
 			});
 		</script>
 	</body>

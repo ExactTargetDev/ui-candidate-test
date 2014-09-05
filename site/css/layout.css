@@ -1357,7 +1357,7 @@ main {
 	text-shadow: 1px 1px 1px #fff;
 }
 
-.month nav {
+.month header nav {
 	position: absolute;
 	top: 0;
 	right: 10px;
@@ -1387,7 +1387,13 @@ main {
 	clip: rect(1px, 1px, 1px, 1px);
 }
 
-.month footer {
+.month footer nav {
+	position: absolute;
+	bottom: -3px;
+	right: 10px;
+}
+
+.down {
 	display: none;
 }
 
@@ -1572,6 +1578,20 @@ main {
 	min-height: 120px;
 }
 
+.panel:hover,
+.panel:focus {
+	top: 40px;
+	padding: 0 6px 5px 6px;
+	cursor: pointer;
+}
+
+.panel.medium:hover,
+.panel.medium:focus {
+	top: 0px;
+	padding: 0 6px;
+	cursor: pointer;
+}
+
 .panel .contents {
 	min-height: 100px;
 	border: 1px solid #d1dfe7;
@@ -1646,6 +1666,21 @@ main {
 	line-height: 14px;
 	text-align: center;
 	color: #7f91a3;
+}
+
+.foursquare span {
+	font-weight: bold;
+	color: #666666;
+}
+
+.foursquare.medium .lft {
+	float: left;
+	clear: left;
+}
+
+.foursquare.medium .rgt {
+	float: right;
+	clear: right;
 }
 
 .landing-pages .contents i {
