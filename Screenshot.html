@@ -9,8 +9,10 @@
 		<!-- CSS -->
 		<link rel="stylesheet" href="site/css/normalize.css" />
 		<link rel="stylesheet" href="site/css/layout.css" />
-		<link rel="stylesheet" href="site/css/type.css" />
 		<link rel="stylesheet" href="site/css/responsive.css" />
+		
+		<!-- Font Awesome Iconography -->
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		
 		<!--[if gte IE 9]>
 		  <style type="text/css">
@@ -79,8 +81,8 @@
 							<h6>September 2010</h6>
 							<nav>
 								<ul>
-									<li><a href="#"><i class="icon gear"></i><span>Settings</span></a></li>
-									<li><a href="#"><i class="icon window"></i><span>Pop Window Out</span></a></li>
+									<li><a href="#"><i class="fa fa-gear"></i><span>Settings</span></a></li>
+									<li><a href="#"><i class="fa fa-external-link"></i><span>Pop Window Out</span></a></li>
 								</ul>
 							</nav>
 						</header>
@@ -130,7 +132,7 @@
 						<footer>
 							<nav>
 								<ul>
-									<li><a href="#"><i class="icon arrow-up"></i><span>Collapse</span></a></li>
+									<li><a href="#"><i class="fa fa-caret-up"></i><span>Collapse</span></a></li>
 								</ul>
 							</nav>
 						</footer>
@@ -142,20 +144,20 @@
 							<h4>Pulse</h4>
 							<nav>
 								<ul>
-									<li><a href="#"><i class="icon gear"></i><span>Settings</span></a></li>
-									<li><a href="#"><i class="icon mystery"></i><span>Mysterious Icon</span></a></li>
-									<li><a href="#"><i class="icon window"></i><span>Pop Window Out</span></a></li>
-									<li><a href="#"><i class="icon close"></i><span>Hide Pulse</span></a></li>
+									<li><a href="#"><i class="fa fa-gear"></i><span>Settings</span></a></li>
+									<li><a href="#"><i class="fa fa-cloud"></i><span>Mysterious Icon</span></a></li>
+									<li><a href="#"><i class="fa fa-external-link"></i><span>Pop Window Out</span></a></li>
+									<li><a href="#"><i class="fa fa-close "></i><span>Hide Pulse</span></a></li>
 								</ul>
 							</nav>
 						</header>
 						
 						<div class="panels">
 							<div class="panel small">
-								<div class="contents">
-									<header>
+								<header>
 										<h5>Followers</h5>
-									</header>
+								</header>
+								<div class="contents">
 									<section>
 										<b>310</b>
 										<i>added today</i>
@@ -165,10 +167,10 @@
 							</div>
 							
 							<div class="panel small">
+								<header>
+									<h5>Fan</h5>
+								</header>
 								<div class="contents">
-									<header>
-										<h5>Fan</h5>
-									</header>
 									<section>
 										<b>73</b>
 										<i>added today</i>
@@ -178,10 +180,10 @@
 							</div>
 							
 							<div class="panel small">
+								<header>
+									<h5>Subscribers</h5>
+								</header>
 								<div class="contents">
-									<header>
-										<h5>Subscribers</h5>
-									</header>
 									<section>
 										<b>56</b>
 										<i>added today</i>
@@ -191,25 +193,26 @@
 							</div>
 							
 							<div class="panel medium foursquare">
+								<header>
+									<h5>foursquare</h5>
+								</header>
 								<div class="contents">
-									<header>
-										<h5>foursquare</h5>
-									</header>
 									<section>
 										<span>Worldwide Checkins</span>
 										<span>3,905</span>
 										<div class="map">
-											<!-- pull in foursquare module -->
+											<!-- pull in foursquare module, image placeholder for now-->
+											<img src="site/img/map.png" />
 										</div>
 									</section>
 								</div>
 							</div>
 							
-							<div class="panel small">
+							<div class="panel small landing-pages">
+								<header>
+									<h5>Landing Pages</h5>
+								</header>
 								<div class="contents">
-									<header>
-										<h5>Landing Pages</h5>
-									</header>
 									<section>
 										<i>Visitors Today</i>
 										<b>397 <span>/ 355</span></b>
@@ -217,22 +220,22 @@
 									</section>
 								</div>
 							</div>
+							
+							<footer>
+								<nav>
+									<ul>
+										<li><a href="#"><span>1</span></a></li>
+										<li><a href="#"><span>2</span></a></li>
+										<li><a href="#"><span>3</span></a></li>
+										<li><a href="#"><span>4</span></a></li>
+										<li><a href="#"><span>5</span></a></li>
+										<li><a href="#" class="active"><span>6</span></a></li>
+										<li><a href="#"><span>7</span></a></li>
+									</ul>
+								</nav>
+								<span class="highlight five"></span>
+							</footer>
 						</div>
-						
-						<footer>
-							<nav>
-								<ul>
-									<li><a href="#"><span>1</span></a></li>
-									<li><a href="#"><span>2</span></a></li>
-									<li><a href="#"><span>3</span></a></li>
-									<li><a href="#"><span>4</span></a></li>
-									<li><a href="#"><span>5</span></a></li>
-									<li><a href="#" class="active"><span>6</span></a></li>
-									<li><a href="#"><span>7</span></a></li>
-								</ul>
-							</nav>
-							<span class="highlight five"></span>
-						</footer>
 					</div>
 					
 				</div>
@@ -246,8 +249,12 @@
 		<script>
 			$(document).foundation();	
 			
-			$(document).ready(function(){
-
+			$(document).ready(function(e){
+				$( ".nav nav a" ).click(function() {
+				  $( ".nav nav a").removeClass('active');
+				  $(this).addClass('active');
+				  e.preventDefault();
+				});
 			});
 		</script>
 	</body>
