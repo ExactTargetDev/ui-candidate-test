@@ -11,7 +11,13 @@
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+        var tmp = 0;
+         for (var i = 0; i < values.length; i++) {
+            if (tmp <= i ) {
+                tmp = i;
+            }
+         }
+         return tmp;
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
@@ -24,7 +30,18 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         var count = 1;
+         while (count < 101) {
+             if ((count % 3 === 0 ) && (count % 5 == 0)){
+                console.log('FizzBuzz');
+             } else if (count % 3 == 0) {
+                console.log('Fizz');
+             } else if (count % 5 == 0) {
+                console.log('Buzz');
+             } else
+             console.log(count);
+             count++;
+         }
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -32,7 +49,15 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         for (var i=0; i < fruitsToRemove.length; i++) {
+            for (var j=0; j < fruits.length; j++) {
+                if (fruitsToRemove[i] == fruits[j]) {
+                    fruits.splice(j,1);
+                }
+            }
+         }
+         console.log(fruits)
+         return fruits;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -50,12 +75,12 @@
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+         //apply?
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         // FILL THIS IN REGEX!!
      }
 
      // write an example of a javascript closure
