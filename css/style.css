@@ -3,17 +3,32 @@
 /* @import bootstrap.css */
 
 
-#foo .bar {
+select#mySelect {
+  padding-top: 50px;
+  margin: 40px 0 20px 30px;
+}
 
-margin-top:10px;
+input#callfunc {
+  margin-left: 20px;
+}
 
+a.link {
+  margin: 10px 0 20px 30px;
 }
 
 #baz {
-margin-top:10px;
+margin: 10px 0 20px 30px;
 }
 
 #foobar {
-margin-top: 10px;
+margin: 10px 0 20px 30px
 }
 
+button {
+  margin-left: 20px;
+}
+
+
+input#chk {
+  margin-left: 10px;
+}
