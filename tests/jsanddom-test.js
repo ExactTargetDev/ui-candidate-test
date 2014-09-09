@@ -57,7 +57,7 @@ test( "removeFruits Test", 2, function() {
     equal( typeof removeFruits, 'function', 'Must contain a removeFruitsfunction' );
 
 
-    ok( removeFruits( ['apple', 'pear', 'peach', 'plum'], ['apple', 'peach'] ), ["pear", "plum"], 'Expected 2 as the result, the result was: ' + removeFruits( ['apple', 'pear', 'peach', 'plum'], ['apple', 'peach'] ) );
+    ok( removeFruits( ['apple', 'pear', 'peach', 'plum'], ['apple', 'peach'] ), ["pear", "plum"], 'Expected "["pear", "plum"]" as the result, the result was: ' + removeFruits( ['apple', 'pear', 'peach', 'plum'], ['apple', 'peach'] ) );
 });
 
 /*********************************/
@@ -71,14 +71,15 @@ test( "removeFruits Test", 2, function() {
 // });
 
 /*********************************/
-// module( "splitListStrUsingCommaUnit Test" );
-// test( "splitListStrUsingComma Test", 2, function() {
-//     // Verify the method exists
-//     equal( typeof splitListStrUsingComma, 'function', 'Must contain a reverseString function' );
+module( "splitListStrUsingCommaUnit Test" );
+test( "splitListStrUsingComma Test", 3, function() {
+    // Verify the method exists
+    equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
 
-//     // Make sure the result from the divide function is valid
-//     ok( splitListStrUsingComma( "Hello Exact Target" ), 'tegraT tcaxE olleH', 'Expected 2 as the result, the result was: ' + splitListStrUsingComma( "Hello Exact Target") );
-// });
+    ok( splitListStrUsingComma( "This is really fun." ), 'This, is, really, fun', 'Expected "This, is, really, fun", as the result, the result was: ' + splitListStrUsingComma( "This is really fun.") );
+
+    ok( splitListStrUsingComma(" "), "", 'Expected "", as the result, the result was: ' + splitListStrUsingComma("") );
+});
 
 /*********************************/
 // module( "sum Unit Test" );
@@ -92,10 +93,11 @@ test( "removeFruits Test", 2, function() {
 
 /*********************************/
 // module( "isOnlyWhitespace Unit Test" );
-// test( "isOnlyWhitespace", 2, function() {
-//     // Verify the method exists
-//     equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
+test( "isOnlyWhitespace", 3, function() {
+    // Verify the method exists
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
 
-//     // Make sure the result from the divide function is valid
-//     ok( isOnlyWhitespace( "Hello Exact Target" ), 'tegraT tcaxE olleH', 'Expected 2 as the result, the result was: ' + isOnlyWhitespace( "Hello Exact Target") );
-// });
+    ok( isOnlyWhitespace( "    " ), 'true', 'Expected "true" as the result, the result was: ' + isOnlyWhitespace( "    ") );
+
+    ok( isOnlyWhitespace( "     get" ), 'false', 'Expected "false" as the result, the result was: ' + isOnlyWhitespace( "     get") );
+});
