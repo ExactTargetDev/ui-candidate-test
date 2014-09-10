@@ -7,8 +7,6 @@ body {
   background-color: #FFFFFF;
 }
 
-style type="text/css">
-<!--
 
 #Table_01 {
   position:absolute;
@@ -52,15 +50,24 @@ style type="text/css">
 
 
 #email {
+  background-image: url('../images/email-base.jpg');
   position:absolute;
   left:29px;
   top:112px;
   width:24px;
   height:24px;
+}
 
+#email:hover {
+  background-image: url('../images/hover/email-hover.jpg');
+}
+
+#email.active {
+  background-image: url('../images/active/email-active.jpg');
 }
 
 #mobile {
+  background-image: url('../images/mobile-base.jpg');
   position:absolute;
   left:29px;
   top:145px;
@@ -68,7 +75,16 @@ style type="text/css">
   height:24px;
 }
 
+#mobile:hover {
+  background-image: url('../images/hover/mobile-hover.jpg');
+}
+
+#mobile.active {
+  background-image: url('../images/active/mobile-active.jpg');
+}
+
 #tweet {
+  background-image: url("../images/tweet-base.jpg");
   position:absolute;
   left:29px;
   top:177px;
@@ -76,7 +92,16 @@ style type="text/css">
   height:24px;
 }
 
+#tweet:hover {
+  background-image: url('../images/hover/tweet-hover.jpg');
+}
+
+#tweet.active {
+  background-image: url('../images/active/tweet-active.jpg');
+}
+
 #sites {
+  background-image: url("../images/sites-base.jpg");
   position:absolute;
   left:29px;
   top:209px;
@@ -84,7 +109,16 @@ style type="text/css">
   height:24px;
 }
 
+#sites:hover {
+  background-image: url('../images/hover/sites-hover.jpg');
+}
+
+#sites.active {
+  background-image: url('../images/active/sites-active.jpg');
+}
+
 #studio {
+  background-image: url("../images/studio-base.jpg");
   position:absolute;
   left:29px;
   top:253px;
@@ -92,8 +126,17 @@ style type="text/css">
   height:25px;
 }
 
+#studio:hover {
+  background-image: url('../images/hover/studio-hover.jpg');
+}
+
+#studio.active {
+  background-image: url('../images/active/studio-active.jpg');
+}
+
 
 #audience {
+  background-image: url("../images/audience-base.jpg");
   position:absolute;
   left:29px;
   top:286px;
@@ -101,12 +144,29 @@ style type="text/css">
   height:24px;
 }
 
+#audience:hover{
+  background-image: url('../images/hover/audience-hover.jpg');
+}
+
+#audience.active {
+  background-image: url('../images/active/audience-active.jpg');
+}
+
 #report {
+  background-image: url("../images/report-base.jpg");
   position:absolute;
   left:29px;
   top:319px;
   width:24px;
   height:24px;
+}
+
+#report:hover {
+  background-image: url('../images/hover/report-hover.jpg');
+}
+
+#report.active {
+  background-image: url('../images/active/report-active.jpg');
 }
 
 /* Pulse Area */
@@ -120,17 +180,8 @@ style type="text/css">
 }
 
 
-#foursquare-large_ {
-  position:absolute;
-  left:750px;
-  top:201px;
-  width:280px;
-  height:187px;
-}
-
-
-
-#followers-small_ {
+#followers {
+  background-image: url("../images/small/followers-small.jpg");
   position:absolute;
   left:234px;
   top:253px;
@@ -138,7 +189,18 @@ style type="text/css">
   height:117px;
 }
 
-#Fan-small_ {
+#followers.lg {
+  background-image: url("../images/large/followers-large.jpg");
+  z-index: 99;
+  position:absolute;
+  left:234px;
+  top:201px;
+  width:280px;
+  height:187px;
+}
+
+#fan {
+  background-image: url("../images/small/Fan-small.jpg");
   position:absolute;
   left:406px;
   top:253px;
@@ -146,8 +208,19 @@ style type="text/css">
   height:116px;
 }
 
+#fan.lg {
+  background-image: url("../images/large/Fan-large.jpg");
+  z-index: 99;
+  position:absolute;
+  left:406px;
+  top:201px;
+  width:280px;
+  height:187px;
+}
 
-#subcribers-small_ {
+
+#subcribers {
+  background-image: url("../images/small/subcribers-small.jpg");
   position:absolute;
   left:577px;
   top:253px;
@@ -155,12 +228,54 @@ style type="text/css">
   height:116px;
 }
 
-
-#landingpages-small_ {
+#subcribers.lg {
+  background-image: url("../images/large/fan-large.jpg");
+  z-index: 99;
   position:absolute;
-  left:1043px;
+  left:577px;
+  top:201px;
+  width:280px;
+  height:187px;
+}
+
+#foursquare {
+  background-image: url("../images/small/foursquare-small.jpg");
+  position:absolute;
+  left:747px;
   top:253px;
   width:160px;
   height:116px;
 }
 
+#foursquare.lg {
+  background-image: url("../images/large/foursquare-large.jpg");
+  z-index: 99;
+  position:absolute;
+  left:747px;
+  top:201px;
+  width:280px;
+  height:187px;
+}
+
+
+#landingpages {
+  background-image: url("../images/small/landingpages-small.jpg");
+  position:absolute;
+  left:918px;
+  top:253px;
+  width:160px;
+  height:116px;
+}
+
+#landingpages.lg {
+  background-image: url("../images/large/fan-large.jpg");
+  position:absolute;
+  left:918px;
+  top:201px;
+  width:280px;
+  height:187px;
+}
+
+.ui-dialog {
+  background: #CCC;
+}

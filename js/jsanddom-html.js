@@ -47,24 +47,25 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
      //
-     // var DataTable = {
+     var DataTable = {
 
 
-     //    function addRows() {
+        function addRows() {
+            rows.apply.
 
-     //    }
+        }
 
-     //    function addColumns() {
+        function addColumns() {
+            colums.apply.push();
+        }
 
-     //    }
+        function getData() {
 
-     //    function getData() {
+        }
 
-     //    }
-
-     //    var rows =  [''];
-     //    var columns = [''];
-     // }
+        var rows =  [];
+        var columns = [];
+     }
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.

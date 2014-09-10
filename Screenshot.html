@@ -40,73 +40,37 @@
     <img id="imhx20base" src="images/imh-base.jpg" width="181" height="336" alt="" />
   </div>
 
-  <div id="email">
-  <a href="#">
-    <img id="email_base" src="images/email-base.jpg" width="24" height="24" alt="" /> </a>
-    <!--<img id="email_hover_1" src="images/hover/email-hover.jpg" width="24" height="24" alt="" />
-    <img id="email_active_1" src="images/active/email-active.jpg" width="24" height="24" alt="" /> -->
-  </div>
+  <div id="email" class="imh"></div>
+  <div id="mobile" class="imh"></div>
+  <div id="tweet" class="imh"></div>
+  <div id="sites" class="imh"></div>
+  <div id="studio" class="imh"></div>
+  <div id="audience" class="imh"></div>
+  <div id="report" class="imh"></div>
 
-  <div id="mobile">
-  <a href="#">
-    <img id="mobile_base" src="images/mobile-base.jpg" width="24" height="24" alt="" />
-  </a>
-  </div>
 
+<!--  PULSE Stuff  -->
   <div id="pulse_">
     <img id="pulse" src="images/pulse.jpg" width="994" height="265" alt="" />
   </div>
 
-  <div id="tweet">
-  <a href="#">
-    <img id="tweet_base" src="images/tweet-base.jpg" width="24" height="24" alt="" />
-  </a>
+  <div id="foursquare" class="dash lg">
+    <!-- <img id="foursquare_large" src="images/large/foursquare-large.jpg" width="280" height="187" alt="" /> -->
   </div>
-
-  <div id="foursquare-large_">
-    <img id="foursquare_large" src="images/large/foursquare-large.jpg" width="280" height="187" alt="" />
+  <div id="followers" class="dash">
+    <!-- <img id="followers_small" src="images/small/followers-small.jpg" width="160" height="117" alt="" /> -->
   </div>
-
-  <div id="sites">
-  <a href="#">
-    <img id="sites_base" src="images/sites-base.jpg" width="24" height="24" alt="" />
-  </a>
+  <div id="fan" class="dash">
+    <!-- <img id="fan_small" src="images/small/Fan-small.jpg" width="159" height="116" alt="" /> -->
   </div>
-
-  <div id="studio">
-  <a href="#">
-    <img id="studio_base" src="images/studio-base.jpg" width="24" height="25" alt="" />
-  </a>
+  <div id="subcribers" class="dash">
+    <!-- <img id="subcribers_small" src="images/small/subcribers-small.jpg" width="159" height="116" alt="" /> -->
   </div>
-
-  <div id="followers-small_">
-    <img id="followers_small" src="images/small/followers-small.jpg" width="160" height="117" alt="" />
-  </div>
-
-  <div id="Fan-small_">
-    <img id="Fan_small" src="images/small/Fan-small.jpg" width="159" height="116" alt="" />
-  </div>
-
-  <div id="subcribers-small_">
-    <img id="subcribers_small" src="images/small/subcribers-small.jpg" width="159" height="116" alt="" />
+  <div id="landingpages" class="dash">
+    <!-- <img id="landingpages_small" src="images/small/landingpages-small.jpg" width="160" height="116" alt="" /> -->
   </div>
 
 
-  <div id="landingpages-small_">
-    <img id="landingpages_small" src="images/small/landingpages-small.jpg" width="160" height="116" alt="" />
-  </div>
-
-  <div id="audience">
-  <a href="#">
-    <img id="audience_base" src="images/audience-base.jpg" width="24" height="24" alt="" />
-  </a>
-  </div>
-
-  <div id="report">
-  <a href="#">
-    <img id="report_base" src="images/report-base.jpg" width="24" height="24" alt="" />
-  </a>
-  </div>
 
 <script type="text/javascript">
 function pjson() {
@@ -116,11 +80,11 @@ function pjson() {
           var tag = $("<div></div>");
           for (var i = 0 ; i < json.help.length; i++){
             help += (json.help[i].title);
-            //help += "\n";
+            help += "</br />";
             help += (json.help[i].URL);
-            //help += "\n";
+            help += "<br /><br />";
           }
-          tag.html(help).dialog().dialog('open');
+          tag.html(help).dialog({width: 350}).dialog({height: 250}).dialog({width: 350}).dialog({position: {my: "right", at: "center", of: window}}).dialog('open');
       });
  };
 
