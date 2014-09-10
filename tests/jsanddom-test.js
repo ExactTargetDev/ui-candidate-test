@@ -9,9 +9,11 @@ test( "divide", 2, function() {
     // Make sure the result from the divide function is valid
     ok( divide( 4, 2 ), 2, 'Expected 2 as the result, the result was: ' + divide( 4, 2 ) );
 });
+
 /********************************
-Please create your tests below...
+reverseString(str)
 ********************************/
+
 module( "reverseString Unit Test" );
 test( "reverseString", 2, function() {
     // Verify the method exists
@@ -21,6 +23,10 @@ test( "reverseString", 2, function() {
     ok( reverseString( "Hello Exact Target" ), 'tegraT tcaxE olleH', 'Expected 2 as the result, the result was: ' + reverseString( "Hello Exact Target") );
 });
 
+/********************************
+findMinValue(values)
+********************************/
+
 module( "findMinValue Unit Test" );
 test( "findMinValue", 2, function() {
     // Verify the method exists
@@ -29,8 +35,10 @@ test( "findMinValue", 2, function() {
     ok( findMinValue( [3, 4, 1, 12, 7] ), 1 , 'Expected 1 as the result, the result was: ' + findMinValue( [3, 4, 1, 12, 7]));
 });
 
+/********************************
+findDistinctValues(values)
+********************************/
 
-/*********************************/
 module( "findDistinctValues Unit Test" );
 test( "findDistinctValues Test", 3, function() {
     // Verify the method exists
@@ -44,17 +52,23 @@ test( "findDistinctValues Test", 3, function() {
     ok( findDistinctValues(arr1), [1,2,3,5,7], 'Expected "[1,2,3,5,7]" as the result, the result was: ' + findDistinctValues(arr1) );
 });
 
-/*********************************/
+/********************************
+doFizzBuzz()
+********************************/
+
 module( "doFizzBuzz Unit Test" );
 test( "doFizzBuzz Test", 2, function() {
     // Verify the method exists
     equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' );
 
-    equal( doFizzBuzz(), '1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz Fizz 22 23 Fizz Buzz 26 Fizz 28 29 FizzBuzz 31 32 Fizz 34 Buzz Fizz 37 38 Fizz Buzz 41 Fizz 43 44 FizzBuzz 46 47 Fizz 49 Buzz Fizz 52 53 Fizz Buzz 56 Fizz 58 59 FizzBuzz 61 62 Fizz 64 Buzz Fizz 67 68 Fizz Buzz 71 Fizz 73 74 FizzBuzz 76 77 Fizz 79 Buzz Fizz 82 83 Fizz Buzz 86 Fizz 88 89 FizzBuzz 91 92 Fizz 94 Buzz Fizz 97 98 Fizz Buzz 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz Fizz 22 23 Fizz Buzz 26 Fizz 28 29 FizzBuzz 31 32 Fizz 34 Buzz Fizz 37 38 Fizz Buzz 41 Fizz 43 44 FizzBuzz 46 47 Fizz 49 Buzz Fizz 52 53 Fizz Buzz 56 Fizz 58 59 FizzBuzz 61 62 Fizz 64 Buzz Fizz 67 68 Fizz Buzz 71 Fizz 73 74 FizzBuzz 76 77 Fizz 79 Buzz Fizz 82 83 Fizz Buzz 86 Fizz 88 89 FizzBuzz 91 92 Fizz 94 Buzz Fizz 97 98 Fizz Buzz',
+    ok( doFizzBuzz(), '1 2 Fizz 4 FizzBuzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz Fizz 22 23 Fizz Buzz 26 Fizz 28 29 FizzBuzz 31 32 Fizz 34 Buzz Fizz 37 38 Fizz Buzz 41 Fizz 43 44 FizzBuzz 46 47 Fizz 49 Buzz Fizz 52 53 Fizz Buzz 56 Fizz 58 59 FizzBuzz 61 62 Fizz 64 Buzz Fizz 67 68 Fizz Buzz 71 Fizz 73 74 FizzBuzz 76 77 Fizz 79 Buzz Fizz 82 83 Fizz Buzz 86 Fizz 88 89 FizzBuzz 91 92 Fizz 94 Buzz Fizz 97 98 Fizz Buzz true',
       'Expected  as the result, the result was: ' + doFizzBuzz() );
 });
 
-/*********************************/
+/********************************
+removeFruits(fruits, fruitsToRemove)
+********************************/
+
 module( "removeFruits Unit Test" );
 test( "removeFruits Test", 2, function() {
     // Verify the method exists
@@ -64,7 +78,10 @@ test( "removeFruits Test", 2, function() {
     ok( removeFruits( ['apple', 'pear', 'peach', 'plum'], ['apple', 'peach'] ), ["pear", "plum"], 'Expected "["pear", "plum"]" as the result, the result was: ' + removeFruits( ['apple', 'pear', 'peach', 'plum'], ['apple', 'peach'] ) );
 });
 
-/*********************************/
+/********************************
+pushOntoArray(array, toPush)
+********************************/
+
 module( "pushOntoArray Unit Test" );
 test( "pushOntoArray Test", 3, function() {
     // Verify the method exists
@@ -75,7 +92,10 @@ test( "pushOntoArray Test", 3, function() {
     ok( pushOntoArray([10,11,20], [1,2,3,5]), '[10,11,20,1,2,3,5]', 'Expected "[10,11,20,1,2,3,5]"as the result, the result was: ' + pushOntoArray([10,11,20], [1,2,3,5]) );
 });
 
-/*********************************/
+/********************************
+splitListStrUsingComma(sourceStr)
+********************************/
+
 module( "splitListStrUsingCommaUnit Test" );
 test( "splitListStrUsingComma Test", 3, function() {
     // Verify the method exists
@@ -83,11 +103,14 @@ test( "splitListStrUsingComma Test", 3, function() {
 
     ok( splitListStrUsingComma( "This is really fun." ), 'This, is, really, fun', 'Expected "This, is, really, fun", as the result, the result was: ' + splitListStrUsingComma( "This is really fun.") );
 
-    ok( splitListStrUsingComma(" "), "", 'Expected "", as the result, the result was: ' + splitListStrUsingComma("") );
+    equal( splitListStrUsingComma(""), "", 'Expected "", as the result, the result was: ' + splitListStrUsingComma("") );
 });
 
-/*********************************/
-// module( "sum Unit Test" );
+/********************************
+sum()
+********************************/
+
+module( "sum Unit Test" );
 test( "sum Test", 4, function() {
     // Verify the method exists
     equal( typeof sum, 'function', 'Must contain a sum function' );
@@ -100,13 +123,20 @@ test( "sum Test", 4, function() {
     ok( sum(1,3,5,7,11), 27, 'Expected 27 as the result, the result was: ' + sum(1,3,5,7,11) );
 });
 
-/*********************************/
-// module( "isOnlyWhitespace Unit Test" );
+/********************************
+isOnlyWhitespace(sourceStr)
+********************************/
+
+module( "isOnlyWhitespace Unit Test" );
 test( "isOnlyWhitespace", 3, function() {
     // Verify the method exists
     equal( typeof isOnlyWhitespace, 'function', 'Must contain an isOnlyWhitespace function' );
 
-    equal( isOnlyWhitespace( "    " ), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace( "    ") );
+    var str1 = "    ";
+    var str2 = "     get";
 
-    equal( isOnlyWhitespace( "     get" ), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace( "     get") );
+    equal( isOnlyWhitespace(str1), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace(str1) );
+
+    equal( isOnlyWhitespace(str2), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace(str2) );
+
 });

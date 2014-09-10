@@ -1,0 +1,166 @@
+
+/* CCS */
+
+body {
+	max-width: 1250px;
+	max-height: 800px;
+  background-color: #FFFFFF;
+}
+
+style type="text/css">
+<!--
+
+#Table_01 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:1250px;
+  height:798px;
+}
+
+#header_ {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:1250px;
+  height:33px;
+}
+
+#cal_ {
+  position:absolute;
+  left:221px;
+  top:33px;
+  width:994px;
+  height:112px;
+}
+
+#scroll_ {
+  position:absolute;
+  left:1233px;
+  top:33px;
+  width:17px;
+  height:765px;
+}
+
+#imhx20base_ {
+  position:absolute;
+  left:20px;
+  top:52px;
+  width:181px;
+  height:60px;
+}
+
+
+#email {
+  position:absolute;
+  left:29px;
+  top:112px;
+  width:24px;
+  height:24px;
+
+}
+
+#mobile {
+  position:absolute;
+  left:29px;
+  top:145px;
+  width:24px;
+  height:24px;
+}
+
+#tweet {
+  position:absolute;
+  left:29px;
+  top:177px;
+  width:24px;
+  height:24px;
+}
+
+#sites {
+  position:absolute;
+  left:29px;
+  top:209px;
+  width:24px;
+  height:24px;
+}
+
+#studio {
+  position:absolute;
+  left:29px;
+  top:253px;
+  width:24px;
+  height:25px;
+}
+
+
+#audience {
+  position:absolute;
+  left:29px;
+  top:286px;
+  width:24px;
+  height:24px;
+}
+
+#report {
+  position:absolute;
+  left:29px;
+  top:319px;
+  width:24px;
+  height:24px;
+}
+
+/* Pulse Area */
+
+#pulse_ {
+  position:absolute;
+  left:221px;
+  top:166px;
+  width:994px;
+  height:35px;
+}
+
+
+#foursquare-large_ {
+  position:absolute;
+  left:750px;
+  top:201px;
+  width:280px;
+  height:187px;
+}
+
+
+
+#followers-small_ {
+  position:absolute;
+  left:234px;
+  top:253px;
+  width:160px;
+  height:117px;
+}
+
+#Fan-small_ {
+  position:absolute;
+  left:406px;
+  top:253px;
+  width:159px;
+  height:116px;
+}
+
+
+#subcribers-small_ {
+  position:absolute;
+  left:577px;
+  top:253px;
+  width:159px;
+  height:116px;
+}
+
+
+#landingpages-small_ {
+  position:absolute;
+  left:1043px;
+  top:253px;
+  width:160px;
+  height:116px;
+}
+

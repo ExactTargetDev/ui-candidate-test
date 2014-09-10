@@ -2,7 +2,133 @@
 <html>
 <head>
     <title>Screenshot.html</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Interactive Marketing Hub</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/screenshot.css">
 </head>
 <body>
-</body>
+  <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+<div id="Table_01">
+
+  <div id="header_">
+    <img id="header" src="images/header.jpg" width="1250" height="33" alt="header" usemap="#help" />
+    <map name="help">
+      <area shape="rect" coords="1160,0,1200,30" href="#" onClick="javascript:pjson();">
+    </map>
+  </div>
+
+  <div id="cal_">
+    <img id="cal" src="images/cal.jpg" width="994" height="112" alt="" />
+  </div>
+
+  <div id="scroll_">
+    <img id="scroll" src="images/scroll.jpg" width="17" height="765" alt="" />
+  </div>
+
+  <div id="imhx20base_">
+    <img id="imhx20base" src="images/imh-base.jpg" width="181" height="336" alt="" />
+  </div>
+
+  <div id="email">
+  <a href="#">
+    <img id="email_base" src="images/email-base.jpg" width="24" height="24" alt="" /> </a>
+    <!--<img id="email_hover_1" src="images/hover/email-hover.jpg" width="24" height="24" alt="" />
+    <img id="email_active_1" src="images/active/email-active.jpg" width="24" height="24" alt="" /> -->
+  </div>
+
+  <div id="mobile">
+  <a href="#">
+    <img id="mobile_base" src="images/mobile-base.jpg" width="24" height="24" alt="" />
+  </a>
+  </div>
+
+  <div id="pulse_">
+    <img id="pulse" src="images/pulse.jpg" width="994" height="265" alt="" />
+  </div>
+
+  <div id="tweet">
+  <a href="#">
+    <img id="tweet_base" src="images/tweet-base.jpg" width="24" height="24" alt="" />
+  </a>
+  </div>
+
+  <div id="foursquare-large_">
+    <img id="foursquare_large" src="images/large/foursquare-large.jpg" width="280" height="187" alt="" />
+  </div>
+
+  <div id="sites">
+  <a href="#">
+    <img id="sites_base" src="images/sites-base.jpg" width="24" height="24" alt="" />
+  </a>
+  </div>
+
+  <div id="studio">
+  <a href="#">
+    <img id="studio_base" src="images/studio-base.jpg" width="24" height="25" alt="" />
+  </a>
+  </div>
+
+  <div id="followers-small_">
+    <img id="followers_small" src="images/small/followers-small.jpg" width="160" height="117" alt="" />
+  </div>
+
+  <div id="Fan-small_">
+    <img id="Fan_small" src="images/small/Fan-small.jpg" width="159" height="116" alt="" />
+  </div>
+
+  <div id="subcribers-small_">
+    <img id="subcribers_small" src="images/small/subcribers-small.jpg" width="159" height="116" alt="" />
+  </div>
+
+
+  <div id="landingpages-small_">
+    <img id="landingpages_small" src="images/small/landingpages-small.jpg" width="160" height="116" alt="" />
+  </div>
+
+  <div id="audience">
+  <a href="#">
+    <img id="audience_base" src="images/audience-base.jpg" width="24" height="24" alt="" />
+  </a>
+  </div>
+
+  <div id="report">
+  <a href="#">
+    <img id="report_base" src="images/report-base.jpg" width="24" height="24" alt="" />
+  </a>
+  </div>
+
+<script type="text/javascript">
+function pjson() {
+
+      $.getJSON("../data/help.json", function (json) {
+          var help = "";
+          var tag = $("<div></div>");
+          for (var i = 0 ; i < json.help.length; i++){
+            help += (json.help[i].title);
+            //help += "\n";
+            help += (json.help[i].URL);
+            //help += "\n";
+          }
+          tag.html(help).dialog().dialog('open');
+      });
+ };
+
+</script>
+
+
+  <script src="./js/jquery.min.js" type="text/javascript"></script>
+  <script src="./js/jquery-ui.min.js" type="text/javascript"></script>
+  <script src="./js/main.js"></script>
+  </body>
 </html>
