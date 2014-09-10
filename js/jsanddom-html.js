@@ -49,18 +49,23 @@
      //
      var DataTable = {
 
+        function addRows(str) {
+            for (var i =0; i < columns.length; i++) {
+                if (row[i] === '')
+                    row.push(str);
+            }
 
-        function addRows() {
-            rows.apply.
-
-        }
-
-        function addColumns() {
-            colums.apply.push();
+        function addColumns(array) {
+            colums.push.apply(array);
         }
 
         function getData() {
+            var myRows = [];
+            myRows
 
+            var data = {};
+            data.rows = myRows;
+            return JSON.stringify(data);
         }
 
         var rows =  [];
