@@ -146,6 +146,7 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     //ERRORING IN TEST SUITE...
      document.getElementById("div1").innerHTML = "<select id='selectatronic'></select><button id='report'>report</button>";
 		var select = document.getElementById("selectatronic");
 		var options = ["one", "two", "three", "four", "five"];
