@@ -99,6 +99,14 @@
      }
 
      // write an example of a javascript closure
+	function closure() {
+    var parentname = "Darth";
+    function parentName() {
+        console.log("My parent's name is: " + parentname);
+    }
+    parentName();    
+	}
+
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -108,7 +116,18 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     
+     var text = '{ "people" : [' +
+	'{ "firstName":"Max" , "lastName":"Headroom" , "city":"Boston" , "state":"MA" , "zip":"00000" , "phone": ["3175551212","3175551313","3175551414"]},' +
+	'{ "firstName":"Princess" , "lastName":"Bubblegum" , "city":"Candy Kingdom" , "state":"AL" , "zip":"77777" , "phone": ["7775551212","7775551313","7775551414"]},' +
+	'{ "firstName":"Clutch" , "lastName":"Powers" , "city":"Rev City" , "state":"HW" , "zip":"99999" , "phone": ["9995551212","9995551313","9995551414"]}' +
+	']}';
 
+//for testing
+/*
+	var obj = JSON.parse(text);  
+	console.log(obj.people[1].firstName + " " + obj.people[1].lastName + " <br />" + obj.people[1].city + ", " + obj.people[1].state + ", " + obj.people[1].zip + " <br />" + obj.people[1].phone[0] + ", " + obj.people[1].phone[1] + ", " + obj.people[1].phone[2]);
+*/
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
@@ -121,16 +140,63 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     
+     //NOTE: Confused by this question, skipping for now.
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     document.getElementById("div1").innerHTML = "<select id='selectatronic'></select><button id='report'>report</button>";
+		var select = document.getElementById("selectatronic");
+		var options = ["one", "two", "three", "four", "five"];
+		for(var i = 0; i < options.length; i++) {
+			var opt = options[i];
+			var el = document.createElement("option");
+			el.textContent = opt;
+			el.value = opt;
+			select.appendChild(el);
+		}
+		document.getElementById("report").onclick=function(){
+		    var x = document.getElementById("selectatronic").value;
+			console.log(x);
+		};
+		
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
+//commented to prevent interference, as jQuery is not being included.
+/*
+	$( ".link" );
+	$( "div.buzz > a" );
+	$( "a" );
+	$( "a:first-of-type" );
+	$( "div a.link" );
+*/
+     
+
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     /*
+
+	<div id="baz" style="margin-top:10px;">
+	  <ul id="list1"></ul>
+	</div>
+*/
+
+	var listed = ["fruit", "vegetables", "non-fruit", "non-vegetables", "other"];
+	var arrayLength = listed.length;
+	for (var p = 0; p < arrayLength; p++) {
+		console.log(listed[p]);
+		 if(!listbits){
+			 var listbits = "<li>" + listed[p] + "</li>"; 			 
+		 }else{
+			 var listbits = listbits + "<li>" + listed[p] + "</li>";
+		 };
+		document.getElementById("list1").innerHTML = listbits;
+	}
+
+     
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
