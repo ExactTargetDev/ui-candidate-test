@@ -141,7 +141,7 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
      
-     //NOTE: Confused by this question, skipping for now.
+//NOTE: Confused by this question, skipping for now.
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
@@ -177,22 +177,14 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
-     /*
-
-	<div id="baz" style="margin-top:10px;">
-	  <ul id="list1"></ul>
-	</div>
-*/
-
 	var listed = ["fruit", "vegetables", "non-fruit", "non-vegetables", "other"];
 	var arrayLength = listed.length;
 	for (var p = 0; p < arrayLength; p++) {
-		console.log(listed[p]);
 		 if(!listbits){
 			 var listbits = "<li>" + listed[p] + "</li>"; 			 
 		 }else{
 			 var listbits = listbits + "<li>" + listed[p] + "</li>";
-		 };
+		 }
 		document.getElementById("list1").innerHTML = listbits;
 	}
 
@@ -202,3 +194,27 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+	var checks = ["one", "two", "three", "four", "five"];
+	var arrayLength = checks.length;
+	for (var t = 0; t < arrayLength; t++) {
+		if(!checklist){
+			var checklist = "<li><input type='checkbox' id='check_" + t + "'> " + checks[t] + "</li>"; 			 
+		}else{
+			var checklist = checklist + "<li><input type='checkbox' id='check_" + t + "'> " + checks[t] + "</li>";
+		}
+	}
+	var checklist = checklist + "<a id='allchecks' href='#'>ALL</a> ";
+	var checklist = checklist + "<a id='nochecks' href='#'>NONE</a>";
+	document.getElementById("foobar").innerHTML = checklist;
+	document.getElementById("allchecks").onclick=function(){
+		event.preventDefault();
+		for (i = 0; i<5; i++) {
+			document.getElementById('check_'+i).checked = true;
+		} 	
+	};
+	document.getElementById("nochecks").onclick=function(){
+		event.preventDefault();
+		for (i = 0; i<5; i++) {
+			document.getElementById('check_'+i).checked = false;
+		}
+	};
