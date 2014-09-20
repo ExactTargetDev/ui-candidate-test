@@ -1,7 +1,7 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
@@ -74,12 +74,17 @@
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+		var stringarray = sourceStr.split(",");
+		return stringarray;
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+		var totalval = 0;
+		for (var i = 0, j = arguments.length; i < j; i++){
+			totalval += arguments[i] 
+		}
+		return totalval;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
