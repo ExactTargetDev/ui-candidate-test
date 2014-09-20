@@ -6,17 +6,21 @@
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+		for (var i = str.length - 1, o = ''; i >= 0; o += str[i--]) { }
+		return o;
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+		 return Math.min.apply(Math, (values));
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+		var uniqueArray = values.filter(function(elem, pos) {
+			return values.indexOf(elem) == pos;
+		}); 
+		return uniqueArray;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,7 +28,17 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+		for (i=1; i<=100; i+=1) {		
+			if(((i % 5) == 0)&&((i % 3) == 0)){
+				console.log("FizzBuzz");
+			}else if((i % 5) == 0){
+				console.log("Buzz");			
+			}else if((i % 3) == 0){
+				console.log("Fizz");
+			}else{
+				console.log(i);
+			}
+		}
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -32,7 +46,14 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+		var arrayLength = fruitsToRemove.length;
+		for (var p = 0; p < arrayLength; p++) {
+			var i = fruits.indexOf(fruitsToRemove[p]);
+			if(i != -1) {
+				fruits.splice(i, 1);
+			}
+		}
+		return fruits;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -40,7 +61,15 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+		if (toPush instanceof Array) {
+			var arrayLength = toPush.length;
+			for (var p = 0; p < arrayLength; p++) {
+			array.push(toPush[p]);
+			}
+		} else {
+			array.push(toPush);
+		}
+		return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
