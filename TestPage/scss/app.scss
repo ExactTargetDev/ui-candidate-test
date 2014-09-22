@@ -217,5 +217,52 @@ a#config {
 }
 
 .pulse {
-	@include border-radius($radius);	
+	@include border-radius($radius);
+	@include background-image(linear-gradient(#bbc8d2, #dbe7ee));
+	@include box-shadow($greytext 0 0 4px inset);
+	margin-top: 30px;
+	h3 {
+		font-size: 1.5em;
+		margin: 5px 0 5px 20px;	
+		color: $whitetext;
+		@include text-shadow(rgba($primaryorange, 0.2) 1px 1px 0);
+	}
+	#pulse_container {
+		overflow: hidden;
+		#pulse_slider {
+			height: 170px;
+			width: 1000px;
+			overflow:hidden;
+			.pulse_item{
+				width: 160px;
+				float:left;
+				text-align: center;
+				margin: 0 10px;
+				span {
+					font-size: .7em;
+				}
+				.pulse_details {
+					@include background-image(linear-gradient(#f9fafb, #dee9f0));
+					@include box-shadow($whitetext 0 0 4px inset);
+					@include box-shadow($greytext 0 0 4px);
+					@include border-radius($radius);
+					height: 95px;
+					width: 160px;
+					.count {
+						color: $lightblue;
+						font-size: 2em;
+						line-height: 1em;
+						margin: 10px;
+					}
+					p {
+						color: $greytext;
+						line-height: .5em;						
+					}
+					small {
+						font-size: .6em;
+					}
+				}
+			}	
+		}
+	}
 }
