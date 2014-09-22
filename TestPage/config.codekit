@@ -3598,6 +3598,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/imh_ico.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2123,
+		"inputAbbreviatedPath": "\/images\/imh_ico.png",
+		"outputAbbreviatedPath": "\/images\/imh_ico.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/imh_menusprites.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5140,
+		"inputAbbreviatedPath": "\/images\/imh_menusprites.png",
+		"outputAbbreviatedPath": "\/images\/imh_menusprites.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,

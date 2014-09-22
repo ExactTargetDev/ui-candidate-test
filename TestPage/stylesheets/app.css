@@ -9006,7 +9006,7 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
-/* line 50, ../scss/app.scss */
+/* line 53, ../scss/app.scss */
 .top-bar {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ1NTI1YyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJiMzAzNCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -9015,21 +9015,145 @@ th.hide-for-touch {
   background-image: -webkit-linear-gradient(#45525c, #2b3034);
   background-image: linear-gradient(#45525c, #2b3034);
 }
-/* line 52, ../scss/app.scss */
+/* line 55, ../scss/app.scss */
 .top-bar #nav_logo {
   padding: 5px 0 0 20px;
 }
-/* line 55, ../scss/app.scss */
-.top-bar ul li, .top-bar a {
+/* line 58, ../scss/app.scss */
+.top-bar li, .top-bar a {
   background: none;
 }
-/* line 58, ../scss/app.scss */
+/* line 61, ../scss/app.scss */
 .top-bar span, .top-bar .divider, .top-bar a {
   color: white;
   font-size: .7em;
   line-height: 32px;
 }
-/* line 63, ../scss/app.scss */
-.top-bar ul li a {
+/* line 66, ../scss/app.scss */
+.top-bar li a {
   font-size: .7em;
+}
+
+/* line 71, ../scss/app.scss */
+#hub_menu {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #f4f4f5;
+  margin-top: 20px;
+}
+/* line 75, ../scss/app.scss */
+#hub_menu .heading {
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlY2E4NyIvPjxzdG9wIG9mZnNldD0iNSUiIHN0b3AtY29sb3I9IiNmZGFmNGIiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmODk4MWQiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #feca87), color-stop(5%, #fdaf4b), color-stop(100%, #f8981d));
+  background-image: -moz-linear-gradient(#feca87, #fdaf4b 5%, #f8981d);
+  background-image: -webkit-linear-gradient(#feca87, #fdaf4b 5%, #f8981d);
+  background-image: linear-gradient(#feca87, #fdaf4b 5%, #f8981d);
+  height: 50px;
+  border: 1px solid #f8981d;
+}
+/* line 80, ../scss/app.scss */
+#hub_menu .heading h2 {
+  text-shadow: rgba(248, 152, 29, 0.2) 1px 1px 0;
+  font-size: 1em;
+  color: white;
+  font-weight: bold;
+}
+/* line 86, ../scss/app.scss */
+#hub_menu .heading h2:before {
+  content: "";
+  display: block;
+  background: url("../images/imh_ico.png") no-repeat;
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin: 0 6px 0 0;
+}
+/* line 96, ../scss/app.scss */
+#hub_menu .side-nav {
+  padding-top: 0px;
+}
+/* line 99, ../scss/app.scss */
+#hub_menu .hub_option {
+  margin-top: 5px;
+  padding: 3px 0 5px 10px;
+  color: #888888;
+}
+/* line 104, ../scss/app.scss */
+#hub_menu #partner_popout {
+  font-size: .9em;
+}
+/* line 107, ../scss/app.scss */
+#hub_menu a.hub_option:before {
+  content: "";
+  display: block;
+  background: url("../images/imh_menusprites.png") no-repeat;
+  width: 24px;
+  height: 24px;
+  float: left;
+  margin: 0 6px 0 0;
+}
+/* line 116, ../scss/app.scss */
+#hub_menu #btn_exacttargetemail:before {
+  background-position: 0 -24px;
+}
+/* line 119, ../scss/app.scss */
+#hub_menu #btn_exacttargetmobile:before {
+  background-position: 0 -48px;
+}
+/* line 122, ../scss/app.scss */
+#hub_menu #btn_cotweetsocial:before {
+  background-position: 0 -72px;
+}
+/* line 125, ../scss/app.scss */
+#hub_menu #btn_exacttargetsites:before {
+  background-position: 0 -96px;
+}
+/* line 128, ../scss/app.scss */
+#hub_menu #btn_automationstudio:before {
+  background-position: 0 -120px;
+}
+/* line 131, ../scss/app.scss */
+#hub_menu #btn_audiencebuilder:before {
+  background-position: 0 -144px;
+}
+/* line 134, ../scss/app.scss */
+#hub_menu #btn_reportbuilder:before {
+  background-position: 0 -168px;
+}
+/* line 137, ../scss/app.scss */
+#hub_menu #partner_popout:before {
+  background-position: 0 -192px;
+  margin: 0;
+}
+
+/* line 143, ../scss/app.scss */
+#calendar_disp {
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #f4f4f5;
+}
+
+/* line 151, ../scss/app.scss */
+.pulse {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
