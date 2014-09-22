@@ -9020,21 +9020,18 @@ th.hide-for-touch {
   padding: 5px 0 0 20px;
 }
 /* line 58, ../scss/app.scss */
-.top-bar li, .top-bar a {
-  background: none;
-}
-/* line 61, ../scss/app.scss */
 .top-bar span, .top-bar .divider, .top-bar a {
   color: white;
   font-size: .7em;
   line-height: 32px;
 }
-/* line 66, ../scss/app.scss */
+/* line 63, ../scss/app.scss */
 .top-bar li a {
+  color: #7fcdf4;
   font-size: .7em;
 }
 
-/* line 71, ../scss/app.scss */
+/* line 69, ../scss/app.scss */
 #hub_menu {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -9045,7 +9042,7 @@ th.hide-for-touch {
   background-color: #f4f4f5;
   margin-top: 20px;
 }
-/* line 76, ../scss/app.scss */
+/* line 74, ../scss/app.scss */
 #hub_menu .heading {
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
@@ -9062,14 +9059,14 @@ th.hide-for-touch {
   height: 50px;
   border: 1px solid #f8981d;
 }
-/* line 81, ../scss/app.scss */
+/* line 79, ../scss/app.scss */
 #hub_menu .heading h2 {
   text-shadow: rgba(248, 152, 29, 0.2) 1px 1px 0;
   font-size: 1em;
   color: white;
   font-weight: bold;
 }
-/* line 87, ../scss/app.scss */
+/* line 85, ../scss/app.scss */
 #hub_menu .heading h2:before {
   content: "";
   display: block;
@@ -9079,21 +9076,21 @@ th.hide-for-touch {
   float: left;
   margin: 0 6px 0 0;
 }
-/* line 97, ../scss/app.scss */
+/* line 95, ../scss/app.scss */
 #hub_menu .side-nav {
   padding: 0px;
 }
-/* line 100, ../scss/app.scss */
+/* line 98, ../scss/app.scss */
 #hub_menu .hub_option {
   margin-top: 5px;
   padding: 3px 0 5px 10px;
   color: #888888;
 }
-/* line 105, ../scss/app.scss */
+/* line 103, ../scss/app.scss */
 #hub_menu #partner_popout {
   font-size: .9em;
 }
-/* line 108, ../scss/app.scss */
+/* line 106, ../scss/app.scss */
 #hub_menu a.hub_option:before {
   content: "";
   display: block;
@@ -9103,41 +9100,71 @@ th.hide-for-touch {
   float: left;
   margin: 0 6px 0 0;
 }
-/* line 117, ../scss/app.scss */
+/* line 115, ../scss/app.scss */
 #hub_menu #btn_exacttargetemail:before {
   background-position: 0 -24px;
 }
-/* line 120, ../scss/app.scss */
+/* line 118, ../scss/app.scss */
 #hub_menu #btn_exacttargetmobile:before {
   background-position: 0 -48px;
 }
-/* line 123, ../scss/app.scss */
+/* line 121, ../scss/app.scss */
 #hub_menu #btn_cotweetsocial:before {
   background-position: 0 -72px;
 }
-/* line 126, ../scss/app.scss */
+/* line 124, ../scss/app.scss */
 #hub_menu #btn_exacttargetsites:before {
   background-position: 0 -96px;
 }
-/* line 129, ../scss/app.scss */
+/* line 127, ../scss/app.scss */
 #hub_menu #btn_automationstudio:before {
   background-position: 0 -120px;
 }
-/* line 132, ../scss/app.scss */
+/* line 130, ../scss/app.scss */
 #hub_menu #btn_audiencebuilder:before {
   background-position: 0 -144px;
 }
-/* line 135, ../scss/app.scss */
+/* line 133, ../scss/app.scss */
 #hub_menu #btn_reportbuilder:before {
   background-position: 0 -168px;
 }
-/* line 138, ../scss/app.scss */
+/* line 136, ../scss/app.scss */
 #hub_menu #partner_popout:before {
   background-position: 0 -192px;
   margin: 0;
 }
 
-/* line 144, ../scss/app.scss */
+/* line 141, ../scss/app.scss */
+.control_icos {
+  display: block;
+  background: url("../images/control_icos.png") no-repeat;
+  width: 12px;
+  height: 12px;
+  float: right;
+  margin: 5px;
+}
+
+/* line 149, ../scss/app.scss */
+a#restore {
+  background-position: 0 0px;
+}
+
+/* line 152, ../scss/app.scss */
+a#minimize {
+  background-position: 0 -12px;
+}
+
+/* line 155, ../scss/app.scss */
+a#close {
+  background-position: 0 -24px;
+}
+
+/* line 158, ../scss/app.scss */
+a#config {
+  background-position: 0 -36px;
+}
+
+/* line 162, ../scss/app.scss */
 #calendar_disp {
   -moz-box-shadow: #888888 0 0 4px;
   -webkit-box-shadow: #888888 0 0 4px;
@@ -9157,29 +9184,29 @@ th.hide-for-touch {
   background-color: #f4f4f5;
   overflow: hidden;
 }
-/* line 152, ../scss/app.scss */
+/* line 170, ../scss/app.scss */
 #calendar_disp h3 {
   font-size: 1em;
   margin: 5px 0 5px 20px;
   color: #99abb6;
 }
-/* line 157, ../scss/app.scss */
+/* line 175, ../scss/app.scss */
 #calendar_disp #date_slider {
   height: 110px;
   width: 1000px;
   overflow: hidden;
 }
-/* line 162, ../scss/app.scss */
+/* line 180, ../scss/app.scss */
 #calendar_disp a.date_box:first-of-type {
   margin-left: -130px;
 }
-/* line 165, ../scss/app.scss */
+/* line 183, ../scss/app.scss */
 #calendar_disp a.date_box {
   width: 140px;
   float: left;
   color: #888888;
 }
-/* line 169, ../scss/app.scss */
+/* line 187, ../scss/app.scss */
 #calendar_disp a.date_box .date_details {
   border-left: 1px ridge #ddd;
   border-bottom: 1px ridge #ddd;
@@ -9188,22 +9215,22 @@ th.hide-for-touch {
   padding: 10px;
   font-size: .8em;
 }
-/* line 176, ../scss/app.scss */
+/* line 194, ../scss/app.scss */
 #calendar_disp a.date_box .date_details .weekday {
   float: left;
 }
-/* line 179, ../scss/app.scss */
+/* line 197, ../scss/app.scss */
 #calendar_disp a.date_box .date_details .datenum {
   float: right;
 }
-/* line 183, ../scss/app.scss */
+/* line 201, ../scss/app.scss */
 #calendar_disp a.date_box .indicator {
   clear: both;
   height: 20px;
   text-align: center;
   font-size: .8em;
 }
-/* line 191, ../scss/app.scss */
+/* line 209, ../scss/app.scss */
 #calendar_disp a.date_box.active .date_details {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViZjFmNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZlZWRkNiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -9212,7 +9239,7 @@ th.hide-for-touch {
   background-image: -webkit-linear-gradient(#ebf1f5, #feedd6);
   background-image: linear-gradient(#ebf1f5, #feedd6);
 }
-/* line 194, ../scss/app.scss */
+/* line 212, ../scss/app.scss */
 #calendar_disp a.date_box.active .indicator {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlZWRkNiIvPjxzdG9wIG9mZnNldD0iNSUiIHN0b3AtY29sb3I9IiNmZGFmNGIiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmODk4MWQiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
   background-size: 100%;
@@ -9223,7 +9250,7 @@ th.hide-for-touch {
   color: white;
 }
 
-/* line 201, ../scss/app.scss */
+/* line 219, ../scss/app.scss */
 .pulse {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;

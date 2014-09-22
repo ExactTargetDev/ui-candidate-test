@@ -3587,6 +3587,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/images\/control_icos.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1281,
+		"inputAbbreviatedPath": "\/images\/control_icos.png",
+		"outputAbbreviatedPath": "\/images\/control_icos.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/et_logo.png": {
 		"fileType": 32768,
 		"ignore": 0,
