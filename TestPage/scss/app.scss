@@ -1,0 +1,66 @@
+$whitetext: rgb(255,255,255);
+$lightblue: rgb(127,205,244);
+
+@import "settings";
+@import "foundation";
+@import "compass";
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+
+$navBarHeight: 32px;
+
+
+
+.top-bar {
+	@include background-image(linear-gradient(rgb(69,82,92), rgb(43,48,52)));
+	#nav_logo {
+		padding: 5px 0 0 20px;
+	}
+	ul li, a {
+		background: none;
+	}
+	span, .divider, a {
+		color: $whitetext;
+		font-size: .7em;
+		line-height: 32px;
+	}
+	ul li a{
+		font-size: .7em;		
+	}
+}
