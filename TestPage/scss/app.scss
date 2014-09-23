@@ -1,0 +1,268 @@
+$whitetext: rgb(255,255,255);
+$greytext: rgb(136,136,136);
+$lightblue: rgb(127,205,244);
+$primaryorange: rgb(248,152,29);
+$primaryorange_light: rgb(253,175,75);
+$primaryorange_lightest: rgb(254,237,214);
+$background_grey: rgb(244,244,245);
+
+$radius: 5px;
+
+@import "settings";
+@import "foundation";
+@import "compass";
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+
+.top-bar {
+	@include background-image(linear-gradient(rgb(69,82,92), rgb(43,48,52)));
+	#nav_logo {
+		padding: 5px 0 0 20px;
+	}
+	span, .divider, a {
+		color: $whitetext;
+		font-size: .7em;
+		line-height: 32px;
+	}
+	li a{
+		color: $lightblue;
+		font-size: .7em;		
+	}
+}
+
+#hub_menu {
+	@include border-radius($radius);
+	@include box-shadow($greytext 0 0 4px);
+	background-color: $background_grey;
+	margin-top: 20px;
+	.heading {
+		@include border-top-radius($radius);
+		@include background-image(linear-gradient($primaryorange_lightest, $primaryorange_light 5%, $primaryorange));
+		height: 50px;
+		border: 1px solid $primaryorange;
+		h2 {
+			@include text-shadow(rgba($primaryorange, 0.2) 1px 1px 0);
+			font-size: 1em;
+			color: $whitetext;
+			font-weight: bold;
+		}
+		h2:before {
+		    content: "";
+		    display: block;
+		    background: url("../images/imh_ico.png") no-repeat;
+		    width: 40px;
+		    height: 40px;
+		    float: left;
+		    margin: 0 6px 0 0;
+		}
+	}
+	.side-nav{
+		padding: 0px;
+	}
+	.hub_option {
+		margin-top: 5px;
+		padding: 3px 0 5px 10px;
+		color: $greytext;
+	}
+	#partner_popout {
+		font-size: .9em;
+	}
+	a.hub_option:before {
+		content: "";
+	    display: block;
+	    background: url("../images/imh_menusprites.png") no-repeat;
+	    width: 24px;
+	    height: 24px;
+	    float: left;
+	    margin: 0 6px 0 0;
+	}
+	#btn_exacttargetemail:before {
+		background-position: 0 -24px;
+	}
+	#btn_exacttargetmobile:before {
+		background-position: 0 -48px;
+	}
+	#btn_cotweetsocial:before {
+		background-position: 0 -72px;
+	}
+	#btn_exacttargetsites:before {
+		background-position: 0 -96px;
+	}
+	#btn_automationstudio:before {
+		background-position: 0 -120px;
+	}
+	#btn_audiencebuilder:before {
+		background-position: 0 -144px;
+	}
+	#btn_reportbuilder:before {
+		background-position: 0 -168px;
+	}
+	#partner_popout:before {
+		background-position: 0 -192px;
+	    margin: 0;
+	}
+}
+.control_icos {
+	display: block;
+    background: url("../images/control_icos.png") no-repeat;
+	width: 12px;
+	height: 12px;
+	float: right;
+	margin: 5px;		
+}
+a#restore {
+	background-position: 0 0px;
+}
+a#minimize {
+	background-position: 0 -12px;		
+}
+a#close {
+	background-position: 0 -24px;
+}
+a#config {
+	background-position: 0 -36px;
+}
+
+#calendar_disp {
+	@include box-shadow($greytext 0 0 4px);
+	@include border-corner-radius(top, left, 0);
+	@include border-corner-radius(top, right, 0);
+	@include border-corner-radius(bottom, left, $radius);
+	@include border-corner-radius(bottom, right, $radius);
+	background-color: $background_grey;
+	overflow: hidden;
+	h3{
+		font-size: 1em;
+		margin: 5px 0 5px 20px;
+		color: #99abb6;
+	}
+	#date_slider {
+		height: 110px;
+		width: 1000px;
+		overflow:hidden;
+	}
+	a.date_box:first-of-type {
+		margin-left: -130px;
+	}
+	a.date_box {
+		width: 140px;
+		float: left;
+		color: $greytext;
+		.date_details {
+			border-left: 1px ridge #ddd;
+			border-bottom: 1px ridge #ddd;
+			border-right: 1px ridge #ddd;
+			height: 90px;
+			padding: 10px;
+			font-size: .8em;
+			.weekday {
+				float: left;
+			}
+			.datenum {
+				float: right;
+			}
+		}
+		.indicator{
+			clear: both;
+			height: 20px;
+			text-align: center;
+			font-size: .8em;
+		}
+	}
+	a.date_box.active {
+		.date_details {
+			@include background-image(linear-gradient(#ebf1f5, $primaryorange_lightest));
+		}
+		.indicator {
+			@include background-image(linear-gradient($primaryorange_lightest, $primaryorange_light 5%, $primaryorange));
+			color: $whitetext;
+		}
+	}
+}
+
+.pulse {
+	@include border-radius($radius);
+	@include background-image(linear-gradient(#bbc8d2, #dbe7ee));
+	@include box-shadow($greytext 0 0 4px inset);
+	margin-top: 30px;
+	h3 {
+		font-size: 1.5em;
+		margin: 5px 0 5px 20px;	
+		color: $whitetext;
+		@include text-shadow(rgba($primaryorange, 0.2) 1px 1px 0);
+	}
+	#pulse_container {
+		overflow: hidden;
+		#pulse_slider {
+			height: 170px;
+			width: 1000px;
+			overflow:hidden;
+			.pulse_item{
+				width: 160px;
+				float:left;
+				text-align: center;
+				margin: 0 10px;
+				span {
+					font-size: .7em;
+				}
+				.pulse_details {
+					@include background-image(linear-gradient(#f9fafb, #dee9f0));
+					@include box-shadow($whitetext 0 0 4px inset);
+					@include box-shadow($greytext 0 0 4px);
+					@include border-radius($radius);
+					height: 95px;
+					width: 160px;
+					.count {
+						color: $lightblue;
+						font-size: 2em;
+						line-height: 1em;
+						margin: 10px;
+					}
+					p {
+						color: $greytext;
+						line-height: .5em;						
+					}
+					small {
+						font-size: .6em;
+					}
+				}
+			}	
+		}
+	}
+}
