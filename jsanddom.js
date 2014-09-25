@@ -6,17 +6,35 @@
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+         return str.split("").reverse().join("");
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+		values.sort(function(a, b){return a-b});//Sort the array ascending and values[0] is the minimum
+
+		var min=values[0];
+		//Found a quicker way to do this
+		/*for(var i=1; i<values.length;i++)
+		{
+			if(values[i]<min)
+				min=values[i];
+		}*/
+				
+		return min;
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+		var outputArray = [];
+		for(var i=0; i< values.length; i++)
+		{
+			if((jQuery.inArray(values[i], outputArray)) == -1)
+			{
+				outputArray.push(values[i]);
+			}
+		}
+		return outputArray;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,7 +42,17 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         for(var i=1; i<=100; i++)
+         {
+         	if(i%3==0 && i%5==0)
+         		console.log("FizzBuzz");
+         	else if(i%3==0)
+         		console.log("Fizz");
+         	else if(i%5==0)
+         		console.log("Buzz");
+         	else
+         		console.log(i);
+         }
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -32,7 +60,15 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+		for(var i=0; i< fruits.length; i++)
+		{
+			if((jQuery.inArray(fruits[i], fruitsToRemove)) >=0)
+			{
+				fruits.splice(i,1);
+			}
+		}
+		return fruits;
+		
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -40,7 +76,15 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+		if(toPush instanceof Array)
+		{
+			array=array.concat(toPush);
+		}
+		else
+		{
+			array.push(toPush);
+		}
+		return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
