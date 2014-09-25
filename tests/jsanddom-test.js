@@ -148,13 +148,31 @@ test( "isOnlyWhitespace", 3, function(){
 	equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
 	
 	// Make sure the result is true if only whitespace
-	var sourceStr="    ";
+	var sourceStr=" ";
 	var expectedResult=true;
 	equal( isOnlyWhitespace(sourceStr), expectedResult,'Expected '+expectedResult+' as the result, the result was: ' + isOnlyWhitespace(sourceStr));
 	
 	// Make sure the result is false if non whitespace
-	sourceStr="THIS SHOULD FAIL";
+	sourceStr="THISSHOULD FAIL";
 	expectedResult=false;
 	equal( isOnlyWhitespace(sourceStr), expectedResult,'Expected '+expectedResult+' as the result, the result was: ' + isOnlyWhitespace(sourceStr));
 
+});
+
+/********************************
+closure Unit Test
+********************************/
+module( "closure Unit Test" );
+test( "closure", 4, function(){
+	// Verify the method exists
+	equal( typeof makeCounter, 'function', 'Must contain a makeCounter function' );
+	
+	// Use a closure to make a counter, increment it and then decrement it
+	var counter1 = makeCounter();
+	equal(counter1.value(),0,'Expected 0 as the result, the result was: '+ counter1.value());
+	counter1.increment();
+	equal(counter1.value(),1,'Expected 1 as the result, the result was :'+counter1.value());
+	counter1.decrement();
+	equal(counter1.value(),0,'Expected 0 as the result, the result was: '+counter1.value());
+		
 });
