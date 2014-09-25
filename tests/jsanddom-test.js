@@ -101,3 +101,60 @@ test( "pushOntoArray", 3, function(){
 	deepEqual( pushOntoArray(array,toPush), expectedResult,'Expected '+expectedResult+' as the result, the result was: ' + array);
 
 });
+
+
+/********************************
+removeFruits Unit Test
+********************************/
+module( "splitListStrUsingComma Unit Test" );
+test( "splitListStrUsingComma", 3, function(){
+	// Verify the method exists
+	equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
+	
+	// Make sure the result is correct
+	var sourceStr="Apple,Banana,Tomato";
+	var resultArray=["Apple","Banana","Tomato"];
+	
+	deepEqual( splitListStrUsingComma(sourceStr), resultArray,'Expected '+resultArray+' as the result, the result was: ' + splitListStrUsingComma(sourceStr));
+	
+	// Make sure the result is an empty array when passing an empty string
+	sourceStr="";
+	resultArray=[];
+	deepEqual( splitListStrUsingComma(sourceStr), resultArray,'Expected '+resultArray+' as the result, the result was: ' + splitListStrUsingComma(sourceStr));
+	
+});
+
+/********************************
+sum Unit Test
+********************************/
+module( "sum Unit Test" );
+test( "sum", 2, function(){
+	// Verify the method exists
+	equal( typeof sum, 'function', 'Must contain a sum function' );
+	
+	// Make sure the result is correct
+	var resultValue=33;
+	var result=0;
+	equal( result=sum(30,3), resultValue,'Expected '+resultValue+' as the result, the result was: ' + result);
+	
+});
+
+/********************************
+isOnlyWhitespace Unit Test
+********************************/
+module( "isOnlyWhitespace Unit Test" );
+test( "isOnlyWhitespace", 3, function(){
+	// Verify the method exists
+	equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
+	
+	// Make sure the result is true if only whitespace
+	var sourceStr="    ";
+	var expectedResult=true;
+	equal( isOnlyWhitespace(sourceStr), expectedResult,'Expected '+expectedResult+' as the result, the result was: ' + isOnlyWhitespace(sourceStr));
+	
+	// Make sure the result is false if non whitespace
+	sourceStr="THIS SHOULD FAIL";
+	expectedResult=false;
+	equal( isOnlyWhitespace(sourceStr), expectedResult,'Expected '+expectedResult+' as the result, the result was: ' + isOnlyWhitespace(sourceStr));
+
+});

@@ -89,17 +89,28 @@
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
-     }
+		var array=[];
+		if(sourceStr.length > 0)
+			array=sourceStr.split(",");
+		return array;
+	}
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
-     }
+     	var sum=0;
+	 	for(var i=0;i<arguments.length;i++)
+	 		sum=sum+arguments[i];
+	 		
+	 	return sum;
+	 }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+
+		// Using a regular expression
+         if(/^\s+$/.test(sourceStr))
+         	valid=true;
+         return valid;
      }
 
      // write an example of a javascript closure
