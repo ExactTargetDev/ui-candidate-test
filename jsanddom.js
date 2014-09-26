@@ -206,7 +206,6 @@
 	 
 	 var selectList = document.createElement("select");
 	 selectList.id="fruitSelect";
-	 div1.appendChild(selectList);
 	 
 	 for(var i=0; i<selectArray.length; i++){
 	 	var option = document.createElement("option");
@@ -222,17 +221,77 @@
 	 	var text =  element.options[element.selectedIndex].text;
 	 	console.log("Value: " + value + " Text: "+ text);
 	 };
+	  div1.appendChild(selectList);
+	
 	 div1.appendChild(fruitButton);
-	 
-	 
 	 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
-
+/*     $(".link");
+     $("#fizz").children();
+     $(".buzz").children();
+     $("a");
+     $("a[href$='#']")
+*/
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+	 var characterArray = ["Mario", "Luigi", "Peach", "Yoshi", "Bowser"];
+	 var list1 = document.getElementById("list1");
+	 for(i=0;i<characterArray.length;i++){
+	 	var listItem = document.createElement('li');
+	 	listItem.innerHTML=characterArray[i];
+	 	list1.appendChild(listItem);
+	 }
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+	 var foobar = document.getElementById("foobar");
+	 var checkBoxArray = ["Daily","Weekly","Monthly"];
+	 for(i=0;i<checkBoxArray.length;i++){
+		var newCheckBox = document.createElement('input');
+		newCheckBox.type = 'checkbox';
+		newCheckBox.id = checkBoxArray[i];
+		newCheckBox.value = checkBoxArray[i];
+		newCheckBox.tag="timeTag";
+		var newLabel = document.createElement('label');
+		newLabel.innerHTML=checkBoxArray[i]+"</br>";
+		
+		foobar.appendChild(newCheckBox);
+		foobar.appendChild(newLabel);
+		
+	 }
+	 var link1 = document.createElement('a');
+	 var link1Text = document.createTextNode("Check All");
+	 var link2 = document.createElement('a');
+ 	 var link2Text = document.createTextNode("Uncheck All");
+
+	 link1.href="#";
+	 link1.appendChild(link1Text);
+	 link1.onclick = function () {
+	 console.log("HELLO");
+	 	var boxes = document.getElementsByTagName('input');
+	 	for(var i=0; i<boxes.length;i++){
+			if(boxes[i].type=='checkbox')
+		 		boxes[i].checked=true;
+	 	}
+
+	 };
+	 
+ 	 link2.href="#";
+	 link2.appendChild(link2Text);
+
+	 link2.onclick = function () {
+	 	var boxes = document.getElementsByTagName('input');
+	 	for(var i=0; i<boxes.length;i++){
+			if(boxes[i].type=='checkbox')		
+		 		boxes[i].checked=false;
+	 	}	 
+	 };	 
+	 
+	 foobar.appendChild(link1);
+	 var br = document.createElement("br");
+	 foobar.appendChild(br);
+ 	 foobar.appendChild(link2);
+	 
