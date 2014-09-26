@@ -143,8 +143,47 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     
+	var collection={
+		"people":[
+	 		{
+	 			"firstName":"Steve", 
+	 			"lastName":"Rodgers", 
+	 			"city":"New York City", 
+	 			"state":"New York", 
+	 			"zip":"91702", 
+	 			"phoneNumbers":[
+	 				{
+	 					"type":"home",
+	 					"number":"317 555-1945"
+	 				},
+	 				{
+	 					"type":"cell",
+	 					"number":"317 555-2014"
+	 				}
+	 			]
+	 		},
+	 		{
+	 			"firstName":"Tony", 
+	 			"lastName":"Stark", 
+			 	"city":"Los Angeles", 
+	 			"state":"California", 
+			 	"zip":"78452", 
+	 			"phoneNumbers":[
+	 				{
+	 					"type":"home",
+	 					"number":"317 555-2353"
+	 				},
+	 				{
+	 					"type":"cell",
+	 					"number":"317 555-9381"
+	 				}
+	 			]
+	 		}
+	 	]
+	 }
 
-
+	 	
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
      // A private rows property (string array)
@@ -156,11 +195,37 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+/*Not sure on this one*/
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
-
+	 var div1 = document.getElementById("div1");
+	 
+	 var selectArray = ["Apple","Banana","Tomato"];
+	 
+	 var selectList = document.createElement("select");
+	 selectList.id="fruitSelect";
+	 div1.appendChild(selectList);
+	 
+	 for(var i=0; i<selectArray.length; i++){
+	 	var option = document.createElement("option");
+	 	option.value=selectArray[i];
+	 	option.text=selectArray[i];
+	 	selectList.appendChild(option);
+	 }
+	 var fruitButton = document.createElement("Button");
+	 fruitButton.innerHTML="Fruit Button";
+	 fruitButton.onclick = function(){
+	 	var element = document.getElementById("fruitSelect");
+	 	var value = element.options[element.selectedIndex].value;
+	 	var text =  element.options[element.selectedIndex].text;
+	 	console.log("Value: " + value + " Text: "+ text);
+	 };
+	 div1.appendChild(fruitButton);
+	 
+	 
+	 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
