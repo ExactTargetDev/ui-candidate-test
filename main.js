@@ -18,7 +18,7 @@ $(document).ready(function(){
 });
 
 // Read the help.json file
-/*
+
 var xmlhttp = new XMLHttpRequest();
 var url = "https://raw.githubusercontent.com/ExactTargetDev/ui-candidate-test/develop/data/help.json";
 
@@ -37,4 +37,4 @@ function myFunction(arr) {
 	
 	alert(arr);
 	
-}*/
+}
