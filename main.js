@@ -9,7 +9,7 @@ $(document).ready(function(){
 		$(".hub-selected").removeClass("hub-selected");
 		$(this).addClass("hub-selected");
 	});
-	$(".pulse-small").click(function(){
+	$(".pulse-panel").click(function(){
 		$(".pulse-med").addClass("pulse-small");
 		$(".pulse-med").removeClass("pulse-med");
 		$(this).removeClass("pulse-small");
