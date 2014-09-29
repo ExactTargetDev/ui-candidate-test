@@ -1,11 +1,17 @@
+$(document).ready(function(){
 
 $(".hub-default").hover(function(){
-	console.log("HOVER!");
 	$(this).addClass("hub-hover");
 	},function(){
 	$(this).removeClass("hub-hover");
 });
+$(".hub-default").click(function(){
+	$(".hub-selected").removeClass("hub-selected");
+	$(this).addClass("hub-selected");
+	
+});
 
+});
 
 // Read the help.json file
 /*
