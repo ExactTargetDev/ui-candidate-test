@@ -3,7 +3,7 @@ $(".hub-default").hover(function(){
 	console.log("HOVER!");
 	$(this).addClass("hub-hover");
 	},function(){
-	$(this).removeClass("hub-hover);
+	$(this).removeClass("hub-hover");
 });
 
 
