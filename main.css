@@ -158,3 +158,41 @@ header
     margin-top: 50px;
 
 }
+
+.overlay-bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+    cursor: pointer;
+    z-index: 1000; 
+    background: #000; 
+    background: rgba(0,0,0,0.5);
+}
+    .overlay-content {
+        display: none;
+        background: #fff;
+        padding: 1%;
+        width: 40%;
+        position: relative;
+        top: 15%;
+        left: 50%;
+        margin: 0 0 0 -20%; 
+        cursor: default;
+        border-radius: 4px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.9);
+    }
+ 
+    .close-btn {
+        cursor: pointer;
+        border: 1px solid #333;
+        padding: 2% 5%;
+        background: #a9e7f9; 
+    }
+    .close-btn:hover {
+        background: #05abe0;
+    }
+
+
