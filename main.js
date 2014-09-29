@@ -1,16 +1,20 @@
 $(document).ready(function(){
 
-$(".hub-default").hover(function(){
-	$(this).addClass("hub-hover");
-	},function(){
-	$(this).removeClass("hub-hover");
-});
-$(".hub-default").click(function(){
-	$(".hub-selected").removeClass("hub-selected");
-	$(this).addClass("hub-selected");
-	
-});
-
+	$(".hub-default").hover(function(){
+		$(this).addClass("hub-hover");
+		},function(){
+		$(this).removeClass("hub-hover");
+	});
+	$(".hub-default").click(function(){
+		$(".hub-selected").removeClass("hub-selected");
+		$(this).addClass("hub-selected");
+	});
+	$(".pulse-small").click(function(){
+		$(".pulse-med").addClass("pulse-small");
+		$(".pulse-med").removeClass("pulse-med");
+		$(this).removeClass("pulse-small");
+		$(this).addClass("pulse-med");
+	});
 });
 
 // Read the help.json file

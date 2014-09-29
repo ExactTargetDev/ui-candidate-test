@@ -1,3 +1,6 @@
+body{
+	font-family: arial;
+}
 header
 {
 /*	height: 30px;*/
@@ -17,7 +20,13 @@ header
 }
 .main-nav
 {
+	margin: 10px;
 	float:right;
+}
+.main-nav, a:link, a:visited, a:hover, a:active
+{
+	text-decoration:none;
+	color: #00CCFF;	
 }
 .title
 {
@@ -97,8 +106,8 @@ header
 }
 #wrapper80
 {
-	width: 89%;
-	float: right;
+	/*width: 80%;*/
+	float: left;
 	display: inline;
 }
 #calendar
@@ -106,20 +115,46 @@ header
 	border-style: solid;
     border-width: 1px;
 	height: 150px;
+	margin: 25px;
 }
 
 #pulse
 {
-	border-style: solid;
-    border-width: 1px;
     height: 300px;
+    margin: 25px;
     
+    
+}
+.grad {
+  background: -webkit-linear-gradient(#BCC9D2, #D9E5ED); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#BCC9D2, #D9E5ED); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#BCC9D2, #D9E5ED); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#BCC9D2, #D9E5ED); /* Standard syntax */
+}
+.win-title
+{
+	position:relative;
+	margin: 25px;
+	top: 25px;
 }
 .pulse-med
 {
-
+	float: left;
+	border-style: solid;
+    border-width: 1px;
+    width: 250px;
+    height: 150px;
+    margin: 25px;
 }	
 .pulse-small
 {
+	float: left;	
+	display: inline;
+	border-style: solid;
+    border-width: 1px;
+	width: 170px;
+    height: 90px;
+    margin: 25px;
+    margin-top: 50px;
 
 }
