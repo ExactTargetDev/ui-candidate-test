@@ -1,2 +1,172 @@
-
-
+html {
+}
+body {
+	background: #fff;
+}
+.header {
+	width: 100%;
+	height: 32px;
+	background: url(../images/header_back.png);
+}
+header {}
+.logo {
+	float: left;
+	width: 20%;
+	height: 32px;
+	background: url(../images/sprite_deck.png) 5px -1px no-repeat;
+}
+.menu {
+	float: left;
+	width: 80%;
+}
+.menu ul {
+	float: right;
+	margin: 5px 0px 0px 0px;
+}
+.menu ul li {
+	display: inline-block;
+	border-right: 1px solid #fff;
+	line-height: 9px;
+	padding: 0px 10px;
+	color: #eee;
+	font-size: 11px;
+}
+.menu ul li:last-child {
+	border-right: none;
+}
+.menu ul li a {
+	color: #99cce1;
+}
+.wrapper {
+	
+}
+.navwrap {
+	width: 20%;
+	float: left;
+}
+nav {
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	background-clip: padding-box;
+	width: 90%;
+	height: auto;
+	margin: 10px auto;
+	border: 1px solid #eee;
+	background-color: #f8981d;
+	background-image:
+	linear-gradient(
+		#fcab43, #f8981d
+	);
+}
+nav ul {
+	background-color: #f4f4f5;
+	margin: 50px 0px 0px 0px !important;
+}
+nav ul, nav ul li  {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	list-style-image: none;
+}
+nav ul li {
+	padding: 0px 0px 0px 40px;
+	margin: 0 0 0 5px;
+	font-size: 12px;
+}
+nav ul li a {
+	text-decoration: none !important;
+	padding: 6px 0px 0px 0px;
+	display: block;
+}
+nav ul li a:hover {
+	color: #f00;
+	text-decoration: none !important;
+}
+nav ul li:first-child {
+	width: 170px;
+	height: 40px;
+    padding: 0 0 0 50px;
+    position: absolute;
+    top: 50px;
+	background: url(../images/sprite_deck.png) -5px -42px no-repeat;
+	color: #fff;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: bold;
+	margin: 2px 0px 0px 0px;
+}
+nav ul li:nth-child(2) {
+  background: url(../images/sprite_deck.png) -8px -82px no-repeat;
+  height: 30px;
+  color: #929ba5;
+}
+nav ul li:nth-child(3) {
+  background: url(../images/sprite_deck.png) -8px -114px no-repeat;
+  height: 30px;
+  color: #929ba5;
+}
+nav ul li:nth-child(4) {
+  background: url(../images/sprite_deck.png) -8px -147px no-repeat;
+  height: 30px;
+  color: #929ba5;
+}
+nav ul li:nth-child(5) {
+  border-bottom: 1px #ccc solid;
+  margin: 0px 0px 10px 0px;
+  padding: 0 0 0 45px;
+  background: url(../images/sprite_deck.png) -3px -180px no-repeat;
+  color: #929ba5;
+  height: auto;
+}
+nav ul li:nth-child(5) a {
+  padding: 6px 0px 15px 0px;
+}
+nav ul li:nth-child(6) {
+  margin: 10px 0px 0px 5px;
+  background: url(../images/sprite_deck.png) -8px -224px no-repeat;
+  color: #929ba5;
+  height: 30px;
+}
+nav ul li:nth-child(6) a {
+  padding: 6px 0px 15px 0px;
+}
+nav ul li:nth-child(7) {
+  background: url(../images/sprite_deck.png) -8px -256px no-repeat;
+  color: #929ba5;
+  height: 30px;
+}
+nav ul li:nth-child(8) {
+  margin: 0px 0px 10px 0px;
+  padding: 0 0 0 45px;
+  border-bottom: 1px #ccc solid;
+  background: url(../images/sprite_deck.png) -3px -288px no-repeat;
+  color: #929ba5;
+  height: auto;
+}
+nav ul li:nth-child(8) a {
+  padding: 6px 0px 15px 0px;
+}
+nav ul li:nth-child(9) {
+  background: url(../images/sprite_deck.png) -8px -351px no-repeat;
+  color: #929ba5;
+  height: 30px;
+  padding: 0 0 0 20px;
+}
+nav ul li:nth-child(9) a {
+  padding: 1px 0px 15px 0px;
+}
+nav ul li:last-child {
+	
+}
+.bodywrap {
+	width: 80%;
+	float: left;
+}
+main {
+}
+.container {
+}
+table {
+}

@@ -1,13 +1,67 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="dashboard">
 <head>
 	<title>ExactTarget Dash</title>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
+    <script>
+	  less = {
+		env: "development",
+		async: false,
+		fileAsync: false,
+		poll: 1000,
+		functions: {},
+		dumpLineNumbers: "comments",
+		relativeUrls: false,
+		rootpath: ":/a.com/"
+	  };
+	</script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.5/less.min.js"></script>
 </head>
-<body>    
-	
-    
+<body>
+	<div class="header">
+    	<header>
+            <div class="logo">
+                <a href="#" alt="ExactTarget">&nbsp;</a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>Welcome Chris!</li>
+                    <li><a href="#" alt="Account Services">Account</a></li>
+                    <li><a href="#" alt="Help">Help</a></li>
+                    <li><a href="#" alt="Logout">Logout</a></li>
+                </ul>
+            </div>
+		</header>
+	</div>
+    <div class="wrapper">
+    	<div class="navwrap">
+        	<nav>
+                <ul>
+                    <li>Interactive Marketing Hub</li>
+					<li><a href="#" alt="ExactTarget Email">ExactTarget Email</a></li>
+					<li><a href="#" alt="ExactTarget Mobile">ExactTarget Mobile</a></li>
+					<li><a href="#" alt="CoTweet Social">CoTweet Social</a></li>
+					<li><a href="#" alt="ExactTarget Sites">ExactTarget Sites</a></li>
+					<li><a href="#" alt="Automation Studio">Automation Studio</a></li>
+					<li><a href="#" alt="Audience Builder">Audience Builder</a></li>
+					<li><a href="#" alt="Report Builder">Report Builder</a></li>
+					<li><a href="#" alt="Partner Applications">Partner Applications</a></li>
+                </ul>
+			</nav>
+        </div>
+        <div class="bodywrap">
+        	<main>
+                <div class="bodywrap_cal">
+                    <p>Pending Style Content</p>
+                </div>
+                <div class="bodywrap_pulse">
+                    <p>Pending Style Content</p>
+                </div>
+            </main>
+        </div>
+	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
