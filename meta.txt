@@ -1,0 +1,10 @@
+## Start Time
+1412149140
+
+##Total Time
+15:30
+
+##Browser Tests Stats
+IE 9 & 10
+Chrome 37.x
+Firefox 32.0.3

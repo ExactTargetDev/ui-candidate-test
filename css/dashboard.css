@@ -1,0 +1,301 @@
+html {
+}
+body {
+	background: #fff;
+}
+.header {
+	width: 100%;
+	height: 32px;
+	background: url(../images/header_back.png);
+}
+header {}
+.logo {
+	float: left;
+	width: 20%;
+	height: 32px;
+	background: url(../images/sprite_deck.png) 5px -1px no-repeat;
+}
+.menu {
+	float: left;
+	width: 80%;
+}
+.menu ul {
+	float: right;
+	margin: 5px 0px 0px 0px;
+}
+.menu ul li {
+	display: inline-block;
+	border-right: 1px solid #fff;
+	line-height: 9px;
+	padding: 0px 10px;
+	color: #eee;
+	font-size: 11px;
+}
+.menu ul li:last-child {
+	border-right: none;
+}
+.menu ul li a {
+	color: #99cce1;
+}
+.wrapper {
+	
+}
+.navwrap {
+	width: 20%;
+	float: left;
+}
+nav {
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	background-clip: padding-box;
+	width: 90%;
+	height: auto;
+	margin: 10px auto;
+	border: 1px solid #eee;
+	background-color: #f8981d;
+	background-image:
+	linear-gradient(
+		#fcab43, #f8981d
+	);
+}
+nav ul {
+	background-color: #f4f4f5;
+	margin: 50px 0px 0px 0px !important;
+}
+nav ul, nav ul li  {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	list-style-image: none;
+}
+nav ul li {
+	padding: 0px 0px 0px 40px;
+	margin: 0 0 0 5px;
+	font-size: 12px;
+}
+nav ul li a {
+	text-decoration: none !important;
+	padding: 6px 0px 0px 0px;
+	display: block;
+}
+nav ul li a:hover {
+	color: #f00;
+	text-decoration: none !important;
+}
+nav ul li:first-child {
+	width: 170px;
+	height: 40px;
+    padding: 0 0 0 50px;
+    position: absolute;
+    top: 50px;
+	background: url(../images/sprite_deck.png) -5px -42px no-repeat;
+	color: #fff;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: bold;
+	margin: 2px 0px 0px 0px;
+}
+nav ul li:nth-child(2) {
+  background: url(../images/sprite_deck.png) -8px -82px no-repeat;
+  height: 30px;
+  color: #929ba5;
+}
+nav ul li:nth-child(3) {
+  background: url(../images/sprite_deck.png) -8px -114px no-repeat;
+  height: 30px;
+  color: #929ba5;
+}
+nav ul li:nth-child(4) {
+  background: url(../images/sprite_deck.png) -8px -147px no-repeat;
+  height: 30px;
+  color: #929ba5;
+}
+nav ul li:nth-child(5) {
+  border-bottom: 1px #ccc solid;
+  margin: 0px 0px 10px 0px;
+  padding: 0 0 0 45px;
+  background: url(../images/sprite_deck.png) -3px -180px no-repeat;
+  color: #929ba5;
+  height: auto;
+}
+nav ul li:nth-child(5) a {
+  padding: 6px 0px 15px 0px;
+}
+nav ul li:nth-child(6) {
+  margin: 10px 0px 0px 5px;
+  background: url(../images/sprite_deck.png) -8px -224px no-repeat;
+  color: #929ba5;
+  height: 30px;
+}
+nav ul li:nth-child(6) a {
+  padding: 6px 0px 15px 0px;
+}
+nav ul li:nth-child(7) {
+  background: url(../images/sprite_deck.png) -8px -256px no-repeat;
+  color: #929ba5;
+  height: 30px;
+}
+nav ul li:nth-child(8) {
+  margin: 0px 0px 10px 0px;
+  padding: 0 0 0 45px;
+  border-bottom: 1px #ccc solid;
+  background: url(../images/sprite_deck.png) -3px -288px no-repeat;
+  color: #929ba5;
+  height: auto;
+}
+nav ul li:nth-child(8) a {
+  padding: 6px 0px 15px 0px;
+}
+nav ul li:nth-child(9) {
+  background: url(../images/sprite_deck.png) -8px -351px no-repeat;
+  color: #929ba5;
+  height: 30px;
+  padding: 0 0 0 20px;
+}
+nav ul li:nth-child(9) a {
+  padding: 1px 0px 15px 0px;
+}
+nav ul li:last-child {
+	
+}
+.bodywrap {
+	width: 80%;
+	float: left;
+}
+.bodywrap_cal {
+	border-radius: 0px 0px 7px 7px;
+	-moz-border-radius:  0px 0px 7px 7px;
+	-webkit-border-radius:  0px 0px 7px 7px;
+	width: 99%;
+	min-height: 100px;
+	background: #f5f5f5;
+	margin: 0px 0px 20px 0px;
+}
+.bodywrap_cal .ui-datepicker-header, table.ui-datepicker-calendar thead { display: none; }
+.bodywrap_cal table {
+	width: auto;
+}
+.bodywrap_cal table tr {}
+.bodywrap_cal table.ui-datepicker-calendar tbody tr {
+	display: inline-block;
+	float: left;
+}
+.bodywrap_pulse {
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	background-clip: padding-box;
+	width: 99%;
+	min-height: 250px;
+	border: 1px solid #a8b4bd;
+	background-color: #a8b4bd;
+	background-image:
+	linear-gradient(
+		#a8b4bd, #cdd9e1
+	);
+}
+.bodywrap_pulse_header {
+	height: 50px;
+}
+.bodywrap_pulse_header_logo {
+	float: left;
+	width: 20%;
+	height: 50px;
+	background: url(../images/sprite_deck.png) 2px -540px no-repeat;
+}
+.bodywrap_pulse_header_nav {
+	float: left;
+	width: 80%;
+}
+.bodywrap_pulse_header_nav span {
+	float: right;
+	width: 20px;
+	height: 20px;
+}
+.bodywrap_pulse_header_nav a:nth-child(1) span {
+	background: url(../images/sprite_deck.png) -7px -522px no-repeat;
+	display: inline-block;
+}
+.bodywrap_pulse_header_nav a:nth-child(2) span {
+	background: url(../images/sprite_deck.png) -7px -400px no-repeat;
+	display: inline-block;
+}
+.bodywrap_pulse_header_nav a:nth-child(3) span {
+	background: url(../images/sprite_deck.png) -7px -375px no-repeat;
+	display: inline-block;
+}
+.bodywrap_pulse_header_nav a:nth-child(4) span {
+	background: url(../images/sprite_deck.png) -7px -325px no-repeat;
+	display: inline-block;
+}
+.bodywrap_pulse_body ul {
+	width: 100%;
+	margin: 0px 0px 0px 10px;
+	padding: 0px;
+}
+.bodywrap_pulse_body ul li {
+	display: inline-block;
+	margin: 0px 5px;
+}
+.bodywrap_pulse_body ul li a, .bodywrap_pulse_body ul li a:hover {
+	text-decoration: none;
+}
+.bodywrap_pulse_body ul li a span:nth-child(1) {
+	color: #7f91a3 !important;
+	display: block;
+	text-align: center;
+	margin: 0px 0px 5px 0px;
+	font-size: 11px;
+}
+.bodywrap_pulse_body ul li a span:nth-child(2) {
+	width: 160px;
+	height: 100px;
+	display: block;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border: 1px solid #dee9f0;
+	background-color: #f8fafb;
+	background-image:
+	linear-gradient(
+		#f8fafb, #dee9f0
+	);
+}
+.bodywrap_pulse_body ul li a span:nth-child(2) span:nth-child(1) {
+	color: #34bbf3 !important;
+	display: block;
+	text-align: center;
+	margin: 0px 0px -7px 0px;
+	font-size: 40px;
+}
+.bodywrap_pulse_body ul li a span:nth-child(2) span:nth-child(2) {
+	color: #98b3c3 !important;
+	height: 20px !important;
+	border: 0px !important; 
+	background-color: transparent !important;
+	background-image: none !important;
+	border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	-webkit-border-radius: 0px !important;
+	display: block;
+	text-align: center;
+	margin: 0px 0px 0px 0px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.bodywrap_pulse_body ul li a span:nth-child(2) span:nth-child(3) {
+	color: #98b3c3 !important;
+	height: 20px;
+	display: block;
+	text-align: center;
+	margin: 7px 0px 0px 0px;
+	font-size: 11px;
+	font-weight: bold;
+}
+main {
+}
+.container {
+}
+table {
+}
