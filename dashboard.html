@@ -1,23 +1,19 @@
 <!doctype html>
 <html lang="en" ng-app="dashboard">
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>ExactTarget Dash</title>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
-    <script>
-	  less = {
-		env: "development",
-		async: false,
-		fileAsync: false,
-		poll: 1000,
-		functions: {},
-		dumpLineNumbers: "comments",
-		relativeUrls: false,
-		rootpath: ":/a.com/"
-	  };
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+	<script>
+		$( document ).ready(function() {
+			console.log( "ready!" );
+			$("#datepicker").datepicker();
+		});
 	</script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.5/less.min.js"></script>
 </head>
 <body>
 	<div class="header">
@@ -29,7 +25,7 @@
                 <ul>
                     <li>Welcome Chris!</li>
                     <li><a href="#" alt="Account Services">Account</a></li>
-                    <li><a href="#" alt="Help">Help</a></li>
+                    <li><a href="#" ng-click="open()">Help</a></li>
                     <li><a href="#" alt="Logout">Logout</a></li>
                 </ul>
             </div>
@@ -54,16 +50,46 @@
         <div class="bodywrap">
         	<main>
                 <div class="bodywrap_cal">
-                    <p>Pending Style Content</p>
+                    <div id="datepicker"></div>
                 </div>
                 <div class="bodywrap_pulse">
-                    <p>Pending Style Content</p>
+                    <div class="bodywrap_pulse_header">
+						<div class="bodywrap_pulse_header_logo"></div>
+						<div class="bodywrap_pulse_header_nav">
+							<a href="#" alt=""><span></span></a>
+							<a href="#" alt=""><span></span></a>
+							<a href="#" alt=""><span></span></a>
+							<a href="#" alt=""><span></span></a>
+						</div>
+					</div>
+					<div class="bodywrap_pulse_body">
+						<ul>
+							<li><a href="#" alt=""><span>Followers</span><span><span>100</span><span>added today</span><span>2,365,654 total</span></span></a></li>
+							<li><a href="#" alt=""><span>Fans</span><span><span>100</span><span>added today</span><span>2,365,654 total</span></span></a></li>
+							<li><a href="#" alt=""><span>Subscribers</span><span><span>100</span><span>added today</span><span>2,365,654 total</span></span></a></li>
+							<li><a href="#" alt=""><span>Foursquare</span><span><span>100</span><span>added today</span><span>2,365,654 total</span></span></a></li>
+							<li><a href="#" alt=""><span>Landing Pages</span><span><span>100</span><span>added today</span><span>2,365,654 total</span></span></a></li>
+						</ul>
+					</div>
                 </div>
             </main>
         </div>
 	</div>
+    <script>
+	  less = {
+		env: "development",
+		async: false,
+		fileAsync: false,
+		poll: 1000,
+		functions: {},
+		dumpLineNumbers: "comments",
+		relativeUrls: false,
+		rootpath: ":/a.com/"
+	  };
+	</script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.5/less.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="js/dashboard.js"></script>
+	<script src="js/dashboard.js"></script>
 </body>
 </html>
