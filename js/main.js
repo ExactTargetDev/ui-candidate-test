@@ -1,5 +1,15 @@
-/**
- * User: Lawrence
- * Date: 11/27/2014
- * Time: 4:57 AM
- */
+$(function(){
+
+    $('#menu-list li').click(function(){
+
+        $('#menu-list li').each(function(){
+            if($(this).hasClass('active')){
+                $(this).removeClass('active')
+            }
+        });
+        $(this).addClass('active');
+    });
+
+
+
+});

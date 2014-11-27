@@ -16,6 +16,9 @@ body {
   padding: 0;
   margin: 0;
 }
+#container {
+  height: 460px;
+}
 #header {
   width: 100%;
   height: 32px;
@@ -37,18 +40,14 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#45525c', endColorstr='#2b3034', GradientType=0);
   /* IE6-9 */
 }
-#header {
-  color: #fefffd;
+#left-column {
+  width: 23%;
+  height: 100%;
+  min-width: 220px;
+  float: left;
 }
-#header a {
-  margin: 0 6px 0 3px;
-  color: #99cce1;
-  text-decoration: none;
-}
-#header a:hover {
-  text-decoration: underline;
-}
-#signed-in {
-  width: 300px;
-  float: right;
+#main-content {
+  width: 77%;
+  height: 100%;
+  float: left;
 }

@@ -1,0 +1,22 @@
+/***********************************
+colors
+************************************/
+/***********************************
+fonts
+************************************/
+#header {
+  color: #fefffd;
+}
+#header a {
+  margin: 0 6px 0 3px;
+  color: #99cce1;
+  text-decoration: none;
+}
+#header a:hover {
+  text-decoration: underline;
+}
+#signed-in {
+  width: 300px;
+  padding-top: 3px;
+  float: right;
+}
