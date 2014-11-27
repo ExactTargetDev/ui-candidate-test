@@ -17,6 +17,7 @@ body {
   margin: 0;
 }
 #container {
+  min-width: 1200px;
   height: 460px;
 }
 #header {
