@@ -32,3 +32,24 @@ test( "Minimum Value of Array ", 2, function() {
 
     ok( findMinValue(arr), 4, 'Expected 4 as the result, the result was: ' + findMinValue(arr));
 });
+
+
+/********************************
+ Test 3 - Distinct Value
+ ********************************/
+test( "Distinct Value of Array", 2, function() {
+    equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
+
+    var arr = [7,4,7,7];
+
+    ok( findDistinctValues(arr), 4, 'Expected 4 as the result, the result was: ' + findDistinctValues(arr));
+});
+
+/********************************
+ Test 4 - Fizz Buzz
+ ********************************/
+test( "Fizz Buzz Multiples", 2, function() {
+    equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' );
+
+    ok( doFizzBuzz(), 'The result was: ' + doFizzBuzz());
+});

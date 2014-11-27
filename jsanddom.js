@@ -22,7 +22,25 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+
+         Array.prototype.inArray = function(values) {
+             for(var i = 0; i < this.length; i++) {
+                 if(this[i] === values) return true;
+             }
+             return false;
+         };
+
+         Array.prototype.distinct = function() {
+             var arr = [];
+             for(var i = 0; i < this.length; i++) {
+                 if(!arr.inArray(this[i])) {
+                     arr.push(this[i]);
+                 }
+             }
+             return arr;
+         };
+
+         return values.distinct();
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -30,7 +48,30 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+
+         var str = "",
+             mult3,
+             mult5,
+             a;
+
+         for (a = 1; a <= 100; a++){
+
+             mult3 = a%3 ==0;
+             mult5 = a%5 ==0;
+
+             if(mult3){
+                 str += "Fizz"
+             }
+             if (mult5){
+                 str += "Buzz"
+             }
+             if (!(mult3||mult5)){
+                 str += a;
+             }
+             str+="\n"
+         }
+
+         return str
      }
 
      // You have a master array of strings, where each element is a fruit name.
