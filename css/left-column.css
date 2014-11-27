@@ -63,6 +63,7 @@ fonts
 #menu-list {
   min-height: 286px;
   background: #f4f4f5;
+  border: 1px solid #dddddd;
 }
 #menu-list ul {
   padding: 10px 0 6px 0;
