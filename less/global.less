@@ -48,3 +48,50 @@ html,body {
 
     float: left;
 }
+
+#modal-overlay {
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.6;
+
+    z-index: -100;
+    visibility: hidden;
+}
+
+#help-modal {
+    width: 500px;
+    height: 400px;
+
+    background-color: @white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -200px 0 0 -250px;
+    padding: 20px;
+
+    z-index: -100;
+    visibility: hidden;
+
+    h4 {
+        color: @steel-blue;
+    }
+
+    a {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    span {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+
+        color: grey;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
