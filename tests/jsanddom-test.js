@@ -53,3 +53,69 @@ test( "Fizz Buzz Multiples", 2, function() {
 
     ok( doFizzBuzz(), 'The result was: ' + doFizzBuzz());
 });
+
+
+/********************************
+ Test 5 - Fruits To Remove
+ ********************************/
+test( "Fruits To Remove", 2, function() {
+    equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
+
+    var fruits = ['Banana', 'Apple', 'Peach', 'Orange'];
+    var fruitsToRemove = 'Orange';
+
+    ok( removeFruits(fruits, fruitsToRemove), 'Expected Banana, Apple, Peach as the result, The result was: ' + removeFruits(fruits, fruitsToRemove));
+});
+
+/********************************
+ Test 6 - To Push Array
+ ********************************/
+test( "To Push Array", 2, function() {
+    equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' );
+    var array = [1,2,3],
+        toPush = [4,5,6];
+
+    ok( pushOntoArray(array, toPush), 'Expected 1,2,3,4,5,6 as the result, The result was: ' + pushOntoArray(array, toPush));
+});
+
+/********************************
+ Test 7 - Split String
+ ********************************/
+test( "Split String", 2, function() {
+    equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
+    var str = 'I am splitting, this string';
+
+    ok( splitListStrUsingComma(str), 'Expected as "this string", The result was: ' + splitListStrUsingComma(str));
+});
+
+/********************************
+ Test 8 - Sum Of All Arguements
+ ********************************/
+test( "Sum Of All Arguements ", 2, function() {
+    equal( typeof sum, 'function', 'Must contain a sum function' );
+    var one = 1,
+        two = 2,
+        three = 3;
+
+    ok( sum(one, two, three), 6, 'Expected as 6, The result was: ' + sum(one, two, three));
+});
+
+/********************************
+ Test 9 - Check Whitespace
+ ********************************/
+test( "Check Whitespace", 2, function() {
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
+    var str = '';
+
+    ok( isOnlyWhitespace(str), false, 'Expected as false, The result was: ' +  isOnlyWhitespace(str));
+});
+
+/********************************
+ Test Closure
+ ********************************/
+test( "Check Closure", 2, function() {
+    equal( typeof outerFunc, 'function', 'Must contain a outerFunc function' );
+    var str = '';
+
+    ok( outerFunc(), 3, 'Expected as false, The result was: ' +  outerFunc());
+});

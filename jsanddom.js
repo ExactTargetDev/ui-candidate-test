@@ -79,7 +79,12 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+
+         fruits = fruits.filter( function( el ) {
+             return fruitsToRemove.indexOf( el ) < 0;
+         });
+
+         return fruits
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -87,25 +92,53 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+
+         array = array.concat(toPush);
+
+         return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+
+         if(sourceStr == ''){
+             return []
+         } else {
+             var result = sourceStr.split(',');
+             return result[1];
+         }
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+         var sumTotal = {};
+
+         for (var i=0; i < arguments.length; i++) {
+             sumTotal = sumTotal + arguments[i];
+         }
+
+         return sumTotal;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         if(sourceStr === ''){
+             return true
+         } else {
+             return false
+         }
      }
 
      // write an example of a javascript closure
+
+     function outerFunc(){
+         var outVar1 = 1,
+             outVar2 = 2;
+
+         return function innerFunc(){
+             return outVar1 + outVar2;
+         }
+     }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -115,6 +148,24 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+
+     var peopleJSON = {"people":[
+         {
+             "firstName":"John",
+             "lastName":"Doe",
+             "city":"Indianapolis",
+             "state":"Indiana",
+             "zip": "46260",
+             "numbers": [
+                 {
+                     "firstNumber" : "1234456",
+                     "secondNumber" : "1234456",
+                     "thirdNumber" : "1234456"
+                 }
+             ]
+         }
+     ]};
+
 
 
      // Create a javascript object (DataTable) with the following:
@@ -133,11 +184,55 @@
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
+     var div1 = document.getElementById("div1");
+
+
+     //Create array of options to be added
+     var array = ["Red","Blue","Green","White"];
+
+     var selectList = document.createElement("select");
+     selectList.id = "selectList";
+     div1.appendChild(selectList);
+
+     for (var i = 0; i < array.length; i++) {
+         var option = document.createElement("option");
+         option.value = array[i];
+         option.text = array[i];
+         option.className = 'option';
+         selectList.appendChild(option);
+     }
+
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
+     $(function(){
+         $('.link');
+         $('#fizz').find('.link');
+         $('#fizz').children();
+         $('#fizz a');
+         $('a').first();
+     });
+
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     var myArrayList = [],
+         createdListItem = [],
+         list1 = document.getElementById("list1");
+
+     (function createArray(){
+         myArrayList.push('Item One');
+         myArrayList.push('Item Two');
+         myArrayList.push('Item Three');
+         myArrayList.push('Item Four');
+         myArrayList.push('Item Five');
+     })();
+
+     for (var i = 0; i < myArrayList.length; i++) {
+         createdListItem.push(document.createElement('li'));
+         list1.appendChild(createdListItem[i]);
+         createdListItem[i].innerHTML = myArrayList[i];
+     }
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
