@@ -41,6 +41,7 @@ $(function(){
         $(this).css('margin-left', '-=' + infoWidth / 2)
     });
 
+    //Opens help modal and gets JSON
     $(".help").click(function(){
         $('#modal-overlay').css({
             zIndex: 100,
@@ -53,17 +54,18 @@ $(function(){
         });
 
         $.ajax({url:"data/help.json",success:function(result){
-            $("#help-info").append('<h4>' + result.help[0].title + '<h4>');
-            $("#help-info").append('<a href="' + result.help[0].URL + '">' + result.help[0].URL + '<a>');
+            $("#help-info").append('<h4>' + result.help[0].title + '</h4>');
+            $("#help-info").append('<a href="' + result.help[0].URL + '">' + result.help[0].URL + '</a>');
 
-            $("#help-info").append('<h4>' + result.help[1].title + '<h4>');
-            $("#help-info").append('<a href="' + result.help[1].URL + '">' + result.help[1].URL + '<a>');
+            $("#help-info").append('<h4>' + result.help[1].title + '</h4>');
+            $("#help-info").append('<a href="' + result.help[1].URL + '">' + result.help[1].URL + '</a>');
 
-            $("#help-info").append('<h4>' + result.help[2].title + '<h4>');
-            $("#help-info").append('<a href="' + result.help[2].URL + '">' + result.help[2].URL + '<a>');
+            $("#help-info").append('<h4>' + result.help[2].title + '</h4>');
+            $("#help-info").append('<a href="' + result.help[2].URL + '">' + result.help[2].URL + '</a>');
         }});
     });
 
+    //Closes help modal and clears info
     $("#help-modal span").click(function(){
         $('#modal-overlay').css({
             zIndex: -100,
@@ -75,6 +77,6 @@ $(function(){
             visibility: 'hidden'
         });
 
-        $("#help-info").html('')
+        $("#help-info").html('');
     });
 });
