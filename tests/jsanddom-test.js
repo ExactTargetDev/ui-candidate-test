@@ -13,5 +13,22 @@ test( "Example Test", 2, function() {
 Please create your tests below...
 ********************************/
 
+/********************************
+ Test 1 - Reverse String
+ ********************************/
+test( "Reverse String", 2, function() {
+    equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
 
+    ok( reverseString('mystring'), 'gnirtsym', 'Expected gnirtsym as  the result, the result was: ' + reverseString('mystring'));
+});
 
+/********************************
+ Test 2 - Min Value of Array
+ ********************************/
+test( "Minimum Value of Array ", 2, function() {
+    equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
+
+    var arr = [8,4,7,34,6,7];
+
+    ok( findMinValue(arr), 4, 'Expected 4 as the result, the result was: ' + findMinValue(arr));
+});
