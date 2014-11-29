@@ -8,7 +8,9 @@ $(document).ready( function(){
 
     // Write a function that takes a single argument (a string) and returns the string reversed.
     function reverseString(str) {
-        // FILL THIS IN
+        //Split out each character into an array, reverse the order of the array, join them back into a string
+        return str.split("").reverse().join("");
+        //Use github.com/mathiasbynens/esrever if you need to handle special characters
     }
 
     // Write a function that takes an array of numbers and returns the minimum value
