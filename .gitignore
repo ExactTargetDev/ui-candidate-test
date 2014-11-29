@@ -1,0 +1,12 @@
+# Logs
+logs
+*.log
+
+# Sass cache
+.sass-cache/*
+.sass-cache
+
+# Other
+.idea/
+devnotes
+.DS_Store

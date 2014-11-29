@@ -1,3 +1,16 @@
 Start time: 1417249800 11/29/2014 1:30PM (EST)
 Total time: HHmm
-Browser Testing: 
+
+BROWSERS TESTED         | Results
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯
+Chrome 41               | Test Pending
+Chrome Canary 41        | Test Pending
+Firefox 33.1.1          | Test Pending
+Firefox Nightly 37.01a  | Test Pending
+Internet Explorer 8     | Test Pending
+Internet Explorer 9     | Test Pending
+Internet Explorer 10    | Test Pending
+Internet Explorer 11    | Test Pending
+
+Technology Colophon:
+jQuery, Normalize, Meyer Resets, ScoutApp, GitHub

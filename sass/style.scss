@@ -1,0 +1,14 @@
+@charset "utf-8";                // Character type for the stylesheet
+
+//Stuff that goes at the start
+@import "_var.sass";             // Variables and mixins used by other sass files
+@import "_meyer.sass";           // Resets browser defaults so browsers render pages the same
+@import "_normalize.sass";       // Removes inconsistencies in the way different browsers render items by default. Bootstrap comes with Normalize
+
+//Stuff that effects every page
+@import "_main.sass";            // The main CSS that effects all pages
+
+//Stuff that effects specific pages
+@import "_jsanddom.sass";        // Original inline CSS from JsAndDom.html
+
+//Stuff that goes at the end

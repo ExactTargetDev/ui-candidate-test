@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>JsAndDom</title>
-    <link href="jsanddom.css" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css" />
   </head>
-  <body>
+  <body id="jsanddom">
 
     <div id="div1"></div>
 
@@ -20,6 +20,8 @@
 
     <div id="foobar"></div>
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script> <!-- Local fallback -->
     <script src="jsanddom.js" type="text/javascript"></script>
 
   </body>
