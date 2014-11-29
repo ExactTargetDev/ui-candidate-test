@@ -48,7 +48,16 @@ $(document).ready( function(){
     // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
     // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
     function removeFruits(fruits, fruitsToRemove) {
-        // FILL THIS IN
+        //loop through all fruits
+        for (var i = 0; i < fruits.length; i++) {
+            //check each fruit against each fruit to remove
+            for (var j = 0; j < fruitsToRemove.length; j++) {
+                //remove that fruit from array if it's on fruitsToRemove list
+                if ( fruits[i] == fruitsToRemove[j] ) {
+                    fruits.splice(i,1);
+                }
+            }
+        }
     }
 
     // Write a function to push either a simple value or an array of values onto a specified array.
