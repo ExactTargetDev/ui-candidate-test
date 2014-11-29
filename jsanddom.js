@@ -75,7 +75,28 @@ $(document).ready( function(){
 
     // Write a function that will take any number of arguments and return their sum
     function sum() {
-        // FILL THIS IN
+        //define variables
+        var total = 0;
+        var nonNumbers = [];
+        //check each argument to see if it's a number or not
+        for(var i = 0; i < arguments.length; i++) {
+            if ( typeof arguments[i] === 'number' ) {
+                //If it's a number add it to the running total
+                total = total + arguments[i];
+            } else {
+                //If it isn't a number, throw it into the nonNumbers array
+                nonNumbers.push(arguments[i]);
+            }
+        }
+
+        if (nonNumbers != "") {
+            //If you had non-number arguments return the total plus a list of them.
+            return "Your sum is: <strong>" + total + "</strong> and " + nonNumbers + ".";
+        } else {
+            //Otherwise just return the total
+            return "Your sum is: <strong>" + total + "</strong>.";
+        }
+    }
     }
 
     // Write a function that will return true if a specified string consists of only whitespace.
