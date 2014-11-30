@@ -160,6 +160,45 @@ $(document).ready( function(){
     // - zip
     // - a collection of phone numbers (home, work, mobile)
 
+    var users =
+    {
+        "person1": {
+            "firstname": "John",
+            "lastname": "Doe",
+            "city": "Indianapolis",
+            "state": "IN",
+            "zip": "46204",
+            "phone": {
+                "home": "317-123-4567",
+                "work": "317-987-6543",
+                "mobile": "317-555-1234"
+            }
+        },
+        "person2": {
+            "firstname": "Jane",
+            "lastname": "Doe",
+            "city": "Indianapolis",
+            "state": "IN",
+            "zip": "46204",
+            "phone": {
+                "home": "317-456-9873",
+                "work": "317-765-3210",
+                "mobile": "317-555-0123"
+            }
+        },
+        "person3": {
+            "firstname": "Richard",
+            "lastname": "Roe",
+            "city": "Indianapolis",
+            "state": "IN",
+            "zip": "46222",
+            "phone": {
+                "home": "317-987-2222",
+                "work": "317-987-1111",
+                "mobile": "317-987-0000"
+            }
+        }
+    };
 
     // Create a javascript object (DataTable) with the following:
     // A private columns property (string array)
