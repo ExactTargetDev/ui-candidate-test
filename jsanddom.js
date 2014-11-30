@@ -15,12 +15,24 @@ $(document).ready( function(){
 
     // Write a function that takes an array of numbers and returns the minimum value
     function findMinValue(values) {
-        // FILL THIS IN
+        //Run the built in JS object Math to find the minimum value in the array and return it
+        return Math.min.apply( Math, values );
     }
 
     // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
     function findDistinctValues(values) {
-        // FILL THIS IN
+        //Create the resulting array as empty
+        var result = [];
+        //Check each item in the array
+        $.each(values, function(i, e) {
+            //Check if the item is already in the array
+            if ($.inArray(e, result) == -1) {
+                //If the item is unique, add it to the result array, otherwise skip
+                result.push(e);
+            }
+        });
+        //Give back the distinct list without any duplicates
+        return result;
     }
 
     // Write a function that logs the numbers from 1 to 100 to the console.
