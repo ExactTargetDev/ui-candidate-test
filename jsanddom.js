@@ -142,6 +142,14 @@ $(document).ready( function(){
     }
 
     // write an example of a javascript closure
+    //Closure passing in jQuery
+    (function($){
+        //dummy code
+        $("#slideNextBttn").click( function(){
+            $("#slideA").fadeToggle("slow", "linear");
+            $("#slideB").fadeToggle("slow", "linear");
+        };
+    })(jQuery);
 
     // define a json object that represents a collection of people.
     // each person should have the following properties
