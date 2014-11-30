@@ -1,7 +1,8 @@
-Start time: 1417249800 11/29/2014 1:30PM (EST)
-Library Closed: 11/29/2014 4:50PM (EST)
-Food and Home: 11/29/2014 6:15PM (EST)
-Night: 11/29/2014 11:45PM (EST)
+Start time:     1417249800 11/29/2014  1:30PM (EST)
+Library Closed:            11/29/2014  4:50PM (EST)
+Food and Home:             11/29/2014  6:15PM (EST)
+Night:                     11/29/2014 11:45PM (EST)
+Morning:                   11/30/2014 10:00AM (EST)
 
 Total time: HHmm
 
