@@ -1,3 +1,5 @@
+//Some aspects of this file edit the DOM, to make life easier,
+//wait for the DOM to be ready before doing anything
 $(document).ready( function(){
 
     // Example unit test function
@@ -127,7 +129,6 @@ $(document).ready( function(){
             return "Your sum is: <strong>" + total + "</strong>.";
         }
     }
-    }
 
     // Write a function that will return true if a specified string consists of only whitespace.
     function isOnlyWhitespace(sourceStr) {
@@ -148,7 +149,7 @@ $(document).ready( function(){
         $("#slideNextBttn").click( function(){
             $("#slideA").fadeToggle("slow", "linear");
             $("#slideB").fadeToggle("slow", "linear");
-        };
+        });
     })(jQuery);
 
     // define a json object that represents a collection of people.
@@ -216,11 +217,24 @@ $(document).ready( function(){
     // SELECT element (with multiple items) and a button.
     // when the button is clicked write out the name and value of the selected item to the console.
 
-    // Write 5 different jQuery selectors to retrieve the
-    // sample anchor in the markup below.
+    // Write 5 different jQuery selectors to retrieve the sample anchor from below.
+    // <div id="foo" class="bar">
+    //   <div id="fizz" class="buzz">
+    //     <a class="link" href="#">sample anchor</a>
+    //   </div>
+    // </div>
+    $(".link");
+    $("#fizz a");
+    $(".buzz .link");
+    $("#foo #fizz a");
+    $(".bar .buzz .link");
+    $("#foo.bar #fizz.buzz a.link");
 
     // Programatically create an array with 5 items.  Create a list item for each item in the array
     // and add the list items to the unordered list with an id of "list1".
+    for ( var i = 1; i <= 5; i++ ) {
+        $("#list1").append( "<li>List item " + i + "</li>" );
+    }
 
     // Use javascript to add a list of checkboxes and 2 links
     // to the div with an id of "foobar"
