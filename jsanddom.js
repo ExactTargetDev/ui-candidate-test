@@ -216,6 +216,34 @@ $(document).ready( function(){
     // within div1, programatically create a
     // SELECT element (with multiple items) and a button.
     // when the button is clicked write out the name and value of the selected item to the console.
+    //Create an array of happy fruit choices
+    var happyFruits = ['Apple', 'Banana', 'Orange', 'Kiwi', 'Pear', 'Plum', 'Strawberry'];
+    //Put an empty dropdown box and a submit button in "div1" as a form.
+    $("#div1").append(
+        '<form id="fruitasticForm">' +
+          '<label for="frutiChoice">Pick the happiest fruit:</label>' +
+          '<select id="fruitChoice" name="fruitChoice"></select>' +
+          '<button type="submit">Submit</button>') +
+        '</form>';
+
+    //Create a list of options for the dropdown box based on happyFruits array
+    for ( var i = 0; i < happyFruits.length; i++ ) {
+        //Make the value lower case while keeping the capitalized text
+        var lowerCaseFruit = happyFruits[i].toLowerCase();
+        $("#fruitChoice").append('<option value="' + lowerCaseFruit + '">' + happyFruits[i] + '</option>');
+    }
+
+    //When submit button is pressed, log the user's choice and it's value
+    $("#div1 button").click( function( event ){
+        //Prevent button from submitting and updating the URL
+        event.preventDefault();
+        //create variables for the text and value chosen
+        var happiestFruit = $("#fruitChoice option:selected").text();
+        var happiestFruitVal = $("#fruitChoice").val();
+        //Log the user's choice to the console.
+        console.log(  "%cThe happiest fruit was " + happiestFruit + ", all along! I knew you had it in you " + happiestFruitVal + ".", "color: #36A; font-family: sans-serif; font-size: 15px" );
+    });
+
 
     // Write 5 different jQuery selectors to retrieve the sample anchor from below.
     // <div id="foo" class="bar">
