@@ -7,8 +7,13 @@
 
 //Stuff that effects every page
 @import "_main.sass";            // The main CSS that effects all pages
+@import "_header.sass";          // The header of the dashboard
+@import "_nav.sass";             // The IMH nav on the dashboard
 
-//Stuff that effects specific pages
+
+//Stuff that effects specific pages or widgets
 @import "_jsanddom.sass";        // Original inline CSS from JsAndDom.html
+@import "_calendar.sass";        // The calendar widget for the dashboard
+@import "_pulse.sass";           // The pulse widget on the dashboard
 
 //Stuff that goes at the end

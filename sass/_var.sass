@@ -5,3 +5,13 @@
     border: 0px
     margin: 0px
     padding: 0px
+
+@mixin lingrad($fromColor, $toColor)
+    background-color: $toColor
+    background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor))
+    background-image: -webkit-linear-gradient(top, $fromColor, $toColor)
+    background-image: -moz-linear-gradient(top, $fromColor, $toColor)
+    background-image: -ms-linear-gradient(top, $fromColor, $toColor)
+    background-image: -o-linear-gradient(top, $fromColor, $toColor)
+    background-image: linear-gradient(top, $fromColor, $toColor)
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}')
