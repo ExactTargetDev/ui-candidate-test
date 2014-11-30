@@ -240,5 +240,24 @@ $(document).ready( function(){
     // to the div with an id of "foobar"
     // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
     // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+    //Create a paragraph in #foobar and a ul to hold the checkbox list.
+    $("#foobar").append(
+        '<p>List of checkboxes. ' +
+        '<a class="selectAll">Select All</a> | ' +
+        '<a class="deselectAll">Deselect All</a></p>' +
+        '<ul></ul>');
+    //Added some checkboxes into a list
+    for ( var i = 1; i <= 5; i++ ) {
+        $("#foobar ul").append('<li><input type="checkbox" value="check' + i + '" />' + i + '</li>' );
+    };
+    //When you click "Select All" check all the boxes
+    $("#foobar .selectAll").click( function() {
+        $('#foobar ul input[type="checkbox"]').prop("checked", true);
+    });
+    //When you click "Deselect All" uncheck all the boxes
+    $("#foobar .deselectAll").click( function() {
+        $('#foobar ul input[type="checkbox"]').prop("checked", false);
+    });
+
 
 }); //end document ready
