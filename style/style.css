@@ -336,18 +336,20 @@ img {
 }
 
 /* line 25, ../sass/_main.sass */
-.clearfix:before,
-.clearfix:after {
+.clearfix:after,
+.clearfix:before {
   content: " ";
   display: table;
 }
 
 /* line 30, ../sass/_main.sass */
-.clearfix:after {
+.clearfix,
+.clearfix:after,
+.clearfix:before {
   clear: both;
 }
 
-/* line 33, ../sass/_main.sass */
+/* line 35, ../sass/_main.sass */
 #mainContent {
   width: 1195px;
   margin: 0px auto;
@@ -415,16 +417,22 @@ header .logo {
 nav {
   background-color: #eeeeee;
   border-radius: 4px;
+  display: inline-block;
   margin: 52px 0px 0px 20px;
   width: 181px;
 }
-/* line 9, ../sass/_nav.sass */
+/* line 10, ../sass/_nav.sass */
 nav a {
   color: #888888;
   text-decoration: none;
 }
-
 /* line 13, ../sass/_nav.sass */
+nav a:hover {
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+  color: #707070;
+}
+
+/* line 17, ../sass/_nav.sass */
 .navHeader {
   -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
@@ -435,12 +443,14 @@ nav a {
   background-position: top left;
   border-radius: 4px 4px 0px 0px;
   height: 50px;
+  position: relative;
+  top: 1px;
 }
-/* line 21, ../sass/_nav.sass */
+/* line 27, ../sass/_nav.sass */
 .navHeader img {
   float: left;
 }
-/* line 23, ../sass/_nav.sass */
+/* line 29, ../sass/_nav.sass */
 .navHeader h3 {
   color: white;
   display: inline-block;
@@ -453,6 +463,48 @@ nav a {
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   width: 130px;
   vertical-align: middle;
+}
+
+/* line 42, ../sass/_nav.sass */
+.navBox {
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  background-color: #f4f4f5;
+  border: 1px solid white;
+  font-size: 10pt;
+  line-height: 26px;
+  padding: 6px 10px;
+  vertical-align: middle;
+}
+/* line 50, ../sass/_nav.sass */
+.navBox ul {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+/* line 52, ../sass/_nav.sass */
+.navBox li {
+  margin: 0px 0px 5px 0px;
+  vertical-align: middle;
+}
+/* line 55, ../sass/_nav.sass */
+.navBox li img {
+  vertical-align: middle;
+}
+/* line 57, ../sass/_nav.sass */
+.navBox:first-of-type {
+  border: 0px;
+}
+/* line 59, ../sass/_nav.sass */
+.navBox:last-of-type {
+  line-height: 13px;
+  border-radius: 0px 0px 4px 4px;
+}
+/* line 62, ../sass/_nav.sass */
+.navBox:last-of-type li {
+  margin: 0px;
+  padding: 0px;
 }
 
 /* line 4, ../sass/_jsanddom.sass */
@@ -501,14 +553,16 @@ nav a {
 
 /* line 4, ../sass/_calendar.sass */
 #calendar {
-  background-color: #eeeeee;
-  width: 100px;
+  background-color: #cccccc;
+  display: inline-block;
   height: 100px;
+  width: 100px;
 }
 
 /* line 4, ../sass/_pulse.sass */
 #pulse {
-  background-color: #eeeeee;
-  height: 100%;
-  width: 100%;
+  background-color: #cccccc;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
 }
