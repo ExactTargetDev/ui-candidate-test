@@ -81,6 +81,9 @@ $(".pulseLink").click( function() {
 
 //When you click Help in the header display a modal
 $(".help").click( function() {
+    //Clear out div
+    $('#help-modal div').html(" ");
+    //Pull in JSON info and plug it into the modal
     $.ajax({
         dataType: "json",
         url: "data/help.json",
@@ -90,6 +93,7 @@ $(".help").click( function() {
             })
         }
     });
+    //Fade modal in
     $("#help-modal").fadeIn("slow");
     $("#help-modal").dialog({
         modal: true,
@@ -157,7 +161,6 @@ $("#pulse .pulseItem").click( function() {
 ////////////////////////////////////////
 //             PAGINATION             //
 ////////////////////////////////////////
-
 
 $("#pagination .firstPage").click( function() {
 
