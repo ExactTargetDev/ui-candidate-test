@@ -1,0 +1,50 @@
+
+//This styles the header of the dashboard
+
+header
+    +boxshadow(0px, 0px, 4px, rgba(0,0,0,0.5))
+    +lingrad(#45525C, #2A2F33)
+    height: 32px
+    overflow: hidden
+    position: absolute
+    top: 0px
+    left: 0px
+    right: 0px
+    width: 100%
+    z-index: 9
+    .logo
+        margin: 9px 0px 0px 20px
+
+#headerText
+    color: #EEE
+    font-size: $headerFontSize
+    float: right
+    height: 32px
+    line-height: 32px
+    margin: 0px 10px 0px 0px
+    span
+        font-family: arial, sans-serif
+        padding: 0px 5px 0px 0px
+    ul
+        display: inline-block
+    li
+        display: inline-block
+        a
+            color: #99CCE1
+            text-decoration: none
+            &:hover
+                color: #BEF
+
+#help-modal
+    display: none
+    p
+        line-height: 20px
+
+.ui-dialog
+    border-radius: 4px
+
+.ui-dialog-titlebar
+    +lingrad(#45525C, #2A2F33)
+    color: #EEE
+    border: 0px
+    border-radius: 4px

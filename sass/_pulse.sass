@@ -1,0 +1,172 @@
+
+// This styles the calendar widget on the dashboard
+
+#pulseContainer
+    +bmp0
+    +boxshadow(0px, 0px, 2px, rgba(0,0,0,0.1))
+    +pulseBg
+    border-radius: 4px
+    display: inline-block
+    left: 1px
+    position: relative
+    width: $widgetWidth
+
+#pulse
+    +boxshadowinset(0px, 0px, 25px, rgba(0,0,0,0.3))
+    background-color: transparent
+    background-image: url('../img/pulsegraphic.png')
+    background-position: 0px 20px
+    background-repeat: no-repeat
+    border-radius: 4px
+    h3
+        color: #FFF
+        font-family: arial, sans-serif
+        font-size: 18pt
+        -webkit-font-smoothing: subpixel-antialiased
+        position: absolute
+        top: 10px
+        left: 10px
+        text-shadow: 0px 1px 1px rgba(88,139,172,0.6)
+
+.pulseCollapse
+    height: 50px
+
+.pulseExpand
+    height: $pulseHeight
+
+.pulseLinkSmall
+    font-size: 0px
+
+.pulseLinkLarge
+    font-size: $headerFontSize
+
+.widgetContent
+    text-align: center
+
+
+.pulseItem
+    display: inline-block
+    margin: 90px -4px 0px
+    .pulseItemBox
+        background-image: url('../img/pulseboxsmall.png')
+        background-repeat: no-repeat
+        background-position: top center
+        cursor: pointer
+        height: 101px
+        width: 172px
+    h1,
+    h2,
+    h4
+        text-align: center
+    h1
+        color: #34BBF3
+        font-size: 28pt
+        margin: 0px
+        padding: 9px 0px 0px 0px
+        span
+            color: #93AFC0
+            font-size: 18pt
+    h2
+        color: #93AFC0
+        font-size: 13pt
+        margin: 0px
+    h4
+        color: #93AFC0
+        font-size: 9pt
+        margin: 0px
+        padding: 7px 0px 0px 0px
+
+.soulja
+    margin: 0px -4px
+    h2
+        padding: 10px 0px 0px 0px
+    h1
+        padding: 0px
+
+.pulseItemTitle
+    color: #7F91A3
+    font-family: arial, sans-serif
+    font-size: 8.5pt
+    padding: 0px 0px 8px 0px
+    text-align: center
+
+.pulseItemSelected
+    background-image: url('../img/pulseboxbig.png')
+    background-repeat: no-repeat
+    background-position: top center
+    cursor: pointer
+    display: inline-block
+    height: 197px
+    margin: 0px -12px
+    position: relative
+    top: 20px
+    width: 313px
+    h1,
+    h4
+        color: #666
+        display: inline-block
+        font-size: 9pt
+        font-weight: bold
+        margin: 0px
+        padding: 0px
+        padding-bottom: 6px
+        padding-top: 8px
+    h1
+        float: left
+        text-align: left
+        padding-left: 31px
+    h4
+        float: right
+        text-align: right
+        padding-right: 31px
+
+#pagination
+    border: 0px
+    bottom: 10px
+    cursor: default
+    display: block
+    margin: 0 auto
+    padding: 0px
+    position: absolute
+    text-align: center
+    width: 100%
+    span
+        background-color: #C8D0D6
+        cursor: pointer
+        display: inline-block
+        height: 3px
+        margin: 0px
+        padding: 0px
+        position: relative
+        top: -5px
+        width: 4px
+    .firstPage,
+    .secondPage
+        display: inline-block
+        margin: 0 auto
+    .group
+        background-color: #D7E3EC
+        border: 1px solid #B7C6D1
+        border-radius: 4px
+        cursor: pointer
+        display: inline-block
+        height: 13px
+        margin: 0px
+        padding: 3px 2px
+        position: relative
+        top: 4px
+        span
+            color: #C0CED8
+            position: relative
+            top: -9px
+        .selected
+            border-radius: 2px
+            height: 5px
+            position: relative
+            top: -8px
+            width: 7px
+
+.hidden,
+.medium,
+#pagination .firstPage
+    display: none

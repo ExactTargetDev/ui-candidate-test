@@ -1,0 +1,56 @@
+
+// Supplies mixins and variables that other Sass files can call
+
+@mixin bmp0
+    border: 0px
+    margin: 0px
+    padding: 0px
+
+@mixin lingrad($fromColor, $toColor)
+    background-color: $toColor
+    background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor))
+    background-image: -webkit-linear-gradient(top, $fromColor, $toColor)
+    background-image: -moz-linear-gradient(top, $fromColor, $toColor)
+    background-image: -ms-linear-gradient(top, $fromColor, $toColor)
+    background-image: -o-linear-gradient(top, $fromColor, $toColor)
+    background-image: linear-gradient(top, $fromColor, $toColor)
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}')
+
+@mixin boxshadowinset($top, $left, $blur, $color)
+    -webkit-box-shadow: inset $top $left $blur $color
+    -moz-box-shadow: inset $top $left $blur $color
+    box-shadow: inset $top $left $blur $color
+
+@mixin boxshadow($top, $left, $blur, $color)
+    -webkit-box-shadow: $top $left $blur $color
+    -moz-box-shadow: $top $left $blur $color
+    box-shadow: $top $left $blur $color
+
+@mixin pulseBg
+    background: #BAC8D1
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2JhYzhkMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg5JSIgc3RvcC1jb2xvcj0iI2UzZWRmNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkMmRlZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+)
+    background: -moz-linear-gradient(top, #BAC8D1 0%, #E3EDF5 89%, #D2DEE6 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#BAC8D1), color-stop(89%,#E3EDF5), color-stop(100%,#D2DEE6))
+    background: -webkit-linear-gradient(top, #BAC8D1 0%,#E3EDF5 89%,#D2DEE6 100%)
+    background: -o-linear-gradient(top, #BAC8D1 0%,#E3EDF5 89%,#D2DEE6 100%)
+    background: -ms-linear-gradient(top, #BAC8D1 0%,#E3EDF5 89%,#D2DEE6 100%)
+    background: linear-gradient(to bottom, #BAC8D1 0%,#E3EDF5 89%,#D2DEE6 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BAC8D1', endColorstr='#D2DEE6',GradientType=0 )
+
+@mixin todayBg
+    background: #F8981D
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y4OTgxZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZkYWY0YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=)
+    background: -moz-linear-gradient(top, #F8981D 0%, #FDAF4B 75%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F8981D), color-stop(75%,#FDAF4B))
+    background: -webkit-linear-gradient(top, #F8981D 0%,#FDAF4B 75%)
+    background: -o-linear-gradient(top, #F8981D 0%,#FDAF4B 75%)
+    background: -ms-linear-gradient(top, #F8981D 0%,#FDAF4B 75%)
+    background: linear-gradient(to bottom, #F8981D 0%,#FDAF4B 75%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F8981D', endColorstr='#FDAF4B',GradientType=0 )
+
+//Variables
+$dayWidth: 139px        // Calendar
+$headerFontSize: 10pt   // Font size of elements in header
+$pulseHeight: 265px     // Height of the pulse and pulseContainer divs
+$weekWidth: 975px       // Calendar
+$widgetWidth: 994px     // Width for Calendar, Pulse, and other widgets

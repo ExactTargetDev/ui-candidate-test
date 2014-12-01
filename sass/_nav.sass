@@ -1,0 +1,68 @@
+
+// This styles the IMH Navigation sidebar on the dashboard.
+
+nav
+    background-color: #EEE
+    border-radius: 4px
+    display: inline-block
+    float: left
+    margin: 52px 15px 0px 0px
+    width: 181px
+    a
+        color: #888
+        text-decoration: none
+        &:hover
+            color: #6B6B6B
+            text-shadow: 0px 0px 1px rgba(0,0,0,0.1)
+        &:active
+            color: #333
+            text-shadow: 0px 0px 1px rgba(0,0,0,0.2)
+
+.navHeader
+    +boxshadowinset(0px, 0px, 3px, rgba(0,0,0,0.5))
+    background-color: transparent
+    background-image: url('../img/nav/imh_headerbg.png')
+    background-repeat: no-repeat
+    background-position: top left
+    border-radius: 4px 4px 0px 0px
+    height: 50px
+    position: relative
+    top: 1px
+    img
+        float: left
+    h3
+        color: #FFF
+        display: inline-block
+        font-family: arial, sans-serif
+        font-weight: bold
+        font-size: 12pt
+        height: 50px
+        line-height: 14pt
+        padding: 8px 0px 0px 3px
+        text-shadow: 0px 1px 1px rgba(0,0,0,0.1)
+        width: 130px
+        vertical-align: middle
+
+.navBox
+    +boxshadow(0px, 0px, 3px, rgba(0,0,0,0.5))
+    background-color: #F4F4F5
+    border: 1px solid #FFF
+    font-size: 10pt
+    line-height: 26px
+    padding: 6px 10px
+    vertical-align: middle
+    ul
+        +bmp0
+    li
+        margin: 0px 0px 5px 0px
+        vertical-align: middle
+        img
+            vertical-align: middle
+    &:first-of-type
+        border: 0px
+    &:last-of-type
+        line-height: 13px
+        border-radius: 0px 0px 4px 4px
+        li
+            margin: 0px
+            padding: 0px

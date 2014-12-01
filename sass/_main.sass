@@ -1,0 +1,45 @@
+
+// The main document, every page refers to this basic document
+
+*,
+*:before,
+*:after
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+html
+    +bmp0
+    height: 100%
+    width: 100%
+
+body
+    +bmp0
+    background-color: #F1F1F1
+    font-family: "trebuchet ms", tahoma, verdana, arial, sans-serif
+    width: 100%
+
+img
+    -ms-interpolation-mode: bicubic
+
+.clearfix:after,
+.clearfix:before
+    content: " "
+    display: table
+
+.clearfix,
+.clearfix:after,
+.clearfix:before
+    clear: both
+
+#mainContent
+    width: 1195px
+    margin: 0px auto
+
+.windowControls
+    position: absolute
+    top: 12px
+    right: 12px
+    li
+        display: inline-block
+        padding: 0px 2px

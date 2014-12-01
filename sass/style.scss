@@ -1,0 +1,21 @@
+@charset "utf-8";                    // Character type for the stylesheet
+
+//Stuff that goes at the start
+@import "_var.sass";                 // Variables and mixins used by other sass files
+@import "_meyer.sass";               // Resets browser defaults so browsers render pages the same
+@import "_normalize.sass";           // Removes inconsistencies in the way different browsers render items by default. Bootstrap comes with Normalize
+//@import "_jquery-ui.scss";         // jQueryUI full version, not needed
+@import "_jquery-ui.structure.scss"; // jQueryUI core for modal
+@import "_jquery-ui.theme.scss";     // jQueryUI theme for modal
+
+//Stuff that effects every page
+@import "_main.sass";                // The main CSS that effects all pages
+@import "_header.sass";              // The header of the dashboard
+@import "_nav.sass";                 // The IMH nav on the dashboard
+
+//Stuff that effects specific pages or widgets
+@import "_jsanddom.sass";            // Original inline CSS from JsAndDom.html
+@import "_calendar.sass";            // The calendar widget for the dashboard
+@import "_pulse.sass";               // The pulse widget on the dashboard
+
+//Stuff that goes at the end
