@@ -1,5 +1,26 @@
 
 
+/////////////////////////////////////
+//     CALENDAR WINDOW CONTROLS    //
+/////////////////////////////////////
+
+//Click the triangle
+$(".calendarhide").click( function() {
+    //slide the calendar up
+    $("#calendar").animate({ marginTop: "-85px" }, 1000, function() {
+        //after calendar is gone, have the link in the header appear
+        $(".calendarLink").switchClass("calendarLinkSmall", "calendarLinkLarge", 1000, "easeInOutCubic");
+    });
+});
+
+//Click the link in the header
+$(".calendarLink").click( function() {
+    //
+    $("#calendar").animate({ marginTop: "32px" }, 1000, function() {
+        //after the calendar slides back onto the page hide the header link
+        $(".calendarLink").switchClass("calendarLinkLarge", "calendarLinkSmall", 1000, "easeInOutCubic");
+    });
+})
 
 
 /////////////////////////////////////

@@ -9,6 +9,104 @@
     border-color: #CCC
     border-radius: 0px 0px 4px 4px
     display: inline-block
+    font-size: 0px
     height: 113px
     margin: 32px 0px 21px 0px
+    overflow: hidden
+    position: relative
     width: $widgetWidth
+    .monthYear
+        font-size: 10pt
+        color: #99ABB6
+        position: absolute
+        top: 3px
+        left: 3px
+    .windowControls
+        top: 4px
+        right: 8px
+    .weekly
+        border-bottom: 1px solid #FFF
+        border-left: 1px solid #DDD
+        border-right: 1px solid #FFF
+        border-top: 0px
+        height: 79px
+        margin: 20px auto 0px
+        width: $weekWidth
+    .daily
+        border-bottom: 1px solid #DDD
+        border-left: 1px solid #FFF
+        border-right: 1px solid #DDD
+        border-top: 0px
+        display: inline-block
+        height: 79px
+        margin: 0px 0px 0px 0px
+        padding: 0px
+        width: $dayWidth
+        &.today
+            +lingrad(#EBF1F5, #FEEDD6)
+    .day
+        color: #999
+        font-family: arial, sans-serif
+        font-size: 9pt
+        float: left
+        padding: 5px 0px 0px 5px
+    .number
+        color: #666
+        font-family: arial, sans-serif
+        font-size: 9pt
+        float: right
+        padding: 5px 5px 0px 0px
+    .weeklyLabel
+        height: 5px
+        margin: 0px auto
+        width: $weekWidth
+    .dailySkip
+        display: inline-block
+        margin: 0px
+        padding: 0px
+        width: $dayWidth
+    .dailyNotice
+        +todayBg
+        color: white
+        display: inline-block
+        font-size: 10px
+        font-weight: bold
+        height: 13px
+        line-height: 13px
+        text-align: center
+        text-transform: uppercase
+        width: $dayWidth
+    .calendarhide
+        bottom: 5px
+        position: absolute
+        right: 6px
+    .bar
+        background-color: #D7D7E9
+        display: inline-block
+        height: 5px
+        margin: 10px 0px 0px 0px
+        width: 100%
+    .hidden0
+        color: #666
+        display: inline-block
+        font-family: arial, sans-serif
+        font-size: 9pt
+        left: -1px
+        position: absolute
+        top: 25px
+        z-index: 8
+    .hiddenS
+        color: #999
+        display: inline-block
+        font-family: arial, sans-serif
+        font-size: 9pt
+        position: absolute
+        right: -3px
+        top: 25px
+        z-index: 7
+
+.calendarLinkSmall
+    font-size: 0px
+
+.calendarLinkLarge
+    font-size: $headerFontSize

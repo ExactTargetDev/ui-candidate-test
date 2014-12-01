@@ -35,10 +35,11 @@
       <div id="headerText">
         <span>Welcome John!</span>
         <ul class="headerLinks">
-          <li><span class="pulseLink pulseLinkSmall"><a href="#">Pulse</a          > | </span></li>
-          <li><span class="account"                 ><a href="#account">Account</a > | </span></li>
-          <li><span class="help"                    ><a href="#help">Help</a       > | </span></li>
-          <li><span class="logout"                  ><a href="#logout">Logout</a      ></span></li>
+          <li><span class="calendarLink calendarLinkSmall" ><a href="#">Calendar</a       > | </span></li>
+          <li><span class="pulseLink pulseLinkSmall"       ><a href="#">Pulse</a          > | </span></li>
+          <li><span class="account"                        ><a href="#account">Account</a > | </span></li>
+          <li><span class="help"                           ><a href="#help">Help</a       > | </span></li>
+          <li><span class="logout"                         ><a href="#logout">Logout</a   ></span></li>
         </ul>
       </div>
     </header>
@@ -72,7 +73,60 @@
       </nav>
 
       <section id="calendar">
-        <div></div>
+        <h3 class="monthYear">September 2010</h3>
+        <ul class="windowControls">
+          <li><a href="#pulseoptions"  class="pulseoptions"  ><img src="img/win_options.png" alt="Options icon"  title="Options"  /></a></li>
+          <li><a href="#pulsemaximize" class="pulsemaximize" ><img src="img/win_expand.png"  alt="Maximize icon" title="Maximize" /></a></li>
+        </ul>
+        <div class="weekly">
+          <div class="daily">
+            <span class="day">Sat</span>
+            <span class="number">11</span>
+            <span class="bar"></span>
+          </div>
+          <div class="daily">
+            <span class="day">Sun</span>
+            <span class="number">12</span>
+            <span class="bar"></span>
+          </div>
+          <div class="daily">
+            <span class="day">Mon</span>
+            <span class="number">13</span>
+            <span class="bar"></span>
+          </div>
+          <div class="daily today">
+            <span class="day">Tue</span>
+            <span class="number">14</span>
+            <span class="bar"></span>
+          </div>
+          <div class="daily">
+            <span class="day">Wed</span>
+            <span class="number">15</span>
+            <span class="bar"></span>
+          </div>
+          <div class="daily">
+            <span class="day">Thu</span>
+            <span class="number">16</span>
+            <span class="bar"></span>
+          </div>
+          <div class="daily">
+            <span class="day">Fri</span>
+            <span class="number">17</span>
+            <span class="bar"></span>
+          </div>
+        </div>
+        <div class="weeklyLabel">
+          <div class="dailySkip"></div>
+          <div class="dailySkip"></div>
+          <div class="dailySkip"></div>
+          <div class="dailyNotice">Today</div>
+          <div class="dailySkip"></div>
+          <div class="dailySkip"></div>
+          <div class="dailySkip"></div>
+        </div>
+        <a href="#calendarhide" class="calendarhide"><img src="img/win_hide.png" alt="Hide Calendar" title="Hide" /></a>
+        <span class="hidden0">0</span>
+        <span class="hiddenS">S</span>
       </section>
 
       <section id="pulseContainer" class="pulseExpand">
