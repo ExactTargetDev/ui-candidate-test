@@ -1,23 +1,20 @@
-Start time:     1417249800 11/29/2014  1:30PM (EST)
-Library Closed:            11/29/2014  4:50PM (EST)
-Food and Home:             11/29/2014  6:15PM (EST)
-Night:                     11/29/2014 11:45PM (EST)
-Morning:                   11/30/2014 10:00AM (EST)
-Night:                     12/01/2014  5:00AM (EST)
-Morning:                   12/01/2014  8:55AM (EST)
+NOTES:          UNIX       DATE          EST    MIL    UTC
+Start time:     1417249800 11/29/2014  1:30PM  13:30   8:30
+Library Closed: 1417261800 11/29/2014  4:50PM  16:50  11:50
 
-Total time: HHmm
+Food and Home:  1417266900 11/29/2014  6:15PM  18:15  13:15
+Night:          1417286700 11/29/2014 11:45PM  23:45  18:45
 
-BROWSERS TESTED         | Results
-¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯
-Chrome 41               | Test Pending
-Chrome Canary 41        | Test Pending
-Firefox 33.1.1          | Test Pending
-Firefox Nightly 37.01a  | Test Pending
-Internet Explorer 8     | Test Pending
-Internet Explorer 9     | Test Pending
-Internet Explorer 10    | Test Pending
-Internet Explorer 11    | Test Pending
+Morning:        1417323600 11/30/2014 10:00AM  10:00   5:00
+Night:          1417392000 12/01/2014  5:00AM   5:00   0:00
+
+Morning:        1417406100 12/01/2014  8:55AM   8:55   3:55
+Lunch:          1417417200 12/01/2014 12:00PM  12:00   7:00
+
+Afternoon:      1417419000 12/01/2014 12:30PM  12:30   7:30
+Deadline:       1417422600 12/01/2014  1:30PM  13:30   8:30
+
+Total time: 31:55
 
 Technology Colophon:
 jQuery, jQueryUI, Normalize, Meyer Resets, ScoutApp, GitHub
