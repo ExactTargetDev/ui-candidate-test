@@ -3,6 +3,8 @@ Library Closed:            11/29/2014  4:50PM (EST)
 Food and Home:             11/29/2014  6:15PM (EST)
 Night:                     11/29/2014 11:45PM (EST)
 Morning:                   11/30/2014 10:00AM (EST)
+Night:                     12/01/2014  5:00AM (EST)
+Morning:                   12/01/2014  8:55AM (EST)
 
 Total time: HHmm
 
@@ -18,4 +20,4 @@ Internet Explorer 10    | Test Pending
 Internet Explorer 11    | Test Pending
 
 Technology Colophon:
-jQuery, Normalize, Meyer Resets, ScoutApp, GitHub
+jQuery, jQueryUI, Normalize, Meyer Resets, ScoutApp, GitHub

@@ -6,20 +6,22 @@
 
 //Click the triangle
 $(".calendarhide").click( function() {
+    //Remove focus
+    $(".calendarhide").blur();
     //slide the calendar up
-    $("#calendar").animate({ marginTop: "-85px" }, 1000, function() {
-        //after calendar is gone, have the link in the header appear
-        $(".calendarLink").switchClass("calendarLinkSmall", "calendarLinkLarge", 1000, "easeInOutCubic");
-    });
+    $("#calendar").animate({ marginTop: "-95px" }, 1000, "easeInOutCubic");
+    //have the link in the header appear
+    $(".calendarLink").switchClass("calendarLinkSmall", "calendarLinkLarge", 1000, "easeInOutCubic");
 });
 
 //Click the link in the header
 $(".calendarLink").click( function() {
-    //
-    $("#calendar").animate({ marginTop: "32px" }, 1000, function() {
-        //after the calendar slides back onto the page hide the header link
-        $(".calendarLink").switchClass("calendarLinkLarge", "calendarLinkSmall", 1000, "easeInOutCubic");
-    });
+    //Remove focus
+    $(".calendarLink a").blur();
+    //slide calendar down
+    $("#calendar").animate({ marginTop: "32px" }, 1000, "easeInOutCubic");
+    //hide the calendar link in the header
+    $(".calendarLink").switchClass("calendarLinkLarge", "calendarLinkSmall", 1000, "easeInOutCubic");
 })
 
 
@@ -29,6 +31,8 @@ $(".calendarLink").click( function() {
 
 //When you click the minimize button on the window control of Pulse widget, collapse the widget
 $(".pulseminimize").click( function() {
+    //Remove focus
+    $(".pulseminimize a").blur();
     //Fade out the content first
     $(".widgetContent").fadeOut("fast", function(){
         //After content is gone collapse the pulseContainer and pulse divs
@@ -39,7 +43,11 @@ $(".pulseminimize").click( function() {
 
 //When you click the maximize button on the window control of Pulse widget, expand the widget
 $(".pulsemaximize").click( function() {
+    //Remove focus
+    $(".pulsemaximize a").blur();
+    //expand pulse container back to full size
     $("#pulseContainer").switchClass("pulseCollapse", "pulseExpand", 1000, "easeInOutCubic");
+    //expand pulse content, fade in after expand finishes
     $("#pulse").switchClass("pulseCollapse", "pulseExpand", 1000, "easeInOutCubic", function(){
         //after divs have expanded, fade in content
         $(".widgetContent").fadeIn("fast");
@@ -48,15 +56,22 @@ $(".pulsemaximize").click( function() {
 
 //When you click the close button on the window control of Pulse widget, hide the widget and add a link in the header
 $(".pulseclose").click( function() {
+    //Remove focus
+    $(".pulseclose").blur();
+    //Fade out the pulse widget
     $("#pulseContainer").fadeOut("slow");
+    //Add the "Pulse" link to the header
     $(".pulseLink").switchClass("pulseLinkSmall", "pulseLinkLarge", 1000, "easeInOutCubic");
 })
 
 //When you click the link in the header, show the pulse widget and hide the link
 $(".pulseLink").click( function() {
-    $("#pulseContainer").fadeIn("slow", function(){
-        $(".pulseLink").switchClass("pulseLinkLarge", "pulseLinkSmall", 1000, "easeInOutCubic");
-    });
+    //Remove focus
+    $( ".pulseLink a" ).blur();
+    //Fade Pulse widget in
+    $("#pulseContainer").fadeIn("slow");
+    //hide pulse link in header
+    $(".pulseLink").switchClass("pulseLinkLarge", "pulseLinkSmall", 1000, "easeInOutCubic");
 })
 
 

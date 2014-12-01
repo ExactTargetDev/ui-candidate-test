@@ -1,6 +1,8 @@
 
 // This styles the calendar widget on the dashboard
 
+$calendarHeight: 113px + 10px
+
 #calendar
     +boxshadow(0px, 1px, 2px, rgba(0,0,0,0.1))
     background-color: #F5F5F5
@@ -10,7 +12,7 @@
     border-radius: 0px 0px 4px 4px
     display: inline-block
     font-size: 0px
-    height: 113px
+    height: $calendarHeight
     margin: 32px 0px 21px 0px
     overflow: hidden
     position: relative
@@ -29,7 +31,7 @@
         border-left: 1px solid #DDD
         border-right: 1px solid #FFF
         border-top: 0px
-        height: 79px
+        height: $calendarHeight - 34px
         margin: 20px auto 0px
         width: $weekWidth
     .daily
@@ -38,10 +40,11 @@
         border-right: 1px solid #DDD
         border-top: 0px
         display: inline-block
-        height: 79px
+        height: $calendarHeight - 34px
         margin: 0px 0px 0px 0px
         padding: 0px
         width: $dayWidth
+        vertical-align: bottom
         &.today
             +lingrad(#EBF1F5, #FEEDD6)
     .day
@@ -49,13 +52,13 @@
         font-family: arial, sans-serif
         font-size: 9pt
         float: left
-        padding: 5px 0px 0px 5px
+        padding: 2px 0px 0px 5px
     .number
         color: #666
         font-family: arial, sans-serif
         font-size: 9pt
         float: right
-        padding: 5px 5px 0px 0px
+        padding: 2px 5px 0px 0px
     .weeklyLabel
         height: 5px
         margin: 0px auto
@@ -84,7 +87,7 @@
         background-color: #D7D7E9
         display: inline-block
         height: 5px
-        margin: 10px 0px 0px 0px
+        margin: 5px 0px 0px 0px
         width: 100%
     .hidden0
         color: #666
@@ -110,3 +113,55 @@
 
 .calendarLinkLarge
     font-size: $headerFontSize
+
+
+.row
+    content: " "
+    display: block
+    height: 16px
+    margin: 2px 0px 0px 0px
+.purplebg,
+.greenbg,
+.redbg
+    border-radius: 3px
+    color: #666
+    cursor: pointer
+    display: inline-block
+    font-family: arial, sans-serif
+    font-size: 8pt
+    height: 16px
+    margin: 5px
+    padding: 0px 2px
+    vertical-align: top
+.purplebg
+    background-color: #D7D7E9
+.greenbg
+    background-color: #CEE5BD
+.redbg
+    background-color: #F0CBCB
+.caltext
+    display: inline-block
+    padding: 3px 6px
+    vertical-align: super
+.calsprite
+    background-image: url('../img/calendarsprites.png')
+    background-repeat: no-repeat
+    display: inline-block
+    height: 14px
+    width: 14px
+.calsprite01
+    background-position: 0px 0px
+    left: 16px
+    cursor: pointer
+    position: absolute
+    top: 36px
+.calsprite02
+    background-position: -14px 0px
+.calsprite03
+    background-position: -28px 0px
+.calsprite04
+    background-position: -42px 0px
+.calsprite05
+    background-position: -56px 0px
+.calsprite06
+    background-position: -70px 0px
