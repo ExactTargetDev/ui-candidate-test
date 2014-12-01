@@ -29,3 +29,26 @@ $(".pulseLink").click( function() {
         $(".pulseLink").switchClass("pulseLinkLarge", "pulseLinkSmall", 1000, "easeInOutCubic");
     });
 })
+
+//When you click Help in the header display a modal
+$(".help").click( function() {
+    $.ajax({
+        dataType: "json",
+        url: "data/help.json",
+        success: function(helpData) {
+            $.each( helpData.help, function (i, site) {
+                $('#help-modal div').append('<p><a href="' + site.URL + '">' + site.title + '</a></p>');
+            })
+        }
+    });
+    $("#help-modal").fadeIn("slow");
+    $("#help-modal").dialog({
+        modal: true,
+        width: 540,
+        buttons: {
+            Ok: function() {
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+})
