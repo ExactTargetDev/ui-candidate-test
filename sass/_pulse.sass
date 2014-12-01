@@ -43,6 +43,7 @@
 .widgetContent
     text-align: center
 
+
 .pulseItem
     display: inline-block
     margin: 90px -4px 0px
@@ -118,17 +119,7 @@
         text-align: right
         padding-right: 31px
 
-
-
-//<div class="pulseItemSelected">
-//  <div class="pulseItemBox">
-//    <h1>Worldwide Checkins</h1>
-//    <h4>3,905</h4>
-//    <h2><img src="img/map.png" alt="Foursquare Checkins Map" /><h2>
-//  </div>
-//</div>
-
-.pagination
+#pagination
     border: 0px
     bottom: 10px
     cursor: default
@@ -148,6 +139,10 @@
         position: relative
         top: -5px
         width: 4px
+    .firstPage,
+    .secondPage
+        display: inline-block
+        margin: 0 auto
     .group
         background-color: #D7E3EC
         border: 1px solid #B7C6D1
@@ -169,3 +164,8 @@
             position: relative
             top: -8px
             width: 7px
+
+.hidden,
+.medium,
+#pagination .firstPage
+    display: none
