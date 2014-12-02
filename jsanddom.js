@@ -58,6 +58,29 @@
          // FILL THIS IN
      }
 
+     var dp = new DayPilot.Calendar("dp");
+        dp.viewType = "Week";
+         dp.events.list = [
+  {
+    "id":"5",
+    "text":"Calendar Event 5",
+    "start":"2014-02-25T10:30:00",
+    "end":"2014-02-25T16:30:00"
+  },
+  {
+    "id":"6",
+    "text":"Calendar Event 6",
+    "start":"2014-02-24T09:00:00",
+    "end":"2014-02-24T14:30:00"
+  },
+  {
+    "id":"7",
+    "text":"Calendar Event 7",
+    "start":"2014-02-27T12:00:00",
+    "end":"2014-02-27T16:00:00"
+  }];
+        dp.init();
+
      // write an example of a javascript closure
 
      // define a json object that represents a collection of people.

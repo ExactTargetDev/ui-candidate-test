@@ -12,31 +12,110 @@
 			<span class="verticalline">Account</span>
 			<span class="verticalline">Help</span>
 			<span>Logout</span>
-
-
 		</div>
 		<div class="container">
 			<div class="leftpart">
-				<div id="leftmaindiv"><img  class="white" src="Picture1.png">
-					<a id="firsta" href="">Interactive  Marketing Hub</a>
-				</div>
-				<div><img src="glyphicons_010_envelope.png"><a href="">ExactTarget Email</a></div>
-				<div><img src="glyphicons_323_calculator.png"><a href="">ExactTarget Mobile</a></div>
-				<div><img src="glyphicons_social_31_twitter.png"><a href="">Go Tweet Social</a></div>
-				<div><img src="Picture1.png"><a href="">ExactTarget Staus</a></div><hr>
-				<div><img src="glyphicons_137_cogwheels.png"><a href="">Automation Studio</a></div>
-				<div><img src="glyphicons_043_group.png"><a href="">Audience Builder</a></div>
-				<div><img src="Picture1.png"><a href="">Report Builder</a></div><hr>
-				<div><a href="">Partner Applications</a></div>
+			<ul>
+				<li><p><img  class="white" src="Picture1.png"></p>
+					<a id="firsta" href="">Interactive <br />Marketing Hub</a></li>
+				<li><p><img src="glyphicons_010_envelope.png"></p><a href="">ExactTarget Email</a></li>
+				<li><p><img src="glyphicons_323_calculator.png"></p><a href="">ExactTarget Mobile</a></li>
+				<li><p><img src="glyphicons_social_31_twitter.png"></p><a href="">Go Tweet Social</a></li>
+				<li><p><img src="Picture1.png"></p><a href="">ExactTarget Staus</a></li>
+				<hr />
+				<li><p><img src="glyphicons_137_cogwheels.png"></p><a href="">Automation Studio</a></li>			
+				<li><p><img src="glyphicons_043_group.png"></p><a href="">Audience Builder</a></li>
+				<li><p><img src="Picture1.png"></p><a href="">Report Builder</a></li>				
+				<hr />
+				<li><a href="">Partner Applications</a></li>
+			</ul>
+				
 			</div>
 			<div class="rightpart">
-				<div class="calendar"></div>
-				<div class="dashboard"></div>
+				<div id="dp">
+					<img src="calender.png">
+				</div>
+				<div class="dashboard">
+				<div class="head">
+					<div class="headleft">
+						<img src="pulse.png" style="float:left;padding-top:5px;">
+					</div>
+					<div class="headleft">
+						<img src="icons.png" style="float:right;">
+					</div>
+				</div>
+				<div class="headcontainer">
+					<div class="items">
+						<div class="item">
+							<div class="itemhead">Followers</div>
+							<div class="itembody">
+								<h1>310</h1>
+								<h3>added today</h3>
+								<p>2,393,905 total</p>
+							</div>
+						</div>
+					</div>
+					<div class="items">
+						<div class="item">
+							<div class="itemhead">Fan</div>
+							<div class="itembody">
+								<h1>73</h1>
+								<h3>added today</h3>
+								<p>91,765 total</p>
+							</div>
+						</div>
+					</div>
+					<div class="items">
+						<div class="item">
+							<div class="itemhead">Subscribers</div>
+							<div class="itembody">
+								<h1>56</h1>
+								<h3>added today</h3>
+								<p>189,405 total</p>
+							</div>
+						</div>
+					</div>
+					<div class="items active hover">
+						<div class="item">
+							<div class="itemhead">foursquare</div>
+							<div class="itembody">
+								<h4>WorldWide Checkins</h4>
+								<h4 style="margin-left:29%">3,905</h4>
+								<img src="googlemap.png">
+							</div>
+						</div>
+					</div>
+					<div class="items">
+						<div class="item">
+							<div class="itemhead">Landing pages</div>
+							<div class="itembody">
+								<h3>Visitors Today</h3>
+								<h1>397/<h3>355</h3></h1>
+								<p>Souja Boy V.I.P</p>
+							</div>
+						</div>
+					</div>
+				</div>	
+				</div>
 			</div>
 
 		</div>
 	</div>
-
-	<script src="jsanddom.js" type="text/javascript"></script>
+	<script src="jquery-1.11.1.min.js"></script>
+	<!--<script src="jsanddom.js" type="text/javascript"></script>-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+		$('.items').hover(function() {
+	        $('.items').css('width','15%');
+			$(this).css('width','30%');
+		})
+		
+	    .blur(function() {
+	        $('.items').css('width','20%');
+	    });
+		});
+		
+	</script>
 </body>
 </html>
