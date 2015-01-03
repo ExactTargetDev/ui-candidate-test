@@ -14,6 +14,9 @@
     "url": "https://github.com/willhoit/ui-candidate-test/issues"
   },
   "homepage": "https://github.com/willhoit/ui-candidate-test",
+  "dependencies": {
+    "bower": "^1.3.12"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.10.0",
