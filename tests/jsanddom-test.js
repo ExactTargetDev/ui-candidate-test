@@ -102,6 +102,19 @@ test( "findDistinctValues", 3, function() {
 });
 
 
+/********************************
+Do Fizz Buzz
+********************************/
+module( "Do Fizz Buzz" );
+
+test( "doFizzBuzz", 1, function() {
+    // Verify the method exists
+    equal( typeof doFizzBuzz,
+        'function',
+        'Must contain a doFizzBuzz function' );
+});
+
+
 
 
 
