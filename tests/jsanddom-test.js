@@ -115,6 +115,24 @@ test( "doFizzBuzz", 1, function() {
 });
 
 
+/********************************
+Remove Fruits
+********************************/
+module( "Remove Fruits" );
+
+test( "removeFruits", 2, function() {
+    // Verify the method exists
+    equal( typeof removeFruits,
+        'function',
+        'Must contain a removeFruits function' );
+
+    // Ensure that ET test data passes
+    deepEqual( removeFruits( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana'] ),
+        ['apple', 'orange', 'kiwi', 'plum', 'strawberry'],
+        'Expected "["apple", "orange", "kiwi", "plum", "strawberry"]" as the result, the result was: ' + removeFruits( ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana'] ) );
+});
+
+
 
 
 
