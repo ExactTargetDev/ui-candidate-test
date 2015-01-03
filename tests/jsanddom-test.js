@@ -4,55 +4,91 @@ Unit Test Example
 module( "Example Unit Test" );
 test( "Example Test", 2, function() {
     // Verify the method exists
-    equal( typeof divide, 'function', 'Must contain a divide function' );
+    equal( typeof divide,
+        'function',
+        'Must contain a divide function' );
 
     // Make sure the result from the divide function is valid
-    strictEqual( divide( 4, 2 ), 2, 'Expected 2 as the result, the result was: ' + divide( 4, 2 ) );
+    strictEqual( divide( 4, 2 ),
+        2,
+        'Expected 2 as the result, the result was: ' + divide( 4, 2 ) );
 });
 /********************************
 Please create your tests below...
 ********************************/
 
+
+/********************************
+Reverse String
+********************************/
 module( "Reverse String" );
+
 test( "reverseString", 5, function() {
     // Verify the method exists
-    equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
+    equal( typeof reverseString,
+        'function',
+        'Must contain a reverseString function' );
 
     // Make sure the result from the reverseString function is valid
-    strictEqual( reverseString( "doge" ), "egod", 'Expected "egod" as the result, the result was: ' + reverseString( "doge" ) );
+    strictEqual( reverseString( "doge" ),
+        "egod",
+        'Expected "egod" as the result, the result was: ' + reverseString( "doge" ) );
 
     // Ensure that ET test data passes
-    strictEqual( reverseString( "Subscribers rock" ), "kcor srebircsbuS", 'Expected "kcor srebircsbuS" as the result, the result was: ' + reverseString( "Subscribers rock" ) );
+    strictEqual( reverseString( "Subscribers rock" ),
+        "kcor srebircsbuS",
+        'Expected "kcor srebircsbuS" as the result, the result was: ' + reverseString( "Subscribers rock" ) );
 
     // Ensure astral symbols reverse properly. see: https://github.com/mathiasbynens/esrever
-    strictEqual( reverseString( "foo 𝌆 bar" ), "rab 𝌆 oof", 'Expected "rab 𝌆 oof" as the result, the result was: ' + reverseString( "foo 𝌆 bar" ) );
+    strictEqual( reverseString( "foo 𝌆 bar" ),
+        "rab 𝌆 oof",
+        'Expected "rab 𝌆 oof" as the result, the result was: ' + reverseString( "foo 𝌆 bar" ) );
 
     // Ensure that combining marks reverse perperly. see: https://github.com/mathiasbynens/esrever
-    strictEqual( reverseString( "mañana mañana" ), "anañam anañam", 'Expected "anañam anañam" as the result, the result was: ' + reverseString( "mañana mañana" ) );
-
-
+    strictEqual( reverseString( "mañana mañana" ),
+        "anañam anañam",
+        'Expected "anañam anañam" as the result, the result was: ' + reverseString( "mañana mañana" ) );
 });
 
+
+/********************************
+Find Min Value
+********************************/
 module( "Find Min Value" );
+
 test( "findMinValue", 4, function() {
     // Verify the method exists
-    equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
+    equal( typeof findMinValue,
+        'function',
+        'Must contain a findMinValue function' );
 
     // Make sure the result from the findMinValue function is valid
-    strictEqual( findMinValue( [5,2,9,13,7,4,32] ), 2, 'Expected "2" as the result, the result was: ' + findMinValue( [5,2,9,13,7,4,32] ) );
+    strictEqual( findMinValue( [5,2,9,13,7,4,32] ),
+        2,
+        'Expected "2" as the result, the result was: ' + findMinValue( [5,2,9,13,7,4,32] ) );
 
     // Ensure that ET test data passes
-    strictEqual( findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ), -1.1, 'Expected "-1.1" as the result, the result was: ' + findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ) );
+    strictEqual( findMinValue( [3, 5, 7, 20, 0.18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ),
+        -1.1,
+        'Expected "-1.1" as the result, the result was: ' + findMinValue( [3, 5, 7, 20, 0.18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ) );
 
     // Throw 'error' if array is empty
-    equal( findMinValue( [] ), "*throw array empty error*", 'Expected "*throw array empty error*" as the result, the result was: ' + findMinValue( [] ) )
+    equal( findMinValue( [] ),
+        '*throw array empty error*',
+        'Expected "*throw array empty error*" as the result, the result was: ' + findMinValue( [] ) );
 });
 
 
+/********************************
+Find Distinct Values
+********************************/
 module( "Find Distinct Values" );
+
 test( "findDistinctValues", 3, function() {
     // Verify the method exists
-    equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
+    equal( typeof findDistinctValues,
+        'function',
+        'Must contain a findDistinctValues function' );
 
     // Make sure the result from the findDistinctValues function is valid
     deepEqual( findDistinctValues( [5, 2, 9, 13, 9, 7, 4, 13, 32] ),
@@ -60,9 +96,9 @@ test( "findDistinctValues", 3, function() {
         'Expected "[5, 2, 9, 13, 7, 4, 32]" as the result, the result was: ' + findDistinctValues( [5, 2, 9, 13, 9, 7, 4, 13, 32] ) );
 
     // Ensure that ET test data passes
-    deepEqual( findDistinctValues( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ),
+    deepEqual( findDistinctValues( [3, 5, 7, 20, 0.18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ),
         [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity],
-        'Expected "[3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity]" as the result, the result was: ' + findDistinctValues( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ) );
+        'Expected "[3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity]" as the result, the result was: ' + findDistinctValues( [3, 5, 7, 20, 0.18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ) );
 });
 
 
