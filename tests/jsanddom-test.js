@@ -133,10 +133,27 @@ test( "removeFruits", 2, function() {
 });
 
 
+/********************************
+Push Onto Array
+********************************/
+module( "Push Onto Array" );
 
+test( "pushOntoArray", 3, function() {
+    // Verify the method exists
+    equal( typeof pushOntoArray,
+        'function',
+        'Must contain a pushOntoArray function' );
 
+    // Ensure that ET test data passes: simple value
+    deepEqual( pushOntoArray( [1, 2, 3, 4, 5], 6 ),
+        [1, 2, 3, 4, 5, 6],
+        'Expected "[1, 2, 3, 4, 5, 6]" as the result, the result was: ' + pushOntoArray( [1, 2, 3, 4, 5], 6 ) );
 
-
+    // Ensure that ET test data passes: array
+    deepEqual( pushOntoArray( [1, 2, 3, 4, 5], [7, 8, 9] ),
+        [1, 2, 3, 4, 5, 7, 8, 9],
+        'Expected "[1, 2, 3, 4, 5, 7, 8, 9]" as the result, the result was: ' + pushOntoArray( [1, 2, 3, 4, 5], [7, 8, 9] ) );
+});
 
 
 

@@ -51,12 +51,8 @@ function doFizzBuzz() {
 // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
 function removeFruits(fruits, fruitsToRemove) {
 
-    function sort(fruit, index){
-        return _.contains(fruitsToRemove, fruit);
-    }
-
-    return _.reject(fruits, sort);
-
+    // http://underscorejs.org/#difference
+    return _.difference(fruits, fruitsToRemove);
 }
 
 // Write a function to push either a simple value or an array of values onto a specified array.
@@ -64,7 +60,14 @@ function removeFruits(fruits, fruitsToRemove) {
 // If toPush is a simple value, it should be pushed onto array as an element.
 // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
 function pushOntoArray(array, toPush) {
-    // FILL THIS IN
+
+    if( _.isArray( toPush )){
+        array.push.apply(array, toPush);
+    } else {
+        array.push(toPush);
+    }
+
+    return array;
 }
 
 // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
