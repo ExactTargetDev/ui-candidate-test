@@ -156,6 +156,30 @@ test( "pushOntoArray", 3, function() {
 });
 
 
+/********************************
+Split List Str Using Comma
+********************************/
+module( "Split List Str Using Comma" );
+
+test( "splitListStrUsingComma", 3, function() {
+    // Verify the method exists
+    equal( typeof splitListStrUsingComma,
+        'function',
+        'Must contain a splitListStrUsingComma function' );
+
+    // Ensure that ET test data passes: string
+    deepEqual( splitListStrUsingComma( 'The, quick, brown, fox jumped over' ),
+        ['The', ' quick', ' brown', ' fox jumped over'],
+        'Expected "["The", " quick", " brown", " fox jumped over"]" as the result, the result was: ' + splitListStrUsingComma( 'The, quick, brown, fox jumped over' ) );
+
+        // Ensure that ET test data passes: empty string
+    deepEqual( splitListStrUsingComma( '' ),
+        [],
+        'Expected "[]" as the result, the result was: ' + splitListStrUsingComma( '' ) );
+});
+
+
+
 
 
 
