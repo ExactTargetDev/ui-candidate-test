@@ -21,7 +21,7 @@ function findMinValue(values) {
 
 // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
 function findDistinctValues(values) {
-    // FILL THIS IN
+    return _.uniq(values);
 }
 
 // Write a function that logs the numbers from 1 to 100 to the console.

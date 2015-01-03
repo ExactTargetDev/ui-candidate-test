@@ -47,3 +47,31 @@ test( "findMinValue", 4, function() {
     // Throw 'error' if array is empty
     equal( findMinValue( [] ), "*throw array empty error*", 'Expected "*throw array empty error*" as the result, the result was: ' + findMinValue( [] ) )
 });
+
+
+module( "Find Distinct Values" );
+test( "findDistinctValues", 3, function() {
+    // Verify the method exists
+    equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
+
+    // Make sure the result from the findDistinctValues function is valid
+    deepEqual( findDistinctValues( [5, 2, 9, 13, 9, 7, 4, 13, 32] ),
+        [5, 2, 9, 13, 7, 4, 32],
+        'Expected "[5, 2, 9, 13, 7, 4, 32]" as the result, the result was: ' + findDistinctValues( [5, 2, 9, 13, 9, 7, 4, 13, 32] ) );
+
+    // Ensure that ET test data passes
+    deepEqual( findDistinctValues( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ),
+        [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity],
+        'Expected "[3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity]" as the result, the result was: ' + findDistinctValues( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ) );
+});
+
+
+
+
+
+
+
+
+
+
+
