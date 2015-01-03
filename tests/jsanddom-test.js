@@ -14,17 +14,36 @@ Please create your tests below...
 ********************************/
 
 module( "Reverse String" );
-test( "Reverse String", 4, function() {
+test( "reverseString", 5, function() {
     // Verify the method exists
     equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
 
-    // Make sure the result from the divide function is valid
+    // Make sure the result from the reverseString function is valid
     strictEqual( reverseString( "doge" ), "egod", 'Expected "egod" as the result, the result was: ' + reverseString( "doge" ) );
 
-    // Ensure astral symbols reverse properly
+    // Ensure that ET test data passes
+    strictEqual( reverseString( "Subscribers rock" ), "kcor srebircsbuS", 'Expected "kcor srebircsbuS" as the result, the result was: ' + reverseString( "Subscribers rock" ) );
+
+    // Ensure astral symbols reverse properly. see: https://github.com/mathiasbynens/esrever
     strictEqual( reverseString( "foo 𝌆 bar" ), "rab 𝌆 oof", 'Expected "rab 𝌆 oof" as the result, the result was: ' + reverseString( "foo 𝌆 bar" ) );
 
-    // Ensure that combining marks reverse perperly
+    // Ensure that combining marks reverse perperly. see: https://github.com/mathiasbynens/esrever
     strictEqual( reverseString( "mañana mañana" ), "anañam anañam", 'Expected "anañam anañam" as the result, the result was: ' + reverseString( "mañana mañana" ) );
 
+
+});
+
+module( "Find Min Value" );
+test( "findMinValue", 4, function() {
+    // Verify the method exists
+    equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
+
+    // Make sure the result from the findMinValue function is valid
+    strictEqual( findMinValue( [5,2,9,13,7,4,32] ), 2, 'Expected "2" as the result, the result was: ' + findMinValue( [5,2,9,13,7,4,32] ) );
+
+    // Ensure that ET test data passes
+    strictEqual( findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ), -1.1, 'Expected "-1.1" as the result, the result was: ' + findMinValue( [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12] ) );
+
+    // Throw 'error' if array is empty
+    equal( findMinValue( [] ), "*throw array empty error*", 'Expected "*throw array empty error*" as the result, the result was: ' + findMinValue( [] ) )
 });
