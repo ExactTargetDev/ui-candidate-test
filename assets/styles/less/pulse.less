@@ -3,6 +3,49 @@
 .pulse{
     margin-top: 10px;
     background-color: @secondary;
+    background-image:
+        linear-gradient(@secondary, lighten(@secondary, 20%));
     border: 1px solid @medium-grey;
     border-radius: 4px;
+    box-shadow: inset 0 0 6px darken(@secondary, 20%);
+}
+
+.pulse-modules{
+    margin: 5px;
+    color: darken(@secondary, 20%);
+}
+
+.pulse-modules .active{
+    width: 25%;
+}
+
+.pulse-module{
+    text-align: center;
+    margin: 10px 6px 40px;
+    width: 16%;
+
+}
+
+.pulse-module h1{
+    color: @pulse-h1;
+    margin-bottom: 0px;
+    font-size: 3em;
+}
+
+.pulse-module h3{
+    margin-top: 2px;
+}
+
+
+.module-data{
+    background-color: @medium-grey;
+    border-radius: 4px;
+    border: 1px solid @medium-grey;
+    background-image:
+        linear-gradient(lighten(@secondary, 40%), lighten(@secondary, 10%));
+    -webkit-box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.4);
+    box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.4);
+
+    text-align: center;
 }
