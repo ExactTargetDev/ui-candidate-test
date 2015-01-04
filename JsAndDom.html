@@ -55,6 +55,23 @@
 		</form>
 	</script>
 
+    <script id="checkbox-template" type="text/x-handlebars-template">
+		<div class="checkboxes form-group">
+			<h4>{{ header }}</h4>
+			{{#checkbox}}
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="{{ value }}">
+					{{ label }}
+				</label>
+			</div>
+			{{/checkbox}}
+			<a href="#" id="checkAll">Check All</a>
+			<br/>
+			<a href="#" id="uncheckAll">Uncheck All</a>
+		</div>
+	</script>
+
 
 	<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
 	<script src="bower_components/handlebars/handlebars.js" type="text/javascript"></script>

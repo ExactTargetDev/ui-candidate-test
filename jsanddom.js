@@ -270,3 +270,43 @@ $('#list1').html(stateList);
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+var checkboxData = {
+    header: "Select all the things you like:",
+    checkbox: [
+        {
+            "label": "Kittens",
+            "value": "kittens"
+        },
+        {
+            "label": "Gifs",
+            "value": "gifs"
+        },
+        {
+            "label": "Coffee",
+            "value": "coffee"
+        },
+        {
+            "label": "Tuberculosis",
+            "value": "tuberculosis"
+        },
+        {
+            "label": "Checkboxes",
+            "value": "checkboxes"
+        }
+    ]
+};
+
+var checkboxTemplate = $("#checkbox-template").html(),
+    checkboxTemplateCompiled = Handlebars.compile(checkboxTemplate),
+    checkboxHtml = checkboxTemplateCompiled(checkboxData);
+
+$('#foobar').html(checkboxHtml);
+
+$('#foobar #checkAll').on( "click", function() {
+    $('#foobar input:checkbox').prop('checked', true);
+});
+
+$('#foobar #uncheckAll').on( "click", function() {
+    $('#foobar input:checkbox').prop('checked', false);
+});
+
