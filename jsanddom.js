@@ -100,6 +100,14 @@ function isOnlyWhitespace(sourceStr) {
 }
 
 // write an example of a javascript closure
+function calculateAnimalAge(animalToHumanYears){
+    return function(humanYears){
+        return animalToHumanYears * humanYears;
+    };
+}
+
+var catAge = calculateAnimalAge(5);
+var dogAge = calculateAnimalAge(7);
 
 // define a json object that represents a collection of people.
 // each person should have the following properties

@@ -230,3 +230,38 @@ test( "isOnlyWhitespace", 5, function() {
         'Expected "false" as the result, the result was: ' + isOnlyWhitespace( "" ) );
 });
 
+
+/********************************
+Calculate Animal Age
+********************************/
+module( "Calculate Animal Age" );
+test( "calculateAnimalAge", 5, function() {
+    // Verify the method exists
+    equal( typeof calculateAnimalAge,
+        'function',
+        'Must contain a calculateAnimalAge function' );
+
+    // Verify the method exists
+    equal( typeof catAge,
+        'function',
+        'Must contain a catAge function' );
+
+    // Verify the method exists
+    equal( typeof dogAge,
+        'function',
+        'Must contain a dogAge function' );
+
+    // Ensure dog age is valid
+    strictEqual( dogAge(8),
+        56,
+        'Expected 56 as the result, the result was: ' + dogAge(8) );
+
+    // Ensure cat age is valid
+    strictEqual( catAge(3),
+        15,
+        'Expected 15 as the result, the result was: ' + catAge(3) );
+});
+
+
+
+
