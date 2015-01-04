@@ -252,6 +252,19 @@ $("#foo a:first-of-type").html();
 
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
+var states = ["Iowa", "Indiana", "Minnesota"],
+    stateList = "";
+
+// reuses previously written function
+states = pushOntoArray(states, ["Colorado", "Utah"]);
+
+function createList(state){
+    stateList += "<li>" + state + "</li>";
+}
+
+_.each(states, createList);
+
+$('#list1').html(stateList);
 
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
