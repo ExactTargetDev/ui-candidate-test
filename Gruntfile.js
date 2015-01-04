@@ -17,18 +17,28 @@ module.exports = function(grunt) {
         }
       }
     },
+    less: {
+      development: {
+        options: {
+          paths: ["assets/styles/css"]
+        },
+        files: {
+          "assets/styles/css/main.css": "assets/styles/less/main.less"
+        }
+      }
+    },
     watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['jshint', 'qunit']
+      files: ['assets/styles/less/*.less', 'Gruntfile.js', 'src/**/*.js', 'tests/**/*.js', 'jsanddom.js'],
+      tasks: ['less', 'jshint', 'qunit']
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-less');
 
   grunt.registerTask('test', ['jshint', 'qunit']);
-
   grunt.registerTask('default', ['jshint', 'qunit']);
 
 };
