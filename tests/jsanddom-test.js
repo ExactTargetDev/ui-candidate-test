@@ -1,8 +1,9 @@
 /********************************
-Unit Test Example
+Divide
 ********************************/
-module( "Example Unit Test" );
-test( "Example Test", 2, function() {
+module( "Divide" );
+
+test( "divide", 2, function() {
     // Verify the method exists
     equal( typeof divide,
         'function',
@@ -13,9 +14,6 @@ test( "Example Test", 2, function() {
         2,
         'Expected 2 as the result, the result was: ' + divide( 4, 2 ) );
 });
-/********************************
-Please create your tests below...
-********************************/
 
 
 /********************************
@@ -179,6 +177,26 @@ test( "splitListStrUsingComma", 3, function() {
 });
 
 
+/********************************
+Sum
+********************************/
+module( "Sum" );
+test( "sum", 3, function() {
+    // Verify the method exists
+    equal( typeof sum,
+        'function',
+        'Must contain a sum function' );
+
+    // Ensure that ET test data passes
+    strictEqual( sum( 1, 1, 2, 3, 5, 7 ),
+        19,
+        'Expected 19 as the result, the result was: ' + sum( 1, 1, 2, 3, 5, 7 ) );
+
+    // Ensure that passing zero arguments doesn't break all the things
+    strictEqual( sum(),
+        0,
+        'Expected 0 as the result, the result was: ' + sum() );
+});
 
 
 
