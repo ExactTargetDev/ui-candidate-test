@@ -199,5 +199,34 @@ test( "sum", 3, function() {
 });
 
 
+/********************************
+Is Only Whitespace
+********************************/
+module( "Is Only Whitespace" );
+test( "isOnlyWhitespace", 5, function() {
+    // Verify the method exists
+    equal( typeof isOnlyWhitespace,
+        'function',
+        'Must contain a isOnlyWhitespace function' );
 
+    // Ensure that multiple spaces returns true
+    strictEqual( isOnlyWhitespace( "        " ),
+        true,
+        'Expected "true" as the result, the result was: ' + isOnlyWhitespace( "        " ) );
+
+    // Ensure that a single space returns true
+    strictEqual( isOnlyWhitespace( " " ),
+        true,
+        'Expected "true" as the result, the result was: ' + isOnlyWhitespace( " " ) );
+
+    // Ensure that a string containing non-whitespace characters is false
+    strictEqual( isOnlyWhitespace( "    hodor " ),
+        false,
+        'Expected "false" as the result, the result was: ' + isOnlyWhitespace( "    hodor " ) );
+
+    // Ensure that an empty string returns false (technically, it has no white space)
+    strictEqual( isOnlyWhitespace( "" ),
+        false,
+        'Expected "false" as the result, the result was: ' + isOnlyWhitespace( "" ) );
+});
 
