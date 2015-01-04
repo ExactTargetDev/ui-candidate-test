@@ -196,6 +196,27 @@ var dogAge = calculateAnimalAge(7);
 // .addColumns('column1', 'column2', 'column3');
 // .addRow('value1A', 'value1B', 'value1C');
 // .addRow('value2A', 'value2B', 'value2C');
+var DataTable = function(initColumns, initRows){
+    var columns = initColumns || [],
+        rows = initRows || [];
+
+    this.addColumns = function(columnsToAdd){
+        return pushOntoArray(columns, columnsToAdd);
+    };
+
+    this.addRows = function(rowsToAdd){
+        return pushOntoArray(rows, rowsToAdd);
+    };
+
+    this.getColumns = function(){
+        return columns;
+    }
+};
+
+var Satellites = new DataTable(["Mercury", "Venus"], ["moon1", "moon2"]);
+
+Satellites.addColumns([ "Earth", "Mars"]);
+console.log(Satellites.getColumns());
 
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
