@@ -210,17 +210,37 @@ var DataTable = function(initColumns, initRows){
 
     this.getColumns = function(){
         return columns;
-    }
+    };
 };
 
 var Satellites = new DataTable(["Mercury", "Venus"], ["moon1", "moon2"]);
 
 Satellites.addColumns([ "Earth", "Mars"]);
-console.log(Satellites.getColumns());
 
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
+var selectElementData = {
+    id: "x-men",
+    label: "X-Men",
+    options: [
+        {"option": "Beast"},
+        {"option": "Iceman"},
+        {"option": "Banshee"},
+        {"option": "Forge"}
+    ],
+    button: "Log!"
+};
+
+var selectElementTemplate = $("#select-element-template").html(),
+    selectTemplateCompiled = Handlebars.compile(selectElementTemplate),
+    selectElementHtml = selectTemplateCompiled(selectElementData);
+
+$('#div1').html(selectElementHtml);
+
+$('#div1 button').on( "click", function() {
+    console.log( $("#div1 select").val() );
+});
 
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
