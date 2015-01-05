@@ -57,12 +57,12 @@
                         <li><a href="#">Exact Target Sites</a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
-                        <li><a href="">Automation Studio</a></li>
-                        <li><a href="">Audience Builder</a></li>
-                        <li><a href="">Report Builder</a></li>
+                        <li><a href="#">Automation Studio</a></li>
+                        <li><a href="#">Audience Builder</a></li>
+                        <li><a href="#">Report Builder</a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
-                        <li><a href="">Partner Applications</a></li>
+                        <li><a href="#">Partner Applications</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -99,7 +99,7 @@
                                     <h6>189,405 total</h6>
                                 </div>
                             </div>
-                            <div class="pull-left pulse-module active">
+                            <div class="pull-left pulse-module modal-active">
                                 <h6 class="module-title">foursquare</h6>
                                 <div class="module-data-foursquare">
                                     <h1>Worldwide Checkins</h1>
@@ -121,7 +121,7 @@
             </div>
         </div>
 
-        <div id="helpModalHolder"></div>
+        <div id="help-modal-holder"></div>
 
         <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -132,12 +132,12 @@
 
         <!-- TEMPLATES -->
         <script id="help-modal-template" type="text/x-handlebars-template">
-            <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+            <div class="modal fade" id="help-modal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="helpModalLabel">Interactive Marketing Hub Help</h4>
+                            <h4 class="modal-title" id="help-modal-label">Interactive Marketing Hub Help</h4>
                         </div>
                         <div class="modal-body">
                             {{#help}}

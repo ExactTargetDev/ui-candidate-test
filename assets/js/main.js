@@ -3,9 +3,9 @@ $(function() {
     Toggle Pulse Modules
     ***************************/
     $(".pulse-module").on('click', function(){
-        if ( !$(this).hasClass("active") ) {
-            $(".active").removeClass('active');
-            $(this).addClass("active");
+        if ( !$(this).hasClass("modal-active") ) {
+            $(".modal-active").removeClass('modal-active');
+            $(this).addClass("modal-active");
         }
     });
 
@@ -21,8 +21,8 @@ $(function() {
                     helpModalTemplateCompiled = Handlebars.compile(helpModalTemplate),
                     helpModalHtml = helpModalTemplateCompiled(data);
 
-                $('#helpModalHolder').html(helpModalHtml);
-                $('#helpModal').modal();
+                $('#help-modal-holder').html(helpModalHtml);
+                $('#help-modal').modal();
             }
         });
     })
