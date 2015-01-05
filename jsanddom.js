@@ -117,73 +117,73 @@ var dogAge = calculateAnimalAge(7);
 // - state
 // - zip
 // - a collection of phone numbers (home, work, mobile)
-// {
-//     "people": [
-//         {
-//             "firstName": "Eric",
-//             "lastName": "Willhoit",
-//             "city": "Des Moines",
-//             "state": "IA",
-//             "zip": "55555",
-//             "phoneNumbers": [
-//                 {
-//                   "type": "home",
-//                   "number": "515 222-1234"
-//                 },
-//                 {
-//                   "type": "work",
-//                   "number": "515 222-2345"
-//                 },
-//                 {
-//                   "type": "mobile",
-//                   "number": "515 222-3456"
-//                 }
-//             ]
-//         },
-//         {
-//             "firstName": "Ellie",
-//             "lastName": "Willhoit",
-//             "city": "Des Moines",
-//             "state": "IA",
-//             "zip": "55555",
-//             "phoneNumbers": [
-//                 {
-//                   "type": "home",
-//                   "number": "515 444-4567"
-//                 },
-//                 {
-//                   "type": "work",
-//                   "number": "515 444-5678"
-//                 },
-//                 {
-//                   "type": "mobile",
-//                   "number": "515 444-6789"
-//                 }
-//             ]
-//         },
-//         {
-//             "firstName": "Larry",
-//             "lastName": "Dunbar",
-//             "city": "Denver",
-//             "state": "CO",
-//             "zip": "70707",
-//             "phoneNumbers": [
-//                 {
-//                   "type": "home",
-//                   "number": "860 777-3855"
-//                 },
-//                 {
-//                   "type": "work",
-//                   "number": "860 777-2335"
-//                 },
-//                 {
-//                   "type": "mobile",
-//                   "number": "860 777-6757"
-//                 }
-//             ]
-//         }
-//     ]
-// }
+var people = {
+    "people": [
+        {
+            "firstName": "Eric",
+            "lastName": "Willhoit",
+            "city": "Des Moines",
+            "state": "IA",
+            "zip": "55555",
+            "phoneNumbers": [
+                {
+                  "type": "home",
+                  "number": "515 222-1234"
+                },
+                {
+                  "type": "work",
+                  "number": "515 222-2345"
+                },
+                {
+                  "type": "mobile",
+                  "number": "515 222-3456"
+                }
+            ]
+        },
+        {
+            "firstName": "Ellie",
+            "lastName": "Willhoit",
+            "city": "Des Moines",
+            "state": "IA",
+            "zip": "55555",
+            "phoneNumbers": [
+                {
+                  "type": "home",
+                  "number": "515 444-4567"
+                },
+                {
+                  "type": "work",
+                  "number": "515 444-5678"
+                },
+                {
+                  "type": "mobile",
+                  "number": "515 444-6789"
+                }
+            ]
+        },
+        {
+            "firstName": "Larry",
+            "lastName": "Dunbar",
+            "city": "Denver",
+            "state": "CO",
+            "zip": "70707",
+            "phoneNumbers": [
+                {
+                  "type": "home",
+                  "number": "860 777-3855"
+                },
+                {
+                  "type": "work",
+                  "number": "860 777-2335"
+                },
+                {
+                  "type": "mobile",
+                  "number": "860 777-6757"
+                }
+            ]
+        }
+    ]
+};
 
 // Create a javascript object (DataTable) with the following:
 // A private columns property (string array)

@@ -46,6 +46,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-autoprefixer');
 
   grunt.registerTask('test', ['jshint', 'qunit']);
-  grunt.registerTask('default', ['jshint', 'qunit']);
+  grunt.registerTask('default', ['less', 'autoprefixer', 'jshint', 'qunit']);
 
 };
