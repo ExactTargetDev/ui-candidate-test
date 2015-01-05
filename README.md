@@ -1,4 +1,11 @@
-# ExactTarget UI Candidates 
+# Instructions
+
+This project utilizes NPM, Bower and Grunt for package management and automation.
+
+To get this project up and running you'll need to run `npm install`, `bower install` and `grunt` (or `grunt watch`).
+
+
+# ExactTarget UI Candidates
 
 This is the candaidate test for ExactTarget UI developers. It is **NOT** pass/fail. It is intended to provide insight into the range of your skill set. Please do what you can.
 
