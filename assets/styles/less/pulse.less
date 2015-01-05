@@ -1,6 +1,7 @@
 @import "colors";
 
 .pulse{
+    position: relative;
     margin-top: 10px;
     background-color: @secondary;
     background-image:
@@ -10,13 +11,38 @@
     box-shadow: inset 0 0 6px darken(@secondary, 20%);
 }
 
+.pulse-icon{
+    position: absolute;
+    left:0;
+
+    h2{
+        color: @white;
+        margin: 10px 0 0 15px;
+        text-shadow: 0px 2px 1px rgba(127, 127, 127, 1);
+    }
+    img{
+        margin-top: -10px;
+    }
+}
+
+.pulse-icons{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.pulse-pagination{
+    position: absolute;
+    bottom: 10px;
+    left: 47%;
+}
+
 .pulse-modules{
     margin: 5px 0 0 20px;
     color: darken(@secondary, 20%);
 }
 
 .pulse-modules .modal-active{
-    margin-top: 10px;
     width: 35%;
 }
 
@@ -26,8 +52,19 @@
 }
 
 .pulse-module{
-    margin: 75px 6px 40px;
+    float: left;
+    margin: 65px 6px 40px;
     width: 14%;
+}
+
+.pulse-module-foursquare{
+    float: left;
+    margin: 65px 6px 40px;
+    width: 14%;
+}
+
+.pulse-module-foursquare.modal-active{
+    margin-top: 10px !important;
 }
 
 .module-data h1{
@@ -35,9 +72,6 @@
     margin-bottom: 0px;
     font-size: 3em;
 }
-
-
-
 
 .module-data h3{
     margin: 2px 0 10px;
@@ -71,6 +105,16 @@
 .module-data-foursquare img{
     width: 90%;
     margin-bottom: 15px;
+}
+
+.module-foursquare-title{
+    float: left;
+    margin: 5px 15px;
+}
+
+.module-foursquare-count{
+    float: right;
+    margin:5px 15px;
 }
 
 .module-visitors span{
