@@ -208,14 +208,14 @@ var DataTable = function(initColumns, initRows){
         return pushOntoArray(rows, rowsToAdd);
     };
 
-    this.getColumns = function(){
-        return columns;
+    this.getData = function(){
+        // Still uncertain of "hash" instructions..
+        // All I can think of when looking at this is:
+        // "This sounds like a very bad way to store data, I should be using Mongo" :D
     };
 };
 
 var Satellites = new DataTable(["Mercury", "Venus"], ["moon1", "moon2"]);
-
-Satellites.addColumns([ "Earth", "Mars"]);
 
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
