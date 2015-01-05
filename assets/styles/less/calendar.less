@@ -1,0 +1,87 @@
+@import "colors";
+
+.weeklyCalendar{
+    background-color: @light-grey;
+    border: 1px solid @medium-grey;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.44);
+    -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.44);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.44);
+}
+
+.calendar-holder{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.month-year{
+    float: left;
+    color: darken(@secondary, 10%);
+    font-size: .75em;
+    margin: 2px 0 2px 8px;
+}
+
+.icons{
+    margin: 2px 8px 2px 0;
+    float:right;
+}
+
+.icons img{
+    cursor: pointer;
+    float: left;
+}
+
+.week{
+    margin: 0 8px 15px;
+    position: relative;
+    z-index: 2;
+    border-left: 1px solid @medium-grey;
+    border-bottom: 1px solid @medium-grey;
+    height: 85px;
+}
+
+.day{
+    color: @medium-grey;
+    font-size: .75em;
+    float: left;
+    width: 14.2857143%;
+    height: 85px;
+    border-right: 1px solid @medium-grey;
+}
+
+.day-of-week{
+    margin-left: 3px;
+    float:left;
+}
+
+.date{
+    margin-right: 3px;
+    float: right;
+}
+
+.today{
+    background-color: lighten(@highlight, 35%);
+    background-image:
+        linear-gradient(lighten(@secondary, 15%), lighten(@highlight, 35%));
+}
+
+.today-text{
+    background-color: @highlight;
+    background-image:
+        linear-gradient(lighten(@highlight, 5%), @highlight);
+    width:100%;
+    height: 16px;
+    border-top: 1px solid @medium-grey;
+    margin-top: 84px;
+    text-align: center;
+    color: @white;
+}
+
+.collapse-calendar{
+    position: absolute;
+    right: 2px;
+    bottom: -17px;
+}
+

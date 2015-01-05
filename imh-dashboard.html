@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>Interactive Marketing Hub Dashboard</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="assets/styles/css/main.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="assets/images/icons/et-logo.png" alt="IMH Logo"></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#" id="help">Help</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ul class="nav nav-sidebar">
+                        <li class="active"><a href="#"><img src="assets/images/icons/side-nav-IMH.png" alt="IMH Logo">Interactive <br/> Marketing Hub<span class="sr-only">(current)</span></a></li>
+                        <li><a href="#"><img src="assets/images/icons/side-nav-email.png" alt="Email Logo">ExactTarget Email</a></li>
+                        <li><a href="#"><img src="assets/images/icons/side-nav-et-mobile.png" alt="ET Mobile Logo">ExactTarget Mobile</a></li>
+                        <li><a href="#"><img src="assets/images/icons/side-nav-co-tweet-social.png" alt="CoTweet Social Logo">CoTweet Social</a></li>
+                        <li><a href="#"><img src="assets/images/icons/side-nav-et-sites.png" alt="Exact Target Sites Logo">Exact Target Sites</a></li>
+                    </ul>
+                    <hr>
+                    <ul class="nav nav-sidebar">
+                        <li><a href="#"><img src="assets/images/icons/side-nav-automation-studio.png" alt="Automation Studio Logo">Automation Studio</a></li>
+                        <li><a href="#"><img src="assets/images/icons/side-nav-audience-builder.png" alt="Audience Builder Logo">Audience Builder</a></li>
+                        <li><a href="#"><img src="assets/images/icons/side-nav-report.png" alt="Report Builder Logo">Report Builder</a></li>
+                    </ul>
+                    <hr>
+                    <ul class="nav nav-sidebar">
+                        <li><a href="#"><img src="assets/images/icons/side-nav-partner-applications.png" alt="Partner Applications Logo">Partner Applications</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+                    <div class="weeklyCalendar">
+                        <div class="calendar-holder">
+                            <div class="month-year">September 2010</div>
+                            <div class="icons">
+                                <img src="assets/images/icons/cal-gear.png" alt="Calendar Settings">
+                                <img src="assets/images/icons/cal-pane-toggle.png" alt="Toggle Calendar">
+                            </div>
+                            <p class="clear"></p>
+                            <div class="week">
+                                <div class="day">
+                                    <div class="day-of-week">Sat</div>
+                                    <div class="date">11</div>
+                                </div>
+                                <div class="day">
+                                    <div class="day-of-week">Sun</div>
+                                    <div class="date">12</div>
+                                </div>
+                                <div class="day">
+                                    <div class="day-of-week">Mon</div>
+                                    <div class="date">13</div>
+                                </div>
+                                <div class="day">
+                                    <div class="day-of-week">Tue</div>
+                                    <div class="date">14</div>
+                                </div>
+                                <div class="day today">
+                                    <div class="day-of-week">Wed</div>
+                                    <div class="date">15</div>
+                                    <div class="today">
+                                        <div class="today-gradient"></div>
+                                        <div class="today-text">TODAY</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="day-of-week">Thu</div>
+                                    <div class="date">16</div>
+                                </div>
+                                <div class="day">
+                                    <div class="day-of-week">Fri</div>
+                                    <div class="date">17</div>
+                                </div>
+                            </div>
+                            <p class="clear"></p>
+                            <div class="collapse-calendar">
+                                <img src="assets/images/icons/cal-collapse.png" alt="Collapse Calendar">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pulse">
+
+                        <div class="pulse-icon">
+                            <h2>Pulse</h2>
+                            <img src="assets/images/icons/pulse.png" alt="Pulse Logo">
+                        </div>
+
+                        <div class="pulse-icons">
+                            <img src="assets/images/icons/main-gear.png" alt="Pulse Settings">
+                            <img src="assets/images/icons/main-multi.png" alt="Bundle o' icons">
+                        </div>
+
+                        <div class="row pulse-modules">
+                            <div class="pulse-module">
+                                <h6 class="module-title">Followers</h6>
+                                <div class="module-data">
+                                    <h1>310</h1>
+                                    <h3>added today</h3>
+                                    <h6>2,393,905 total</h6>
+                                </div>
+                            </div>
+                            <div class="pulse-module">
+                                <h6 class="module-title">Fan</h6>
+                                <div class="module-data">
+                                    <h1>73</h1>
+                                    <h3>added today</h3>
+                                    <h6>91,675 total</h6>
+                                </div>
+                            </div>
+                            <div class="pulse-module">
+                                <h6 class="module-title">Subscribers</h6>
+                                <div class="module-data">
+                                    <h1>56</h1>
+                                    <h3>added today</h3>
+                                    <h6>189,405 total</h6>
+                                </div>
+                            </div>
+                            <div class="pulse-module pulse-module-foursquare modal-active">
+                                <h6 class="module-title">foursquare</h6>
+                                <div class="module-data-foursquare">
+                                    <div class="module-foursquare-title">Worldwide Checkins</div>
+                                    <div class="module-foursquare-count">3,905</div>
+                                    <img src="assets/images/foursquareMap.jpg" alt="Map of Foursquare Checkins">
+                                </div>
+                            </div>
+                            <div class="pulse-module">
+                                <h6 class="module-title">Landing Pages</h6>
+                                <div class="module-data module-visitors">
+                                    <h3>Visitors Today</h3>
+                                    <h1>397<span>/ 355</span></h1>
+                                    <h6>Soulja Boy V.I.P</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pulse-pagination">
+                            <img src="assets/images/icons/main-pagination.png" alt="Pulse Pagination">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="help-modal-holder"></div>
+
+        <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/handlebars/handlebars.js" type="text/javascript"></script>
+        <script src="assets/js/main.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+        <!-- TEMPLATES -->
+        <script id="help-modal-template" type="text/x-handlebars-template">
+            <div class="modal fade" id="help-modal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="help-modal-label">Interactive Marketing Hub Help</h4>
+                        </div>
+                        <div class="modal-body">
+                            {{#help}}
+                                <h3>{{ title }}</h3>
+                                <a href="{{ URL }}" target="_BLANK">{{ URL }}</a>
+                                <hr/>
+                            {{/help}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+    </body>
+</html>

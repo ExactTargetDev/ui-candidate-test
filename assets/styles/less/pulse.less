@@ -1,0 +1,132 @@
+@import "colors";
+
+.pulse{
+    position: relative;
+    margin-top: 10px;
+    background-color: @secondary;
+    background-image:
+        linear-gradient(@secondary, lighten(@secondary, 20%));
+    border: 1px solid @medium-grey;
+    border-radius: 4px;
+    box-shadow: inset 0 0 6px darken(@secondary, 20%);
+}
+
+.pulse-icon{
+    position: absolute;
+    left:0;
+
+    h2{
+        color: @white;
+        margin: 10px 0 0 15px;
+        text-shadow: 0px 2px 1px rgba(127, 127, 127, 1);
+    }
+    img{
+        margin-top: -10px;
+    }
+}
+
+.pulse-icons{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.pulse-pagination{
+    position: absolute;
+    bottom: 10px;
+    left: 47%;
+}
+
+.pulse-modules{
+    margin: 5px 0 0 20px;
+    color: darken(@secondary, 20%);
+}
+
+.pulse-modules .modal-active{
+    width: 35%;
+}
+
+.module-title{
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.pulse-module{
+    float: left;
+    margin: 65px 6px 40px;
+    width: 14%;
+}
+
+.pulse-module-foursquare{
+    float: left;
+    margin: 65px 6px 40px;
+    width: 14%;
+}
+
+.pulse-module-foursquare.modal-active{
+    margin-top: 20px !important;
+}
+
+.module-data h1{
+    color: @pulse-h1;
+    margin-bottom: 0px;
+    font-size: 2.5em;
+}
+
+.module-data h3{
+    margin: 2px 0 10px;
+}
+
+.module-data{
+    background-color: @medium-grey;
+    border-radius: 4px;
+    border: 1px solid @medium-grey;
+    background-image:
+        linear-gradient(lighten(@secondary, 40%), lighten(@secondary, 10%));
+    -webkit-box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.4);
+    box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.4);
+
+    text-align: center;
+}
+
+.module-data-foursquare{
+    text-align: center;
+    background-color: @medium-grey;
+    border-radius: 4px;
+    border: 1px solid @medium-grey;
+    background-image:
+        linear-gradient(lighten(@secondary, 40%), lighten(@secondary, 10%));
+    -webkit-box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.4);
+    box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.4);
+}
+
+.module-data-foursquare img{
+    width: 90%;
+    margin-bottom: 15px;
+}
+
+.module-foursquare-title{
+    float: left;
+    margin: 5px 15px;
+}
+
+.module-foursquare-count{
+    float: right;
+    margin:5px 15px;
+}
+
+.module-visitors span{
+    color: darken(@secondary, 20%);
+    font-size: .5em;
+}
+
+.module-visitors h1{
+    margin-top: 4px;
+}
+
+.module-visitors h3{
+    margin: 20px 0 0;
+}
+

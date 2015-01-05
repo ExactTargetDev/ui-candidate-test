@@ -1,0 +1,31 @@
+@import "colors";
+@import "text";
+@import "sidebar";
+@import "navbar";
+@import "calendar";
+@import "pulse";
+
+
+body{
+    background-color: @primary;
+    padding-top: 50px;
+}
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+p.clear{
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
