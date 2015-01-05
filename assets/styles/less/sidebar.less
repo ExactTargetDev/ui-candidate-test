@@ -3,21 +3,51 @@
 /* Hide for mobile, show later */
 .sidebar {
   display: none;
+  padding: 0 !important;
+  margin-top: 20px;
+  border-radius: 4px;
+  border: 1px solid @dark-grey;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.44);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.44);
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.44);
+
+  hr{
+    border-top: 1px solid @dark-grey;
+    padding: 0;
+    margin: 0;
+  }
+  ul{
+    margin-bottom: 0;
+  }
+  li{
+    margin-left: 10px;
+  }
+  img{
+    margin-right: 4px;
+  }
+  a{
+    padding: 2px 0 2px 15px !important;
+    font-size: 1em;
+    color: @medium-grey;
+  }
 }
 
 .nav-sidebar>li>a:hover, .nav>li>a:focus {
-    background-color: @medium-grey !important;
+  color: @medium-grey !important;
+  background-color: @white !important;
 }
 
 .nav-sidebar>li>a:active {
-    background-color: @highlight !important;
+  color: @white !important;
+  background-color: @highlight !important;
 }
+
 
 @media (min-width: 768px) {
   .sidebar {
     position: fixed;
-    top: 66px
-    bottom: 0;
+    top: 66px;
+    // bottom: 0;
     left: 15px;
     z-index: 1000;
     display: block;
@@ -25,7 +55,6 @@
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     background-color: @light-grey;
-    border-right: 1px solid #eee;
   }
 }
 

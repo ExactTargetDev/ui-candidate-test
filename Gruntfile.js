@@ -23,13 +23,19 @@ module.exports = function(grunt) {
           paths: ["assets/styles/css"]
         },
         files: {
-          "assets/styles/css/main.css": "assets/styles/less/*.less"
+          "assets/styles/css/main-combined.css": "assets/styles/less/*.less"
         }
       }
     },
+    autoprefixer: {
+      single_file: {
+        src: 'assets/styles/css/main-combined.css',
+        dest: 'assets/styles/css/main.css'
+      },
+    },
     watch: {
       files: ['assets/styles/less/*.less', 'Gruntfile.js', 'src/**/*.js', 'tests/**/*.js', 'jsanddom.js'],
-      tasks: ['less', 'jshint', 'qunit']
+      tasks: ['less', 'autoprefixer', 'jshint', 'qunit']
     }
   });
 
@@ -37,6 +43,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
   grunt.registerTask('test', ['jshint', 'qunit']);
   grunt.registerTask('default', ['jshint', 'qunit']);
