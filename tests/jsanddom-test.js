@@ -112,3 +112,14 @@ test( "Sum of Arguments Unit Test", 2, function() {
     // Make sure the result from the findDistinctValues function is valid
     ok( sum( 1, 1, 2, 3, 5, 7 ), 19, 'Expected 19 as the result, the result was: ' + sum( 1, 1, 2, 3, 5, 7 ) );
 });
+
+// isOnlyWhitespace
+module( "isOnlyWhitespace Unit Test" );
+test( "String is Only Whitespace Unit Test", 4, function() {
+    // Verify the method exists
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' ); 
+
+    equal( isOnlyWhitespace( '     ' ), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace( '     ' ) );
+    equal( isOnlyWhitespace( 'a b c' ), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace( 'a b c' ) );
+    equal( isOnlyWhitespace( 'abc' ), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace( 'abc' ) );
+});

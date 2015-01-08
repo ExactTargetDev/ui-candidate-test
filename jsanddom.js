@@ -82,8 +82,14 @@
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         return sourceStr.split('').filter(function(v) {
+            return v === ' ';
+         }).length === sourceStr.split('').length ? true : false;
      }
+
+     console.log(isOnlyWhitespace('   '));
+     console.log(isOnlyWhitespace('a b c'));
+     console.log(isOnlyWhitespace('abc'));
 
      // write an example of a javascript closure
 
