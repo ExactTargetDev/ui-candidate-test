@@ -60,3 +60,16 @@ test( "Do Fizz Buzz Unit Test", 1, function() {
     // Make sure the result from the doFizzBuzz function is valid
     // TODO: create tests for doFizzBuzz
 });
+
+// removeFruits
+module( "removeFruits Unit Test" );
+test( "Remove Fruits from Array Unit Test", 2, function() {
+    // Verify the method exists
+    equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' ); 
+
+    // Make sure the result from the findDistinctValues function is valid
+    var fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],
+    	fruitsToRemove = ['pear', 'banana'];
+
+    ok( removeFruits( fruits, fruitsToRemove ), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Expected ["apple", "orange", "kiwi", "plum", "strawberry"] as the result, the result was: ' + removeFruits( fruits, fruitsToRemove ) );
+});
