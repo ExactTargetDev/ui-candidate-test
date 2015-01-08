@@ -20,7 +20,7 @@ test( "Reverse String Test", 4, function() {
     equal( typeof reverseString, 'function', 'Must contain a reverseString function' ); 
 
     // Make sure the result from the reverseString function is valid
-    ok( reverseString( 'hello' ), 'olleh', 'Expected olleh as the result, the result was: ' + reverseString( 'hello' ) );
+    ok( reverseString( 'Subscribers rock' ), 'kcor srebircsbuS', 'Expected kcor srebircsbuS as the result, the result was: ' + reverseString( 'kcor srebircsbuS' ) );
     ok( reverseString( 'a' ), 'a', 'Expected a as the result, the result was: ' + reverseString( 'a' ) );
     ok( reverseString( 'abc123' ), '321cba', 'Expected 321cba as the result, the result was: ' + reverseString( 'abc123' ) );
 });
