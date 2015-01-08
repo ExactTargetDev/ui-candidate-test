@@ -50,3 +50,13 @@ test( "Find Distinct Values of Array Unit Test", 3, function() {
     ok( findDistinctValues( testArrayInt ), [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, 0.18], 'Expected [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, 0.18] as the result, the result was: ' + findDistinctValues( testArrayInt ) );
     ok( findDistinctValues( testArrayStr ), ['a', 'b', 'c'], 'Expected ["a", "b", "c"] as the result, the result was: ' + findDistinctValues( testArrayStr ) );
 });
+
+// doFizzBuzz
+module( "doFizzBuzz Unit Test" );
+test( "Do Fizz Buzz Unit Test", 1, function() {
+    // Verify the method exists
+    equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' ); 
+
+    // Make sure the result from the doFizzBuzz function is valid
+    // TODO: create tests for doFizzBuzz
+});
