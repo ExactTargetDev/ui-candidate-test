@@ -1,12 +1,13 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+        if(str.length <= 1) return str;
+        return reverseString(str.substring(1)) + str.charAt(0);
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
