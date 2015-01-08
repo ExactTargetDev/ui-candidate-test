@@ -102,3 +102,13 @@ test( "Split String by Comma into Array Unit Test", 3, function() {
     ok( splitListStrUsingComma( sourceStr ), ["The", "quick", "brown", "fox jumped over"], 'Expected ["The", "quick", "brown", "fox jumped over"] as the result, the result was: ' + splitListStrUsingComma( sourceStr ) );
     ok( splitListStrUsingComma( sourceStrEmpty ), [], 'Expected [] as the result, the result was: ' + splitListStrUsingComma( sourceStrEmpty ) );
 });
+
+// sum
+module( "sum Unit Test" );
+test( "Sum of Arguments Unit Test", 2, function() {
+    // Verify the method exists
+    equal( typeof sum, 'function', 'Must contain a sum function' ); 
+
+    // Make sure the result from the findDistinctValues function is valid
+    ok( sum( 1, 1, 2, 3, 5, 7 ), 19, 'Expected 19 as the result, the result was: ' + sum( 1, 1, 2, 3, 5, 7 ) );
+});
