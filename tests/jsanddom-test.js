@@ -33,5 +33,20 @@ test( "Array Minimum Value Unit Test", 2, function() {
 
     // Make sure the result from the reverseString function is valid
     var testArray = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+
     ok( findMinValue( testArray ), -1.1, 'Expected -1.1 as the result, the result was: ' + findMinValue( testArray ) );
+});
+
+// findDistinctValues
+module( "findDistinctValues Unit Test" );
+test( "Find Distinct Values of Array Unit Test", 3, function() {
+    // Verify the method exists
+    equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' ); 
+
+    // Make sure the result from the findDistinctValues function is valid
+    var testArrayInt = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12],
+    	testArrayStr = ['a', 'a', 'b', 'b', 'c', 'c'];
+
+    ok( findDistinctValues( testArrayInt ), [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, 0.18], 'Expected [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, 0.18] as the result, the result was: ' + findDistinctValues( testArrayInt ) );
+    ok( findDistinctValues( testArrayStr ), ['a', 'b', 'c'], 'Expected ["a", "b", "c"] as the result, the result was: ' + findDistinctValues( testArrayStr ) );
 });
