@@ -1,14 +1,95 @@
 #applauncher {
 	font-size: 12px;
 	background-color: $background-light-grey;
+	margin-top: 20px;
+	box-shadow: 0px 0px 2px #888888;
+	border-radius: 5px;
 
 	.header {
-		padding: 10px;
-		background-color: $applauncher-header-orange;
+		font-size: 14px;
+		line-height: 16px;
+		padding-right: 10px;
+		height: 50px;
 		color: $header-text-white;
+		box-shadow: 0px 0px 2px #f8981d;
+		border-radius: 5px 5px 0px 0px;
+
+		.logo {
+			width: 45px;
+			height: 50px;
+			background: url('../images/imh-logo.png');
+			float: left;
+		}
+
+		.text {
+			padding-top: 8px;
+			text-shadow: 1px 1px 1px $background-dark-grey;
+			font-weight: bold;
+		}
+	}
+
+	.apps {
+		clear: both;
+		padding: 10px 10px 0px 10px;
+		color: $applauncher-apps-grey;
 	}
 
 	.footer {
 		padding: 10px;
+		color: $applauncher-apps-grey;
+
+		.icon-partner-apps {
+			color: #a8b2b9;
+			font-size: 11px;
+			padding: 0px 1px 1px 0px;
+			border: 2px solid #ccc;
+			border-radius: 3px;
+		}
 	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		list-style: none;
+		clear: both;
+		height: 26px;
+		margin-bottom: 4px;
+
+		.text {
+			float: left;
+			margin-left: 10px;
+			padding-top: 4px;
+		}
+	}
+
+	a {
+		display: inline-block;
+		color: $applauncher-apps-grey;
+		text-decoration: none;
+	}
+
+	a:hover {
+		opacity: 0.5;
+	}
+
+	a:active {
+		opacity: 0.75;
+	}
+
+	.al-icon {
+		width: 26px;
+		height: 26px;
+		float: left;
+	}
+
+	.al-icon-email { background: url('../images/al-icons.png') 0 0; }
+	.al-icon-mobile { background: url('../images/al-icons.png') 0 -26px; }
+	.al-icon-cotweet { background: url('../images/al-icons.png') 0 -52px; }
+	.al-icon-sites { background: url('../images/al-icons.png') 0 -78px; }
+	.al-icon-automation { background: url('../images/al-icons.png') 0 -104px; }
+	.al-icon-audience { background: url('../images/al-icons.png') 0 -130px; }
+	.al-icon-report { background: url('../images/al-icons.png') 0 -156px; }
 }

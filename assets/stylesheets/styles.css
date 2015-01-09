@@ -27,30 +27,77 @@ html, body {
   color: #9da5ab;
 }
 
+/* line 1, ../sass/_gradients.scss */
+.orange-gradient {
+  /* fallback */
+  background-color: #fca93f;
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdaf4b), to(#f8991e));
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #fdaf4b, #f8991e);
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #fdaf4b, #f8991e);
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #fdaf4b, #f8991e);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #fdaf4b, #f8991e);
+}
+
+/* line 16, ../sass/_gradients.scss */
+.grey-gradient {
+  /* fallback */
+  background-color: #363f45;
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#43505a), to(#2b3034));
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #43505a, #2b3034);
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #43505a, #2b3034);
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #43505a, #2b3034);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #43505a, #2b3034);
+}
+
+/* line 31, ../sass/_gradients.scss */
+.grey-lte-gradient {
+  /* fallback */
+  background-color: #cddae2;
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b9c6cf), to(#d4e0e8));
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #b9c6cf, #d4e0e8);
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #b9c6cf, #d4e0e8);
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #b9c6cf, #d4e0e8);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #b9c6cf, #d4e0e8);
+}
+
 /* line 1, ../sass/_header.scss */
 #header {
   display: table;
   padding-left: 20px;
-  background-color: #384249;
   color: #fff;
   height: 32px;
 }
-/* line 8, ../sass/_header.scss */
+/* line 7, ../sass/_header.scss */
 #header .logo {
   margin-top: 8px;
 }
-/* line 11, ../sass/_header.scss */
+/* line 10, ../sass/_header.scss */
 #header .logo a {
   display: inline-block;
   width: 86px;
   height: 16px;
   background: url("../images/et-logo.png");
 }
-/* line 19, ../sass/_header.scss */
+/* line 18, ../sass/_header.scss */
 #header .links {
   margin-top: 7px;
 }
-/* line 22, ../sass/_header.scss */
+/* line 21, ../sass/_header.scss */
 #header .links a {
   color: #99cce1;
 }
@@ -59,16 +106,117 @@ html, body {
 #applauncher {
   font-size: 12px;
   background-color: #f4f4f5;
+  margin-top: 20px;
+  box-shadow: 0px 0px 2px #888888;
+  border-radius: 5px;
 }
-/* line 5, ../sass/_applauncher.scss */
+/* line 8, ../sass/_applauncher.scss */
 #applauncher .header {
-  padding: 10px;
-  background-color: #fba73d;
+  font-size: 14px;
+  line-height: 16px;
+  padding-right: 10px;
+  height: 50px;
   color: #fff;
+  box-shadow: 0px 0px 2px #f8981d;
+  border-radius: 5px 5px 0px 0px;
 }
-/* line 11, ../sass/_applauncher.scss */
+/* line 17, ../sass/_applauncher.scss */
+#applauncher .header .logo {
+  width: 45px;
+  height: 50px;
+  background: url("../images/imh-logo.png");
+  float: left;
+}
+/* line 24, ../sass/_applauncher.scss */
+#applauncher .header .text {
+  padding-top: 8px;
+  text-shadow: 1px 1px 1px #384249;
+  font-weight: bold;
+}
+/* line 31, ../sass/_applauncher.scss */
+#applauncher .apps {
+  clear: both;
+  padding: 10px 10px 0px 10px;
+  color: #888888;
+}
+/* line 37, ../sass/_applauncher.scss */
 #applauncher .footer {
   padding: 10px;
+  color: #888888;
+}
+/* line 41, ../sass/_applauncher.scss */
+#applauncher .footer .icon-partner-apps {
+  color: #a8b2b9;
+  font-size: 11px;
+  padding: 0px 1px 1px 0px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+}
+/* line 50, ../sass/_applauncher.scss */
+#applauncher ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 55, ../sass/_applauncher.scss */
+#applauncher li {
+  list-style: none;
+  clear: both;
+  height: 26px;
+  margin-bottom: 4px;
+}
+/* line 61, ../sass/_applauncher.scss */
+#applauncher li .text {
+  float: left;
+  margin-left: 10px;
+  padding-top: 4px;
+}
+/* line 68, ../sass/_applauncher.scss */
+#applauncher a {
+  display: inline-block;
+  color: #888888;
+  text-decoration: none;
+}
+/* line 74, ../sass/_applauncher.scss */
+#applauncher a:hover {
+  opacity: 0.5;
+}
+/* line 78, ../sass/_applauncher.scss */
+#applauncher a:active {
+  opacity: 0.75;
+}
+/* line 82, ../sass/_applauncher.scss */
+#applauncher .al-icon {
+  width: 26px;
+  height: 26px;
+  float: left;
+}
+/* line 88, ../sass/_applauncher.scss */
+#applauncher .al-icon-email {
+  background: url("../images/al-icons.png") 0 0;
+}
+/* line 89, ../sass/_applauncher.scss */
+#applauncher .al-icon-mobile {
+  background: url("../images/al-icons.png") 0 -26px;
+}
+/* line 90, ../sass/_applauncher.scss */
+#applauncher .al-icon-cotweet {
+  background: url("../images/al-icons.png") 0 -52px;
+}
+/* line 91, ../sass/_applauncher.scss */
+#applauncher .al-icon-sites {
+  background: url("../images/al-icons.png") 0 -78px;
+}
+/* line 92, ../sass/_applauncher.scss */
+#applauncher .al-icon-automation {
+  background: url("../images/al-icons.png") 0 -104px;
+}
+/* line 93, ../sass/_applauncher.scss */
+#applauncher .al-icon-audience {
+  background: url("../images/al-icons.png") 0 -130px;
+}
+/* line 94, ../sass/_applauncher.scss */
+#applauncher .al-icon-report {
+  background: url("../images/al-icons.png") 0 -156px;
 }
 
 /* line 1, ../sass/calendar.scss */
@@ -89,14 +237,13 @@ html, body {
 /* line 1, ../sass/pulse.scss */
 #pulse {
   padding: 10px;
-  background-color: #cfdbe4;
   height: 206px;
 }
-/* line 6, ../sass/pulse.scss */
+/* line 5, ../sass/pulse.scss */
 #pulse .logo {
   color: #fff;
 }
-/* line 10, ../sass/pulse.scss */
+/* line 9, ../sass/pulse.scss */
 #pulse .footer {
   position: absolute;
   bottom: 10px;
