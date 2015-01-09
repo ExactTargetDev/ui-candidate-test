@@ -6,46 +6,45 @@ html, body {
 
 /* line 8, ../sass/styles.scss */
 .container {
-  width: 100%;
-  min-width: 1250px !important;
+  width: 1250px !important;
 }
 
-/* line 13, ../sass/styles.scss */
+/* line 12, ../sass/styles.scss */
 #left {
   padding-left: 20px;
   padding-right: 0px;
 }
 
-/* line 18, ../sass/styles.scss */
+/* line 17, ../sass/styles.scss */
 #right {
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* line 23, ../sass/styles.scss */
+/* line 22, ../sass/styles.scss */
 .header, .footer {
   color: #9da5ab;
 }
 
-/* line 27, ../sass/styles.scss */
+/* line 26, ../sass/styles.scss */
 a {
   color: #9da5ab;
   text-decoration: none;
 }
 
-/* line 32, ../sass/styles.scss */
+/* line 31, ../sass/styles.scss */
 a:hover {
   color: #384249;
 }
 
-/* line 36, ../sass/styles.scss */
+/* line 35, ../sass/styles.scss */
 .mc-border-radius {
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
 }
 
-/* line 42, ../sass/styles.scss */
+/* line 41, ../sass/styles.scss */
 .mc-border-radius-top-only {
   border-top-left-radius: 5px;
   -webkit-border-top-left-radius: 5px;
@@ -55,7 +54,7 @@ a:hover {
   -moz-border-top-right-radius: 5px;
 }
 
-/* line 51, ../sass/styles.scss */
+/* line 50, ../sass/styles.scss */
 .mc-border-radius-bottom-only {
   border-bottom-left-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -65,14 +64,21 @@ a:hover {
   -moz-border-bottom-right-radius: 5px;
 }
 
-/* line 60, ../sass/styles.scss */
+/* line 59, ../sass/styles.scss */
 .mc-box-shadow-grey {
   box-shadow: 0px 0px 2px #888;
   -webkit-box-shadow: 0px 0px 2px #888;
   -moz-box-shadow: 0px 0px 2px #888;
 }
 
-/* line 66, ../sass/styles.scss */
+/* line 65, ../sass/styles.scss */
+.mc-box-shadow-grey-inset {
+  box-shadow: inset 0px 0px 5px #888;
+  -webkit-box-shadow: inset 0px 0px 5px #888;
+  -moz-box-shadow: inset 0px 0px 5px #888;
+}
+
+/* line 71, ../sass/styles.scss */
 .mc-box-shadow-orange {
   box-shadow: 0px 0px 2px #f8981d;
   -webkit-box-shadow: 0px 0px 2px #f8981d;
@@ -288,12 +294,11 @@ a:hover {
 /* line 15, ../sass/calendar.scss */
 #calendar .week .day {
   padding: 0px 5px;
-  width: 14.28%;
-  min-width: 140px;
+  width: 140px;
   height: 80px;
   border-right: 1px solid #ddd;
 }
-/* line 23, ../sass/calendar.scss */
+/* line 22, ../sass/calendar.scss */
 #calendar .week .today {
   position: relative;
   /* fallback */
@@ -309,7 +314,7 @@ a:hover {
   /* Opera 11.10+ */
   background: -o-linear-gradient(top, #ebf1f5, #feedd6);
 }
-/* line 39, ../sass/calendar.scss */
+/* line 38, ../sass/calendar.scss */
 #calendar .week .today::after {
   content: 'TODAY';
   position: absolute;
@@ -341,16 +346,87 @@ a:hover {
 
 /* line 1, ../sass/pulse.scss */
 #pulse {
-  padding: 10px;
-  height: 206px;
+  padding: 5px 10px;
 }
 /* line 5, ../sass/pulse.scss */
-#pulse .logo {
+#pulse .header .logo {
   color: #fff;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #384249;
+  margin-left: -10px;
+  width: 116px;
+  height: 45px;
+  background: url("../images/pulse-logo.png") no-repeat left bottom;
 }
-/* line 9, ../sass/pulse.scss */
-#pulse .footer {
-  position: absolute;
-  bottom: 10px;
-  right: 50%;
+/* line 14, ../sass/pulse.scss */
+#pulse .header .logo .text {
+  margin-left: 10px;
+}
+/* line 20, ../sass/pulse.scss */
+#pulse .content {
+  clear: both;
+  height: 196px;
+}
+/* line 24, ../sass/pulse.scss */
+#pulse .content h3, #pulse .content h4, #pulse .content h5, #pulse .content h6 {
+  margin: 0;
+  padding: 0;
+  color: #7f91a3;
+}
+/* line 30, ../sass/pulse.scss */
+#pulse .content h3 {
+  font-size: 32px;
+  color: #34bbf3;
+}
+/* line 31, ../sass/pulse.scss */
+#pulse .content h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+/* line 32, ../sass/pulse.scss */
+#pulse .content h5 {
+  margin-bottom: 10px;
+}
+/* line 33, ../sass/pulse.scss */
+#pulse .content h5, #pulse .content h6 {
+  font-size: 11px;
+}
+/* line 35, ../sass/pulse.scss */
+#pulse .content .item {
+  float: left;
+  margin-top: 50px;
+  margin-right: 10px;
+  width: 156px;
+  text-align: center;
+}
+/* line 42, ../sass/pulse.scss */
+#pulse .content .item .stats {
+  padding: 10px;
+  background-color: #f4f4f5;
+  height: 100%;
+}
+/* line 49, ../sass/pulse.scss */
+#pulse .content .item.item-focus {
+  width: 316px;
+  height: 164px;
+  margin-top: 0px;
+}
+/* line 54, ../sass/pulse.scss */
+#pulse .content .item.item-focus .stats {
+  /* fallback */
+  background-color: #e3f4fe;
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f2faff), to(#e2f4fe));
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #f2faff, #e2f4fe);
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #f2faff, #e2f4fe);
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #f2faff, #e2f4fe);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #f2faff, #e2f4fe);
+}
+/* line 70, ../sass/pulse.scss */
+#pulse .content .item:last-child {
+  margin-right: 0px;
 }

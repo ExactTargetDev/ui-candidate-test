@@ -1,14 +1,74 @@
 #pulse {
-	padding: 10px;
-	height: 206px;
+	padding: 5px 10px;
 
-	.logo {
-		color: $header-text-white;
+	.header {
+		.logo {
+			color: $header-text-white;
+			font-size: 20px;
+			text-shadow: 1px 1px 1px $background-dark-grey;
+			margin-left: -10px;
+			width: 116px;
+			height: 45px;
+			background: url('../images/pulse-logo.png') no-repeat left bottom;
+
+			.text {
+				margin-left: 10px;
+			}
+		}
 	}
 
-	.footer {
-		position: absolute;
-		bottom: 10px;
-		right: 50%;
+	.content {
+		clear: both;
+		height: 196px;
+
+		h3, h4, h5, h6 {
+			margin: 0;
+			padding: 0;
+			color: $pulse-grey;
+		}
+
+		h3 { font-size: 32px; color: $pulse-blue; }
+		h4 { margin-bottom: 10px; font-size: 16px; }
+		h5 { margin-bottom: 10px; }
+		h5, h6 { font-size: 11px; }
+
+		.item {
+			float: left;
+			margin-top: 50px;
+			margin-right: 10px;
+			width: 156px;
+			text-align: center;
+
+			.stats {
+				padding: 10px;
+				background-color: $background-light-grey;
+				height: 100%;
+			}
+		}
+
+		.item.item-focus {
+			width: 316px;
+			height: 164px;
+			margin-top: 0px;
+
+			.stats {
+				/* fallback */
+				background-color: $blue-gradient-fallback;
+				/* Safari 4-5, Chrome 1-9 */
+				background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($blue-gradient-top), to($blue-gradient-bottom));
+				/* Safari 5.1, Chrome 10+ */
+				background: -webkit-linear-gradient(top, $blue-gradient-top, $blue-gradient-bottom);
+				/* Firefox 3.6+ */
+				background: -moz-linear-gradient(top, $blue-gradient-top, $blue-gradient-bottom);
+				/* IE 10 */
+				background: -ms-linear-gradient(top, $blue-gradient-top, $blue-gradient-bottom);
+				/* Opera 11.10+ */
+				background: -o-linear-gradient(top, $blue-gradient-top, $blue-gradient-bottom);
+			}
+		}
+
+		.item:last-child {
+			margin-right: 0px;
+		}
 	}
 }

@@ -3,22 +3,33 @@ Error: Undefined variable: "$header-text-white".
         on line 6 of /Users/jwhitney/Desktop/ui-candidate-test/assets/sass/pulse.scss
 
 1: #pulse {
-2: 	padding: 10px;
-3: 	height: 206px;
-4: 
-5: 	.logo {
-6: 		color: $header-text-white;
-7: 	}
-8: 
-9: 	.footer {
-10: 		position: absolute;
-11: 		bottom: 10px;
+2: 	padding: 5px 10px;
+3: 
+4: 	.header {
+5: 		.logo {
+6: 			color: $header-text-white;
+7: 			font-size: 20px;
+8: 			text-shadow: 1px 1px 1px $background-dark-grey;
+9: 			margin-left: -10px;
+10: 			width: 116px;
+11: 			height: 45px;
 
 Backtrace:
 /Users/jwhitney/Desktop/ui-candidate-test/assets/sass/pulse.scss:6
 /Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:384:in `visit_prop'
+/Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
+/Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
+/Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
+/Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:420:in `block (2 levels) in visit_rule'
+/Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:420:in `map'
+/Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:420:in `block in visit_rule'
+/Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:418:in `visit_rule'
 /Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 /Users/jwhitney/.rvm/gems/ruby-2.1.1/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
@@ -78,4 +89,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$header-text-white\".\A         on line 6 of /Users/jwhitney/Desktop/ui-candidate-test/assets/sass/pulse.scss\A \A 1: #pulse {\A 2: 	padding: 10px;\A 3: 	height: 206px;\A 4: \A 5: 	.logo {\A 6: 		color: $header-text-white;\A 7: 	}\A 8: \A 9: 	.footer {\A 10: 		position: absolute;\A 11: 		bottom: 10px;"; }
+  content: "Error: Undefined variable: \"$header-text-white\".\A         on line 6 of /Users/jwhitney/Desktop/ui-candidate-test/assets/sass/pulse.scss\A \A 1: #pulse {\A 2: 	padding: 5px 10px;\A 3: \A 4: 	.header {\A 5: 		.logo {\A 6: 			color: $header-text-white;\A 7: 			font-size: 20px;\A 8: 			text-shadow: 1px 1px 1px $background-dark-grey;\A 9: 			margin-left: -10px;\A 10: 			width: 116px;\A 11: 			height: 45px;"; }
