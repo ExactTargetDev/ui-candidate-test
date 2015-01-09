@@ -283,7 +283,7 @@ a:hover {
   border-left: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   color: #384249;
-  overflow: hidden;
+  height: 80px;
 }
 /* line 15, ../sass/calendar.scss */
 #calendar .week .day {
@@ -292,6 +292,51 @@ a:hover {
   min-width: 140px;
   height: 80px;
   border-right: 1px solid #ddd;
+}
+/* line 23, ../sass/calendar.scss */
+#calendar .week .today {
+  position: relative;
+  /* fallback */
+  background-color: #f5efe6;
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ebf1f5), to(#feedd6));
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #ebf1f5, #feedd6);
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #ebf1f5, #feedd6);
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #ebf1f5, #feedd6);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #ebf1f5, #feedd6);
+}
+/* line 39, ../sass/calendar.scss */
+#calendar .week .today::after {
+  content: 'TODAY';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 100%;
+  min-width: 140px;
+  height: 15px;
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  /* fallback */
+  background-color: #fca93f;
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdaf4b), to(#f8991e));
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #fdaf4b, #f8991e);
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #fdaf4b, #f8991e);
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #fdaf4b, #f8991e);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #fdaf4b, #f8991e);
+  box-shadow: 0px 0px 2px #888;
+  -webkit-box-shadow: 0px 0px 2px #888;
+  -moz-box-shadow: 0px 0px 2px #888;
 }
 
 /* line 1, ../sass/pulse.scss */
