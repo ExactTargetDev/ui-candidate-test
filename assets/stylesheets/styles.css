@@ -36,7 +36,22 @@ html, body {
   height: 32px;
 }
 /* line 8, ../sass/_header.scss */
-#header a {
+#header .logo {
+  margin-top: 8px;
+}
+/* line 11, ../sass/_header.scss */
+#header .logo a {
+  display: inline-block;
+  width: 86px;
+  height: 16px;
+  background: url("../images/et-logo.png");
+}
+/* line 19, ../sass/_header.scss */
+#header .links {
+  margin-top: 7px;
+}
+/* line 22, ../sass/_header.scss */
+#header .links a {
   color: #99cce1;
 }
 
