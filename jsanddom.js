@@ -189,6 +189,33 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     var superHeros = [
+        {'name': 'Steve Rogers', 'alias': 'Captain America'},
+        {'name': 'Tony Stark', 'alias': 'Ironman'},
+        {'name': 'Bruce Banner', 'alias': 'Hulk'},
+     ];
+
+     var div1Select = document.createElement('SELECT');
+
+     superHeros.forEach(function(v) {
+        var div1Option = document.createElement('OPTION');
+        div1Option.value = v.alias;
+        div1Option.innerHTML = v.name;
+        div1Select.appendChild(div1Option);
+     });
+
+     var div1Button = document.createElement('BUTTON');
+     div1Button.innerHTML = 'Reveal Alias';
+     div1Button.onclick = function() {
+        var select = document.getElementById('div1').getElementsByTagName('SELECT')[0],
+            value = select.options[select.selectedIndex].value,
+            text = select.options[select.selectedIndex].text;
+
+        console.log(text + ' is ' + value);
+     };
+
+     document.getElementById('div1').appendChild(div1Select);
+     document.getElementById('div1').appendChild(div1Button);
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
