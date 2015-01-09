@@ -5,13 +5,13 @@ Error: Undefined variable: "$background-light-grey".
 1: #calendar {
 2: 	position: relative;
 3: 	margin-bottom: 20px;
-4: 	padding: 5px 10px;
+4: 	padding: 10px 10px 0px 10px;
 5: 	background-color: $background-light-grey;
-6: 	height: 113px;
+6: 	overflow: hidden;
 7: 
-8: 	.footer {
-9: 		position: absolute;
-10: 		bottom: 5px;
+8: 	.week {
+9: 		clear: both;
+10: 		border-left: 1px solid #ddd;
 
 Backtrace:
 /Users/jwhitney/Desktop/ui-candidate-test/assets/sass/calendar.scss:5
@@ -66,4 +66,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$background-light-grey\".\A         on line 5 of /Users/jwhitney/Desktop/ui-candidate-test/assets/sass/calendar.scss\A \A 1: #calendar {\A 2: 	position: relative;\A 3: 	margin-bottom: 20px;\A 4: 	padding: 5px 10px;\A 5: 	background-color: $background-light-grey;\A 6: 	height: 113px;\A 7: \A 8: 	.footer {\A 9: 		position: absolute;\A 10: 		bottom: 5px;"; }
+  content: "Error: Undefined variable: \"$background-light-grey\".\A         on line 5 of /Users/jwhitney/Desktop/ui-candidate-test/assets/sass/calendar.scss\A \A 1: #calendar {\A 2: 	position: relative;\A 3: 	margin-bottom: 20px;\A 4: 	padding: 10px 10px 0px 10px;\A 5: 	background-color: $background-light-grey;\A 6: 	overflow: hidden;\A 7: \A 8: 	.week {\A 9: 		clear: both;\A 10: 		border-left: 1px solid #ddd;"; }

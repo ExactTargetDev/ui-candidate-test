@@ -1,13 +1,26 @@
 #calendar {
 	position: relative;
 	margin-bottom: 20px;
-	padding: 5px 10px;
+	padding: 10px 10px 0px 10px;
 	background-color: $background-light-grey;
-	height: 113px;
+	overflow: hidden;
+
+	.week {
+		clear: both;
+		border-left: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		color: $background-dark-grey;
+		overflow: hidden;
+
+		.day {
+			padding: 0px 5px;
+			width: 14.28%;
+			min-width: 140px;
+			height: 80px;
+			border-right: 1px solid #ddd;
+		}
+	}
 
 	.footer {
-		position: absolute;
-		bottom: 5px;
-		right: 10px;
 	}
 }
