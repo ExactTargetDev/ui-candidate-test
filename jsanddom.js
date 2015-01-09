@@ -63,8 +63,6 @@
          return array;
      }
 
-     console.log(pushOntoArray([1,2,3,4,5], 6));
-
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          var array = sourceStr.length === 0 ? [] : sourceStr.split(',').map(function(v) {
@@ -90,6 +88,11 @@
      }
 
      // write an example of a javascript closure
+     function sayHello(myName) {
+        return function (name) {
+            return 'Hello ' + name + ' my name is ' + myName;
+        }
+     }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties

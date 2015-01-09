@@ -120,3 +120,19 @@ test( "String is Only Whitespace Unit Test", 4, function() {
     equal( isOnlyWhitespace( 'a b c' ), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace( 'a b c' ) );
     equal( isOnlyWhitespace( 'abc' ), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace( 'abc' ) );
 });
+
+// sayHello Closure
+module( "sayHello Unit Test" );
+test( "Say Hello Closure Unit Test", 4, function() {
+    // Verify the method exists
+    equal( typeof sayHello, 'function', 'Must contain a sayHello function' );
+
+    // Verify that method returns a function
+    equal( typeof sayHello('Jon'), 'function', 'Must return a function' );
+
+    var helloThere = sayHello('Jon');
+
+    // Make sure the result from the sayHello function is equal to expected value
+    equal( helloThere( 'Andrew' ), 'Hello Andrew my name is Jon', 'Expected "Hello Andrew my name is Jon" as the result, the result was: ' + helloThere( 'Andrew' ) );
+    equal( helloThere( 'Peyton' ), 'Hello Peyton my name is Jon', 'Expected "Hello Peyton my name is Jon" as the result, the result was: ' + helloThere( 'Peyton' ) );
+});
