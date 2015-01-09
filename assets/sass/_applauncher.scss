@@ -1,0 +1,14 @@
+#applauncher {
+	font-size: 12px;
+	background-color: $background-light-grey;
+
+	.header {
+		padding: 10px;
+		background-color: $applauncher-header-orange;
+		color: $header-text-white;
+	}
+
+	.footer {
+		padding: 10px;
+	}
+}

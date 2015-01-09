@@ -1,0 +1,13 @@
+#calendar {
+	position: relative;
+	margin-bottom: 20px;
+	padding: 5px 10px;
+	background-color: $background-light-grey;
+	height: 113px;
+
+	.footer {
+		position: absolute;
+		bottom: 5px;
+		right: 10px;
+	}
+}

@@ -1,0 +1,15 @@
+#pulse {
+	padding: 10px;
+	background-color: $background-medium-grey;
+	height: 206px;
+
+	.logo {
+		color: $header-text-white;
+	}
+
+	.footer {
+		position: absolute;
+		bottom: 10px;
+		right: 50%;
+	}
+}

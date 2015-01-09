@@ -1,0 +1,89 @@
+/* line 3, ../sass/styles.scss */
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+}
+
+/* line 8, ../sass/styles.scss */
+.container {
+  width: 100%;
+  min-width: 1250px !important;
+}
+
+/* line 13, ../sass/styles.scss */
+#left {
+  padding-left: 20px;
+  padding-right: 0px;
+}
+
+/* line 18, ../sass/styles.scss */
+#right {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* line 23, ../sass/styles.scss */
+.header, .footer {
+  color: #9da5ab;
+}
+
+/* line 1, ../sass/_header.scss */
+#header {
+  display: table;
+  padding-left: 20px;
+  background-color: #384249;
+  color: #fff;
+  height: 32px;
+}
+/* line 8, ../sass/_header.scss */
+#header a {
+  color: #99cce1;
+}
+
+/* line 1, ../sass/_applauncher.scss */
+#applauncher {
+  font-size: 12px;
+  background-color: #f4f4f5;
+}
+/* line 5, ../sass/_applauncher.scss */
+#applauncher .header {
+  padding: 10px;
+  background-color: #fba73d;
+  color: #fff;
+}
+/* line 11, ../sass/_applauncher.scss */
+#applauncher .footer {
+  padding: 10px;
+}
+
+/* line 1, ../sass/calendar.scss */
+#calendar {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  background-color: #f4f4f5;
+  height: 113px;
+}
+/* line 8, ../sass/calendar.scss */
+#calendar .footer {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+/* line 1, ../sass/pulse.scss */
+#pulse {
+  padding: 10px;
+  background-color: #cfdbe4;
+  height: 206px;
+}
+/* line 6, ../sass/pulse.scss */
+#pulse .logo {
+  color: #fff;
+}
+/* line 10, ../sass/pulse.scss */
+#pulse .footer {
+  position: absolute;
+  bottom: 10px;
+  right: 50%;
+}
