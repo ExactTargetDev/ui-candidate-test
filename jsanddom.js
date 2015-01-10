@@ -17,10 +17,22 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-        return values.reduce(function(pv, cv) {
-            if (pv.indexOf(cv) < 0) pv.push(cv);
-            return pv;
-        }, []);
+        if (Array.prototype.reduce) {
+            return values.reduce(function(pv, cv) {
+                if (pv.indexOf(cv) < 0) pv.push(cv);
+                return pv;
+            }, []);
+        } else {
+            var noDuplicates = [];
+
+            for (var i = 0; i < values.length; i++) {
+                if (noDuplicates.indexOf(values[i]) < 0) {
+                    noDuplicates.push(values[i]);
+                }
+            }
+
+            return noDuplicates;
+        }
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
