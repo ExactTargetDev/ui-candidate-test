@@ -35,7 +35,6 @@
 	    var div1Select = document.createElement('SELECT');
 
 	    for (var i = 0; i < superHeros.length; i++) {
-	    	console.log(superHeros[i]);
 	    	var div1Option = document.createElement('OPTION');
 	        div1Option.value = superHeros[i]['alias'];
 	        div1Option.innerHTML = superHeros[i]['name'];
@@ -49,7 +48,9 @@
 	            value = select.options[select.selectedIndex].value,
 	            text = select.options[select.selectedIndex].text;
 
-	        console.log(text + ' is ' + value);
+	        if(typeof console !== "undefined") {
+	        	console.log(text + ' is ' + value);
+	        }
 	    };
 
 	    document.getElementById('div1').appendChild(div1Select);
@@ -63,6 +64,14 @@
 	            sampleAnchor3 = $('#fizz .link'),
 	            sampleAnchor4 = $('#fizz.buzz .link'),
 	            sampleAnchor5 = $('#foo.bar #fizz.buzz .link');
+
+	        if(typeof console !== "undefined") {
+	        	console.log(sampleAnchor1);
+	        	console.log(sampleAnchor2);
+	        	console.log(sampleAnchor3);
+	        	console.log(sampleAnchor4);
+	        	console.log(sampleAnchor5);
+	        }
 	    })(jQuery);
 
 	    // Programatically create an array with 5 items.  Create a list item for each item in the array
