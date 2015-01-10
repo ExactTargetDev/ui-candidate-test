@@ -263,7 +263,7 @@ a:hover {
   opacity: 0.5;
 }
 /* line 81, ../sass/_applauncher.scss */
-#applauncher a:active {
+#applauncher a:active, #applauncher li:active {
   opacity: 0.75;
 }
 /* line 85, ../sass/_applauncher.scss */

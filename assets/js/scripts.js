@@ -4,7 +4,7 @@ var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
 (function($) {
 	$(document).ready(function() {
 		// Get app launcher data
-		$.get('../data/applauncher.json', function(data) {
+		$.get('data/applauncher.json', function(data) {
 			if (data) {
 				var templateScriptPrimary = $('#templateApps').html(),
 					templateScriptSecondary = $('#templateApps').html(),
@@ -42,7 +42,7 @@ var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
 		$('#calendar .week').html(template(week));
 
 		// Get pulse data
-		$.get('../data/pulse.json', function(data) {
+		$.get('data/pulse.json', function(data) {
 			if (data) {
 				var templateScript = $('#templatePulse').html(),
 					template = Handlebars.compile(templateScript);
@@ -64,7 +64,7 @@ var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
 
 			$('#mcModal').find('.modal-title').html('Help');
 
-			$.get('../data/help.json', function(data) {
+			$.get('data/help.json', function(data) {
 				if (data) {
 					var templateScript = $('#templateHelp').html(),
 						template = Handlebars.compile(templateScript);
