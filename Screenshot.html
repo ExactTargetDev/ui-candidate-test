@@ -21,7 +21,7 @@
 						<a href="/Screenshot.html"></a>
 					</div>
 					<div class="links pull-right">
-						<span>Welcome Jon!&nbsp;&nbsp;&nbsp;<a href="#">Account</a>&nbsp;&nbsp;&#124;&nbsp;&nbsp;<a href="#">Help</a>&nbsp;&nbsp;&#124;&nbsp;&nbsp;<a href="#">Logout</a></span>
+						<span>Welcome Jon!&nbsp;&nbsp;&nbsp;<a href="#">Account</a>&nbsp;&nbsp;&#124;&nbsp;&nbsp;<a href="#" class="help-link">Help</a>&nbsp;&nbsp;&#124;&nbsp;&nbsp;<a href="#">Logout</a></span>
 					</div>
 				</div>
 			</div>
@@ -35,56 +35,8 @@
 						<div class="logo"></div>
 						<div class="text">Interactive<br/>Marketing Hub</div>
 					</div>
-					<div class="apps">
-						<ul>
-							<li>
-								<a href="#">
-									<div class="al-icon al-icon-email"></div>
-									<div class="text">ExactTarget Email</div>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="al-icon al-icon-mobile"></div>
-									<div class="text">ExactTarget Mobile</div>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="al-icon al-icon-cotweet"></div>
-									<div class="text">CoTweet Social</div>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="al-icon al-icon-sites"></div>
-									<div class="text">ExactTarget Sites</div>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="apps">
-						<ul>
-							<li>
-								<a href="#">
-									<div class="al-icon al-icon-automation"></div>
-									<div class="text">Automation Studio</div>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="al-icon al-icon-audience"></div>
-									<div class="text">Audience Builder</div>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="al-icon al-icon-report"></div>
-									<div class="text">Report Builder</div>
-								</a>
-							</li>
-						</ul>
-					</div>
+					<div class="apps apps-primary"></div>
+					<div class="apps apps-secondary"></div>
 					<div class="footer">
 						<a href="#">
 							<span class="glyphicon glyphicon-chevron-right icon-partner-apps" aria-hidden="true"></span>&nbsp;<span>Partner Applications</span>
@@ -143,7 +95,7 @@
 						</div>
 					</div>
 					<div class="content">
-						<div class="item">
+						<div class="item item-focus">
 							<h5>Followers</h5>
 							<div class="stats mc-box-shadow-grey mc-border-radius">
 								<h3>310</h3>
@@ -151,7 +103,7 @@
 								<h6>2,393,905 total</h6>
 							</div>							
 						</div>
-						<div class="item item-focus">
+						<div class="item">
 							<h5>Followers</h5>
 							<div class="stats mc-box-shadow-grey mc-border-radius">
 								<h3>310</h3>
@@ -192,7 +144,41 @@
 		</div>
 	</div>
 
+	<!-- Modal -->
+	<div class="modal fade" id="mcModal" tabindex="-1" role="dialog" aria-labelledby="mcModal" aria-hidden="true">
+		<div class="modal-dialog">
+		    <div class="modal-content">
+		      	<div class="modal-header">
+		        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        	<h4 class="modal-title" id="myModalLabel"></h4>
+		      	</div>
+		      	<div class="modal-body"></div>
+		    </div>
+		</div>
+	</div>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
+
+	<script id="templateHelp" type="text/x-handlebars-template">
+        {{#each help}}
+        	<h5><a href="{{URL}}" target="_blank">{{title}}</a></h5>
+    	{{/each}}
+    </script>
+
+    <script id="templateApps" type="text/x-handlebars-template">
+        <ul>
+	        {{#each items}}
+	        	<li>
+					<a href="{{URL}}">
+						<div class="al-icon al-icon-{{class}}"></div>
+						<div class="text">{{title}}</div>
+					</a>
+				</li>
+	    	{{/each}}
+    	</ul>
+    </script>
 </body>
 </html>

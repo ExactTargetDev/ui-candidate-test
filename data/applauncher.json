@@ -1,0 +1,45 @@
+{
+    "primary": {
+        "items": [
+            {
+                "title": "ExactTarget Email",
+                "class": "email",
+                "URL": "#"
+            },
+            {
+                "title": "ExactTarget Mobile",
+                "class": "mobile",
+                "URL": "#"
+            },
+            {
+                "title": "CoTweet Social",
+                "class": "cotweet",
+                "URL": "#"
+            },
+            {
+                "title": "ExactTarget Sites",
+                "class": "sites",
+                "URL": "#"
+            }
+        ]
+    },
+    "secondary": {
+        "items": [
+            {
+                "title": "Automation Studio",
+                "class": "automation",
+                "URL": "#"
+            },
+            {
+                "title": "Audience Builder",
+                "class": "audience",
+                "URL": "#"
+            },
+            {
+                "title": "Report Builder",
+                "class": "report",
+                "URL": "#"
+            }
+        ]
+    }
+}
