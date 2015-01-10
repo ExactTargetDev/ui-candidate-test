@@ -1,0 +1,108 @@
+@import 'variables';
+
+html, body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.container {
+	width: 1195px!important;
+}
+
+#left {
+	padding-left: 20px;
+	padding-right: 0px;
+}
+
+#right {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.header, .footer {
+	color: $calendar-header-grey;
+}
+
+a {
+	color: $calendar-header-grey;
+	text-decoration: none;
+}
+
+a:hover {
+	color: $background-dark-grey;
+}
+
+.glyph-button {
+	margin-left: 5px;
+}
+
+.mc-border-radius {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+.mc-border-radius-top-only {
+	border-top-left-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-top-right-radius: 5px;
+}
+
+.mc-border-radius-bottom-only {
+	border-bottom-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+}
+
+.mc-box-shadow-grey {
+	box-shadow: 0px 0px 2px #888;
+	-webkit-box-shadow: 0px 0px 2px #888;
+	-moz-box-shadow: 0px 0px 2px #888;
+}
+
+.mc-box-shadow-grey-inset {
+	box-shadow: inset 0px 0px 5px #888;
+	-webkit-box-shadow: inset 0px 0px 5px #888;
+	-moz-box-shadow: inset 0px 0px 5px #888;
+}
+
+.mc-box-shadow-orange {
+	box-shadow: 0px 0px 2px #f8981d;
+	-webkit-box-shadow: 0px 0px 2px #f8981d;
+	-moz-box-shadow: 0px 0px 2px #f8981d;
+}
+
+.modal-header {
+	color: #fff;
+	/* fallback */
+	background-color: $orange-gradient-fallback;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($orange-gradient-top), to($orange-gradient-bottom));
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, $orange-gradient-top, $orange-gradient-bottom);
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, $orange-gradient-top, $orange-gradient-bottom);
+	/* IE 10 */
+	background: -ms-linear-gradient(top, $orange-gradient-top, $orange-gradient-bottom);
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, $orange-gradient-top, $orange-gradient-bottom);
+
+	border-top-left-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-top-right-radius: 5px;
+}
+
+@import 'gradients';
+@import 'header';
+@import 'applauncher';
+@import 'calendar';
+@import 'pulse';

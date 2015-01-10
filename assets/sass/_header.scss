@@ -1,0 +1,25 @@
+#header {
+	display: table;
+	padding-left: 20px;
+	color: $header-text-white;
+	height: 32px;
+
+	.logo {
+		margin-top: 8px;
+
+		a {
+			display: inline-block;
+			width: 86px;
+			height: 16px;
+			background: url('../images/et-logo.png');
+		}
+	}
+
+	.links {
+		margin-top: 7px;
+
+		a {
+			color: $header-link-blue;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+Start Time: 1420750470
+
+TotalTime: 47:05
+
+BrowserTesting: Mac | Chrome | 39
+				Mac | Firefox | 34
+				Mac | Safari | 7
+				Mac | Opera | 26
+				Win7 | Chrome | 38
+				Win7 | Firefox | 34
+				Win7 | Opera | 26
+				Win7 | Internet Explorer | 8
+				Win7 | Internet Explorer | 9
+				Win8 | Internet Explorer | 10
+				Win7 | Internet Explorer | 11
+

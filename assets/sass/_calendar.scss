@@ -1,0 +1,67 @@
+#calendar {
+	position: relative;
+	margin-bottom: 20px;
+	padding: 10px 10px 0px 10px;
+	background-color: $background-light-grey;
+	overflow: hidden;
+
+	.week {
+		clear: both;
+		border-left: 1px solid #ddd;
+		color: $background-dark-grey;
+		height: 80px;
+
+		.day {
+			padding: 0px 5px;
+			width: 14.28%; // 133.5px;
+			height: 80px;
+			border-right: 1px solid #ddd;
+			border-bottom: 1px solid #ddd;
+		}
+
+		.today {
+			position: relative;
+			/* fallback */
+			background-color: $grey-orange-gradient-fallback;
+			/* Safari 4-5, Chrome 1-9 */
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($grey-orange-gradient-top), to($grey-orange-gradient-bottom));
+			/* Safari 5.1, Chrome 10+ */
+			background: -webkit-linear-gradient(top, $grey-orange-gradient-top, $grey-orange-gradient-bottom);
+			/* Firefox 3.6+ */
+			background: -moz-linear-gradient(top, $grey-orange-gradient-top, $grey-orange-gradient-bottom);
+			/* IE 10 */
+			background: -ms-linear-gradient(top, $grey-orange-gradient-top, $grey-orange-gradient-bottom);
+			/* Opera 11.10+ */
+			background: -o-linear-gradient(top, $grey-orange-gradient-top, $grey-orange-gradient-bottom);
+		}
+
+		.today::after {
+			content: 'TODAY';
+			position: absolute;
+			bottom: -15px;
+			left: 0;
+			width: 100%;
+			min-width: 14.28%; // 133.5px;
+			height: 15px;
+			text-align: center;
+			color: #fff;
+			font-size: 10px;
+			font-weight: bold;
+			/* fallback */
+			background-color: $orange-gradient-fallback;
+			/* Safari 4-5, Chrome 1-9 */
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($orange-gradient-top), to($orange-gradient-bottom));
+			/* Safari 5.1, Chrome 10+ */
+			background: -webkit-linear-gradient(top, $orange-gradient-top, $orange-gradient-bottom);
+			/* Firefox 3.6+ */
+			background: -moz-linear-gradient(top, $orange-gradient-top, $orange-gradient-bottom);
+			/* IE 10 */
+			background: -ms-linear-gradient(top, $orange-gradient-top, $orange-gradient-bottom);
+			/* Opera 11.10+ */
+			background: -o-linear-gradient(top, $orange-gradient-top, $orange-gradient-bottom);
+			box-shadow: 0px 0px 2px #888;
+			-webkit-box-shadow: 0px 0px 2px #888;
+			-moz-box-shadow: 0px 0px 2px #888;
+		}
+	}
+}

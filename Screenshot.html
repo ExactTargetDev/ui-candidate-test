@@ -2,7 +2,173 @@
 <html>
 <head>
     <title>Screenshot.html</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/stylesheets/styles.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--[if IE 8]>
+    	<style type="text/css">
+    		#pulse .content .item { width: 150px; }
+    		#pulse .content h6 { font-size: 10px; }
+			
+			#applauncher a:hover { color: #fba73d; font-weight: bold; }
+			#applauncher a:active, #applauncher li:active { color: #333; font-weight: bold; }
+
+			.modal-dialog { margin: 0 auto; width: 600px; }
+
+			#applauncher, #calendar, #pulse { border: 1px solid #ccc; }
+    	</style>
+    <![endif]-->
 </head>
 <body>
+	<div class="grey-gradient">
+		<div class="container">
+			<div class="row">
+				<div id="header" class="col-xs-12">
+					<div class="logo pull-left">
+						<a href="/Screenshot.html"></a>
+					</div>
+					<div class="links pull-right">
+						<span>Welcome Jon!&nbsp;&nbsp;&nbsp;<a href="#">Account</a>&nbsp;&nbsp;&#124;&nbsp;&nbsp;<a href="#" class="help-link">Help</a>&nbsp;&nbsp;&#124;&nbsp;&nbsp;<a href="#">Logout</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div id="left" class="col-xs-2">
+				<div id="applauncher" class="mc-border-radius mc-box-shadow-grey">
+					<div class="header orange-gradient mc-border-radius-top-only mc-box-shadow-orange">
+						<div class="logo"></div>
+						<div class="text">Interactive<br/>Marketing Hub</div>
+					</div>
+					<div class="apps apps-primary"></div>
+					<div class="apps apps-secondary"></div>
+					<div class="footer">
+						<a href="#">
+							<span class="glyphicon glyphicon-chevron-right icon-partner-apps grey-lte-gradient" aria-hidden="true"></span><span>Partner Applications</span>
+						</a>
+					</div>
+				</div>				
+			</div>
+			<div id="right" class="col-xs-10">
+				<div id="calendar" class="mc-box-shadow-grey mc-border-radius-bottom-only">
+					<div class="header">
+						<div class="month pull-left"></div>
+						<div class="pull-right">
+							<a href="#" class="glyph-button"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
+							<a href="#" class="glyph-button"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+						</div>
+					</div>
+					<div class="week"></div>
+					<div class="footer pull-right">
+						<a href="#"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+					</div>
+				</div>
+				<div id="pulse" class="grey-med-gradient mc-box-shadow-grey-inset mc-border-radius">
+					<div class="header">
+						<div class="logo pull-left">
+							<div class="text">Pulse</div>
+						</div>
+						<div class="pull-right">
+							<a href="#" class="glyph-button"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
+							<a href="#" class="glyph-button"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></a>
+							<a href="#" class="glyph-button"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+							<a href="#" class="glyph-button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+						</div>
+					</div>
+					<div class="content"></div>
+					<div class="footer">
+						<p>
+							<span class="preview"></span>
+							<span class="preview"></span>
+							<span class="preview"></span>
+							<span class="preview"></span>
+							<span class="preview"></span>
+						</p>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="mcModal" tabindex="-1" role="dialog" aria-labelledby="mcModal" aria-hidden="true">
+		<div class="modal-dialog">
+		    <div class="modal-content">
+		      	<div class="modal-header">
+		        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        	<h4 class="modal-title" id="myModalLabel"></h4>
+		      	</div>
+		      	<div class="modal-body"></div>
+		    </div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
+
+	<script id="templateHelp" type="text/x-handlebars-template">
+        {{#each help}}
+        	<h5><a href="{{URL}}" target="_blank">{{title}}</a></h5>
+    	{{/each}}
+    </script>
+
+    <script id="templateApps" type="text/x-handlebars-template">
+        <ul>
+	        {{#each items}}
+	        	<li>
+					<a href="{{URL}}">
+						<div class="al-icon al-icon-{{class}}"></div>
+						<div class="text">{{title}}</div>
+					</a>
+				</li>
+	    	{{/each}}
+    	</ul>
+    </script>
+
+    <script id="templateCalendar" type="text/x-handlebars-template">
+        {{#each dates}}
+        	<div class="day pull-left {{#if today}}today{{/if}}">
+				<span class="pull-left">{{day}}</span><span class="pull-right">{{date}}</span>
+			</div>
+    	{{/each}}
+    </script>
+
+    <script id="templatePulse" type="text/x-handlebars-template">
+        {{#each pulse}}
+        	<div class="item {{#if primary}}item-focus{{/if}}">
+				<h3>{{title}}</h3>
+				<div class="stats mc-box-shadow-grey mc-border-radius grey-lte-gradient">
+					<div class="stats-inner">
+						{{#if added}}
+							<h1>{{count}}</h1>
+							<h2>added today</h2>
+							<h4>{{total}} total</h4>
+						{{/if}}
+						{{#if map}}
+							<h6 class="pull-left">{{description}}</h6>
+							<h6 class="pull-right">{{count}}</h6>
+							<img src="{{URL}}" class="img-responsive" />
+						{{/if}}
+						{{#if visitors}}
+							<h5>Visitors Today</h5>
+							<h1>{{count}} <span class="outof">/ {{total}}</span></h1>
+							<h4>{{name}}</h4>
+						{{/if}}
+					</div>
+				</div>							
+			</div>
+    	{{/each}}
+    </script>
 </body>
 </html>

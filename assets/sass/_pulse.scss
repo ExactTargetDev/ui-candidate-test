@@ -1,0 +1,117 @@
+#pulse {
+	padding: 5px 10px;
+
+	.header {
+		.logo {
+			color: $header-text-white;
+			font-size: 20px;
+			text-shadow: 1px 1px 1px #999;
+			margin-left: -10px;
+			width: 116px;
+			height: 45px;
+			background: url('../images/pulse-logo.png') no-repeat left bottom;
+
+			.text {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	.content {
+		clear: both;
+		height: 196px;
+
+		h1, h2, h3, h4, h5, h6 {
+			margin: 0;
+			padding: 0;
+			color: $pulse-grey;
+		}
+
+		h1 { font-size: 32px; color: $pulse-blue; }
+		h2 { margin-bottom: 8px; font-size: 16px; }
+		h3 { margin-bottom: 8px; font-size: 11px; }
+		h4 { font-size: 11px; }
+		h5 { font-size: 13px; margin-bottom: 8px; }
+		h6 { font-size: 11px; font-weight: bold; margin-bottom: 8px; }
+
+		.item {
+			float: left;
+			margin-top: 50px;
+			margin-right: 10px;
+			width: 153px;
+			text-align: center;
+
+			.stats {
+				padding: 8px;
+				background-color: $background-light-grey;
+				height: 100%;
+				min-height: 87px;
+
+				.stats-inner {
+					width: 100%;
+					max-width: 252px;
+					margin: 0 auto;
+
+					.outof {
+						color: $pulse-grey;
+						font-size: 20px;
+					}
+
+					img {
+						clear: both;
+						max-height: 48px;
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+
+		.item.item-focus {
+			width: 278px;
+			height: 163px;
+			margin-top: 0px;
+
+			.stats {
+				/* fallback */
+				background-color: $blue-gradient-fallback;
+				/* Safari 4-5, Chrome 1-9 */
+				background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($blue-gradient-top), to($blue-gradient-bottom));
+				/* Safari 5.1, Chrome 10+ */
+				background: -webkit-linear-gradient(top, $blue-gradient-top, $blue-gradient-bottom);
+				/* Firefox 3.6+ */
+				background: -moz-linear-gradient(top, $blue-gradient-top, $blue-gradient-bottom);
+				/* IE 10 */
+				background: -ms-linear-gradient(top, $blue-gradient-top, $blue-gradient-bottom);
+				/* Opera 11.10+ */
+				background: -o-linear-gradient(top, $blue-gradient-top, $blue-gradient-bottom);
+
+				.stats-inner {
+					img {
+						max-height: 122px;
+					}
+				}
+			}
+		}
+
+		.item:last-child {
+			margin-right: 0px;
+		}
+	}
+
+	.footer {
+		margin: 0;
+		padding: 0;
+
+		p {
+			text-align: center;
+
+			.preview {
+				display: inline-block;
+				margin: 0px 1px;
+				width: 5px;
+				height: 4px;
+				background-color: #c0ced8;
+			}
+		}
+	}
+}

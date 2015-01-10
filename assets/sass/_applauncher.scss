@@ -1,0 +1,101 @@
+#applauncher {
+	font-size: 12px;
+	background-color: $background-light-grey;
+	margin-top: 20px;
+
+	.header {
+		font-size: 14px;
+		line-height: 16px;
+		padding-right: 10px;
+		height: 50px;
+		color: $header-text-white;
+
+		.logo {
+			width: 45px;
+			height: 50px;
+			background: url('../images/imh-logo.png');
+			float: left;
+		}
+
+		.text {
+			padding-top: 8px;
+			text-shadow: 1px 1px 1px #e89223;
+			font-weight: bold;
+		}
+	}
+
+	.apps {
+		clear: both;
+		padding: 10px 10px 0px 10px;
+		color: $applauncher-apps-grey;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.footer {
+		padding: 10px;
+		color: $applauncher-apps-grey;
+
+		a {
+			text-decoration: none;
+		}
+
+		.icon-partner-apps {
+			color: #a8b2b9;
+			font-size: 11px;
+			margin-right: 5px;
+			padding-bottom: 1px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+		}
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		list-style: none;
+		clear: both;
+		height: 26px;
+		margin-bottom: 4px;
+
+		.text {
+			float: left;
+			margin-left: 10px;
+			padding-top: 4px;
+		}
+	}
+
+	a {
+		display: inline-block;
+		color: $applauncher-apps-grey;
+	}
+
+	a:hover {
+		opacity: 0.5;
+		color: #fba73d;
+		font-weight: bold;
+	}
+
+	a:active, li:active {
+		opacity: 0.75;
+		color: #333;
+	}
+
+	.al-icon {
+		width: 26px;
+		height: 26px;
+		float: left;
+	}
+
+	.al-icon-email { background: url('../images/al-icons.png') 0 0; }
+	.al-icon-mobile { background: url('../images/al-icons.png') 0 -26px; }
+	.al-icon-cotweet { background: url('../images/al-icons.png') 0 -52px; }
+	.al-icon-sites { background: url('../images/al-icons.png') 0 -78px; }
+	.al-icon-automation { background: url('../images/al-icons.png') 0 -104px; }
+	.al-icon-audience { background: url('../images/al-icons.png') 0 -130px; }
+	.al-icon-report { background: url('../images/al-icons.png') 0 -156px; }
+}
