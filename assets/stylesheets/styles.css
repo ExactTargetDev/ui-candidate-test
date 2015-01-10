@@ -423,13 +423,17 @@ a:hover {
   color: #7f91a3;
   font-size: 20px;
 }
-/* line 62, ../sass/_pulse.scss */
+/* line 59, ../sass/_pulse.scss */
+#pulse .content .item .stats .stats-inner img {
+  clear: both;
+}
+/* line 66, ../sass/_pulse.scss */
 #pulse .content .item.item-focus {
   width: 316px;
   height: 164px;
   margin-top: 0px;
 }
-/* line 67, ../sass/_pulse.scss */
+/* line 71, ../sass/_pulse.scss */
 #pulse .content .item.item-focus .stats {
   /* fallback */
   background-color: #e3f4fe;
@@ -444,7 +448,7 @@ a:hover {
   /* Opera 11.10+ */
   background: -o-linear-gradient(top, #f2faff, #e2f4fe);
 }
-/* line 83, ../sass/_pulse.scss */
+/* line 87, ../sass/_pulse.scss */
 #pulse .content .item:last-child {
   margin-right: 0px;
 }
