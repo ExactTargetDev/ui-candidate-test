@@ -193,121 +193,30 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
-     var superHeros = [
-        {'name': 'Steve Rogers', 'alias': 'Captain America'},
-        {'name': 'Tony Stark', 'alias': 'Ironman'},
-        {'name': 'Bruce Banner', 'alias': 'Hulk'},
-     ];
-
-     var div1Select = document.createElement('SELECT');
-
-     superHeros.forEach(function(v) {
-        var div1Option = document.createElement('OPTION');
-        div1Option.value = v.alias;
-        div1Option.innerHTML = v.name;
-        div1Select.appendChild(div1Option);
-     });
-
-     var div1Button = document.createElement('BUTTON');
-     div1Button.innerHTML = 'Reveal Alias';
-     div1Button.onclick = function() {
-        var select = document.getElementById('div1').getElementsByTagName('SELECT')[0],
-            value = select.options[select.selectedIndex].value,
-            text = select.options[select.selectedIndex].text;
-
-        console.log(text + ' is ' + value);
-     };
-
-     document.getElementById('div1').appendChild(div1Select);
-     document.getElementById('div1').appendChild(div1Button);
+     
+     // ************************************
+     // SOLUTION: Contained in JsAndDom.html
+     // ************************************
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
-     (function($) {
-        var sampleAnchor1 = $('#foo .link'),
-            sampleAnchor2 = $('#foo.bar .link'),
-            sampleAnchor3 = $('#fizz .link'),
-            sampleAnchor4 = $('#fizz.buzz .link'),
-            sampleAnchor5 = $('#foo.bar #fizz.buzz .link');
-     })(jQuery);
+     
+     // ************************************
+     // SOLUTION: Contained in JsAndDom.html
+     // ************************************
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
-     var list1Array = [];
-
-     for (var i = 1; i <= 5; i++) {
-        list1Array.push('List Item ' + i);
-     }
-
-     list1Array.forEach(function(v) {
-        var list1Item = document.createElement('LI');
-        list1Item.innerHTML = v;
-        document.getElementById('list1').appendChild(list1Item);
-     });
+     
+     // ************************************
+     // SOLUTION: Contained in JsAndDom.html
+     // ************************************
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
-     function createCheckFunction(checkAll) {
-        var onclick = function() {
-            var checkboxes = document.getElementById('foobar').getElementsByTagName('INPUT');
-
-            for (var i = 0; i < checkboxes.length; i++) {
-                if (checkAll) {
-                    checkboxes[i].checked = 'checked';
-                } else {
-                    checkboxes[i].checked = '';
-                }
-            }
-        };
-
-        return onclick;
-     }
-
-     function createAnchor(innerHTML, onclick) {
-        var anchor = document.createElement('A');
-        anchor.innerHTML = innerHTML;
-        anchor.href = '#';
-        anchor.onclick = onclick;
-
-        return anchor;
-     }
-
-     var foobarDiv0 = document.createElement('DIV');
-     var anchor1 = createAnchor('Check All', createCheckFunction(true));
      
-     var anchorSpan = document.createElement('SPAN');
-     anchorSpan.innerHTML = ' | ';
-
-     var anchor2 = createAnchor('Check None', createCheckFunction(false));
-
-     foobarDiv0.appendChild(anchor1);
-     foobarDiv0.appendChild(anchorSpan);
-     foobarDiv0.appendChild(anchor2);
-
-     var foobarDiv1 = document.createElement('DIV');
-
-     var checkbox1 = document.createElement('INPUT');
-     checkbox1.type = 'checkbox';
-     
-     var span1 = document.createElement('SPAN');
-     span1.innerHTML = 'I love Marvel';
-
-     foobarDiv1.appendChild(checkbox1);
-     foobarDiv1.appendChild(span1);
-
-     var foobarDiv2 = document.createElement('DIV');
-
-     var checkbox2 = document.createElement('INPUT');
-     checkbox2.type = 'checkbox';
-     
-     var span2 = document.createElement('SPAN');
-     span2.innerHTML = 'I love DC';
-
-     foobarDiv2.appendChild(checkbox2);
-     foobarDiv2.appendChild(span2);
-
-     document.getElementById('foobar').appendChild(foobarDiv0);
-     document.getElementById('foobar').appendChild(foobarDiv1);
-     document.getElementById('foobar').appendChild(foobarDiv2);
+     // ************************************
+     // SOLUTION: Contained in JsAndDom.html
+     // ************************************
