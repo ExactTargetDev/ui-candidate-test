@@ -34,12 +34,12 @@
 
 	    var div1Select = document.createElement('SELECT');
 
-	    superHeros.forEach(function(v) {
-	        var div1Option = document.createElement('OPTION');
-	        div1Option.value = v.alias;
-	        div1Option.innerHTML = v.name;
+	    for (var i = 0; i < superHeros.length; i++) {
+	    	var div1Option = document.createElement('OPTION');
+	        div1Option.value = superHeros[i].alias;
+	        div1Option.innerHTML = superHeros[i].name;
 	        div1Select.appendChild(div1Option);
-	    });
+	    }
 
 	    var div1Button = document.createElement('BUTTON');
 	    div1Button.innerHTML = 'Reveal Alias';
@@ -66,17 +66,11 @@
 
 	    // Programatically create an array with 5 items.  Create a list item for each item in the array
 	    // and add the list items to the unordered list with an id of "list1".
-	    var list1Array = [];
-
 	    for (var i = 1; i <= 5; i++) {
-	        list1Array.push('List Item ' + i);
-	    }
-
-	    list1Array.forEach(function(v) {
-	        var list1Item = document.createElement('LI');
-	        list1Item.innerHTML = v;
+	    	var list1Item = document.createElement('LI');
+	        list1Item.innerHTML = 'List Item: ' + i;
 	        document.getElementById('list1').appendChild(list1Item);
-	    });
+	    }
 
 	    // Use javascript to add a list of checkboxes and 2 links
 	    // to the div with an id of "foobar"
