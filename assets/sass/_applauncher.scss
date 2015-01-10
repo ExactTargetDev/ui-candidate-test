@@ -76,10 +76,13 @@
 
 	a:hover {
 		opacity: 0.5;
+		color: #fba73d;
+		font-weight: bold;
 	}
 
 	a:active, li:active {
 		opacity: 0.75;
+		color: #333;
 	}
 
 	.al-icon {

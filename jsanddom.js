@@ -172,20 +172,29 @@
      // ****************************************
 
      function DataTable() {
-        this.columns = new Array();
-        this.rows = new Array();
+        var columns = new Array();
+        var rows = new Array();
 
-        this.addRows = function(row) {
-            this.rows.push(row);
+        this.addRows = function() {
+            if (arguments) {
+                var args = Array.prototype.slice.call(arguments);
+
+                rows.push(args);
+            }
         };
 
-        this.addColumns = function(column) {
-            this.columns.push(column);
+        this.addColumns = function() {
+            if (arguments) {
+                var args = Array.prototype.slice.call(arguments);
+                
+                columns.push(args);
+            }
         };
 
         this.getData = function() {
             return {
-
+                "columns": columns,
+                "rows": rows,
             };
         };
      };

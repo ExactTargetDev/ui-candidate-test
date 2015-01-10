@@ -90,6 +90,29 @@ a:hover {
   -moz-box-shadow: 0px 0px 2px #f8981d;
 }
 
+/* line 81, ../sass/styles.scss */
+.modal-header {
+  color: #fff;
+  /* fallback */
+  background-color: #fca93f;
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdaf4b), to(#f8991e));
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #fdaf4b, #f8991e);
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #fdaf4b, #f8991e);
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #fdaf4b, #f8991e);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #fdaf4b, #f8991e);
+  border-top-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+}
+
 /* line 1, ../sass/_gradients.scss */
 .orange-gradient {
   /* fallback */
@@ -261,42 +284,45 @@ a:hover {
 /* line 77, ../sass/_applauncher.scss */
 #applauncher a:hover {
   opacity: 0.5;
+  color: #fba73d;
+  font-weight: bold;
 }
-/* line 81, ../sass/_applauncher.scss */
+/* line 83, ../sass/_applauncher.scss */
 #applauncher a:active, #applauncher li:active {
   opacity: 0.75;
+  color: #333;
 }
-/* line 85, ../sass/_applauncher.scss */
+/* line 88, ../sass/_applauncher.scss */
 #applauncher .al-icon {
   width: 26px;
   height: 26px;
   float: left;
 }
-/* line 91, ../sass/_applauncher.scss */
+/* line 94, ../sass/_applauncher.scss */
 #applauncher .al-icon-email {
   background: url("../images/al-icons.png") 0 0;
 }
-/* line 92, ../sass/_applauncher.scss */
+/* line 95, ../sass/_applauncher.scss */
 #applauncher .al-icon-mobile {
   background: url("../images/al-icons.png") 0 -26px;
 }
-/* line 93, ../sass/_applauncher.scss */
+/* line 96, ../sass/_applauncher.scss */
 #applauncher .al-icon-cotweet {
   background: url("../images/al-icons.png") 0 -52px;
 }
-/* line 94, ../sass/_applauncher.scss */
+/* line 97, ../sass/_applauncher.scss */
 #applauncher .al-icon-sites {
   background: url("../images/al-icons.png") 0 -78px;
 }
-/* line 95, ../sass/_applauncher.scss */
+/* line 98, ../sass/_applauncher.scss */
 #applauncher .al-icon-automation {
   background: url("../images/al-icons.png") 0 -104px;
 }
-/* line 96, ../sass/_applauncher.scss */
+/* line 99, ../sass/_applauncher.scss */
 #applauncher .al-icon-audience {
   background: url("../images/al-icons.png") 0 -130px;
 }
-/* line 97, ../sass/_applauncher.scss */
+/* line 100, ../sass/_applauncher.scss */
 #applauncher .al-icon-report {
   background: url("../images/al-icons.png") 0 -156px;
 }
