@@ -6,7 +6,7 @@ html, body {
 }
 
 .container {
-	width: 1250px!important;
+	width: 1195px!important;
 }
 
 #left {
@@ -30,6 +30,10 @@ a {
 
 a:hover {
 	color: $background-dark-grey;
+}
+
+.glyph-button {
+	margin-left: 5px;
 }
 
 .mc-border-radius {

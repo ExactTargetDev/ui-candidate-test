@@ -8,15 +8,15 @@
 	.week {
 		clear: both;
 		border-left: 1px solid #ddd;
-		border-bottom: 1px solid #ddd;
 		color: $background-dark-grey;
 		height: 80px;
 
 		.day {
 			padding: 0px 5px;
-			width: 140px;
+			width: 14.28%; // 133.5px;
 			height: 80px;
 			border-right: 1px solid #ddd;
+			border-bottom: 1px solid #ddd;
 		}
 
 		.today {
@@ -41,7 +41,7 @@
 			bottom: -15px;
 			left: 0;
 			width: 100%;
-			min-width: 140px;
+			min-width: 14.28%; // 133.5px;
 			height: 15px;
 			text-align: center;
 			color: #fff;

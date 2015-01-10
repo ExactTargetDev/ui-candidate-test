@@ -39,7 +39,7 @@
 					<div class="apps apps-secondary"></div>
 					<div class="footer">
 						<a href="#">
-							<span class="glyphicon glyphicon-chevron-right icon-partner-apps" aria-hidden="true"></span>&nbsp;<span>Partner Applications</span>
+							<span class="glyphicon glyphicon-chevron-right icon-partner-apps grey-lte-gradient" aria-hidden="true"></span><span>Partner Applications</span>
 						</a>
 					</div>
 				</div>				
@@ -47,55 +47,39 @@
 			<div id="right" class="col-xs-10">
 				<div id="calendar" class="mc-box-shadow-grey mc-border-radius-bottom-only">
 					<div class="header">
-						<div id="month" class="pull-left">
-							<span>January 2014</span>
-						</div>
+						<div class="month pull-left"></div>
 						<div class="pull-right">
-							<a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
-							<a href="#"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+							<a href="#" class="glyph-button"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
+							<a href="#" class="glyph-button"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
 						</div>
 					</div>
-					<div class="week">
-						<div class="day pull-left">
-							<span class="pull-left">Sun</span><span class="pull-right">1</span>
-						</div>
-						<div class="day pull-left">
-							<span class="pull-left">Mon</span><span class="pull-right">2</span>
-						</div>
-						<div class="day pull-left">
-							<span class="pull-left">Tue</span><span class="pull-right">3</span>
-						</div>
-						<div class="day pull-left today">
-							<span class="pull-left">Wed</span><span class="pull-right">4</span>
-						</div>
-						<div class="day pull-left">
-							<span class="pull-left">Thu</span><span class="pull-right">5</span>
-						</div>
-						<div class="day pull-left">
-							<span class="pull-left">Fri</span><span class="pull-right">6</span>
-						</div>
-						<div class="day pull-left">
-							<span class="pull-left">Sat</span><span class="pull-right">7</span>
-						</div>
-					</div>
+					<div class="week"></div>
 					<div class="footer pull-right">
 						<a href="#"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
 					</div>
 				</div>
-				<div id="pulse" class="grey-lte-gradient mc-box-shadow-grey-inset mc-border-radius">
+				<div id="pulse" class="grey-med-gradient mc-box-shadow-grey-inset mc-border-radius">
 					<div class="header">
 						<div class="logo pull-left">
 							<div class="text">Pulse</div>
 						</div>
 						<div class="pull-right">
-							<a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
-							<a href="#"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
-							<a href="#"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></a>
-							<a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+							<a href="#" class="glyph-button"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
+							<a href="#" class="glyph-button"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></a>
+							<a href="#" class="glyph-button"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+							<a href="#" class="glyph-button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
 						</div>
 					</div>
 					<div class="content"></div>
-					<div class="footer"></div>
+					<div class="footer">
+						<p>
+							<span class="preview"></span>
+							<span class="preview"></span>
+							<span class="preview"></span>
+							<span class="preview"></span>
+							<span class="preview"></span>
+						</p>
+					</div>
 				</div>				
 			</div>
 		</div>
@@ -138,26 +122,34 @@
     	</ul>
     </script>
 
+    <script id="templateCalendar" type="text/x-handlebars-template">
+        {{#each dates}}
+        	<div class="day pull-left {{#if today}}today{{/if}}">
+				<span class="pull-left">{{day}}</span><span class="pull-right">{{date}}</span>
+			</div>
+    	{{/each}}
+    </script>
+
     <script id="templatePulse" type="text/x-handlebars-template">
         {{#each pulse}}
-        	<div class="item">
-				<h5>{{title}}</h5>
-				<div class="stats mc-box-shadow-grey mc-border-radius">
+        	<div class="item {{#if primary}}item-focus{{/if}}">
+				<h3>{{title}}</h3>
+				<div class="stats mc-box-shadow-grey mc-border-radius grey-lte-gradient">
 					<div class="stats-inner">
 						{{#if added}}
-							<h3>{{count}}</h3>
-							<h4>added today</h4>
-							<h6>{{total}} total</h6>
+							<h1>{{count}}</h1>
+							<h2>added today</h2>
+							<h4>{{total}} total</h4>
 						{{/if}}
 						{{#if map}}
-							<h2 class="pull-left">{{description}}</h2>
-							<h2 class="pull-right">{{count}}</h2>
+							<h6 class="pull-left">{{description}}</h6>
+							<h6 class="pull-right">{{count}}</h6>
 							<img src="{{URL}}" class="img-responsive" />
 						{{/if}}
 						{{#if visitors}}
 							<h5>Visitors Today</h5>
-							<h3>{{count}} <span class="outof">/ {{total}}</span></h3>
-							<h6>{{name}}</h6>
+							<h1>{{count}} <span class="outof">/ {{total}}</span></h1>
+							<h4>{{name}}</h4>
 						{{/if}}
 					</div>
 				</div>							

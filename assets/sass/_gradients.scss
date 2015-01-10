@@ -28,6 +28,21 @@
 	background: -o-linear-gradient(top, $grey-gradient-top, $grey-gradient-bottom);
 }
 
+.grey-med-gradient {
+	/* fallback */
+	background-color: $grey-med-gradient-fallback;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($grey-med-gradient-top), to($grey-med-gradient-bottom));
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, $grey-med-gradient-top, $grey-med-gradient-bottom);
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, $grey-med-gradient-top, $grey-med-gradient-bottom);
+	/* IE 10 */
+	background: -ms-linear-gradient(top, $grey-med-gradient-top, $grey-med-gradient-bottom);
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, $grey-med-gradient-top, $grey-med-gradient-bottom);
+}
+
 .grey-lte-gradient {
 	/* fallback */
 	background-color: $grey-lte-gradient-fallback;

@@ -19,7 +19,7 @@
 
 		.text {
 			padding-top: 8px;
-			text-shadow: 1px 1px 1px $background-dark-grey;
+			text-shadow: 1px 1px 1px #e89223;
 			font-weight: bold;
 		}
 	}
@@ -35,11 +35,16 @@
 		padding: 10px;
 		color: $applauncher-apps-grey;
 
+		a {
+			text-decoration: none;
+		}
+
 		.icon-partner-apps {
 			color: #a8b2b9;
 			font-size: 11px;
-			padding: 0px 1px 1px 0px;
-			border: 2px solid #ccc;
+			margin-right: 5px;
+			padding-bottom: 1px;
+			border: 1px solid #ccc;
 			border-radius: 3px;
 			-webkit-border-radius: 3px;
 			-moz-border-radius: 3px;

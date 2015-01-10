@@ -4,26 +4,27 @@
             "added": true,
             "title": "Followers",
             "count": 310,
-            "total": 2393905
+            "total": "2,393,905"
         },
         {
             "added": true,
             "title": "Fan",
             "count": 73,
-            "total": 91675
+            "total": "91,675"
         },
         {
             "added": true,
             "title": "Subscribers",
             "count": 56,
-            "total": 189405
+            "total": "189,405"
         },
         {
             "map": true,
             "title": "foursquare",
             "description": "Worldwide Checkins",
-            "count": 3905,
-            "URL": "assets/images/foursquare-pulse.png"
+            "count": "3,905",
+            "URL": "assets/images/foursquare-pulse.png",
+            "primary": true
         },
         {
             "visitors": true,
