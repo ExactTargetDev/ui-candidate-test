@@ -1,6 +1,6 @@
 Start Time: 1420750470
 
-TotalTime:
+TotalTime: 47:05
 
 BrowserTesting: Mac | Chrome | 39
 				Mac | Firefox | 34
