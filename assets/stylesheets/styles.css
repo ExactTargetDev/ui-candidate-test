@@ -275,7 +275,7 @@ a:hover {
   background: url("../images/al-icons.png") 0 -156px;
 }
 
-/* line 1, ../sass/calendar.scss */
+/* line 1, ../sass/_calendar.scss */
 #calendar {
   position: relative;
   margin-bottom: 20px;
@@ -283,7 +283,7 @@ a:hover {
   background-color: #f4f4f5;
   overflow: hidden;
 }
-/* line 8, ../sass/calendar.scss */
+/* line 8, ../sass/_calendar.scss */
 #calendar .week {
   clear: both;
   border-left: 1px solid #ddd;
@@ -291,14 +291,14 @@ a:hover {
   color: #384249;
   height: 80px;
 }
-/* line 15, ../sass/calendar.scss */
+/* line 15, ../sass/_calendar.scss */
 #calendar .week .day {
   padding: 0px 5px;
   width: 140px;
   height: 80px;
   border-right: 1px solid #ddd;
 }
-/* line 22, ../sass/calendar.scss */
+/* line 22, ../sass/_calendar.scss */
 #calendar .week .today {
   position: relative;
   /* fallback */
@@ -314,7 +314,7 @@ a:hover {
   /* Opera 11.10+ */
   background: -o-linear-gradient(top, #ebf1f5, #feedd6);
 }
-/* line 38, ../sass/calendar.scss */
+/* line 38, ../sass/_calendar.scss */
 #calendar .week .today::after {
   content: 'TODAY';
   position: absolute;
@@ -344,11 +344,11 @@ a:hover {
   -moz-box-shadow: 0px 0px 2px #888;
 }
 
-/* line 1, ../sass/pulse.scss */
+/* line 1, ../sass/_pulse.scss */
 #pulse {
   padding: 5px 10px;
 }
-/* line 5, ../sass/pulse.scss */
+/* line 5, ../sass/_pulse.scss */
 #pulse .header .logo {
   color: #fff;
   font-size: 20px;
@@ -358,40 +358,46 @@ a:hover {
   height: 45px;
   background: url("../images/pulse-logo.png") no-repeat left bottom;
 }
-/* line 14, ../sass/pulse.scss */
+/* line 14, ../sass/_pulse.scss */
 #pulse .header .logo .text {
   margin-left: 10px;
 }
-/* line 20, ../sass/pulse.scss */
+/* line 20, ../sass/_pulse.scss */
 #pulse .content {
   clear: both;
   height: 196px;
 }
-/* line 24, ../sass/pulse.scss */
-#pulse .content h3, #pulse .content h4, #pulse .content h5, #pulse .content h6 {
+/* line 24, ../sass/_pulse.scss */
+#pulse .content h2, #pulse .content h3, #pulse .content h4, #pulse .content h5, #pulse .content h6 {
   margin: 0;
   padding: 0;
   color: #7f91a3;
 }
-/* line 30, ../sass/pulse.scss */
+/* line 30, ../sass/_pulse.scss */
+#pulse .content h2 {
+  font-size: 12px;
+  color: #384249;
+  margin-bottom: 10px;
+}
+/* line 31, ../sass/_pulse.scss */
 #pulse .content h3 {
   font-size: 32px;
   color: #34bbf3;
 }
-/* line 31, ../sass/pulse.scss */
+/* line 32, ../sass/_pulse.scss */
 #pulse .content h4 {
   margin-bottom: 10px;
   font-size: 16px;
 }
-/* line 32, ../sass/pulse.scss */
+/* line 33, ../sass/_pulse.scss */
 #pulse .content h5 {
   margin-bottom: 10px;
 }
-/* line 33, ../sass/pulse.scss */
+/* line 34, ../sass/_pulse.scss */
 #pulse .content h5, #pulse .content h6 {
   font-size: 11px;
 }
-/* line 35, ../sass/pulse.scss */
+/* line 36, ../sass/_pulse.scss */
 #pulse .content .item {
   float: left;
   margin-top: 50px;
@@ -399,19 +405,31 @@ a:hover {
   width: 156px;
   text-align: center;
 }
-/* line 42, ../sass/pulse.scss */
+/* line 43, ../sass/_pulse.scss */
 #pulse .content .item .stats {
   padding: 10px;
   background-color: #f4f4f5;
   height: 100%;
+  min-height: 110px;
 }
-/* line 49, ../sass/pulse.scss */
+/* line 49, ../sass/_pulse.scss */
+#pulse .content .item .stats .stats-inner {
+  width: 100%;
+  max-width: 252px;
+  margin: 0 auto;
+}
+/* line 54, ../sass/_pulse.scss */
+#pulse .content .item .stats .stats-inner .outof {
+  color: #7f91a3;
+  font-size: 20px;
+}
+/* line 62, ../sass/_pulse.scss */
 #pulse .content .item.item-focus {
   width: 316px;
   height: 164px;
   margin-top: 0px;
 }
-/* line 54, ../sass/pulse.scss */
+/* line 67, ../sass/_pulse.scss */
 #pulse .content .item.item-focus .stats {
   /* fallback */
   background-color: #e3f4fe;
@@ -426,7 +444,7 @@ a:hover {
   /* Opera 11.10+ */
   background: -o-linear-gradient(top, #f2faff, #e2f4fe);
 }
-/* line 70, ../sass/pulse.scss */
+/* line 83, ../sass/_pulse.scss */
 #pulse .content .item:last-child {
   margin-right: 0px;
 }

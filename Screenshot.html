@@ -94,51 +94,8 @@
 							<a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
 						</div>
 					</div>
-					<div class="content">
-						<div class="item item-focus">
-							<h5>Followers</h5>
-							<div class="stats mc-box-shadow-grey mc-border-radius">
-								<h3>310</h3>
-								<h4>added today</h4>
-								<h6>2,393,905 total</h6>
-							</div>							
-						</div>
-						<div class="item">
-							<h5>Followers</h5>
-							<div class="stats mc-box-shadow-grey mc-border-radius">
-								<h3>310</h3>
-								<h4>added today</h4>
-								<h6>2,393,905 total</h6>
-							</div>							
-						</div>
-						<div class="item">
-							<h5>Followers</h5>
-							<div class="stats mc-box-shadow-grey mc-border-radius">
-								<h3>310</h3>
-								<h4>added today</h4>
-								<h6>2,393,905 total</h6>
-							</div>							
-						</div>
-						<div class="item">
-							<h5>Followers</h5>
-							<div class="stats mc-box-shadow-grey mc-border-radius">
-								<h3>310</h3>
-								<h4>added today</h4>
-								<h6>2,393,905 total</h6>
-							</div>							
-						</div>
-						<div class="item">
-							<h5>Followers</h5>
-							<div class="stats mc-box-shadow-grey mc-border-radius">
-								<h3>310</h3>
-								<h4>added today</h4>
-								<h6>2,393,905 total</h6>
-							</div>							
-						</div>
-					</div>
-					<div class="footer">
-						<span>Hello</span>
-					</div>
+					<div class="content"></div>
+					<div class="footer"></div>
 				</div>				
 			</div>
 		</div>
@@ -179,6 +136,33 @@
 				</li>
 	    	{{/each}}
     	</ul>
+    </script>
+
+    <script id="templatePulse" type="text/x-handlebars-template">
+        {{#each pulse}}
+        	<div class="item">
+				<h5>{{title}}</h5>
+				<div class="stats mc-box-shadow-grey mc-border-radius">
+					<div class="stats-inner">
+						{{#if added}}
+							<h3>{{count}}</h3>
+							<h4>added today</h4>
+							<h6>{{total}} total</h6>
+						{{/if}}
+						{{#if map}}
+							<h2 class="pull-left">{{description}}</h2>
+							<h2 class="pull-right">{{count}}</h2>
+							<img src="{{URL}}" class="img-responsive" />
+						{{/if}}
+						{{#if visitors}}
+							<h5>Visitors Today</h5>
+							<h3>{{count}} <span class="outof">/ {{total}}</span></h3>
+							<h6>{{name}}</h6>
+						{{/if}}
+					</div>
+				</div>							
+			</div>
+    	{{/each}}
     </script>
 </body>
 </html>

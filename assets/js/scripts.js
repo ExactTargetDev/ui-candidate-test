@@ -1,21 +1,27 @@
 (function($) {
 	$(document).ready(function() {
 		$.get('../data/applauncher.json', function(data) {
-			console.log('hello');
 			if (data) {
-				console.log(data);
-
 				var templateScriptPrimary = $('#templateApps').html(),
 					templateScriptSecondary = $('#templateApps').html(),
 					templatePrimary = Handlebars.compile(templateScriptPrimary),
 					templateSecondary = Handlebars.compile(templateScriptSecondary);
 
-				$('.apps-primary').html(templatePrimary(data['primary']));
-				$('.apps-secondary').html(templatePrimary(data['secondary']));
+				$('#applauncher .apps-primary').html(templatePrimary(data['primary']));
+				$('#applauncher .apps-secondary').html(templatePrimary(data['secondary']));
 			}
 		});
 
-		$('#pulse .item').on('click', function() {
+		$.get('../data/pulse.json', function(data) {
+			if (data) {
+				var templateScript = $('#templatePulse').html(),
+					template = Handlebars.compile(templateScript);
+
+				$('#pulse .content').html(template(data));
+			}
+		});
+
+		$('#pulse .content').on('click', '.item', function() {
 			$('#pulse .item').each(function() {
 				$(this).removeClass('item-focus');
 			});
