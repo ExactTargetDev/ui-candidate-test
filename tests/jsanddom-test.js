@@ -59,3 +59,16 @@ QUnit.test( "Find Distinct Values Test", 2, function(assert) {
     assert.equal( doFizzBuzz(), undefined , 'Expected undefined as the return type, the return was: ' + doFizzBuzz() );
 });
 
+module( "Remove Fruits Unit Test" );
+QUnit.test( "Remove Fruits Test", 4, function(assert) {
+    // Verify the method exists
+    assert.equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
+
+    //empty array should return null
+    assert.deepEqual( removeFruits(["apple", "banana", "mango"]), ["apple", "banana", "mango"] , 'Expected fruits array to remain the same, the result was: ' + removeFruits(["apple", "banana", "mango"]) );
+
+    // Make sure the result from the minimum function is valid
+    assert.deepEqual( removeFruits(["apple", "banana", "mango"], ["mango"]), ["apple", "banana"] , 'Expected ["apple", "banana"] as the result, the result was: ' + removeFruits(["apple", "banana", "mango"], ["mango"]) );
+
+    assert.equal( removeFruits([6,7,8], [1]), undefined , 'Expected undefined for non strings, the result was: ' + removeFruits([6,7], [6]) );
+});

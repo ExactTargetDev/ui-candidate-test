@@ -11,7 +11,7 @@
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-
+        //sanitize for numbers
          if (values.length === 0) return null;
          return Math.min.apply(null, values)
      }
@@ -50,7 +50,18 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+        if(fruitsToRemove === undefined || fruitsToRemove.length === 0) return fruits;
+
+         for(var i=0; i<fruits.length; i++){
+            if(typeof fruits[i] !== "string")
+                return;
+
+            if(fruitsToRemove.indexOf(fruits[i]) !== -1){
+                fruits.splice(i, 1);
+            }
+
+         }
+         return fruits
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
