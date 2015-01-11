@@ -85,3 +85,42 @@ QUnit.test( "PushOnto Array Test", 3, function(assert) {
     assert.deepEqual( pushOntoArray(["a", "b", "c"], "d"), ["a", "b", "c", "d"] , 'Expected ["a", "b", "c", "d"] as the result, the result was: ' + pushOntoArray(["a", "b", "c"], "d") );
 
 });
+
+module( "splitListStrUsingComma Unit Test" );
+QUnit.test( "splitListStrUsingComma", 3, function(assert) {
+    // Verify the method exists
+    assert.equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
+
+    //empty array should return null
+    assert.deepEqual( splitListStrUsingComma(""), [] , 'Expected [], the result was: ' + splitListStrUsingComma("") );
+
+    // Make sure the result from the minimum function is valid
+    assert.deepEqual( splitListStrUsingComma("a,b,c,d"), ["a", "b", "c", "d"] , 'Expected ["a", "b", "c", "d"] as the result, the result was: ' + splitListStrUsingComma("a,b,c,d") );
+
+});
+
+module( "sum Unit Test" );
+QUnit.test( "sum", 4, function(assert) {
+    // Verify the method exists
+    assert.equal( typeof sum, 'function', 'Must contain a sum function' );
+
+    //empty array should return null
+    assert.equal( sum(1,2,3,4), 10 , 'Expected 10, the result was: ' + sum(1,2,3,4) );
+
+    // Make sure the result from the minimum function is valid
+    assert.equal( sum("a","b","c","d"), "abcd" , 'Expected "abcd" as the result, the result was: ' + sum("a","b","c","d") );
+
+    assert.equal( sum(1.1,2.2,3.3,4.5), 11.1 , 'Expected 11.1, the result was: ' + sum(1.1,2.2,3.3,4.5) );
+});
+
+module( "isOnlyWhitespace Unit Test" );
+QUnit.test( "isOnlyWhitespace", 3, function(assert) {
+    // Verify the method exists
+    assert.equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
+
+    //empty array should return null
+    assert.equal( isOnlyWhitespace("    "), true , 'Expected true, the result was: ' + isOnlyWhitespace("   ") );
+
+    // Make sure the result from the minimum function is valid
+    assert.equal( isOnlyWhitespace(" fh d"), false , 'Expected false as the result, the result was: ' + isOnlyWhitespace(" fh d") );
+});
