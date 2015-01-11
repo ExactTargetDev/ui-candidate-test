@@ -72,3 +72,16 @@ QUnit.test( "Remove Fruits Test", 4, function(assert) {
 
     assert.equal( removeFruits([6,7,8], [1]), undefined , 'Expected undefined for non strings, the result was: ' + removeFruits([6,7], [6]) );
 });
+
+module( "Push Onto Array Unit Test" );
+QUnit.test( "PushOnto Array Test", 3, function(assert) {
+    // Verify the method exists
+    assert.equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' );
+
+    //empty array should return null
+    assert.deepEqual( pushOntoArray(["apple", "banana", "mango"],[1,2]), ["apple", "banana", "mango", 1, 2] , 'Expected ["apple", "banana", "mango", 1, 2], the result was: ' + pushOntoArray(["apple", "banana", "mango"],[1,2]) );
+
+    // Make sure the result from the minimum function is valid
+    assert.deepEqual( pushOntoArray(["a", "b", "c"], "d"), ["a", "b", "c", "d"] , 'Expected ["a", "b", "c", "d"] as the result, the result was: ' + pushOntoArray(["a", "b", "c"], "d") );
+
+});
