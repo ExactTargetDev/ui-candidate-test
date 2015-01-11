@@ -119,7 +119,8 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-     var collection = [
+     var collection = {
+        "data" : [
         {
             "fname": "Neil",
             "lname" : "Lobo",
@@ -156,7 +157,7 @@
                 "work" : "+166044284445"
             }
         }
-     ]
+     ]}
 
 
      // Create a javascript object (DataTable) with the following:
@@ -199,17 +200,95 @@
 
 
      }
-     // within div1, programatically create a
+
+     $(document).ready(function(){
+        var favorites = [{"id" : 1, "name" : "Chocolate" }, {"id" : 2, "name" : "Strings" }, {"id" : 3, "name" : "Kittens" }]
+
+            // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+        $.each(favorites, function(){
+            $("#div1").append(
+                $('<label />', {
+                    'text': this.name
+                }).append(
+                    $('<input />', {
+                        type : 'radio',
+                        name : 'radioOptions',
+                        id : this.name
 
-     // Write 5 different jQuery selectors to retrieve the
-     // sample anchor in the markup below.
+                    })
+               )
+          );
+       });
+
+        $("#div1").append('<button id="select"> Select </button>');
+        $("#select").click(function(){
+            console.log($("input[name=radioOptions]:checked")[0].id);
+        });
+        // Write 5 different jQuery selectors to retrieve the
+        // sample anchor in the markup below.
+
+        console.log($("div div a")[0].innerHTML);
+
+        console.log($(".link")[0].innerHTML);
+
+        console.log($(".bar .buzz .link")[0].innerHTML);
+
+        console.log($("a")[0].innerHTML);
+
+        console.log($("#fizz").children().first()[0].innerHTML)
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+        var arrayItems = []
+        for(var i=1; i<=5; i++){
+            arrayItems.push("Item "+ i);
+        }
+        $.each(arrayItems, function(index, item){
+            $("#list1").append(
+                    $('<li>'+item+'</li>')
+                )
+       });
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+        for(var i=1; i<=4; i++){
+            var checkbox = document.createElement('input');
+            checkbox.type = "checkbox";
+            checkbox.setAttribute('class', 'checkboxes')
+
+
+            var label = document.createElement('label')
+            label.htmlFor = "Checkbox" + i;;
+            label.appendChild(document.createTextNode('Checkbox ' + i));
+
+            document.getElementById('foobar').appendChild(checkbox);
+            document.getElementById('foobar').appendChild(label);
+        }
+        var newlink = document.createElement('a');
+        newlink.onclick = function(){
+            var boxes = document.getElementsByClassName('checkboxes');
+            for (var i=0; i<boxes.length; i++){
+                boxes[i]["checked"] = true;
+            }
+
+        };
+        newlink.innerHTML = "Check All"
+        document.getElementById('foobar').appendChild(newlink);
+
+        var newlink2 = document.createElement('a');
+        newlink2.innerHTML = "Uncheck All"
+        newlink2.onclick = function(){
+            var boxes = document.getElementsByClassName('checkboxes');
+            for (var i=0; i<boxes.length; i++){
+                boxes[i]["checked"] = false;
+            }
+        };
+        document.getElementById('foobar').appendChild(newlink2);
+
+
+     });
