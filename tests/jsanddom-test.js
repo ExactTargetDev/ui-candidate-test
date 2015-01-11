@@ -50,3 +50,12 @@ QUnit.test( "Find Distinct Values Test", 4, function(assert) {
 
     assert.deepEqual( findDistinctValues([6,7]), [6,7] , 'Expected [6,7] as the result, the result was: ' + findDistinctValues([6,7]) );
 });
+
+module( "FizzBuzz Unit Test" );
+QUnit.test( "Find Distinct Values Test", 2, function(assert) {
+    // Verify the method exists
+    assert.equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' );
+
+    assert.equal( doFizzBuzz(), undefined , 'Expected undefined as the return type, the return was: ' + doFizzBuzz() );
+});
+
