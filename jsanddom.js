@@ -102,7 +102,14 @@
          return true;
      }
 
-     // write an example of a javascript closure
+     function makeNames (firstName) {
+        var nameIntro = "Hello ";
+        // this inner function has access to the outer function's variables, including the parameter​
+       function lastName (giveLastName) {
+            return nameIntro + firstName + " " + giveLastName;
+        }
+        return lastName;
+     }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -112,6 +119,44 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     var collection = [
+        {
+            "fname": "Neil",
+            "lname" : "Lobo",
+            "city" : "San Francisco",
+            "state" : "CA",
+            "zip" : 94110,
+            "numbers" : {
+                "home" : "123-456-789",
+                "mobile" : "423-859-9933",
+                "work" : "+19-922-049984445"
+            }
+        },
+        {
+            "fname": "Alex",
+            "lname" : "Dsouza",
+            "city" : "San Mateo",
+            "state" : "CA",
+            "zip" : 92420,
+            "numbers" : {
+                "home" : "123-111-789",
+                "mobile" : "423-859-333",
+                "work" : "+122-0344445"
+            }
+        },
+        {
+            "fname": "Rohit",
+            "lname" : "Date",
+            "city" : "Mountain View",
+            "state" : "CA",
+            "zip" : 94040,
+            "numbers" : {
+                "home" : "123-425329",
+                "mobile" : "42-859933",
+                "work" : "+166044284445"
+            }
+        }
+     ]
 
 
      // Create a javascript object (DataTable) with the following:
@@ -126,6 +171,34 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+     function DataTable(){
+        var columns = [], rows = [];
+
+        this.addRows = function(items){
+            for(var i=0; i<items.length; i++){
+                rows.push(item[i]);
+            }
+        }
+
+
+        this.addColumns = function(items){
+            for(var i=0; i<items.length; i++){
+                columns.push(item[i]);
+            }
+        }
+
+        this.getData = function(){
+            var obj = {};
+            for(var i=0; i < columns.length; i++){
+                for(var j=0; j<rows.length; j++){
+
+                }
+            }
+            return obj;
+        }
+
+
+     }
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.

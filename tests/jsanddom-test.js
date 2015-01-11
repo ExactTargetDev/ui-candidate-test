@@ -124,3 +124,15 @@ QUnit.test( "isOnlyWhitespace", 3, function(assert) {
     // Make sure the result from the minimum function is valid
     assert.equal( isOnlyWhitespace(" fh d"), false , 'Expected false as the result, the result was: ' + isOnlyWhitespace(" fh d") );
 });
+
+module( "Closure Unit Test" );
+QUnit.test( "Closure", 3, function(assert) {
+    // Verify the method exists
+    assert.equal( typeof makeNames, 'function', 'Must contain a makeNames function' );
+
+    //empty array should return null
+    assert.equal( typeof makeNames("Neil"), 'function' , 'makeNames should return a function' );
+
+    // Make sure the result from the minimum function is valid
+    assert.equal( makeNames("Neil")("Lobo"), "Hello Neil Lobo" , 'Inner function should retain access to outer function scope');
+});
