@@ -37,3 +37,16 @@ test( "Minimum Value", 4, function() {
     ok( findMinValue([-1,-2,-3]) == -3 , 'Expected -3 as the result, the result was: ' + findMinValue([-1, -2, -3]) );
 });
 
+module( "Unique Array Unit Test" );
+QUnit.test( "Find Distinct Values Test", 4, function(assert) {
+    // Verify the method exists
+    assert.equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
+
+    //empty array should return null
+    assert.deepEqual( findDistinctValues([]), [] , 'Expected empty array as the result, the result was: ' + findDistinctValues([]) );
+
+    // Make sure the result from the minimum function is valid
+    assert.deepEqual( findDistinctValues([1,2,3,2,3]), [1,2,3] , 'Expected [1,2,3] as the result, the result was: ' + findDistinctValues([1, 2, 3, 2, 3]) );
+
+    assert.deepEqual( findDistinctValues([6,7]), [6,7] , 'Expected [6,7] as the result, the result was: ' + findDistinctValues([6,7]) );
+});
