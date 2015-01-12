@@ -1,43 +1,78 @@
+#header {
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+#title {
+    display: inline;
+    width: 80px
+}
+.user {
+    font-size: 70%;
+    float: right;
+    margin: 2px;
+    display: inline;
+}
 .container1 {
-    width: 200px;
+    width: 170px;
+    font-size: 85%;
     float: left;
     left: 0;
-    margin: 10px;
-    border: 1px solid grey ;
-    background-color: pink;
-}
-
-.container2 {
-    width: 700px;
-    height: auto;
-    float: left;
-    margin-left: 50px;
-    background-color: yellow;
+    margin: 8px;
+    border: 1px solid #BAB7BE ;
+    color: #BAB7BE;
+    background-color: #F5F5F5;
 }
 
 .active-click {
-    background-color: orange;
+    background-color: #FCAD46;
+    color: white;
 }
 
 .nav .nav-pills .nav-stacked{
     width: 100%;
 }
 
-.pulse {
+.container2 {
+    width: 720px;
+    height: auto;
+    float: left;
+    margin-left: 10px;
+}
 
+#cal{
+    width: 100%;
+    margin: 2px;
+    border: 1px solid #BAB7BE;
+}
+.calendar {
+    margin: 1px;
+    border: 1px ridge #BAB7BE;
+    background-color: #F5F5F5
+}
+.date{
+    width: 60px;
+    height: 60px;
+    border: 1px solid #BAB7BE;
+}
+
+.pulse {
+    margin-top: 40px;
+    background-color: #C5D2DB;
 }
 .box {
-    margin: 10px;
-    width: 80px;
+    margin: 3px;
+    width: 110px;
     height: 80px;
     display: inline-block;
     border: 1px solid black;
 }
 
 .active{
-    width: 120px;
+    width: 180px;
     height: 120px;
-    margin: 10px;
+    margin: 3px;
     display: inline-block;
     border: 1px solid black;
 }
+
