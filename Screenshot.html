@@ -1,8 +1,112 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Screenshot.html</title>
+<title>Screenshot</title>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
+<!-- Because of Cross Origin security policy in loading json file -->
+<script type="text/javascript" language="javascript" src="./data/help.json"></script>
+<script>
+    $(document).ready(function(){
+      var toggleHelp = false;
+      //for menu container
+      $("ul li").click(function(){
+        $('.active-click').removeClass('active-click');
+         $(this).addClass('active-click');
+      });
+
+      $("ul li").hover(
+        function(){
+          //check if it has clicked active status, and if so return
+          if($(this).hasClass('active-click'))
+            return;
+         $(this).addClass('active-hover');
+        },
+        function(){
+          $(this).removeClass('active-hover')
+        });
+
+      // for pulse window
+      $(".box").click(function(){
+        $('.active').removeClass('active');
+         $(this).addClass('active');
+      });
+
+      //for displaying help
+      $("#help").click(function(){
+        //while here we would do a get request to get the json file, due to security issues, we are preloading it via script
+        toggleHelp = !toggleHelp;
+        if(toggleHelp) {
+          $('#overlay').css('visibility', 'visible');
+
+          if($('#overlay').children().length === 0){
+            //if data is not parsed, then parse and display
+            $("#overlay").append('<p> Click on Help again to close this window </p>')
+            var data = help.help;
+             $.each(data, function(index, item){
+                $("#overlay").append(
+                    $('<a class = "help" href='+this.URL+'>'+this.title+'</a>')
+                )
+            });
+
+          }
+        } else {
+          $('#overlay').css('visibility', 'hidden');
+        }
+
+      });
+    });
+</script>
 </head>
 <body>
+
+	<div id="header">
+		<p id="title"> ExactTarget</p>
+		<span class="user"> Logout</span>
+		<span class="user" id="help"> Help</span>
+		<span class="user"> Account</span>
+		<span class="user"> Welcome John</span>
+	</div>
+<div id="wrapper">
+    <div class="container1">
+      <ul class="nav nav-pills nav-stacked">
+          <li class="active-click"> Marketing Hub</li>
+          <li> ExactTarget Email</li>
+          <li> ExactTarget Mobile</li>
+          <li> CoTweet Social</li>
+          <hr>
+          <li> ExactTarget Sites</li>
+          <li> Automation Studio</li>
+          <li> Audience Builder</li>
+          <li> Report Builder</li>
+          <li> Partner Applications</li>
+      </ul>
+  </div>
+    <div class="container2">
+      <div id="overlay">  </div>
+        <div class="calendar">
+        	<table id="cal">
+					  <tr>
+					    <td class="date">Sat</td>
+					    <td class="date">Sun</td>
+					    <td class="date">Mon</td>
+					    <td class="date">Tue</td>
+					    <td class="date">Wed</td>
+					    <td class="date">Thu</td>
+					    <td class="date">Fri</td>
+					  </tr>
+					</table>
+        </div>
+        <div class="pulse">
+                <div class="box" id="followers"> Followers</div>
+                <div class="box" id="fans">  Fans </div>
+                <div class="box active" id="subscribers"> Subscribers
+                </div>
+                <div class="box" id="foursquare">Foursquare</div>
+                <div class="box" id="landing">Landing</div>
+        </div>
+    </div>
+  </div>
 </body>
 </html>
