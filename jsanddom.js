@@ -203,7 +203,8 @@
 
 
 $(document).ready(function(){
-        var favorites = [{"id" : 1, "name" : "Chocolate" }, {"id" : 2, "name" : "Strings" }, {"id" : 3, "name" : "Kittens" }]
+
+    var favorites = [{"id" : 1, "name" : "Chocolate" }, {"id" : 2, "name" : "Strings" }, {"id" : 3, "name" : "Kittens" }]
 
             // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
@@ -235,15 +236,15 @@ $(document).ready(function(){
         // Write 5 different jQuery selectors to retrieve the
         // sample anchor in the markup below.
 
-        console.log($("#fizz").children().first()[0].innerHTML);
+        console.log("Method 1: ",$("#fizz").children().first()[0].innerHTML);
 
-        console.log($("div div a")[0].innerHTML);
+        console.log("Method 2: ",$("div div a")[0].innerHTML);
 
-        console.log($(".link")[0].innerHTML);
+        console.log("Method 3: ",$(".link")[0].innerHTML);
 
-        console.log($(".bar .buzz .link")[0].innerHTML);
+        console.log("Method 4: ",$(".bar .buzz .link")[0].innerHTML);
 
-        console.log($("a")[0].innerHTML);
+        console.log("Method 5: ",$("a")[0].innerHTML);
 
 
 
@@ -305,4 +306,4 @@ $(document).ready(function(){
         document.getElementById('foobar').appendChild(newlink2);
 
 
-     });
+});
