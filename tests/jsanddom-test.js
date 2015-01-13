@@ -1,3 +1,5 @@
+// $(document).ready(function(){
+
 /********************************
 Unit Test Example
 ********************************/
@@ -135,4 +137,21 @@ QUnit.test( "Closure", 3, function(assert) {
 
     // Make sure the result from the minimum function is valid
     assert.equal( makeNames("Neil")("Lobo"), "Hello Neil Lobo" , 'Inner function should retain access to outer function scope');
+});
+
+module( "DataTable Unit Test" );
+QUnit.test( "DataTable", 7, function(assert) {
+    x = new DataTable()
+    // Verify the method exists
+    assert.equal( typeof DataTable, 'function', 'Must contain a DataTable' );
+
+    assert.equal( typeof x, 'object' , 'DataTable function must return an object' );
+
+    assert.equal( typeof x.addRows, 'function' , 'DataTable object must contain an addRows function' );
+    assert.equal( typeof x.addColumns, 'function' , 'DataTable object must contain an addColumns function' );
+    assert.equal( typeof x.getData, 'function' , 'DataTable object must contain a getData function' );
+
+    assert.equal (x.rows, undefined , 'The row property should not be accessible' );
+    assert.equal (x.columns, undefined , 'The column property should not be accessible' );
+
 });

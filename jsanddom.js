@@ -172,36 +172,37 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+     //did not understand  the getData method, leaving aside for now
      function DataTable(){
-        var columns = [], rows = [];
+        var columns = [];
+        var rows = [];
+      }
 
-        this.addRows = function(items){
+        DataTable.prototype.addRows = function(items){
             for(var i=0; i<items.length; i++){
                 rows.push(item[i]);
             }
         }
 
 
-        this.addColumns = function(items){
+        DataTable.prototype.addColumns = function(items){
             for(var i=0; i<items.length; i++){
                 columns.push(item[i]);
             }
         }
 
-        this.getData = function(){
+        DataTable.prototype.getData = function(){
             var obj = {};
             for(var i=0; i < columns.length; i++){
                 for(var j=0; j<rows.length; j++){
-
+                    obj[columns[i]][j] = rows[j];
                 }
             }
             return obj;
         }
 
 
-     }
-
-     $(document).ready(function(){
+$(document).ready(function(){
         var favorites = [{"id" : 1, "name" : "Chocolate" }, {"id" : 2, "name" : "Strings" }, {"id" : 3, "name" : "Kittens" }]
 
             // within div1, programatically create a
@@ -224,10 +225,17 @@
 
         $("#div1").append('<button id="select"> Select </button>');
         $("#select").click(function(){
-            console.log($("input[name=radioOptions]:checked")[0].id);
+            var option = $("input[name=radioOptions]:checked")
+            if(option[0])
+               console.log("The option selected was ",option[0].id);
+            else
+                console.log("No option selected");
         });
+
         // Write 5 different jQuery selectors to retrieve the
         // sample anchor in the markup below.
+
+        console.log($("#fizz").children().first()[0].innerHTML);
 
         console.log($("div div a")[0].innerHTML);
 
@@ -237,7 +245,8 @@
 
         console.log($("a")[0].innerHTML);
 
-        console.log($("#fizz").children().first()[0].innerHTML)
+
+
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
@@ -256,6 +265,7 @@
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
 
+//creating four checkboxes and appending them
         for(var i=1; i<=4; i++){
             var checkbox = document.createElement('input');
             checkbox.type = "checkbox";
@@ -268,20 +278,24 @@
 
             document.getElementById('foobar').appendChild(checkbox);
             document.getElementById('foobar').appendChild(label);
-        }
-        var newlink = document.createElement('a');
-        newlink.onclick = function(){
-            var boxes = document.getElementsByClassName('checkboxes');
-            for (var i=0; i<boxes.length; i++){
-                boxes[i]["checked"] = true;
-            }
 
-        };
-        newlink.innerHTML = "Check All"
-        document.getElementById('foobar').appendChild(newlink);
+           }
+
+           var newlink = document.createElement('a');
+           newlink.onclick = function(){
+             var boxes = document.getElementsByClassName('checkboxes');
+             for (var i=0; i<boxes.length; i++){
+                boxes[i]["checked"] = true;
+             }
+           };
+
+         newlink.innerHTML = " Check All "
+         newlink.setAttribute('class', 'checks');
+         document.getElementById('foobar').appendChild(newlink);
 
         var newlink2 = document.createElement('a');
-        newlink2.innerHTML = "Uncheck All"
+        newlink2.innerHTML = " Uncheck All "
+        newlink2.setAttribute('class', 'checks');
         newlink2.onclick = function(){
             var boxes = document.getElementsByClassName('checkboxes');
             for (var i=0; i<boxes.length; i++){
