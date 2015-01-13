@@ -11,7 +11,8 @@
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-        //sanitize for numbers
+        //sanitize for numbers?
+        //or can default to Math.min error  - Nan
          if (values.length === 0) return null;
          return Math.min.apply(null, values)
      }
@@ -85,7 +86,10 @@
      }
 
      // Write a function that will take any number of arguments and return their sum
+
      function sum() {
+        //setting it equal to first argument, so can handle strings
+        if(arguments.length === 0) return;
          var sum=arguments[0];
          for(var i=1; i < arguments.length; i++){
             sum += arguments[i];
@@ -172,7 +176,7 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
-     //did not understand  the getData method, leaving aside for now
+     //did not understand  the getData method-
      function DataTable(){
         var columns = [];
         var rows = [];
