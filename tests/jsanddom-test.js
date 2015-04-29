@@ -85,3 +85,11 @@ test( "sum with any number of arguments Test", function() {
 
     equal(sum(1,1,2,3,5,7), 19, 'The result was: ' + sum(1,1,2,3,5,7) );
 });
+
+test( "white space string Test", function() {
+
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
+
+    equal(isOnlyWhitespace('          '), true, 'The result was: ' + isOnlyWhitespace('          ') );
+    equal(isOnlyWhitespace('     s     '), false, 'The result was: ' + isOnlyWhitespace('     s     ') );
+});
