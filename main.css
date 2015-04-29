@@ -1,0 +1,79 @@
+#tool-bar {
+    height: 30px;
+    background: #424E57;
+}
+
+#tool-bar span{
+    color: #FFFFFF;
+    margin-left: 5px;
+}
+
+#tool-bar .nav {
+    float: right;
+    font-size: .875em; 
+}
+
+#tool-bar .nav span{
+    color: #FFFFFF;
+    margin-right: 10px;
+}
+
+#tool-bar .nav .links{
+    display: inline-block;;
+}
+
+#tool-bar .nav .links a{
+    text-decoration: none;
+    color: blue;
+}
+
+#main-content {
+    float: right;
+    width: 75%
+}
+
+#calendar {
+    background: #F5F5F5;
+    height: 100px;
+
+}
+
+#pulse-panel {
+    background: #BAC6CF;
+    height: 200px;
+}
+
+
+#pulse-panel .pulse-item {
+    float: left;
+}
+
+
+.pulse-item .title{
+    text-align: center;
+}
+
+.pulse-item .content {
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+.pulse-item .content.small {
+    background: silver;
+    border: 1px solid white;
+    height: 80px;
+    width: 150px;
+
+}
+
+.pulse-item .content.medium {
+    background: url("medium-panel1.jpg") 0 0;
+    width: 279px;
+    height: 165px;
+    display: none;
+
+}
+
+.pulse-item .content span {
+    display: block;
+}
