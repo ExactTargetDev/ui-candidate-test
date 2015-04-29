@@ -22,6 +22,7 @@ test( "reverse string Test", function() {
 
 test( "findMinValue Test", function() {
     var testData = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+
     equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' ); 
 
     equal(findMinValue(testData), -1.1, 'Expected -1.1 as the result, the result was: ' + findMinValue(testData) );
@@ -34,5 +35,19 @@ test( "findDistinctValues Test", function() {
 
     equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' ); 
 
-    ok(findDistinctValues(testData), result, 'The result was: ' + findDistinctValues(testData) );
+    deepEqual(findDistinctValues(testData), result, 'The result was: ' + findDistinctValues(testData) );
+});
+
+
+test( "remove fruits Test", function() {
+    var testData = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+    var remove = ['pear', 'banana'];
+    var result = ['apple', 'orange', 'kiwi', 'plum', 'strawberry'];
+
+    equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' ); 
+
+    //change the original array
+    removeFruits(testData, remove);
+
+    deepEqual(testData, result, 'The result was: ' + testData );
 });

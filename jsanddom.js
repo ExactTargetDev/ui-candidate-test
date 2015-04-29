@@ -36,6 +36,7 @@
          var r = [];
          var i;
 
+         //the reason to do this function is that IE8 does not support Array indexOf
          function contains(array, v) {
              var ii;
              for(ii = 0; ii < array.length; ii++) {
@@ -85,7 +86,18 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         var i;
+         var j;
+
+         for(i = 0; i < fruitsToRemove.length; i++) {
+             for(j = 0; j < fruits.length; j++) {
+                 if (fruits[j] === fruitsToRemove[i]) {
+                     fruits.splice(j, 1);//remove the found item from the orgin array
+                     break;
+                 }
+
+             }
+         }
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
