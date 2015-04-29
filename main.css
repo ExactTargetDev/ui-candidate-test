@@ -24,7 +24,7 @@
 
 #tool-bar .nav .links a{
     text-decoration: none;
-    color: blue;
+    color: #BAC6CF;
 }
 
 
@@ -39,13 +39,37 @@
 
 #main-content {
     float: right;
-    width: 75%
+    width: 80%
 }
 
 #calendar {
     background: #F5F5F5;
     height: 100px;
 
+}
+
+#calendar #calendar-days{
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    height: 90px;
+
+}
+
+#calendar .calendar-content{
+    display: inline-block;
+    border-right: 1px solid black;
+    height: 90px;
+    width: 107px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+#calendar .calendar-content span.day{
+    float: left;
+}
+
+#calendar .calendar-content span.date{
+    float: right;
 }
 
 #pulse-panel {

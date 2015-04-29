@@ -197,3 +197,33 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+
+    (function (global) {
+        $(document).ready(function() {
+
+            var $prevOpenMedium = null;
+
+            $('.pulse-item .content.small').click(function () {
+                //hide other medium panel first
+                if ($prevOpenMedium) {
+                    $prevOpenMedium.hide();
+                    $prevOpenMedium.siblings('.small').show();
+
+                }
+
+                $prevOpenMedium = $(this).siblings('.medium');
+                $(this).hide();
+                $prevOpenMedium.show();
+            });
+
+            $('.pulse-item .content.medium').click(function () {
+                $prevOpenMedium = null;
+
+                $(this).hide();
+                $(this).siblings('.small').show();
+            });
+
+        });
+
+    })(window);
