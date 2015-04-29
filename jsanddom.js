@@ -224,6 +224,19 @@
                 $(this).siblings('.small').show();
             });
 
+
+            //click and hover handlers for each item under market hub
+            $('#main-content').on('click', '.item', function (event) {
+                console.log('click event: ', event.target);
+            });
+
+            $('#main-content').on('mouseenter', '.item', function (event) {
+                console.log('mouse enter: ', event.target);
+            });
+
+            $('#main-content').on('mouseleave', '.item', function (event) {
+                console.log('mouse left: ', event.target);
+            });
         });
 
     })(window);
