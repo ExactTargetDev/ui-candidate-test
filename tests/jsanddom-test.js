@@ -12,3 +12,17 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+
+test( "reverse string Test", function() {
+    equal( typeof reverseString, 'function', 'Must contain a reverseString function' ); 
+
+    equal(reverseString('Subscribers rock'), 'kcor srebircsbuS', 'The result was: ' + reverseString('Subscribers rock') );
+});
+
+
+test( "findMinValue Test", function() {
+    var testData = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+    equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' ); 
+
+    equal(findMinValue(testData), -1.1, 'Expected -1.1 as the result, the result was: ' + findMinValue(testData) );
+});
