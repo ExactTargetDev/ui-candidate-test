@@ -248,17 +248,18 @@
             });
 
 
+            var $statusPanel = $('#status-panel');
             //click and hover handlers for each item under market hub
             $('#main-content').on('click', '.item', function (event) {
-                console.log('click event: ', event.target);
+                $statusPanel.text('click event: element class names: ' + event.currentTarget.className);
             });
 
             $('#main-content').on('mouseenter', '.item', function (event) {
-                console.log('mouse enter: ', event.target);
+                $statusPanel.text('mouse enter event: element class names: ' + event.currentTarget.className);
             });
 
             $('#main-content').on('mouseleave', '.item', function (event) {
-                console.log('mouse left: ', event.target);
+                $statusPanel.text('mouse leave event: element class names: ' + event.currentTarget.className);
             });
 
 

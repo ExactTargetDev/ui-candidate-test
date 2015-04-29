@@ -112,6 +112,12 @@
     display: block;
 }
 
+#status-panel {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
 #dialog {
     position: relative;
     width: 500px;
