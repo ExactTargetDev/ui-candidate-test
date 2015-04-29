@@ -68,3 +68,20 @@ test( "push to array Test", function() {
     deepEqual(array, [1,2,3,4,5,6,7,8,9], 'The second push result was: ' + array);
 
 });
+
+
+test( "split by comma Test", function() {
+    var str = 'The, quick, brown, fox jumped over';
+    var result = ['The', 'quick', 'brown', 'fox jumped over'];
+
+    equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' ); 
+
+    deepEqual(splitListStrUsingComma(str), result, 'The result was: ' + splitListStrUsingComma(str) );
+});
+
+test( "sum with any number of arguments Test", function() {
+
+    equal( typeof sum, 'function', 'Must contain a sum function' ); 
+
+    equal(sum(1,1,2,3,5,7), 19, 'The result was: ' + sum(1,1,2,3,5,7) );
+});
