@@ -200,6 +200,29 @@
 
 
     (function (global) {
+
+        //simple function to insert html into dialog and display and display
+        function displayDialog (data) {
+            $('#dialog').html(data).show();
+            $('#overlay').show();
+        }
+
+        var HELP_JSON = {
+        "help": [
+            {
+                "title": "What is JSON?",
+                "URL": "http://en.wikipedia.org/wiki/JSON"
+            },
+            {
+                "title": "What is ExactTarget?",
+                "URL": "http://en.wikipedia.org/wiki/ExactTarget"
+            },
+            {
+                "title": "More info about ExactTarget REST APIs",
+                "URL": "http://code.exacttarget.com/question/rest-api-authentication"
+            }
+        ]};
+
         $(document).ready(function() {
 
             var $prevOpenMedium = null;
@@ -237,6 +260,25 @@
             $('#main-content').on('mouseleave', '.item', function (event) {
                 console.log('mouse left: ', event.target);
             });
+
+
+            //click event for Help link
+            $('#tool-bar .nav .help').click(function() {
+                var i;
+                var helps = HELP_JSON['help'];
+                var html = '<div class="help-links">';
+
+                //construct html for help links
+                for (i = 0; i < helps.length; i ++) {
+                    html += '<a href=' + helps[i].URL + '>' + helps[i].title + '</a>';
+
+                }
+
+                html += '</div>';
+
+                displayDialog(html);
+            });
+
         });
 
     })(window);

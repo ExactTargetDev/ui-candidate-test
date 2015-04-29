@@ -111,3 +111,32 @@
 .pulse-item .content span {
     display: block;
 }
+
+#dialog {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    display: none;
+    margin: auto;
+    top: 50px;
+    background: #BAC6CF;
+}
+
+#overlay {
+    position: absolute;
+    background: gray;
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+
+#dialog .help-links {
+    padding: 50px;
+}
+
+#dialog .help-links a {
+    display: block;
+}
