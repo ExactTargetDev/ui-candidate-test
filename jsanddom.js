@@ -6,12 +6,21 @@
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+        	     var revStr = '';
+			for (var i = str.length - 1; i >= 0; i--)
+			revStr += str[i];
+			return revStr;
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+         var len = values.length, min = Infinity;
+		while (len--) {
+			if (values[len] < min) {
+				min = values[len];
+			 }
+		 }
+		return min;
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
@@ -25,6 +34,26 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
+         for(var i=1;i<=100;i++ )
+         {
+              if(i%3==0)
+              {
+                   console.log("Fizz");
+              }
+              else if(i%5==0)
+              {
+                   console.log("Buzz");
+              }
+              else if(i%3==0&&i%5==0)
+              {
+                   console.log("FizzBuzz");
+              }
+              else
+              {
+                   console.log(i);
+              }
+         }
+         
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -32,33 +61,77 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
-     }
+        for( var i =fruits.length - 1; i>=0; i--){
+           for( var j=0; j<fruitsToRemove.length; j++){
+                if(fruits[i] === fruitsToRemove[j]){
+                    fruits.splice(i, 1);
+                    }
+                }
+           }
+      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
-     }
+         if(Array.isArray(toPush))
+         {
+              for(var i=0; i<toPush.length;i++)
+              {
+                   array.push(toPush[i]);
+              }
+         }
+         else
+         {
+              array.push(toPush);
+         }
+      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         if(sourceStr.length==null)
+         {
+              return null;
+         }
+         else
+         {
+              var split=sourceStr.split("");
+              return split;
+         }
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
-     }
+               var sum=0;
+               for (var i=0 ; i< arguments.length ; i++)
+                    sum+= arguments[i];
+               return sum; 
+      }
+     
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
-     }
+          if (sourceStr == null) {
+               return false;
+           }
+           else if(sourceStr.IsWhiteSpace())
+               return true;
+          else
+               return false;
+           }
+     
+  
+     
 
      // write an example of a javascript closure
+     
+     function add() {
+          var counter = 0;
+          function plus() {counter += 1;}
+          plus();    
+          return counter; 
+      }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -68,7 +141,16 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+     
+     var employees = [
+    {
+    "firstName":"John",
+    "lastName":"Doe",
+    "city":"San Antonio",
+    "State":"Texas",
+    "zip":"78249",
+    "phone":[{"home":123,"work":213, "Mobile":2121}]
+    }];
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
@@ -88,6 +170,13 @@
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     
+     //foo is the div name and status is the class
+     $('div#foo a.status')
+     $('div#foo > a.status')
+     $('div#foo').find('a.status')
+     $('div#foo').children('a.status')
+
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
