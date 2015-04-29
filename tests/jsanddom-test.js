@@ -26,3 +26,13 @@ test( "findMinValue Test", function() {
 
     equal(findMinValue(testData), -1.1, 'Expected -1.1 as the result, the result was: ' + findMinValue(testData) );
 });
+
+
+test( "findDistinctValues Test", function() {
+    var testData = [3, -1.1, 12, Infinity, Infinity, 'test', 'test', 0.18, -1.1, 12];
+    var result = [3, -1.1, 12, Infinity, 'test', 0.18];
+
+    equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' ); 
+
+    ok(findDistinctValues(testData), result, 'The result was: ' + findDistinctValues(testData) );
+});

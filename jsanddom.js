@@ -15,6 +15,7 @@
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
+         //assume values is array, skip if array check in this test
          if (values.length === 0) {
              return undefined;
          }
@@ -32,7 +33,27 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+         var r = [];
+         var i;
+
+         function contains(array, v) {
+             var ii;
+             for(ii = 0; ii < array.length; ii++) {
+                if(array[ii] === v) {
+                    return true;
+                }
+             }
+
+             return false;
+         }
+
+         for (i = 0; i < values.length; i++) {
+             if (!contains(r, values[i])) {
+                 r.push(values[i]);
+             }
+         }
+
+         return r;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -40,7 +61,23 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         var i;
+
+         for (i = 1; i <= 100; i++) {
+             if (i % 15 === 0) { //multiples of 3 and 5
+                console.log('FizzBuzz');
+             } else {
+                 if (i % 3 === 0) { //multiples of 3
+                    console.log('Fizz');
+                 } else if (i % 5 === 0) { //multiples of 5
+                    console.log('Buzz');
+                 } else {
+                     console.log(i);
+                 }
+
+             }
+
+         }
      }
 
      // You have a master array of strings, where each element is a fruit name.
