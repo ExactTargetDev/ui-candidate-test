@@ -51,3 +51,20 @@ test( "remove fruits Test", function() {
 
     deepEqual(testData, result, 'The result was: ' + testData );
 });
+
+test( "push to array Test", function() {
+
+    var array = [1, 2, 3, 4, 5];
+    var pushValue = 6;
+    var pushArray = [7, 8, 9];
+
+    equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' ); 
+
+    //change the original array
+    pushOntoArray(array, 6);
+    deepEqual(array, [1,2,3,4,5,6], 'The first push result was: ' + array );
+
+    pushOntoArray(array, pushArray);
+    deepEqual(array, [1,2,3,4,5,6,7,8,9], 'The second push result was: ' + array);
+
+});
