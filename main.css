@@ -1,0 +1,148 @@
+#tool-bar {
+    height: 30px;
+    background: #424E57;
+}
+
+#tool-bar span{
+    color: #FFFFFF;
+    margin-left: 5px;
+}
+
+#tool-bar .nav {
+    float: right;
+    font-size: .875em; 
+}
+
+#tool-bar .nav span{
+    color: #FFFFFF;
+    margin-right: 10px;
+}
+
+#tool-bar .nav .links{
+    display: inline-block;;
+}
+
+#tool-bar .nav .links a{
+    text-decoration: none;
+    color: #BAC6CF;
+}
+
+
+#nav-bar {
+    float: left;
+    background: url("images/nav-bar-dashboard.jpg") 0 0;
+    width: 182px;
+    height: 336px;
+
+    margin: 20px;
+}
+
+#main-content {
+    float: right;
+    width: 80%
+}
+
+#calendar {
+    background: #F5F5F5;
+    height: 100px;
+
+}
+
+#calendar #calendar-days{
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    height: 90px;
+
+}
+
+#calendar .calendar-content{
+    display: inline-block;
+    border-right: 1px solid black;
+    height: 90px;
+    width: 107px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+#calendar .calendar-content span.day{
+    float: left;
+}
+
+#calendar .calendar-content span.date{
+    float: right;
+}
+
+#pulse-panel {
+    background: #BAC6CF;
+    height: 200px;
+}
+
+
+#pulse-panel .pulse-item {
+    float: left;
+}
+
+
+.pulse-item .title{
+    text-align: center;
+}
+
+.pulse-item .content {
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+.pulse-item .content.small {
+    background: silver;
+    border: 1px solid white;
+    height: 80px;
+    width: 150px;
+
+}
+
+.pulse-item .content.medium {
+    background: url("images/medium-panel1.jpg") 0 0;
+    width: 279px;
+    height: 165px;
+    display: none;
+
+}
+
+.pulse-item .content span {
+    display: block;
+}
+
+#status-panel {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+#dialog {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    display: none;
+    margin: auto;
+    top: 50px;
+    background: #BAC6CF;
+}
+
+#overlay {
+    position: absolute;
+    background: gray;
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+
+#dialog .help-links {
+    padding: 50px;
+}
+
+#dialog .help-links a {
+    display: block;
+}
