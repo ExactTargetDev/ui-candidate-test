@@ -1,22 +1,25 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
-     function reverseString(str) {
-         // FILL THIS IN
+     function reverseString(revStr) {
+         return revStr.split('').reverse().join('');
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
-     function findMinValue(values) {
-         // FILL THIS IN
+     function findMinValue(array) {
+         Array.min = function( array ){
+			 return Math.min.apply( Math, array );
+    	};
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+         var myArray = [2, 5, 5, 7, 7, 8, 9, 9, 9, 1, 3, 3, 4, 5];
+        	var newArray = $.unique(myArray.sort()).sort();
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
