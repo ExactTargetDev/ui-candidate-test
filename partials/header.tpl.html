@@ -1,0 +1,49 @@
+<div>
+
+    <!-- Add your site or application content here -->
+    <div>
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#/">ExactTarget.</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+
+            <div id="directory_search_row">
+              <nav class="loggedinmenu" ng-show="!authenticated" >
+                <ul>
+                  <li><a href="" class="loggedin_link">Logout</a></li>
+                  <li><a href="" class="loggedin_link" ng-click='toggleModal()'>Help</a></li>
+                  <li><a href="" class="loggedin_link">Account</a></li>
+                </ul>
+              </nav>
+
+            </div>
+
+            <div class="container">
+              <modal-dialog show='modalShown' width='750px' height='90%'>
+                <ul ng-repeat="item in helpText">
+                  <li>
+                    {{item.title}}: {{item.URL}}
+                  </li>
+                </ul>
+
+              </modal-dialog>
+            </div>
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+</div>
