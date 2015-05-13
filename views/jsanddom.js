@@ -125,15 +125,40 @@
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+         console.log('start sum');
+         var args = arguments;
+
+         var summation = 0;
+
+         for (var a in args)
+         {
+              summation += args[a];
+         }
+         console.log('values summed: ' + summation);
+
+         console.log('end sum');
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         var ret = false;
+
+         console.log('start isOnlyWhitespace');
+         if((jQuery.trim( sourceStr )).length==0) ret = true;
+         console.log(ret);
+         console.log('end isOnlyWhitespace');
+
+         return ret;
      }
 
      // write an example of a javascript closure
+
+
+     var increment = (function () {
+                var counter = 0;
+                return function () {return counter += 1;}
+                })();
+
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
