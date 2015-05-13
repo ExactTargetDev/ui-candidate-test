@@ -30,7 +30,24 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         console.log('start of doFizzBuzz');
+         for ( i = 0; i < 100; i++)
+         {
+               console.log(i);
+               if ( i % 3 === 0)
+               {
+                   console.log('Fizz');
+               }
+               if ( i % 5 === 0)
+               {
+                    console.log('Buzz');
+               }
+               if ( i % 8 === 0)
+               {
+                    console.log('FizzBuzz');
+               }
+         }
+         console.log('end of doFizzBuzz');
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -38,7 +55,35 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         console.log('start removeFruits');
+         console.log('fruits before remove');
+         for ( i=0;i<fruits.length;i++ )
+         {
+               console.log(fruits[i]);
+         }
+
+         var fruitsVal = '';
+         var fruitsRemove = '';
+         for ( i=0;i<fruits.length;i++ )
+         {
+           fruitsVal = fruits[i];
+           for ( j=0; j < fruitsToRemove.length; j++ )
+
+           {
+                if ( fruitsVal == fruitsToRemove[j] )
+                {
+                  fruits.splice(i, j);
+                  break;
+                }
+
+           }
+         }
+         console.log('fruits after remove');
+         for ( i=0;i<fruits.length;i++ )
+         {
+               console.log(fruits[i]);
+         }
+         console.log('end removeFruits');
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.

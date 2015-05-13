@@ -9,5 +9,5 @@ app.use('/',
 app.listen(3000,
            function()
            {
-             console.log('simple login listening at localhost port 3000')
+             console.log('listening at localhost port 3000')
            });
