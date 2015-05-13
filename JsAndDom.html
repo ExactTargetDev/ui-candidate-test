@@ -3,6 +3,8 @@
 <head>
     <title>JsAndDom</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script>
      function logFunctionResults()
      {
@@ -28,6 +30,32 @@
      function runUnitTests()
      {
      }
+
+     function parseJsonHelp()
+     {
+          var obj = jQuery.parseJSON( '{ "name": "John" }' );
+          var jsonHelpTitle = jQuery.parseJSON( '{"title": "More info about ExactTarget REST APIs"}' );
+
+          var jsonHelpUrl = jQuery.parseJSON( '{"URL": "http://code.exacttarget.com/question/rest-api-authentication"}' );
+          //return jsonHelpTitle + jsonHelpUrl;
+          return jsonHelpTitle;
+
+     }
+
+     function openHelpDialog() {
+       var helpJSON = parseJsonHelp();
+       $("#helpDialog").html(helpJSON.title);
+
+       // Define the Dialog and its properties.
+       $("#helpDialog").dialog({
+           resizable: false,
+           modal: true,
+           title: "IMH Help",
+           height: 250,
+           width: 400
+
+       });
+   }
 
      $(document).ready(function() {
 
@@ -58,6 +86,17 @@
     <button id="logFunctionResults" value="" onclick="logFunctionResults();">Log Function Results</button>
     <br>
     <button id="runUnitTests" value="" onclick="runUnitTests();">Run Unit Tests</button>
+
+    <h2> Interactive Marketing Hub Dashboard Test </h2>
+    <br>
+    <button onclick="openHelpDialog();">Help</button>
+    <div id="imh">
+         <img src="UI_CandidateTest_IMH_dashboard.png" alt="Interactive Marketing Hub DashBoard" height="900" width="1200">
+    </div>
+
+    <div id="helpDialog" title="ExactTarget IMH help">
+      <p></p>
+    </div>
 
   </div>
 
