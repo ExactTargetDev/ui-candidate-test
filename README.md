@@ -1,9 +1,11 @@
 # Jason Russell updates
 
-- Using node.js to serve html and assets
+- Using node.js to serve html and assets under \views
 - node server from \ui-candidate-test
 - http://localhost:3000
 - verify results in browser console
+
+- or open JsAndDom.html file under \ui-candidate-test in browser as stand alone render
 
 
 # ExactTarget UI Candidates
