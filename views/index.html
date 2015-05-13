@@ -1,59 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+<head>
+    <title>JsAndDom</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script>
+     function logFunctionResults()
+     {
+       console.log(divide(4, 2));   // divide function
+       console.log(reverseString('Subscribers rock'));
+       console.log(findMinValue([1, 2, 3, 4, 5]));
+       console.log(findDistinctValues([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]));
+       doFizzBuzz();
+       console.log(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],
+                                ['pear', 'banana']));
 
-   <head>
-     <meta charset="utf-8" />
-     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-     <title>Jason Russell Salesforce Marketing Cloud Candidate UI Test</title>
-     <!--link rel="stylesheet" href="style.css" /-->
-     <script src="jsanddom.js"></script>
+       pushOntoArray([1, 2, 3, 4, 5], 6);
+       pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]);
 
-     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+       console.log(splitListStrUsingComma('The, quick, brown, fox jumped over'));
+       console.log(splitListStrUsingComma(''));
 
-     <script>
-      function logFunctionResults()
-      {
-        console.log(divide(4, 2));   // divide function
-        console.log(reverseString('Subscribers rock'));
-        console.log(findMinValue([1, 2, 3, 4, 5]));
-        console.log(findDistinctValues([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]));
-        doFizzBuzz();
-        console.log(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],
-                                 ['pear', 'banana']));
+       sum( 1, 1, 2, 3, 5, 7);
 
-        pushOntoArray([1, 2, 3, 4, 5], 6);
-        pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]);
+       isOnlyWhitespace('');
+     }
 
-        console.log(splitListStrUsingComma('The, quick, brown, fox jumped over'));
-        console.log(splitListStrUsingComma(''));
+     function runUnitTests()
+     {
+     }
 
-        sum( 1, 1, 2, 3, 5, 7);
+     function parseJsonHelp()
+     {
+          var obj = jQuery.parseJSON( '{ "name": "John" }' );
+          var jsonHelpTitle = jQuery.parseJSON( '{"title": "More info about ExactTarget REST APIs"}' );
 
-        isOnlyWhitespace('');
-      }
+          var jsonHelpUrl = jQuery.parseJSON( '{"URL": "http://code.exacttarget.com/question/rest-api-authentication"}' );
+          //return jsonHelpTitle + jsonHelpUrl;
+          return jsonHelpTitle;
 
-      function runUnitTests()
-      {
-      }
+     }
 
-      $(document).ready(function() {
+     function openHelpDialog() {
+       var helpJSON = parseJsonHelp();
+       $("#helpDialog").html(helpJSON.title);
+
+       // Define the Dialog and its properties.
+       $("#helpDialog").dialog({
+           resizable: false,
+           modal: true,
+           title: "IMH Help",
+           height: 250,
+           width: 400
+
+       });
+   }
+
+     $(document).ready(function() {
 
 
-      });
-     </script>
-   </head>
+     });
+    </script>
+</head>
+<body>
+	<div id="div1">
+	</div>
 
+	<div id="foo" class="bar" style="margin-top:10px;">
+	  <div id="fizz" class="buzz">
+	    <a class="link" href="#">sample anchor</a>
+	  </div>
+	</div>
 
-   <body>
-     <div
-       <h1>  Jason Russell Salesforce Marketing Cloud Candidate UI Test  </h1>
-       <br>
-       <button id="logFunctionResults" value="" onclick="logFunctionResults();">Log Function Results</button>
-       <br>
-       <button id="runUnitTests" value="" onclick="runUnitTests();">Run Unit Tests</button>
+	<div id="baz" style="margin-top:10px;">
+	  <ul id="list1"></ul>
+	</div>
 
-     </div>
-   </body>
+	<div id="foobar" style="margin-top:10px;">
+	</div>
 
+  <div
+    <h1>  Jason Russell Salesforce Marketing Cloud Candidate UI Test  </h1>
+    <br>
+    <button id="logFunctionResults" value="" onclick="logFunctionResults();">Log Function Results</button>
+    <br>
+    <button id="runUnitTests" value="" onclick="runUnitTests();">Run Unit Tests</button>
+
+    <h2> Interactive Marketing Hub Dashboard Test </h2>
+    <br>
+    <button onclick="openHelpDialog();">Help</button>
+    <div id="imh">
+         <img src="UI_CandidateTest_IMH_dashboard.png" alt="Interactive Marketing Hub DashBoard" height="900" width="1200">
+    </div>
+
+    <div id="helpDialog" title="ExactTarget IMH help">
+      <p></p>
+    </div>
+
+  </div>
+
+	<script src="jsanddom.js" type="text/javascript"></script>
+</body>
 </html>
