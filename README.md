@@ -1,4 +1,12 @@
-# ExactTarget UI Candidates 
+# Jason Russell updates
+
+- Using node.js to serve html and assets
+- node server from \ui-candidate-test
+- http://localhost:3000
+- verify results in browser console
+
+
+# ExactTarget UI Candidates
 
 This is the candaidate test for ExactTarget UI developers. It is **NOT** pass/fail. It is intended to provide insight into the range of your skill set. Please do what you can.
 
