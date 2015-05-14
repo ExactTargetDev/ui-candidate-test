@@ -1,0 +1,12 @@
+<div id="sidelinkArea" ng-controller="SideLinkCtrl">
+	<div class="exactMenu" style="border:1px solid #000;">
+		<div class="menu_header">
+			Interactive<br>Marketing Hub
+		</div>	
+		<ul ng-repeat="item in sideLinks">
+		  <li class="{{item.icon}}">
+		    <a href="{{item.link}}" title="{{item.text}}">{{item.text}}</a>
+		  </li>
+		</ul>
+	</div>
+</div>
