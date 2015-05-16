@@ -149,7 +149,30 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     var peopleObject = function() {
+           [{"firstName":"Donald",
+                        "lastName":"Duck",
+                        "city":"LA",
+                        "state":"CA",
+                        "zip":"09844",
+                        "phones":[{"number":"993 999-9999","type":"home"},
+                                   {"number":"888 999-3333","type":"work"},
+                                   {"number":"333 898-2344","type":"mobile"}
+                                  ]
+                       },
+                       {"firstName":"Mickey",
+                        "lastName":"Mouse",
+                        "city":"LA",
+                        "state":"CA",
+                        "zip":"09833",
+                        "phones":[{"number":"993 999-9999","type":"home"},
+                                  {"number":"888 999-3333","type":"work"},
+                                  {"number":"333 898-2344","type":"mobile"}
+                                 ]
+                       }
+           ]
 
+     }
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
@@ -162,10 +185,44 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     
+     var DataTable = (function() {
+         var columns = [];
+         var rows = [];
+         
+         return {
+             addRows: function(item) {
+                 rows.push(item);
+             },
+             addColumns: function(item) {
+                 columns.push(item);
+             },
+             getData: function() {
+                 return colums;      // not sure how you are intending to combine columns and rows
+             }
+         }
+     });
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     var selectFunc = function() {
+         var options = ['red', 'yellow', 'blue', 'green'];
+         $('#div1').append('<select id="my-select"></select>');
+         var mySelect = $('#my-select');
+         for(var i=0; i<options.length; i++) {
+             mySelect.append('<option value='+options[i]+'>'+options[i]+'</option>');
+         }
+         // add button
+         $('#div1').append('<button id="div1-button" type="button">Show Selected</button>');
+         
+         $('#div1-button').click(function(ev) {
+            var opt = $('#my-select').val();
+            var text = $('#my-select option:selected').text()
+            console.log('value: '+opt+', text: '+text);
+         });
+     }
+     
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
