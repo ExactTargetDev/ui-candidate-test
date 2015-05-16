@@ -1,22 +1,34 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+         var stringArray = str.split('');
+         var revStringArray = stringArray.reverse();
+         return revStringArray.join('');
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+         values.sort(function(x,y){
+                        return (x - y);
+                        });
+         return values[0];
      }
 
-     // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
+     // Write a function that takes an array aand returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+         var sortArray = values.sort();            // sort
+         for(var i=1; i<sortArray.length; i++) {   
+             if(sortArray[i-1] == sortArray[i]) {   // look for duplicates
+                sortArray.splice(i-1, 1);           // remove previous duplicate
+                i = i - 1;                          // adjust array index
+             }      
+         }
+         return sortArray;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,7 +36,27 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         var i = 1;
+         var output = '';
+         var outArray = [];
+         var printme = '';
+         for(i = 1; i <= 100; i++) {
+             printme = '';
+             if(i % 3 == 0) {
+                 printme = 'Fizz';
+             }
+             if(i % 5 == 0) {
+                 printme += 'Buzz';
+             }
+             if(printme == ''){
+                 printme = i;
+             }
+             output += printme+' ';
+             outArray.push(printme);
+         }
+         console.log(outArray);  //  output array to console
+         return outArray;        // return array for Unit test
+             
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -32,7 +64,16 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         if($.isArray(fruits) != true || $.isArray(fruitsToRemove) != true  || ($.isArray(fruits) == true && fruits.length < 1))
+            return false;
+         var index = 0;
+         for(var i = 0; i < fruitsToRemove.length; i++) {
+            index = fruits.indexOf(fruitsToRemove[i]);
+            if(index >= 0) {
+                fruits.splice(index, 1);
+            }
+         }
+         return fruits; // fruits is modified, but return fruits array for unit tests
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -40,25 +81,65 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+         if($.isArray(toPush)) {
+            for(var i=0; i<=toPushlength; i++) {
+                array.push(toPush[i]);
+            }
+         }
+         else {
+             array.push(toPush);
+         }
+         return array;      // array is modified, but return array for unit tests
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         var split = [];
+         if(sourceStr.length > 0) {
+             split =  sourceStr.split(',');
+         }
+         return split;
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+         var sum = 0;
+         var num = 0;
+         
+         if(arguments.length > 0) {
+             for(var i=0; i<arguments.length; i++) {
+                 num = parseFloat(arguments[i]);
+                 if(!isNaN(num))  {
+                    sum += num;
+                 }
+             }
+         }
+         return sum;
+                 
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         var whiteLength = str.match(/\s/g).length;   // get number of whitespace characters
+         if(whiteLength == str.length)                // is length of whitespace same as total string length
+             return true;
+         else
+             return false;
      }
 
      // write an example of a javascript closure
+     var myFunc = function() {
+         var var1 = 'one';      // defined in function so will be available in functions defined inside this function 
+         this.var1 = 'one';     // defined elsewhere so will not be available in functions defined inside this function
+         $.get('undefined.php', function() { // callback function
+             console.log(this.var1);   // should be undefined
+             console.log(var1);        // should be defined
+         }).fail(function() {
+             console.log(this.var1);   // should be undefined
+             console.log(var1);        // should be defined
+             
+         });
+     }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties

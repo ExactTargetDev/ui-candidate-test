@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="//code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div> <h3> Start Time: <span id="unix-time"></span> (in milliseconds)</h3>
+</div>
+</html>
+<script>
+
+$(document).ready(function() {
+						  
+	// startup
+	var time = new Date().getTime();
+	$('#unix-time').text(time);
+	
+	$.ajax({
+		type: 'POST', // Use POST with X-HTTP-Method-Override or a straight PUT if appropriate.
+		dataType: 'text', // Set datatype - affects Accept header
+		url: "http://test3.localhost/meta.txt", // A valid URL
+		headers: {"X-HTTP-Method-Override": "PUT"}, // X-HTTP-Method-Override set to PUT.
+		data: 'name: Leland', // Some data e.g. Valid JSON as a string
+		success: function(a,b,c) {
+			alert('success');
+		},
+		error: function(a,b,c) {
+			alert('error');
+		}
+    });
+	
+});
+</script>
