@@ -27,3 +27,9 @@ test("reverseString Test", 5, function() {
     // Two Words
     equal(reverseString('Nick Reitman'), 'namtieR kciN', 'Check with two words');
 });
+
+test("findMinValue Test", 2, function(){
+    equal(typeof findMinValue, 'function', 'Verify the findMinValue function is present');
+
+    equal(findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), -1.1, 'Verify we find the minimum value');
+});
