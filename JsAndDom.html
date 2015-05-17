@@ -2,10 +2,12 @@
 <html>
 <head>
     <title>JsAndDom</title>
+<script src="//code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
 </head>
 <body>
-	<div id="div1">
-	</div>
+	<div id="div1" >
+    
+    </div>
 
 	<div id="foo" class="bar" style="margin-top:10px;">
 	  <div id="fizz" class="buzz">
@@ -21,5 +23,28 @@
 	</div>
 
 	<script src="jsanddom.js" type="text/javascript"></script>
+
+<script>
+$(document).ready( function () {
+
+// execute
+
+// build select dropdown
+    selectFunc();  
+
+// build DataTable
+     DataTable.addColumns(['column1', 'column2', 'column3']);
+     DataTable.addRow(['value1A', 'value1B', 'value1C']);
+     DataTable.addRow(['value2A', 'value2B', 'value2C']);
+     var dT = DataTable.getData();        // retrieve DataTable object
+     console.log('DataTable object below:');             // show DataTable object
+     console.log(dT);
+
+// display closure results to console log
+    myClosure();  
+    
+    
+});
+</script>
 </body>
 </html>
