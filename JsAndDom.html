@@ -29,7 +29,19 @@ $(document).ready( function () {
 
 // execute
 
-selectFunc();    
+// build select dropdown
+    selectFunc();  
+
+// build DataTable
+     DataTable.addColumns(['column1', 'column2', 'column3']);
+     DataTable.addRow(['value1A', 'value1B', 'value1C']);
+     DataTable.addRow(['value2A', 'value2B', 'value2C']);
+     var dT = DataTable.getData();        // retrieve DataTable object
+     console.log('DataTable object below:');             // show DataTable object
+     console.log(dT);
+
+// display closure results to console log
+    myClosure();  
     
     
 });

@@ -15,6 +15,9 @@ test( "Example Test", 2, function() {
 Please create your tests below...
 ********************************/
 
+// fix IE8 console problem  ///////
+if(!window.console) {console = {log: function() {}} };////////////////////////////////////
+
 test('reverse string', 2, function() {
     // Verify the method exists
     equal( typeof reverseString, 'function', 'Must contain a reverseString function' ); 
@@ -54,12 +57,27 @@ test('remove fruits', 3, function() {
     equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' ); 
     
     var f = removeFruits(['apple', 'orange', 'grapes', 'melon'],['grapes','lemon', 'orange']);
-    ok(f.length == 2 && f.indexOf('apple') >= 0 && f.indexOf('melon') >= 0,
+    ok(f.length == 2 && $.inArray('apple',f) >= 0 && $.inArray('melon',f) >= 0,
        'Expected true as the result, the result was false');
     
     ok(removeFruits('apple', ['apple']) == false,
       'Expected  false, the result was not false');
 });
 
-myFunc();
+test('push onto array', 3, function() {
+    // Verify the method exists
+    equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' ); 
+    
+    var array = ['apple', 'orange', 'grapes'];
+    pushOntoArray(array, ['fig','melon'])
+    ok(JSON.stringify(array) == JSON.stringify(['apple', 'orange', 'grapes','fig','melon']),
+       'Expected true as the result, the result was false');
+   
+    pushOntoArray(array, 'cranberry');
+    ok(JSON.stringify(array) == JSON.stringify(['apple', 'orange', 'grapes','fig','melon','cranberry']),
+      'Expected  true, the result was false');
+});
+
+
+
 

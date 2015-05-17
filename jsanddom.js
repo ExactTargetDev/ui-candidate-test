@@ -4,6 +4,10 @@
         return a / b;
      }
 
+// fix IE8 console problem  ///////
+if(!window.console) {console = {log: function() {}} };
+////////////////////////////////////     
+     
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          var stringArray = str.split('');
@@ -68,7 +72,7 @@
             return false;
          var index = 0;
          for(var i = 0; i < fruitsToRemove.length; i++) {
-            index = fruits.indexOf(fruitsToRemove[i]);
+            index = $.inArray(fruitsToRemove[i], fruits);     
             if(index >= 0) {
                 fruits.splice(index, 1);
             }
@@ -82,14 +86,13 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          if($.isArray(toPush)) {
-            for(var i=0; i<=toPushlength; i++) {
+            for(var i=0; i<toPush.length; i++) {
                 array.push(toPush[i]);
             }
          }
          else {
              array.push(toPush);
          }
-         return array;      // array is modified, but return array for unit tests
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
@@ -128,15 +131,15 @@
      }
 
      // write an example of a javascript closure
-     var myFunc = function() {
+     var myClosure = function() {
          var var1 = 'one';      // defined in function so will be available in functions defined inside this function 
          this.var1 = 'one';     // defined elsewhere so will not be available in functions defined inside this function
          $.get('undefined.php', function() { // callback function
-             console.log(this.var1);   // should be undefined
-             console.log(var1);        // should be defined
+             console.log('myClosure function - should be undefined: '+this.var1);   // should be undefined
+             console.log('myClosure function - should be "one": '+var1);        // should be defined
          }).fail(function() {
-             console.log(this.var1);   // should be undefined
-             console.log(var1);        // should be defined
+             console.log('myClosure function - should be undefined: '+this.var1);   // should be undefined
+             console.log('myClosure function - should be "one": '+var1);        // should be defined
              
          });
      }
@@ -189,37 +192,72 @@
      var DataTable = (function() {
          var columns = [];
          var rows = [];
+         var dtArray = [];
+         var obj = {};
          
          return {
-             addRows: function(item) {
-                 rows.push(item);
+             addColumns: function(items) {
+                 if($.isArray(items)) {
+                    for(var i=0; i<items.length; i++) { // build a single row array
+                        columns.push(items[i]);      
+                    }
+                 }
+                 else {
+                     columns.push(items);
+                 }
              },
-             addColumns: function(item) {
-                 columns.push(item);
+             addRow: function(items) {
+                 var tempRow = [];
+                 if($.isArray(items)) {
+                    for(var i=0; i<items.length; i++) { // build a single row array
+                        tempRow.push(items[i]);      
+                    }
+                 }
+                 else {
+                     tempRow.push(items);
+                 }
+                 rows.push(tempRow);     //  push the single row to rows array
              },
              getData: function() {
-                 return colums;      // not sure how you are intending to combine columns and rows
+                 for(var r=0; r<rows.length; r++) {
+                    var tempObj = {};                    
+                    for(var c=0; c<columns.length; c++) {
+                        tempObj[columns[c]] = rows[r][c];
+                    }
+                    dtArray.push(tempObj);       // build array of dt row objects
+                    obj.dataTable = dtArray;     // build dt object
+                 }
+                 return obj;      // return populated DataTable object
              }
          }
-     });
+     })();
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     
      var selectFunc = function() {
          var options = ['red', 'yellow', 'blue', 'green'];
          $('#div1').append('<select id="my-select"></select>');
          var mySelect = $('#my-select');
+         mySelect.append('<option value=>- select -</option>');  // add initial select prompt
+         // add options
          for(var i=0; i<options.length; i++) {
              mySelect.append('<option value='+options[i]+'>'+options[i]+'</option>');
          }
          // add button
          $('#div1').append('<button id="div1-button" type="button">Show Selected</button>');
-         
+         // add message area
+         $('#div1').append('<span id="selected-message"></span>');
+         // set click event for button
          $('#div1-button').click(function(ev) {
             var opt = $('#my-select').val();
-            var text = $('#my-select option:selected').text()
-            console.log('value: '+opt+', text: '+text);
+            var text = $('#my-select option:selected').text();
+            if(opt != '') {
+                $('#selected-message').text(text);
+                console.log('selected value: '+opt+', text: '+text);
+            }
+              
          });
      }
      
