@@ -63,7 +63,7 @@ test( 'Push Element On To Array Test', 2, function() {
     // Execute method as it affects the fruits collection directly (rather than return a result)
     pushOntoArray( array, toPushEl );
 
-    deepEqual( array, toPushEl, 'Expected [1, 2, 3, 4, 5, 6] as the result, the result was: ' + JSON.stringify( array ) );
+    deepEqual( array, [1, 2, 3, 4, 5, 6], 'Expected [1, 2, 3, 4, 5, 6] as the result, the result was: ' + JSON.stringify( array ) );
 });
 
 test( 'Push Array On To Array Test', 2, function() {
@@ -73,9 +73,11 @@ test( 'Push Array On To Array Test', 2, function() {
     equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' ); 
 
     // Execute method as it affects the fruits collection directly (rather than return a result)
+    console.log( array );
     pushOntoArray( array, toPushArr );
+    console.log( array );
 
-    deepEqual( array, toPushArr, 'Expected [1, 2, 3, 4, 5, 7, 8, 9] as the result, the result was: ' + JSON.stringify( array ) );
+    deepEqual( array, [1, 2, 3, 4, 5, 7, 8, 9], 'Expected [1, 2, 3, 4, 5, 7, 8, 9] as the result, the result was: ' + JSON.stringify( array ) );
 });
 
 test( 'Split List String Using Comma Test', 2, function() {
