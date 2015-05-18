@@ -136,6 +136,51 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+    var people = [{
+        FirstName: 'Dominic',
+        LastName: 'Reitman',
+        City: 'Fishers',
+        State: 'IN',
+        Zip: '46037',
+        PhoneNumbers: {
+            Home: '317-555-5533',
+            Mobile: '317-555-5533',
+            Work: '317-555-2879'
+        }
+    },{
+        FirstName: 'Sylvia',
+        LastName: 'Reitman',
+        City: 'Fishers',
+        State: 'IN',
+        Zip: '46037',
+        PhoneNumbers: {
+            Home: '317-555-1383',
+            Mobile: '317-555-1383',
+            Work: '317-555-4666'
+        }
+    },{
+        FirstName: 'Andrew',
+        LastName: 'Reitman',
+        City: 'Fishers',
+        State: 'IN',
+        Zip: '46037',
+        PhoneNumbers: {
+            Home: '317-555-5533',
+            Mobile: '',
+            Work: ''
+        }
+    },{
+        FirstName: 'Mike',
+        LastName: 'Jones',
+        City: 'Indianapolis',
+        State: 'IN',
+        Zip: '46256',
+        PhoneNumbers: {
+            Home: '317-555-1234',
+            Mobile: '317-555-6734',
+            Work: ''
+        }
+    }];
 
 
      // Create a javascript object (DataTable) with the following:
