@@ -12,3 +12,10 @@ test( 'Example Test', 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+
+module( 'Candidate Unit Tests' );
+
+test( 'Reverse String Test', 1, function() {
+    equal( typeof reverseString, 'function', 'Must contain a reverseString function' ); 
+});
+
