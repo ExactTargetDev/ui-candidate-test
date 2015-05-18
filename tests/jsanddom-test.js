@@ -81,3 +81,11 @@ test("sum", 2, function() {
 
     equal(sum(1, 1, 2, 3, 5, 7), 19, 'Check that sum works correctly');
 });
+
+
+test("isOnlyWhitespace Test", 3, function() {
+    equal(typeof isOnlyWhitespace, 'function', 'Verify the isOnlyWhitespace function is present');
+
+    equal(isOnlyWhitespace('   \t\r  \n   \t \n   '), true, 'Check with only white space characters');
+    equal(isOnlyWhitespace('   \t\r  fn   \t \n   '), false, 'Check with regular characters');
+});
