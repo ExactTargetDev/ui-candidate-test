@@ -46,3 +46,11 @@ test("findDistinctValues", 3, function(){
 test("doFizzBuzz Test", 1, function(){
     equal(typeof doFizzBuzz, 'function', 'Verify the doFizzBuzz function is present');
 });
+
+test("removeFruits", 2, function() {
+    equal(typeof removeFruits, 'function', 'Verify the removeFruits function is present');
+
+    var fruits = ['apple', 'orange', 'pear', 'peach', 'plum', 'banana', 'melon'];
+
+    deepEqual(removeFruits(fruits, ['pear', 'apple', 'melon']), ['orange', 'peach', 'plum', 'banana'], 'Verify we revmoved the correct fruits from the list');
+});
