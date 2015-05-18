@@ -11,7 +11,15 @@ function reverseString( str ) {
 
 // Write a function that takes an array of numbers and returns the minimum value
 function findMinValue( values ) {
-    // FILL THIS IN
+    if( !_.isArray( values ) || values.length == 0 ) {
+        return;
+    }
+
+    if( values.length === 1 ) {
+        return values[0];
+    }
+
+    return _.min( values );
 }
 
 // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)

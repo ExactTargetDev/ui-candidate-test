@@ -20,3 +20,11 @@ test( 'Reverse String Test', 2, function() {
 
     ok( reverseString( 'Subscribers rock' ), 'kcor srebircsbuS', 'Expected kcor srebircsbuS as the result, the result was: ' + reverseString( 'Subscribers rock' ) );
 });
+
+test( 'Find Min Value Test', 2, function() {
+    var testValues = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+
+    equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' ); 
+
+    ok( findMinValue( testValues ), '-1.1', 'Expected -1.1 as the result, the result was: ' + findMinValue( testValues ) );
+});
