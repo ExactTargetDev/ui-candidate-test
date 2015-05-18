@@ -24,7 +24,28 @@ function findMinValue( values ) {
 
 // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
 function findDistinctValues( values ) {
-    // FILL THIS IN
+    // Values as keys for quick lookup
+    var HashMap = {};
+
+    var distinctValues = [];
+    var n = values.length - 1;
+
+    // Sanity...
+    if( !_.isArray( values ) || values.length == 0 ) {
+        return;
+    }
+
+    do {
+        // Safety-first...
+        if( !values[n] ) break;
+        if( HashMap[values[n]] ) continue;
+
+        HashMap[values[n]] = true;
+
+        distinctValues.push( values[n] );
+    } while( n-- );
+
+    return distinctValues;
 }
 
 // Write a function that logs the numbers from 1 to 100 to the console.

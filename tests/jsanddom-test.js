@@ -28,3 +28,11 @@ test( 'Find Min Value Test', 2, function() {
 
     ok( findMinValue( testValues ), '-1.1', 'Expected -1.1 as the result, the result was: ' + findMinValue( testValues ) );
 });
+
+test( 'Find Distinct Values Test', 2, function() {
+    var testValues = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+
+    equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' ); 
+
+    ok( findDistinctValues( testValues ), [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity], 'Expected [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity] as the result, the result was: ' + JSON.stringify( findDistinctValues( testValues ) ) );
+});
