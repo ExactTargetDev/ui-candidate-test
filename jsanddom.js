@@ -53,7 +53,34 @@ function findDistinctValues( values ) {
 // For multiples of five print "Buzz".
 // For numbers which are multiples of both three and five print "FizzBuzz".
 function doFizzBuzz() {
-    // FILL THIS IN
+    var fizzBuzz = '';
+
+    var max = 101;
+    var min;
+
+
+    for( min = 1; min < max; min++ ) {
+        fizzBuzz = '';
+
+        // For multiples of three print "Fizz" instead of the number.
+        if( min %3 == 0 ) {
+            fizzBuzz = 'Fizz';
+            console.log( fizzBuzz );
+        } else {
+            console.log( min );
+        }
+
+        // For multiples of five print "Buzz".
+        if( min %5 == 0 ) {
+            fizzBuzz += 'Buzz';
+            console.log( 'Buzz' );
+        }
+
+        // For numbers which are multiples of both three and five print "FizzBuzz".
+        if( fizzBuzz.length > 0 ) {
+            console.log( fizzBuzz );
+        }
+    }
 }
 
 // You have a master array of strings, where each element is a fruit name.

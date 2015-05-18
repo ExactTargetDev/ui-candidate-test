@@ -36,3 +36,7 @@ test( 'Find Distinct Values Test', 2, function() {
 
     ok( findDistinctValues( testValues ), [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity], 'Expected [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity] as the result, the result was: ' + JSON.stringify( findDistinctValues( testValues ) ) );
 });
+
+test( 'Do Fizz Buzz Test', 1, function() {
+    equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' ); 
+});
