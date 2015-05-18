@@ -6,7 +6,7 @@ function divide(  a, b  ) {
 
 // Write a function that takes a single argument (a string) and returns the string reversed.
 function reverseString( str ) {
-    // FILL THIS IN
+    return _.str.reverse( str );
 }
 
 // Write a function that takes an array of numbers and returns the minimum value
