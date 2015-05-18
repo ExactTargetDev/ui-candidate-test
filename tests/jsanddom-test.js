@@ -41,3 +41,8 @@ test("findDistinctValues", 3, function(){
     deepEqual(findDistinctValues([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity], 'Check that we got a unique set of numbers');
     deepEqual(findDistinctValues([1,3,'dupe',5,5,'5',7,3,8,'dupe']), [1,3,'dupe',5,'5',7,8], 'Check that strings evaluate uniquely');
 });
+
+
+test("doFizzBuzz Test", 1, function(){
+    equal(typeof doFizzBuzz, 'function', 'Verify the doFizzBuzz function is present');
+});
