@@ -13,9 +13,10 @@ test( 'Example Test', 2, function() {
 Please create your tests below...
 ********************************/
 
-module( 'Candidate Unit Tests' );
+module( 'Candidate Unit Test' );
 
-test( 'Reverse String Test', 1, function() {
+test( 'Reverse String Test', 2, function() {
     equal( typeof reverseString, 'function', 'Must contain a reverseString function' ); 
-});
 
+    ok( reverseString( 'Subscribers rock' ), 'kcor srebircsbuS', 'Expected kcor srebircsbuS as the result, the result was: ' + reverseString( 'Subscribers rock' ) );
+});
