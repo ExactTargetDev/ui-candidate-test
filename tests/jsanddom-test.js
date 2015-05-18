@@ -33,3 +33,11 @@ test("findMinValue Test", 2, function(){
 
     equal(findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), -1.1, 'Verify we find the minimum value');
 });
+
+
+test("findDistinctValues", 3, function(){
+    equal(typeof findDistinctValues, 'function', 'Verify the findDistinctValues function is present');
+
+    deepEqual(findDistinctValues([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity], 'Check that we got a unique set of numbers');
+    deepEqual(findDistinctValues([1,3,'dupe',5,5,'5',7,3,8,'dupe']), [1,3,'dupe',5,'5',7,8], 'Check that strings evaluate uniquely');
+});
