@@ -154,7 +154,7 @@ function sum() {
 
 // Write a function that will return true if a specified string consists of only whitespace.
 function isOnlyWhitespace( sourceStr ) {
-    // FILL THIS IN
+    return sourceStr.replace( new RegExp( /^\s+|\s+$/g ), '' ).length == 0;
 }
 
 // write an example of a javascript closure
@@ -167,6 +167,36 @@ function isOnlyWhitespace( sourceStr ) {
 // - state
 // - zip
 // - a collection of phone numbers (home, work, mobile)
+var PeopleCollection = [
+    {
+        "first_name": "Joe",
+        "last_name": "Bob",
+        "city": "Manchester",
+        "state": "KY",
+        "zip": "40962",
+        "phone_numbers": [  // making sure its a collection
+            {
+                "home": "606-598-0000",
+                "work": "606-598-0001",
+                "mobile": "606-598-0002"
+            }
+        ]
+    },
+    {
+        "first_name": "Jenny",
+        "last_name": "Anonymous",
+        "city": "Colorado Springs",
+        "state": "CO",
+        "zip": "80909",
+        "phone_numbers": [
+            {
+                "home": "719-867-5309",
+                "work": "",
+                "mobile": ""
+            }
+        ]
+    }
+];
 
 
 // Create a javascript object (DataTable) with the following:
@@ -181,17 +211,152 @@ function isOnlyWhitespace( sourceStr ) {
 // .addRow('value1A', 'value1B', 'value1C');
 // .addRow('value2A', 'value2B', 'value2C');
 
+var DataTable = function( obj ) {
+    // A private columns property (string array)
+    var columns = [];
+
+    // A private rows property (string array)
+    var rows = [];
+
+    this.rowCount = 0;
+};
+
+DataTable.prototype.addRows = function() {
+    var args = _.toArray( arguments );
+
+    var stringArr;
+
+    if( args.length === 0 ) {
+        throw 'You must provide at least 1 row to use DataTable.addRows!';
+    }
+
+    stringArr = _.chain( args ).map( function( arg ) {
+        if( _.isString( arg ) ) {
+            return arg;
+        }
+    }).filter( Boolean ).value();
+
+    if( stringArr.length === 0 ) {
+        return;
+    }
+
+    rows = rows.concat( stringArr );
+};
+
+DataTable.prototype.addColumns = function() {
+    var args = _.toArray( arguments );
+
+    var stringArr;
+
+    if( args.length === 0 ) {
+        throw 'You must provide at least 1 row to use DataTable.addRows!';
+    }
+
+    stringArr = _.chain( args ).map( function( arg ) {
+        if( _.isString( arg ) ) {
+            return arg;
+        }
+    }).filter( Boolean ).value();
+
+    if( stringArr.length === 0 ) {
+        return;
+    }
+
+    columns = columns.concat( stringArr );
+};
+
+DataTable.prototype.getData = function() {
+    return {
+        columns: columns,
+        rows: rows
+    };
+};
+
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
+( function( $ ) {
+    'use strict';
+
+    var $select = $( '<select />' );
+    var $btn    = $( '<button>Go</button>' );
+
+    var options = ['option1', 'option2', 'option3', 'option4'];
+    var n = options.length;
+
+    var i;
+
+    $( function() {
+
+        $( '#div1' ).append( $select, $btn );
+
+        for( i = 0; i < n; i++ ) {
+            $( '<option />', {
+                value: options[i],
+                text: 'Option ' + i
+            }).appendTo( $select );
+        }
+
+        $btn.on( 'click', function( e ) {
+            if( e && e.preventDefault ) {
+                e.preventDefault();
+            }
+
+            console.log( $select.find( ':selected' ).val() );
+        });
+    });
+}( jQuery ));
 
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
+var selectors = [ $( '#foo a.link' ), $( '#foo .buzz a.link' ), $( '#foo' ).find( 'a.link' ), $( '#foo .buzz' ).find( 'a.link' ), $( '#fizz a.link' ) ];
 
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
+( function( $ ) {
+    'use strict';
+
+    var listItems = [ 'listItem 1', 'listItem 2', 'listItem 3', 'listItem 4', 'listItem 5' ];
+    var n = listItems.length;
+
+    var i;
+
+    $( function() {
+        var $list     = $( '#list1' );
+
+        for( i = 0; i < n; i++ ) {
+            $list.append( '<li>' + listItems[i] + '</li>' );
+        }
+    });
+}( jQuery ));
+
 
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+( function( $ ) {
+    'use strict';
+
+    $( document ).ready( function() {
+        var $checkAll = $( '<a name="checkAll" id="checkAll" href="#">check All</a>' ).on( 'click', function() {
+            $( '.checkboxListItems' ).each(function( idx, el ) {
+                $( this ).prop( 'checked', true );
+            });
+        });
+
+        var $uncheckAll = $( '<a name="uncheckAll" id="uncheckAll" href="#">uncheck All</a>' ).on( 'click', function() {
+            $( '.checkboxListItems' ).each( function( idx, el ) {
+                $( this ).prop( 'checked', false );
+            });
+        });
+
+        $( '#foobar' ).css({
+            'margin-left': '50px'
+        }).append( $checkAll, '&nbsp;&nbsp;&nbsp;', $uncheckAll );
+
+        for( i = 0; i < 20; i++) {
+            $( '#foobar' ).append( '<div><input type="checkbox" name="checkboxList[]" class="checkboxListItems" value="checkBoxListItem ' + i + '" /> Meh</div>' );
+        }
+    });
+})(jQuery);

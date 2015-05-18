@@ -89,10 +89,17 @@ test( 'Split List String Using Comma Test', 2, function() {
     deepEqual( splitListStrUsingComma( sourceStr ), ["The", " quick", " brown", " fox jumped over"], 'Expected ["The", " quick", " brown", " fox jumped over"] as the result, the result was: ' + JSON.stringify( splitListStrUsingComma( sourceStr ) ) );
 });
 
-test( 'Split List String Using Comma Test', 2, function() {
+test( 'Sum Test', 2, function() {
     equal( typeof sum, 'function', 'Must contain a sum function' ); 
 
     // Execute method as it affects the fruits collection directly (rather than return a result)
     deepEqual( sum( 1, 1, 2, 3, 5, 7 ), 19, 'Expected 19 as the result, the result was: ' + sum( 1, 1, 2, 3, 5, 7 ) );
+});
+
+test( 'Is Only Whitespace Test', 2, function() {
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' ); 
+
+    // Execute method as it affects the fruits collection directly (rather than return a result)
+    ok( isOnlyWhitespace( '       ' ), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace( '       ' ) );
 });
 
