@@ -107,7 +107,7 @@
         {
           tsum  = args[a];
      }
-     console.log('Sum is : '   tsum);
+     console.log(tsum);
 
      }
 
@@ -180,8 +180,10 @@
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
