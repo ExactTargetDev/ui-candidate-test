@@ -31,10 +31,10 @@ test( 'Find Min Value Test', 2, function() {
 
 test( 'Find Distinct Values Test', 2, function() {
     var testValues = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
-
+    var distinctValues = findDistinctValues( testValues );
     equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' ); 
 
-    deepEqual( findDistinctValues( testValues ), [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity], 'Expected [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity] as the result, the result was: ' + JSON.stringify( findDistinctValues( testValues ) ) );
+    deepEqual( _.sortBy( distinctValues, function( num ) { return num; }), [-1.1, .18, 1, 3, 5, 7, 12, 20, Infinity], 'Expected [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity] as the result, the result was: ' + JSON.stringify( findDistinctValues( testValues ) ) );
 });
 
 test( 'Do Fizz Buzz Test', 1, function() {
@@ -85,5 +85,12 @@ test( 'Split List String Using Comma Test', 2, function() {
 
     // Execute method as it affects the fruits collection directly (rather than return a result)
     deepEqual( splitListStrUsingComma( sourceStr ), ["The", " quick", " brown", " fox jumped over"], 'Expected ["The", " quick", " brown", " fox jumped over"] as the result, the result was: ' + JSON.stringify( splitListStrUsingComma( sourceStr ) ) );
+});
+
+test( 'Split List String Using Comma Test', 2, function() {
+    equal( typeof sum, 'function', 'Must contain a sum function' ); 
+
+    // Execute method as it affects the fruits collection directly (rather than return a result)
+    deepEqual( sum( 1, 1, 2, 3, 5, 7 ), 19, 'Expected 19 as the result, the result was: ' + sum( 1, 1, 2, 3, 5, 7 ) );
 });
 
