@@ -88,7 +88,26 @@ function doFizzBuzz() {
 // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
 // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
 function removeFruits( fruits, fruitsToRemove ) {
-    // FILL THIS IN
+    var distinctFruits = [];
+    var indexToRemove  = 0;
+    var n = 0;
+
+    // Returning when fruitsToRemove is empty as there isn't a need to do anything to the master fruits collection
+    if( !_.isArray( fruits ) || fruits.length == 0 || !_.isArray( fruitsToRemove ) || fruitsToRemove.length == 0 ) {
+        return;
+    }
+
+    distinctFruits = findDistinctValues( fruitsToRemove );
+
+    n = distinctFruits.length - 1;
+    do {
+        indexToRemove = _.indexOf( fruits, distinctFruits[n] );
+        if( indexToRemove == -1 ) {
+            continue;
+        }
+
+        fruits.splice( indexToRemove, 1 );
+    } while( n-- );
 }
 
 // Write a function to push either a simple value or an array of values onto a specified array.

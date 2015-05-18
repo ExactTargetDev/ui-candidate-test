@@ -40,3 +40,16 @@ test( 'Find Distinct Values Test', 2, function() {
 test( 'Do Fizz Buzz Test', 1, function() {
     equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' ); 
 });
+
+
+test( 'Remove Fruits Test', 2, function() {
+    var fruits         = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+    var fruitsToRemove = ['pear', 'banana'];
+
+    equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' ); 
+
+    // Execute method as it affects the fruits collection directly (rather than return a result).
+    removeFruits( fruits, fruitsToRemove );
+
+    ok( fruits, ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Expected [apple, orange, kiwi, plum, strawberry] as the result, the result was: ' + JSON.stringify( fruits ) );
+});
