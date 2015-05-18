@@ -1,0 +1,147 @@
+
+body {
+	background-color: #f1f1f1;
+}
+header{
+	background-image: url("../img/header.jpg");
+	background-repeat: repeat-x;
+}
+
+nav ul {
+	display: inline-block;
+		padding: 0;
+		margin: 0;
+
+}
+
+nav ul li {
+ 	font-size: 11px;
+ 	padding-top: 7px;
+ 	font-family: Arial, sans-serif;
+ 	color: #6b8d9b;
+	text-decoration: none;
+	display: inline-block;
+}
+
+nav ul li a{
+ 	font-family: Arial, sans-serif;
+ 	color: #6b8d9b;
+	text-decoration: none;
+
+
+}
+
+aside{
+	background-color: #f4f4f5;
+	display: block;
+	margin: 100 20 0 0;
+ 	float: left;
+}
+
+aside ul {
+		padding: 0px 0px 0px 10px ;
+		margin: 0;
+
+}
+
+aside ul li {
+ 	font-size: 12px;
+ 	padding: 17px 0px 0px 0px;
+ 	font-family: Arial, sans-serif;
+ 	color: #888888;
+	text-decoration: none;
+	display: block;
+}
+
+hr {display: block; height: 1px;
+    border: 0; 
+	border-top: 1px solid #e1e1e2;
+}
+
+#app_launcher {
+	margin: 20px 0px 0px 10px;
+}
+
+#calendar img {
+	padding: 0px 0px 0px 20px;
+}
+
+.clear {
+	clear: both;
+}
+.icon {
+	padding: 10px 10px 0px 0px;
+	float: left;
+}
+
+
+.divider{
+	color: #ffffff;
+}
+
+.selected {
+	width: 220px !important;
+	padding: 0px !important;
+}
+
+.pulse { 
+	width: 165px;
+	padding: 5px 2px 10px 2px;
+}
+#pulse {
+	background-image: url("../img/pulseBG.jpg");
+	background-repeat: repeat-x;
+	margin-left: 210px;
+	width: 990px;
+
+}
+
+.nav-right {
+	float: right;
+	padding-right: 120px;
+}
+
+#app_launcher a{
+	color: #888888;
+	text-decoration: none;
+}
+
+
+
+#app_launcher a:hover{
+	background-color: #000;
+	color: #fff;
+
+}
+
+#app_launcher a:active { 
+	color: #000; 
+}
+
+ .pulse-nav{
+ 	text-align: center;
+
+ }
+
+ .pulse-nav a{ 
+	display: inline-block;
+ 	width: 25px;
+ 	height: 25px;
+ 	cursor: pointer;
+ 	margin-left: 15px;
+ 	background: url(../img/nav_btns.png) no-repeat 0px 0px;
+ }
+
+.pulse-nav a:hover{
+	background-position: -25px 0px;
+}
+
+.centerMe {
+	padding-top: 100px;
+	text-align: center;
+}
+
+
+
+
+

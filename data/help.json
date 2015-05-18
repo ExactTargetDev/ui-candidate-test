@@ -1,4 +1,4 @@
-{
+dataHandler({
     "help": [
         {
             "title": "What is JSON?",
@@ -13,4 +13,4 @@
             "URL": "http://code.exacttarget.com/question/rest-api-authentication"
         }
     ]
-}
+});
