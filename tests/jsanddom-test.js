@@ -34,7 +34,7 @@ test( 'Find Distinct Values Test', 2, function() {
 
     equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' ); 
 
-    ok( findDistinctValues( testValues ), [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity], 'Expected [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity] as the result, the result was: ' + JSON.stringify( findDistinctValues( testValues ) ) );
+    deepEqual( findDistinctValues( testValues ), [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity], 'Expected [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity] as the result, the result was: ' + JSON.stringify( findDistinctValues( testValues ) ) );
 });
 
 test( 'Do Fizz Buzz Test', 1, function() {
@@ -51,7 +51,7 @@ test( 'Remove Fruits Test', 2, function() {
     // Execute method as it affects the fruits collection directly (rather than return a result) - which is "assumed" but not "spelled out" as the instructions for pushOntoArray is.
     removeFruits( fruits, fruitsToRemove );
 
-    ok( fruits, ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Expected [apple, orange, kiwi, plum, strawberry] as the result, the result was: ' + JSON.stringify( fruits ) );
+    deepEqual( fruits, ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Expected [apple, orange, kiwi, plum, strawberry] as the result, the result was: ' + JSON.stringify( fruits ) );
 });
 
 test( 'Push Element On To Array Test', 2, function() {
@@ -63,7 +63,7 @@ test( 'Push Element On To Array Test', 2, function() {
     // Execute method as it affects the fruits collection directly (rather than return a result)
     pushOntoArray( array, toPushEl );
 
-    ok( array, toPushEl, 'Expected [1, 2, 3, 4, 5, 6] as the result, the result was: ' + JSON.stringify( array ) );
+    deepEqual( array, toPushEl, 'Expected [1, 2, 3, 4, 5, 6] as the result, the result was: ' + JSON.stringify( array ) );
 });
 
 test( 'Push Array On To Array Test', 2, function() {
@@ -75,6 +75,15 @@ test( 'Push Array On To Array Test', 2, function() {
     // Execute method as it affects the fruits collection directly (rather than return a result)
     pushOntoArray( array, toPushArr );
 
-    ok( array, toPushArr, 'Expected [1, 2, 3, 4, 5, 7, 8, 9] as the result, the result was: ' + JSON.stringify( array ) );
+    deepEqual( array, toPushArr, 'Expected [1, 2, 3, 4, 5, 7, 8, 9] as the result, the result was: ' + JSON.stringify( array ) );
+});
+
+test( 'Split List String Using Comma Test', 2, function() {
+    var sourceStr = 'The, quick, brown, fox jumped over';
+
+    equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' ); 
+
+    // Execute method as it affects the fruits collection directly (rather than return a result)
+    deepEqual( splitListStrUsingComma( sourceStr ), ["The", " quick", " brown", " fox jumped over"], 'Expected ["The", " quick", " brown", " fox jumped over"] as the result, the result was: ' + JSON.stringify( splitListStrUsingComma( sourceStr ) ) );
 });
 
