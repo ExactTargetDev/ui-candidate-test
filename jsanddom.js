@@ -351,6 +351,8 @@ var selectors = [ $( '#foo a.link' ), $( '#foo .buzz a.link' ), $( '#foo' ).find
             });
         });
 
+        var i;
+
         $( '#foobar' ).css({
             'margin-left': '50px'
         }).append( $checkAll, '&nbsp;&nbsp;&nbsp;', $uncheckAll );
