@@ -1,22 +1,47 @@
      // Example unit test function
      function divide( a, b ) {
-        // To see the test pass, uncomment the following line
-        //return a / b;
+        //To see the test pass, uncomment the following line
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
+          return str.split('').reverse().join('');
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+          var len = values.length, min = Infinity;
+          while (len--) {
+               if (Number(values[len]) < min) {
+                    min = Number(values[len]);
+               }
+          }
+          return min;
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+          var newValue = [],
+              length1 = values.length,
+              found, var1, var2;
+
+          for (var1 = 0; var1 < length1; var1++) {
+               found = undefined;
+               for (var2 = 0; var2 < newValue.length; var2++) {
+                    if (values[var1] === newValue[var2]) {
+                         found = true;
+                         break;
+                    }
+               }
+               if (!found) {
+                    newValue.push(values[var1]);
+               }
+          }
+          return newValue;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -25,6 +50,20 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
+          for ( var x=1; x <= 100; x++){
+               if( x % 3 == 0 ){
+                    console.log("Fizz")
+               }
+               if( x % 5 == 0 ){
+                    console.log("Buzz")
+               }
+               if( ( x % 3 == 0 ) && ( x % 5 == 0 ) ){
+                    console.log("FizzBuzz")
+               }
+               if( ( x % 3 != 0 ) && ( x % 5 != 0 ) ){
+                    console.log(x)
+               }
+          }
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -33,6 +72,15 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+          var what, len = fruitsToRemove.length, ax;
+          while (len > 0 && fruits.length) {
+               what = fruitsToRemove[--len];
+               while ((ax= fruits.indexOf(what)) !== -1) {
+                    fruits.splice(ax, 1);
+               }
+          }
+          console.log(fruits);
+          return fruits;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -41,24 +89,62 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+          newArray = array.concat(toPush);
+          return newArray;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          // FILL THIS IN
+          var res
+          if(sourceStr != ''){
+               res = sourceStr.split(',')
+          } else {
+               res= [];
+          }
+          return res;
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          // FILL THIS IN
+          var i, sumValue = 0;
+          for (i = 0; i < arguments.length; i++) {
+               sumValue += arguments[i];
+          }
+          return sumValue;
+
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
+          if( sourceStr.indexOf(' ') >= 0){
+               return true;
+          }else
+               return false;
+
      }
 
      // write an example of a javascript closure
+
+     // Id generation:
+     function showID () {
+          var myID = 999;
+          // We are returning an object with some inner functions
+          // All the inner functions have access to the outer function's variables
+          return {
+               getID: function ()  {
+                    // This inner function will return the UPDATED myID variable
+                    // It will return the current value of myID, even after the setID function changes it
+                    return myID;
+               },
+               setID: function (theNewID)  {
+                    // This inner function will change the outer function's variable anytime
+                    myID = theNewID;
+               }
+          }
+     }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -69,6 +155,18 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
+     var obj = {
+          "fistName": "Prashanth",
+          "lastName":"Naika",
+          "city":"Chicago",
+          "state":"IL",
+          "zip":60616,
+          "phone": {
+               "home": "3126985475",
+               "work": "3126985476",
+               "mobile":"3126985477"
+          }
+     };
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
@@ -81,6 +179,7 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
