@@ -7,16 +7,20 @@
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
+         return str.split("").reverse().join("");
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+         var min = Math.min.apply(null, values);
+
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+         var unique=_uniq(values);
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,7 +28,24 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         for(var i=1;i<101;i  )
+         {
+           if(i%3==0 && i%5==0)
+           {
+             console.log("FizzBuzz")
+           }
+           else if (i%3==0 )
+           {
+           console.log("Fizz");
+           }
+           else if (i%4==0)
+           {
+             console.log("Buzz")
+           }
+           else {
+             console.log(i);
+           }
+         }
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -33,6 +54,16 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+
+         for(var i=0;i<fruitsToRemove.length;i  )
+         {
+           var ftr= fruitsToRemove[i];
+           for(var k=0;k<fruit.length;k  )
+           {
+             if(fruitsToRemove[i]==fruits[k])
+             fruits.splice(k, 1);
+           }
+         }
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -41,21 +72,57 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+        array.push(toPush);
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          // FILL THIS IN
+
+         if(sourceStr!==null)
+         {
+         var str_array = sourceStr.split(',');
+
+      for(var i = 0; i < str_array.length; i  )
+          {
+    // Trim the excess whitespace.
+      str_array[i] = str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
+
+
+          }
+
+     }
+     else {
+      var str_array = null;
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          // FILL THIS IN
+         var args = arguments;
+
+   var tsum = 0;
+
+    for (var a in args)
+        {
+          tsum  = args[a];
+     }
+     console.log('Sum is : '   tsum);
+
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
+         function isOnlyWhitespace(sourceStr) {
+    var temp = false;
+
+    if((jQuery.trim( sourceStr )).length==0) temp = true;
+       console.log(temp);
+
+
+   return ret;
+}
      }
 
      // write an example of a javascript closure
@@ -68,7 +135,18 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+     var people = function() {
+           [{"firstName":"Foo",
+                        "lastName":"Bar",
+                          "city":"Chicago",
+                          "state":"Illinois",
+                          "zip":"60657",
+                          "phones":[{"number":"999 999-9999","type":"home"},
+                                     {"number":"888 888-888","type":"work"},
+                                     {"number":"777 777-777","type":"mobile"}
+                                    ]
+                         }
+             ]
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
@@ -81,6 +159,22 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     var DataTable = (function() {
+          var columns = [];
+          var rows = [];
+
+          return {
+              addRows: function(item) {
+                  rows.push(item);
+              },
+              addColumns: function(item) {
+                  columns.push(item);
+              },
+              getData: function() {
+                  return colums;
+              }
+          }
+      });
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
