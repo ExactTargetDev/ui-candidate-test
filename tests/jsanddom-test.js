@@ -9,6 +9,6 @@ test( "Example Test", 2, function() {
     // Make sure the result from the divide function is valid
     ok( divide( 4, 2 ), 2, 'Expected 2 as the result, the result was: ' + divide( 4, 2 ) );
 });
-/********************************
+/***************************************123
 Please create your tests below...
 ********************************/
