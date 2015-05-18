@@ -7,46 +7,102 @@
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
+         return str.split('').reverse().join('');
      }
+
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+       // FILL THIS IN
+       var min =  Math.min.apply(Math, values);
+       return min;
+         
      }
 
+      var array = [1, 2, 3, 4, 5, 2, 4];
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+         var distinctArray = values.filter(function(elem, pos) {
+            return values.indexOf(elem) == pos;
+          }); 
+         console.log(distinctArray)
      }
 
+     findDistinctValues(array);
      // Write a function that logs the numbers from 1 to 100 to the console.
      // For multiples of three print "Fizz" instead of the number.
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
+        var i = 1;
+        while(i<101)
+        {
+            if (i % 3 == 0 && i % 5 == 0) {
+                console.log("FizzBuzz")
+            }
+            else if (i % 5 == 0) {
+                console.log("Buzz")
+            }
+            else if (i % 3 == 0){
+                console.log("Fizz")
+            }else{
+                console.log(i)
+            }
+            i++;
+        }
          // FILL THIS IN
      }
+
 
      // You have a master array of strings, where each element is a fruit name.
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
+        for (var i = 0; i < fruitsToRemove.length; i++) {
+            for (var x = 0; x < fruits.length; x++) {
+                if (fruitsToRemove[i]==fruits[x]) {
+                    fruits.splice(x, 1);
+                };
+            };
+        }
          // FILL THIS IN
      }
+
 
      // Write a function to push either a simple value or an array of values onto a specified array.
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+        // FILL THIS IN
+        if(toPush.constructor === Array){
+           for (var i = 0; i < toPush.length; i++) {
+            array.push(toPush[i]); 
+        }
+        }
+        else{
+            array.push(toPush);
+
+        }
+         console.log(array)
      }
+
+    
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
+        var mySplit = [];
+        if (sourceStr == "") {
+            // console.log(mySplit)
+        }else{
+        mySplit = sourceStr.split(",");
+        // console.log(mySplit);
+        }
          // FILL THIS IN
      }
+
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
@@ -60,6 +116,14 @@
 
      // write an example of a javascript closure
 
+     function locationName(city, state){
+        var location = "Your location is ";
+        function makeFullLocation () {
+            return location + city + ", " + state;
+        }
+        return makeFullLocation();
+     }
+
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -68,6 +132,59 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     var people = [
+        {
+            "firstName": 'Chad',          
+            "lastName": 'Perdue',
+            "city": 'Lebanon',
+            "state": 'Indiana',
+            "zip": '46052',
+            "phoneNumbers": [
+                {   
+                    "location": "home",
+                    "phone": "765-481-0471"
+                },
+                {   
+                    "location": "home",
+                    "phone": "765-481-0129"
+                },
+            ]          
+        },
+        {
+            "firstName": 'Jaxon',          
+            "lastName": 'Perdue',
+            "city": 'Zionsvilee',
+            "state": 'Indiana',
+            "zip": '46022',
+            "phoneNumbers": [
+                {   
+                    "location": "home",
+                    "phone": "765-481-0421"
+                },
+                {   
+                    "location": "home",
+                    "phone": "765-481-0229"
+                },
+            ]            
+        },
+        {
+            "firstName": 'Wyatt',          
+            "lastName": 'Perdue',
+            "city": 'Chicago',
+            "state": 'Illinois',
+            "zip": '33333',
+            "phoneNumbers": [
+                {   
+                    "location": "home",
+                    "phone": "765-481-0171"
+                },
+                {   
+                    "location": "home",
+                    "phone": "765-481-1129"
+                },
+            ]            
+        }
+    ]
 
 
      // Create a javascript object (DataTable) with the following:
