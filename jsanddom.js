@@ -110,6 +110,23 @@
      }
 
      // write an example of a javascript closure
+    function MyClosure(secret) {
+        var privateProperty = 'private';
+
+        function privateFunction() {
+            return secret;
+        }
+
+        return {
+            getPrivate: function () {
+                return privateProperty;
+            },
+
+            answerToLife: function () {
+                return privateFunction();
+            }
+        };
+    }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties

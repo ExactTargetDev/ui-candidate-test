@@ -89,3 +89,18 @@ test("isOnlyWhitespace Test", 3, function() {
     equal(isOnlyWhitespace('   \t\r  \n   \t \n   '), true, 'Check with only white space characters');
     equal(isOnlyWhitespace('   \t\r  fn   \t \n   '), false, 'Check with regular characters');
 });
+
+test("Closure Test", 6, function() {
+    equal(typeof MyClosure, 'function', 'Verify MyClosure constructor');
+
+    var my1 = MyClosure(42);
+    var my2 = MyClosure('different value');
+
+
+    equal(my1.privateFunction, undefined, 'Verify our function is private');
+    equal(my1.privateProperty, undefined, 'Verify our property is private');
+    equal(my1.answerToLife(), 42, 'Verify public method works with passed in value');
+    equal(my1.getPrivate(), 'private', 'Verify our access to the private property works');
+
+    equal(my2.answerToLife(), 'different value', 'Make sure our class objects are unique');
+});
