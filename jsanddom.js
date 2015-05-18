@@ -115,7 +115,30 @@ function removeFruits( fruits, fruitsToRemove ) {
 // If toPush is a simple value, it should be pushed onto array as an element.
 // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
 function pushOntoArray( array, toPush ) {
-    // FILL THIS IN
+    var originalVal, n;
+
+    if( !_.isArray( array ) ) {
+        return;
+    }
+
+    // Make sure toPush isn't an object or empty string (otherwise - nothing to do)
+    if( _.isObject || _.str.isBlank( toPush ) ) {
+        return;
+    }
+
+    if( _.isArray( toPush.length == 0 ) && toPush.length === 0 ) {
+        return;
+    }
+
+    if( !_.isArray( toPush ) ) {
+        originalVal = toPush;
+        toPush = [originalVal];
+    }
+
+    n = toPush.length - 1;
+    do {
+        array.push( toPush [n] );
+    } while( n-- );
 }
 
 // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.

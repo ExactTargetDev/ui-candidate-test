@@ -48,8 +48,32 @@ test( 'Remove Fruits Test', 2, function() {
 
     equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' ); 
 
-    // Execute method as it affects the fruits collection directly (rather than return a result).
+    // Execute method as it affects the fruits collection directly (rather than return a result) - which is "assumed" but not "spelled out" as the instructions for pushOntoArray is.
     removeFruits( fruits, fruitsToRemove );
 
     ok( fruits, ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Expected [apple, orange, kiwi, plum, strawberry] as the result, the result was: ' + JSON.stringify( fruits ) );
+});
+
+test( 'Push Element On To Array Test', 2, function() {
+    var array     = [1, 2, 3, 4, 5];
+    var toPushEl  = 6;
+
+    equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' ); 
+
+    // Execute method as it affects the fruits collection directly (rather than return a result)
+    pushOntoArray( array, toPushEl );
+
+    ok( array, toPushEl, 'Expected [1, 2, 3, 4, 5, 6] as the result, the result was: ' + JSON.stringify( array ) );
+});
+
+test( 'Push Array On To Array Test', 2, function() {
+    var array     = [1, 2, 3, 4, 5];
+    var toPushArr = [7, 8, 9];
+
+    equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' ); 
+
+    // Execute method as it affects the fruits collection directly (rather than return a result)
+    pushOntoArray( array, toPushArr );
+
+    ok( array, toPushArr, 'Expected [1, 2, 3, 4, 5, 7, 8, 9] as the result, the result was: ' + JSON.stringify( array ) );
 });
