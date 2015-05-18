@@ -75,3 +75,9 @@ test("splitListStrUsingComma", 3, function(){
 
     deepEqual(splitListStrUsingComma(''), [], 'Check empty string results');
 });
+
+test("sum", 2, function() {
+    equal(typeof sum, 'function', 'Verify the sum function is present');
+
+    equal(sum(1, 1, 2, 3, 5, 7), 19, 'Check that sum works correctly');
+});
