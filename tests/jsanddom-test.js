@@ -54,3 +54,24 @@ test("removeFruits", 2, function() {
 
     deepEqual(removeFruits(fruits, ['pear', 'apple', 'melon']), ['orange', 'peach', 'plum', 'banana'], 'Verify we revmoved the correct fruits from the list');
 });
+
+test("pushOntoArray", 3, function() {
+    equal(typeof pushOntoArray, 'function', 'Verify the pushOntoArray function is present');
+
+    var arr = [1, 2, 3, 4, 5];
+
+    pushOntoArray(arr, 6);
+    deepEqual(arr, [1, 2, 3, 4, 5, 6], 'Check single value push');
+
+    pushOntoArray(arr, [7,8,9]);
+    deepEqual(arr, [1, 2, 3, 4, 5, 6, 7, 8, 9], 'Check array push');
+});
+
+test("splitListStrUsingComma", 3, function(){
+    equal(typeof splitListStrUsingComma, 'function', 'Verify the splitListStrUsingComma function is present');
+
+    var str = 'The, quick, brown, fox jumped over';
+    deepEqual(splitListStrUsingComma(str), ['The',' quick',' brown',' fox jumped over'], 'Check split string');
+
+    deepEqual(splitListStrUsingComma(''), [], 'Check empty string results');
+});
