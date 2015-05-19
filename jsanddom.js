@@ -242,6 +242,13 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+    $(document).ready(function() {
+        $('#qunit-testrunner-toolbar').append('<select id="MyOptions"><option>Option 1</option><option>Option 2</option><option>Option 3</option></select>');
+        $('#qunit-testrunner-toolbar').append('<button id="MyLogButton">Log Option</button>');
+        $('#MyLogButton').on('click', function() {
+            console.log($('#MyOptions :selected').val());
+        });
+    });
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
