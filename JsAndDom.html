@@ -1,15 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html ng-App="myApp">
 <head>
     <title>JsAndDom</title>
+	<script>
+
+		var movies = [];
+		movies.push("Avatar");
+		movies.push("Lord of the Rings");
+		movies.push("Aion");
+		movies.push("The Eve");
+		movies.push("Final Destination");
+
+		var list1 = document.getElementById('list1');
+
+		movies.forEach(function (movie) {
+			var li = document.createElement('li');
+
+			li.textContent = movie;
+			list1.appendChild(li);
+		});
+
+		$(document).ready(function() {
+			$('#selecctall').click(function(event) {  //on click
+				if(this.checked) { // check select status
+					$('.checkbox1').each(function() { //loop through each checkbox
+						this.checked = true;  //select all checkboxes with class "checkbox1"
+					});
+				}else{
+					$('.checkbox1').each(function() { //loop through each checkbox
+						this.checked = false; //deselect all checkboxes with class "checkbox1"
+					});
+				}
+			});
+
+		});
+	</script>
 </head>
 <body>
-	<div id="div1">
+	<div id="div1" ng-controller="crtl as tc">
+		<table border="1">
+			<thead>
+			<tr>
+				<th>title</th>
+				<th>URL</th>
+				<th>button</th>
+			</tr>
+			</thead>
+			<tbody ng-repeat="u in tc.help" ng-click="tc.selectRow = u">
+			<!--<tr ng-repeat="u in tc.help" ng-click="tc.selectedUser = u" ng-class="{true: 'active',false: ''}[tc.selectedUser==u]">-->
+			<tr  >
+				<td>{{ u[0].title }}</td>
+				<td>{{ u[0].URL }}</td>
+				<th><input type="button" value="Click" ng-click="tc.selectRow = u"/></th>
+			</tr>
+			<tr >
+				<td>{{ u[1].title }}</td>
+				<td>{{ u[1].URL }}</td>
+				<th><input type="button"  value="Click" ng-click="tc.selectRow = u"/></th>
+			</tr>
+			<tr >
+				<td>{{ u[2].title }}</td>
+				<td>{{ u[2].URL }}</td>
+				<th><input type="button"  value="Click" /></th>
+			</tr>
+			</tbody>
+		</table>
+		<div>
+			<table>
+				<tr>
+					<td>"title is "  {{tc.selectRow.title}}</td>
+					<td>"Url is " {{ tc.selectRow.URL }}</td>
+				</tr>
+			</table>
+
+		</div>
 	</div>
 
 	<div id="foo" class="bar" style="margin-top:10px;">
 	  <div id="fizz" class="buzz">
 	    <a class="link" href="#">sample anchor</a>
+
 	  </div>
 	</div>
 
@@ -18,8 +88,22 @@
 	</div>
 
 	<div id="foobar" style="margin-top:10px;">
+		<ul class="chk-container">
+			<li><input type="checkbox" id="selecctall"/> Selecct All</li>
+			<li><input class="checkbox1" type="checkbox" name="check[]" value="item1"> Item 1</li>
+			<li><input class="checkbox1" type="checkbox" name="check[]" value="item2"> Item 2</li>
+			<li><input class="checkbox1" type="checkbox" name="check[]" value="item3"> Item 3</li>
+			<li><input class="checkbox1" type="checkbox" name="check[]" value="item4"> Item 4</li>
+			<li><input class="checkbox1" type="checkbox" name="check[]" value="item5"> Item 5</li>
+			<li><input class="checkbox1" type="checkbox" name="check[]" value="item6"> Item 6</li>
+			<li><input class="checkbox2" type="checkbox" name="check[]" value="item6"> Do not select this</li>
+		</ul>
 	</div>
 
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
+	<script src="script.js"></script>
 	<script src="jsanddom.js" type="text/javascript"></script>
 </body>
 </html>
