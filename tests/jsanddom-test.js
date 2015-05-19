@@ -1,7 +1,7 @@
 /********************************
 Unit Test Example
 ********************************/
-module( "Example Unit Test" );
+module( "JsAndDOM" );
 test( "Example Test", 2, function() {
     // Verify the method exists
     equal( typeof divide, 'function', 'Must contain a divide function' );
