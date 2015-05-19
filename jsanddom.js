@@ -255,6 +255,16 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+    $(document).ready(function() {
+        var items = ['The Walking Dead', 'Game of Thrones', 'Breaking Bad', 'Better Call Saul', 'Bones'],
+            i, ulist;
+
+        ulist = $('<ul id="list1"/>');
+        for(i=0; i<items.length; i++) {
+            ulist.append('<li>' + items[i] + '</li>');
+        }
+        //$('#qunit-header').append(ulist); // Check that is was created correctly
+    });
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
