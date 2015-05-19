@@ -137,3 +137,17 @@ test("DataTable Test", 7, function(){
 
     deepEqual(table.getData(), result, 'Check that we get valid table object');
 });
+
+test("Footer link selectors", 16, function() {
+    equal(typeof getFooterCheckAllAnchor, 'function', 'Verify getFooterCheckAllAnchor function is present');
+
+    var selectors = getFooterCheckAllAnchor(),
+        i, sel;
+
+    for(i=1; i<=selectors.length; i++) {
+        sel = selectors[i-1];
+        equal(sel.length, 2, 'Check selector ' + i + ' has two anchors');
+        equal(sel[0].id, 'check', 'Check selector ' + i + ' has "Check All" anchor in first position');
+        equal(sel[1].id, 'uncheck', 'Check selector ' + i + ' has "Uncheck All" anchor in second position');
+    }
+});

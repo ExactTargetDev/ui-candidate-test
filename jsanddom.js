@@ -252,6 +252,16 @@
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+    function getFooterCheckAllAnchor() {
+        var checkAllAnchors = [];
+        checkAllAnchors.push($('#check, #uncheck'));
+        checkAllAnchors.push($('#footer a'));
+        checkAllAnchors.push($('a.footer-anchor'));
+        checkAllAnchors.push($('.footer-anchor'));
+        checkAllAnchors.push($('#footer ul li:gt(4) a'));
+
+        return checkAllAnchors;
+    }
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
@@ -270,3 +280,27 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+    $(document).ready(function() {
+        var items = ['The Walking Dead', 'Game of Thrones', 'Breaking Bad', 'Better Call Saul', 'Bones'],
+            i, footer, list;
+
+        // Create our list of checkboxes
+        footer = $('#footer');
+        list = footer.append('<ul style="list-style:none;"/>').find('ul');
+
+        for(i=0; i<items.length; i++) {
+            list.append('<li><input type="checkbox">' + items[i] + '</input></li>');
+        }
+
+        // Create our links
+        list.append('<li><a id="check" class="footer-anchor">Check All</a></li>');
+        list.append('<li><a id="uncheck" class="footer-anchor">Uncheck All</a></li>');
+
+        // Create our event handlers
+        footer.find('#check').on('click', function() {
+            footer.find('input').prop('checked', true);
+        });
+        footer.find('#uncheck').on('click', function() {
+            footer.find('input').prop('checked', false);
+        });
+    });
