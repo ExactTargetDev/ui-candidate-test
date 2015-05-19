@@ -3,23 +3,35 @@
 <head>
     <title>JsAndDom</title>
 	<script>
-		var movies = new Array();
-		movies[0] = "Avatar";
-		movies[1] = "Lord of the Rings";
-		movies[2] = "Aion";
-		movies[3] = "The Eve";
-		movies[4] = "Final Destination";
-		movies[5] = "City of Heros";
-		movies[6] = "Final Destination II";
-		movies[7] = "Dark Age";
-		movies[8] = "Warhammer";
-		movies[9] = "Age of Conan";
-		$(document).ready(function(){
-			var list = "";
-			for(i=0; i<movies.length; i++){
-				list +="<li>"+movies[i]+"</li>";
-			}
-			$("#list1").append(list);
+
+		var movies = [];
+		movies.push("Avatar");
+		movies.push("Lord of the Rings");
+		movies.push("Aion");
+		movies.push("The Eve");
+		movies.push("Final Destination");
+
+		var list1 = document.getElementById('list1');
+
+		movies.forEach(function (movie) {
+			var li = document.createElement('li');
+
+			li.textContent = movie;
+			list1.appendChild(li);
+		});
+
+		$(document).ready(function() {
+			$('#selecctall').click(function(event) {  //on click
+				if(this.checked) { // check select status
+					$('.checkbox1').each(function() { //loop through each checkbox
+						this.checked = true;  //select all checkboxes with class "checkbox1"
+					});
+				}else{
+					$('.checkbox1').each(function() { //loop through each checkbox
+						this.checked = false; //deselect all checkboxes with class "checkbox1"
+					});
+				}
+			});
 
 		});
 	</script>
@@ -72,12 +84,20 @@
 	</div>
 
 	<div id="baz" style="margin-top:10px;">
-	  <ul id="list1">
-
-	  </ul>
+	  <ul id="list1"></ul>
 	</div>
 
 	<div id="foobar" style="margin-top:10px;">
+		<ul class="chk-container">
+			<li><input type="checkbox" id="selecctall"/> Selecct All</li>
+			<li><input class="checkbox1" type="checkbox" name="check[]" value="item1"> Item 1</li>
+			<li><input class="checkbox1" type="checkbox" name="check[]" value="item2"> Item 2</li>
+			<li><input class="checkbox1" type="checkbox" name="check[]" value="item3"> Item 3</li>
+			<li><input class="checkbox1" type="checkbox" name="check[]" value="item4"> Item 4</li>
+			<li><input class="checkbox1" type="checkbox" name="check[]" value="item5"> Item 5</li>
+			<li><input class="checkbox1" type="checkbox" name="check[]" value="item6"> Item 6</li>
+			<li><input class="checkbox2" type="checkbox" name="check[]" value="item6"> Do not select this</li>
+		</ul>
 	</div>
 
 
