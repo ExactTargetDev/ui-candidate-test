@@ -382,3 +382,12 @@ body {
 #pulse .tiles .item.selected .tile .map {
   top: 25px;
 }
+/* line 265, ../sass/screen.scss */
+#pulse .tiles .item.selected .tile .largeblue {
+  margin-top: 20px;
+  font-size: 48px;
+}
+/* line 268, ../sass/screen.scss */
+#pulse .tiles .item.selected .tile .largeblue span {
+  font-size: 38px;
+}

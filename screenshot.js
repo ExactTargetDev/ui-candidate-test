@@ -6,6 +6,7 @@ var Screenshot = {
      */
     init: function() {
         this.setupCalendar();
+        this.setupTiles();
     },
 
     /**
@@ -40,6 +41,18 @@ var Screenshot = {
             }
 
             daysCont.append('<div class="day'+ (d===0?' today':'') +'"><div class="top"><span class="weekname">'+$.format.date(dt, 'E')+'</span><span class="monthday">'+$.format.date(dt, 'd')+'</span></div><div class="bottom">'+txt+'</div></div>');
+        }
+    },
+
+    setupTiles: function() {
+        var me = this;
+        $('#pulse .tiles').on('click', function() {me.onTileClick.apply(me, arguments);});
+    },
+
+    onTileClick: function(evt) {
+        if($(evt.target).parents('.tile').length > 0 || $(evt.target).is('.tile')) {
+            $('#pulse .item.selected').removeClass('selected');
+            $(evt.target).parents('.item').addClass('selected');
         }
     }
 };
