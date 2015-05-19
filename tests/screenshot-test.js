@@ -21,12 +21,34 @@ test("Test setupCalendar", 1, function() {
     equal(typeof Screenshot.setupCalendar, 'function', 'Check existence of the Screenshot.setupCalendar function');
 });
 
-test("Test setupTiles", 1, function() {
+test("Test setupTiles", 3, function() {
     equal(typeof Screenshot.setupTiles, 'function', 'Check existence of the Screenshot.setupTiles function');
+
+    $("#sandbox").empty();
+    $('#sandbox').append('<div id="pulse"><div class="tiles"></div></div>');
+
+
+    var el = $('#pulse .tiles');
+    equal(typeof $._data(el[0], 'events'), 'undefined', 'Check that the click event handler is not there');
+    Screenshot.setupTiles();
+    equal(typeof $._data(el[0], 'events').click, 'object', 'Check that the click event handler is created');
+
+    $("#sandbox").empty();
 });
 
-test("Test setupHelp", 1, function() {
+test("Test setupHelp", 3, function() {
     equal(typeof Screenshot.setupHelp, 'function', 'Check existence of the Screenshot.setupHelp function');
+
+    $("#sandbox").empty();
+    $('#sandbox').append('<div id="header"><div class="actions"><div class="action help"></div></div></div>');
+
+
+    var el = $('#header .actions .action.help');
+    equal(typeof $._data(el[0], 'events'), 'undefined', 'Check that the click event handler is not there');
+    Screenshot.setupHelp();
+    equal(typeof $._data(el[0], 'events').click, 'object', 'Check that the click event handler is created');
+
+    $("#sandbox").empty();
 });
 
 test("Test onTileClick", 1, function() {
