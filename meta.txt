@@ -1,1 +1,5 @@
 Start Time: 1431890040
+Browser Testing: Chrome Canary/44.0.2403.0
+Browser Testing: Chrome/42.0.2311.152
+Browser Testing: IE11/11.0.9600.17801
+Browser Testing: IE9/9.0.8112.16421
