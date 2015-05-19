@@ -7,6 +7,7 @@ var Screenshot = {
     init: function() {
         this.setupCalendar();
         this.setupTiles();
+        this.setupHelp();
     },
 
     /**
@@ -44,15 +45,56 @@ var Screenshot = {
         }
     },
 
+    /**
+     * Create out event handler for selecting tiles in the Pulse window. We will encapsulate and add
+     * only one event handler to the DOM. The handler will need to determine what tile was clicked.
+     */
     setupTiles: function() {
         var me = this;
         $('#pulse .tiles').on('click', function() {me.onTileClick.apply(me, arguments);});
     },
 
+    /**
+     * Setup up the click handler for the Help action
+     * @return {[type]} [description]
+     */
+    setupHelp: function() {
+        var me = this;
+        $('#header .actions .action.help').on('click', function() {me.onHelpClick.apply(me, arguments);});
+    },
+
+    /**
+     * Called when the user clicks in the tiles div. We need to determine if a tile was clicked
+     * and if it was then remove the selection state for the other tile and apply it to the
+     * tile that was clicked. Note that the "selected" class is kept at the "item" div but we only
+     * allow clicking of the "tile" divs
+     * @param  {Event} evt The event object
+     */
     onTileClick: function(evt) {
         if($(evt.target).parents('.tile').length > 0 || $(evt.target).is('.tile')) {
             $('#pulse .item.selected').removeClass('selected');
             $(evt.target).parents('.item').addClass('selected');
         }
+    },
+
+    onHelpClick: function(evt) {
+        var me = this;
+
+        $.ajax({
+            url: 'data/help.json',
+            dataType: 'json',
+            success: function(data) {
+                var helpCont = $('#helpModal .modal-body'),
+                    i, helpitem;
+
+                helpCont.empty();
+                for(i=0; i<data.help.length; i++) {
+                    helpitem = data.help[i];
+                    helpCont.append('<a href="'+helpitem.URL+'" target="_blank">'+helpitem.title+'</a><br>');
+                }
+
+                $('#helpModal').modal();
+            }
+        });
     }
 };
