@@ -2,5 +2,268 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
+@import "compass";
 @import "compass/reset";
+
+body {
+    font-family: Arial;
+    font-size: 14px;
+}
+
+#header {
+    font-family: Arial;
+    padding: 8px;
+    @include background-image(linear-gradient(#45525C, #3E4A52 30%,#2A2F33));
+    height: 35px;
+    color: #EEE;
+    a {
+        color: #99CCE1;
+        padding: 0 2px 0 2px;
+    }
+    .title {
+        float: left;
+        font-size: 17px;
+        padding-left: 8px;
+    }
+    .actions {
+        padding-top: 4px;
+        font-size: 11px;
+        float: right;
+    }
+}
+
+#mainarea {
+    position: absolute;
+    top: 35px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 180px;
+    background-color: transparent;
+
+    .header {
+        @include background-image(linear-gradient(#FECA87, #FDAF4B 20%,#F8981D));
+        font-weight: bold;
+        border: 1px solid #F8981D;
+        height: 50px;
+        line-height: 15px;
+        padding: 10px 20px 10px 40px;
+        color: #FFF;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .item, .footer {
+        height: 32px;
+        background-color: #F4F4F5;
+        color: #888888;
+        border: 1px solid #E6E6E6;
+        border-top-width: 0;
+        border-bottom-width: 0;
+        padding: 8px 8px 0 40px;
+        cursor: pointer;
+
+        &.bar {
+            height: 1px;
+            padding: 0;
+            background-color: #E1E1E2;
+            cursor: normal;
+        }
+    }
+    .footer {
+        border-bottom-width: 1px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        font-size: 12px;
+        padding-left: 30px;
+    }
+}
+
+#calendar {
+    position: absolute;
+    top: 0;
+    left: 220px;
+    right: 20px;
+    height: 115px;
+    background-color: #F5F5F5;
+    border: 1px solid #CCC;
+    border-top-width: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    .header {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 15px;
+        font-size: 11px;
+        padding: 3px 0 0 10px;
+
+        .month {
+            color: #99ABB6;
+        }
+    }
+    .days {
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        top: 20px;
+        bottom: 0px;
+
+        .day {
+            color: #999;
+            font-size: 11px;
+            width: 14%;
+            height: 100%;
+            float: left;
+
+            .top {
+                bottom: 15px;
+                border: 1px solid #DDD;
+                border-top-width: 0;
+                padding: 0 3px 3px 3px;
+                height: 80px;
+                .monthday {
+                    display: inline-block;
+                    float: right;
+                }
+            }
+            .bottom {
+                height: 14px;
+                line-height: 14px;
+                text-align: center;
+            }
+
+            &.today {
+                .top {
+                    color: #000;
+                    @include background-image(linear-gradient(#EBF1F5,#FEEDD6));
+                }
+                .bottom {
+                    color: #FFF;
+                    @include background-image(linear-gradient(#FDAF4B,#F89A20));
+                }
+            }
+
+        }
+    }
+}
+
+#pulse {
+    position: absolute;
+    top: 135px;
+    left: 220px;
+    right: 20px;
+    height: 270px;
+    @include background-image(linear-gradient(#BECCD5,#DCE8F0 70%,#C7D2D9));
+    border: 1px solid #BDC8CF;
+    border-radius: 5px;
+
+    .pulseimage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 116px;
+        height: 50px;
+        background-image: url("../images/pulse.png");
+    }
+
+    .tiles {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        bottom: 50px;
+
+        .item {
+            float: left;
+            width: 18%;
+            height: 100px;
+            padding: 30px 10px 0 10px;
+
+            h1 {
+                text-align: center;
+                color: #7F91A3;
+                padding-bottom: 10px;
+            }
+            .tile {
+                position: relative;
+                color: #93AFC0;
+                width: 100%;
+                height: 90px;
+                @include background-image(linear-gradient(#FAFCFC,#D4DEE5));
+                @include box-shadow(#AAA 0px 4px 8px);
+                border: 1px solid #D4DEE5;
+                border-radius: 5px;
+                padding: 8px;
+                cursor: pointer;
+
+                .largeblue {
+                    color: #34BBF3;
+                    font-size: 28px;
+                    font-weight: normal;
+                    text-align: center;
+                    span {
+                        color: #93AFC0;
+                        font-size: 20px;
+                    }
+                    margin: 4px 0 4px 0;
+                }
+                .text {
+                    text-align: center;
+                    margin: 2px 0 2px 0;
+                }
+                .summary {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+                    padding: 0 0 8px 0;
+                    font-size: 12px;
+                }
+                .header {
+                    display: none;
+                    span {
+                        display: inline-block;
+                        float: right;
+                    }
+                }
+                .map {
+                    position:absolute;
+                    top: 8px;
+                    left: 8px;
+                    right: 8px;
+                    bottom: 8px;
+                    background-image: url("../images/map.png");
+                    background-size: 100% 100%;
+                    border: 1px solid #BECCD5;
+                    border-radius: 5px;
+                }
+            }
+
+            &.selected {
+                width: 28%;
+                height: 156px;
+                padding-top: 5px;
+                .tile {
+                    height: 140px;
+                    color: #666;
+
+                    .header {
+                        display: block;
+                    }
+                    .map {
+                        top: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
