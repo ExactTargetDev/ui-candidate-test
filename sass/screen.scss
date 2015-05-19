@@ -74,6 +74,12 @@ body {
             background-color: #E1E1E2;
             cursor: normal;
         }
+        &:hover {
+            color: #222222;
+        }
+        &:active {
+            color: #F8981D;
+        }
     }
     .footer {
         border-bottom-width: 1px;
