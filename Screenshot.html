@@ -2,7 +2,118 @@
 <html>
 <head>
     <title>Screenshot.html</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jquery-dateFormat.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="screenshot.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            Screenshot.init();
+        });
+    </script>
 </head>
 <body>
+    <div id="header">
+        <div class="title">ExactTarget.</div>
+        <div class="actions">
+            <span> Welcome John! </span>
+            <a class="action account" href="#"> Account </a>|
+            <a class="action help" href="#"> Help </a>|
+            <a class="action logout" href="#"> Logout </a>
+        </div>
+    </div>
+    <div id="mainarea">
+        <div id="menu">
+            <div class="header">Interactive Marketing Hub</div>
+            <div class="item">ExactTarget Email</div>
+            <div class="item">ExactTarget Mobile</div>
+            <div class="item">CoTweet Social</div>
+            <div class="item">ExactTarget Sites</div>
+            <div class="item bar"></div>
+            <div class="item">Automation Studio</div>
+            <div class="item">Audience Builder</div>
+            <div class="item">Report Builder</div>
+            <div class="item bar"></div>
+            <div class="footer">Partner Applications</div>
+        </div>
+
+        <div id="calendar">
+            <div class="header">
+                <span class="month"/>
+            </div>
+            <div class="days"></div>
+        </div>
+
+        <div id="pulse">
+            <div class="pulseimage"></div>
+            <div class="tiles">
+
+                <div class="item">
+                    <h1>Followers</h1>
+                    <div class="tile">
+                        <div class="largeblue">310</div>
+                        <div class="text">added today</div>
+                        <div class="summary">2,393,905 total</div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h1>Fan</h1>
+                    <div class="tile">
+                        <div class="largeblue">73</div>
+                        <div class="text">added today</div>
+                        <div class="summary">91,675 total</div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h1>Subscribers</h1>
+                    <div class="tile">
+                        <div class="largeblue">56</div>
+                        <div class="text">added today</div>
+                        <div class="summary">189,405 total</div>
+                    </div>
+                </div>
+
+                <div class="item selected">
+                    <h1>foursquare</h1>
+                    <div class="tile">
+                        <div class="header">Worldwide Checkins<span>3,905</span></div>
+                        <div class="map"></div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h1>Landing Pages</h1>
+                    <div class="tile">
+                        <div class="text">Visitors Today</div>
+                        <div class="largeblue">397<span>&nbsp;/&nbsp;355</span></div>
+                        <div class="summary">Souija Boy V.I.P.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Help</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
