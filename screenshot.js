@@ -77,6 +77,11 @@ var Screenshot = {
         }
     },
 
+    /**
+     * When the user clicks help we will load data from a json file and render
+     * it into a modal overlay
+     * @param  {Event} evt the click event
+     */
     onHelpClick: function(evt) {
         var me = this;
 
