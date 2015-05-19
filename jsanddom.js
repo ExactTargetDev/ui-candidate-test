@@ -330,10 +330,6 @@ var selectors = [ $( '#foo a.link' ), $( '#foo .buzz a.link' ), $( '#foo' ).find
     });
 }( jQuery ));
 
-
-Mon, 18 May 2015 23:57:36 GMT
-Tue, 19 May 2015 00:00:06 GMT
-
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
