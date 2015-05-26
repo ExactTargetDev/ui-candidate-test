@@ -16,7 +16,11 @@
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+        Array.prototype.min = function() {
+          return Math.min.apply(null, this);
+        };
+        return values.min();
+        //With supplied Test Data: findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
@@ -101,3 +105,15 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+
+/*CR*/
+function test(value){
+
+Array.min = function( array ){
+    return Math.min.apply( Math, array );
+};
+
+
+}
+ 
