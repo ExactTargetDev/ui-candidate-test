@@ -101,6 +101,13 @@
      }
 
      // write an example of a javascript closure
+    function myClosure() {
+      var name = "Christopher"; // name is a local variable created by myClosure
+      function displayName() { // displayName() is the inner function, a closure
+        console.log(name); // use variable declared in the parent function, log it to the console
+      }
+      displayName();
+    }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
