@@ -34,7 +34,8 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+        //Loop through 1 until 100 and replace the console output if divisible by the appropriate number
+         for(n=1;n<101;++n)console.log(((n%3)?'':'Fizz')+((n%5)?'':'Buzz')||n)
      }
 
      // You have a master array of strings, where each element is a fruit name.
