@@ -43,7 +43,17 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+        //Supplied test data: removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']);
+        //I would prefer the Array.filter() method but it's not supported by IE9 so we are left with using 2 loops
+        for( var i = fruits.length - 1; i>=0; i--){
+          for( var j=0; j<fruitsToRemove.length; j++){
+            if(fruits[i] === fruitsToRemove[j]){
+              fruits.splice(i, 1);
+            }
+          }
+        }
+        //Now return the value of the modified array
+        return fruits;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
