@@ -77,13 +77,27 @@
      }
 
      // Write a function that will take any number of arguments and return their sum
-     function sum() {
-         // FILL THIS IN
+     function sum(args) {
+        //Test data: sum([1, 2, 3, 4, 5, 6, 7]);
+        var total = 0;
+        //Accept unlimited number of arguments
+        for( var i = 0; i < args.length; i++) {
+            total += args[i];
+        }
+        //Return the final sum
+        return total;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+        //Using the regex way will also check for other white space characters like Tab, etc
+        if (sourceStr.match(/\S/)) { 
+            return false; 
+        }else{
+            return true;
+        }
+
+
      }
 
      // write an example of a javascript closure
