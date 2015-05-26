@@ -25,7 +25,8 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+         //Test Function: findDistinctValues([1,2,2,2,3,4,5,6,7,7,7,8,8,9]);
+         return $.unique(values);
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
