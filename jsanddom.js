@@ -6,7 +6,12 @@
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+      /*    This will work; however, it's technically broken for UTF-16 strings that contain surrogate pairs, 
+            (i.e. characters outside of the basic multilingual plane)
+            To "properly" reverse a string in JS I would use a library capabale of Unicode-aware string reversal 
+            however it would probably be overkill for this context and adds unecessary weight
+            More at https://github.com/mathiasbynens/esrever*/
+         return str.split('').reverse().join('');
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
