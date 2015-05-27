@@ -178,6 +178,17 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+        //We'll call this function onload to populate the list1 UL
+        function ShowArray(){
+            var index;
+            //Create array
+            var a = ["Array Item 1", "Array Item 2", "Array Item 3", "Array Item 4", "Array Item 5"];
+
+            //Loop through and append each array item as a new <li>
+            for (index = 0; index < a.length; ++index) {
+                $("ul#list1").append('<li>'+a[index]+'</li>');
+            }
+        }
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
