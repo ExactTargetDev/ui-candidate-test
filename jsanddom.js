@@ -135,6 +135,29 @@
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
+    //Create array of actors
+    var arr = [
+      {val : 1, text: 'Nicolas Cage'},
+      {val : 2, text: 'Bruce Willis'},
+      {val : 3, text: 'John Travolta'}
+    ];
+
+    //Append data to #div1
+    var sel = $("<select id='ActorSelection'>").appendTo("#div1");
+    $(arr).each(function() {
+        sel.append($("<option>").attr('value',this.val).text(this.text));
+    });
+
+    //Add our button
+    $("<button name='div1Submit' type='submit'>Submit</button>").appendTo("#div1");
+
+    function submitActor(){
+        //Grab the selected actor in our list
+        var SelectedActor = $('#ActorSelection').find(":selected").text();
+        //Log selected actor to console
+        console.log(SelectedActor);
+    }
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 

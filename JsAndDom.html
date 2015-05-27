@@ -20,7 +20,15 @@
 	<div id="foobar" style="margin-top:10px;">
 	</div>
 
-	<script src="jsanddom.js" type="text/javascript"></script>
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="jsanddom.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	(function($) {
+		$( "#div1 button" ).click(function() {
+		  //Listen for the #div button click then execute submitActor
+		  submitActor();
+		});
+	})(jQuery);
+	</script>
 </body>
 </html>
