@@ -161,6 +161,21 @@
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
+        //Reference to a link with the "link" class
+        $("a.link")
+
+        //Reference using div container ID
+        $("#fizz a")
+
+        //Using parent class "buzz"
+        $(".buzz a")
+
+        //Go up and reference using grandparent ID
+        $("div#foo a")
+
+        //Go up the structure and reference using grandparent class
+        $("div.bar a")
+
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
 
