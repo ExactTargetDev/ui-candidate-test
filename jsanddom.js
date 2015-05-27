@@ -1,22 +1,32 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+      /*    This will work; however, it's technically broken for UTF-16 strings that contain surrogate pairs, 
+            (i.e. characters outside of the basic multilingual plane)
+            To "properly" reverse a string in JS I would use a library capabale of Unicode-aware string reversal 
+            however it would probably be overkill for this context and adds unecessary weight
+            More at https://github.com/mathiasbynens/esrever*/
+         return str.split('').reverse().join('');
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+        Array.prototype.min = function() {
+          return Math.min.apply(null, this);
+        };
+        return values.min();
+        //With supplied Test Data: findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+         //Test Function: findDistinctValues([1,2,2,2,3,4,5,6,7,7,7,8,8,9]);
+         return $.unique(values);
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,7 +34,8 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+        //Loop through 1 until 100 and replace the console output if divisible by the appropriate number
+         for(n=1;n<101;++n)console.log(((n%3)?'':'Fizz')+((n%5)?'':'Buzz')||n)
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -32,7 +43,17 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+        //Supplied test data: removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']);
+        //I would prefer the Array.filter() method but it's not supported by IE9 so we are left with using 2 loops
+        for( var i = fruits.length - 1; i>=0; i--){
+          for( var j=0; j<fruitsToRemove.length; j++){
+            if(fruits[i] === fruitsToRemove[j]){
+              fruits.splice(i, 1);
+            }
+          }
+        }
+        //Now return the value of the modified array
+        return fruits;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -40,25 +61,53 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+        //Test data used:
+        //var array = [1, 2, 3, 4, 5];
+        //var toPush = [7, 8, 9];
+
+        console.log("Array: "+array); //Array before
+        array.push(toPush); //Modify by pushing to the original array
+        console.log("Updated Array: "+array); //Log new values for the original array
+
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         return sourceStr.split(',');
      }
 
      // Write a function that will take any number of arguments and return their sum
-     function sum() {
-         // FILL THIS IN
+     function sum(args) {
+        //Test data: sum([1, 2, 3, 4, 5, 6, 7]);
+        var total = 0;
+        //Accept unlimited number of arguments
+        for( var i = 0; i < args.length; i++) {
+            total += args[i];
+        }
+        //Return the final sum
+        return total;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+        //Using the regex way will also check for other white space characters like Tab, etc
+        if (sourceStr.match(/\S/)) { 
+            return false; 
+        }else{
+            return true;
+        }
+
+
      }
 
      // write an example of a javascript closure
+    function myClosure() {
+      var name = "Christopher"; // name is a local variable created by myClosure
+      function displayName() { // displayName() is the inner function, a closure
+        console.log(name); // use variable declared in the parent function, log it to the console
+      }
+      displayName();
+    }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -86,11 +135,60 @@
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
+    //Create array of actors
+    var arr = [
+      {val : 1, text: 'Nicolas Cage'},
+      {val : 2, text: 'Bruce Willis'},
+      {val : 3, text: 'John Travolta'}
+    ];
+
+    //Append data to #div1
+    var sel = $("<select id='ActorSelection'>").appendTo("#div1");
+    $(arr).each(function() {
+        sel.append($("<option>").attr('value',this.val).text(this.text));
+    });
+
+    //Add our button
+    $("<button name='div1Submit' type='submit'>Submit</button>").appendTo("#div1");
+
+    function submitActor(){
+        //Grab the selected actor in our list
+        var SelectedActor = $('#ActorSelection').find(":selected").text();
+        //Log selected actor to console
+        console.log(SelectedActor);
+    }
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
+        //Reference to a link with the "link" class
+        $("a.link")
+
+        //Reference using div container ID
+        $("#fizz a")
+
+        //Using parent class "buzz"
+        $(".buzz a")
+
+        //Go up and reference using grandparent ID
+        $("div#foo a")
+
+        //Go up the structure and reference using grandparent class
+        $("div.bar a")
+
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+        //We'll call this function onload to populate the list1 UL
+        function ShowArray(){
+            var index;
+            //Create array
+            var a = ["Array Item 1", "Array Item 2", "Array Item 3", "Array Item 4", "Array Item 5"];
+
+            //Loop through and append each array item as a new <li>
+            for (index = 0; index < a.length; ++index) {
+                $("ul#list1").append('<li>'+a[index]+'</li>');
+            }
+        }
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
