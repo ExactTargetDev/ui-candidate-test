@@ -151,9 +151,6 @@
          }
      };
 
-
-
-
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
      // A private rows property (string array)
@@ -169,6 +166,8 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+
+
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
