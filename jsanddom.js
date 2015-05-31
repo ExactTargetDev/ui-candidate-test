@@ -235,11 +235,18 @@
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
      function addGeneratedItemsToList () {
-         var array = [];
+         var array = [],
+             template = '';
 
-         for (var i; i < 5; i ++) {
-
+         for (var i = 1; i <= 5; i++) {
+             array.push('Element#' + i);
          }
+
+         array.forEach(function (value) {
+             template += '<li>' + value + '</li>';
+         });
+
+         $('#list1').html(template);
      }
 
 
