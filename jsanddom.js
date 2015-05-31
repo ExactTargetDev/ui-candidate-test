@@ -167,10 +167,18 @@
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
-
-
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+
+     function differentWayToGetElement() {
+         console.log('By Class name - ', $('.link'));
+         console.log('By Tag name - ', $('a'));
+         console.log('By index - ', $('a:eq(0)'));
+         console.log('By Attribute value - ', $('a[href="#"]'));
+         console.log('As first element with tag name a - ', $('a:first'));
+     }
+
+
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
