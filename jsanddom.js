@@ -220,3 +220,31 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+     function addCheckboxes() {
+         var footBar = $('#footbar'),
+             checkboxes;
+
+         for (var key in peopleCollection) {
+             footBar.append('<input type="checkbox" id="' + key + '"/>' +
+                 '<label for="' + key + '">' + peopleCollection[key].last_name + '</label>')
+         }
+
+         footBar.append('<p><a href="#" id="enable-all">Enable All</a></p>')
+         footBar.append('<p><a href="#" id="disable-all">Disable All</a></p>')
+
+         $('#enable-all').on('click', function () {
+            enableDisable(true);
+         });
+
+         $('#disable-all').on('click', function () {
+            enableDisable(false);
+         });
+
+         function enableDisable(value){
+             checkboxes = $('input[type="checkbox"]');
+             for (var i = 0, n = checkboxes.length; i < n; i++) {
+                 checkboxes[i].checked = value;
+             }
+         }
+     }
