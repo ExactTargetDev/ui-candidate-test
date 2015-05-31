@@ -163,6 +163,37 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+     function DataTable() {
+         var columns = [],
+             rows = [];
+
+         return {
+             addColumns: function(){
+                 pushOntoArray(columns, arguments);
+             },
+             addRow: function(){
+                 var array = {};
+
+                 for (var i = 0; i < columns.length; i++) {
+                     if (arguments[i]) {
+                         array[columns[i]] = arguments[i];
+                     }
+                 }
+
+                 rows.push(array);
+             },
+             getData: function(){
+                 var array = {};
+
+                 for (var i = 0; i < rows.length; i++) {
+                     array[i] = rows[i];
+                 }
+
+                 return array;
+             }
+         }
+     }
+
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
@@ -182,6 +213,8 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+
+
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
