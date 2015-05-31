@@ -112,6 +112,47 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
+     var peopleCollection = {
+         0: {
+             "first_name": "Sheldon",
+             "last_name": "Cooper",
+             "city": "New York",
+             "state": "New York",
+             "zip": 10019,
+             "phones": {
+                 "home": "518-485-5082",
+                 "work": "518-475-6677",
+                 "mobile": "718-908-2904"
+             }
+         },
+         1: {
+             "first_name": "Leonard",
+             "last_name": "Hofstadter",
+             "city": "New York",
+             "state": "New York",
+             "zip": 10019,
+             "phones": {
+                 "home": "518-444-5082",
+                 "work": "666-475-6677",
+                 "mobile": "718-908-777"
+             }
+         },
+         2: {
+             "first_name": "Amy",
+             "last_name": " Farrah Fowler",
+             "city": "New York",
+             "state": "New York",
+             "zip": 10019,
+             "phones": {
+                 "home": "518-485-5082",
+                 "work": "518-475-6677",
+                 "mobile": "718-908-2904"
+             }
+         }
+     };
+
+
+
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
