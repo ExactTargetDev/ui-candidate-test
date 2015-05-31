@@ -95,6 +95,13 @@
      }
 
      // write an example of a javascript closure
+     var count = function () {
+         var counter = 0;
+
+         return function () {
+            return ++counter;
+         }
+     };
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
