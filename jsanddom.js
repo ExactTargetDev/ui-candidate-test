@@ -198,6 +198,27 @@
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
+     function createSelectElement() {
+         var divElement = $('#div1'),
+             selectElement,
+             person;
+
+         divElement.html('<select></select>');
+
+         for (var key in peopleCollection) {
+             selectElement = divElement.find('select');
+             person = peopleCollection[key];
+             selectElement.append('<option name="' + person.last_name + '">' + person.phones.mobile + '</option>');
+         }
+
+         divElement.append('<button id="get-name">Get person name!</button>');
+         divElement.append('<p></p>');
+
+         $('#get-name').on('click', function () {
+             divElement.find('p').html(selectElement.find('option:selected').attr('name'));
+         });
+     }
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
@@ -213,7 +234,13 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     function addGeneratedItemsToList () {
+         var array = [];
 
+         for (var i; i < 5; i ++) {
+
+         }
+     }
 
 
      // Use javascript to add a list of checkboxes and 2 links
