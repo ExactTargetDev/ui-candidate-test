@@ -1,22 +1,36 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+         // FILL THIS 
+         return str.split("").reverse().join("");
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+         var sorted= values.sort(function(a,b){return a-b});
+         return sorted[0];
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+         var sorted= values.sort(function(a,b){return a-b});
+         var result=[];
+         result[0] = sorted[0];
+         for (var i=1; i<sorted.length; i++)
+         {
+            if (sorted[i]!=sorted[i-1]){
+                result.push(sorted[i]);
+            }
+
+         }
+         return result;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -25,6 +39,18 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
+         for (var i=1; i<=100; i++){
+            if(i%3==0 && i%5==0)
+                console.log("FizzBuzz");
+            else if(i%3==0)
+                console.log("Fizz");
+            else if(i%5==0)
+                console.log("Buzz");
+            else{
+                console.log(i);
+            }
+         }
+         return true;
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -33,6 +59,20 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+
+         var result=[];
+         for(var i=0; i<fruits.length; i++){
+            result.push(fruits[i]);
+            for(var j=0; j<fruitsToRemove.length; j++ ){
+                if(fruits[i]==fruitsToRemove[j]){
+                    result.pop();
+                    break;
+                }
+            }
+        }
+
+
+        return result;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -41,21 +81,37 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+         // if (toPush.constructor.toString().indexOf("Array")>-1){
+
+         // }
+         return array.concat(toPush);
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          // FILL THIS IN
+         return sourceStr.split("").join();
      }
 
      // Write a function that will take any number of arguments and return their sum
-     function sum() {
+     function sum(base) {
          // FILL THIS IN
+           base = Number(base);
+           for (var i = 1; i < arguments.length; i++) {
+               base += Number(arguments[i]);
+           }
+           return base;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
+         for (var i=0; i<sourceStr.length;i++){
+            if(sourceStr[i]!==' '){
+                return false;
+            }
+            return true;
+         }
      }
 
      // write an example of a javascript closure
