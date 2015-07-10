@@ -12,3 +12,11 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+
+test( "Reverse String test", 2, function() {
+    // Verify the method exists
+    equal( typeof reverseString, 'function', 'Must contain a reverseString function' ); 
+
+    // Make sure the result of the string is backwards from original string
+    ok( reverseString( "Subscribers rock" ), 'kcor srebircsbuS', 'Expected "kcor srebircsbuS" as the result, the result was: ' + reverseString( "Subscribers rock" ) );
+});
