@@ -198,19 +198,36 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     
+     /*
+      * So ... I may be misunderstanding the question here ...
+      * I have built this function so that
+      * 1) You can add one or more columns with the addColumns method
+      * 2) You can then add a row with the addRow method by giving a string array. 
+      * Individual items in the array will be assigned to separate columns
+      * 3) The getData method returns the whole table in an object, separated into rows, and then columns
+      */
      var DataTable = function(){
      	var columns = [];
      	var rows = [];
      	
      	return {
-     		addRows : function(row){
-     			rows.push(row);
+     		addRow : function(){
+     			var single_row = {};
+     			for (var jjj = 0; jjj < arguments.length; jjj++){
+     				if (columns.length > jjj){
+     					single_row[columns[jjj]] = arguments[jjj];
+     				}
+     			}
+     			rows.push(single_row);
      		},
-     		addColumns : function(column){
-     			columns.push(column);
+     		addColumns : function(){
+     			for (var iii = 0; iii < arguments.length; iii++){
+		         	columns.push(arguments[iii]);
+		         }
      		},
      		getData : function(){
-     			return '';
+     			return rows;
      		}
      	}
      };
