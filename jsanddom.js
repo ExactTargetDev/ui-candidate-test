@@ -6,17 +6,35 @@
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+         return str.split('').reverse().join('');
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+     	var min_value;
+         for (var iii = 0; iii < (values.length - 1); iii++){
+         	min_value = (values[iii] < values[iii+1]) ? values[iii] : values[iii+1];
+         }
+         return min_value;
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+         var distinct_array = [];
+         var in_array = false;
+         for (var iii = 0; iii < values.length; iii++){
+         	in_array = false;
+         	for (var jjj = 0; jjj < distinct_array.length; jjj++){
+         		if (distinct_array[jjj] == values[iii]){
+         			in_array = true;
+         			break;
+         		}
+         	}
+         	if (!in_array){
+         		distinct_array.push(values[iii]);
+         	}
+         }
+         return values;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,7 +42,17 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         for (var iii = 1; iii < (100 + 1); iii++){
+         	if (iii%5 == 0 && iii%3 == 0){
+         		console.log("FizzBuzz");
+         	} else if (iii%5 == 0){
+         		console.log("Buzz");
+         	} else if (iii%3 == 0){
+         		console.log("Fizz");
+         	} else {
+         		console.log(iii);
+         	}
+         }
      }
 
      // You have a master array of strings, where each element is a fruit name.
