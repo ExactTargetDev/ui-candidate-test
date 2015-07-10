@@ -1,7 +1,7 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
@@ -60,7 +60,14 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         for (var iii = 0; iii < fruitsToRemove.length; iii++){
+         	for (var jjj = fruits.length; jjj > -1; jjj--){
+         		if (fruits[jjj] == fruitsToRemove[iii]){
+         			fruits.splice(jjj, 1);
+         		}
+         	}
+         }
+         return fruits;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -68,22 +75,47 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+         if (typeof toPush == 'array'){
+         	for (var iii = 0; iii < toPush.length; iii++){
+         		array.push(toPush);
+         	}
+         } else {
+         	array.push(toPush);
+         }
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         var string_array = [];
+         string_array = sourceStr.split(',');
+         return string_array;
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+         var total = 0;
+         for (var iii = 0; iii < arguments.length; iii++){
+         	total += arguments[iii];
+         }
+         return total;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         if (!String.prototype.trim) { // make sure older browsers have trim
+		    (function() {
+		        // Make sure we trim BOM and NBSP
+		        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+		        String.prototype.trim = function() {
+		            return this.replace(rtrim, '');
+		        };
+		    })();
+		}
+		if (sourceStr.trim() === ''){
+			return true;
+		} else {
+			return false;
+		}
      }
 
      // write an example of a javascript closure
