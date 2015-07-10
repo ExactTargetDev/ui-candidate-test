@@ -140,3 +140,13 @@ test( "Whitespace test", 5, function() {
      // negative test, negative w/ spaces, tabs, carriage return and character
      ok( !(isOnlyWhitespace('  	\n	!  ')), true, 'Expected false');
 });
+
+// Closure Test
+test( "Closure test", 2, function() {
+    // Verify the method exists
+    equal( typeof closureTest, 'function', 'Must contain a closureTest function' ); 
+
+    // Our test string
+    var test_string = 'This is the first half of the sentence, and this is the second half!';
+    ok( closureTest(), test_string, 'Expected strings to have same values' );
+});

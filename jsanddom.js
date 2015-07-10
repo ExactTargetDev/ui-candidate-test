@@ -125,6 +125,16 @@
      }
 
      // write an example of a javascript closure
+     function closureTest(){
+     	var string1 = 'This is the first half of the sentence, ';
+     	
+     	function innerFunction(){
+     		var string2 = string1 + 'and this is the second half!';
+     		return string2;
+     	}
+     	
+     	return innerFunction();
+     }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -134,6 +144,47 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     var people_json = {
+     	"number_of_people" : 3,
+     	"people" : [
+     		{
+     			"first_name" : "John",
+     			"last_name" : "Doe",
+     			"city" : "Indianapolis",
+     			"state" : "Indiana",
+     			"zip" : "46201",
+     			"phone_numbers" : {
+     				"home" : "317-555-5555",
+     				"work" : "317-123-4567",
+     				"mobile" : "317-765-4321"
+     			}
+     		},
+     		{
+     			"first_name" : "Jane",
+     			"last_name" : "Smith",
+     			"city" : "Columbus",
+     			"state" : "Indiana",
+     			"zip" : "47201",
+     			"phone_numbers" : {
+     				"home" : "812-555-5555",
+     				"work" : "812-123-4567",
+     				"mobile" : "812-765-4321"
+     			}
+     		},
+     		{
+     			"first_name" : "Joe",
+     			"last_name" : "Schmoe",
+     			"city" : "Lafayette",
+     			"state" : "Indiana",
+     			"zip" : "47901",
+     			"phone_numbers" : {
+     				"home" : "765-555-5555",
+     				"work" : "765-123-4567",
+     				"mobile" : "765-765-4321"
+     			}
+     		}
+     	]
+     };
 
 
      // Create a javascript object (DataTable) with the following:
@@ -147,6 +198,22 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     var DataTable = function(){
+     	var columns = [];
+     	var rows = [];
+     	
+     	return {
+     		addRows : function(row){
+     			rows.push(row);
+     		},
+     		addColumns : function(column){
+     			columns.push(column);
+     		},
+     		getData : function(){
+     			return '';
+     		}
+     	}
+     };
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
