@@ -42,17 +42,23 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
+     	info_log = [];
          for (var iii = 1; iii < (100 + 1); iii++){
          	if (iii%5 == 0 && iii%3 == 0){
-         		console.log("FizzBuzz");
+         		//console.log("FizzBuzz");
+         		info_log.push("FizzBuzz");
          	} else if (iii%5 == 0){
-         		console.log("Buzz");
+         		//console.log("Buzz");
+         		info_log.push("Buzz");
          	} else if (iii%3 == 0){
-         		console.log("Fizz");
+         		//console.log("Fizz");
+         		info_log.push("Fizz");
          	} else {
-         		console.log(iii);
+         		//console.log(iii);
+         		info_log.push(iii);
          	}
          }
+         return info_log;
      }
 
      // You have a master array of strings, where each element is a fruit name.
