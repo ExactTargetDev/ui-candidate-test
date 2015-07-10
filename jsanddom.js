@@ -218,14 +218,65 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     function create_select(){
+     	var select_html = '<select id="my_select">';
+     	select_html += '<option value="option1">Pick Me!</option>';
+     	select_html += '<option value="option2">No, Pick Me!</option>';
+     	select_html += '<option value="option3">Pick me instead!</option>';
+     	select_html += '</select>';
+     	$('#div1').append(select_html);
+     	var button_html = '<input type="button" value="Show Selection in Console" onclick="console.log(\'Name: \' + $(\'#my_select option:selected\').text() + \' Value: \' + $(\'#my_select\').val())" />';
+     	$('#div1').append(button_html);
+     }
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     function grab_anchor(){
+     	// add an exclamation point for each time we successfully grab the anchor
+     	$('a').append('!');
+     	$('.link').append('!');
+     	$('[href="#"]').append('!');
+     	$('#fizz > *').append('!');
+     	$('#foo *:not(div)').append('!');
+     }
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     function create_array(){
+     	var my_array = [];
+     	for (var iii = 100; iii < 600; iii = iii + 100){
+     		my_array.push(iii);
+     	}
+     	
+     	for (var jjj = 0; jjj < my_array.length; jjj++){
+     		$('#list1').append('<li>'+my_array[jjj]+'</li>');
+     	}
+     }
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     function add_checks_n_links(){
+     	var checkbox_html = '';
+     	
+     	for (var iii = 0; iii < 10; iii++){
+     		checkbox_html += '<input type="checkbox" id="checkbox'+iii+'" />';
+     	}
+     	
+     	$('#foobar').append(checkbox_html);
+     	
+     	var link_html = '<br/><a href="#" onclick="check_all(true);return false;">Check All</a>';
+     	link_html += '<br/><a href="#" onclick="check_all(false);return false;">Uncheck All</a>';
+     	
+     	$('#foobar').append(link_html);
+     }
+     
+     /*
+      * Function that actually does the checking/unchecking. Gets passed true to check all and false to uncheck all
+      */
+     function check_all(check_or_uncheck){
+     	$('#foobar input[type = "checkbox"]').each(function(){
+     		$(this).prop('checked', check_or_uncheck);
+     	});
+     }
