@@ -150,3 +150,38 @@ test( "Closure test", 2, function() {
     var test_string = 'This is the first half of the sentence, and this is the second half!';
     ok( closureTest(), test_string, 'Expected strings to have same values' );
 });
+
+// Create JSON Test
+test( "JSON test", 4, function() {
+    // Verify the method exists
+    equal( typeof create_json_test, 'function', 'Must contain a create_json_test function' ); 
+
+    // Our JSON object
+    var sample_json = create_json_test();
+    
+    // test to make sure we can drill down to each part successfully
+    ok( sample_json.number_of_people, 3, 'Object should equal 3' );
+    ok( sample_json.people[1].first_name, 'Jane', 'Object should equal Jane' );
+    ok( sample_json.people[2].phone_numbers.work, '765-123-4567', 'Object should equal 765-123-4567' );
+});
+
+// Create DataTable Test
+test( "Data Table test", 4, function() {
+   
+    // Our new object
+    var my_data_table = new DataTable;
+    my_data_table.addColumns('column1', 'column2', 'column3'); // add our columns
+    my_data_table.addRow('A1', 'A2', 'A3'); // add a row
+    my_data_table.addRow('B1', 'B2', 'B3'); // add a 2nd row
+    sample_json = my_data_table.getData();
+    
+    // tests to make sure json was successful
+    ok( sample_json[0].column1, 'A1', 'Object should equal A1' );
+    ok( sample_json[1].column3, 'B3', 'Object should equal B3' );
+    
+    // test that the rows and columns properties are private
+    var rows = my_data_table.rows;
+    var columns = my_data_table.columns;
+    ok( (typeof rows == 'undefined'), true, 'Object should be undefined' );
+    ok( (typeof columns == 'undefined'), true, 'Object should be undefined' );
+});

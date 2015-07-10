@@ -144,47 +144,51 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-     var people_json = {
-     	"number_of_people" : 3,
-     	"people" : [
-     		{
-     			"first_name" : "John",
-     			"last_name" : "Doe",
-     			"city" : "Indianapolis",
-     			"state" : "Indiana",
-     			"zip" : "46201",
-     			"phone_numbers" : {
-     				"home" : "317-555-5555",
-     				"work" : "317-123-4567",
-     				"mobile" : "317-765-4321"
-     			}
-     		},
-     		{
-     			"first_name" : "Jane",
-     			"last_name" : "Smith",
-     			"city" : "Columbus",
-     			"state" : "Indiana",
-     			"zip" : "47201",
-     			"phone_numbers" : {
-     				"home" : "812-555-5555",
-     				"work" : "812-123-4567",
-     				"mobile" : "812-765-4321"
-     			}
-     		},
-     		{
-     			"first_name" : "Joe",
-     			"last_name" : "Schmoe",
-     			"city" : "Lafayette",
-     			"state" : "Indiana",
-     			"zip" : "47901",
-     			"phone_numbers" : {
-     				"home" : "765-555-5555",
-     				"work" : "765-123-4567",
-     				"mobile" : "765-765-4321"
-     			}
-     		}
-     	]
-     };
+     function create_json_test(){
+     	var people_json = {
+	     	"number_of_people" : 3,
+	     	"people" : [
+	     		{
+	     			"first_name" : "John",
+	     			"last_name" : "Doe",
+	     			"city" : "Indianapolis",
+	     			"state" : "Indiana",
+	     			"zip" : "46201",
+	     			"phone_numbers" : {
+	     				"home" : "317-555-5555",
+	     				"work" : "317-123-4567",
+	     				"mobile" : "317-765-4321"
+	     			}
+	     		},
+	     		{
+	     			"first_name" : "Jane",
+	     			"last_name" : "Smith",
+	     			"city" : "Columbus",
+	     			"state" : "Indiana",
+	     			"zip" : "47201",
+	     			"phone_numbers" : {
+	     				"home" : "812-555-5555",
+	     				"work" : "812-123-4567",
+	     				"mobile" : "812-765-4321"
+	     			}
+	     		},
+	     		{
+	     			"first_name" : "Joe",
+	     			"last_name" : "Schmoe",
+	     			"city" : "Lafayette",
+	     			"state" : "Indiana",
+	     			"zip" : "47901",
+	     			"phone_numbers" : {
+	     				"home" : "765-555-5555",
+	     				"work" : "765-123-4567",
+	     				"mobile" : "765-765-4321"
+	     			}
+	     		}
+	     	]
+	     };
+	     return people_json;
+     }
+     
 
 
      // Create a javascript object (DataTable) with the following:
