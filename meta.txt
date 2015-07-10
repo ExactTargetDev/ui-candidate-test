@@ -1,1 +1,27 @@
 Starting Timestamp: 1436490513
+9:08PM EST
+
+I have tested the UnitTests and the JsAndDom.html items in the following browsers:
+Firefox 38.0.5 (Mac)
+Chrome 43.0.2357.132 (Mac)
+Safari 6.0.5 (Mac) (I am getting an error on the UnitTests, but it is listed as "Global" and not associated with any 
+individual test)
+Opera 12.16 (Mac)
+Internet Explorer 8.0.6 (Emulated on Mac) - Everything works except for console.log (not supported by IE)
+Internet Explorer 11.0.9 (on PC)
+Android Chrome
+iPad Safari (Emulated iOS 7.1)
+
+Ending Timestamp: 1436502839
+12:34AM EST
+
+Total Time: 3h26m
+
+A few notes:
+So I think I might have misunderstood some items at first... I was attempting to put together the dashboard as well, but I do not
+have Photoshop. I do have Gimp, and was attempting to use that, but I don't have much experience with it, so I apologize if I 
+have an automatic failure from not completing the slicing into HTML portion. 
+I do feel comfortable enough with HTML and CSS to model objects around, I just don't know my way around Photoshop.
+I also probably spent way too much time trying to open different emulators to test IE and mobile, but I figured I would
+try to make up for my lack of Photoshop skills with being thorough. 
+Anyway, thank you for your time!
