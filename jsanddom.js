@@ -205,6 +205,35 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+	       /* <!DOCTYPE html>
+<html>
+<body>
+
+Select your favorite fruit:
+<select id="mySelect">
+  <option value="v_item1">Apple</option>
+  <option value="v_item2">Orange</option>
+  <option value="v_item3">Pineapple</option>
+  <option value="v_item4">Banana</option>
+</select>
+
+<p>Click the button to return the value of the selected fruit.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<script>*/
+function myFunction() {
+var select = document.getElementById("mySelect");
+ var selectedString = select.options[select.selectedIndex].text;
+    console.log(selectedString);
+    var x = document.getElementById("mySelect").selectedIndex;
+     console.log(document.getElementsByTagName("option")[x].value);
+    
+}
+/*</script>
+
+</body>
+</html>*/
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
