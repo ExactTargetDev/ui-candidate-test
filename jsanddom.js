@@ -60,7 +60,17 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
-     }
+		  var  newF= [],fruitsToRemove = {};
+  
+  for (var i = fruitsToRemove.length - 1; i >= 0; i--) {
+    fruitsToRemove[fruitsToRemove [i]] = 1;
+  }
+  for (var i = -1; ++i < fruits.length;) {
+    var fruit = fruits [i];
+    if (!fruitsToRemove[fruit]) newF.push (fruit);
+  }
+  return newF;
+}
 
      // Write a function to push either a simple value or an array of values onto a specified array.
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
