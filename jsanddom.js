@@ -272,3 +272,37 @@ var select = document.getElementById("mySelect");
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+	 /* <html>
+<body>
+<div id="foobar">
+<form name="myform">
+
+<input type="checkbox" name="check_list" value="1">item1<br>
+<input type="checkbox" name="check_list" value="2">item2<br>
+<input type="checkbox" name="check_list" value="3">item3<br>
+<input type="checkbox" name="check_list" value="4">item4<br>
+<input type="checkbox" name="check_list" value="5">item5<br>
+
+<a href="#"><input type="button" name="Check_All" value="Check All"
+onClick="CheckAll(document.myform.check_list)"></a>
+<a href="#"><input type="button" name="Un_CheckAll" value="Uncheck All"
+onClick="UnCheckAll(document.myform.check_list)"></a>
+<br>
+</form>
+</div>
+<script>*/
+function CheckAll(chk)
+{
+for (i = 0; i < chk.length; i++)
+	chk[i].checked = true ;
+//document.myform.CheckAll.value="uncheck all";
+}
+
+function UnCheckAll(chk)
+{
+for (i = 0; i < chk.length; i++)
+	chk[i].checked = false ;
+}
+/*</script>
+</body>
+</html>*/
