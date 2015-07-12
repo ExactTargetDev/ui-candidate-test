@@ -131,8 +131,10 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-     var human = {
-    person1: 
+     
+	 function closure(){
+	 var human = {
+    "person1":[ 
         {
             "firstName": "John",
             "lastName": "Doe",
@@ -145,7 +147,7 @@
                 "mobile": 510456789
             }
         },
-        person2:{
+        {
             "firstName": "mark",
             "lastName": "Doe",
             "city": "fremont",
@@ -156,9 +158,23 @@
                 "home": 7896541236,
                 "mobile": 321456987
             }
+        },
+		{
+            "firstName": "simo",
+            "lastName": "Doe",
+            "city": "colombus",
+            "state": "ohio",
+            "Zip": 50586,
+            "phoneNumbers": {
+                "work": 5104567897,
+                "home": 7896541236,
+                "mobile": 321456987
+            }
         }
-    
-};
+      ]
+	 };
+	 return human;
+	 }
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
