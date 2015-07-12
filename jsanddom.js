@@ -98,10 +98,15 @@
   }
 }
 
+    
      // Write a function that will take any number of arguments and return their sum
-     function sum() {
-         // FILL THIS IN
-     }
+   function abc(){
+  var total = 0;
+  for( var i = 0; i < arguments.length; i++) {
+     total += arguments[i];
+  }
+  return total;
+}
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
