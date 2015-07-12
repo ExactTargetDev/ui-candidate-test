@@ -26,3 +26,10 @@ test( "Minimum Value ", function() {
     // Make sure the result from the reverseString function is valid
     ok( findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), -1.1, 'Expected -1.1 as the result, the result was: ' + findMinValue([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]) );
 });
+test( "Distinct Values", function() {
+    // Verify the method exists
+    equal( typeof findDistinct, 'function', 'Must contain a findDistinctValues function' );
+
+    // Make sure the result from the reverseString function is valid
+    ok( findDistinct([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, 0.18], 'Expected [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, 0.18] as the result, the result was: ' + findDistinct([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]) );
+});
