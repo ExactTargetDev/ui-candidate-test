@@ -245,6 +245,28 @@ var select = document.getElementById("mySelect");
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+	     /*<html>
+<head>
+<title>Script Test</title>
+</head>
+<body>
+    <ul id="list1"></ul>
+</body>
+<script>*/
+    function additems () {
+         var a = [];
+            var output = '';
+    for (var i = 1; i <= 5; i++) {
+             a.push('Element#' + i);
+         }
+     a.forEach(function (value) {
+             output += '<li>' + value + '</li>';
+         });
+
+         $('#list1').html(output);
+     }
+/*</script>
+</html>*/
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
