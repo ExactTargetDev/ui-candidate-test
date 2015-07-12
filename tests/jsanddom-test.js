@@ -55,3 +55,11 @@ test( "SplitUsingComa ", function() {
     // Make sure the result from the reverseString function is valid
     ok( splitListStrUsingComma('The, quick, brown, fox jumped over'),['The', 'quick', 'brown', 'fox jumped over'], "Expected ['The', 'quick', 'brown', 'fox jumped over'] as the result, the result was: " + splitListStrUsingComma('The, quick, brown, fox jumped over'));
 });
+
+test( "Sum of no's", function() {
+    // Verify the method exists
+    equal( typeof abc, 'function', 'Must contain a Sum function' );
+
+    // Make sure the result from the reverseString function is valid
+    ok( abc(1, 1, 2, 3, 5, 7),19, "Expected 19 as the result, the result was: " + abc(1, 1, 2, 3, 5, 7));
+});
