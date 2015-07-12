@@ -63,3 +63,10 @@ test( "Sum of no's", function() {
     // Make sure the result from the reverseString function is valid
     ok( abc(1, 1, 2, 3, 5, 7),19, "Expected 19 as the result, the result was: " + abc(1, 1, 2, 3, 5, 7));
 });
+test( "White Space in string", function() {
+    // Verify the method exists
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
+
+    // Make sure the result from the reverseString function is valid
+    ok( isOnlyWhitespace(''), true, "Expected true as the result, the result was: " + isOnlyWhitespace(''));
+});
