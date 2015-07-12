@@ -171,6 +171,36 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+	 function Dtable() {
+         var cols = [],
+             rows = [];
+
+         return {
+             addColumns: function(){
+                 pushOntoArray(cols, arguments);
+             },
+             addRow: function(){
+                 var array = {};
+
+                 for (var i = 0; i < cols.length; i++) {
+                     if (arguments[i]) {
+                         array[cols[i]] = arguments[i];
+                     }
+                 }
+
+                 rows.push(array);
+             },
+             getData: function(){
+                 var array = {};
+
+                 for (var i = 0; i < rows.length; i++) {
+                     array[i] = rows[i];
+                 }
+
+                 return array;
+             }
+         }
+     }
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
