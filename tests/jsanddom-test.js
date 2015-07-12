@@ -41,3 +41,10 @@ test( "Remove Fruits ", function() {
     ok( removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],['pear', 'banana']),
         ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], "Expected ['apple', 'orange', 'kiwi', 'plum', 'strawberry'] as the result, the result was: " + removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],['pear', 'banana']) );
 });
+test( "Push Onto Array", function() {
+    // Verify the method exists
+    equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' );
+
+    // Make sure the result from the reverseString function is valid
+    ok( pushOntoArray([1, 2, 3, 4, 5],[7, 8, 9]),[1, 2, 3, 4, 5, 7, 8, 9], "Expected [1, 2, 3, 4, 5, 7, 8, 9] as the result, the result was: " + pushOntoArray([1, 2, 3, 4, 5],[7, 8, 9]));
+});
