@@ -1,271 +1,118 @@
-﻿ <html>
+<html>
  <head>
      <title>Screenshot.html</title>
-    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
-    <meta http-equiv="EXPIRES" content="Sun, 12 Jul 2015 00:55:01 GMT">
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Place favicon.ico in the root directory -->
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.string/2.3.3/underscore.string.min.js"></script>
-
-    <style type="text/css">
-    #interactive-marketing-hub li:hover {
-        background: #eee;
-    }
-
-    #interactive-marketing-hub li.active {
-        background: yellow;
-    }
-
-    #interactive-marketing-hub li.active:hover {
-        background: #f5f6ce;
-    }
-    </style>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.min.js"</script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="screenshot.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            Screenshot.init();
+        });
+    </script>
  </head>
  <body>
-<header>
-    <section>
-        <h1>ExactTarget.</h1>
-    </section>
-    <section>
-        <span>Welcome John!</span>
-    </section>
-    <section>
-        <ul>
-            <li><a href="#">Account</a></li>
-            <li><a id="help">Help</a></li>
-            <li><a href="#">Logout</a></li>
-        </ul>
-    </section>
-</header>
-<aside>
-    <section id="interactive-marketing-hub">
-        <h1>Interactive Marketing Hub</h1>
-        <ul>
-            <li>ExactTarget Email</li>
-            <li>ExactTarget Mobile</li>
-            <li>CoTweet Social</li>
-            <li>ExactTarget Sites</li>
-        </ul>
-        <ul>
-            <li>Automation Studio</li>
-            <li>Audience Builder</li>
-            <li>Report Builder</li>
-        </ul>
-        <ul>
-            <li>Partner Applications</li>
-        </ul>
-    </section>
-</aside>
-<section id="help-details">
-</section>
-<section>
-    <article>
-        <header>
-            <h3>September 2010</h3>
-            <ul>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Pop-out</a></li>
-            </ul>
-        </header>
-        <section>
-            <ul>
-                <li>
-                    <header>
-                        <h4>Fri</h4>
-                        <h4>10</h4>
-                    </header>
-                    <section></section>
-                    <footer></footer>
-                </li>
-                <li>
-                    <header>
-                        <h4>Sat</h4>
-                        <h4>11</h4>
-                    </header>
-                    <section></section>
-                    <footer></footer>
-                </li>
-                <li>
-                    <header>
-                        <h4>Sun</h4>
-                        <h4>12</h4>
-                    </header>
-                    <section></section>
-                    <footer></footer>
-                </li>
-                <li>
-                    <header>
-                        <h4>Mon</h4>
-                        <h4>13</h4>
-                    </header>
-                    <section></section>
-                    <footer></footer>
-                </li>
-                <li>
-                    <header>
-                        <h4>Tue</h4>
-                        <h4>14</h4>
-                    </header>
-                    <section></section>
-                    <footer><h5>Today</h5></footer>
-                </li>
-                <li>
-                    <header>
-                        <h4>Wed</h4>
-                        <h4>15</h4>
-                    </header>
-                    <section></section>
-                    <footer></footer>
-                </li>
-                <li>
-                    <header>
-                        <h4>Thu</h4>
-                        <h4>16</h4>
-                    </header>
-                    <section></section>
-                    <footer></footer>
-                </li>
-                <li>
-                    <header>
-                        <h4>Fri</h4>
-                        <h4>17</h4>
-                    </header>
-                    <section></section>
-                    <footer></footer>
-                </li>
-                <li>
-                    <header>
-                        <h4>Sat</h4>
-                        <h4>18</h4>
-                    </header>
-                    <section></section>
-                    <footer></footer>
-                </li>
-            </ul>
-        </section>
-    </article>
-    <article>
-        <header>
-            <h3>Pulse</h3>
-            <ul>
-                <li>Settings</li>
-                <li>Collapse</li>
-                <li>Pop-out</li>
-                <li>Close</li>
-            </ul>
-        </header>
-        <section>
-            <ul>
-                <li class="panel">
-                    <header><h5>Followers</h5></header>
-                    <section>
-                        <h3>210</h3>
-                        <h4>added today</h4>
-                    </section>
-                    <footer>
-                        <h5>2,393,905 total</h5>
-                    </footer>
-                </li>
-                <li class="panel">
-                    <header><h5>Fan</h5></header>
-                    <section>
-                        <h3>73</h3>
-                        <h4>added today</h4>
-                    </section>
-                    <footer>
-                        <h5>91,675 total</h5>
-                    </footer>
-                </li>
-                <li class="panel">
-                    <header><h5>Subscribers</h5></header>
-                    <section>
-                        <h3>56</h3>
-                        <h4>added today</h4>
-                    </section>
-                    <footer>
-                        <h5>189,405 total</h5>
-                    </footer>
-                </li>
-                <li class="panel medium-view">
-                    <header><h5>foursquare</h5></header>
-                    <section>
-                        <ul>
-                            <li>Worldwide Checkins</li>
-                            <li>3,905</li>
-                        </ul>
-                        <figure>
-                            <img src="#" alt="map" />
-                        </figure>
-                    </section>
-                    <footer>
-                        <h5>189,405 total</h5>
-                    </footer>
-                </li>
-                <li class="panel">
-                    <header><h5>Landing Pages</h5></header>
-                    <section>
-                        <h4>Visitors Today</h4>
-                        <h3>397 <span>/ 355</span></h3>
-                    </section>
-                    <footer>
-                        <h5>Soulja Boy V.I.P.</h5>
-                    </footer>
-                </li>
-            </ul>
-        </section>
-        <footer>
-            <ul>
-                <li>[]</li>
-                <li>[]</li>
-                <li>[]</li>
-                <li>[]</li>
-            </li>
-        </footer>
-    </article>
-</section>
-<script type="text/javascript">
-$( function() {
-    $( '.panel' ).click( function( e ) {
-        if( e && e.preventDefault ) {
-            e.preventDefault();
-        }
+    <div id="header">
+        <div class="title">ExactTarget.</div>
+        <div class="actions">
+            <span> Welcome John! </span>
+            <a class="action account" href="#"> Account </a>|
+            <a class="action help" href="#"> Help </a>|
+            <a class="action logout" href="#"> Logout </a>
+        </div>
+    </div>
+    <div id="mainarea">
+        <div id="menu">
+            <div class="header">Interactive Marketing Hub</div>
+            <div class="item">ExactTarget Email</div>
+            <div class="item">ExactTarget Mobile</div>
+            <div class="item">CoTweet Social</div>
+            <div class="item">ExactTarget Sites</div>
+            <div class="item bar"></div>
+            <div class="item">Automation Studio</div>
+            <div class="item">Audience Builder</div>
+            <div class="item">Report Builder</div>
+            <div class="item bar"></div>
+            <div class="footer">Partner Applications</div>
+        </div>
 
-        if( $( this ).hasClass( 'medium-view' ) ) {
-            return;
-        }
+        <div id="calendar">
+            <div class="header">
+                <span class="month"/>
+            </div>
+            <div class="days"></div>
+        </div>
 
-        $( '.panel' ).removeClass( 'medium-view' );
-        $( this ).addClass( 'medium-view' );
-    });
+        <div id="pulse">
+            <div class="pulseimage"></div>
+            <div class="tiles">
 
-    $( '#interactive-marketing-hub li' ).click( function( e ) {
-        if( e && e.preventDefault ) {
-            e.preventDefault();
-        }
+                <div class="item">
+                    <h1>Followers</h1>
+                    <div class="tile">
+                        <div class="largeblue">310</div>
+                        <div class="text">added today</div>
+                        <div class="summary">2,393,905 total</div>
+                    </div>
+                </div>
 
-        if( $( this ).hasClass( 'active' ) ) {
-            return;
-        }
+                <div class="item">
+                    <h1>Fan</h1>
+                    <div class="tile">
+                        <div class="largeblue">73</div>
+                        <div class="text">added today</div>
+                        <div class="summary">91,675 total</div>
+                    </div>
+                </div>
 
-        $( '#interactive-marketing-hub li' ).removeClass( 'active' );
-        $( this ).addClass( 'active' );
-    });
+                <div class="item">
+                    <h1>Subscribers</h1>
+                    <div class="tile">
+                        <div class="largeblue">56</div>
+                        <div class="text">added today</div>
+                        <div class="summary">189,405 total</div>
+                    </div>
+                </div>
 
-    $( '#help' ).click( function( e ) {
-        if( e && e.preventDefault ) {
-            e.preventDefault();
-        }
+                <div class="item selected">
+                    <h1>foursquare</h1>
+                    <div class="tile">
+                        <div class="header">Worldwide Checkins<span>3,905</span></div>
+                        <div class="map"></div>
+                    </div>
+                </div>
 
-        $.getJSON( "data/help.json", function( data ) {
-            $( '#help-details' ).html( JSON.stringify( data ) );
-        });
-    });
-});
-</script>
+                <div class="item">
+                    <h1>Landing Pages</h1>
+                    <div class="tile">
+                        <div class="text">Visitors Today</div>
+                        <div class="largeblue">397<span>&nbsp;/&nbsp;355</span></div>
+                        <div class="summary">Souija Boy V.I.P.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Help</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
  </body>
  </html>
