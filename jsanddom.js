@@ -115,9 +115,14 @@
 
      }
 	 
-
-     // write an example of a javascript closure
-
+// write an example of a javascript closure
+	 function myfunc() {
+    // Local variable that ends up within closure
+    var num = 666;
+    var sayAlert = function() { alert(num); }
+    num++;
+    return sayAlert;
+} myfunc();
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
