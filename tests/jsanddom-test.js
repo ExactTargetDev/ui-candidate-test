@@ -46,3 +46,16 @@ test(" Find Distinct Values Test ", function(assert){
 	var expectedResults = [1,2,3,5,7];
 	assert.deepEqual(findDistinctValues(testData), expectedResults, "Expected result does not match corresponding array. ");
 });
+
+test("Fizz Buzz Test",function(assert){
+	//Verify the method exists.
+	equal(typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function ');
+
+	//Make sure we get expected results.
+	var expectedResults = [1,2,"Fizz",4,"Buzz","Fizz",7,8,"Fizz","Buzz",11,"Fizz",13,14,"FizzBuzz"];
+	
+	//We are going to build into the fizz buzz function an array return with results 
+	//of the first 15 elements (for brevity in handwriting data.)
+	assert.deepEqual(doFizzBuzz(),expectedResults,"Expected result is matching arrays. ");
+	
+});
