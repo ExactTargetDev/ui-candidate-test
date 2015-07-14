@@ -66,7 +66,9 @@ body {
   background-color: #428bca;
 }
 
-
+nav.navbar-inverse {background:linear-gradient(rgb(51,62,70),rgb(66,67,69));}
+.nav>li>a {padding:15px 1px;}
+.nav>li:last-child>a {padding-right:5px;}
 /*
  * Main content
  */
@@ -82,24 +84,4 @@ body {
 }
 .main .page-header {
   margin-top: 0;
-}
-
-
-/*
- * Placeholder dashboard ideas
- */
-
-.placeholders {
-  margin-bottom: 30px;
-  text-align: center;
-}
-.placeholders h4 {
-  margin-bottom: 0;
-}
-.placeholder {
-  margin-bottom: 20px;
-}
-.placeholder img {
-  display: inline-block;
-  border-radius: 50%;
 }
