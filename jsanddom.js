@@ -5,7 +5,14 @@ function divide(a, b) {
 
 // Write a function that takes a single argument (a string) and returns the string reversed.
 function reverseString(str) {
-    // FILL THIS IN
+    var length = str.length;
+    var reversed = new Array(length);
+
+    var i = length;
+    while (i--) {
+        reversed[length - i] = str.charAt(i);
+    }
+    return reversed.join('');
 }
 
 // Write a function that takes an array of numbers and returns the minimum value
