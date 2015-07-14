@@ -141,7 +141,19 @@
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         var source = sourceStr;
+
+         //jquery trims whitespace, so if we trim it and it's empty (where it wasn't empty before)
+         //then it was all whitespace.
+         if(source.length > 0){
+            if($.trim(source).length === 0){
+                return true;
+            } else {
+                return false;
+            }
+         } else {
+            return false;
+         }
      }
 
      // write an example of a javascript closure

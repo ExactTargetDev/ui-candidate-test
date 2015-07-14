@@ -125,6 +125,6 @@ test("Is it Only Whitespace ?", function(assert){
 	var bothString = ' abc';	//This string contains both letters and whitespace.
 
 	assert.ok(isOnlyWhitespace(trueString), "This string contains only whitespace. ");
-	assert.ok(isOnlyWhitespace(falsString), "This string contains no whitespace. ");
-	assert.ok(isOnlyWhitespace(bothString), "This string contains a combination of whitespace and letters. ");
+	assert.ok(!isOnlyWhitespace(falsString), "This string contains no whitespace. ");
+	assert.ok(!isOnlyWhitespace(bothString), "This string contains a combination of whitespace and letters. ");
 });
