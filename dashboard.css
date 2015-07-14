@@ -71,7 +71,15 @@ body {
 .sidebar-nav ul li a:hover {color:black;background-color:rgb(250,250,250);}
 .sidebar-nav hr {margin:10px 0px 10px -10px;color:rgb(224,224,224);border: 1px 0px 0px 0px solid rgb(224,224,224) ;}
 
-.calendar-container {border:1px solid rgb(224,224,224);border-top:0;border-bottom-left-radius: 8px;border-bottom-right-radius: 8px;background-color:#FAFAFA;margin-top:-20px;}
+.calendar-container {border:1px solid rgb(224,224,224);border-top:0;border-bottom-left-radius: 8px;border-bottom-right-radius: 8px;background-color:#FAFAFA;margin-top:-35px;}
+.calendar-body table{width:95%;margin:-20px 20px auto;height:100px;border-collapse: collapse;}
+.calendar-body table tr.helperRow {height:15px;}
+.calendar-body table tr.helperRow td.active {border-left:1px solid rgb(213,213,213);border-right:1px solid rgb(213,213,213);background-color:#F59C36;text-align: center;color:white;font-size:11px;letter-spacing: .25px}
+.calendar-body table tr.listRow {border-bottom:1px solid rgb(213,213,213);}
+.calendar-body table tr.listRow td {border-left:1px solid rgb(213,213,213);border-right:1px solid rgb(213,213,213);vertical-align: top}
+div.calendar-day {display: inline-block;text-align: left;padding-left:4px;font-size:12px;}
+div.calendar-num {display: inline-block;text-align: right;width:75%;padding-right:4px;font-size:12px;}
+.calendar-body table tr.listRow td.active {background: linear-gradient(rgb(254,234,204),rgb(230,230,240));}
 
 nav.navbar-inverse {background:linear-gradient(rgb(51,62,70),rgb(66,67,69));}
 .nav>li>a {padding:15px 1px;}
