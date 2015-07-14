@@ -112,5 +112,5 @@ test("Sum up and number of arguments. ", function(assert){
 
 	assert.equal(sum(1, 1, 2, 3, 5, 7),19,"Passed the first summation test");
 
-	assert.equal(sum(1,1,16),19,"Passed the second summation test");
+	assert.equal(sum(1,1,16),18,"Passed the second summation test");
 });
