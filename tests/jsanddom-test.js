@@ -142,3 +142,33 @@ test("Is it valid JSON ? ",function(assert){
 	equal(people[0].first_name, "Joshua", "Valid JSON able to get object value out. ");
 	equal(people[0].phone_numbers.cell_phone, "337-322-9661", "Able to get deeper information out of the object. ");
 });
+
+module(" DataTable tests ");
+test("Adding a column ",function(assert){
+	//Test for adding columns.
+	DataTable.addColumns('column1', 'column2', 'column3');
+	assert.equal(DataTable.columnCount(), 3, "The correct number of columns was found to be added. ");
+});
+
+test("Adding rows", function(assert){
+	DataTable.addColumns('column1', 'column2', 'column3');
+
+	DataTable.addRow('value1A', 'value1B', 'value1C');
+	assert.equal(DataTable.rowCount(), 1, "The correct number of rows was added. ");
+
+	DataTable.addRow('value2A', 'value2B', 'value2C');
+	assert.equal(DataTable.rowCount(), 2, "The correct number of rows is returned. ");
+});
+
+test("DataTables JSON object", function(assert){
+	DataTable.addColumns('column1', 'column2', 'column3');
+	DataTable.addRow('value1A', 'value1B', 'value1C');
+	DataTable.addRow('value2A', 'value2B', 'value2C');
+
+	expectedValue = [
+		{"column1":"value1A","column2":"value1B","column3":"value1C"},
+		{"column1":"value2A","column2":"value2B","column3":"value2C"}
+	];
+
+	assert.deepEqual(DataTable.getData(),expectedValue,"The expected JSON data was returned from getData. ");
+});
