@@ -22,4 +22,16 @@ test(" Reverse String Test ", function(assert) {
 	var expectedString = 'kcor srebircsbuS';
 
 	assert.equal(string, expectedString, "Reverse string worked as expected. ");
-})
+});
+
+test(" Find Minimum Value Test ", function(assert) {
+	//Verify the method exists.
+	equal(typeof findMinValue, 'function', 'Must contain a findMinValue function');
+
+	//Make sure the result are expected.
+	var testData = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+
+	var expectedResult = -1.1;
+
+	assert.equal(findMinValue(testData), expectedResult, "Expected Result matches");
+});
