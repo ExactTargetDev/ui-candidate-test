@@ -35,3 +35,14 @@ test(" Find Minimum Value Test ", function(assert) {
 
 	assert.equal(findMinValue(testData), expectedResult, "Expected Result matches");
 });
+
+test(" Find Distinct Values Test ", function(assert){
+	//Verify the method exists.
+	equal(typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function');
+
+	//Make sure the results are expected.
+	var testData = [1,1,2,3,5,7];
+
+	var expectedResults = [1,2,3,5,7];
+	assert.deepEqual(findDistinctValues(testData), expectedResults, "Expected result does not match corresponding array. ");
+});
