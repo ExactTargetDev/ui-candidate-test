@@ -287,10 +287,31 @@
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
      var items = ["Item 1","Item 2","Item 3","Item 4","Item 5"];
-     
-     
+     var div1 = $("#div1");
+     var select = $('<select>').attr('id','items');
+     $.each(items, function(index, value) {   
+          select.append($('<option>', { value : index }).text(value)); 
+     });
+     var button = $('<button>').attr('class','btn btn-primary').attr('id','pressMeBtn').text('Press Me');
+     div1.append(select).append(button);
+     //Bind an event to the button.
+     div1.on('click','button#pressMeBtn',function(e){
+        console.log($('select#items option:selected').val()+":"+$('select#items option:selected').text());
+     });
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     var anchor1 = $('a.link');         
+     console.log(anchor1.text());
+     var anchor2 = $('div.buzz a');     
+     console.log(anchor2.text());
+     var anchor3 = $('div#fizz a');     
+     console.log(anchor3.text());
+     var anchor4 = $('div#foo a');      
+     console.log(anchor4.text());
+     var anchor5 = $('div.bar a');
+     console.log(anchor5.text());
+
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".

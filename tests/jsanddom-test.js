@@ -162,3 +162,12 @@ test(" Testing all DataTable functions ",function(assert){
 
 	assert.deepEqual(DataTable.getData(),expectedValue,"The expected JSON data was returned from getData. ");
 });
+
+module("DOM Testing");
+test("Testing the selectors for the anchor",function(assert){
+	ok(true, "Not sure how to write the tests for this, but wanted to include a test for it.");
+});
+
+test("Testing for the select build ", function(assert){
+	ok(true, "Again, not sure how to write a test for that but wanted to include one. ");
+});
