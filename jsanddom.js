@@ -286,7 +286,9 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
-
+     var items = ["Item 1","Item 2","Item 3","Item 4","Item 5"];
+     
+     
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
