@@ -171,3 +171,11 @@ test("Testing the selectors for the anchor",function(assert){
 test("Testing for the select build ", function(assert){
 	ok(true, "Again, not sure how to write a test for that but wanted to include one. ");
 });
+
+test("Testing for the list items ", function(assert){
+	ok(true, "Not sure how to test for that, but wanted to include it. ");
+})
+
+test("Testing the checkboxes ", function(assert){
+	ok(true, "Not sure how to test for that, but wanted to include it. ");
+})
