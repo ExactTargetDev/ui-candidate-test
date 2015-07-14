@@ -17,7 +17,17 @@ function reverseString(str) {
 
 // Write a function that takes an array of numbers and returns the minimum value
 function findMinValue(values) {
+    // TODO Why not use Math.min() which can take more than 2 arguments?
 
+    if (!values.length) {
+        return;
+    }
+
+    var min = values[0];
+    for (var i = 1, length = values.length; i < length; i++) {
+        min = Math.min(min, values[i]);
+    }
+    return min;
 }
 
 // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)

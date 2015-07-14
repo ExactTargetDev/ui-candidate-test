@@ -31,7 +31,7 @@ String.format = function() {
 };
 
 module('Test function');
-test('Reverse string function test', function() {
+test('String reversion function test', function() {
     // Verify the method exists
     equal(typeof reverseString, 'function', 'Must contain a "reverseString" function');
 
@@ -44,4 +44,23 @@ test('Reverse string function test', function() {
     testReverseString('0987654321', reverseString('1234567890'));
 
     testReverseString('', reverseString(''));
+});
+
+test('Minimal value search function test', function() {
+    // Verify the method exists
+    equal(typeof findMinValue, 'function', 'Must contain a "reverseString" function');
+
+    function testFindMinValue(expected, result) {
+        equal(result, expected, String.format('Expected "{0}" as the result, the result was: "{1}"', expected, result));
+    }
+
+    // Verify function logic
+    testFindMinValue(-1, findMinValue([1, 2, -1]));
+    testFindMinValue(1, findMinValue([1, 2, 3]));
+    testFindMinValue(-3, findMinValue([-1, -2, -3]));
+    testFindMinValue(-3, findMinValue([-3, -2, -1]));
+    testFindMinValue(5, findMinValue([5, 5, 5]));
+
+    testFindMinValue(undefined, findMinValue([]));
+    testFindMinValue(5, findMinValue([5]));
 });
