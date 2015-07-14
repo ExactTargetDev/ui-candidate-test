@@ -136,3 +136,9 @@ test("Is it a closure ?", function(assert){
 	//Test for non-access to private function.
 	equal(typeof module.private_function, "undefined", "No access to the private function. ");
 });
+
+module(" JSON Test");
+test("Is it valid JSON ? ",function(assert){
+	equal(people[0].first_name, "Joshua", "Valid JSON able to get object value out. ");
+	equal(people[0].phone_numbers.cell_phone, "337-322-9661", "Able to get deeper information out of the object. ");
+});

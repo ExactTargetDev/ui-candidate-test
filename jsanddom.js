@@ -180,7 +180,44 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+     var people = [  
+               {  
+                  "first_name":"Joshua",
+                  "last_name":"Sampia",
+                  "city":"Westfield",
+                  "state":"Indiana",
+                  "zip":"46077",
+                  "phone_numbers":{  
+                     "work_number":"317-493-0574",
+                     "home_number":"337-322-9661",
+                     "cell_phone":"337-322-9661"
+                  }
+               },
+               {  
+                  "first_name":"Christine",
+                  "last_name":"Sampia",
+                  "city":"Westfield",
+                  "state":"Indiana",
+                  "zip":"46077",
+                  "phone_numbers":{  
+                     "work_number":"317-493-0574",
+                     "home_number":"337-303-8309",
+                     "cell_phone":"337-303-8309"
+                  }
+               },
+               {  
+                  "first_name":"Shana",
+                  "last_name":"Sampia",
+                  "city":"Carencro",
+                  "state":"Louisiana",
+                  "zip":"70508",
+                  "phone_numbers":{  
+                     "work_number":"317-493-0574",
+                     "home_number":"337-258-3590",
+                     "cell_phone":"337-258-3590"
+                  }
+               }
+            ];
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
