@@ -59,3 +59,16 @@ test("Fizz Buzz Test",function(assert){
 	assert.deepEqual(doFizzBuzz(),expectedResults,"Expected result is matching arrays. ");
 	
 });
+
+module(" Some Array Tests ");
+test("Remove Fruits from Array",function(assert){
+	//Verify the method exists.
+	equal(typeof removeFruits, 'function', 'Must contain a removeFruits function ');
+
+	//Make sure we get the expected results.
+	var allFruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+	var fruitsToRemove = ['pear', 'banana'];
+	var expectedResult = ['apple','orange','kiwi','plum','strawberry'];
+
+	assert.deepEqual(removeFruits(allFruits, fruitsToRemove), expectedResult, "The array returned as expected with fruit removed. ");
+});
