@@ -72,3 +72,24 @@ test("Remove Fruits from Array",function(assert){
 
 	assert.deepEqual(removeFruits(allFruits, fruitsToRemove), expectedResult, "The array returned as expected with fruit removed. ");
 });
+
+test("Push Onto Array - Simple",function(assert){
+	//Verify the method exists.
+	equal(typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function ');
+
+	//Make sure we get the expected result for a simple value.
+	var currentArray = [1, 2, 3, 4, 5];
+	var valueToPush = 6;
+	var expectedResult = [1, 2, 3, 4, 5, 6];
+
+	assert.deepEqual(pushOntoArray(currentArray, valueToPush),expectedResult, "Expected result of array is good. ");
+})
+
+test("Push Onto Array - Another Array",function(assert){
+	//Make sure we get the expected result for a simple value.
+	var currentArray = [1, 2, 3, 4, 5];
+	var valueToPush = [7, 8, 9];
+	var expectedResult = [1, 2, 3, 4, 5, 7, 8, 9];
+
+	assert.deepEqual(pushOntoArray(currentArray, valueToPush),expectedResult, "Expected result of array is good. ");
+})
