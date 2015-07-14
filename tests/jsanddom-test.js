@@ -83,7 +83,7 @@ test("Push Onto Array - Simple",function(assert){
 	var expectedResult = [1, 2, 3, 4, 5, 6];
 
 	assert.deepEqual(pushOntoArray(currentArray, valueToPush),expectedResult, "Expected result of array is good. ");
-})
+});
 
 test("Push Onto Array - Another Array",function(assert){
 	//Make sure we get the expected result for a simple value.
@@ -92,7 +92,7 @@ test("Push Onto Array - Another Array",function(assert){
 	var expectedResult = [1, 2, 3, 4, 5, 7, 8, 9];
 
 	assert.deepEqual(pushOntoArray(currentArray, valueToPush),expectedResult, "Expected result of array is good. ");
-})
+});
 
 test("Split string using commas ", function(assert){
 	//Verify the method exists.
@@ -105,4 +105,12 @@ test("Split string using commas ", function(assert){
 	var stringToSplit = 'The, quick, brown, fox jumped over';
 	var expectedResult = ['The',' quick',' brown',' fox jumped over'];
 	assert.deepEqual(splitListStrUsingComma(stringToSplit),expectedResult,"The string was split into an array as expected. ");
-})
+});
+
+test("Sum up and number of arguments. ", function(assert){
+	equal(typeof sum, 'function', 'Must contain a sum function ');
+
+	assert.equal(sum(1, 1, 2, 3, 5, 7),19,"Passed the first summation test");
+
+	assert.equal(sum(1,1,16),19,"Passed the second summation test");
+});
