@@ -81,6 +81,29 @@ div.calendar-day {display: inline-block;text-align: left;padding-left:4px;font-s
 div.calendar-num {display: inline-block;text-align: right;width:75%;padding-right:4px;font-size:12px;}
 .calendar-body table tr.listRow td.active {background: linear-gradient(rgb(254,234,204),rgb(230,230,240));}
 
+.pulse-container {
+    background:linear-gradient(rgb(185,199,213),rgb(220,230,240));
+    box-shadow: 0 0 5px rgb(240,240,240);
+    border:1px solid rgb(200,200,200);
+    border-radius: 8px;
+    margin-top:20px;height:300px;}
+.pulse-container div.panel-container div {display:inline;}
+.pulse-container div.pulse-container-header {
+    position:relative;
+}
+.pulse-container div.pulse-container-header h3 {
+    position:absolute;
+    top:-15px;
+    left:0;
+    color:white;
+}
+.pulse-container div.pulse-container-header div {
+  display:inline-block;
+  text-align: right;
+  width:85%;
+  color:rgb(148,166,177);
+}
+
 nav.navbar-inverse {background:linear-gradient(rgb(51,62,70),rgb(66,67,69));}
 .nav>li>a {padding:15px 1px;}
 .nav>li:last-child>a {padding-right:5px;}
