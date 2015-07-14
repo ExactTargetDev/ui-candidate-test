@@ -112,7 +112,16 @@
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         var source = sourceStr;
+         var answer = [];
+
+         if(source != ''){
+             //From here we take advantage of the string.split
+             answer = source.split(",");
+         }
+
+         return answer;
+
      }
 
      // Write a function that will take any number of arguments and return their sum

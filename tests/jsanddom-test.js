@@ -99,7 +99,7 @@ test("Split string using commas ", function(assert){
 	equal(typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function ');
 
 	//Get an empty array from an empty string.
-	assert.equal(splitListStrUsingComma(''),[],"An empty string returns an empty array");
+	assert.deepEqual(splitListStrUsingComma(''),[],"An empty string returns an empty array");
 
 	//Get an array of elements after splitting a string by commas
 	var stringToSplit = 'The, quick, brown, fox jumped over';
