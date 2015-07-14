@@ -96,7 +96,13 @@
          //We are going to take advantage of a jquery method here to determine 
          //if the toPush value is an array or not. Anything not an array, is considered another value.
          if($.isArray(toPush)){
+            var i, length = toPush.length;
 
+            //For shiggles we will make it recursive. (Could handle multi-tier arrays)
+            for(i=0;i<length;i++){
+                var value = toPush[i];
+                pushOntoArray(array, value);
+            }
          } else {
             array.push(toPush);
          }
