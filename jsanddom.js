@@ -157,6 +157,20 @@
      }
 
      // write an example of a javascript closure
+     ;(function(module, undefined){
+        var private_string = "private";
+
+        //This is the closure.
+        var private_function = function(){
+            return private_string;
+        }
+
+        //This is a publicly exposed function of my module.
+        module.public_function = function(){
+            return private_string;
+        }
+     })(window.module = window.module || {});
+     //In my code when trying to hide stuff I almost always use the IFFE method.
 
      // define a json object that represents a collection of people.
      // each person should have the following properties

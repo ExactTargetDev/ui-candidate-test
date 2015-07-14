@@ -128,3 +128,11 @@ test("Is it Only Whitespace ?", function(assert){
 	assert.ok(!isOnlyWhitespace(falsString), "This string contains no whitespace. ");
 	assert.ok(!isOnlyWhitespace(bothString), "This string contains a combination of whitespace and letters. ");
 });
+
+module("Closure Tests");
+test("Is it a closure ?", function(assert){
+	equal(module.public_function(),"private","The publicly exposed method works. ");
+
+	//Test for non-access to private function.
+	equal(typeof module.private_function, "undefined", "No access to the private function. ");
+});
