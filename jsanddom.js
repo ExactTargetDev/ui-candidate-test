@@ -230,6 +230,58 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     ;(function(DataTable, undefined){
+        var columns = [];
+        var rows = [];
+
+        DataTable.addColumns = function(){
+            var i, length = arguments.length;
+
+            for(i=0;i<length;i++){
+                columns.push(arguments[i]);
+            }
+        }
+
+        DataTable.columnCount = function(){
+            return columns.length;
+        }
+
+        DataTable.addRow = function(){
+            var i, row = [], length = arguments.length;
+
+            for(i=0;i<length;i++){
+                row.push(arguments[i]);
+            }
+
+            rows.push(row);
+        }
+
+        DataTable.rowCount = function(){
+            return rows.length;
+        }
+
+        DataTable.getData = function(){
+            var json = [];
+            var obj = {};
+            var i,j, col, data;
+            var rowLength = rows.length;
+            var colLength = columns.length;
+            
+            for(i=0;i<rowLength;i++){
+                obj = {};   //Explicity reset the object
+                for(j=0;j<colLength;j++){
+                    col = columns[j];   //Get the column name
+                    data = rows[i][j];  //Get the value of the column at this row
+
+                    obj[col] = data;    //Put into the object.
+                }
+                json.push(obj);         //Push this object onto the stack.
+            }
+
+            return json;
+        }
+
+     })(window.DataTable = window.DataTable || {});
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
