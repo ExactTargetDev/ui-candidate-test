@@ -36,10 +36,12 @@ test('Reverse string function test', function() {
     equal(typeof reverseString, 'function', 'Must contain a "reverseString" function');
 
     function testReverseString(expected, result) {
-        equal(result, expected, String.format('Expected "{0}" as the result, the result was: {1}', expected, result));
+        equal(result, expected, String.format('Expected "{0}" as the result, the result was: "{1}"', expected, result));
     }
 
     // Verify function logic
     testReverseString('hgfedcba', reverseString('abcdefgh'));
     testReverseString('0987654321', reverseString('1234567890'));
+
+    testReverseString('', reverseString(''));
 });

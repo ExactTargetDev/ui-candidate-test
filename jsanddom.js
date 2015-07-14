@@ -17,7 +17,7 @@ function reverseString(str) {
 
 // Write a function that takes an array of numbers and returns the minimum value
 function findMinValue(values) {
-    // FILL THIS IN
+
 }
 
 // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
