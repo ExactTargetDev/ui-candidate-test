@@ -1,1 +1,3 @@
 Start Time:1436879295
+TotalTime: 
+Browser Testing:Chrome Version 43.0.2357.81 (64-bit), Firefox 37.0.2, Safari Version 8.0.6 (10600.6.3)
