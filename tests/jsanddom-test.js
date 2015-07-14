@@ -114,3 +114,17 @@ test("Sum up and number of arguments. ", function(assert){
 
 	assert.equal(sum(1,1,16),18,"Passed the second summation test");
 });
+
+module(" Testing for Regular Expressions ");
+test("Is it Only Whitespace ?", function(assert){
+	equal(typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function. ');
+
+	//This string contains a space and a tab.
+	var trueString = ' 	';
+	var falsString = 'abc';
+	var bothString = ' abc';	//This string contains both letters and whitespace.
+
+	assert.ok(isOnlyWhitespace(trueString), "This string contains only whitespace. ");
+	assert.ok(isOnlyWhitespace(falsString), "This string contains no whitespace. ");
+	assert.ok(isOnlyWhitespace(bothString), "This string contains a combination of whitespace and letters. ");
+});
