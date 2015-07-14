@@ -12,3 +12,14 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+module( "Basic Function Tests ");
+test(" Reverse String Test ", function(assert) {
+	//Verify the method exists
+	equal(typeof reverseString, 'function', 'Must contain a reverseString function');
+
+	//Make sure the results is expected.
+	var string = reverseString('Subscribers rock');
+	var expectedString = 'kcor srebircsbuS';
+
+	assert.equal(string, expectedString, "Reverse string worked as expected. ");
+})
