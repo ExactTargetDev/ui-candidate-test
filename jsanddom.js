@@ -93,7 +93,15 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+         //We are going to take advantage of a jquery method here to determine 
+         //if the toPush value is an array or not. Anything not an array, is considered another value.
+         if($.isArray(toPush)){
+
+         } else {
+            array.push(toPush);
+         }
+
+         return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
