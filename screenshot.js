@@ -14,6 +14,6 @@ $(function(){
 
 		var text = $(this).text();
 
-		dialog.html(text).dialog('open').dialog('moveToTop');
+		dialog.html(text).dialog('open');
 	});
 });

@@ -47,6 +47,8 @@ body {
   }
 }
 
+.ui-dialog {z-index: 1040 !important;}
+
 /* Sidebar navigation */
 .sidebar-nav {width:95%;
   border:1px solid rgb(224,224,224);
@@ -68,6 +70,8 @@ body {
 .sidebar-nav ul li a {color:rgb(164,164,165);padding:0;}
 .sidebar-nav ul li a:hover {color:black;background-color:rgb(250,250,250);}
 .sidebar-nav hr {margin:10px 0px 10px -10px;color:rgb(224,224,224);border: 1px 0px 0px 0px solid rgb(224,224,224) ;}
+
+.calendar-container {border:1px solid rgb(224,224,224);border-top:0;border-bottom-left-radius: 8px;border-bottom-right-radius: 8px;background-color:#FAFAFA;margin-top:-20px;}
 
 nav.navbar-inverse {background:linear-gradient(rgb(51,62,70),rgb(66,67,69));}
 .nav>li>a {padding:15px 1px;}
