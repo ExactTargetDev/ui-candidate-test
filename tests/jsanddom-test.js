@@ -117,4 +117,34 @@ test('JSON Object Tests', 3, function() {
   equal(people[1].first_name, 'Jane', 'Expect name to be \'Jane\'');
 });
 
+test('DataTable Tests', 7, function() {
+    equal(typeof DataTable, 'object', 'Must contain a DataTable object');
+
+    // Check private properties
+    equal(DataTable.columns, undefined, 'columns is private');
+    equal(DataTable.rows, undefined, 'rows is private');
+
+    // Check publis methods
+    equal(typeof DataTable.addColumns, 'function', 'addColumns is a public method');
+    equal(typeof DataTable.addRow, 'function', 'addRow is a public method');
+    equal(typeof DataTable.getData, 'function', 'getData is a public method');
+
+    // Add our data
+    DataTable.addColumns('column1', 'column2', 'column3');
+    DataTable.addRow('value1A', 'value1B', 'value1C');
+    DataTable.addRow('value2A', 'value2B', 'value2C');
+
+    var result = [{
+        column1: 'value1A',
+        column2: 'value1B',
+        column3: 'value1C'
+    }, {
+        column1: 'value2A',
+        column2: 'value2B',
+        column3: 'value2C'
+    }];
+
+    deepEqual(DataTable.getData(), result, 'Data from the table is valid');  
+})
+
 

@@ -193,7 +193,7 @@
             rows = [];
 
             return {
-                addRows: function () {
+                addRow: function () {
                     [].push.apply(rows, arguments);
                 },
 
