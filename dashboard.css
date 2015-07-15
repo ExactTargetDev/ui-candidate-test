@@ -87,7 +87,7 @@ div.calendar-num {display: inline-block;text-align: right;width:75%;padding-righ
     border:1px solid rgb(200,200,200);
     border-radius: 8px;
     margin-top:20px;height:300px;}
-.pulse-container div.panel-container div {display:inline;}
+
 .pulse-container div.pulse-container-header {
     position:relative;
 }
@@ -103,6 +103,35 @@ div.calendar-num {display: inline-block;text-align: right;width:75%;padding-righ
   width:85%;
   color:rgb(148,166,177);
 }
+.pulse-container div.panel-container {width:100%;height:220px;}
+div.small-panel {float:left; width:18%;text-align: center;margin-top:50px;}
+div.med-panel {float:left;width:28%;text-align: center;height:80%;}
+div.small-panel div.panel-content {
+  background: linear-gradient(rgb(240,240,240),rgb(215,230,230));
+  border:1px solid rgb(200,200,200);
+  box-shadow: 0 0 5px rgb(240,240,240);
+  border-radius: 8px;
+  margin:2px 15px;
+}
+div.med-panel div.panel-content {
+  background-color:rgb(216,238,253);
+  border:1px solid rgb(200,200,200);
+  box-shadow: 0 0 5px rgb(240,240,240);
+  border-radius: 8px;
+  margin:15px;
+}
+div.panel-content img {
+  border:1px solid black;
+  border-radius:4px;
+  width:90%;
+  margin:5px 5px 15px 5px;
+}
+div.float-left {float:left;}
+div.float-right {float:right;}
+div.panel-content span.sub-header {border:0;color:rgb(130,160,180);font-size:11px;}
+div.panel-content span.sub-bold {color:rgb(130,160,180);font-size:16px;}
+div.panel-caption {color:rgb(130,160,180);font-size:11px;}
+div.panel-content h3.bold-num {color:rgb(50,160,220);font-size:26px;padding:5px;margin:2px;}
 
 nav.navbar-inverse {background:linear-gradient(rgb(51,62,70),rgb(66,67,69));}
 .nav>li>a {padding:15px 1px;}
