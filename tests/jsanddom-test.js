@@ -76,3 +76,25 @@ test('Distinct values search function test', function() {
 
     deepEqual(findDistinctValues([1, '1']), [1, '1'], 'Have to correctly handle empty arrays');
 });
+
+test('FizzBuzz function test', function() {
+    // Verify the method exists
+    equal(typeof doFizzBuzz, 'function', 'Must contain a "doFizzBuzz" function');
+    equal(typeof getFizzBuzzSequence, 'function', 'Must contain a "getFizzBuzz" function');
+
+    // Verify function logic
+    deepEqual(getFizzBuzzSequence(), [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz", 16, 17, "Fizz", 19, "Buzz", "Fizz", 22, 23, "Fizz", "Buzz", 26, "Fizz", 28, 29, "FizzBuzz", 31, 32, "Fizz", 34, "Buzz", "Fizz", 37, 38, "Fizz", "Buzz", 41, "Fizz", 43, 44, "FizzBuzz", 46, 47, "Fizz", 49, "Buzz", "Fizz", 52, 53, "Fizz", "Buzz", 56, "Fizz", 58, 59, "FizzBuzz", 61, 62, "Fizz", 64, "Buzz", "Fizz", 67, 68, "Fizz", "Buzz", 71, "Fizz", 73, 74, "FizzBuzz", 76, 77, "Fizz", 79, "Buzz", "Fizz", 82, 83, "Fizz", "Buzz", 86, "Fizz", 88, 89, "FizzBuzz", 91, 92, "Fizz", 94, "Buzz", "Fizz", 97, 98, "Fizz", "Buzz"], 'Have to generate proper FizzBuzz sequence');
+});
+
+test('Fruits removal function test', function() {
+    // Verify the method exists
+    equal(typeof removeFruits, 'function', 'Must contain a "removeFruits" function');
+
+    // Verify function logic
+    deepEqual(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Have to remove specified fruits');
+    deepEqual(removeFruits(['apple', 'banana', 'banana', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Have to remove all duplicated fruits');
+    deepEqual(removeFruits(['banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['apple', 'pear', 'banana']), ['orange', 'kiwi', 'plum', 'strawberry'], 'Have to ignore fruits to remove which are absent in fruits set');
+
+    deepEqual(removeFruits([], ['pear', 'banana']), [], 'Have to correctly handle empty array for fruits argument');
+    deepEqual(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], []), ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], 'Have to correctly handle empty array for fruitsToRemove argument');
+});
