@@ -132,6 +132,14 @@
      }
 
      // write an example of a javascript closure
+     function createCounter (increment) {
+        var count = 0;
+
+        return function () {
+            count += increment;
+            return count;
+        }
+     }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -141,7 +149,33 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     var people = [
+        {
+            "first_name": "John",
+            "last_name": "Doe",
+            "city": "Some City",
+            "state": "Some State",
+            "zip": "12345",
+            "phone_numbers": {
+                "home": "555-555-5555",
+                "work": "555-555-5556",
+                "mobile": "555-555-5557"
+            }
+        },
 
+        {
+            "first_name": "Jane",
+            "last_name": "Doe",
+            "city": "Some City",
+            "state": "Some State",
+            "zip": "12345",
+            "phone_numbers": {
+                "home": "555-555-5555",
+                "work": "555-555-6665",
+                "mobile": "555-555-5558"
+            }
+        }
+     ]
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
