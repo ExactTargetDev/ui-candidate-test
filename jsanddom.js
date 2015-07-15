@@ -202,7 +202,20 @@
                 },
 
                 getData: function () {
+                    var table = [],
+                        index = 0,
+                        row, i;
 
+                    while(index < rows.length) {
+                        row = {};
+                        for(i = 0; i < columns.length; i += 1) {
+                            row[columns[i]] = rows[index];
+                            index += 1;
+                        }
+                        table.push(row);
+                    }
+
+                    return table;
                 }
             };
      }());
