@@ -40,4 +40,13 @@ $(function(){
 			dialog.dialog('option',{title: 'HELP'}).dialog('open');
 		},'json');
 	});
+
+	$('.panel-container').on('click','div.small-panel',function(e){
+		e.preventDefault();
+
+		//Toggle the class for this one and toggle the class for the current one.
+		$('div.med-panel').addClass('small-panel').removeClass('med-panel');
+		$(this).addClass('med-panel').removeClass('small-panel');
+	});
+
 });
