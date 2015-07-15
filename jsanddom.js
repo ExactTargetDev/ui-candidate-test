@@ -1,22 +1,39 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
+         return str.split('').reverse().join('');
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+         return Math.min.apply(null, values);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+         var prims = {
+             "boolean": {}, 
+             "string": {}, 
+             "number": {}
+         }, objs = [], type;
+
+         return values.filter(function (item) {
+            type = typeof item;
+            
+            if(type in prims) {
+                return prims[type].hasOwnProperty(item) ? false : (prims[type][item] = true);
+            } else {
+                return objs.indexOf(item) >= 0 ? false : objs.push(item);
+            }
+         });
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -25,6 +42,38 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
+         var i = 0, result = '', forTest = [];
+
+         for (i = 1; i < 101; i += 1) {
+            result = '';
+
+            if (i % 3 == 0) {
+                // If 'i' is divisble by 3 it will add Fizz to the result
+                result += 'Fizz';
+            }
+
+            if (i % 5 == 0) {
+                // If 'i' is divisble by 5 it will add Buzz to the result
+                // If 'i' is divisble by 15 it is divisible by 5 as well as 
+                // 3, so FizzBuzz will be the contents of the result string
+                result += 'Buzz';
+            }
+
+            if (result === '') {
+                // If 'i' is not divisbile by 3 or 5 the value of 'i' will
+                // be added to the result string
+                result = i;
+            }
+
+            console.log(result);
+
+            // used to test result
+            if (i <= 25) {
+                forTest.push(result);
+            }
+
+            return forTest;
+         }
      }
 
      // You have a master array of strings, where each element is a fruit name.
