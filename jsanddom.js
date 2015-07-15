@@ -188,18 +188,80 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     var DataTable = (function () {
+        var columns = [],
+            rows = [];
+
+            return {
+                addRows: function () {
+                    [].push.apply(rows, arguments);
+                },
+
+                addColumns: function (args) {
+                    [].push.apply(columns, arguments);
+                },
+
+                getData: function () {
+
+                }
+            };
+     }());
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     var items = ['Foo', 'Bar', 'FooBar'],
+         div = $("#div1"),
+         select = $('<select>'),
+         button = $('<button>').text('Log Item');
+
+     items.forEach(function(item, index) {   
+         select.append($('<option>', { value : index }).text(item)); 
+     });
+
+     div.append(select).append(button);
+
+     div.on('click','button',function(e){
+         console.log('Name: ' + $('select option:selected').text() + ', Value: ' + $('select option:selected').val());
+     });
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
+     // logging the value of the queries to console in an array
+     var anchor = [$('a.link').text(), $('.buzz a').text(), $('#fizz a').text(), $('#foo a').text(), $('.bar a').text()];
+     console.log(anchor);
+
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     var ul = $("ul#list1");
+     ['li 1', 'li 2', 'li 3', 'li 4', 'li 5'].forEach(function(item){
+        ul.append($('<li>').text(item));
+     });
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     var counter,
+         foobar = $("#foobar"),
+         link1 = $('<a id="checkAll" href="">').text("Check All"),
+         link2 = $('<a id="uncheckAll" href="">').text("Uncheck All");
+
+     //Create the list of checkboxes.
+     for(counter = 0; counter < 3; counter += 1){
+        foobar.append($('<input>', {type: 'checkbox'}));
+     }
+
+     // Create links
+     foobar.append(link1).append('&nbsp;').append(link2);
+     
+     // Bind events to links
+     foobar.on('click','#checkAll', function(e) {
+        e.preventDefault();
+        var item = $("input[type='checkbox']");
+        $('input[type=checkbox]').prop('checked', true);
+     }).on('click','#uncheckAll', function(e) {
+        e.preventDefault();
+        $('input[type=checkbox]').prop('checked', false);
+     });

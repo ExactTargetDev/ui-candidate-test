@@ -115,4 +115,6 @@ test('JSON Object Tests', 3, function() {
   equal(typeof people, 'object', 'Must contain a people object');
   equal(people[0].first_name, 'John', 'Expect name to be \'John\'');
   equal(people[1].first_name, 'Jane', 'Expect name to be \'Jane\'');
-})
+});
+
+
