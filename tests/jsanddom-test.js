@@ -64,3 +64,15 @@ test('Minimal value search function test', function() {
     testFindMinValue(undefined, findMinValue([]));
     testFindMinValue(5, findMinValue([5]));
 });
+
+test('Distinct values search function test', function() {
+    // Verify the method exists
+    equal(typeof findDistinctValues, 'function', 'Must contain a "findDistinctValues" function');
+
+    // Verify function logic
+    deepEqual(findDistinctValues([1, 2, 3, 3, 3]), [1, 2, 3], 'Have to filter out the duplicated elements (case 1)');
+    deepEqual(findDistinctValues([1, 1, 1, 1]), [1], 'Have to filter out the duplicated elements (case 2)');
+    deepEqual(findDistinctValues([1, '1']), [1, '1'], 'Have to correctly handle the same values of different types');
+
+    deepEqual(findDistinctValues([1, '1']), [1, '1'], 'Have to correctly handle empty arrays');
+});
