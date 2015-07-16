@@ -221,13 +221,75 @@ var contacts = [
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
 
+(function() {
+    var div = $('#div1');
+    var select = div.append('<select id="test-select"></select>').find('#test-select');
+
+    for (var i = 0; i < 10; i++) {
+        select.append('<option value="' + i + '">' + i + '</option>');
+    }
+
+    div.append('<button id="test-button">GET</button>').find('#test-button').on('click', function() {
+        console.log(select.val());
+    });
+})();
+
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
+(function() {
+    var anchor;
+
+    anchor = $('.link');
+    anchor = $('#fizz > a');
+    anchor = $('.bar .buzz .link');
+    anchor = $('body div div a');
+    anchor = $('#fizz *:first-child');
+})();
 
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
+(function() {
+    var array = [];
+
+    for (var i = 1; i <= 5; i++) {
+        array.push(i);
+    }
+
+    var list = $('#list1');
+    for (a in array) {
+        $('<li>' + array[a] + '</li>').appendTo(list);
+    }
+})();
 
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+(function() {
+    var foobar = $('#foobar');
+    var list = $('<ul></ul>').appendTo(foobar);
+
+    for (var i = 1; i <= 5; i++) {
+        list.append('<li><input id="foobar-option-' + i + '" type="checkbox">Option ' + i + '</input></li>');
+    }
+
+    var enableLink = $('<a href="javascript:void(0)" id="foobar-action-enable-all">Enable all</a>');
+    enableLink.on('click', function(e) {
+        e.preventDefault();
+
+        $('#foobar > ul > li > input').each(function() {
+            $(this).prop('checked', true);
+        });
+    });
+    enableLink.appendTo(foobar);
+
+    var disableLink = $('<a href="javascript:void(0)" id="foobar-action-enable-all">Disable all</a>');
+    disableLink.appendTo(foobar);
+    disableLink.on('click', function(e) {
+        e.preventDefault();
+
+        $('#foobar > ul > li > input').each(function() {
+            $(this).prop('checked', false);
+        });
+    });
+})();
