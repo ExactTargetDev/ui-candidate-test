@@ -12,3 +12,17 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+
+//module( "Salesforce UI Candidate Test Unit Testing" );
+module( "Function That Returns String Reversed" );
+test( "Test reverseString with Valid arg", function(){
+
+});
+
+test( "Test reverseString with no args", function(){
+
+});
+
+test( "Test reverseString with wrong", function(){
+	
+});
