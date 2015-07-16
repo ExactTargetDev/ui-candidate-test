@@ -30,92 +30,97 @@ String.format = function() {
     return theString;
 };
 
-module('Test function');
-test('String reversion function test', function() {
-    // Verify the method exists
-    equal(typeof reverseString, 'function', 'Must contain a "reverseString" function');
+(function() {
+    module('Test function');
+    test('String reversion function test', function() {
+        // Verify the method exists
+        testMethodsExistence('reverseString');
 
-    function testReverseString(expected, result) {
-        equal(result, expected, String.format('Expected "{0}" as the result, the result was: "{1}"', expected, result));
+        function testReverseString(expected, result) {
+            equal(result, expected, String.format('Expected "{0}" as the result, the result was: "{1}"', expected, result));
+        }
+
+        // Verify function logic
+        testReverseString('hgfedcba', reverseString('abcdefgh'));
+        testReverseString('0987654321', reverseString('1234567890'));
+
+        testReverseString('', reverseString(''));
+    });
+
+    test('Minimal value search function test', function() {
+        // Verify the method exists
+        testMethodsExistence('findMinValue');
+
+        function testFindMinValue(expected, result) {
+            equal(result, expected, String.format('Expected "{0}" as the result, the result was: "{1}"', expected, result));
+        }
+
+        // Verify function logic
+        testFindMinValue(-1, findMinValue([1, 2, -1]));
+        testFindMinValue(1, findMinValue([1, 2, 3]));
+        testFindMinValue(-3, findMinValue([-1, -2, -3]));
+        testFindMinValue(-3, findMinValue([-3, -2, -1]));
+        testFindMinValue(5, findMinValue([5, 5, 5]));
+
+        testFindMinValue(undefined, findMinValue([]));
+        testFindMinValue(5, findMinValue([5]));
+    });
+
+    test('Distinct values search function test', function() {
+        // Verify the method exists
+        testMethodsExistence('findDistinctValues');
+
+        // Verify function logic
+        deepEqual(findDistinctValues([1, 2, 3, 3, 3]), [1, 2, 3], 'Have to filter out the duplicated elements (case 1)');
+        deepEqual(findDistinctValues([1, 1, 1, 1]), [1], 'Have to filter out the duplicated elements (case 2)');
+        deepEqual(findDistinctValues([1, '1']), [1, '1'], 'Have to correctly handle the same values of different types');
+
+        deepEqual(findDistinctValues([1, '1']), [1, '1'], 'Have to correctly handle empty arrays');
+    });
+
+    test('FizzBuzz function test', function() {
+        // Verify the method exists
+        testMethodsExistence('doFizzBuzz', 'getFizzBuzzSequence');
+
+        // Verify function logic
+        deepEqual(getFizzBuzzSequence(), [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz", 16, 17, "Fizz", 19, "Buzz", "Fizz", 22, 23, "Fizz", "Buzz", 26, "Fizz", 28, 29, "FizzBuzz", 31, 32, "Fizz", 34, "Buzz", "Fizz", 37, 38, "Fizz", "Buzz", 41, "Fizz", 43, 44, "FizzBuzz", 46, 47, "Fizz", 49, "Buzz", "Fizz", 52, 53, "Fizz", "Buzz", 56, "Fizz", 58, 59, "FizzBuzz", 61, 62, "Fizz", 64, "Buzz", "Fizz", 67, 68, "Fizz", "Buzz", 71, "Fizz", 73, 74, "FizzBuzz", 76, 77, "Fizz", 79, "Buzz", "Fizz", 82, 83, "Fizz", "Buzz", 86, "Fizz", 88, 89, "FizzBuzz", 91, 92, "Fizz", 94, "Buzz", "Fizz", 97, 98, "Fizz", "Buzz"], 'Have to generate proper FizzBuzz sequence');
+    });
+
+    test('Fruits removal function test', function() {
+        // Verify the method exists
+        testMethodsExistence('removeFruits');
+
+        // Verify function logic
+        deepEqual(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Have to remove specified fruits');
+        deepEqual(removeFruits(['apple', 'banana', 'banana', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Have to remove all duplicated fruits');
+        deepEqual(removeFruits(['banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['apple', 'pear', 'banana']), ['orange', 'kiwi', 'plum', 'strawberry'], 'Have to ignore fruits to remove which are absent in fruits set');
+
+        deepEqual(removeFruits([], ['pear', 'banana']), [], 'Have to correctly handle empty array for fruits argument');
+        deepEqual(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], []), ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], 'Have to correctly handle empty array for fruitsToRemove argument');
+    });
+
+    test('Array push function test', function() {
+        // Verify the method exists
+        testMethodsExistence('pushOntoArray');
+
+        // Verify function logic
+        deepEqual(pushOntoArray(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], 'pear'), ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry', 'pear'], 'Have to push one element');
+        deepEqual(pushOntoArray(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry', 'pear', 'banana'], 'Have to push all elements from array');
+    });
+
+    test('String split function test', function() {
+        // Verify the method exists
+        testMethodsExistence('splitListStrUsingComma');
+
+        // Verify function logic
+        deepEqual(splitListStrUsingComma('The, quick, brown, fox jumped over'), ['The', ' quick', ' brown', ' fox jumped over'], 'Have to split string (case 1)');
+        deepEqual(splitListStrUsingComma('The quick brown fox jumped over'), ['The quick brown fox jumped over'], 'Have to split string (case 2)');
+        deepEqual(splitListStrUsingComma(''), [], 'Have to produce empty array in case when string is empty');
+    });
+
+    function testMethodsExistence() {
+        for (var i = 0, length = arguments.length; i < length; i++) {
+            ok(typeof window[arguments[i]] === 'function', String.format('Must contain a "{0}" function', arguments[i]));
+        }
     }
-
-    // Verify function logic
-    testReverseString('hgfedcba', reverseString('abcdefgh'));
-    testReverseString('0987654321', reverseString('1234567890'));
-
-    testReverseString('', reverseString(''));
-});
-
-test('Minimal value search function test', function() {
-    // Verify the method exists
-    equal(typeof findMinValue, 'function', 'Must contain a "reverseString" function');
-
-    function testFindMinValue(expected, result) {
-        equal(result, expected, String.format('Expected "{0}" as the result, the result was: "{1}"', expected, result));
-    }
-
-    // Verify function logic
-    testFindMinValue(-1, findMinValue([1, 2, -1]));
-    testFindMinValue(1, findMinValue([1, 2, 3]));
-    testFindMinValue(-3, findMinValue([-1, -2, -3]));
-    testFindMinValue(-3, findMinValue([-3, -2, -1]));
-    testFindMinValue(5, findMinValue([5, 5, 5]));
-
-    testFindMinValue(undefined, findMinValue([]));
-    testFindMinValue(5, findMinValue([5]));
-});
-
-test('Distinct values search function test', function() {
-    // Verify the method exists
-    equal(typeof findDistinctValues, 'function', 'Must contain a "findDistinctValues" function');
-
-    // Verify function logic
-    deepEqual(findDistinctValues([1, 2, 3, 3, 3]), [1, 2, 3], 'Have to filter out the duplicated elements (case 1)');
-    deepEqual(findDistinctValues([1, 1, 1, 1]), [1], 'Have to filter out the duplicated elements (case 2)');
-    deepEqual(findDistinctValues([1, '1']), [1, '1'], 'Have to correctly handle the same values of different types');
-
-    deepEqual(findDistinctValues([1, '1']), [1, '1'], 'Have to correctly handle empty arrays');
-});
-
-test('FizzBuzz function test', function() {
-    // Verify the method exists
-    equal(typeof doFizzBuzz, 'function', 'Must contain a "doFizzBuzz" function');
-    equal(typeof getFizzBuzzSequence, 'function', 'Must contain a "getFizzBuzz" function');
-
-    // Verify function logic
-    deepEqual(getFizzBuzzSequence(), [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz", 16, 17, "Fizz", 19, "Buzz", "Fizz", 22, 23, "Fizz", "Buzz", 26, "Fizz", 28, 29, "FizzBuzz", 31, 32, "Fizz", 34, "Buzz", "Fizz", 37, 38, "Fizz", "Buzz", 41, "Fizz", 43, 44, "FizzBuzz", 46, 47, "Fizz", 49, "Buzz", "Fizz", 52, 53, "Fizz", "Buzz", 56, "Fizz", 58, 59, "FizzBuzz", 61, 62, "Fizz", 64, "Buzz", "Fizz", 67, 68, "Fizz", "Buzz", 71, "Fizz", 73, 74, "FizzBuzz", 76, 77, "Fizz", 79, "Buzz", "Fizz", 82, 83, "Fizz", "Buzz", 86, "Fizz", 88, 89, "FizzBuzz", 91, 92, "Fizz", 94, "Buzz", "Fizz", 97, 98, "Fizz", "Buzz"], 'Have to generate proper FizzBuzz sequence');
-});
-
-test('Fruits removal function test', function() {
-    // Verify the method exists
-    equal(typeof removeFruits, 'function', 'Must contain a "removeFruits" function');
-
-    // Verify function logic
-    deepEqual(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Have to remove specified fruits');
-    deepEqual(removeFruits(['apple', 'banana', 'banana', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], 'Have to remove all duplicated fruits');
-    deepEqual(removeFruits(['banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['apple', 'pear', 'banana']), ['orange', 'kiwi', 'plum', 'strawberry'], 'Have to ignore fruits to remove which are absent in fruits set');
-
-    deepEqual(removeFruits([], ['pear', 'banana']), [], 'Have to correctly handle empty array for fruits argument');
-    deepEqual(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], []), ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], 'Have to correctly handle empty array for fruitsToRemove argument');
-});
-
-test('Array push function test', function() {
-    // Verify the method exists
-    equal(typeof pushOntoArray, 'function', 'Must contain a "pushOntoArray" function');
-
-    // Verify function logic
-    deepEqual(pushOntoArray(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], 'pear'), ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry', 'pear'], 'Have to push one element');
-    deepEqual(pushOntoArray(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry', 'pear', 'banana'], 'Have to push all elements from array');
-});
-
-test('String split function test', function() {
-    // Verify the method exists
-    equal(typeof splitListStrUsingComma, 'function', 'Must contain a "splitListStrUsingComma" function');
-
-    // Verify function logic
-    deepEqual(splitListStrUsingComma('The, quick, brown, fox jumped over'), ['The', ' quick', ' brown', ' fox jumped over'], 'Have to split string (case 1)');
-    deepEqual(splitListStrUsingComma('The quick brown fox jumped over'), ['The quick brown fox jumped over'], 'Have to split string (case 2)');
-    deepEqual(splitListStrUsingComma(''), [], 'Have to produce empty array in case when string is empty');
-});
-
-
+})();
