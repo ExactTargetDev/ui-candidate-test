@@ -1,22 +1,58 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
+
+
+     //Function to confirm if a value is numeric 
+    function isNumeric(n) {
+      return !isNaN(parseFloat(n)) && isFinite(n);
+    }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+         numArgs = arguments.length;
+         if(numArgs !== 1){
+            throw new Error('Function only expecting on arg');
+         }
+
+         if (typeof (str) !== 'string' ){
+            throw new Error('Function expects string arg')
+         }
+
+         return str.split('').reverse().join('');
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+         if ( !$.isArray( values )){
+            throw new Error('Function expects an array arg.');
+         }
+         $.each(values, function(index, value){
+            if(!isNumeric(value)){
+                throw new Error('Function expect array to take only numbers');
+            }
+         });
+
+        return Math.min.apply(Math, values);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+        if ( !$.isArray( values )){
+            throw new Error('Function expects an array arg.');
+        }
+
+        var distinctValues = [], placeholder = [], i ;
+        for( i=0; i< values.length; i++) {
+            if( placeholder[values[i]]){
+              continue;  
+            } 
+            placeholder[values[i]] = true;
+            distinctValues.push(values[i]);
+        }
+        return distinctValues;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,7 +60,20 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+        var popHolder = [];
+         for (var i=1; i<101; i++) {
+            var nameHolder = i;
+            if (i % 3 == 0 && i % 5 == 0){
+                nameHolder = "FizzBuzz";
+            } else if (i % 3 == 0){
+                nameHolder = "Fizz";
+            } else if (i % 5 == 0) {
+                nameHolder = "Buzz";
+            }
+            popHolder.push(nameHolder);
+            console.log(nameHolder);
+        }
+        return popHolder;
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -41,21 +90,42 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+         if(toPush.isArray){
+            array.concat(toPush);
+         } else {
+            array.push(toPush);
+         }
+         return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+        var theSum = 0;
+
+        for(var i = 0; i < arguments.length; i++)
+        {
+            if(!isNumeric(arguments[i])){
+                throw new Error('Function expect to take only numbers');
+            }
+            theSum = theSum += arguments[i];
+        }
+        return theSum;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+        var leftOver;
+        leftOver = sourceStr.replace(/ /g,'');
+        if (leftOver == ""){
+            return true;
+        } else {
+            throw new Error("This function expects only whitespace");
+        }
      }
 
      // write an example of a javascript closure
@@ -68,9 +138,65 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+ 
+// {
+//     "People": [
+//         {   
+//             "first name": "John", 
+//             "last name": "Doe",
+//             "city": "Poduck",
+//             "state": "AL",
+//             "zip": "35005",
+//             "phone": [
+//                 {
+//                     "home": "(999) 777-3333",
+//                     "work": "(999) 222-3333",
+//                     "mobile": "(999) 333-2222"
+//                 }
+//             ]
+//         },
+//         {   
+//             "first name": "Jane", 
+//             "last name": "Doe",
+//             "city": "Troy",
+//             "state": "IN",
+//             "zip": "46005",
+//             "phone": [
+//                 {
+//                     "home": "(317) 777-3333",
+//                     "work": "(317) 222-3333",
+//                     "mobile": "(317) 333-2222"
+//                 }
+//             ]
+//         }
+//     ]
 
+// }
 
      // Create a javascript object (DataTable) with the following:
+
+
+    //  var dataTable = {
+    //     var columns = [], rows= [];
+
+    //     return {
+    //         addRows: function(){
+    //             for(var i = 0; i < arguments.length; i++){
+    //                 rows.push(arguments[i]);
+    //             }
+    //             return rows;
+    //         },
+    //         addColumns: function (){
+    //             for(var i = 0; i < arguments.length; i++){
+    //                 columns.push(arguments[i]);
+    //             }
+    //             return columns;
+    //         }, 
+    //         getData: function(){
+                
+    //         }
+    //     }
+    // };
      // A private columns property (string array)
      // A private rows property (string array)
      // A public method addRows that adds an item to the rows array
