@@ -132,6 +132,28 @@ var counter = function() {
 // - state
 // - zip
 // - a collection of phone numbers (home, work, mobile)
+var contacts = [
+    {
+        firstName : 'Arthur',
+        lastName : 'Gurov',
+        city : 'Kharkov',
+        state : 'Ukraine',
+        zip : 61100,
+        phoneNumbers : [
+            {phoneNumber : '+380677023906', type : 'MOBILE'},
+            {phoneNumber : '+380572984917', type : 'HOME'}
+        ]
+    }, {
+        firstName : 'Victoria',
+        lastName : 'Gurova',
+        city : 'Kharkov',
+        state : 'Ukraine',
+        zip : 61100,
+        phoneNumbers : [
+            {phoneNumber : '+380671234567', type : 'MOBILE'}
+        ]
+    }
+];
 
 // Create a javascript object (DataTable) with the following:
 // A private columns property (string array)
