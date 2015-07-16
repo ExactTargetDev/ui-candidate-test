@@ -4,24 +4,38 @@
         return a / b;
      }
 
+
+     //Function to confirm if a value is numeric 
+    function isNumeric(n) {
+      return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
          numArgs = arguments.length;
          if(numArgs !== 1){
             throw new Error('Function only expecting on arg');
          }
 
-         if (typeof !== 'string' ){
-            throw new Error('')
+         if (typeof (str) !== 'string' ){
+            throw new Error('Function expects string arg')
          }
-         
+
          return str.split('').reverse().join('');
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+         if ( !$.isArray( values )){
+            throw new Error('Function expects an array arg.');
+         }
+         $.each(values, function(index, value){
+            if(!isNumeric(value)){
+                throw new Error('Function expect array to take only numbers');
+            }
+         });
+
+        return Math.min.apply(Math, values);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)

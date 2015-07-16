@@ -23,6 +23,19 @@ test( "Test reverseString with no args", function(){
 
 });
 
-test( "Test reverseString with wrong", function(){
+test( "Test reverseString with no args", function(){
 	
+});
+
+module("Functtion That Finds Min Value in Array");
+test( "Test findMinValue with Valid args", function(){
+
+});
+
+test( "Test findMinValue with no args", function(){
+
+});
+
+test( "Test findMinValue with invalid args", function(){
+
 });
