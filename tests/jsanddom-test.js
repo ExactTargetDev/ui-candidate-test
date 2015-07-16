@@ -27,7 +27,8 @@ test( "Test reverseString with no args", function(){
 	
 });
 
-module("Functtion That Finds Min Value in Array");
+
+module("Function That Finds Min Value in Array");
 test( "Test findMinValue with Valid args", function(){
 
 });
@@ -37,5 +38,19 @@ test( "Test findMinValue with no args", function(){
 });
 
 test( "Test findMinValue with invalid args", function(){
+
+});
+
+
+module("Function That Returns Distinct Values of Array");
+test( "Test findDistinctValues with Valid args", function(){
+
+});
+
+test( "Test findDistinctValues with no args", function(){
+
+});
+
+test( "Test findDistinctValues with invalid args", function(){
 
 });
