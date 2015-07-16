@@ -99,7 +99,6 @@ test('Fruits removal function test', function() {
     deepEqual(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], []), ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], 'Have to correctly handle empty array for fruitsToRemove argument');
 });
 
-
 test('Array push function test', function() {
     // Verify the method exists
     equal(typeof pushOntoArray, 'function', 'Must contain a "pushOntoArray" function');
@@ -108,3 +107,15 @@ test('Array push function test', function() {
     deepEqual(pushOntoArray(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], 'pear'), ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry', 'pear'], 'Have to push one element');
     deepEqual(pushOntoArray(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry', 'pear', 'banana'], 'Have to push all elements from array');
 });
+
+test('String split function test', function() {
+    // Verify the method exists
+    equal(typeof splitListStrUsingComma, 'function', 'Must contain a "splitListStrUsingComma" function');
+
+    // Verify function logic
+    deepEqual(splitListStrUsingComma('The, quick, brown, fox jumped over'), ['The', ' quick', ' brown', ' fox jumped over'], 'Have to split string (case 1)');
+    deepEqual(splitListStrUsingComma('The quick brown fox jumped over'), ['The quick brown fox jumped over'], 'Have to split string (case 2)');
+    deepEqual(splitListStrUsingComma(''), [], 'Have to produce empty array in case when string is empty');
+});
+
+
