@@ -123,9 +123,19 @@ String.format = function() {
         testMethodsExistence('sum');
 
         // Verify function logic
-        deepEqual(sum(1, 1, 2, 3, 5, 7), 19, 'Have to sum all provided numbers (case 1)');
-        deepEqual(sum(0, 0, 0), 0, 'Have to sum all provided numbers (case 2)');
-        deepEqual(sum(5), 5, 'Have to sum all provided numbers (case 3)');
+        equal(sum(1, 1, 2, 3, 5, 7), 19, 'Have to sum all provided numbers (case 1)');
+        equal(sum(0, 0, 0), 0, 'Have to sum all provided numbers (case 2)');
+        equal(sum(5), 5, 'Have to sum all provided numbers (case 3)');
+    });
+
+    test('Whitespaces function test', function() {
+        // Verify the method exists
+        testMethodsExistence('isOnlyWhitespace');
+
+        // Verify function logic
+        ok(isOnlyWhitespace('The quick brown fox jumped over'), 'Have to success on normal string');
+        notOk(isOnlyWhitespace(''), 'Have to fail on empty string');
+        notOk(isOnlyWhitespace('              '), 'Have to fail on blank string');
     });
 
     function testMethodsExistence() {
