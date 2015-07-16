@@ -7,13 +7,14 @@ module.exports = {
 
   output: {
     // main js output file for Screenshot.html
-    filename: 'Screenshot.js',
+    filename: 'app.js',
   },
 
   module: {
     loaders: [
       // convertting .scss files to .css
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract("style", "css!sass") }
+      { test: /\.scss$/, loader: ExtractTextPlugin.extract("style", "css!sass") },
+      { test: /\.png$/, loader: "url-loader?limit=8192" }
     ]
   },
 
