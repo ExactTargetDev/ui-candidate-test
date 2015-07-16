@@ -167,6 +167,56 @@ var contacts = [
 // .addRow('value1A', 'value1B', 'value1C');
 // .addRow('value2A', 'value2B', 'value2C');
 
+(function() {
+    function DataTable() {
+        this.columns = [];
+        this.rows = [];
+    }
+
+    DataTable.prototype.addColumns = function() {
+        var oldLength = this.columns.length;
+        Array.prototype.push.apply(this.columns, arguments);
+
+        // Fill new columns by 'undefined' values if already exists some rows
+        if (this.rows.length) {
+            var newLength = this.columns.length;
+
+            if (newLength != oldLength) {
+                for (var i = oldLength, length = Math.ceil(this.rows.length / oldLength) * newLength; i <= length; i += newLength) {
+                    for (var j = 0; j < newLength - oldLength; j++) {
+                        this.rows.splice(i + j, 0, undefined);
+                    }
+                }
+            }
+        }
+
+        return this;
+    };
+    DataTable.prototype.addRow = function() {
+        if (!this.columns.length) {
+            throw 'Please add some columns to the table';
+        }
+
+        Array.prototype.push.apply(this.rows, arguments);
+
+        return this;
+    };
+    DataTable.prototype.getData = function() {
+        var data = [];
+
+        for (var i = 0, columns = this.columns.length, rows = this.rows.length; i < rows; i += columns) {
+            var obj = {};
+            for (var j = 0; j < columns; j++) {
+                obj[this.columns[j]] = this.rows[i + j];
+            }
+            data.push(obj);
+        }
+
+        return data;
+    };
+    window.DataTable = DataTable;
+})();
+
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.

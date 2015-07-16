@@ -138,6 +138,46 @@ String.format = function() {
         notOk(isOnlyWhitespace('              '), 'Have to fail on blank string');
     });
 
+    test('DataTable test', function() {
+        // Verify the method exists
+        testMethodsExistence('DataTable');
+
+        // Verify logic
+        deepEqual(
+            new DataTable().addColumns('column1', 'column2', 'column3').addRow('value1A', 'value1B', 'value1C').addRow('value2A', 'value2B', 'value2C').getData(),
+            [
+                {column1 : 'value1A', column2 : 'value1B', column3 : 'value1C'},
+                {column1 : 'value2A', column2 : 'value2B', column3 : 'value2C'}
+            ],
+            'Have successfully generate object with data');
+
+        deepEqual(
+            new DataTable().addColumns('column1', 'column2', 'column3').addRow('value1A', 'value1B', 'value1C').addRow('value2A', 'value2B', 'value2C', 'value3A').getData(),
+            [
+                {column1 : 'value1A', column2 : 'value1B', column3 : 'value1C'},
+                {column1 : 'value2A', column2 : 'value2B', column3 : 'value2C'},
+                {column1 : 'value3A', column2 : undefined, column3 : undefined}
+            ],
+            'Have handle incomplete data amount');
+
+        deepEqual(
+            new DataTable().addColumns('column1', 'column2', 'column3').addRow('value1A', 'value1B', 'value1C').addRow('value2A', 'value2B', 'value2C').addColumns('column4').getData(),
+            [
+                {column1 : 'value1A', column2 : 'value1B', column3 : 'value1C', column4 : undefined},
+                {column1 : 'value2A', column2 : 'value2B', column3 : 'value2C', column4 : undefined}
+            ],
+            'Have handle column added after rows');
+
+        deepEqual(
+            new DataTable().addColumns('column1', 'column2', 'column3').addRow('value1A', 'value1B', 'value1C').addRow('value2A', 'value2B', 'value2C').addColumns('column4').addRow('value3A', 'value3B', 'value3C').getData(),
+            [
+                {column1 : 'value1A', column2 : 'value1B', column3 : 'value1C', column4 : undefined},
+                {column1 : 'value2A', column2 : 'value2B', column3 : 'value2C', column4 : undefined},
+                {column1 : 'value3A', column2 : 'value3B', column3 : 'value3C', column4 : undefined}
+            ],
+            'Have handle chaotic columns and rows adding');
+    });
+
     function testMethodsExistence() {
         for (var i = 0, length = arguments.length; i < length; i++) {
             ok(typeof window[arguments[i]] === 'function', String.format('Must contain a "{0}" function', arguments[i]));
