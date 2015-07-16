@@ -18,16 +18,10 @@ module( "Function That Returns String Reversed" );
 test( "Test reverseString with Valid arg", function(){
 	//check function reverseString exists
 	equal( typeof reverseString, 'function', 'Must contain a reverseString function' );	
+	equal( reverseString("fish"), 'hsif', 'The function should reverse string arg' );	
 	//test with different size strings
-});
-
-
-test( "Test reverseString with bad info", function(){
-	//test with too many args
-
-	//test with no args
-
-	//test with different types in arg
+	equal( reverseString("georgerootsisfun"), 'nufsistooregroeg', 'The function should reverse string arg' );	
+	
 });
 
 
@@ -35,11 +29,8 @@ module("Function That Finds Min Value in Array");
 test( "Test findMinValue with valid info", function(){
 	//check function findMinValue exists
 	equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
-
-});
-
-test( "Test findMinValue with invalid", function(){
-
+	equal( findMinValue(["2", "3", "4", "5", "5"]), '2', 'Function should return min value' );	
+	equal( findMinValue(["100", "1000", "2", "3", "4", "5", "5"]), '2', 'Function should return min value' );	
 });
 
 
@@ -47,13 +38,9 @@ module("Function That Returns Distinct Values of Array");
 test( "Test findDistinctValues with Valid info", function(){
 	//check function findDistinctValues exists
 	equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
+	deepEqual( findDistinctValues(["2", "2", "3", "4", "4", "5", "6"]), '["2", "3", "4", "5", "6"]', 'Return Distinct values' );
 
 });
-
-test( "Test findDistinctValues with invalid", function(){
-
-});
-
 
 module("Function Buzz, Fizz, or BuzzFizz based on place in counter");
 test( "Test Correct Return", function(){
@@ -74,6 +61,7 @@ module("Function sum");
 test( "Test Correct Return", function(){
 	//check function sum exists
 	equal( typeof sum, 'function', 'Must contain a sum function' );
+	equal( sum(2, 4, 6), '12', 'Sum equals 12' );
 });
 
 
@@ -81,4 +69,5 @@ module("Function isOnlyWhitespace");
 test( "Test Correct Return", function(){
 	//check function isOnlyWhitespace exists
 	equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
+	equal( isOnlyWhitespace("    "), true, 'Function should only return white space' );
 });

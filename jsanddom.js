@@ -100,15 +100,19 @@
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-        
+
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         var theSum = 0;
+        var theSum = 0;
+
         for(var i = 0; i < arguments.length; i++)
         {
-            theSum = theSum + arguments[i];
+            if(!isNumeric(arguments[i])){
+                throw new Error('Function expect to take only numbers');
+            }
+            theSum = theSum += arguments[i];
         }
         return theSum;
      }
@@ -170,6 +174,29 @@
 // }
 
      // Create a javascript object (DataTable) with the following:
+
+
+    //  var dataTable = {
+    //     var columns = [], rows= [];
+
+    //     return {
+    //         addRows: function(){
+    //             for(var i = 0; i < arguments.length; i++){
+    //                 rows.push(arguments[i]);
+    //             }
+    //             return rows;
+    //         },
+    //         addColumns: function (){
+    //             for(var i = 0; i < arguments.length; i++){
+    //                 columns.push(arguments[i]);
+    //             }
+    //             return columns;
+    //         }, 
+    //         getData: function(){
+                
+    //         }
+    //     }
+    // };
      // A private columns property (string array)
      // A private rows property (string array)
      // A public method addRows that adds an item to the rows array
