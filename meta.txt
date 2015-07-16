@@ -1,3 +1,4 @@
-Start Time: 1437062535
+Start Time: 1437048000
+End Time: 1437058800
 TotalTime:
 BrowserTesting: FireFox 38.05, Google Chrome 43.0
