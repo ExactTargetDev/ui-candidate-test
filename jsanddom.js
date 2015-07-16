@@ -195,11 +195,13 @@ Array.prototype.unique = function() {
           });
           // Write 5 different jQuery selectors to retrieve the
           // sample anchor in the markup below.
-          console.log('Using tag selector ' + $('a')[0]);
-          console.log('Using child selector ' + $('#fizz > a')[0]);
-          console.log('Using class selector ' + $('.link')[0]);
-          console.log('Using child from parent of parent selector ' + $('#foo > div >a')[0]);
-          console.log('Using child from body ' + $('body > div#foo > div > a')[0]);
+          if (window.console){
+               console.log('Using tag selector ' + $('a')[0]);
+               console.log('Using child selector ' + $('#fizz > a')[0]);
+               console.log('Using class selector ' + $('.link')[0]);
+               console.log('Using child from parent of parent selector ' + $('#foo > div >a')[0]);
+               console.log('Using child from body ' + $('body > div#foo > div > a')[0]);
+          }
           // Programatically create an array with 5 items.  Create a list item for each item in the array
           // and add the list items to the unordered list with an id of "list1".
           var items = [];
