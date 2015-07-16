@@ -98,3 +98,13 @@ test('Fruits removal function test', function() {
     deepEqual(removeFruits([], ['pear', 'banana']), [], 'Have to correctly handle empty array for fruits argument');
     deepEqual(removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], []), ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], 'Have to correctly handle empty array for fruitsToRemove argument');
 });
+
+
+test('Array push function test', function() {
+    // Verify the method exists
+    equal(typeof pushOntoArray, 'function', 'Must contain a "pushOntoArray" function');
+
+    // Verify function logic
+    deepEqual(pushOntoArray(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], 'pear'), ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry', 'pear'], 'Have to push one element');
+    deepEqual(pushOntoArray(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry', 'pear', 'banana'], 'Have to push all elements from array');
+});
