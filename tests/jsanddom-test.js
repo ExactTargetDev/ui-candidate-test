@@ -118,6 +118,16 @@ String.format = function() {
         deepEqual(splitListStrUsingComma(''), [], 'Have to produce empty array in case when string is empty');
     });
 
+    test('Sum function test', function() {
+        // Verify the method exists
+        testMethodsExistence('sum');
+
+        // Verify function logic
+        deepEqual(sum(1, 1, 2, 3, 5, 7), 19, 'Have to sum all provided numbers (case 1)');
+        deepEqual(sum(0, 0, 0), 0, 'Have to sum all provided numbers (case 2)');
+        deepEqual(sum(5), 5, 'Have to sum all provided numbers (case 3)');
+    });
+
     function testMethodsExistence() {
         for (var i = 0, length = arguments.length; i < length; i++) {
             ok(typeof window[arguments[i]] === 'function', String.format('Must contain a "{0}" function', arguments[i]));

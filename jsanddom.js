@@ -97,7 +97,12 @@ function splitListStrUsingComma(sourceStr) {
 
 // Write a function that will take any number of arguments and return their sum
 function sum() {
-    // FILL THIS IN
+    var sum = 0;
+
+    for (var i = 0, length = arguments.length; i < length; i++) {
+        sum += arguments[i];
+    }
+    return sum;
 }
 
 // Write a function that will return true if a specified string consists of only whitespace.
