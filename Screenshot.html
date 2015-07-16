@@ -1,8 +1,41 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Screenshot.html</title>
+  <title>Screenshot.html</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <nav>
+    <a class="navbar-brand" href="#">ExactTarget.</a>            
+    <ul class="navbar-links">
+      <li class="navbar-text">Welcome John!</li>
+      <li class="navbar-text"><a href="#">Account</a><span>|</span></li>
+      <li class="navbar-text"><a href="#" id="help-link" data-toggle="modal" data-target="#helpModal">Help</a><span>|</span></li>
+      <li class="navbar-text"><a href="#">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Modal -->
+  <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Help</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
