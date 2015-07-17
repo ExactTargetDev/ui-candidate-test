@@ -1,0 +1,37 @@
+.ab-animation(@value) {
+  -webkit-animation: @value;
+  -moz-animation: @value;
+  -ms-animation: @value;
+  -o-animation: @value;
+  animation: @value;
+}
+
+.ab-transition(@value) {
+  -webkit-transition: @value;
+  -moz-transition: @value;
+  -o-transition: @value;
+  transition: @value;
+}
+
+.ab-transform(@value) {
+  -webkit-transform: @value;
+  -moz-transform: @value;
+  -o-transform: @value;
+  transform: @value;
+}
+
+.ab-background-color-gradient(@startColor, @endColor) {
+  background: @startColor;
+  background: -moz-linear-gradient(top, @startColor 0%, @endColor 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor));
+  background: -webkit-linear-gradient(top, @startColor 0%, @endColor 100%);
+  background: -o-linear-gradient(top, @startColor 0%, @endColor 100%);
+  background: -ms-linear-gradient(top, @startColor 0%, @endColor 100%);
+  background: linear-gradient(to bottom, @startColor 0%, @endColor 100%);
+}
+
+.ab-box-shadow(@value) {
+  -moz-box-shadow: @value;
+  -webkit-box-shadow: @value;
+  box-shadow: @value;
+}
