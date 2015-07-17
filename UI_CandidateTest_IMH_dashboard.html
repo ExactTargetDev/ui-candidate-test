@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="assets/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet/less" type="text/css" href="styles/styles.less"/>
+    <script src="assets/lessjs-1.7.3/less.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">ExactTarget.</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li><a>Welcome John!</a></li>
+                <li class="nav-item"><a href="#account">Account</a></li>
+                <li class="nav-item"><a href="javascript:void(0)" onclick="showHelp()">Help</a></li>
+                <li class="nav-item"><a href="#log-out">Log out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-xs-5 col-sm-4 col-md-3 col-lg-3">
+            <div class="row sidebar">
+                <div class="col-xs-12 sidebar-menu">
+                    <div class="row sidebar-menu-header">
+                        <img height="24" width="24" src="images/hub.png"/>
+
+                        <div class="title">Interactive<br/>Marketing Hub</div>
+                    </div>
+                    <ul class="row sidebar-menu-list">
+                        <li><img height="24" width="24" src="images/email.png"/><a href="#email">ExactTarget Email</a></li>
+                        <li><img height="24" width="24" src="images/mobile.png"/><a href="#mobile">ExactTarget Mobile</a></li>
+                        <li><img height="24" width="24" src="images/cotweet-social.png"/><a href="#cotweet-social">CoTweet Social</a></li>
+                        <li><img height="24" width="24" src="images/sites.png"/><a href="#sites">ExactTarget Sites</a></li>
+                    </ul>
+                    <ul class="row sidebar-menu-list">
+                        <li><img height="24" width="24" src="images/automation-studio.png"/><a href="#automation-studio">Automation Studio</a></li>
+                        <li><img height="24" width="24" src="images/audience-builder.png"/><a href="#audience-builder">Audience Builder</a></li>
+                        <li><img height="24" width="24" src="images/report-builder.png"/><a href="#report-builder">Report Builder</a></li>
+                    </ul>
+                    <ul class="row sidebar-menu-list">
+                        <li><img height="13" width="13" src="images/partner-applications.png"/><a href="#partner-applications">Partner Applications</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-7 col-sm-8 col-md-9 col-lg-9">
+            <div class="row calendar">
+                <div class="col-xs-12 calendar-container">
+                    <div class="header">September 2010</div>
+                    <div class="day-cell">
+                        <div class="day-name">Sat</div>
+                        <div class="day-date">11</div>
+                    </div>
+                    <div class="day-cell">
+                        <div class="day-name">Sun</div>
+                        <div class="day-date">12</div>
+                    </div>
+                    <div class="day-cell">
+                        <div class="day-name">Mon</div>
+                        <div class="day-date">13</div>
+                    </div>
+                    <div class="day-cell current-date">
+                        <div class="day-name">Tue</div>
+                        <div class="day-date">14</div>
+                        <div class="qualifier">TODAY</div>
+                    </div>
+                    <div class="day-cell">
+                        <div class="day-name">Wed</div>
+                        <div class="day-date">15</div>
+                    </div>
+                    <div class="day-cell">
+                        <div class="day-name">Thu</div>
+                        <div class="day-date">16</div>
+                    </div>
+                    <div class="day-cell">
+                        <div class="day-name">Fri</div>
+                        <div class="day-date">17</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pulse">
+                <div class="col-xs-12 pulse-container">
+                    <div class="header"><span>Pulse</span></div>
+                    <div class="boxes-container">
+                        <div class="box">
+                            <div class="header">Followers</div>
+                            <div class="number number-lg">310</div>
+                            <div class="info">added today</div>
+                            <div class="info info-sm">2,393,905 total</div>
+                        </div>
+                        <div class="box">
+                            <div class="header">Fan</div>
+                            <div class="number number-lg">73</div>
+                            <div class="info">added today</div>
+                            <div class="info info-sm">91,675 total</div>
+                        </div>
+                        <div class="box">
+                            <div class="header">Subscribers</div>
+                            <div class="number number-lg">56</div>
+                            <div class="info">added today</div>
+                            <div class="info info-sm">189,405 total</div>
+                        </div>
+                        <div class="box image active">
+                            <div class="header">foursquare</div>
+                            <div class="info pull-left">Worldwide Checkins</div>
+                            <div class="info pull-right">3,905</div>
+                            <img src="images/foursquare.png"/>
+                        </div>
+                        <div class="box">
+                            <div class="header">Landing Pages</div>
+                            <div class="info">Visitors Today</div>
+                            <div class="number">
+                                <div class="number number-lg">397</div>
+                                / 355
+                            </div>
+                            <div class="info info-sm">Soulja Boy V.I.P.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="helpModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Help</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/jquery-1.11.3/jquery-1.11.3.min.js"></script>
+<script src="assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="scripts/scripts.js"></script>
+</body>
+</html>
