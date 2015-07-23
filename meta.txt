@@ -1,1 +1,14 @@
 Start Time: 1437530760
+
+TotalTime: 16:00
+
+BrowserTesting: 
+
+	Browser.name  : Crome
+	Browser.version : 40.0.2214.115
+
+	Browser.name  : Mozhilla
+	Browser.version : 38.0.5
+
+	Browser.name  : IE
+	Browser.version : 09
