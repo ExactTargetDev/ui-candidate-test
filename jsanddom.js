@@ -7,7 +7,8 @@
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
-         return (if(str) str = '', str.split('').reverse().join(''));
+         if(str) str = '';
+         return (str.split('').reverse().join(''));
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
@@ -86,10 +87,6 @@
          return sourceStr.match(/^\s+$/) !== null ;
      }
 
-     // write an example of a javascript closure
-
-     
-
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -98,20 +95,79 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     var defaultJson = {
+                person : [
+                    {
+                        'firstName'   : 'Liza',
+                        'lastName'    : 'Zinto',
+                        'city'        : 'United States',
+                        'state'       : 'CA',
+                        'zip'         : '90032',
+                        'phone'       : ['+918870324564','+919025990532']
+                    },{
+                        'firstName'   : 'Philp',
+                        'lastName'    : 'Parker',
+                        'city'        : 'United States',
+                        'state'       : 'SF',
+                        'zip'         : '90031',
+                        'phone'        : ['+918870324564','+919025990532']
+                    },{
+                        'firstName'   : 'Alex',
+                        'lastName'    : 'Kolonitsky',
+                        'city'        : 'Russiya',
+                        'state'       : 'Minsty',
+                        'zip'         : '092092',
+                        'phone'       : ['+918870324564','+919025990532']
+                    }
+                ]
+        };
 
 
+     // write an example of a javascript closure
+
+     var toJSON = function (p){
+        function o(){
+            return JSON.stringify(p);
+        }
+        return o;
+     }(defaultJson.person);
+
+    window.onload = function(){
+        
+    console.log(toJSON()); // invoke the clousre
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
-
+     var json  = [
+                    {
+                        text : 'Apple',
+                        value : 'Apple'
+                    },{
+                        text : 'Orange',
+                        value : 'Orange'
+                    },{
+                        text : 'Banana',
+                        value : 'Banana'
+                    }
+                ];
+     tasks.creatDropdown(json);
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
+     $('a.link');
+     $('a:contains("sample")');
+     $('#fizz>a.link');
+     $('#fizz a.link:first-child');
+     $('#fizz a.link:first-child');
+     $('body>div+div>div>a.link'); // Supportable by even IE 8
+
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
-
+     tasks.createListItem(json);
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     tasks.addCheckBoxList(json);
+};
