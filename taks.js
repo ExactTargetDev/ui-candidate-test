@@ -89,13 +89,29 @@ var tasks = {
 };
 
 function loadJSON(){
-	$.ajax(
+	$.ajax({
 			url : 'data/help.json',
-		).done(function(response,status){
-
+			type : 'GET'
+		}).done(function(response,status){
+			$('#dialog').html(JSON.stringify(response));
 		}).fail(function(){
 			// fail stuff 
 		}).always(function(){
 			// release your resouces functionality
+			$('#dialog').dialog({
+				  dialogClass: "no-close",
+				  title : "Help",
+				  modal : true,
+				  height : 400,
+				  width :600,
+				  buttons: [
+				    {
+				      text: "OK",
+				      click: function() {
+				        $( this ).dialog( "close" );
+				      }
+				    }
+				  ]
+				});
 		})
 }
