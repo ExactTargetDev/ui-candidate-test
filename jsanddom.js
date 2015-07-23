@@ -7,16 +7,19 @@
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
+         return (if(str) str = '', str.split('').reverse().join(''));
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+         return values.min();
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+         return values.unique();
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -25,6 +28,10 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
+         var d=101, f = ((window.console) ? true : false );  
+         while(--d){ ((d%5==0 && d%3==0) ? (f?console.log('FizzBuzz',d):''):''),
+                    ((d%3==0) ? (f?console.log('Fizz',d):''):''),
+                    ((d%5==0) ? (f?console.log('Buzz',d):''):''); }
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -33,6 +40,16 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+        var a = [];
+        for(var idx = 0; idx < fruits.length; idx++){
+                if(fruitsToRemove.contains(fruits[idx])){
+                    removedIndexes.push(idx)
+            }
+          }
+         for(var j = 0; j < a.length; j++){
+             fruits.splice(a[j], 1);
+         }
+        return fruits;         
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -41,24 +58,37 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+          if(toPush instanceof Array){
+               for(var i = 0; i < toPush.length; i++){
+                    array.push(toPush[i]);
+               }
+          }else{
+               array.push(toPush);
+          }        
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          // FILL THIS IN
+         if(sourceStr) return [];
+         return sourceStr.split(',');
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          // FILL THIS IN
+          return Array.prototype.reduce.call(arguments,function(x,y){return x+y;},0);
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
+         return sourceStr.match(/^\s+$/) !== null ;
      }
 
      // write an example of a javascript closure
+
+     
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -70,17 +100,6 @@
      // - a collection of phone numbers (home, work, mobile)
 
 
-     // Create a javascript object (DataTable) with the following:
-     // A private columns property (string array)
-     // A private rows property (string array)
-     // A public method addRows that adds an item to the rows array
-     // A public method addColumns that adds an item to the columns array
-     // A public method getData that returns the a json object representation of the DataTable
-     // Note: the row object should be a hash of the column name and row item value
-     // Example:
-     // .addColumns('column1', 'column2', 'column3');
-     // .addRow('value1A', 'value1B', 'value1C');
-     // .addRow('value2A', 'value2B', 'value2C');
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
