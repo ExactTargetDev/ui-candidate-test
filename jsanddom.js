@@ -2,12 +2,13 @@
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
         //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
-         if(str) str = '';
+         if(str=== null || str === undefined) str = '';
          return (str.split('').reverse().join(''));
      }
 
@@ -33,6 +34,7 @@
          while(--d){ ((d%5==0 && d%3==0) ? (f?console.log('FizzBuzz',d):''):''),
                     ((d%3==0) ? (f?console.log('Fizz',d):''):''),
                     ((d%5==0) ? (f?console.log('Buzz',d):''):''); }
+        return true;
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -44,7 +46,7 @@
         var a = [];
         for(var idx = 0; idx < fruits.length; idx++){
                 if(fruitsToRemove.contains(fruits[idx])){
-                    removedIndexes.push(idx)
+                    a.push(idx)
             }
           }
          for(var j = 0; j < a.length; j++){
@@ -65,7 +67,8 @@
                }
           }else{
                array.push(toPush);
-          }        
+          }
+          return   array;      
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.

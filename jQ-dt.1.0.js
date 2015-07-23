@@ -17,15 +17,15 @@
 	};
 
 	var dtbl = {
-		addColumn : function (arr){
+		addColumns : function (arr){
 			Array.prototype.push.apply(p._columns,arr);
 		},
 		addRow : function (arr){
 			 if(arr.length > 0){
-			     var r = [];debugger;
+			     var r = [];
 			      for(var idx = 0; idx < arr.length; idx++)
 			      	r[p._columns[idx]] = arr[idx]
-			      _default.extend(p._rows,r);
+			      p._rows = _default.extend(p._rows,r);
 			}
 		},
 		getData : function(){
@@ -34,16 +34,31 @@
 	};
 
 	var _default = {
-		extend : function(){
-		    for(var idx=1; idx<arguments.length; idx++)
-		        for(var key in arguments[idx])
-		            if(arguments[idx].hasOwnProperty(key))
-		                arguments[0][key] = arguments[idx][key];
-		    return arguments[0];
+		/**
+		 * Merge defaults with user options
+		 * @private
+		 * @param {Object} defaults Default settings
+		 * @param {Object} options User options
+		 * @returns {Object} Merged values of defaults and options
+		 */
+		 extend : function ( defaults, options ) {
+		    var extended = {};
+		    var prop;
+		    for (prop in defaults) {
+		        if (Object.prototype.hasOwnProperty.call(defaults, prop)) {
+		            extended[prop] = defaults[prop];
+		        }
+		    }
+		    for (prop in options) {
+		        if (Object.prototype.hasOwnProperty.call(options, prop)) {
+		            extended[prop] = options[prop];
+		        }
+		    }
+		    return extended;
 		},
 		Name :  "jQ-data-table.1.0"
 	};
 
-	_default.extend(window.$$,dtbl);
+	window.$$ = _default.extend(window.$$,dtbl);
 
 })(window);

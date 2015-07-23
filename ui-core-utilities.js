@@ -23,3 +23,16 @@ Array.prototype.unique = function() {
      return a;
 };
 
+var unitTestJson ={
+     a : 'Subscribers rock',
+     b : [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12],
+     c : ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],
+     d : ['pear', 'banana'],
+     e : [1, 2, 3, 4, 5],
+     f : 6,
+     g : [7, 8, 9],
+     h : 'The, quick, brown, fox jumped over',
+     i : '',
+     j : [1, 1, 2, 3, 5, 7],
+     k : ' '
+}
