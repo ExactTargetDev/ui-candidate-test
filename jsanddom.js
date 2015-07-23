@@ -103,24 +103,24 @@
                     {
                         'firstName'   : 'Liza',
                         'lastName'    : 'Zinto',
-                        'city'        : 'United States',
-                        'state'       : 'CA',
-                        'zip'         : '90032',
-                        'phone'       : ['+918870324564','+919025990532']
+                        'city'        : 'Charlotte',
+                        'state'       : 'NC',
+                        'zip'         : '28202',
+                        'phone'       : ['5107714875','6183037484']
                     },{
                         'firstName'   : 'Philp',
                         'lastName'    : 'Parker',
-                        'city'        : 'United States',
-                        'state'       : 'SF',
-                        'zip'         : '90031',
-                        'phone'        : ['+918870324564','+919025990532']
+                        'city'        : 'Los Angeles',
+                        'state'       : 'CA',
+                        'zip'         : '90007',
+                        'phone'        : ['4085058231','2543665295']
                     },{
                         'firstName'   : 'Alex',
                         'lastName'    : 'Kolonitsky',
-                        'city'        : 'Russiya',
-                        'state'       : 'Minsty',
-                        'zip'         : '092092',
-                        'phone'       : ['+918870324564','+919025990532']
+                        'city'        : 'Dallas',
+                        'state'       : 'Texas',
+                        'zip'         : '75201',
+                        'phone'       : ['4087188201','5714710153']
                     }
                 ]
         };

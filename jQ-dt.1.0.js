@@ -59,6 +59,6 @@
 		Name :  "jQ-data-table.1.0"
 	};
 
-	window.$$ = _default.extend(window.$$,dtbl);
+	window.$$ = DataTable = _default.extend(window.$$,dtbl);
 
 })(window);
