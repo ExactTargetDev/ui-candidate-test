@@ -1,0 +1,122 @@
+
+body{background:#fff; padding:0px; margin:0px;}
+
+form,table,p,h1,h2,h3,h4,h5,h6,ul,li,div,dl{margin:0;padding:0;}
+
+li{	padding:0;margin:0;list-style:none;}
+
+a{text-decoration:none;outline:none;}
+
+.clsFloatLeft {float : left;}
+
+.clsFloatRight {float : right;}
+
+.clear {clear : both;}
+
+img{ border:0px;}
+/*-- End of Common Styles --*/
+.clsClearFix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+
+.clsClearFix {display: inline-table;}
+
+/* Hides from IE-mac \*/
+
+* html .clsClearFix {height: 1%;}
+
+.clsClearFix {display: block;}
+
+/* CSS Clearfix */
+
+.clearfix:after {
+
+	content: ".";
+
+	display: block;
+
+	clear: both;
+
+	visibility: hidden;
+
+	line-height: 0;
+
+	height: 0;
+
+}
+
+.clearfix {
+
+	display: inline-block;
+
+}
+
+html[xmlns] .clearfix {
+
+	display: block;
+
+}
+
+* html .clearfix {
+
+	height: 1%; 
+
+}
+
+ul{ list-style-type:none; padding:0px; margin:0px;}
+
+.container { width:1250px;margin:0 auto;}
+.maintop{ background: url("topbg.png") repeat;width:95%;height:32px;padding:0px 2.5% }
+.logo {padding-top:9px; }
+.logo a { background:url(logo.png) no-repeat top center;width:86px; height:16px;text-indent:-999em; display:block;}
+.maintop ul li { float:left;margin-right: 8px;margin-top: 4px;}
+.maintop ul li  a { color:#99cce1;font: 13px arial; padding-top: 7px;text-transform:capitalize;}
+.maintop ul li  a:hover{text-decoration:underline;}
+.maintop h6 {color: #eeeeee;font: 13px arial; padding-top: 7px;text-transform:capitalize;  margin-right: 15px;}
+
+.mainpage {padding:0px 2%; } 
+.mainleft {width:183px; }
+.menu { background:#f4f4f5;  border-radius: 3px;  border: 1px solid #e6e6e6;   box-shadow: 2px 2px 5px #ddd;margin-top:40px;}
+h5.intra {background:url(orange.png) no-repeat top center;width:183px;height:52px;font:14px arial; font-weight:bold;color:#fff;padding-top:7px; }
+h5.intra span {  background: url("intra.png") no-repeat scroll 0px 0px rgba(0, 0, 0, 0); display: block;float: left; height: 45px; text-indent: -999em;
+ width: 42px;margin-top:-6px; }
+.menu ul { padding:5px;border-radius:0px 0px 3px 3px;   border: 2px solid #fff; border-top:0px;}
+.menu ul li { margin-bottom:10px;}
+.menu ul li a {font:15px/25px arial;color:#888888;text-transform:capitalize;padding-left:32px;display:block;width:100% !important; }
+.menu ul li a:hover{text-decoration:underline;}
+.menu ul li a.email {background:url(email.png) no-repeat top left; width:26px;height:26px; }
+.menu ul li a.mobile {background:url(mobile.png) no-repeat top left; width:26px;height:26px; }
+.menu ul li a.social {background:url(co.png) no-repeat top left; width:26px;height:26px; }
+.menu ul li a.sites {background:url(ex-images.png) no-repeat top left; width:26px;height:26px; }
+.menu ul li a.studio {background:url(automationstudio.png) no-repeat top left; width:26px;height:26px; }
+.menu ul li a.builder {background:url(audience.png) no-repeat top left; width:26px;height:26px; }
+.menu ul li a.report {background:url(report.png) no-repeat top left; width:26px;height:26px; }
+.menu ul li a.part {background:url(partnericon.png) no-repeat left center; width:26px;height:26px; }
+.menu ul.two ,.menu ul.three { border-top:1px solid #dddddd;}
+.mar0 {margin:0px !important; }
+.marright0 { margin-right:0px !important;}
+.mainright { }
+.mainbg { background:url(probg.png) no-repeat top left;width:994px;height:265px;display:block;}
+.mainbg h2 {font:20px arial;color:#fff;line-height:50px;padding-left:15px;position:relative; }
+.mainbg h2  span {background: url("puls.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);display: block;height: 33px;left: 0; position: absolute;
+ text-indent: -999em; top: 27px; width: 116px;}
+.mainbg-top { margin-bottom:20px;}
+.mainbg-top .right { }
+.mainbg-top .right ul li {float:left; float: left; margin: 15px 3px; }
+.mainbg-top .right ul li a {text-indent:-999em;display:block; }
+.mainbg-top .right ul li a.setting{background: url("setting.png") no-repeat;width:13px;height:13px; }
+.mainbg-top .right ul li a.saveas{background: url("sett2.png") no-repeat;width:13px;height:13px; }
+.mainbg-top .right ul li a.save{background: url("sett3.png") no-repeat;width:13px;height:13px; }
+.mainbg-top .right ul li a.close{background: url("close.png") no-repeat;width:13px;height:13px; }
+
+.product {background:#e9f0f4; width:100%;height:99px;display:block;border-radius:4px;text-align:center; padding-top: 10px;}
+.product h1 {font:32px arial; color:#34bbf3;font-weight:bold;margin-bottom:5px;}
+.product p { font:16px arial;color:#93afc0;margin-bottom:10px;}
+.product h2 { font:11px arial;color:#93afc0; }
+.product:hover {width:auto;}
+#carousel li h4 { font:bold 15px arial; margin-bottom:15px;color:#7f91a3;text-align:center;text-transform:capitalize;}
+#carousel li:hover{height: 150px; width:auto;background:#e9f0f4;border-radius:3px;box-shadow: 1px 4px 6px #bac3c9;padding: 3% 4%;}
+#carousel li:hover h4 { margin-top:-50px;}
+li.lay2 {     position: relative;top: -73px;width:20% !important; }
+li.lay2 .product { background:url(map2.png) no-repeat;padding:0px;width:190px;height:112px;display:block;text-indent:-999em;}
+ li.lay2 .product:hover { background:url(map5.png) no-repeat;padding:0px;width:220px;height:210px;display:block;text-indent:-999em;}
+#carousel li.lay2:hover { background:0px none;box-shadow:none;padding:0px;}
+.loading img {  display: block;margin:auto;text-align: center;width: 47px;}

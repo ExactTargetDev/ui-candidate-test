@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="stylesheet.css" type="text/css"/>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>    
+    <script src="dashboard.js" type="text/javascript"> </script>
+    <script src="taks.js" type="text/javascript"> </script>
+
+</head>
+<body>
+    <div class="container">
+            <header>
+                <div class="maintop">
+                    <div class="left logo clsFloatLeft">
+                        <a href="#">
+                            logo
+                        </a>
+                    </div>
+                    <div class="right clsFloatRight">
+                        <h6 class="clsFloatLeft">Welcome John!  </h6>
+                        <ul class="clsFloatRight">
+                            <li>
+                                <a href="#"> Account | </a>
+                            </li>
+                            <li>
+                                <a href="#" class="help-lnk"> Help | </a>
+                            </li>
+                            <li class="marright0">
+                                <a href="#"> Logout </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!--maintop-->
+            </header>
+        <div class="mainpage clsClearFix">
+            <div class="mainleft clsFloatLeft">
+                <div class="menu">
+                    <h5 class="intra">
+                        <span> icon</span>
+                        Interactive Marketing Hub
+                    </h5>
+                    <ul>
+                        <li>
+                            <a class="email" href="#"> ExactTarget Email </a>
+                        </li>
+                        <li>
+                            <a class="mobile" href="#">ExactTarget Mobile </a>
+                        </li>
+                        <li>
+                            <a class="social" href="#">CoTweet Social </a>
+                        </li>
+                        <li>
+                            <a class="sites" href="#"> ExactTarget Sites </a>
+                        </li>                        
+                    </ul>
+                    <ul class="two">
+                        <li>
+                            <a class="studio" href="#"> Automation Studio </a>
+                        </li>
+                        <li>
+                            <a class="builder" href="#"> Audience Builder </a>
+                        </li>
+                        <li>
+                            <a class="report" href="#">Report Builder </a>
+                        </li>
+                    </ul>
+                    <ul class="three">
+                        <li class="mar0">
+                            <a class="part" href="#">Partner Applications</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+            <div class="mainright clsFloatRight">
+                <div class="calender clsClearFix">
+                    <a href="#">
+                        <img src="cal.png" width="100%" />
+                    </a>
+                </div> <!--calender-->
+                <div class="mainbg clsClearFix">
+                    <div class="mainbg-top clsClearFix">
+                        <div class="left clsFloatLeft">
+                            <h2>
+                                Pulse
+                                <span>icon</span>
+                            </h2>
+                        </div>
+                        <div class="right clsFloatRight">
+                            <ul>
+                                <li>
+                                    <a class="setting" href="#"> settings </a>
+                                </li>
+                                <li>
+                                    <a class="saveas" href="#"> save as </a>
+                                </li>
+                                <li>
+                                    <a class="save" href="#"> save </a>
+                                </li>
+                                <li>
+                                    <a class="close" href="#"> close </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mainbottom clsClearFix">
+                        <div id="main">
+                            <ul id="carousel">
+                                <li>   
+                                    <h4>
+                                        Followers
+                                    </h4>                                
+                                    <div class="product">                                    
+                                        <h1>310</h1>
+                                        <p>added today</p>
+                                        <h2>2,393,905 total</h2>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Fan
+                                    </h4>
+                                    <div class="product">
+                                        <h1>73</h1>
+                                        <p>added today</p>
+                                        <h2>91,675 total</h2>
+                                    </div>
+                                </li> 
+                                <li>
+                                    <h4>
+                                        Subscribers 
+                                    </h4>
+                                    <div class="product">
+                                        <h1>56</h1>
+                                        <p>added today</p>
+                                        <h2>189,405 total</h2>
+                                    </div>
+                                </li>
+                                <li class="lay2">
+                                    <h4>
+                                        foursquare
+                                    </h4>
+                                    <div class="product">
+                                        <a href="#">
+                                            map
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Landing Pages
+                                    </h4>
+                                    <div class="product">
+                                        <p>Visitors Today</p>
+                                        <h1>397 </h1>
+                                        <h2>Soulja Boy V.I.P.</h2>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="loading">
+                            <img src="loading.png" />
+                        </div>
+                    </div>
+                    
+                </div> <!--mainbg-->
+            </div>
+        </div>
+
+    </div> <!--container-->
+    <div id="dialog"></div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.menu>ul>li').on('click',function(){
+                console.log("You have selected : ",$(this).find('a').html());
+            })
+            $('.help-lnk').on('click',function(){
+                loadJSON();
+            })            
+        });
+    </script>
+</body>
+</html>

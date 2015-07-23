@@ -4,7 +4,7 @@ This is the candaidate test for ExactTarget UI developers. It is **NOT** pass/fa
 
 Read *ALL* bullet points.
 
-Please include "ATTENTION: &lt;ET Contacts Name&gt;" in your pull request
+Please include "ATTENTION: &lt;ET Liza Zinto &gt;" in your pull request
 
 ## Here are the guidelines for the test:
 + Be sure to read all the bullet points below.
