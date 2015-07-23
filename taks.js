@@ -87,3 +87,15 @@ var tasks = {
 		}
 	}
 };
+
+function loadJSON(){
+	$.ajax(
+			url : 'data/help.json',
+		).done(function(response,status){
+
+		}).fail(function(){
+			// fail stuff 
+		}).always(function(){
+			// release your resouces functionality
+		})
+}
