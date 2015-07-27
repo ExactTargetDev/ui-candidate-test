@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function timeS(){
+    
+    var unix = Math.round(+new Date()/1000);
+	document.write(unix);
+
+}
+
+</script>
+</head>
+<body onload="javascript:timeS()">
+
+<h1>Unix Time Stamp</h1>
+
+</body>
+</html> 
