@@ -15,6 +15,12 @@
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+         	var minimum_value;  
+         	for (var i = 0; i < (values.length - 1); i++)
+         	     {  
+         	          minimum_value = (values[i] < values[i+1]) ? values[i] : values[i+1];  
+         	     }    
+         	return minimum_value;   
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
