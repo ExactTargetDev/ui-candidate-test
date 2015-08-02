@@ -67,6 +67,16 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+         var index; 
+         for(var i=0; i<fruitsToRemove.length; i++) 
+         { 
+             index = fruits.indexOf(fruitsToRemove[i]); 
+             if(index >= 0) 
+             { 
+                 fruits = fruits.slice(0, index).concat(fruits.slice(index+1)); 
+             } 
+         } 
+       return fruits; 
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -75,8 +85,7 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
-     }
-
+         
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          // FILL THIS IN
