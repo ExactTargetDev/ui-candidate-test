@@ -12,3 +12,17 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+/********************************
+reverseString Test.............
+********************************/
+test("reverseString Test", 5, function() { 
+    equal(typeof reverseString, 'function', 'Verify the reverseString function is present'); 
+     ok(reverseString('Sejal'), 'lajeS', 'Expect a valid result'); 
+     // Even number of characters 
+     equal(reverseString('PatelS'), 'SletaP', 'Check even # Chars'); 
+     // Odd number of characters 
+     equal(reverseString('Sejal'), 'lajeS', 'Check odd # Chars'); 
+     // Two Words 
+     equal(reverseString('Nick Reitman'), 'namtieR kciN', 'Check with two words'); 
+ }); 
+
