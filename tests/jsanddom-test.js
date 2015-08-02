@@ -23,6 +23,6 @@ test("reverseString Test", 5, function() {
      // Odd number of characters 
      equal(reverseString('Sejal'), 'lajeS', 'Check odd # Chars'); 
      // Two Words 
-     equal(reverseString('Nick Reitman'), 'namtieR kciN', 'Check with two words'); 
+     equal(reverseString('Sejal Patel'), 'letaP lajeS', 'Check with two words'); 
  }); 
 
