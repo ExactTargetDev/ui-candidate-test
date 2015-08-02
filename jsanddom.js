@@ -26,6 +26,15 @@
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+         var unique = [],i;  
+         for(i=0; i<values.length; i++)
+           {  
+              if(unique.indexOf(values[i]) < 0) 
+              {  
+                 unique.push(values[i]);
+              }  
+           }  
+      return unique;  
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
