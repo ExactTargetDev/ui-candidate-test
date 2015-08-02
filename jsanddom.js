@@ -2,21 +2,38 @@
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
         //return a / b;
+        return a/b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
+         return str.split('').reverse().join(''); 
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+         	var minimum_value;  
+         	for (var i = 0; i < (values.length - 1); i++)
+         	     {  
+         	          minimum_value = (values[i] < values[i+1]) ? values[i] : values[i+1];  
+         	     }    
+         	return minimum_value;   
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+         var unique = [],i;  
+         for(i=0; i<values.length; i++)
+           {  
+              if(unique.indexOf(values[i]) < 0) 
+              {  
+                 unique.push(values[i]);
+              }  
+           }  
+      return unique;  
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -25,6 +42,22 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
+         for(var i=1; i<=100; i++) 
+         {  
+             if(i%3===0 && i%5===0) 
+             {  
+                 console.log('FizzBuzz');  
+             } else if(i%3===0) 
+             {  
+                 console.log('Fizz');  
+             } else if(i%5===0) 
+             {  
+                 console.log('Buzz');  
+             } else 
+             {  
+                 console.log(i);  
+             }  
+         }  
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -33,6 +66,16 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+         var index; 
+         for(var i=0; i<fruitsToRemove.length; i++) 
+         { 
+             index = fruits.indexOf(fruitsToRemove[i]); 
+             if(index >= 0) 
+             { 
+                 fruits = fruits.slice(0, index).concat(fruits.slice(index+1)); 
+             } 
+         } 
+       return fruits; 
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -41,21 +84,45 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+         if(Array.isArray(toPush)) 
+         {  
+             for(var i=0; i<toPush.length; i++) 
+             {  
+               array.push(toPush[i]);  
+             }  
+         } else 
+         {  
+             array.push(toPush);  
+         }  
      }
 
+         
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
          // FILL THIS IN
+         if(sourceStr.length === 0) 
+         { 
+             return []; 
+         } 
+      return sourceStr.split(','); 
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          // FILL THIS IN
+         var sum = 0;  
+         for(var i=0; i<arguments.length; i++) 
+         {  
+             sum += arguments[i];  
+         }  
+         return sum;  
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
+        var stng = /^\s*$/;  
+        return stng.test(sourceStr);  
      }
 
      // write an example of a javascript closure
