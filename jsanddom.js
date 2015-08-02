@@ -9,7 +9,6 @@
      function reverseString(str) {
          // FILL THIS IN
          return str.split('').reverse().join(''); 
-         
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
@@ -85,6 +84,18 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+         if(Array.isArray(toPush)) 
+         {  
+             for(var i=0; i<toPush.length; i++) 
+             {  
+               array.push(toPush[i]);  
+             }  
+         } else 
+         {  
+             array.push(toPush);  
+         }  
+     }
+
          
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
