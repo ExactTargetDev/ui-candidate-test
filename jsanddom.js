@@ -18,15 +18,15 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-	var distinct = [];
+     	var distinct = [];
 
-	for( var i = 0; i < values.length; ++i ) {
-		if(distinct.indexOf(values[i]) < 0) {
-			distinct.push(values[i]);
-		}
-	}
+     	for( var i = 0; i < values.length; ++i ) {
+     		if(distinct.indexOf(values[i]) < 0) {
+     			distinct.push(values[i]);
+     		}
+     	}
 
-	return distinct;
+     	return distinct;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -78,7 +78,9 @@
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         return (sourceStr.length > 0)
+                    ? sourceStr.split(',')
+                    : [];
      }
 
      // Write a function that will take any number of arguments and return their sum
@@ -94,6 +96,7 @@
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
+     // NOTE: An empty string is not considered whitespace in this implementation.
      function isOnlyWhitespace(sourceStr) {
 	    return sourceStr !== '' && sourceStr.length !== sourceStr.split(' ').length;
      }
@@ -101,22 +104,21 @@
      // write an example of a javascript closure
 
      var X = (function(val1, val2, val3) {
+          // Private method (in closure)
+          var _add = function(a, b) {
+               return a + b;
+          };
+
+          // Private value (in closure)
+          var _x = _add(val1, _add(val2, val3)), 
+               _y = 2;
+
 		// Private method (in closure)
-		var _add = function(a, b) {
-			return a + b;
-		};
-
-		// Private value (in closure)
-		var _x = _add(val1, _add(val2, val3));
-
-		// Alternate method syntax and definition for local scope (closure)
-		this._get_x = function () {
+		var _get_x = function () {
 			return _x;
 		};
-
-		// Alternate value, in scope of "this" (closure)
-		this._y = 2;
 		
+          // Return object, exposing specific methods and properties
 		return {
 			// Return public alias to "_add"
 			add : _add,
@@ -128,6 +130,8 @@
      })(1, 2, 3);
 
      // X.get_x(); // returns 6
+     // X.y; // 2
+     // X.add(1, 2); // returns 3
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -137,6 +141,39 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     
+     var peopleJSON = [
+          {
+               "firstName" : "Justin",
+               "lastName" : "Evans",
+               "city" : "Indianapolis",
+               "state" : {
+                    "name" : "Indiana",
+                    "abbr" : "IN"
+               },
+               "zip" : "46219",
+               "phone" : {
+                    "home" : "317-555-1234",
+                    "work" : "317-555-6195",
+                    "mobile" : "773-555-4321"
+               }
+          },
+          {
+               "firstName" : "Jason",
+               "lastName" : "Edwards",
+               "city" : "Chicago",
+               "state" : {
+                    "name" : "Illinois",
+                    "abbr" : "IL"
+               },
+               "zip" : "60640",
+               "phone" : {
+                    "home" : "312-555-1234",
+                    "work" : "847-555-1111",
+                    "mobile" : "773-555-4321"
+               }
+          }
+     ];
 
 
      // Create a javascript object (DataTable) with the following:
@@ -150,6 +187,43 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     
+     var DataTable = (function(){
+
+          var  _columns = [],
+               _rows = [];
+
+          var _addColumns = function() {
+               var args = [].slice.call(arguments);
+
+               for(var i=0; i<args.length; ++i)
+               {
+                    _columns.push(args[i]);
+                    _rows[args[i]] = []; // Initialize array of row items for each column
+               }
+
+               return _columns;
+          };
+
+          var _addRow = function() {
+               var args = [].slice.call(arguments);
+
+               for(var i=0; i<args.length; ++i)
+               {
+                    _rows[_columns[i]].push(args[i]);
+               }
+          };
+
+          var _getData = function() {
+               return _rows; // GET JSON
+          };
+
+          return {
+               addColumns : _addColumns,
+               addRow : _addRow,
+               getData : _getData
+          };
+     })();
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
