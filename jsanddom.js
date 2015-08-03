@@ -96,21 +96,29 @@
      // write an example of a javascript closure
 
      var X = (function(val1, val2, val3) {
-		// Private method
+		// Private method (in closure)
 		var _add = function(a, b) {
 			return a + b;
 		};
 
-		// Private value
+		// Private value (in closure)
 		var _x = _add(val1, _add(val2, val3));
 
-		// Alternate private method syntax and definition
-		function _get_x () {
+		// Alternate method syntax and definition for local scope (closure)
+		this._get_x = function () {
 			return _x;
-		}
+		};
+
+		// Alternate value, in scope of "this" (closure)
+		this._y = 2;
+		
 		return {
-			add : _add, // Make private method "_add" public
-			get_x : _get_x // Method for obtaining private "_x" value
+			// Return public alias to "_add"
+			add : _add,
+			// Return public alias to "_get_x"
+			get_x : this._get_x, 
+			// Return public alias to property "_y"
+			y : this._y
 		};
      })(1, 2, 3);
 
