@@ -1,20 +1,19 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-	if(str.length > 0)
-		return str.split('').pop() + reverseString(str.slice(0,-1));
-	else
-		return str;
+	return (str.length > 0)
+		? str.slice(str.length - 1, str.length) + reverseString(str.slice(0,-1))
+		: str;
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+	
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
