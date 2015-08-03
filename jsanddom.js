@@ -1,24 +1,32 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        return a / b;
+        // return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
 	return (str.length > 0)
-		? str.slice(str.length - 1, str.length) + reverseString(str.slice(0,-1))
+		? str.slice(str.length - 1, str.length) + reverseString(str.slice(0, -1))
 		: str;
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-	
+	return Math.min.apply(Math, values);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+	var distinct = [];
+
+	for( var i = 0; i < values.length; ++i ) {
+		if(distinct.indexOf(values[v]) < 0) {
+			distinct.push(values[v]);
+		}
+	}
+
+	return distinct;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -26,7 +34,25 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+
+	for( var i = 1; i <= 100; ++i ) {
+
+		var output = '';
+
+		if( i % 3 === 0 ) {
+			output = 'Fizz';
+		}
+
+		if( i % 5 === 0 ) {
+			output += 'Buzz';
+		}
+		
+		if( output.length === 0 ) {
+			output = i;
+		}
+
+		console.log(output);
+	}
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -52,15 +78,43 @@
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+	var args = [].slice.call(arguments),
+	    sum = 0;
+
+	for(var i=0; i < args.length; ++i) {
+		sum += args[i];
+	}
+
+	return sum;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+	return sourceStr.length !== sourceStr.split(' ').length;
      }
 
      // write an example of a javascript closure
+
+     var X = (function(val1, val2, val3) {
+		// Private method
+		var _add = function(a, b) {
+			return a + b;
+		};
+
+		// Private value
+		var _x = _add(val1, _add(val2, val3));
+
+		// Alternate private method syntax and definition
+		function _get_x () {
+			return _x;
+		}
+		return {
+			add : _add, // Make private method "_add" public
+			get_x : _get_x // Method for obtaining private "_x" value
+		};
+	})(1, 2, 3);
+
+     // X.get_x(); // returns 6
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
