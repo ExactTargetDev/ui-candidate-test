@@ -1,7 +1,7 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        // return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
@@ -13,7 +13,7 @@
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-	return Math.min.apply(Math, values);
+	    return Math.min.apply(Math, values);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
@@ -21,8 +21,8 @@
 	var distinct = [];
 
 	for( var i = 0; i < values.length; ++i ) {
-		if(distinct.indexOf(values[v]) < 0) {
-			distinct.push(values[v]);
+		if(distinct.indexOf(values[i]) < 0) {
+			distinct.push(values[i]);
 		}
 	}
 
@@ -34,25 +34,30 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
+          var fizzBuzz = [];
 
-	for( var i = 1; i <= 100; ++i ) {
+     	for( var i = 1; i <= 100; ++i ) {
 
-		var output = '';
+     		var output = '';
 
-		if( i % 3 === 0 ) {
-			output = 'Fizz';
-		}
+     		if( i % 3 === 0 ) {
+     			output = 'Fizz';
+     		}
 
-		if( i % 5 === 0 ) {
-			output += 'Buzz';
-		}
-		
-		if( output.length === 0 ) {
-			output = i;
-		}
+     		if( i % 5 === 0 ) {
+     			output += 'Buzz';
+     		}
+     		
+     		if( output.length === 0 ) {
+     			output = i;
+     		}
 
-		console.log(output);
-	}
+     		fizzBuzz.push(output);
+     	}
+
+          console.dir(fizzBuzz);
+          
+          return fizzBuzz;
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -78,14 +83,14 @@
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-	var args = [].slice.call(arguments),
-	    sum = 0;
+     	var args = [].slice.call(arguments),
+     	    sum = 0;
 
-	for(var i=0; i < args.length; ++i) {
-		sum += args[i];
-	}
+     	for(var i=0; i < args.length; ++i) {
+     		sum += args[i];
+     	}
 
-	return sum;
+     	return sum;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
