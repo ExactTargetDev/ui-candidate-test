@@ -90,7 +90,7 @@
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-	return sourceStr.length !== sourceStr.split(' ').length;
+	return sourceStr !== '' && sourceStr.length !== sourceStr.split(' ').length;
      }
 
      // write an example of a javascript closure
@@ -112,7 +112,7 @@
 			add : _add, // Make private method "_add" public
 			get_x : _get_x // Method for obtaining private "_x" value
 		};
-	})(1, 2, 3);
+     })(1, 2, 3);
 
      // X.get_x(); // returns 6
 
