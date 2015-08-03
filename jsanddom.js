@@ -56,7 +56,7 @@
      	}
 
           console.dir(fizzBuzz);
-          
+
           return fizzBuzz;
      }
 
@@ -95,7 +95,7 @@
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-	return sourceStr !== '' && sourceStr.length !== sourceStr.split(' ').length;
+	    return sourceStr !== '' && sourceStr.length !== sourceStr.split(' ').length;
      }
 
      // write an example of a javascript closure
