@@ -37,7 +37,19 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+         var arr = [];
+                for (var i=1;i <= 100;i++){
+                     if (i % 15 == 0){
+                          arr.push("FizzBuzz");
+                     }else if (i % 3 == 0){
+                          arr.push("Fizz");
+                     }else if (i % 5 == 0){
+                          arr.push("Buzz");
+                     }else{
+                          arr.push(i);
+                     }
+                }
+                console.log(arr);
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -45,7 +57,18 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         var arr = [];
+         var fruits = ["Orange","Banana","Mango","Apple"];
+         var remove = ["Apple","Orange"];
+         for (var i=0; i <remove.length;i++){
+              for (var j=0; j<fruits.length;j++){
+                   if(fruits[j] == remove[i]){
+                        fruits.splice(j,1);
+                        //arr.push(fruits.splice(j,1));
+                   }
+              }
+         }
+         alert(fruits);
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -58,12 +81,13 @@
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         var tempArray = sourceStr.split(",");
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+         var arr = [1,2,3,4];
+          alert(eval(arr.join('+')));
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
