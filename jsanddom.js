@@ -92,10 +92,20 @@
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+         if(!sourceStr.match(/\S/)){
+              return true;
+         }
+              return false;
      }
 
      // write an example of a javascript closure
+           function fullName(firstName){
+                var fullName = "Full name is";
+                function lastName (lastName){
+                     return fullName+firstName+""+lastName;
+                }
+                return lastName; 
+           }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -105,6 +115,29 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+               var persons = [{
+                    "firstName": "test",
+                    "lastName": "test",
+                    "city": "Chicago",
+                    "state": "IL",
+                    "zip": 60194,
+                    "phone":{
+                    "home":"111-111-1111",
+                    "work":"222-222-2222",
+                    "mobile":"333-333-3333"
+                    }
+                    },{
+                    "firstName": "sample",
+                    "lastName": "sample",
+                    "city": "Chicago",
+                    "state": "IL",
+                    "zip": 60193,
+                    "phone": {
+                    "home": "444-444-4444",
+                    "work": "555-555-5555",
+                    "mobile": "666-666-6666"
+                    }
+                    }]
 
 
      // Create a javascript object (DataTable) with the following:
@@ -128,6 +161,20 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+          function createListArray(){
+               var listArray =[];
+               
+               for (var i=0;i<5;i++)
+               {
+                    var data = [];
+                    for (var j=0;j<5;j++)
+                    {
+                         data.push("List" +j);
+                    }
+                    listArray.push(data);
+               }
+               return listArray;
+          }
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
