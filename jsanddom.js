@@ -76,7 +76,15 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+         if(toPush instanceof Array){
+              alert('value is Array!');
+              for(var i=0;i < toPush.length;i++){
+                   array.push(toPush[i]);
+              }
+         }else{
+              array.push(toPush)
+         }
+         alert(array);
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
@@ -151,13 +159,83 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
-
+    var DataTable = (function(){
+      var columns = [];
+             var rows = []; 
+                   var dtArray = []; 
+                   var obj = {};
+                   return {
+                        addColumns: function(items) { 
+                             if($.isArray(items)) { 
+                                  for(var i=0; i<items.length; i++) {
+                                       columns.push(items[i]);
+                                  }
+                             }
+                             else {
+                                  columns.push(items[i]);
+                             }
+                        },
+                        addRow: function(items) { 
+                             var tempRow = []; 
+                             if($.isArray(items)) { 
+                                  for(var i=0; i<items.length; i++) {
+                                       tempRow.push(items[i]); 
+                                  }   
+                              } 
+                              else { 
+                                   tempRow.push(items); 
+                                   } rows.push(tempRow); 
+                              },
+                              getData: function() { 
+                                   for(var r=0; r<rows.length; r++) {
+                                        var tempObj = {}; 
+                                        for(var c=0; c<columns.length; c++) { 
+                                             tempObj[columns[c]] = rows[r][c]; 
+                                             } 
+                                             dtArray.push(tempObj); 
+                                             obj.dataTable = dtArray; 
+                                        } 
+                                        return obj; 
+                                   } 
+                              }
+                         })();
+    
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
-
+       var getFunction = function() { 
+            var options = ['red', 'yellow', 'blue', 'green']; 
+            $('#div1').append('<select id="my-select"></select>'); 
+            var mySelect = $('#my-select');
+            mySelect.append('<option value=>- select -</option>'); // add initial select prompt
+            for(var i=0; i<options.length; i++) {
+                 mySelect.append('<option value='+options[i]+'>'+options[i]+'</option>'); 
+                }
+                $('#div1').append('<button id="div1-button" type="button">Show Selected</button>'); 
+                $('#div1').append('<span id="selected-message"></span>');
+                $('#div1-button').click(function(ev) {
+                     var opt = $('#my-select').val(); 
+                     var text = $('#my-select option:selected').text(); 
+                     if(opt != '') { 
+                          $('#selected-message').text(text); 
+                          console.log('selected value: '+opt+', text: '+text); 
+                         } 
+               });
+               }
+                
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     
+     $("button").click(function () { 
+          var str = $(this).text(); 
+          $('a').css("border", "0px solid #000000"); 
+          $(str).css("border", "1px solid #ff0000"); 
+          $('#msg').html("<h2>Attribute Selector : " + str + "</h2>"); 
+          
+     }); 
+          $("#reset").click(function () { 
+               location.reload(); 
+          });
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
