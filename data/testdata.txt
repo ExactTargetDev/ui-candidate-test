@@ -1,15 +1,14 @@
-'Subscribers rock'
+'Technical Engineers'
 
-[3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]
+[33, 54, 75, 20, .19, 81, -18.1, 49, manager, director, 18, 11.1, 17]
 
-['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry']
-['pear', 'banana']
+['jerry', 'collins', 'samuel', 'irene', 'dome', 'kennedy', 'thomas']
+['doris', 'sammy']
 
-[1, 2, 3, 4, 5]
-6
-[7, 8, 9]
+[4, 5, 9, 0, 5]2
+[8, 9, 10]
 
-'The, quick, brown, fox jumped over'
-''
+'The, only, unfathomable, team of incredilous instanpedious engineers'
+''4
 
-1, 1, 2, 3, 5, 7
+1, 51, 82, 93, 55, 67
