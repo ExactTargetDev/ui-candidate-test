@@ -1,1 +1,20 @@
 Start Time: [1443470400]
+
+TotalTime: 20:30
+BrowserTesting: 
+Browser Version:
+IE 11
+Chrome Version 44.0.2403.155
+Firefox 41.0
+
+Tester: Grace Shi 
+
+comment: 
+I have implemented all the requirement mentioned in the README, since I 
+don't have photoshop, I'm not able to extract css and layer from the psd, 
+I used bootstrap ui and jQuery to replicate the psd. That's the reason 
+I took so much time to complete the task, I plan to use bower to instll 
+the external libraries and other denpendencies, but due to the timelimitation, 
+I just includeded the libraries and css in the js and css folder. Thanks
+for your understanding.  
+

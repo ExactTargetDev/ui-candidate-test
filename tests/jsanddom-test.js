@@ -11,9 +11,7 @@ test( "Example Test", 2, function() {
 });
 /********************************
 Please create your tests below...
-Browser Version:
-IE 11
-Chrome Version 44.0.2403.155
+
 
 ********************************/
 test( "String reverse", 3, function() {
