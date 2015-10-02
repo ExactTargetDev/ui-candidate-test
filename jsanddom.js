@@ -50,7 +50,7 @@
 	       	} else if(i % 5 === 0 ) {
 	       		console.log('Buzz');
 		    } else {
-			    console.log(i);
+			   console.log(i);
 		    }
 	    }
      }
@@ -59,22 +59,55 @@
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
-     function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
-     }
+    
+   
+    function removeFruits(fruits, fruitsToRemove) {
+	    var num = fruits.length;
+	    
+        for(i = 0; i < num; i++ ) {
+	         if(fruitsToRemove.indexOf(fruits[i]) > -1 ) {
+		        fruits.splice(i,1);
+	        }
+        }
+        return fruits;
+		//console.log(fruits)
+    }
+    var fruits = [ 'apples','bananas','grapes','kiwis'];
+    var fruitsToRemove = [ 'kiwis','bananas'];
+    removeFruits(fruits, fruitsToRemove);
 
      // Write a function to push either a simple value or an array of values onto a specified array.
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
+     
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+         array.push(toPush);
+         console.log(array);
      }
-
+	 
+	 var array = [1,2,3,4,5];
+	 var toPush = 'foo'; // Simple
+	 //var toPush = ['foo','bar','fizz','buzz']; // Array
+	 pushOntoArray(array, toPush);
+	 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
+	     
+	     var arr = [];
          // FILL THIS IN
+         if(sourceStr.length > -1) {
+	        var asource = sourceStr.split(',');
+	        for(i = 0; i < asource.length; i++ ){
+		        arr.push(asource[i]);
+	        }
+         }
+         console.log(arr);
+         return arr;
      }
+     
+     splitListStrUsingComma('Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.');
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
@@ -84,7 +117,11 @@
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
+        if (sourceStr.match(/^\s*$/)) {
+		  return true;
+		} 
      }
+     isOnlyWhitespace(' ');
      
      doFizzBuzz();
 
@@ -98,7 +135,60 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+	
+		 
+/*
+	 var peoplecollection = {'people' : [
+		 	{'person1' : {
+			 'firstname' : 'First Name',
+			 'lastname' : 'Last Name',
+			 'city' : 'City',
+			 'state' : 'State',
+			 'zip' : 'Zip',
+			 'phone' : {
+				 'home': '(XXX) XXX-XXXX',
+				 'work': '(XXX) XXX-XXXX',
+				 'mobile': '(XXX) XXX-XXXX'
+			 }
+			}},
+		 	{'person2' : {
+			 'firstname' : 'First Name',
+			 'lastname' : 'Last Name',
+			 'city' : 'City',
+			 'state' : 'State',
+			 'zip' : 'Zip',
+			 'phone' : {
+				 'home': '(XXX) XXX-XXXX',
+				 'work': '(XXX) XXX-XXXX',
+				 'mobile': '(XXX) XXX-XXXX'
+			 }
+			}},
+		 	{'person3' : {
+			 'firstname' : 'First Name',
+			 'lastname' : 'Last Name',
+			 'city' : 'City',
+			 'state' : 'State',
+			 'zip' : 'Zip',
+			 'phone' : {
+				 'home': '(XXX) XXX-XXXX',
+				 'work': '(XXX) XXX-XXXX',
+				 'mobile': '(XXX) XXX-XXXX'
+			 }
+			}},
+		 	{'person4' : {
+			 'firstname' : 'First Name',
+			 'lastname' : 'Last Name',
+			 'city' : 'City',
+			 'state' : 'State',
+			 'zip' : 'Zip',
+			 'phone' : {
+				 'home': '(XXX) XXX-XXXX',
+				 'work': '(XXX) XXX-XXXX',
+				 'mobile': '(XXX) XXX-XXXX'
+			 }
+			}}
+		 ]};
+*/
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
@@ -118,6 +208,15 @@
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     
+/*
+     var jQ1 = jQuery('.link');
+     var jQ2 = jQuery('#foo a');
+     var jQ3 = jQuery('.bar a');
+     var jQ4 = jQuery('.buzz a');
+     var jQ5 = jQuery('#fizz a');
+*/
+     
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
