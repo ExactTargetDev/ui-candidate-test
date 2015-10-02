@@ -1,24 +1,38 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
-         str.split(' ').reverse().join(' ');
+         str = str.split(' ').reverse().join(' ');
          return str;
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+         var low_value = Math.min.apply(Math,values);
+         return low_value;
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
+         var obj = {};
+         var new_vals = [];
+         var vl = values.length;
+         
+         for(i = 0; i < vl; i++ ) {
+	         if(!(values[i] in obj)) {
+		        new_vals.push(values[i]);
+		        obj[values[i]] = true;
+	         }
+         }
+        
+         return new_vals;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -26,7 +40,19 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+	     var fb = new Array(100);
+        // FILL THIS IN
+        for(i = 1; i < fb.length; i++){
+	        if((i % 3 === 0) && (i % 5 === 0)) {
+	       		console.log('FizzBuzz');
+		    } else if(i % 3 === 0) {
+	       		console.log('Fizz');
+	       	} else if(i % 5 === 0 ) {
+	       		console.log('Buzz');
+		    } else {
+			    console.log(i);
+		    }
+	    }
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -59,6 +85,8 @@
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
      }
+     
+     doFizzBuzz();
 
      // write an example of a javascript closure
 
