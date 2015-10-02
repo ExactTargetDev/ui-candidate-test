@@ -1,10 +1,10 @@
 # ExactTarget UI Candidates 
 
-This is the candaidate test for ExactTarget UI developers. It is **NOT** pass/fail. It is intended to provide insight into the range of your skill set. Please do what you can.
+This is the candaidate test for Salesforce Marketing Cloud UI developers. It is **NOT** pass/fail. It is intended to provide insight into the range of your skill set. Please do what you can.
 
 Read *ALL* bullet points.
 
-Please include "ATTENTION: &lt;ET Contacts Name&gt;" in your pull request
+Please title your pull request with "ATTENTION: _&lt;Name of your Salesforce Contact&gt;"_
 
 ## Here are the guidelines for the test:
 + Be sure to read all the bullet points below.
