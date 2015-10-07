@@ -108,29 +108,84 @@
      }
 
      // write an example of a javascript closure
+     function dtWhole(){
 
-     // define a json object that represents a collection of people.
-     // each person should have the following properties
-     // - first name
-     // - last name
-     // - city
-     // - state
-     // - zip
-     // - a collection of phone numbers (home, work, mobile)
+        // define a json object that represents a collection of people.
+        // each person should have the following properties
+        // - first name
+        // - last name
+        // - city
+        // - state
+        // - zip
+        // - a collection of phone numbers (home, work, mobile)
+        var data = [
+            {  
+                "firstName": "Billy",
+                "lastName" : "Bob",
+                "city" : "Fishers",
+                "state" : "Indiana",
+                "zip" : "46240",
+                "phones": {
+                  "home": "765-225-9969",
+                  "work": "317-589-7845",
+                  "mobile": "745-857-9658"
+                }
+            },
+            {
+                "firstName": "John",
+                "lastName" : "Doe",
+                "city" : "Fishers",
+                "state" : "Indiana",
+                "zip" : "46240",
+                "phones": {
+                  "home": "765-225-9969",
+                  "work": "317-589-7845",
+                  "mobile": "745-857-9658"
+                }
+            },
+            {
+                "firstName": "Jane",
+                "lastName" : "Doe",
+                "city" : "Indianapolis",
+                "state" : "Indiana",
+                "zip" : "46240",
+                "phones": {
+                  "home": "765-225-9969",
+                  "work": "317-589-7845",
+                  "mobile": "745-857-9658"
+                }
+            }
+        ];
 
+        // Create a javascript object (DataTable) with the following:
+        // A private columns property (string array)
+        // A private rows property (string array)
+        // A public method addRows that adds an item to the rows array
+        // A public method addColumns that adds an item to the columns array
+        // A public method getData that returns the a json object representation of the DataTable
+        // Note: the row object should be a hash of the column name and row item value
+        // Example:
+        // .addColumns('column1', 'column2', 'column3');
+        // .addRow('value1A', 'value1B', 'value1C');
+        // .addRow('value2A', 'value2B', 'value2C');
+        function createDataTable(id, info){
+            var dt = $("#"+id).DataTable({
+                "data":info,
+                 "columns": [
+                    { "data": "firstName" },
+                    { "data": "lastName" },
+                    { "data": "city" },
+                    { "data": "state" },
+                    { "data": "zip" }
+                ]
+            });
+        }
 
-     // Create a javascript object (DataTable) with the following:
-     // A private columns property (string array)
-     // A private rows property (string array)
-     // A public method addRows that adds an item to the rows array
-     // A public method addColumns that adds an item to the columns array
-     // A public method getData that returns the a json object representation of the DataTable
-     // Note: the row object should be a hash of the column name and row item value
-     // Example:
-     // .addColumns('column1', 'column2', 'column3');
-     // .addRow('value1A', 'value1B', 'value1C');
-     // .addRow('value2A', 'value2B', 'value2C');
+        console.log(data);
+        createDataTable("dt", data);
+     }
 
+     
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.

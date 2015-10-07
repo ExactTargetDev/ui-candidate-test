@@ -4,9 +4,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
 	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8" ></script>
 	<script src="jsanddom.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
 		var test = "this is a test";
@@ -32,11 +33,31 @@
 		// var str = "something,else,will,be here";
 		// console.log(splitListStrUsingComma(str));
 
-		console.log(isOnlyWhitespace("something"));
+		// console.log(isOnlyWhitespace("something"));
+		// createDataTable("dtExample");
+		// $("#dtExample").dataTable();
+		// $("#dt").dataTable(data:data);
+
+		dtWhole();
 	});		
 	</script>
 </head>
 <body>
-	
+	<div id="dtExample">
+		<table id="dt"> 
+			<thead>
+				<!-- <tr>
+					<th>fristName</th>
+					<th>lastName</th>
+					<th>City</th>
+					<th>State</th>
+					<th>Zip</th>
+				</tr> -->
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
