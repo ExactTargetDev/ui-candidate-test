@@ -17,7 +17,6 @@
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
         // FILL THIS IN
-        // var tmp = Math.min(values);  // doesn't work.
         var tmp = Math.min.apply(Math,values);
         return tmp;
      }
