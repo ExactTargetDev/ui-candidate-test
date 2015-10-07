@@ -72,3 +72,12 @@ test( "pushOntoArray", 3, function() {
     ok( pushOntoArray(a3, 10), ["apples","oranges","strawberry", "watermelon", 10], 'Expected ["apples","oranges","strawberry", "watermelon", 10] as the result, the result was: ' + pushOntoArray(a3, 10) );
 
 });
+
+module("splitListStrUsingComma Unit Test");
+test( "splitListStrUsingComma", 3, function() {
+    // Verify the method exists
+    equal( typeof splitListStrUsingComma, 'function', 'splitListStrUsingComma is a function if this passes' ); 
+
+    ok( splitListStrUsingComma("words,will,be here"), ["words", "will","be here"], 'Expected ["words", "will","be here"] as the result, the result was: ' + splitListStrUsingComma("words,will,be here") );
+    ok( splitListStrUsingComma(""), [], 'Expected [] as the result, the result was: ' + splitListStrUsingComma("") );
+});

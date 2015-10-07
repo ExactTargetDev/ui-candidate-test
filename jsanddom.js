@@ -65,25 +65,31 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
-         if($.isArray(toPush) === true){
+        // FILL THIS IN
+        if($.isArray(toPush) === true){
             $.each(toPush,function(index, el) {
                 array.push(el);
             });
-         }else{
+        }else{
             array.push(toPush);
-         }
-         return array;
+        }
+        return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+        // FILL THIS IN
+        return sourceStr.split( ',' );
+        // var tmp = '';
+        // for (var i = 0, len = sourceStr.length; i < len; i++) {
+        //     tmp += sourceStr[i]+ ','; 
+        // }
+        // return tmp;
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+        // FILL THIS IN
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
