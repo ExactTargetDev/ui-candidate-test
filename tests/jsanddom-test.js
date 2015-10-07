@@ -35,3 +35,13 @@ test( "findMinValue", 3, function() {
     var info2 = [54,400,23,43,37];
     ok( findMinValue(info2), 23, 'Expected 23 as the result, the result was: ' + findMinValue( info2 ) );
 });
+
+module('findDistinctValues Unit Test');
+test( "findDistinctValues", 2, function() {
+    // Verify the method exists
+    equal( typeof findDistinctValues, 'function', 'findMinValue is a function if this passes' ); 
+
+    var info = [17,17,17,1,3,4,"test","test","test"];
+    ok( findDistinctValues(info), [17,1,3,4,"test"], 'Expected [17,1,3,4,"test"] as the result, the result was: ' + findDistinctValues( info ) );
+});
+
