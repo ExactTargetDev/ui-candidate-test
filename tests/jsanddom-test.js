@@ -45,3 +45,30 @@ test( "findDistinctValues", 2, function() {
     ok( findDistinctValues(info), [17,1,3,4,"test"], 'Expected [17,1,3,4,"test"] as the result, the result was: ' + findDistinctValues( info ) );
 });
 
+module('doFizzBuzz Unit Test');
+test( "doFizzBuzz", 1, function() {
+    // Verify the method exists
+    equal( typeof findDistinctValues, 'function', 'doFizzBuzz is a function if this passes' ); 
+});
+
+module('removeFruits Unit Test');
+test( "removeFruits", 2, function() {
+    // Verify the method exists
+    equal( typeof findDistinctValues, 'function', 'findDistinctValues is a function if this passes' ); 
+
+    var a1=["apples","oranges","strawberry", "watermelon"], a2=['apples', 'oranges'];
+    ok( removeFruits(a1, a2), ["strawberry", "watermelon"], 'Expected ["strawberry", "watermelon"] as the result, the result was: ' + removeFruits(a1, a2) );
+});
+
+module("pushOntoArray Unit Test");
+test( "pushOntoArray", 3, function() {
+    // Verify the method exists
+    equal( typeof pushOntoArray, 'function', 'pushOntoArray is a function if this passes' ); 
+
+    var a1=["apples","oranges","strawberry", "watermelon"], a2=['apples', 'oranges'];
+    ok( pushOntoArray(a1, a2), ["apples","oranges","strawberry", "watermelon","apples","oranges"], 'Expected ["apples","oranges","strawberry", "watermelon","apples","oranges"] as the result, the result was: ' + pushOntoArray(a1, a2) );
+
+    var a3=["apples","oranges","strawberry", "watermelon"];
+    ok( pushOntoArray(a3, 10), ["apples","oranges","strawberry", "watermelon", 10], 'Expected ["apples","oranges","strawberry", "watermelon", 10] as the result, the result was: ' + pushOntoArray(a3, 10) );
+
+});
