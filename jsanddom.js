@@ -80,21 +80,31 @@
      function splitListStrUsingComma(sourceStr) {
         // FILL THIS IN
         return sourceStr.split( ',' );
-        // var tmp = '';
-        // for (var i = 0, len = sourceStr.length; i < len; i++) {
-        //     tmp += sourceStr[i]+ ','; 
-        // }
-        // return tmp;
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
         // FILL THIS IN
+        // var total = 0;
+        // $.each(arguments, function(index, val) {
+        //     total += (int)val;
+        //     total += Number(val);
+        // });
+        // return total;
+
+        return [].reduce.call( arguments, function( prev, current, index ) {
+            return prev + current;
+        }, 0 );
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
+        if (/\S/.test(sourceStr)) {
+            return false;
+        }else{
+            return true;
+        }
      }
 
      // write an example of a javascript closure
