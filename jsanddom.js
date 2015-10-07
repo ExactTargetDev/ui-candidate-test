@@ -1,22 +1,34 @@
+    
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
+        var tmp = '';
+        for (var i = str.length - 1; i >= 0; i--)
+            tmp += str[i];
+        return tmp;
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+        // FILL THIS IN
+        var tmp = Math.min.apply(Math,values);
+        return tmp;
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+        // FILL THIS IN
+        var result = [];
+        $.each(values, function(i, e) {
+            if ($.inArray(e, result) == -1) result.push(e);
+        });
+        return result;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -25,6 +37,18 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
+         for (var i = 1; i <= 100; i++) {
+            // console.log(i);
+            if(i % 3 === 0 && i % 5 === 0){
+                console.log("FizzBuzz");
+            }else if(i % 3 === 0){
+                console.log("Fizz");
+            }else if(i % 5 === 0){
+                console.log("Buzz");
+            }else{
+                console.log(i);
+            }
+         };
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -32,7 +56,8 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+        // FILL THIS IN
+        return $(fruits).not(fruitsToRemove).get();
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -40,48 +65,127 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         // FILL THIS IN
+        // FILL THIS IN
+        if($.isArray(toPush) === true){
+            $.each(toPush,function(index, el) {
+                array.push(el);
+            });
+        }else{
+            array.push(toPush);
+        }
+        return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+        // FILL THIS IN
+        return sourceStr.split( ',' );
      }
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+        // FILL THIS IN
+        // var total = 0;
+        // $.each(arguments, function(index, val) {
+        //     total += (int)val;
+        //     total += Number(val);
+        // });
+        // return total;
+
+        return [].reduce.call( arguments, function( prev, current, index ) {
+            return prev + current;
+        }, 0 );
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
+        if (/\S/.test(sourceStr)) {
+            return false;
+        }else{
+            return true;
+        }
      }
 
      // write an example of a javascript closure
+     function dtWhole(){
 
-     // define a json object that represents a collection of people.
-     // each person should have the following properties
-     // - first name
-     // - last name
-     // - city
-     // - state
-     // - zip
-     // - a collection of phone numbers (home, work, mobile)
+        // define a json object that represents a collection of people.
+        // each person should have the following properties
+        // - first name
+        // - last name
+        // - city
+        // - state
+        // - zip
+        // - a collection of phone numbers (home, work, mobile)
+        var data = [
+            {  
+                "firstName": "Billy",
+                "lastName" : "Bob",
+                "city" : "Fishers",
+                "state" : "Indiana",
+                "zip" : "46240",
+                "phones": {
+                  "home": "765-225-9969",
+                  "work": "317-589-7845",
+                  "mobile": "745-857-9658"
+                }
+            },
+            {
+                "firstName": "John",
+                "lastName" : "Doe",
+                "city" : "Fishers",
+                "state" : "Indiana",
+                "zip" : "46240",
+                "phones": {
+                  "home": "765-225-9969",
+                  "work": "317-589-7845",
+                  "mobile": "745-857-9658"
+                }
+            },
+            {
+                "firstName": "Jane",
+                "lastName" : "Doe",
+                "city" : "Indianapolis",
+                "state" : "Indiana",
+                "zip" : "46240",
+                "phones": {
+                  "home": "765-225-9969",
+                  "work": "317-589-7845",
+                  "mobile": "745-857-9658"
+                }
+            }
+        ];
 
+        // Create a javascript object (DataTable) with the following:
+        // A private columns property (string array)
+        // A private rows property (string array)
+        // A public method addRows that adds an item to the rows array
+        // A public method addColumns that adds an item to the columns array
+        // A public method getData that returns the a json object representation of the DataTable
+        // Note: the row object should be a hash of the column name and row item value
+        // Example:
+        // .addColumns('column1', 'column2', 'column3');
+        // .addRow('value1A', 'value1B', 'value1C');
+        // .addRow('value2A', 'value2B', 'value2C');
+        function createDataTable(id, info){
+            var dt = $("#"+id).DataTable({
+                "data":info,
+                 "columns": [
+                    { "data": "firstName" },
+                    { "data": "lastName" },
+                    { "data": "city" },
+                    { "data": "state" },
+                    { "data": "zip" }
+                ]
+            });
+        }
 
-     // Create a javascript object (DataTable) with the following:
-     // A private columns property (string array)
-     // A private rows property (string array)
-     // A public method addRows that adds an item to the rows array
-     // A public method addColumns that adds an item to the columns array
-     // A public method getData that returns the a json object representation of the DataTable
-     // Note: the row object should be a hash of the column name and row item value
-     // Example:
-     // .addColumns('column1', 'column2', 'column3');
-     // .addRow('value1A', 'value1B', 'value1C');
-     // .addRow('value2A', 'value2B', 'value2C');
+        console.log(data);
+        createDataTable("dt", data);
+     }
 
+     
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
