@@ -92,3 +92,14 @@ test( "sum", 4, function() {
     ok( sum(10), 10, 'Expected 6 as the result, the result was: ' + sum(10) );
     
 });
+
+module("isOnlyWhitespace Unit Test");
+test( "isOnlyWhitespace", 4, function() {
+    // Verify the method exists
+    equal( typeof isOnlyWhitespace, 'function', 'isOnlyWhitespace is a function if this passes' ); 
+
+    ok( isOnlyWhitespace(" "), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace(" ") );
+    ok( isOnlyWhitespace(""), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace("") );
+    ok( isOnlyWhitespace("something"), false, 'Expected false as the result, the result was: ' + isOnlyWhitespace("something ") );
+    
+});
