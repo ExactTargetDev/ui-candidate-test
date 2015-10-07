@@ -81,3 +81,14 @@ test( "splitListStrUsingComma", 3, function() {
     ok( splitListStrUsingComma("words,will,be here"), ["words", "will","be here"], 'Expected ["words", "will","be here"] as the result, the result was: ' + splitListStrUsingComma("words,will,be here") );
     ok( splitListStrUsingComma(""), [], 'Expected [] as the result, the result was: ' + splitListStrUsingComma("") );
 });
+
+module("sum Unit Test");
+test( "sum", 4, function() {
+    // Verify the method exists
+    equal( typeof sum, 'function', 'sum is a function if this passes' ); 
+
+    ok( sum([10,55,20]), 85, 'Expected 85 as the result, the result was: ' + sum([10,55,20]) );
+    ok( sum([1,2,3]), 6, 'Expected 6 as the result, the result was: ' + sum([1,2,3]) );
+    ok( sum(10), 10, 'Expected 6 as the result, the result was: ' + sum(10) );
+    
+});
