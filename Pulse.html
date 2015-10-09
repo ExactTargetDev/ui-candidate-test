@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pulse</title>
+     <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body id="pulsebody">
+    <div id="panelgroup" >
+    
+       <div class="floating-panel">
+         
+       </div>
+       <div class="floating-panel">
+        
+       </div>
+       <div class="floating-panel">
+         
+       </div>
+       <div class="floating-panel">
+         
+       </div>
+       <div class="floating-panel">
+         
+       </div>
+    </div>
+	  <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+    	$('.floating-panel').on('click', function(){
+    		
+    		if($(this).hasClass('clicked')){
+    			$(this).removeClass('clicked');
+    		}else{
+    			$('.clicked').removeClass('clicked');
+    			$(this).addClass('clicked');
+    		}
+    	    	
+		});
+    </script>
+   
+</body>
+</html>
