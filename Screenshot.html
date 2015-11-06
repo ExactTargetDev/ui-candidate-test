@@ -2,7 +2,289 @@
 <html>
 <head>
     <title>Screenshot.html</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<style>
+	a:link {
+    text-decoration: none;
+	}
+	a:hover {
+    text-decoration: none;
+	}
+	#map {
+        width: 140px;
+        height: 70px;
+      }
+	.box {
+        width: 140px;
+        height: 90px;
+		border: 0;
+      }
+	 
+
+	.thumbnail:hover {
+		
+		
+		width:150px;
+		height:150px;
+		display:block;
+		z-index:999;
+	}
+	.thumbnailclick{
+		border: 0;
+		width:140px;
+		height:120px;
+		display:block;
+		z-index:999;
+	}
+	.carousel-inner .active.left { left: -25%; }
+	.carousel-inner .next        { left:  25%; }
+	.carousel-inner .prev        { left: -25%; }
+	.carousel-control.left,.carousel-control.right {background-image:none;}
+	</style>
+	<script type="text/javascript">
+		function initialize() {
+			var mapCanvas = document.getElementById('map');
+			var mapOptions = {
+			  center: new google.maps.LatLng(44.5403, -78.5463),
+			  zoom: 8,
+			  mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			var map = new google.maps.Map(mapCanvas, mapOptions);
+		  }
+		//google.maps.event.addDomListener(window, 'load', initialize);
+		$(document).ready(function() {
+			initialize();
+			$('#myCarousel').carousel({
+			interval: 10000
+			});
+			$(".left").click(function(){
+				var act= $("#myCarousel .active");
+				var actid = $("#myCarousel .active").attr('id');
+				if(actid != "A"){
+				act.prev().children(':first-child').children(':first-child').children(':first-child').removeClass("box").addClass( "thumbnailclick" );
+				}
+				else{
+				$("#E").children(':first-child').children(':first-child').children(':first-child').removeClass("box").addClass( "thumbnailclick" );;
+				}
+				
+			});
+			$(".right").click(function(){
+				var act= $("#myCarousel .active");
+				var actid = $("#myCarousel .active").attr('id');
+				if(actid != "E"){
+				act.next().children(':first-child').children(':first-child').children(':first-child').removeClass("box").addClass( "thumbnailclick" );
+				}
+				else{
+				$("#A").children(':first-child').children(':first-child').children(':first-child').removeClass("box").addClass( "thumbnailclick" );
+				}
+				
+			});
+			$('.carousel .item').each(function(){
+		      initialize();
+			  var next = $(this).next();
+			  if (!next.length) {
+				next = $(this).siblings(':first');
+			  }
+			  next.children(':first-child').clone().appendTo($(this));
+			  
+			  if (next.next().length>0) {
+				next.next().children(':first-child').clone().appendTo($(this));
+			  }
+			  else {
+				$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+			  }
+			});
+		 $("#help").click(function() {
+			$("#mbody").html("");
+			$.getJSON( "data/help.json", function( data ) {
+			  var items = [];
+			  items.push("<ul>");
+			  $.each( data.help, function( key, val ) {
+				items.push( '<li><a href="'+ val.URL +'">'+ val.title + '</a></li>' );
+			  });
+			 items.push("</ul>");
+			  
+				var html = items.join( "" );
+				$("#mbody").append(html);
+			});
+		});
+		});
+	</script>
 </head>
-<body>
+<body style="background-color:#DBDCDD">
+	<nav  style="height:5px;width:100%;background-color:#808080"  class="navbar navbar-default navbar-fixed-top">
+      <div class="container" >
+        <div class="navbar-header">
+          <span class="navbar-brand" style="color:white">ExactTarget</span>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+			<li style="padding-top:15px;padding-bottom:15px;"><p style="color:white">Welcome John!</p></li> 
+            <li><a href="#account" style="color:#1A70A1">Account</a></li> 
+			 <li style="padding-top:15px;padding-bottom:15px;color:#1A70A1">|</li>
+            <li><a href="#help" id="help" style="color:#1A70A1" data-toggle="modal" data-target="#myModal">Help</a></li> 
+			 <li style="padding-top:15px;padding-bottom:15px;color:#1A70A1">|</li>
+            <li><a href="#logout" style="color:#1A70A1">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	<br/><br/><br/>
+	<div class="col-sm-3 col-md-3 sidebar">
+		<div class="panel-group">
+		<div  class="panel panel-default">
+		<div style="background-color:#FEA708" class="panel-heading"><p style="text-align: center">Interactive Marketing Hub</p>
+          </div>
+		<div class="panel-body">
+		 
+		<!-- </div>
+		<div class="panel panel-default"> -->
+          <ul class="nav nav-sidebar">
+            <li><a href="#" data-toggle="tooltip" title="Watch our email products in action!"><img src="email.png" style="width:20%"/> ExactTarget Email</a></li>
+            <li><a href="#" data-toggle="tooltip" title="Watch our mobile products in action!"><img src="phone.png" style="width:20%"/> ExactTarget Mobile</a></li>
+            <li><a href="#" data-toggle="tooltip" title="Social in action!"><img src="co.jpg" style="width:20%"/> CoTweet Social</a></li>
+            <li><a href="#" data-toggle="tooltip" title="Other Sites!"><img src="site.png" style="width:20%"/> ExactTarget Sites</a></li>
+          </ul>
+		  </div>
+		 </div>
+		 <div class="panel panel-default">
+		  <ul class="nav nav-sidebar">
+			<li><a href="" data-toggle="tooltip" title="Automation Studio!"><img src="studio.png" style="width:20%"/> Automation Studio</a></li>
+            <li><a href="" data-toggle="tooltip" title="Audience Builder!"><img src="group.png" style="width:20%"/> Audience Builder</a></li>
+            <li><a href="" data-toggle="tooltip" title="Report Builder!"><img src="report.png" style="width:20%"/> Report Builder</a></li>
+		  </ul>
+		  </div>
+		  <div class="panel panel-default">
+		  <ul class="nav nav-sidebar">
+			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="play.png" style="width:10%"/>Partner Applications
+			<ul class="dropdown-menu">
+                            <li>
+                                <a href="">Journey Management</a>
+                            </li>
+                            <li>
+                                <a href="">Predictive Intelligence</a>
+                            </li>
+                            <li>
+                        <a href="">Content and Messaging</a>
+						</li>
+                            <li>
+                                <a href="">Customer Data Platform</a>
+                            </li>
+                            <li>
+                                <a href="">Hub Exchange</a>
+                            </li>
+                        </ul>
+			</a></li>
+		  </ul>
+		  </div>
+		  </div>
+    </div>
+	<!-- <div class="col-sm-2 col-md-2 sidebar"> -->
+	<div class="col-sm-7 col-md-7">
+		<div class="">
+		<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=150&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=gq48ojo8cnb9urke8e39e070e0%40group.calendar.google.com&amp;color=%2323164E&amp;ctz=Asia%2FCalcutta" style="border-width:0" width="780" height="150" frameborder="0" scrolling="no"></iframe>
+		</div>
+		
+		<div class="container" style="background-color:#E3E9FF;height:150px; width:780px">
+		<div class="col-xs-12">
+			<span style="color:white"> Pulse </span> <img src="pulse.png" style="width:5%"/>
+            <div id="myCarousel" class="carousel slide">
+                
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    
+                    <!--/item-->
+                    <div class="item active" id="A">
+                            <div class="col-xs-3"><a href="#x" class="thumbnail">
+							<div class="panel panel-default box">
+							<div class="panel-heading ">Followers</div>
+							<p style="text-align:center">
+							325<br/> added today<br/>234,123,567 total.
+							</p>
+							</div></a>
+                            </div>
+					</div>
+					<div class="item" id="B">
+                            <div class="col-xs-3"><a href="#x" class="thumbnail">
+							<div class="panel panel-default box">
+							<div class="panel-heading">Fan</div>
+							<p style="text-align:center">
+							73<br/> added today<br/>91,567 total.
+							</p>
+							</div></a>
+                            </div>
+					</div>
+					<div class="item" id="C">
+							<div class="col-xs-3 "><a href="#x" class="thumbnail">
+							<div class="panel panel-default box">
+							<div class="panel-heading">World Checkins</div>
+							<div id="map"></div>
+							</div></a>
+                            </div>
+					</div>
+					<div class="item" id="D">
+                            <div class="col-xs-3 "><a href="#x" class="thumbnail">
+							<div class="panel panel-default box">
+							<div class="panel-heading">Subscribers</div>
+							<p style="text-align:center">
+							30<br/> added today<br/>234,123 total.
+							</p>
+							</div></a>
+                            </div>
+                    </div>
+                        <!--/row-->
+                    <!--/item-->
+					<div class="item" id="E">
+                            <div class="col-xs-3 "><a href="#x" class="thumbnail">
+							<div class="panel panel-default box">
+							<div class="panel-heading">Landing Pages</div>
+							<p style="text-align:center">
+							Visitors Today<br/> 397 / 355<br/>
+							</p>
+							</div></a>
+                            </div>
+                    </div>
+					
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                
+                <!--/carousel-inner--> <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+            </div>
+            <!--/myCarousel-->
+        
+        <!--/well-->
+		</div>
+	</div>
+		
+
+
+
+		
+	</div>
+	
+	<div  id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+    <!-- Modal content-->
+		<div class="modal-content">
+		 <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">ExactTarget Help</h4>
+		  </div>
+		  <div class="modal-body" id="mbody">
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	</div>
+	</div>
+	
+	
 </body>
 </html>
