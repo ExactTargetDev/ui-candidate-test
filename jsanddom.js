@@ -159,7 +159,7 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
-			var DataTable = {columns:['column1','column2'],
+			var DataTable = {columns:['column1','column2','column3'],
 							rows:[{'value1A','value1B','value1C'},{'value2A','value2B','value2C'}],
 							addRows:function(value){
 								return this.rows.push(value);
@@ -171,20 +171,7 @@
 								return this;
 							}
 							};
-			/* function class DataTable(){
-			private var columns = [];
-			private var rows = [];
-			public addRows(){
-			
-			}
-			public addColumns(){
-			
-			}
-			public getData(){
-			
-			}
-			} */
-			
+
 			
 			
 			
