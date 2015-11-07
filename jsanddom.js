@@ -52,7 +52,16 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+        //Not totally clear if you want it to be mutating the 'master' array or not
+        //If you don't want it to, you can copy the 'master' array
+        //ie: var copy = fruits.slice(0);
+        //and run this loop on the copy, then return the copy
+
+         for (var i = 0; i < fruitsToRemove.length; i++) {
+            while (fruits.indexOf(fruitsToRemove[i]) != -1) {
+                fruits.splice(fruits.indexOf(fruitsToRemove[i]), 1);
+            }
+         }
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.

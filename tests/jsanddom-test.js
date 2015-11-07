@@ -56,8 +56,8 @@ $(function() {
 		it('should remove the specified fruits from the array', function() {
 			var master = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
 			var fruitsToRemove = ['pear', 'banana'];
-			var arrayWithFruitsRemoved = removeFruits(master, fruitsToRemove);
-			expect(arrayWithFruitsRemoved).toEqual(['apple', 'orange', 'kiwi', 'plum', 'strawberry']);
+			removeFruits(master, fruitsToRemove);
+			expect(master).toEqual(['apple', 'orange', 'kiwi', 'plum', 'strawberry']);
 		});
 
 	});
