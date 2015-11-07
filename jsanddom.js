@@ -275,7 +275,7 @@
 
      var $first = $('a');
      var $second = $('.link');
-     var $third = $('.buzz > a')
+     var $third = $('.buzz > a');
      var $fourth = $('#fizz').children();
      var $fifth = $('#foo a');
 
@@ -284,13 +284,13 @@
 
      var fiveItemArray = [];
      for (var i = 1; i < 6; i++) {
-        fiveItemArray.push('List Item Number ' + i)
+        fiveItemArray.push('List Item Number ' + i);
      }
 
      var list = document.getElementById('list1');
      for (var i = 0; i < fiveItemArray.length; i++) {
         var listItem = document.createElement('li');
-        listItem.appendChild(document.createTextNode(fiveItemArray[i]))
+        listItem.appendChild(document.createTextNode(fiveItemArray[i]));
         list.appendChild(listItem);
      }
 
@@ -298,3 +298,43 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+     //using jQuery for a change of pace!
+     var $foobar = $('#foobar');
+
+     var $checkboxList = $('<ul>', {id: 'checkboxList'});
+
+     var $checkAllLink = $('<a>', {href: '#', id: 'checkAll', text: 'Check All!'});
+     $checkAllLink.click(function() {
+        $checkboxList.find('input').prop('checked', true);
+     });
+
+     var $uncheckAllLink = $('<a>', {href: '#', id: 'uncheckAll', text: 'Uncheck All!'});
+     $uncheckAllLink.click(function() {
+        $checkboxList.find('input').prop('checked', false);
+     });
+
+     for (var i = 1; i < 11; i++) {
+        var $checkboxListItem = $('<li>');
+        var $checkbox = $('<input>', {type: 'checkbox'});
+        var $label = $('<label>', {text: 'Checkbox ' + i});
+        $checkboxListItem.append($checkbox);
+        $checkboxListItem.append($label);
+        $checkboxList.append($checkboxListItem);
+     }
+
+     $foobar.append($checkboxList);
+     $foobar.append($checkAllLink);
+     $foobar.append('<br />');
+     $foobar.append($uncheckAllLink);
+
+
+
+
+
+
+
+
+
+
+
