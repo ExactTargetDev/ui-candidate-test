@@ -1,0 +1,22 @@
+{
+  "name": "ui-candidate-test",
+  "version": "1.0.0",
+  "description": "This is the candaidate test for Salesforce Marketing Cloud UI developers. It is **NOT** pass/fail. It is intended to provide insight into the range of your skill set. Please do what you can.",
+  "main": "jsanddom.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danodea/ui-candidate-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danodea/ui-candidate-test/issues"
+  },
+  "homepage": "https://github.com/danodea/ui-candidate-test#readme"
+}
