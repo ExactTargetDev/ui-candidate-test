@@ -24,7 +24,7 @@ $(function() {
 	describe('The string reverser', function() {
 
 		it('reverses the string', function() {
-			var theString = stringReverser('Subscribers rock');
+			var theString = reverseString('Subscribers rock');
 			expect(theString).toEqual('kcor srebircsbuS');
 		});
 
