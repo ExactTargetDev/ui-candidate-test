@@ -200,7 +200,7 @@
                 }
             }
         ]
-     }
+     };
 
 
      // Create a javascript object (DataTable) with the following:
@@ -214,6 +214,36 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+
+
+     // I really don't understand what you want
+     // Here's my best guess:
+     var DataTable = new function() {
+        var columns = [];
+        var rows = [];
+
+        this.addRow = function() {
+            var newRow = [];
+            for (var i = 0; i < arguments.length; i++) {
+                newRow.push(arguments[i]);
+            }
+            rows.push(newRow);
+        };
+
+        this.addColumns = function() {
+            for (var i = 0; i < arguments.length; i++) {
+                columns.push(arguments[i]);
+            }
+        };
+
+        this.getData = function() {
+            var table = {};
+            table.columns = columns;
+            table.rows = rows;
+            return JSON.stringify(table);
+        };
+     };
+
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
