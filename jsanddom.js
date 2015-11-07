@@ -112,6 +112,58 @@
 
      // write an example of a javascript closure
 
+     function outerFunction() {
+        var outerVariable = 'Closures are cool!';
+        return function() {
+            console.log(outerVariable);
+        };
+     }
+
+     var closure = outerFunction();
+     /*
+     Closure function looks like this:
+     function() {
+        console.log(outerVariable)
+     }
+
+     As you can see, outerVariable is not defined in the function,
+     but it is remembered from it's parent scope of outerFunction!
+
+     So if you call closure()
+     it will successfully log
+     < 'Closures are cool!'
+
+     */
+
+     //you can also use closures to create psuedo private methods
+     var Constructor = function(thing) {
+        this.a = 1;
+        var b = thing;
+        function getThing() {
+            return b;
+        }
+
+        this.reallyGetThing = function() {
+            return getThing();
+        };
+     };
+
+     var closureObject = new Constructor('turtle!');
+
+     /*
+        > closureObject.a
+        < 1
+        > closureObject.b
+        < undefined
+        > closureObject.getThing
+        < undefined
+        > closureObject.getThing()
+        < TypeError: not a function
+        > closureObject.reallyGetThing()
+        < 'turtle!'
+     */
+
+
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
