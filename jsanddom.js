@@ -11,7 +11,9 @@
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+         return values.reduce(function(previous, current) {
+            return (previous < current ? previous : current);
+         });
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
