@@ -84,7 +84,7 @@ $(function() {
 
 		it('should return an array of split values', function() {
 			var result = splitListStrUsingComma('The, quick, brown, fox jumped over');
-			expect(result).toEqual(['The', 'quick', 'brown', 'fox jumped over']);
+			expect(result).toEqual(['The', ' quick', ' brown', ' fox jumped over']);
 		});
 
 		it('should return an empty array if the string is empty', function() {
