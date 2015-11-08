@@ -1,0 +1,69 @@
+/** {
+	border: 1px solid red;
+}*/
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.container {
+	width: 1295px;
+	margin: auto;
+}
+
+/* HEADER *******************************************************************/
+header {
+	width: 100%;
+	height: 32px;
+	padding: 0 10px 0 20px;
+	line-height: 32px;
+
+	/* all gradients created with http://www.colorzilla.com/gradient-editor/ */
+	background: #44515a; /* Old browsers */
+	background: -moz-linear-gradient(top,  #44515a 0%, #2b3034 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#44515a), color-stop(100%,#2b3034)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #44515a 0%,#2b3034 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #44515a 0%,#2b3034 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #44515a 0%,#2b3034 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #44515a 0%,#2b3034 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44515a', endColorstr='#2b3034',GradientType=0 ); /* IE6-9 */
+	color: #eee;
+}
+
+.account {
+	float: right;
+	font-size: 11px
+}
+
+.account :first-child {
+	margin-right: 5px;
+}
+
+header a {
+	color: #8cbacd;
+	text-decoration: none;
+}
+
+header > span {
+	vertical-align: middle;
+}
+
+
+/* NAV **********************************************************************/
+nav {
+
+}
+
+/* CALENDAR *****************************************************************/
+.calendar {
+
+}
+
+
+/* PULSE ********************************************************************/
+.pulse {
+
+}
