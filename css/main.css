@@ -266,12 +266,10 @@ nav a:active {
 .panel {
 	float: left;
 	margin-left: 10px;
-}
-
-.small {
 	width: 160px;
 	height: 100px;
 	margin-top: 70px;
+	cursor: pointer;
 }
 
 .medium {
