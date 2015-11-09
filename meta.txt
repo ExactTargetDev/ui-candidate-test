@@ -1,1 +1,3 @@
 Start Time: 1446906361
+TotalTime: ~16:30
+BrowserTesting: Latest Chrome and Safari on El Capitan.  See modal commit for info about Chrome security!
