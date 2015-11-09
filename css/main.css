@@ -1,7 +1,3 @@
-/** {
-	border: 1px solid red;
-}*/
-
 body {
 	font-family: Arial, sans-serif;
 	margin: 0;
@@ -10,13 +6,16 @@ body {
 }
 
 .container {
-	width: 1295px;
+	width: 1245px;
 	margin: auto;
+}
+
+.right {
+	float: right;
 }
 
 /* HEADER *******************************************************************/
 header {
-	width: 100%;
 	height: 32px;
 	padding: 0 10px 0 20px;
 	line-height: 32px;
@@ -56,7 +55,7 @@ header > span {
 nav {
 	float: left;
 	width: 180px;
-	margin: 20px;
+	margin: 20px 0 0 20px;
 	background-color: #f4f4f5;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
@@ -151,8 +150,93 @@ nav a:active {
 
 /* CALENDAR *****************************************************************/
 .calendar {
-
+	width: 995px;
+	height: 112px;
+	background: #f5f5f5;
+	float: right;
+	margin: 0 35px 30px 0;
+	padding: 0;
+	border: 1px groove white;
+	white-space: nowrap;
+	font-size: 0;
 }
+
+.calendar-header {
+	font-size: 11px;
+}
+
+.calendar-header span {
+	margin-left: 10px;
+	color: #9fb0ba;
+}
+
+.calendar-header img {
+	margin: 2px 5px 0 0;
+}
+
+.day {
+	width: 138px;
+	height: 80px;
+	display: inline-block;
+	margin-top: 10px;
+	padding: 0;
+	border-left: 1px groove white;
+	border-bottom: 1px groove white;
+	font-size: 11px;
+}
+
+.first-day {
+	margin-left: 10px;
+}
+
+.last-day {
+	border-right: 1px groove white;
+}
+
+.day-of-week {
+	margin-left: 5px;
+	color: #9f9f9f;
+}
+
+.day-of-month {
+	margin-right: 5px;
+	color: #666;
+}
+
+.collapse {
+	margin: 2px 5px 0 0;
+}
+
+.today {
+	position: relative;
+	background: #ebf1f5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ebf1f5 0%, #feedd6 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f5), color-stop(100%,#feedd6)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ebf1f5 0%,#feedd6 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ebf1f5 0%,#feedd6 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ebf1f5 0%,#feedd6 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ebf1f5 0%,#feedd6 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f5', endColorstr='#feedd6',GradientType=0 ); /* IE6-9 */
+}
+
+.today-highlight {
+	position: absolute;
+	bottom: -10px;
+	width: 138px;
+	font-size: 8px;
+	text-align: center;
+	color: white;
+
+	background: #fdaf4b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fdaf4b 0%, #f8991e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdaf4b), color-stop(100%,#f8991e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fdaf4b 0%,#f8991e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fdaf4b 0%,#f8991e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fdaf4b 0%,#f8991e 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fdaf4b 0%,#f8991e 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8991e',GradientType=0 ); /* IE6-9 */
+}
+
 
 
 /* PULSE ********************************************************************/
