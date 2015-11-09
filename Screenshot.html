@@ -1,8 +1,151 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>Screenshot.html</title>
-</head>
-<body>
-</body>
+﻿<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Screenshot</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/vendor/normalize.css">
+        <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+    	<div class="container">
+	    	<header>
+	    		<span>ExactTarget.</span>
+	    		<span class="account right">
+	    			<span>Welcome John!</span>
+	    			<a href="#account">Account</a>
+	    			<span> | </span>
+	    			<a id="help" href="#help">Help</a>
+	    			<span> | </span>
+	    			<a href="#logout">Logout</a>
+	    		</span>
+	    	</header>
+
+	    	<nav>
+	    		<div class="nav-header">
+	    			<ul>
+	    				<li>Interactive Marketing Hub</li>
+	    			</ul>
+	    		</div>
+	    		<ul class="iconed">
+	    			<li><a href="#email">ExactTarget Email</a></li>
+	    			<li><a href="#mobile">ExactTarget Mobile</a></li>
+	    			<li><a href="#social">CoTweet Social</a></li>
+	    			<li><a href="#sites">ExactTarget Sites</a></li>
+	    		</ul>
+	    		<ul class="iconed">
+	    			<li><a href="#as">Automation Studio</a></li>
+	    			<li><a href="#ab">Audience Builder</a></li>
+	    			<li><a href="#rb">Report Builder</a></li>
+	    		</ul>
+	    		<ul class="partners">
+	    			<li><a href="#partners">Partner Applications</a></li>
+	    		</ul>
+	    	</nav>
+
+	    	<div class="calendar right">
+	    		<div class="calendar-header">
+		    		<span class="month">September 2010</span>
+		    		<img class="right" src="http://www.placehold.it/10x10" />
+		    		<img class="right" src="http://www.placehold.it/10x10" />
+		    	</div>
+		    	<div class="day first-day">
+		    		<span class="day-of-week">Sat</span>
+		    		<span class="day-of-month right">11</span>
+		    	</div>
+		    	<div class="day">
+		    		<span class="day-of-week">Sun</span>
+		    		<span class="day-of-month right">12</span>
+		    	</div>
+		    	<div class="day">
+		    		<span class="day-of-week">Mon</span>
+		    		<span class="day-of-month right">13</span>
+		    	</div>
+		    	<div class="day today">
+		    		<span class="day-of-week">Tue</span>
+		    		<span class="day-of-month right">14</span>
+		    		<div class="today-highlight"><span>TODAY</span></div>
+		    	</div>
+		    	<div class="day">
+		    		<span class="day-of-week">Wed</span>
+		    		<span class="day-of-month right">15</span>
+		    	</div>
+		    	<div class="day">
+		    		<span class="day-of-week">Thur</span>
+		    		<span class="day-of-month right">16</span>
+		    	</div>
+		    	<div class="day last-day">
+		    		<span class="day-of-week">Fri</span>
+		    		<span class="day-of-month right">17</span>
+		    	</div>
+		    	<img class="collapse right" src="http://www.placehold.it/10x5" />
+	    	</div>
+
+	    	<div class="pulse right">
+	    		<div class="pulse-header">
+	    			<span>Pulse</span>
+	    			<img class="right" src="http://www.placehold.it/13x13" />
+		    		<img class="right" src="http://www.placehold.it/13x13" />
+		    		<img class="right" src="http://www.placehold.it/13x13" />
+		    		<img class="right" src="http://www.placehold.it/13x13" />
+		    	</div>
+		    	<div class="pulse-content">
+		    		<div class="followers panel">
+		    			<div class="title">Followers</div>
+		    			<div class="content">
+		    				<span class="blue">310</span>
+		    				<br />
+		    				<span class="medium-font">added today</span>
+		    				<br />
+		    				<span class="small-font">2,393,905 total</span>
+		    			</div>
+		    		</div>
+		    		<div class="fan panel">
+		    			<div class="title">Fan</div>
+		    			<div class="content">
+		    				<span class="blue">73</span>
+		    				<br />
+		    				<span class="medium-font">added today</span>
+		    				<br />
+		    				<span class="small-font">91,675 total</span>
+		    			</div>
+		    		</div>
+		    		<div class="subscribers panel">
+		    			<div class="title">Subscribers</div>
+		    			<div class="content">
+		    				<span class="blue">56</span>
+		    				<br />
+		    				<span class="medium-font">added today</span>
+		    				<br />
+		    				<span class="small-font">189,405 total</span>
+		    			</div>
+		    		</div>
+		    		<div class="foursquare panel medium">
+		    			<div class="title">Foursquare</div>
+		    			<div class="content">
+		    				<span class="small-font">Worldwide Checkins 3905</span>
+		    				<br />
+		    				<img src="img/checkin-map.png" />
+		    			</div>
+		    		</div>
+		    		<div class="landing panel">
+		    			<div class="title">Landing Pages</div>
+		    			<div class="content">
+		    				<span class="medium-font">Visitors Today</span>
+		    				<br />
+		    				<span><span class="blue">397</span><span>/ 355</span></span>
+		    				<br />
+		    				<span class="small-font">Soulja Boy V.I.P.</span>
+		    			</div>
+		    		</div>
+		    	</div>
+		    	<img class="pulse-nav-img" src="http://www.placehold.it/50x10" />
+	    	</div>
+	    </div>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+        <script src="screenshot.js"></script>
+    </body>
 </html>

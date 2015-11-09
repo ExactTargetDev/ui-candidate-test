@@ -1,0 +1,331 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.container {
+	width: 1245px;
+	margin: auto;
+}
+
+.right {
+	float: right;
+}
+
+/* HEADER *******************************************************************/
+header {
+	height: 32px;
+	padding: 0 10px 0 20px;
+	line-height: 32px;
+
+	/* all gradients created with http://www.colorzilla.com/gradient-editor/ */
+	background: #44515a; /* Old browsers */
+	background: -moz-linear-gradient(top,  #44515a 0%, #2b3034 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#44515a), color-stop(100%,#2b3034)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #44515a 0%,#2b3034 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #44515a 0%,#2b3034 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #44515a 0%,#2b3034 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #44515a 0%,#2b3034 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44515a', endColorstr='#2b3034',GradientType=0 ); /* IE6-9 */
+	color: #eee;
+}
+
+.account {
+	font-size: 11px
+}
+
+.account :first-child {
+	margin-right: 5px;
+}
+
+header a {
+	color: #8cbacd;
+	text-decoration: none;
+}
+
+header > span {
+	vertical-align: middle;
+}
+
+
+/* NAV **********************************************************************/
+nav {
+	float: left;
+	width: 180px;
+	margin: 20px 0 0 20px;
+	background-color: #f4f4f5;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	font-size: 11px;
+}
+
+.nav-header {
+	background: #fdaf4b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fdaf4b 0%, #f8991e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdaf4b), color-stop(100%,#f8991e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fdaf4b 0%,#f8991e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fdaf4b 0%,#f8991e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fdaf4b 0%,#f8991e 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fdaf4b 0%,#f8991e 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8991e',GradientType=0 ); /* IE6-9 */
+
+	height: 50px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	color: white;
+}
+
+.nav-header ul li {
+	background-image: url(../img/imh-logo.png);
+	background-repeat: no-repeat;
+	background-position: 0 10px;
+	padding-left: 40px;
+	padding-top: 8px;
+	margin-left: 5px;
+	font-weight: bold;
+	line-height: 17px;
+	font-size: 14px;
+}
+
+nav ul:not(:first-child) {
+	background-color: #f4f4f5;
+	border: 1px groove white;
+	border-top: none;
+}
+
+nav a {
+	text-decoration: none;
+	color: #888;
+}
+
+nav a:hover {
+	color:#24C8FF;
+}
+
+nav a:active {
+	text-decoration: underline;
+}
+
+.iconed {
+	padding: 8px 0;
+	font-size: 12px;
+}
+
+.iconed li {
+	background-image: url(http://www.placehold.it/25x25);
+	background-repeat: no-repeat;
+	background-position: 0 6px;
+	padding-left: 30px;
+	margin-left: 10px;
+	line-height: 32px;
+}
+
+.partners {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.partners a {
+	font-size: 8px;
+	color: black;
+}
+
+.partners li {
+	background-image: url(http://www.placehold.it/13x13);
+	background-repeat: no-repeat;
+	background-position: 5px 9px;
+	padding-left: 30px;
+	margin-left: 10px;
+	line-height: 32px;
+}
+
+/* CALENDAR *****************************************************************/
+.calendar {
+	width: 995px;
+	height: 112px;
+	background: #f5f5f5;
+	margin: 0 35px 30px 0;
+	padding: 0;
+	border: 1px groove white;
+	white-space: nowrap;
+	font-size: 0;
+}
+
+.calendar-header {
+	font-size: 11px;
+}
+
+.calendar-header span {
+	margin-left: 10px;
+	color: #9fb0ba;
+}
+
+.calendar-header img {
+	margin: 2px 5px 0 0;
+}
+
+.day {
+	width: 138px;
+	height: 80px;
+	display: inline-block;
+	margin-top: 10px;
+	padding: 0;
+	border-left: 1px groove white;
+	border-bottom: 1px groove white;
+	font-size: 11px;
+}
+
+.first-day {
+	margin-left: 10px;
+}
+
+.last-day {
+	border-right: 1px groove white;
+}
+
+.day-of-week {
+	margin-left: 5px;
+	color: #9f9f9f;
+}
+
+.day-of-month {
+	margin-right: 5px;
+	color: #666;
+}
+
+.collapse {
+	margin: 2px 5px 0 0;
+}
+
+.today {
+	position: relative;
+	background: #ebf1f5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ebf1f5 0%, #feedd6 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f5), color-stop(100%,#feedd6)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ebf1f5 0%,#feedd6 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ebf1f5 0%,#feedd6 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ebf1f5 0%,#feedd6 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ebf1f5 0%,#feedd6 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f5', endColorstr='#feedd6',GradientType=0 ); /* IE6-9 */
+}
+
+.today-highlight {
+	position: absolute;
+	bottom: -10px;
+	width: 138px;
+	font-size: 8px;
+	text-align: center;
+	color: white;
+
+	background: #fdaf4b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fdaf4b 0%, #f8991e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdaf4b), color-stop(100%,#f8991e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fdaf4b 0%,#f8991e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fdaf4b 0%,#f8991e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fdaf4b 0%,#f8991e 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fdaf4b 0%,#f8991e 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8991e',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+/* PULSE ********************************************************************/
+
+.pulse {
+	width: 995px;
+	height: 265px;
+	margin-right: 35px;
+	position:relative;
+	background: #bbc8d2; /* Old browsers */
+	background: -moz-linear-gradient(top,  #bbc8d2 0%, #d7e2ea 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bbc8d2), color-stop(100%,#d7e2ea)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #bbc8d2 0%,#d7e2ea 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #bbc8d2 0%,#d7e2ea 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #bbc8d2 0%,#d7e2ea 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #bbc8d2 0%,#d7e2ea 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bbc8d2', endColorstr='#d7e2ea',GradientType=0 ); /* IE6-9 */
+}
+
+.pulse-header {
+	margin: 10px 10px 0 10px;
+	color: white;
+}
+
+.pulse-header img {
+	margin-left: 5px;
+}
+
+.panel {
+	float: left;
+	margin-left: 10px;
+	width: 160px;
+	height: 100px;
+	margin-top: 70px;
+	cursor: pointer;
+}
+
+.medium {
+	width: 280px;
+	height: 180px;
+	margin-top: 0px;
+}
+
+.content {
+	height: 95px;
+	text-align: center;
+	padding-top: 10px;
+	color: #93afc0;
+	border-radius: 3px;
+
+	background: #f6f9fa; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f6f9fa 0%, #dee9f0 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f9fa), color-stop(100%,#dee9f0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f6f9fa 0%,#dee9f0 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f6f9fa 0%,#dee9f0 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f6f9fa 0%,#dee9f0 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f6f9fa 0%,#dee9f0 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f9fa', endColorstr='#dee9f0',GradientType=0 ); /* IE6-9 */
+}
+
+.medium .content {
+	height: 165px;
+}
+
+.content img {
+	height: 80%;
+	width: 80%;
+}
+
+.title {
+	font-size: 11px;
+	color: #777;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.blue {
+	font-size: 28px;
+	color: #62c9f4;
+}
+
+.medium-font {
+	font-size: 16px;
+}
+
+.small-font {
+	font-size: 11px;
+}
+
+.pulse-nav-img {
+	position: absolute;
+	bottom: 15px;
+	right: 50%;
+}
