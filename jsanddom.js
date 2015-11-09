@@ -57,6 +57,8 @@
         }
     }
 
+    doFizzBuzz();
+
     // **************************************************************************************************
 
     // You have a master array of strings, where each element is a fruit name.
