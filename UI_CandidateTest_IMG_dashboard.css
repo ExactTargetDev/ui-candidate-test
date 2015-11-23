@@ -1,0 +1,70 @@
+body {
+  	padding-top: 75px;  
+}
+.et-nav{
+	background-color: #2E2E2E;
+}
+.navbar-header.navbar-brand{
+	color: white;
+}
+ul.nav{
+	background-color: #eee;
+}
+ul.nav a{
+	color: #454545;
+	font-weight: bold;
+	padding: 15px 75px;
+}
+.int-hub{
+	background-color: orange;
+}
+.int-hub a{
+	color: white !important;
+}
+
+.nav > li > a:hover{
+	background-color: #3E3E3E;
+	color: white;
+}
+.right-section{
+	margin-top: -25px;
+}
+.dates{
+    background-color: #eee;
+    border-radius: 10px;
+    height: 150px;
+    width: 98%;
+}
+.pulse{
+    background-color: #afc4c7;
+    border-radius: 10px;
+    height: 385px;
+    margin-top: 45px;
+    width: 100%;
+    
+}
+
+.pulse-square{
+    background-color: #d7e7ea;
+    border-radius: 10px;
+    color: #4c8d96;
+    height: 150px;
+    position: relative;
+    text-align: center;
+    top: 85px;
+}
+.pulse-title{
+	color: #ffffff;
+	margin-left: 15px;
+}
+.square-title{
+	color: #4c8d96;
+	position: relative;
+    text-align: center;
+    top: 75px;
+}
+
+.num-added{
+	color: #6ad5f4;
+	padding-top: 10px;
+}

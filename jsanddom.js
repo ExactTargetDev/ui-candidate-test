@@ -18,7 +18,7 @@
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
-/*     function findDistinctValues(values) {
+     function findDistinctValues(values) {
          // FILL THIS IN
          var values = values.filter(function(dup,pos){
             return values.indexOf(dup) == pos;
@@ -56,7 +56,7 @@
          // FILL THIS IN
 
      }
-*/
+
      // Write a function to push either a simple value or an array of values onto a specified array.
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
      // If toPush is a simple value, it should be pushed onto array as an element.
