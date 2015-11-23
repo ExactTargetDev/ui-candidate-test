@@ -102,6 +102,42 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
+     {
+        "people":
+        [
+            {
+                "first name": Marcus,
+                "last name": Warnsley,
+                "city": Indianapolis,
+                "state": Indiana,
+                "zip": 46220,
+                "phone": 
+                [
+                    {
+                        "home": 2604030877,
+                        "work": 3174023567,
+                        "mobile": 2604030877
+                    }
+                ]
+            },
+            {
+                "first name": Sales,
+                "last name": Force,
+                "city": Indianapolis,
+                "state": Indiana,
+                "zip": 46204,
+                "phone": 
+                [
+                    {
+                        "home": 9999999999,
+                        "work": 5555555555,
+                        "mobile": 1111111111
+                    }
+                ]
+            }
+        ]
+     }
+
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
