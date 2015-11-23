@@ -20,7 +20,7 @@
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
-         var values = values.filter(function(dup,pos){
+         var arrayRemoval = values.filter(function(dup,pos){
             return values.indexOf(dup) == pos;
         });
      }
@@ -94,13 +94,13 @@
 
          return n;
      }
-/*
+
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
          return /\s/g.test(sourceStr);
      }
-*/
+
      // write an example of a javascript closure
      function displayMessage(priceBefore,priceAfter){
         var message = "The total price of your item before taxes will be";
@@ -112,8 +112,6 @@
         return itemPrice();
      }
 
-    // displayMessage("$3.99","$4.35");
-/*
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -123,6 +121,7 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
+/*
      {
         "people":
         [

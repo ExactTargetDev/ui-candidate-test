@@ -25,19 +25,19 @@ test("Min Array Values", function(){
 	// Make sure the result returns the minimum value
 	ok(findMinValue([35,65,23,4,78]), 4, "Expected for 4 to be the lowest value");
 });
-/*
+
 module("Distinctive Values");
 test("Remove Duplicates", function(){
 	// Make sure the result removes the duplicates in the array
-	ok(findDistinctValues([25,65,25,13,78,65]), 4, "Expected to remove 25 and 65");
+	ok(findDistinctValues([25,65,25,13,78,65]), [25,65], "Expected to remove 25 and 65");
 });
 
 module("FizzBuzz");
 test("Log Fizz Buzz", function(){
 	// Make sure the result prints fizz, buzz, or fizz buzz
-	ok(doFizzBuzz(), 4, "Expected to remove 25 and 65");
+	ok(doFizzBuzz(), "Expected to print numbers 1-100 with Fizz for % 3, Buzz for % 5, and FizzBuzz for % 3 & 5");
 });
-*/
+
 module("Push to Array");
 test("Push values onto array", function(){
 	//Make sure a single value and array are pushed onto other array
@@ -60,6 +60,12 @@ module("Return Sum");
 test("Return sum of arguments", function(){
 	//Make sure that the function returns the sum of ANY number of arguments
 	ok(sum(3,7,5,2,8), 23, "Expect for any number of arguments to be accepted with the sum of all the numbers returned");
+});
+
+module("White Space Function");
+test("Test white space in string", function(){
+	//Make sure the functions returns true for whitespace and false for not
+	ok(isOnlyWhitespace("String to test"), true, "Expected for given string to return true because of whitespace");
 });
 
 module("Closure Example");

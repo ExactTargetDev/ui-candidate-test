@@ -1,6 +1,13 @@
 body {
   	padding-top: 75px;  
 }
+.wht-text{
+	color: #ffffff;
+}
+
+ul li{
+	list-style-type: none;
+}
 .et-nav{
 	background-color: #2E2E2E;
 }
@@ -67,4 +74,48 @@ ul.nav a{
 .num-added{
 	color: #6ad5f4;
 	padding-top: 10px;
+}
+.log-nav li{
+	padding: 15px 35px 15px 5px;
+}
+.log-nav li a{
+	color: #6ad5f4 !important;
+}
+.navbar-header .navbar-brand{
+	color: #ffffff !important;
+}
+
+
+/********************************************
+
+FULL SCREEN OVERLAY FOR HELP BUTTON POPUP
+
+********************************************/
+
+#body-overlay{
+    display: none;
+    background: rgba(0,0,0,0.6);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    width: 100%;
+}
+#help-display{
+	background-color: #ffffff;
+	display: none;
+    height: 500px;
+    left: 35%;
+    position: fixed;
+    z-index: 5;
+    top: 25%;
+    width: 500px;
+}
+
+.exit{
+	float: right;
+}
+.help-info{
+	padding: 55px;
 }

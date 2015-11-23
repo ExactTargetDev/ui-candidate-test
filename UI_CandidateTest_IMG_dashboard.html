@@ -12,8 +12,20 @@
       <div class="page-container">
         <div class="navbar navbar-default navbar-fixed-top et-nav" role="navigation">
           <div class="container=fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">Exact Target.</a>
+            <div class="row">
+              <div class="col-md-2">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="http://www.exacttarget.com/">Exact Target.</a>
+                </div>
+              </div>
+              <div class="col-md-10">
+                <ul class="navbar-nav navbar-right log-nav">
+                  <li class="wht-text">Welcome John!</li>
+                  <li><a title="Login to your account" href="#">Account</a></li>|
+                  <li><a id="show-help" title="View Help" href="#">Help</a></li>|
+                  <li><a title="Logout of your account" href="#">Logout</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -21,15 +33,15 @@
           <div class="row row-offcanvas row-offcanvas-left">
             <div class="col-md-2 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav">
-                  <li class="active int-hub"><a href="#">Interactive<br>Marketing Hub</a></li>
-                  <li><a href="#">ExactTarget Email</a></li>
-                  <li><a href="#">ExactTarget Mobile</a></li>
-                  <li><a href="#">CoTweet Social</a></li>
-                  <li><a href="#">Exact Target Sites</a></li>
-                  <li><a href="#">Automation Studio</a></li>   
-                  <li><a href="#">Audeience Builder</a></li>
-                  <li><a href="#">Report Builder</a></li>
-                  <li><a href="#">Partner Applications</a></li> 
+                  <li class="active int-hub"><a href="http://www.exacttarget.com/video/watch/exacttarget-interactive-marketing-hub">Interactive<br>Marketing Hub</a></li>
+                  <li><a href="http://www.exacttarget.com/products/email-marketing">ExactTarget Email</a></li>
+                  <li><a href="http://www.exacttarget.com/products/mobile-marketing">ExactTarget Mobile</a></li>
+                  <li><a href="http://www.exacttarget.com/products/social-media-marketing">CoTweet Social</a></li>
+                  <li><a href="http://www.exacttarget.com/products/web-personalization">Exact Target Sites</a></li>
+                  <li><a href="https://help.exacttarget.com/no/documentation/automation_studio/using_the_automation_studio_overview_page/">Automation Studio</a></li>   
+                  <li><a href="http://www.exacttarget.com/products/customer-data-platform/audience-builder">Audience Builder</a></li>
+                  <li><a href="http://www.exacttarget.com/products/customer-data-platform/tracking-reporting">Report Builder</a></li>
+                  <li><a href="http://www.exacttarget.com/exacttarget-partners">Partner Applications</a></li> 
                 </ul>
             </div>
         
@@ -90,6 +102,18 @@
               </div>
             </div>
         </div>
+      </div>
+    </div>
+    <div id="body-overlay"></div>
+    <div id="help-display">
+      <button type="button" id="close" class="btn btn-danger exit">X</button>
+      <div class="help-info">
+        <h3 id="help-title-1"></h3>
+        <p id="help-text-1"></p><br>
+        <h3 id="help-title-2"></h3>
+        <p id="help-text-2"></p><br>
+        <h3 id="help-title-3"></h3>
+        <p id="help-text-3"></p>
       </div>
     </div>
   </body>
