@@ -121,7 +121,6 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
-
      var peopleText = {
                         "people":
                                 [
@@ -158,7 +157,6 @@
                                 ]
                     }
 
-
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
      // A private rows property (string array)
@@ -170,6 +168,20 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+
+     function DataTable(){
+        var columns = [];
+        var rows = [];
+        this.addRows = function(){
+            rows.push(ritem);
+        };
+        this.addColumns = function(){
+            columns.push(citem);
+        };
+        this.getData = function(){
+            return JSON.parse(DataTable());
+        }
+     }
 
 
 

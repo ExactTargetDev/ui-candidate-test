@@ -30,4 +30,6 @@ $(document).ready(function(){
 		$('.pulse-square').removeClass("active");
 		$(this).addClass("active");
 	});
+
+	
 });
