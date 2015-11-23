@@ -26,5 +26,8 @@ $(document).ready(function(){
 		$("#help-display").css('display','none');
 	});
 
-
+	$('.pulse-square').on('click', function(){
+		$('.pulse-square').removeClass("active");
+		$(this).addClass("active");
+	});
 });

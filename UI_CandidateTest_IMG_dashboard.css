@@ -55,10 +55,14 @@ ul.nav a{
     background-color: #d7e7ea;
     border-radius: 10px;
     color: #4c8d96;
-    height: 150px;
+    height: 165px;
     position: relative;
     text-align: center;
     top: 85px;
+    transition: all .2s ease-in-out; 
+}
+.pulse-square.active{
+ 	transform: scale(1.4); 
 }
 .pulse-title{
 	color: #ffffff;
@@ -83,6 +87,14 @@ ul.nav a{
 }
 .navbar-header .navbar-brand{
 	color: #ffffff !important;
+}
+.box-row{
+	bottom: 10%;
+	left: 5%;
+	position: relative;
+}
+.line-break{
+	border-top: 1px solid gray;
 }
 
 
