@@ -18,3 +18,9 @@ test("Reverse String", 2, function() {
 	equal( typeof reverseString, 'function', 'Must contain reverse function');
 	strictEqual( reverseString('abcdefg'), 'gfedcba', 'Successful output. Expected gfedcba, Result ' + reverseString('abcdefg'))
 });
+
+var values = [300, 200, 100, 99];
+
+test("Find Minimum Value", 1, function() {
+	ok( findMinValue(values), 'Expected 99. Result ' + findMinValue(values));
+});
