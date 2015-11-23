@@ -12,3 +12,9 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+
+module("Marcie's Unit Tests");
+test("Reverse String", 2, function() {
+	equal( typeof reverseString, 'function', 'Must contain reverse function');
+	strictEqual( reverseString('abcdefg'), 'gfedcba', 'Successful output. Expected gfedcba, Result ' + reverseString('abcdefg'))
+});
