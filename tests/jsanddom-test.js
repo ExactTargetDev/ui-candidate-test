@@ -15,8 +15,13 @@ Please create your tests below...
 
 module("Reverse String");
 test("Reverse String", function(){
-	equal(typeof reverseString, 'function', 'String must be reversed when function called');
-
-	ok(reverseString("Marcus Warnsley"), "yelsnraW sucraM", "Expected yelsnraW sucraM to be the result, the result was" + reverseString("Marcus Warnsley"));
+	// Make sure the result is a reversed string
+	equal(reverseString("Marcus Warnsley"), "yelsnraW sucraM", "Expected for the value to equal yelsnraW sucraM");
 });
 
+
+module("Min Array Values");
+test("Min Array Values", function(){
+	// Make sure the result returns the minimum value
+	ok(findMinValue([35,65,23,4,78]), 4, "Expected for 4 to be the lowest value");
+});
