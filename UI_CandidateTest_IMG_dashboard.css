@@ -33,6 +33,11 @@ ul.nav a{
 	background-color: #3E3E3E;
 	color: white;
 }
+.nav > li > a:active{
+	background-color: orange;
+    color: white;
+}
+}
 .right-section{
 	margin-top: -25px;
 }
@@ -96,7 +101,10 @@ ul.nav a{
 .line-break{
 	border-top: 1px solid gray;
 }
-
+.date-block{
+	border-right: 1px solid gray;
+    height: 150px;
+}
 
 /********************************************
 

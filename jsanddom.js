@@ -121,42 +121,42 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
-/*
-     {
-        "people":
-        [
-            {
-                "first name": Marcus,
-                "last name": Warnsley,
-                "city": Indianapolis,
-                "state": Indiana,
-                "zip": 46220,
-                "phone": 
-                [
-                    {
-                        "home": 2604030877,
-                        "work": 3174023567,
-                        "mobile": 2604030877
+
+     var peopleText = {
+                        "people":
+                                [
+                                    {
+                                        "firstName": "Marcus",
+                                        "lastName": "Warnsley",
+                                        "city": "Indianapolis",
+                                        "state": "Indiana",
+                                        "zip": 46220,
+                                        "phone": 
+                                        [
+                                            {
+                                                "home": 2604030877,
+                                                "work": 3174023567,
+                                                "mobile": 2604030877
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "firstName": "Sales",
+                                        "lastName": "Force",
+                                        "city": "Indianapolis",
+                                        "state": "Indiana",
+                                        "zip": 46204,
+                                        "phone": 
+                                        [
+                                            {
+                                                "home": 9999999999,
+                                                "work": 5555555555,
+                                                "mobile": 1111111111
+                                            }
+                                        ]
+                                    }
+                                ]
                     }
-                ]
-            },
-            {
-                "first name": Sales,
-                "last name": Force,
-                "city": Indianapolis,
-                "state": Indiana,
-                "zip": 46204,
-                "phone": 
-                [
-                    {
-                        "home": 9999999999,
-                        "work": 5555555555,
-                        "mobile": 1111111111
-                    }
-                ]
-            }
-        ]
-     }
 
 
      // Create a javascript object (DataTable) with the following:
@@ -177,14 +177,45 @@
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
+     function selectConsoleLog(){
+        var select = document.forms['selection'].elements['select-values'];
+        var userSelect = select.options[select.selectedIndex].text;
+
+        document.getElementById("log-button").addEventListener("click", function(){
+            alert(userSelect);
+        });
+     }
+
+     selectConsoleLog();
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+/****************************************************
+    UNCOMMENT TO SEE THESE ANSWERS
 
+     $(".link")
+     $("#fizz .link")
+     $("#fizz a")
+     $(".buzz a")
+     $("#fizz + a")
+*******************************************************/
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+
+     var listArray = [1,2,3,4,5];
+
+     function addArrayToList(){
+        for(i = 0; i < listArray.length; i++){
+            var createNode = document.createElement("li");
+            var arrayNode = document.createTextNode(listArray[i]);
+            createNode.appendChild(arrayNode);
+            document.getElementById("list1").appendChild(createNode);
+        }
+     }
+
+     addArrayToList();
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
-*/
