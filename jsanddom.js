@@ -16,9 +16,9 @@
          // FILL THIS IN
          return Math.min.apply(Math,values);
      }
-/*
+
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
-     function findDistinctValues(values) {
+/*     function findDistinctValues(values) {
          // FILL THIS IN
          var values = values.filter(function(dup,pos){
             return values.indexOf(dup) == pos;
@@ -47,6 +47,7 @@
          }
          doFizzBuzz();
 
+
      // You have a master array of strings, where each element is a fruit name.
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
@@ -55,7 +56,7 @@
          // FILL THIS IN
 
      }
-
+*/
      // Write a function to push either a simple value or an array of values onto a specified array.
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
      // If toPush is a simple value, it should be pushed onto array as an element.
@@ -79,7 +80,7 @@
             sourceStr = [];
          }
          if (typeof arguments !== null) {
-            return sourceStr.split(",");
+            return sourceStr.split(" ");
          }
      }
 
@@ -88,18 +89,18 @@
          // FILL THIS IN
          var n = 0;
          for(i = 0; i < arguments.length; i++){
-            n += arguemnts[i];
+            n += arguments[i];
          }
 
          return n;
      }
-
+/*
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
          return /\s/g.test(sourceStr);
      }
-
+*/
      // write an example of a javascript closure
      function displayMessage(priceBefore,priceAfter){
         var message = "The total price of your item before taxes will be";
@@ -111,8 +112,8 @@
         return itemPrice();
      }
 
-     displayMessage("$3.99","$4.35");
-
+    // displayMessage("$3.99","$4.35");
+/*
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
