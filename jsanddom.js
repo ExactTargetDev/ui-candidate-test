@@ -57,6 +57,14 @@
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
          // FILL THIS IN
+         if (typeof toPush === 'string' || typeof toPush === 'number' || typeof toPush === 'boolean') {
+            array.push(toPush);
+         }
+         else if (Array.isArray(toPush)) {
+            array.concat(toPush);
+         }
+
+         return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
@@ -151,6 +159,8 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+
+
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
