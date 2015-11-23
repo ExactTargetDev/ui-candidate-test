@@ -9,6 +9,7 @@
          // FILL THIS IN
          return str.split("").reverse().join("");
      }
+     /*
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
@@ -52,6 +53,7 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -185,3 +187,4 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+*/

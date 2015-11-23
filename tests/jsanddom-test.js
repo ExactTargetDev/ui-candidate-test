@@ -12,3 +12,11 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+
+module("Reverse String");
+test("Reverse String", function(){
+	equal(typeof reverseString, 'function', 'String must be reversed when function called');
+
+	ok(reverseString("Marcus Warnsley"), "yelsnraW sucraM", "Expected yelsnraW sucraM to be the result, the result was" + reverseString("Marcus Warnsley"));
+});
+
