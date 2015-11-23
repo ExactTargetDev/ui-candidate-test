@@ -67,6 +67,12 @@
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          // FILL THIS IN
+         var n = 0;
+         for(i = 0; i < arguments.length; i++){
+            n += arguemnts[i];
+         }
+
+         return n;
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
