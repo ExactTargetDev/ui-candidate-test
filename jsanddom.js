@@ -81,6 +81,17 @@
      }
 
      // write an example of a javascript closure
+     function displayMessage(priceBefore,priceAfter){
+        var message = "The total price of your item before taxes will be";
+
+        function itemPrice(){
+            return message + " " + priceBefore + " and " + priceAfter + " after taxes.";
+        }
+
+        return itemPrice();
+     }
+
+     displayMessage("$3.99","$4.35");
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
