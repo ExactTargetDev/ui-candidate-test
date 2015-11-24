@@ -16,11 +16,17 @@ Please create your tests below...
 module("Marcie's Unit Tests");
 test("Reverse String", 2, function() {
 	equal( typeof reverseString, 'function', 'Must contain reverse function');
-	strictEqual( reverseString('abcdefg'), 'gfedcba', 'Successful output. Expected gfedcba, Result ' + reverseString('abcdefg'))
+	strictEqual( reverseString('abcdefg'), 'gfedcba', 'Successful output. Expected gfedcba, Result ' + reverseString('abcdefg'));
 });
 
 var values = [300, 200, 100, 99];
 
 test("Find Minimum Value", 1, function() {
 	ok( findMinValue(values), 'Expected 99. Result ' + findMinValue(values));
+});
+
+var arr = [1, 2, 2, 3, 4, 5, 5, 5, 6, 7, 7, 8, 9, 10, 10];
+
+test("Find Distinct Values", 1, function() {
+	ok( findDistinctValues(arr), 'Successful output. Expected: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, Result: ' + findDistinctValues(arr));
 });
