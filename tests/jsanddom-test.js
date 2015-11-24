@@ -13,7 +13,7 @@ test( "Example Test", 2, function() {
 Please create your tests below...
 ********************************/
 
-module("Marcie's Unit Tests");
+module("UI Unit Tests");
 test("Reverse String", 2, function() {
 	equal( typeof reverseString, 'function', 'Must contain reverse function');
 	strictEqual( reverseString('Subscribers rock'), 'kcor srebircsbuS', 'Successful output. Expected kcor srebircsbuS, Result ' + reverseString('Subscribers rock'));
@@ -27,4 +27,12 @@ test("Find Minimum Value", 1, function() {
 
 test("Find Distinct Values", 1, function() {
 	ok( findDistinctValues(values), 'Successful output. Expected: 3,5,7,20,0.18,1,-1.1,12,Infinity. Result: ' + findDistinctValues(values));
+});
+
+//test FizzBuzz
+
+var fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+var fruitsToRemove = ['pear', 'banana'];
+test("Fruit Array Removal", 1, function() {
+	ok( removeFruits(fruits, fruitsToRemove), 'Successful. Expected: apple,orange,kiwi,plum,strawberry. Result: ' + removeFruits(fruits, fruitsToRemove));
 });
