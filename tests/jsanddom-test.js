@@ -30,6 +30,9 @@ test("Find Distinct Values", 1, function() {
 });
 
 //test FizzBuzz
+test("Fizz Buzz", 1, function() {
+	equal(typeof doFizzBuzz, 'function', 'Must contain fizzbuzz function');
+});
 
 var fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
 var fruitsToRemove = ['pear', 'banana'];
