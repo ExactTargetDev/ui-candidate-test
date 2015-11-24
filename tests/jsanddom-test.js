@@ -19,7 +19,7 @@ test("Reverse String", 2, function() {
 	strictEqual( reverseString('Subscribers rock'), 'kcor srebircsbuS', 'Successful output. Expected kcor srebircsbuS, Result ' + reverseString('Subscribers rock'));
 });
 
-var values = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+var values = [3, 5, 7, 20, 0.18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
 
 test("Find Minimum Value", 1, function() {
 	equal( findMinValue(values), -1.1, 'Successful output. Expected: -1.1. Result: ' + findMinValue(values));
