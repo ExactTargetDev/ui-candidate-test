@@ -55,3 +55,6 @@ test("Sum", 4, function(){
 });
 
 //isOnlyWhitespace
+test("Whitespace", function () {
+	equal(isOnlyWhitespace(" "), true, 'Successful. Expected: true. Result:' + isOnlyWhitespace(" "))
+});
