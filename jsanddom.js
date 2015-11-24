@@ -3,12 +3,12 @@
         // To see the test pass, uncomment the following line
         return a / b;
      }
-     //var str = 'asdfghjkl';
+   
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         console.log(str.split('').reverse().join(''));
+         return str.split('').reverse().join('');
      }
-     //var values = [1, 2, 3, 45];
+
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
           return Math.min.apply( Math, values);
