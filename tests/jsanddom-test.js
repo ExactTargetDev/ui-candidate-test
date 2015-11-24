@@ -33,6 +33,18 @@ test("Find Distinct Values", 1, function() {
 
 var fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
 var fruitsToRemove = ['pear', 'banana'];
+//removeFruits
 test("Fruit Array Removal", 1, function() {
 	ok( removeFruits(fruits, fruitsToRemove), 'Successful. Expected: apple,orange,kiwi,plum,strawberry. Result: ' + removeFruits(fruits, fruitsToRemove));
 });
+
+//pushOntoArray
+test("Push Values Onto Array", 1, function(){
+	ok(pushOntoArray([1, 2, 3, 4, 5], 6), 'Successful. Expected: 1,2,3,4,5,6 Result:' + pushOntoArray([1, 2, 3, 4, 5], 6));
+});
+
+//splitListStrUsingComma
+
+//sum
+
+//isOnlyWhitespace
