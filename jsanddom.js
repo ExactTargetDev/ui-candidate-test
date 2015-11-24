@@ -92,6 +92,15 @@
      }
 
      // write an example of a javascript closure
+     function closure() {
+        var x = 0;
+        this.getX = function (){
+            return x;
+        };
+        this.y = function (){
+            x++
+        };
+     };
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
