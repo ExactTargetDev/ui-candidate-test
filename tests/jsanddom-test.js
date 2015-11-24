@@ -46,5 +46,12 @@ test("Push Values Onto Array", 1, function(){
 //splitListStrUsingComma
 
 //sum
+test("Sum", 4, function(){
+	strictEqual(sum(1, 1, 2, 3, 5, 7), 19, 'Successful. Expected: 19 Result: ' + sum(1, 1, 2, 3, 5, 7));
+	//for extra testing
+	strictEqual(sum(1, 1), 2, 'Successful. Expected: 2 Result: ' + sum(1, 1));
+	strictEqual(sum(1, 1, 2, 3, 7), 14, 'Successful. Expected: 14 Result: ' + sum(1, 1, 2, 3, 7));
+	strictEqual(sum(2, 3, 5, 7), 17, 'Successful. Expected: 17 Result: ' + sum(2, 3, 5, 7));
+});
 
 //isOnlyWhitespace
