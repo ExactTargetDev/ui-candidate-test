@@ -110,7 +110,37 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+     var people  = [{
+        'first name': '',
+        'last name': '',
+        'city': '',
+        'state': '',
+        'zip': '',
+        'phone numbers': [{
+            'home': '',
+            'work': '',
+            'mobile': ''
+        },{
+            'home': '',
+            'work': '',
+            'mobile': ''
+        }]
+     },{
+        'first name': '',
+        'last name': '',
+        'city': '',
+        'state': '',
+        'zip': '',
+        'phone numbers': [{
+            'home': '',
+            'work': '',
+            'mobile': ''
+        },{
+            'home': '',
+            'work': '',
+            'mobile': ''
+        }]
+     }]
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
