@@ -3,7 +3,7 @@ angular.module("dashboard-ui-test")
 
 function mainController(mainService) {
     var vm = this;
-    var help = help;
+    vm.help = help;
 
     ////////////
     function help(){
