@@ -61,3 +61,12 @@ test("Sum", 4, function(){
 test("Whitespace", function () {
 	equal(isOnlyWhitespace(" "), true, 'Successful. Expected: true. Result:' + isOnlyWhitespace(" "))
 });
+
+//closure test
+var newClosure = new closure();
+newClosure.y();
+
+test("Closure", 2, function() {
+	ok(newClosure.getX() == 1, 'Success' );
+	ok(newClosure.x === undefined, 'private variable');
+});
