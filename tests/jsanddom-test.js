@@ -70,3 +70,15 @@ test("Closure", 2, function() {
 	ok(newClosure.getX() == 1, 'Success' );
 	ok(newClosure.x === undefined, 'private variable');
 });
+
+//DataTable Test 
+var newData = new DataTable();
+newData.addColumns(1);
+newData.addRows("A");
+
+test("Columns & Rows", 3, function(){
+	ok(newData.rows === undefined, 'Private variable');
+	ok(newData.columns === undefined, 'Private variable');
+});
+
+
