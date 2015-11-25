@@ -10,7 +10,7 @@ function mainController(mainService) {
       mainService
         .file()
       	.then(function (data){
-      		vm.options = data;
+      		vm.options = data.help;
       		//console.log('data', data);
       	});
     };
