@@ -72,7 +72,6 @@ ul{
 }
 /*MAIN CONTENT*/
 .content{
-	z-index: -1;
 }
 .content-section{
 	margin-top: -5px;
@@ -97,6 +96,7 @@ ul{
 	border-radius: 10px;
 	background-color: #67818a;
 	padding: 20px;
+	z-index: 1;
 }
 .pulse h1{
 	color: #ffffff;
@@ -110,6 +110,10 @@ ul{
 	padding: 20px;
 	text-align: center;
 }
+.active{
+	background-color: #99cfe0;
+}
+
 
 
 
