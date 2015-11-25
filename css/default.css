@@ -83,14 +83,28 @@ ul{
     border-radius: 10px;
     height: 150px;
     width: 100%;
+    margin-bottom: 15px;
 }
 .calendar-square{
 	border: 1px solid #bdbdbd;
+    border-radius: 10px;
 	height: 100%;
 	padding: 15px;
 }
 
+/*PULSE SECTION*/
+.pulse{
+	border-radius: 10px;
+	background-color: #67818a;
+	padding: 20px;
+}
+.pulse-square{
+	border-radius: 10px;
+	background-color: #deeff5;
+	padding: 20px;
+	text-align: center;
 
+}
 
 
 
