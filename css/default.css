@@ -101,6 +101,9 @@ ul{
 .pulse h1{
 	color: #ffffff;
 }
+.pulse h2{
+	color: #72bcd4;
+}
 .pulse-square{
 	border-radius: 10px;
 	background-color: #deeff5;
