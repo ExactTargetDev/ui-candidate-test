@@ -1,0 +1,37 @@
+/*
+styles for screenshot.html
+*/
+body{
+	font-size: 11px;
+	/*bootstrap override*/
+}
+a{
+	text-decoration: none;
+}
+
+ul{
+	list-style: none;
+}
+
+.top-nav {
+	width: 100%;
+	height: 30px;
+    background: -webkit-linear-gradient(#545454, #151515);
+    background: -o-linear-gradient(#545454, #151515);
+    background: -moz-linear-gradient(#545454, #151515);
+    background: linear-gradient(#545454, #151515); /* will change to navy if time allows */
+    padding: 6px;
+}
+.top-nav li{
+	display: inline-block;
+	padding-left: 4px;
+}
+
+.links-right{
+	text-align: right;
+	color: #fff;
+}
+
+.links-right a{
+	color: #939393;
+}
