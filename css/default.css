@@ -43,3 +43,54 @@ ul{
 .links-right a{
 	color: #939393;
 }
+
+/*SIDE NAVIGATION STYLES*/
+.interactive{
+	border-radius: 5px;
+	background-color: #f6f6f6;
+	border: 1px solid #bdbdbd;
+	margin: 5px;
+}
+.interactive-header{
+	background-color: orange;
+	padding: 22px;
+	color:#fff;
+
+}
+.side-nav a{
+	color: #545454;
+}
+.side-nav > li > a:hover{
+	background-color: #E0e0e0;
+	color: #ffffff;
+	cursor: pointer;
+}
+.side-nav > li > a:active{
+	background-color: black;
+    color: #ffffff;
+    cursor: pointer;
+}
+/*MAIN CONTENT*/
+.content{
+	z-index: -1;
+}
+.content-section{
+	margin-top: -5px;
+}
+/*CALENDAR*/
+.calendar{
+    background-color: #eee;
+    border-radius: 10px;
+    height: 150px;
+    width: 100%;
+}
+.calendar-square{
+	border: 1px solid #bdbdbd;
+	height: 100%;
+	padding: 15px;
+}
+
+
+
+
+
