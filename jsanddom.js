@@ -157,6 +157,15 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     $("#div1").append("<select>\
+                <option value='A'> A </option>\
+                <option value='B'> B </option>\
+                <option value='C'> C </option>\
+            </select>\
+            <button>Click here for console</button>");
+     $("button").click(function(){
+        console.log($("select").find(':selected').val());
+     });
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
