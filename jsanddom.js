@@ -153,7 +153,29 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     var DataTable = function (){
+        var rows = [];
+        var columns = [];
 
+         function addRows(row){
+            rows.push(row);
+         };
+
+         function addColumns(col){
+            columns.push(col);
+         };
+
+         function getData(x, y){
+            return { rows[x], columns[y] }
+         };
+
+         return {
+            addRows: addRows,
+            addColumns: addColumns,
+            getData: getData
+         };
+     };
+     
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
