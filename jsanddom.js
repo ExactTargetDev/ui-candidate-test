@@ -166,7 +166,7 @@
          };
 
          function getData(x, y){
-            return { rows[x], columns[y] }
+            return [rows[x], columns[y]]
          };
 
          return {
