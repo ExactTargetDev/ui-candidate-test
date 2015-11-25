@@ -193,3 +193,16 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     $("#foobar").append("<input type='checkbox' name='A'/> <input type='checkbox' name='B'/> <a id='CheckAll' href='#'>Check All</a> <a href='#' id='UnCheckAll'>UnCheck All</a>");
+
+     $("#CheckAll").click(function(){
+        $("input:checkbox").each(function(){
+            this.checked = true;
+        });
+     });
+
+      $("#UnCheckAll").click(function(){
+        $("input:checkbox").each(function(){
+            this.checked = false;
+        });
+     })
