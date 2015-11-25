@@ -27,6 +27,14 @@ ul{
 	padding-left: 4px;
 }
 
+.logo{
+	height: 20px;
+	width: 50%;
+	background-repeat: no-repeat;
+	background-image: url(img/ET-logo.png);
+	float: left;
+}
+
 .links-right{
 	text-align: right;
 	color: #fff;
