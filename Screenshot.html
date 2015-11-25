@@ -2,7 +2,132 @@
 <html>
 <head>
     <title>Screenshot.html</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
 </head>
-<body>
+<body ng-app="dashboard-ui-test">
+	<div ng-controller="mainController as main">
+		<div class="top-nav">
+			<div>
+				<span class="logo"></span>
+				<ul class="links-right">
+					<li>Welcome John!</li>
+					<li><a href="#">Account</a></li>
+					<li>|</li>
+					<li><a ng-click="main.help()">Help</a></li>
+					<li>|</li>
+					<li><a href="#">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="container">
+			<div ng-repeat="option in main.options">
+				<div>
+ 					{{option.title}}, {{option.URL}}
+				</div>	
+			</div>
+          <div class="row">
+            <div class="col-md-2 col-sm-2" role="navigation">
+            	<div class="interactive">
+	            	<div class="interactive-header">
+	            		Interactive Marketing Hub
+	            	</div>
+                <ul class="nav side-nav">
+                  <li><a>ExactTarget Email</a></li>
+                  <li><a>ExactTarget Mobile</a></li>
+                  <li><a>CoTweet Social</a></li>
+                  <li><a>Exact Target Sites</a></li>
+                  <li><hr></li>  
+                  <li><a>Automation Studio</a></li> 
+                  <li><a>Audience Builder</a></li>
+                  <li><a>Report Builder</a></li>
+                  <li><hr></li> 
+                  <li><a>Partner Applications</a></li>
+                </ul>
+            </div>
+        </div>
+            <!-- content -->
+            <div class="col-md-10 col-sm-10 content">
+            	<div class="content-section">           		
+	              <div class="row">
+	                <div class="calendar">
+	                  <div class="col-md-2 calendar-square">
+	                  	Sat
+	                  </div>
+	                  <div class="col-md-2 calendar-square">
+	                  	Sun
+	                  </div>
+	                  <div class="col-md-2 calendar-square">
+	                  	Mon
+	                  </div>
+	                  <div class="col-md-2 calendar-square">
+	                  	Tues
+	                  </div>
+	                  <div class="col-md-2 calendar-square">
+	                  	Wed
+	                  </div>
+	                  <div class="col-md-2 calendar-square">
+	                  	Thurs
+	                  </div>
+	                </div>
+	              </div>
+	              <div class="row pulse" >
+	                <h1>Pulse</h1>
+	                  <div class="row">
+	                    <div class="col-md-2">
+	                      <h4 class="square-title">Followers</h4>
+	                      <div class="pulse-square"  toggle-item>
+	                        <h2>310</h2>
+	                        <h3>added today</h3>
+	                        <p>2,393,905 total</p>
+	                      </div>
+	                    </div>
+	                    <div class="col-md-2">
+	                      <h4 class="square-title">Fan</h4>
+	                      <div class="pulse-square" toggle-item>
+	                        <h2>73</h2>
+	                        <h3>added today</h3>
+	                        <p>91,675 total</p>
+	                      </div>
+	                    </div>
+	                    <div class="col-md-2">
+	                      <h4 class="square-title">Subscribers</h4>
+	                      <div class="pulse-square" toggle-item>
+	                        <h2>56</h2>
+	                        <h3>added today</h3>
+	                        <p>189,405 total</p>
+	                      </div>
+	                    </div>
+	                    <div class="col-md-2">
+	                      <h4 class="square-title">foursquare</h4>
+	                      <div class="pulse-square" toggle-item>
+	                        <p>Worldwide Checkins</p>
+	                        <h2>3,905</h2>
+	                      </div>
+	                    </div>
+	                    <div class="col-md-2">
+	                      <h4 class="square-title">Landing Pages</h4>
+	                      <div class="pulse-square" toggle-item>
+	                        <p>Visitors Today</p>
+	                        <h2><span>397</span> / 355</h2><br>
+	                        <p>Soulja Boy V.I.P.</p>
+	                      </div>
+	                    </div>
+	                  </div>
+	              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+			
+		</div>
+	</div>
+    
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-sanitize.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/main.module.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/main.controller.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/main.service.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/toggle.directive.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
