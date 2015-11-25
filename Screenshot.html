@@ -2,9 +2,27 @@
 <html>
 <head>
     <title>Screenshot.html</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/default.css">
 </head>
-<body>
+<body ng-app="dashboard-ui-test">
+	<div ng-controller="mainController as main">
+		<div class="top-nav">
+			<div>
+				<ul class="links-right">
+					<li>Welcome John!</li>
+					<li><a href="#">Account</a></li>
+					<li>|</li>
+					<li><a ng-click="main.help()">Help</a></li>
+					<li>|</li>
+					<li><a href="#">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="container">
+			
+		</div>
+	</div>
     
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-sanitize.min.js" type="text/javascript" charset="utf-8"></script>
