@@ -98,12 +98,14 @@ ul{
 	background-color: #67818a;
 	padding: 20px;
 }
+.pulse h1{
+	color: #ffffff;
+}
 .pulse-square{
 	border-radius: 10px;
 	background-color: #deeff5;
 	padding: 20px;
 	text-align: center;
-
 }
 
 
