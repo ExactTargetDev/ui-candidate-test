@@ -1,8 +1,188 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Screenshot.html</title>
-</head>
-<body>
-</body>
+
+  <head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link data-require="bootstrap-css@3.3.1" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link data-require="jqueryui@*" data-semver="1.10.0" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/css/smoothness/jquery-ui-1.10.0.custom.min.css" />
+    <script data-require="jqueryui@*" data-semver="1.10.0" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js" data-semver="2.1.4" data-require="jquery@2.1.4"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+  </head>
+
+  <body>
+    <style>
+    .smallPanel {
+      border: solid;
+      margin-right: 5px;
+      background-color: #e5e5ff;
+      padding:0px 10px 10px 10px;
+    }
+    
+    .mediumPanel {
+      border: solid;
+      margin-left:15px;
+      margin-right: 20px;
+      background-color: #cceeff;
+      padding:0px 10px 10px 10px;
+    }
+    
+    .pulse {
+      border: solid;
+      float:bottom;
+       padding:10px 10px 10px 10px;;
+      height:100%;
+      background-color: #b3b3ff;
+      margin-bottom:100px;
+    }
+  </style>
+    <script>
+    var app = angular.module('app', ['ngAnimate', 'ui.bootstrap']);
+    app.controller('navCtrl', function($scope, $uibModal, $log){
+      $scope.link = 'help';
+      $scope.items = ['item1', 'item2', 'item3'];
+      $scope.animationsEnabled = true;
+
+            $scope.helpFunction = function(size){
+                var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: 'myModalContent.html',
+                controller: 'ModalInstanceCtrl',
+                size: size,
+                resolve: {
+                  items: function () {
+                    return $scope.items;
+                  }
+                }
+              });
+          
+              modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+              }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+              });
+           };
+
+          $scope.toggleAnimation = function () {
+            $scope.animationsEnabled = !$scope.animationsEnabled;
+          };
+             
+    }).controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items, $http) {
+            $http({
+                  method: 'GET',
+                  url: '/data/help.json'
+                }).then(function successCallback(response) {
+                   $scope.items = response.data.help;
+                  }, function errorCallback(response) {
+        
+                  });
+          
+            $scope.cancel = function () {
+              $uibModalInstance.dismiss('cancel');
+            };
+    });
+
+    $(function() {
+      $(".smallPanel").on("click", function() {
+        $(this).toggleClass("smallPanel mediumPanel");
+
+        if ($(this).hasClass("mediumPanel")) {
+          $(this).animate({
+            height: '+=50px',
+            width: '+=50px'
+          });
+        } else {
+          $(this).animate({
+            height: '-=50px',
+            width: '-=50px'
+          });
+        }
+
+        $(".pulse").find(".mediumPanel").not(this)
+          .animate({
+            height: '-=50px',
+            width: '-=50px'
+          }).toggleClass("mediumPanel smallPanel");
+      });
+    });
+  </script>
+    <nav ng-app="app" class="navbar navbar-inverse">
+      <ul ng-controller="navCtrl" class="nav navbar-nav navbar-right">
+        <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">help.json</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <label>{{item.title}}</label>
+                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item.URL }}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+       </script>
+        <li>
+          <button ng-click="helpFunction('lg')">{{link}}</button>
+        </li>
+        <li>
+          <a></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="col-md-12" style="border:solid">
+      <div class="col-md-3">
+        <div class="container-fluid">
+          <div class="list-group">
+            <a href="#" class="list-group-item active">Interactive Marketing hub</a>
+            <a class="list-group-item" href="#">ExactTarget Email</a>
+            <a class="list-group-item" href="#">ExactTarget Mobile</a>
+            <a class="list-group-item" href="#">CoTweet Social</a>
+            <a class="list-group-item" href="#">ExactTarget Sites</a>
+            <a class="list-group-item" href="#">Automation Studio</a>
+            <a class="list-group-item" href="#">Audience Builder</a>
+            <a class="list-group-item" href="#">Report Bulder</a>
+            <a class="list-group-item" href="#">Partner Applications</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9" style="height:100%">
+        <div class="container-fluid">
+          <div style="height:120px; width:100%;"></div>
+          <div class="row pulse">
+            <div class="col-md-2 smallPanel" id="followers">
+              <div> 310 </div>
+              <div>added today</div>
+              <div>999,999 total</div>
+            </div>
+            <div class="col-md-2 smallPanel" id="fan">
+              <div> 310 </div>
+              <div>added today</div>
+              <div>999,999 total</div>
+            </div>
+            <div class="col-md-2 smallPanel" id="subscribers">
+              <div> 310 </div>
+              <div>added today</div>
+              <div>999,999 total</div>
+            </div>
+            <div class="col-md-2 smallPanel" id="fourSquare">
+              <div> 310 </div>
+              <div>added today</div>
+              <div>999,999 total</div>
+            </div>
+            <div class="col-md-2 smallPanel" id="landingPages">
+              <div> 310 </div>
+              <div>added today</div>
+              <div>999,999 total</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
 </html>
