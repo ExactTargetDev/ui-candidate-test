@@ -1,8 +1,29 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="etApp">
 <head>
     <title>Screenshot.html</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
+
+    <ng-include src="'components/nav.html'"></ng-include>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <ng-include src="'components/hub.html'"></ng-include>
+            </div>
+            <div class="col-md-9">
+                <ng-include src="'components/pulse.html'"></ng-include>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
