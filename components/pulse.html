@@ -1,0 +1,17 @@
+<div class="pulse-window" ng-controller="PanelController">
+    <div class="pulse-title">
+        <h4>Pulse</h4>
+    </div>
+    <div class="pulse-panels">
+        <div class="pulse-panel" ng-class="{mediumView: panel.mediumView == true}" ng-repeat="panel in panels" ng-click="showMediumPanelView(panel)">
+            <div class="pulse-panel-title">
+                <h5>{{panel.title}}</h5>
+            </div>
+            <div class="panel-data-block" ng-class="{mediumView: panel.mediumView == true}">
+                <h4 class="panel-data-title">{{panel.number}}</h4>
+                <span>{{panel.message}}</span>
+                <span>2,393,905 total</span>
+            </div>
+        </div>
+    </div>
+</div>

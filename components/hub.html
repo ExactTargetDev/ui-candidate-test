@@ -1,0 +1,10 @@
+<div class="hub-panel" ng-controller="HubController">
+    <div class="hub-panel-title">
+        <h5>Interactive Marketing Hub</h5>
+    </div>
+    <div class="hub-panel-links">
+        <ul class="hub-list">
+            <li ng-repeat="link in hubLinks" ng-click="hubItemClick(link)"><button type="button"><i class="fa {{link.icon}}"></i></button> <a>{{link.text}}</a></li>
+        </ul>
+    </div>
+</div>
