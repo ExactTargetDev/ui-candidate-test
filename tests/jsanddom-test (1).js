@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=1020">
     
     
-    <title>ui-candidate-test/JsAndDom-UnitTest-Runner.html at fbef398ed5c55dbf5c3bc2f886ed13e843a563f1 · Asparagarrigus/ui-candidate-test</title>
+    <title>ui-candidate-test/jsanddom-test.js at fbef398ed5c55dbf5c3bc2f886ed13e843a563f1 · Asparagarrigus/ui-candidate-test</title>
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
     <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
@@ -24,7 +24,7 @@
       <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
     <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
     <link rel="assets" href="https://assets-cdn.github.com/">
-    <link rel="web-socket" href="wss://live.github.com/_sockets/MTM1MTU2NDc6MTgwY2EzZTc2YmVlNGZhM2RmYzM3ZTQ5NGM1NTkzMWM6NjI5NjNhYjA2NmM5NGVjYmE0ZTZkZjkxZmIzMWI4OWQxNDc4MDliYTk1NWEzYWUwN2ZjNmQ1MjE0MjUyZDA0Zg==--54d5e0c98ddfb9d1487182072c633d782bc10585">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/MTM1MTU2NDc6MTgwY2EzZTc2YmVlNGZhM2RmYzM3ZTQ5NGM1NTkzMWM6ODYzYTA2MjFhYzA2NjE3NjQ0MTQ1MWRjM2EwMzNjMTEzYTI5MjAwNDM3ZWNiNzkyMDM1MTYyYjU4YzAxYzczNQ==--60b245e18a96068cd9141108539fdd5d86b6931c">
     <meta name="pjax-timeout" content="1000">
     <link rel="sudo-modal" href="/sessions/sudo_modal">
 
@@ -34,7 +34,7 @@
 
         <meta name="google-analytics" content="UA-3769691-2">
 
-    <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="collector-cdn.github.com" name="octolytics-script-host" /><meta content="github" name="octolytics-app-id" /><meta content="60E20AAE:3D4C:83CBEE7:55D17EA8" name="octolytics-dimension-request_id" /><meta content="13515647" name="octolytics-actor-id" /><meta content="sreejamudraveni07" name="octolytics-actor-login" /><meta content="8dab52a8a3764582f07ce9fddb437b80d90dcb97527de6cd64565968cd0f8148" name="octolytics-actor-hash" />
+    <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="collector-cdn.github.com" name="octolytics-script-host" /><meta content="github" name="octolytics-app-id" /><meta content="60E20AAE:7C77:1E3871A:55D17EDF" name="octolytics-dimension-request_id" /><meta content="13515647" name="octolytics-actor-id" /><meta content="sreejamudraveni07" name="octolytics-actor-login" /><meta content="8dab52a8a3764582f07ce9fddb437b80d90dcb97527de6cd64565968cd0f8148" name="octolytics-actor-hash" />
     
     <meta content="Rails, view, blob#show" data-pjax-transient="true" name="analytics-event" />
     <meta class="js-ga-set" name="dimension1" content="Logged In">
@@ -48,7 +48,7 @@
       <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
 
     <!-- </textarea> --><!-- '"` --><meta content="authenticity_token" name="csrf-param" />
-<meta content="+5yQ613vLZdyL9/dgXcFyR7vh5qMfSw3mBVpEuHZRNVpCAbmZWHFytpBEKs6EHAxe7slM4ek+lF2oFDZmIfEDw==" name="csrf-token" />
+<meta content="NzvM1NkjErv7/2x4FVBwU6NF/rWWuL2nNBrbMVwl5ChRhIwM0hlJ4285R7lRjMx98SYY6x5iAh5mx0ei858euw==" name="csrf-token" />
     
 
     <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github/index-78350b39bf13714f4b06a2153e5374de01bc939bfa60ec9bdb34dbb2032dda4b.css" media="all" rel="stylesheet" />
@@ -191,7 +191,7 @@
           Settings
         </a>
 
-        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/logout" class="logout-form" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="NndyxES6nys5zYHdoUuN0+qvZm//9YwzTQF4bqKjj7TuaOMTTOOdH6fIlhvNq+8V9Ji4mRgyt3ke30Uc+YKVcg==" /></div>
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/logout" class="logout-form" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="J71p+tH1ZOR/U6sS0T9KW5I/I2fj8Oq21PJO9/wUh3r3BD8h10B0OM+m3CpP3fF9Fgw3mTb249Rju0W8ymiaZg==" /></div>
           <button class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
             Sign out
           </button>
@@ -223,7 +223,7 @@
 <ul class="pagehead-actions">
 
   <li>
-      <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="ezRiJvZxf/v+FPU15Cbch5c4mnxitORsbs8nZwGoQhrAdR2u9l/UdJibsTz8PWJIvnsv+2elfi7ktHq0QZezfw==" /></div>    <input id="repository_id" name="repository_id" type="hidden" value="23641101" />
+      <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="LNknd4G5Px4mGGHFK3mTuFOKG/P8C+1N0yFbllT5koMTe2CKeJT3+wr+HG5KTQLXsfqkDRfRAk6O9HQ/HPluIA==" /></div>    <input id="repository_id" name="repository_id" type="hidden" value="23641101" />
 
       <div class="select-menu js-menu-container js-select-menu">
         <a href="/Asparagarrigus/ui-candidate-test/subscription"
@@ -298,7 +298,7 @@
     
   <div class="js-toggler-container js-social-container starring-container ">
 
-    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/Asparagarrigus/ui-candidate-test/unstar" class="js-toggler-form starred js-unstar-button" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="n7R+PZonXpNOejed2NjDx00rG/3XhwNgTKn0qx4fyyM9n/X41u2JUh63hXWvpJ9ZqbkSX4FokxQe1VQVMtngkg==" /></div>
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/Asparagarrigus/ui-candidate-test/unstar" class="js-toggler-form starred js-unstar-button" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="MNvZEk8hpUobFVR2r5O2jJfBuNwCtN5CGWTMZdku0Lhc9hdpbu+ubca9w4qAqfmJ43cXAcQ+IdpZ3DeBR0VX1Q==" /></div>
       <button
         class="btn btn-sm btn-with-count js-toggler-target"
         aria-label="Unstar this repository" title="Unstar Asparagarrigus/ui-candidate-test"
@@ -310,7 +310,7 @@
           0
         </a>
 </form>
-    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/Asparagarrigus/ui-candidate-test/star" class="js-toggler-form unstarred js-star-button" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="LzuoHzmQJvbCx6HdY4dlFn+LkJPN5qdOMsAsENqA2MIa/cU/c3S779Ke0jssvqiUYy2wagPdQc1LgWu9idToQA==" /></div>
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/Asparagarrigus/ui-candidate-test/star" class="js-toggler-form unstarred js-star-button" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="HbUxfAtFXLxsFGogDlgDczESXFLbubZat/B9hbsoeDOuF4TBVubo6c2lJ6PaaJf7ca7gNdChiajhtqjQfQ+9kA==" /></div>
       <button
         class="btn btn-sm btn-with-count js-toggler-target"
         aria-label="Star this repository" title="Star Asparagarrigus/ui-candidate-test"
@@ -326,7 +326,7 @@
   </li>
 
         <li>
-          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/Asparagarrigus/ui-candidate-test/fork" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="RiiuDINjoCLA2I3i33C57KGf5ywLW5jBI54P0Ri1/NNvqmlCST8pCXzjC+8uywPupSYnwh6N5EOyhb3kaQix4A==" /></div>
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/Asparagarrigus/ui-candidate-test/fork" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="+DAlI3AI0J2aMobaJN1kR/q2c5o4D7u49y+2f8i4YUCnIaabfOBrJNerOFlRassUoX+FCHIu2G4WPq7k2Bb4Kg==" /></div>
             <button
                 type="submit"
                 class="btn btn-sm btn-with-count"
@@ -452,7 +452,7 @@
 
 
   <div class="clone-options">You can clone with
-    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="zEplVR9QGPp6QHPZPlBrk8arCVRel98x1CfT4UsoxOkPWFEjHwUPw1F7aPkWgfUsqarQVPxf5DUY3xQnYKEhzQ==" /></div><button class="btn-link js-clone-selector" data-protocol="http" type="submit">HTTPS</button></form>, <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=ssh&amp;protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="JJ5+tXrnEuVZv7b6CoCMaHYU6NhZVTZkMM4AMjS+fQtDwUr1eZD1Au+ztDVfkJuk87UIcuG/JECWRL4s57VVyQ==" /></div><button class="btn-link js-clone-selector" data-protocol="ssh" type="submit">SSH</button></form>, or <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="593R7x6lsi27F5FZtIxVynpJE1gM/GTVLQntDqHE47+xY3y7pHszg3xBlpS4lOCoyxwW/1LSGLzr3VcCNjNQQA==" /></div><button class="btn-link js-clone-selector" data-protocol="subversion" type="submit">Subversion</button></form>.
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="/087/GitnK1JsCNs6hiSEcqavaSSmZaPGiJVBFzI2XYlW81N+czOo/qC51SBMKXZcvvSXs857WTplCIpFPKK5g==" /></div><button class="btn-link js-clone-selector" data-protocol="http" type="submit">HTTPS</button></form>, <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=ssh&amp;protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="M13O/VhPBKYeB+3DWElA7H2cahV2rFldIkzT1BVMqIvzyTMgI3zQRdI5K4R/UGHCHOS3NDO/BD5OM9nfY0xfww==" /></div><button class="btn-link js-clone-selector" data-protocol="ssh" type="submit">SSH</button></form>, or <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-form-nonce="f1e6303c934ebd643842a13b2aff2e5f46a22750" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="gsSFPRZNf92LcRmwxQrq4n1eEIdeGUNJqXTdHWowe+t5T5bcquQwwhq8WXLv0C/zFsUJOC40/DNSwArjUmEAeA==" /></div><button class="btn-link js-clone-selector" data-protocol="subversion" type="submit">Subversion</button></form>.
     <a href="https://help.github.com/articles/which-remote-url-should-i-use" class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
       <span class="octicon octicon-question"></span>
     </a>
@@ -476,9 +476,9 @@
 
             
 
-<a href="/Asparagarrigus/ui-candidate-test/blob/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1/tests/JsAndDom-UnitTest-Runner.html" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+<a href="/Asparagarrigus/ui-candidate-test/blob/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1/tests/jsanddom-test.js" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
 
-<!-- blob contrib key: blob_contributors:v21:7acf439067051d3de4efc9be17fa8f57 -->
+<!-- blob contrib key: blob_contributors:v21:ae4823720c7547bdef23cab78f01d628 -->
 
   <div class="file-navigation js-zeroclipboard-container">
     
@@ -521,7 +521,7 @@
 
 
             <a class="select-menu-item js-navigation-item js-navigation-open "
-               href="/Asparagarrigus/ui-candidate-test/blob/develop/tests/JsAndDom-UnitTest-Runner.html"
+               href="/Asparagarrigus/ui-candidate-test/blob/develop/tests/jsanddom-test.js"
                data-name="develop"
                data-skip-pjax="true"
                rel="nofollow">
@@ -560,40 +560,33 @@
     </div>
 
     <div class="breadcrumb js-zeroclipboard-target">
-      <span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/Asparagarrigus/ui-candidate-test/tree/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1" class="" data-branch="fbef398ed5c55dbf5c3bc2f886ed13e843a563f1" data-pjax="true" itemscope="url" rel="nofollow"><span itemprop="title">ui-candidate-test</span></a></span></span><span class="separator">/</span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/Asparagarrigus/ui-candidate-test/tree/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1/tests" class="" data-branch="fbef398ed5c55dbf5c3bc2f886ed13e843a563f1" data-pjax="true" itemscope="url" rel="nofollow"><span itemprop="title">tests</span></a></span><span class="separator">/</span><strong class="final-path">JsAndDom-UnitTest-Runner.html</strong>
+      <span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/Asparagarrigus/ui-candidate-test/tree/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1" class="" data-branch="fbef398ed5c55dbf5c3bc2f886ed13e843a563f1" data-pjax="true" itemscope="url" rel="nofollow"><span itemprop="title">ui-candidate-test</span></a></span></span><span class="separator">/</span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/Asparagarrigus/ui-candidate-test/tree/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1/tests" class="" data-branch="fbef398ed5c55dbf5c3bc2f886ed13e843a563f1" data-pjax="true" itemscope="url" rel="nofollow"><span itemprop="title">tests</span></a></span><span class="separator">/</span><strong class="final-path">jsanddom-test.js</strong>
     </div>
   </div>
 
 
   <div class="commit file-history-tease">
     <div class="file-history-tease-header">
-        <img alt="@futuremint" class="avatar" height="24" src="https://avatars3.githubusercontent.com/u/5891?v=3&amp;s=48" width="24" />
-        <span class="author"><a href="/futuremint" rel="contributor">futuremint</a></span>
-        <time datetime="2014-02-04T16:48:42Z" is="relative-time">Feb 4, 2014</time>
+        <img alt="@creatovisguru" class="avatar" height="24" src="https://avatars1.githubusercontent.com/u/233110?v=3&amp;s=48" width="24" />
+        <span class="author"><a href="/creatovisguru" rel="contributor">creatovisguru</a></span>
+        <time datetime="2012-09-06T20:04:44Z" is="relative-time">Sep 6, 2012</time>
         <div class="commit-title">
-            <a href="/Asparagarrigus/ui-candidate-test/commit/b16440a93f50c6f15b0d0257ef0ca591639b7b54" class="message" data-pjax="true" title="Correct url for QUnit CSS file">Correct url for QUnit CSS file</a>
+            <a href="/Asparagarrigus/ui-candidate-test/commit/dc90b2f3cb9cf12e70a8ba400f3b5b4a257a4c06" class="message" data-pjax="true" title="Added unit test scaffolding and example test for candidates to complete">Added unit test scaffolding and example test for candidates to complete</a>
         </div>
     </div>
 
     <div class="participation">
       <p class="quickstat">
         <a href="#blob_contributors_box" rel="facebox">
-          <strong>2</strong>
-           contributors
+          <strong>1</strong>
+           contributor
         </a>
       </p>
-          <a class="avatar-link tooltipped tooltipped-s" aria-label="futuremint" href="/Asparagarrigus/ui-candidate-test/commits/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1/tests/JsAndDom-UnitTest-Runner.html?author=futuremint"><img alt="@futuremint" class="avatar" height="20" src="https://avatars1.githubusercontent.com/u/5891?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="creatovisguru" href="/Asparagarrigus/ui-candidate-test/commits/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1/tests/JsAndDom-UnitTest-Runner.html?author=creatovisguru"><img alt="@creatovisguru" class="avatar" height="20" src="https://avatars3.githubusercontent.com/u/233110?v=3&amp;s=40" width="20" /> </a>
-
-
+      
     </div>
     <div id="blob_contributors_box" style="display:none">
       <h2 class="facebox-header">Users who have contributed to this file</h2>
       <ul class="facebox-user-list">
-          <li class="facebox-user-list-item">
-            <img alt="@futuremint" height="24" src="https://avatars3.githubusercontent.com/u/5891?v=3&amp;s=48" width="24" />
-            <a href="/futuremint">futuremint</a>
-          </li>
           <li class="facebox-user-list-item">
             <img alt="@creatovisguru" height="24" src="https://avatars1.githubusercontent.com/u/233110?v=3&amp;s=48" width="24" />
             <a href="/creatovisguru">creatovisguru</a>
@@ -607,9 +600,9 @@
     <div class="file-actions">
 
       <div class="btn-group">
-        <a href="/Asparagarrigus/ui-candidate-test/raw/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1/tests/JsAndDom-UnitTest-Runner.html" class="btn btn-sm " id="raw-url">Raw</a>
-          <a href="/Asparagarrigus/ui-candidate-test/blame/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1/tests/JsAndDom-UnitTest-Runner.html" class="btn btn-sm js-update-url-with-hash">Blame</a>
-        <a href="/Asparagarrigus/ui-candidate-test/commits/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1/tests/JsAndDom-UnitTest-Runner.html" class="btn btn-sm " rel="nofollow">History</a>
+        <a href="/Asparagarrigus/ui-candidate-test/raw/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1/tests/jsanddom-test.js" class="btn btn-sm " id="raw-url">Raw</a>
+          <a href="/Asparagarrigus/ui-candidate-test/blame/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1/tests/jsanddom-test.js" class="btn btn-sm js-update-url-with-hash">Blame</a>
+        <a href="/Asparagarrigus/ui-candidate-test/commits/fbef398ed5c55dbf5c3bc2f886ed13e843a563f1/tests/jsanddom-test.js" class="btn btn-sm " rel="nofollow">History</a>
       </div>
 
 
@@ -623,94 +616,71 @@
     </div>
 
     <div class="file-info">
-        21 lines (20 sloc)
+        15 lines (13 sloc)
         <span class="file-info-divider"></span>
-      0.709 kB
+      0.523 kB
     </div>
   </div>
   
 
-  <div class="blob-wrapper data type-html">
+  <div class="blob-wrapper data type-javascript">
       <table class="highlight tab-size js-file-line-container" data-tab-size="8">
       <tr>
         <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="LC1" class="blob-code blob-code-inner js-file-line">&lt;!DOCTYPE html&gt;</td>
+        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c">/********************************</span></td>
       </tr>
       <tr>
         <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="LC2" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">html</span>&gt;</td>
+        <td id="LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-c">Unit Test Example</span></td>
       </tr>
       <tr>
         <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
-        <td id="LC3" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">head</span>&gt;</td>
+        <td id="LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c">********************************/</span></td>
       </tr>
       <tr>
         <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="LC4" class="blob-code blob-code-inner js-file-line">  &lt;<span class="pl-ent">meta</span> <span class="pl-e">charset</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>utf-8<span class="pl-pds">&quot;</span></span> /&gt;</td>
+        <td id="LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">module</span>( <span class="pl-s"><span class="pl-pds">&quot;</span>Example Unit Test<span class="pl-pds">&quot;</span></span> );</td>
       </tr>
       <tr>
         <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
-        <td id="LC5" class="blob-code blob-code-inner js-file-line">  &lt;<span class="pl-ent">title</span>&gt;JS <span class="pl-c1">&amp;amp;</span> DOM - Unit Test Runner&lt;/<span class="pl-ent">title</span>&gt;</td>
+        <td id="LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">test</span>( <span class="pl-s"><span class="pl-pds">&quot;</span>Example Test<span class="pl-pds">&quot;</span></span>, <span class="pl-c1">2</span>, <span class="pl-k">function</span>() {</td>
       </tr>
       <tr>
         <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
-        <td id="LC6" class="blob-code blob-code-inner js-file-line">  &lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>stylesheet<span class="pl-pds">&quot;</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>http://code.jquery.com/qunit/qunit-git.css<span class="pl-pds">&quot;</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>text/css<span class="pl-pds">&quot;</span></span>&gt;</td>
+        <td id="LC6" class="blob-code blob-code-inner js-file-line">    <span class="pl-c">// Verify the method exists</span></td>
       </tr>
       <tr>
         <td id="L7" class="blob-num js-line-number" data-line-number="7"></td>
-        <td id="LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span></td>
+        <td id="LC7" class="blob-code blob-code-inner js-file-line">    <span class="pl-c1">equal</span>( <span class="pl-k">typeof</span> divide, <span class="pl-s"><span class="pl-pds">&#39;</span>function<span class="pl-pds">&#39;</span></span>, <span class="pl-s"><span class="pl-pds">&#39;</span>Must contain a divide function<span class="pl-pds">&#39;</span></span> ); </td>
       </tr>
       <tr>
         <td id="L8" class="blob-num js-line-number" data-line-number="8"></td>
-        <td id="LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>http://code.jquery.com/qunit/qunit-git.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span></td>
+        <td id="LC8" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L9" class="blob-num js-line-number" data-line-number="9"></td>
-        <td id="LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>../jsanddom.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span></td>
+        <td id="LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-c">// Make sure the result from the divide function is valid</span></td>
       </tr>
       <tr>
         <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
-        <td id="LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>jsanddom-test.js<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span></td>
+        <td id="LC10" class="blob-code blob-code-inner js-file-line">    <span class="pl-c1">ok</span>( <span class="pl-c1">divide</span>( <span class="pl-c1">4</span>, <span class="pl-c1">2</span> ), <span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">&#39;</span>Expected 2 as the result, the result was: <span class="pl-pds">&#39;</span></span> <span class="pl-k">+</span> <span class="pl-c1">divide</span>( <span class="pl-c1">4</span>, <span class="pl-c1">2</span> ) );</td>
       </tr>
       <tr>
         <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
-        <td id="LC11" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">head</span>&gt;</td>
+        <td id="LC11" class="blob-code blob-code-inner js-file-line">});</td>
       </tr>
       <tr>
         <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
-        <td id="LC12" class="blob-code blob-code-inner js-file-line">&lt;<span class="pl-ent">body</span>&gt;</td>
+        <td id="LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-c">/********************************</span></td>
       </tr>
       <tr>
         <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
-        <td id="LC13" class="blob-code blob-code-inner js-file-line">  &lt;<span class="pl-ent">h1</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>qunit-header<span class="pl-pds">&quot;</span></span>&gt;ExactTarget Candidate Unit Test Runner&lt;/<span class="pl-ent">h1</span>&gt;</td>
+        <td id="LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-c">Please create your tests below...</span></td>
       </tr>
       <tr>
         <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
-        <td id="LC14" class="blob-code blob-code-inner js-file-line">  &lt;<span class="pl-ent">h2</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>qunit-banner<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">h2</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
-        <td id="LC15" class="blob-code blob-code-inner js-file-line">  &lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>qunit-testrunner-toolbar<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
-        <td id="LC16" class="blob-code blob-code-inner js-file-line">  &lt;<span class="pl-ent">h2</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>qunit-userAgent<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">h2</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
-        <td id="LC17" class="blob-code blob-code-inner js-file-line">  &lt;<span class="pl-ent">ol</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>qunit-tests<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">ol</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
-        <td id="LC18" class="blob-code blob-code-inner js-file-line">  &lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">&quot;</span>qunit-fixture<span class="pl-pds">&quot;</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
-        <td id="LC19" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">body</span>&gt;</td>
-      </tr>
-      <tr>
-        <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
-        <td id="LC20" class="blob-code blob-code-inner js-file-line">&lt;/<span class="pl-ent">html</span>&gt;</td>
+        <td id="LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-c">********************************/</span></td>
       </tr>
 </table>
 
@@ -751,7 +721,7 @@
       <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
 </a>
     <ul class="site-footer-links">
-      <li>&copy; 2015 <span title="0.06398s from github-fe123-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+      <li>&copy; 2015 <span title="0.07034s from github-fe121-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
         <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
         <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
         <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
