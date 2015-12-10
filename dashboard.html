@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="js/lodash.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/dashboard.css"/>
+</head>
+
+<body ng-app="dashboard">
+<div id="container" ng-controller="headerCtrl" >
+    <header >
+        <div class="headerLeft">
+            <label>ExactTarget.</label>
+        </div>
+        <div class="headerRight">
+            <span class="welcome">Welcome</span>
+            <span class="welcomeText">User</span>
+            <span class="account">Account</span>
+            <span class="pipe">|</span>
+            <span class="help"  ng-click="loadJson()" >Help</span>
+            <span class="pipe">|</span>
+            <span class="logout">Logout</span>
+
+        </div>
+
+    </header>
+    <div id="leftPanel">
+        <div>
+            <div class="title">
+                <span class="marketing-hub-icon glyphicon glyphicon-dashboard"></span>
+                <span>Interacting Marketing Hub</span>
+            </div>
+            <ul class="admin-list">
+                <li><a class="glyphicon glyphicon-envelope" data-val="Email" href="#">ExactTarget Email</a></li>
+                <li><a class="glyphicon glyphicon-th" data-val="mobile" href="#">ExactTarget Mobile</a></li>
+                <li><a class="glyphicon glyphicon-square" data-val="social" href="#">CoTweet Social</a></li>
+                <li><a class="glyphicon glyphicon-list-alt" data-val="sites" href="#">ExactTarget Sites</a></li>
+            </ul>
+            <ul class="application-list">
+                <li><a href="#">Automation Studio</a></li>
+                <li><a href="#">Audience Builder</a></li>
+                <li><a href="#">Report Builder</a></li>
+                <li><a href="#">ExactTarget Sites</a></li>
+            </ul>
+            <ul class="partner-list">
+                <li><a href="#">Partner Application</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div id="main-container">
+        <div id="calender-container">
+            <div id="calender">December 2015
+                <!-- Calender Widget -->
+            </div>
+        </div>
+        <div id="pulse-container">
+            <div class="pulse-header">
+                <div class="pulse-img">
+                </div>
+                <div class="action-container">
+                </div>
+            </div>
+
+            <div class="pulse-carousel">
+                <div class="pulse-box inactive">
+                    <div class="pulse-panel-title">Followers</div>
+                    <div class="pulse-panel-content">
+                        <span>369</span>
+                        <span class="addText">added today</span>
+                        <span class="total">2,445,567 total</span>
+                    </div>
+
+                </div>
+
+                <div class="pulse-box inactive">
+                    <div class="pulse-panel-title">Fan</div>
+                    <div class="pulse-panel-content">
+                        <span class="count">73</span>
+                        <span class="addText">added today</span>
+                        <span class="total">2,445,567 total</span>
+                    </div>
+
+                </div>
+
+                <div class="pulse-box inactive">
+                    <div class="pulse-panel-title">Subscribers</div>
+                    <div class="pulse-panel-content">
+                        <span class="count">56</span>
+                        <span class="addText">added today</span>
+                        <span class="total">2,445,567 total</span>
+                    </div>
+
+                </div>
+
+                <div class="pulse-box inactive">
+                    <div class="pulse-panel-title">foursquare</div>
+                    <div class="pulse-panel-content">
+                        <span class="count">369</span>
+                        <span class="addText">added today</span>
+                        <span class="total">2,445,567 total</span>
+                    </div>
+
+                </div>
+
+                <div class="pulse-box inactive">
+                    <div class="pulse-panel-title">Landing Pages</div>
+                    <div class="pulse-panel-content">
+                        <span class="count">397</span>
+                        <span class="addText">added today</span>
+                        <span class="total">2,445,567 total</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="popover" ng-show="isShown">
+        <span ng-click="hidePopover()" class="glyphicon glyphicon-remove"></span>
+        <div ng-repeat="data in data track by $index">
+            <div>
+                <span>title</span>
+                <span>{{data.title}}</span>
+            </div>
+            <div>
+                <span>URL</span>
+                <span>{{data.URL}}</span>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<script src="home.js" type="text/javascript"></script>
+</body>
+</html>
