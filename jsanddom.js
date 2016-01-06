@@ -237,6 +237,47 @@
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
 
+     (function addLinkBoxes(){
+        var boxMax = 5,
+            linkMax = 2,
+            count = 0,
+            div = document.getElementById("foobar");
+
+       for(var i = 0; i < boxMax; i++){
+        var box = document.createElement("input");
+        box.setAttribute("type","checkbox");
+        box.setAttribute("class","mycheckbox");
+        div.appendChild(box);
+       }
+
+       for(var i = 0; i < linkMax; i++){
+        var link = document.createElement("a");
+        link.setAttribute("href","#");
+        link.setAttribute("class","links");
+        link.innerHTML = "link" + " " + (count += 1);
+        div.appendChild(link);
+       }
+
+       var link1 = document.getElementsByClassName("links")[0];
+
+       var link2 = document.getElementsByClassName("links")[1];
+
+       var checkClass = document.getElementsByClassName("mycheckbox");
+
+       link1.addEventListener("click", function(){
+        for(var i = 0; i < checkClass.length; i++){
+            checkClass[i].checked = true;
+        }
+       });
+
+       link2.addEventListener("click", function(){
+        for(var i = 0; i < checkClass.length; i++){
+            checkClass[i].checked = false;
+        }
+       });
+
+     })();
+
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
