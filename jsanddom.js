@@ -184,10 +184,14 @@
         var columns = [];
         var rows = [];
         this.addRows = function(){
-            rows.push(ritem);
+            for(var i = 0; i < arguments.length; i++){
+                rows.push(arguments[i]);
+            }
         }
         this.addColumns = function(){
-            columns.push(ritem);
+            for(var i = 0; i < arguments.length; i++){
+                columns.push(arguments[i]);
+            }
         }
         this.getData = function(){
             var dataTable = DataTable;
