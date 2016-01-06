@@ -15,7 +15,7 @@ ul li{
 	color: white;
 }
 ul.nav{
-	background-color: #eee;
+	background-color: #F4F4F5;
 }
 ul.nav a{
 	color: #454545;
@@ -27,13 +27,18 @@ ul.nav a{
 .int-hub a{
 	color: white !important;
 }
-
+.title li{
+    float: left;
+}
+.icons li{
+    float: right;
+}
 .nav > li > a:hover{
 	background-color: #3E3E3E;
 	color: white;
 }
 .nav > li > a:active{
-	background-color: orange;
+	background-color: #FDAF4B;
     color: white;
 }
 }
@@ -46,17 +51,27 @@ ul.nav a{
     height: 150px;
     width: 98%;
 }
+.cal-container{
+    background-color: #F5F5F5;
+    height: 150px;
+}
 .pulse{
-    background-color: #afc4c7;
-    border-radius: 10px;
+    background: #BBC8D2; 
+    background: -webkit-linear-gradient(#BBC8D2, #E3EDF5); /
+    background: -o-linear-gradient(#BBC8D2, #E3EDF5); 
+    background: -moz-linear-gradient(#BBC8D2, #E3EDF5); 
+    background: linear-gradient(#BBC8D2, #E3EDF5); 
+    border-radius: 20px;
     height: 385px;
     margin-top: 45px;
-    width: 100%;
-    
 }
 
 .pulse-square{
-    background-color: #d7e7ea;
+    background-color: #F2F5F7;
+    background: -webkit-linear-gradient(#F2F5F7, #DFE9F1); /
+    background: -o-linear-gradient(#F2F5F7, #DFE9F1); 
+    background: -moz-linear-gradient(#F2F5F7, #DFE9F1); 
+    background: linear-gradient(#F2F5F7, #DFE9F1); 
     border-radius: 10px;
     color: #4c8d96;
     height: 165px;
