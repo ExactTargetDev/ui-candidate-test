@@ -19,7 +19,6 @@ ul.nav{
 }
 ul.nav a{
 	color: #454545;
-	font-weight: bold;
 	padding: 15px 75px;
 }
 .int-hub{
@@ -92,6 +91,7 @@ ul.nav a{
 }
 .navbar-header .navbar-brand{
 	color: #ffffff !important;
+    margin-left: 25px;
 }
 .box-row{
 	bottom: 10%;
