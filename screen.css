@@ -57,13 +57,15 @@ body {
 }
 
 .leftmenu .colleft {
-	right:75%;			/* right column width */
+	right:75%;	/* right column width */
+	top: 80px;			
 }
 .leftmenu .col1 {
-	width:71%;			/* right column content width */
-	left:102%;			/* 100% plus left column left padding */
+	width: 79%;			/* right column content width */
+	left: 95%;	/* 100% plus left column left padding */
+	top: -30px;		
 }
 .leftmenu .col2 {
-	width:21%;			/* left column content width (column width minus left and right padding) */
-	left:6%;			/* (right column left and right padding) plus (left column left padding) */
+	width: 15%;			/* left column content width (column width minus left and right padding) */
+	left: -2%;			/* (right column left and right padding) plus (left column left padding) */
 }
