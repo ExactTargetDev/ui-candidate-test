@@ -296,7 +296,7 @@
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
-/*
+
      $(".link")
      $("#fizz .link")
      $("#fizz a")
@@ -305,4 +305,3 @@
      $("#foo #fizz .link")
      $(".bar .buzz .link")
      $("#foo .buzz .link")
-*/
