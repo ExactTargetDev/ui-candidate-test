@@ -68,11 +68,21 @@ ul.nav a{
 }
 .globe{
     background: url(images/globe.jpg) no-repeat center center !important;
+    height: 70%;
+    width: 90%;
+    position: relative;
+    left: 10px;
+    bottom: 44%;
 }
 .pulse-boxes li{
     float: left;
 }
-
+.hub{
+    top: 20px;
+}
+.partner{
+    bottom: 10px;
+}
 .pulse-square{
     background-color: #F2F5F7;
     background: -webkit-linear-gradient(#F2F5F7, #DFE9F1); /
