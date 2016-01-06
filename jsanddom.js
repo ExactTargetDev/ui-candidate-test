@@ -20,9 +20,10 @@
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
          // FILL THIS IN
-         var arrayRemoval = values.filter(function(dup,pos){
-            return values.indexOf(dup) == pos;
-        });
+         var newArray = values.filter(function(elem, pos) {
+            return values.indexOf(elem) === pos;
+        }); 
+            return newArray;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -295,7 +296,7 @@
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
-
+/*
      $(".link")
      $("#fizz .link")
      $("#fizz a")
@@ -304,3 +305,4 @@
      $("#foo #fizz .link")
      $(".bar .buzz .link")
      $("#foo .buzz .link")
+*/
