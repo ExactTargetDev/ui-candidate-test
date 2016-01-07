@@ -1,0 +1,71 @@
+body {
+	margin:0;
+	padding:0;
+	border:0;			/* This removes the border around the viewport in old versions of IE */
+	width:100%;
+	min-width:600px;    	/* Minimum width of layout - remove line if not required */
+}
+#ads img {
+	display:block;
+	padding-top:10px;
+}
+
+/* Header styles */
+#header {
+	clear:both;
+	float:left;
+	width:100%;
+}
+#header p,
+#header h1,
+#header h2 {
+	padding:.4em 15px 0 15px;
+	margin:0;
+}
+/* 'widths' sub menu */
+#layoutdims {
+	clear:both;
+	background:#eee;
+	border-top:4px solid #000;
+	margin:0;
+	padding:6px 15px !important;
+	text-align:right;
+}
+/* column container */
+.colmask {
+	position:relative;	/* This fixes the IE7 overflow hidden bug */
+	clear:both;
+	float:left;
+	width:100%;			/* width of whole page */
+	overflow:hidden;		/* This chops off any overhanging divs */
+}
+/* common column settings */
+.colright,
+.colmid,
+.colleft {
+	float:left;
+	width:100%;
+	position:relative;
+}
+.col1,
+.col2,
+.col3 {
+	float:left;
+	position:relative;
+	padding:0 0 1em 0;
+	overflow:hidden;
+}
+
+.leftmenu .colleft {
+	right:75%;	/* right column width */
+	top: 80px;			
+}
+.leftmenu .col1 {
+	width: 79%;			/* right column content width */
+	left: 95%;	/* 100% plus left column left padding */
+	top: -30px;		
+}
+.leftmenu .col2 {
+	width: 15%;			/* left column content width (column width minus left and right padding) */
+	left: -2%;			/* (right column left and right padding) plus (left column left padding) */
+}
