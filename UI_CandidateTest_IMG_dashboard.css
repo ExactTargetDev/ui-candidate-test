@@ -9,7 +9,7 @@ ul li{
 	background-color: #2E2E2E;
 }
 .navbar-header.navbar-brand{
-	color: white;
+	color: #ffffff;
 }
 ul.nav{
 	background-color: #F4F4F5;
@@ -18,11 +18,14 @@ ul.nav a{
 	color: #454545;
 	padding: 15px 75px;
 }
+.nav li a:active{
+    background-color: #FA9F2B;
+}
 .int-hub{
-	background-color: orange;
+	background-color: #FA9F2B;
 }
 .int-hub a{
-	color: white !important;
+	color: #ffffff !important;
 }
 .title li{
     float: left;
