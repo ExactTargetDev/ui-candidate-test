@@ -317,6 +317,10 @@ section.pulse footer.pagination ul li {
     margin: 3px;
 }
 
+.x-hidden{
+    display: none;
+}
+
 @media (max-width: 1170px){
     section.scroll-calender {
         margin-top: 10px;
