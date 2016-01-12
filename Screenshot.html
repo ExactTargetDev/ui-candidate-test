@@ -20,7 +20,7 @@
         <ul>
             <li>Welcome John!</li>
             <li><a href="#">Account</a></li>
-            <li><a id="helpJSON" href="javascript:;">Help</a></li>
+            <li><a id="helpJSON" href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Help</a></li>
             <li><a href="#">Logout</a></li>
         </ul>
     </header>
@@ -87,107 +87,130 @@
         </aside>
 
         <div>
-        <section class="scroll-calender">
+            <section class="scroll-calender">
 
-        </section>
+            </section>
 
-        <section class="pulse">
-            <header class="clearfix">
-                <div class="pulse-beat">
-                    <span> Pulse </span>
+            <section class="pulse">
+                <header class="clearfix">
+                    <div class="pulse-beat">
+                        <span> Pulse </span>
+                    </div>
+
+                    <ul class="config">
+                        <li>
+                            <a href="#"><i class="fa fa-cog"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-list-alt"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-th"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-times"></i></a>
+                        </li>
+                    </ul>
+                </header>
+                <div class="content">
+                    <ul>
+                        <li>
+                            <header class="li-head"> Followers </header>
+                            <div class="detail-pane">
+                                <div class="today">
+                                    <span class="number">310</span>
+                                    <span class="string">added today</span>
+                                    <p class="displayOnExpand x-hidden">
+                                        Expand Section
+                                    </p>
+                                </div>
+                                <div class="footNote">2,393,905 total</div>
+                            </div>
+                        </li>
+                        <li>
+                            <header class="li-head"> Fan </header>
+                            <div class="detail-pane">
+                                <div class="today">
+                                    <span class="number">73</span>
+                                    <span class="string">added today</span>
+                                    <p class="displayOnExpand x-hidden">
+                                        Expand Section
+                                    </p>
+                                </div>
+                                <div class="footNote">91,675 total</div>
+                            </div>
+                        </li>
+                        <li>
+                            <header class="li-head"> Subscribers </header>
+                            <div class="detail-pane">
+                                <div class="today">
+                                    <span class="number">56</span>
+                                    <span class="string">added today</span>
+                                    <p class="displayOnExpand x-hidden">
+                                        Expand Section
+                                    </p>
+                                </div>
+                                <div class="footNote">189,405 total</div>
+                            </div>
+                        </li>
+                        <li class="expand">
+                            <header class="li-head"> foursquare </header>
+                            <div class="detail-pane">
+                                <div class="today">
+                                    <span class="number">3,905</span>
+                                    <span class="string">Worldwide Checkins</span>
+                                    <p class="displayOnExpand">
+                                        Expand Section
+                                    </p>
+                                </div>
+                                <div class="footNote">123,456,789 total</div>
+                            </div>
+                        </li>
+                        <li>
+                            <header class="li-head"> Landing Pages </header>
+                            <div class="detail-pane">
+                                <div class="today">
+                                    <span class="number">397/355</span>
+                                    <span class="string">Vistors Today</span>
+                                    <p class="displayOnExpand x-hidden">
+                                        Expand Section
+                                    </p>
+                                </div>
+                                <div class="footNote"> Souljia Boy V.I.P.</div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
-                <ul class="config">
-                    <li>
-                        <a href="#"><i class="fa fa-cog"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-list-alt"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-th"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-times"></i></a>
-                    </li>
-                </ul>
-            </header>
-            <div class="content">
-                <ul>
-                    <li>
-                        <header class="li-head"> Followers </header>
-                        <div class="detail-pane">
-                            <div class="today">
-                                <span class="number">310</span>
-                                <span class="string">added today</span>
-                            </div>
-                            <div class="footNote">2,393,905 total</div>
-                        </div>
-                    </li>
-                    <li>
-                        <header class="li-head"> Fan </header>
-                        <div class="detail-pane">
-                            <div class="today">
-                                <span class="number">73</span>
-                                <span class="string">added today</span>
-                            </div>
-                            <div class="footNote">91,675 total</div>
-                        </div>
-                    </li>
-                    <li>
-                        <header class="li-head"> Subscribers </header>
-                        <div class="detail-pane">
-                            <div class="today">
-                                <span class="number">56</span>
-                                <span class="string">added today</span>
-                            </div>
-                            <div class="footNote">189,405 total</div>
-                        </div>
-                    </li>
-                    <li class="expand">
-                        <header class="li-head"> foursquare </header>
-                        <div class="detail-pane">
-                            <div class="today">
-                                <span class="number">3,905</span>
-                                <span class="string">Worldwide Checkings</span>
-                            </div>
-                            <div class="footNote">123,456,789 total</div>
-                        </div>
-                    </li>
-<!--
-
-
-
-
- -->
-                    <li>
-                        <header class="li-head"> Landing Pages </header>
-                        <div class="detail-pane">
-                            <div class="today">
-                                <span class="number">397/355</span>
-                                <span class="string">Vistors Today</span>
-                            </div>
-                            <div class="footNote"> Souljia Boy V.I.P.</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <footer class="pagination">
-                <ul class="noBorder">
-                    <li><i class="fa fa-square"></i></li>
-                    <li><i class="fa fa-square"></i></li>
-                </ul>
-                <ul class="withBorder">
-                    <li><i class="fa fa-square"></i></li>
-                    <li><i class="fa fa-square"></i></li>
-                    <li><i class="fa fa-square"></i></li>
-                    <li><i class="fa fa-square"></i></li>
-                    <li><i class="fa fa-square"></i></li>
-                </ul>
-            </footer>
-        </section>
+                <footer class="pagination">
+                    <ul class="noBorder">
+                        <li><i class="fa fa-square"></i></li>
+                        <li><i class="fa fa-square"></i></li>
+                    </ul>
+                    <ul class="withBorder">
+                        <li><i class="fa fa-square"></i></li>
+                        <li><i class="fa fa-square"></i></li>
+                        <li><i class="fa fa-square"></i></li>
+                        <li><i class="fa fa-square"></i></li>
+                        <li><i class="fa fa-square"></i></li>
+                    </ul>
+                </footer>
+            </section>
     </section>
+    </div>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Help Modal</h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -196,4 +219,5 @@
     <script src="main.js"></script>
 
 </body>
+
 </html>

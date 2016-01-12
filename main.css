@@ -95,7 +95,7 @@ header.navbar ul li a {
 
 .container {
     padding-top: 100px;
-    /*70px*/
+    width: 97%;
 }
 
 .clearfix:after {
@@ -219,11 +219,19 @@ section.pulse .content{
     text-align: center;
     color: #50a5cc;
     margin: 10px 0;
+    overflow-x:scroll;
+    white-space: nowrap;
 }
 
+section.pulse .content ul {
+    display: table;
+}
 section.pulse .content ul li {
-    display: inline-block;
-    margin: 10px;
+    /*display: inline-block;*/
+    display:table-cell;
+    vertical-align: middle;
+    padding: 15px;
+
 }
 
 section.pulse .content header {
@@ -249,9 +257,25 @@ section.pulse .content .detail-pane .footNote {
     height: 20px;
 }
 
-section.pulse .content .detail-pane .expand{
-    max-width: 200px;
-    max-height: 200px;
+section.pulse .content li.expand .detail-pane {
+    min-width: 300px;
+    min-height: 170px;
+}
+
+section.pulse .content li.expand .detail-pane .footNote{
+    display: none;
+}
+
+section.pulse .content li.expand .detail-pane span {
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+}
+section.pulse .content li.expand .detail-pane span.number {
+    float: right;
+}
+section.pulse .content li.expand .detail-pane span {
+    float: left;
 }
 
 section.pulse .content .detail-pane span {
@@ -263,6 +287,17 @@ section.pulse .content .detail-pane span.number {
 }
 section.pulse .content .detail-pane span.string {
     font-size: 16px;
+}
+
+section.pulse .content li.expand .detail-pane .displayOnExpand {
+    position: absolute;
+    bottom: 10px;
+    border: 1px solid #ccc;
+    height: 60%;
+    width: 90%;
+    border-radius: 6px;
+    background: rgb(236,241,245);
+    box-shadow: 0px 0px 2px #ccc;
 }
 
 section.pulse footer.pagination {
@@ -280,4 +315,10 @@ section.pulse footer.pagination ul.withBorder {
 section.pulse footer.pagination ul li {
     display: inline;
     margin: 3px;
+}
+
+@media (max-width: 1170px){
+    section.scroll-calender {
+        margin-top: 10px;
+    }
 }
