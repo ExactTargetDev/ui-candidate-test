@@ -4,10 +4,6 @@
   <meta charset="utf-8" />
   <title>JS &amp; DOM - Unit Test Runner</title>
   <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-git.css" type="text/css">
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <script src="http://code.jquery.com/qunit/qunit-git.js"></script>
-  <script src="../jsanddom.js"></script>
-  <script src="jsanddom-test.js"></script>
 </head>
 <body>
   <h1 id="qunit-header">ExactTarget Candidate Unit Test Runner</h1>
@@ -16,5 +12,37 @@
   <h2 id="qunit-userAgent"></h2>
   <ol id="qunit-tests"></ol>
   <div id="qunit-fixture"></div>
+
+  <!-- DOM Elements -->
+
+  <div id="div1">
+  </div>
+
+  <div id="foo" class="bar" style="margin-top:10px;">
+    <div id="fizz" class="buzz">
+      <a class="link" href="#">sample anchor</a>
+    </div>
+  </div>
+
+  <div id="baz" style="margin-top:10px;">
+    <ul id="list1"></ul>
+  </div>
+
+  <div id="foobar" style="margin-top:10px;">
+  </div>
+
+  <!-- Dependecies and Custom JS module -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+  <!-- Qunit Module -->
+  <script src="http://code.jquery.com/qunit/qunit-git.js"></script>
+  <script src="jsanddom-test.js"></script>
+
+  <!-- code coverage module -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blanket.js/1.1.4/blanket.min.js"></script>
+
+  <script src="../jsanddom.js" data-cover></script>
+
+
 </body>
 </html>

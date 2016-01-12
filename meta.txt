@@ -1,0 +1,9 @@
+Start Time: Fri Jan 8 11:44:31 EST 2016
+Actual start time: Sun Jan 10 9:32:12 EST 2016
+
+TotalTime: 0830 - 0900 hours or so
+
+Browser Testing:
+Safari v9.0.2
+Chrome v47.0.2526.106
+Firefox v43.0.3
