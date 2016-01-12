@@ -35,9 +35,9 @@ function reverseString(str) {
     return reversedString;
 }
 // Test case(s)
-log('reverseString');
-log(reverseString(' test  '));
-log(reverseString(12345));
+// log('reverseString');
+// log(reverseString(' test  '));
+// log(reverseString(12345));
 
 // Write a function that takes an array of numbers and returns the minimum value
 function findMinValue(values) {
@@ -64,8 +64,8 @@ function findDistinctValues(values) {
     return uniqueValues;
 }
 // Test case(s)
-log('findDistinctValues');
-log(findDistinctValues([1, 4, 5, 90, -1, -11.92, -11.92, 90, 11.92, 1, 4, 472]));
+// log('findDistinctValues');
+// log(findDistinctValues([1, 4, 5, 90, -1, -11.92, -11.92, 90, 11.92, 1, 4, 472]));
 
 // Write a function that logs the numbers from 1 to 100 to the
 // For multiples of three print "Fizz" instead of the number.
@@ -101,9 +101,9 @@ function doFizzBuzz(from, to) {
     return returnString;
 }
 // Test case(s)
-log('doFizzBuzz');
-log(doFizzBuzz(0, 100));
-log(doFizzBuzz(4, 16));
+// log('doFizzBuzz');
+// log(doFizzBuzz(0, 100));
+// log(doFizzBuzz(4, 16));
 
 // You have a master array of strings, where each element is a fruit name.
 // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
@@ -126,11 +126,11 @@ function removeFruits(fruits, fruitsToRemove) {
     return fruits;
 }
 // Test case(s)
-log('removeFruits');
-log(removeFruits(['apple', 'banana', 'orange'], 'banana'));
-log(removeFruits(['apple', 'banana', 'orange'], ['banana']));
-log(removeFruits(['apple', 'banana', 'orange'], ['apple', 'orange']));
-log(removeFruits(['apple', 'banana', 'orange'], ['kiwi']));
+// log('removeFruits');
+// log(removeFruits(['apple', 'banana', 'orange'], 'banana'));
+// log(removeFruits(['apple', 'banana', 'orange'], ['banana']));
+// log(removeFruits(['apple', 'banana', 'orange'], ['apple', 'orange']));
+// log(removeFruits(['apple', 'banana', 'orange'], ['kiwi']));
 
 // Write a function to push either a simple value or an array of values onto a specified array.
 // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
@@ -144,9 +144,9 @@ function pushOntoArray(array, toPush) {
 
 }
 // Test case(s)
-log('pushOntoArray');
-log(pushOntoArray(['apple', 'banana', 'orange'], 'kiwi'));
-log(pushOntoArray(['apple', 'banana', 'orange'], ['kiwi', 'strawberry']));
+// log('pushOntoArray');
+// log(pushOntoArray(['apple', 'banana', 'orange'], 'kiwi'));
+// log(pushOntoArray(['apple', 'banana', 'orange'], ['kiwi', 'strawberry']));
 
 // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
 function splitListStrUsingComma(sourceStr) {
@@ -156,9 +156,9 @@ function splitListStrUsingComma(sourceStr) {
 
 }
 // Test case(s)
-log('splitListStrUsingComma');
-log(splitListStrUsingComma('this is a test string!'));
-log(splitListStrUsingComma('this is a test string!, with fruits, apple, banana, orange'));
+// log('splitListStrUsingComma');
+// log(splitListStrUsingComma('this is a test string!'));
+// log(splitListStrUsingComma('this is a test string!, with fruits, apple, banana, orange'));
 
 // Write a function that will take any number of arguments and return their sum
 function sum() {
@@ -172,12 +172,12 @@ function sum() {
     return aggregate;
 }
 // Test case(s)
-log('sum');
-log(sum(1, 2, 3, 4, 5, 6));
-log(sum(12, -1, 20, -3));
-log(sum(12, -1.1, 0.20, -3));
-log(sum(-10, -20.29, -30.22));
-log(sum(10, 20, 30.76));
+// log('sum');
+// log(sum(1, 2, 3, 4, 5, 6));
+// log(sum(12, -1, 20, -3));
+// log(sum(12, -1.1, 0.20, -3));
+// log(sum(-10, -20.29, -30.22));
+// log(sum(10, 20, 30.76));
 
 
 // Write a function that will return true if a specified string consists of only whitespace.
@@ -190,10 +190,10 @@ function isOnlyWhitespace(sourceStr) {
     }
 }
 // Test case(s)
-log('isOnlyWhitespace');
-log(isOnlyWhitespace('    '));
-log(isOnlyWhitespace(''));
-log(isOnlyWhitespace('  x  '));
+// log('isOnlyWhitespace');
+// log(isOnlyWhitespace('    '));
+// log(isOnlyWhitespace(''));
+// log(isOnlyWhitespace('  x  '));
 
 // write an example of a javascript closure
 // Closure example - constructor style
@@ -275,7 +275,7 @@ var peopleJSON = function() {
     return people;
 };
 // Test case(s)
-log('peopleJSON', JSON.stringify(peopleJSON(), null, '\t'));
+// log('peopleJSON', JSON.stringify(peopleJSON(), null, '\t'));
 
 // Create a javascript object (DataTable) with the following:
 // A private columns property (string array)
@@ -302,12 +302,7 @@ function DataTable(nRows, nColumns) {
         rows = [],
         columns = [],
         _nRows = nRows || defaultSize,
-        _nColumns = nColumns || defaultSize,
-
-        printHeaderColumns,
-        printDataRows,
-        printDataTable;
-
+        _nColumns = nColumns || defaultSize;
 
     this.getColumnsLength = function() {
         return _nColumns;
@@ -375,6 +370,7 @@ DataTable.prototype.addRow = function() {
 // var sampleTable = new DataTable(3); // 3x3
 // var sampleTable = new DataTable(2); // 2x2
 var sampleTable = new DataTable(3, 2); // 3x2
+sampleTable.addColumns('column1', 'column2', 'column3');
 sampleTable.addColumns('column1', 'column2', 'column3', 'column4');
 sampleTable.addRow('value1A', 'value1B', 'value1C', 'value1D');
 sampleTable.addRow('value2A', 'value2B', 'value2C', 'value2D');
@@ -444,9 +440,9 @@ var selectElements = (function() {
 
 }());
 // Test case(s)
-setTimeout(function() {
-    selectElements('Item5');
-}, 3000);
+// setTimeout(function() {
+//     selectElements('Item5');
+// }, 3000);
 
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
@@ -462,12 +458,12 @@ var retrieveAnchorText = (function() {
 
 }());
 // Test case(s)
-log('retrieveAnchorText');
-log(retrieveAnchorText[0]);
-log(retrieveAnchorText[1]);
-log(retrieveAnchorText[2]);
-log(retrieveAnchorText[3]);
-log(retrieveAnchorText[4]);
+// log('retrieveAnchorText');
+// log(retrieveAnchorText[0]);
+// log(retrieveAnchorText[1]);
+// log(retrieveAnchorText[2]);
+// log(retrieveAnchorText[3]);
+// log(retrieveAnchorText[4]);
 
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
@@ -490,9 +486,9 @@ listItems();
 
 // Test case(s)
 // To check number of items as 5;
-setTimeout(function() {
-    log(document.getElementById("list1").children.length);
-}, 5000);
+// setTimeout(function() {
+//     log(document.getElementById("list1").children.length);
+// }, 5000);
 
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
@@ -586,13 +582,13 @@ var checkBoxToggle = (function(checkBoxCount) {
 
 // Test case(s)
 // Test to check all in 5 secs
-setTimeout(function() {
-    log('Checking All in 5 secs of loading');
-    checkBoxToggle.check();
-}, 5000);
+// setTimeout(function() {
+//      log('Checking All in 5 secs of loading');
+//      checkBoxToggle.check();
+// }, 5000);
 
 // Test to uncheck all in 10 secs
-setTimeout(function() {
-    log('UN Checking All in 10 secs loading');
-    checkBoxToggle.uncheck();
-}, 10000);
+// setTimeout(function() {
+//     log('UN Checking All in 10 secs loading');
+//     checkBoxToggle.uncheck();
+// }, 10000);

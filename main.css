@@ -1,0 +1,283 @@
+* {
+    font-weight: 200;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+    display:inline-block;
+}
+
+html {
+    box-sizing: border-box;
+    overflow-y:scroll;
+}
+
+section{
+    margin: 0 10px 10px 10px;
+}
+
+section.scroll-calender {
+    margin-top: -60px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+header.navbar {
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+header.navbar div.navbar-header {
+    font-size: 21px;
+}
+
+section.container > aside,
+section.container > div {
+    float:left;
+}
+
+section.pulse ul.config,
+header.navbar ul {
+    float: right;
+}
+
+section.pulse ul.config li,
+header.navbar ul li {
+    display: inline-block;
+}
+
+header.navbar ul li {
+    margin: 5px 0px 5px 0px;
+    padding: 0 15px 0 15px;
+    border-right: 1px solid grey;
+}
+
+header.navbar ul li:last-child,
+header.navbar ul li:first-child {
+    border-right: none;
+}
+
+header.navbar ul li a {
+    color: #95cbec;
+}
+
+.border,
+.border-outline {
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 3px;
+    color: white;
+    background: #888;
+    margin: 2px;
+}
+
+.border-outline {
+    height: 16px;
+    width: 16px;
+    line-height: 14px;
+    background: #eee;
+    color: #888;
+    border: 1px solid #888;
+}
+
+.container {
+    padding-top: 100px;
+    /*70px*/
+}
+
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.container aside {
+    border-radius: 8px;
+    background-color: #eee;
+    box-shadow: 1px 1px 1px #888;
+    max-width: 215px;
+}
+
+.container aside .sideHeader {
+    color: #fff;
+    background-color: orange;
+    border-radius: 8px 8px 0 0;
+    /* For mocking the radius behind */
+}
+
+.container aside .sideHeader .hub-icon,
+.container aside .sideHeader span {
+    padding: 5px;
+    font-weight: 500;
+    font-size: 18px;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+.container aside .sideHeader span {
+    width: 179px;
+}
+
+.container aside .sideHeader .hub-icon {
+    vertical-align: super;
+    margin-right: -5px;
+    margin-left: 5px;
+}
+
+.container aside ul {
+    border-bottom: 1px solid #ccc;
+}
+
+.container aside ul:last-child {
+    border-bottom: none;
+}
+
+.container aside ul li {
+    padding: 6px;
+}
+
+.container aside ul a {
+    text-decoration: none;
+    color: #888;
+    display: inline-block;
+    width: 100%;
+}
+
+.container aside li.active,
+.container aside li:hover {
+    background-color: orange;
+    border: 2px solid #fff;
+}
+
+.container aside ul:last-child li.active,
+.container aside ul:last-child li:hover{
+    border-radius: 0 0 8px 8px;
+}
+
+.container aside li.active a,
+.container aside li:hover a {
+    color: #fff;
+}
+
+.container .pulse {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #d2e1e8;
+}
+
+.container .pulse-beat {
+    color: white;
+    float: left;
+    background: url(heartbeat.svg) no-repeat;
+    background-size: 260px 86px;
+    height: 86px;
+    width: 260px;
+    margin-top: 10px;
+    fill: currentColor;
+}
+
+.container .pulse .pulse-beat span {
+    margin-left: 60px;
+    display: block;
+    font-size: 25px;
+
+}
+
+.container .pulse .heart-beat {
+    position: absolute;
+}
+
+section.scroll-calender {
+    height: 160px;
+    width: auto;
+    border-radius: 8px;
+    background-color: #eee;
+    border:1px solid #ccc;
+}
+
+section.pulse ul.config li {
+    margin: 5px;
+}
+
+section.pulse .content{
+    text-align: center;
+    color: #50a5cc;
+    margin: 10px 0;
+}
+
+section.pulse .content ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+section.pulse .content header {
+    margin-bottom: 5px;
+}
+
+section.pulse .content .detail-pane {
+    border: 1px solid #ccc;
+    background: linear-gradient(180deg, rgb(236,241,245), rgb(210,225,232));
+    box-shadow: 0 8px 6px -6px #888;
+    border-radius: 4px;
+    min-height: 120px;
+    min-width: 150px;
+    font-size: 14px;
+    padding: 15px;
+    position: relative;
+}
+section.pulse .content .detail-pane .footNote {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
+section.pulse .content .detail-pane .expand{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+section.pulse .content .detail-pane span {
+    display: block;
+}
+section.pulse .content .detail-pane span.number {
+    font-size: 24px;
+    color: #00D5F7;
+}
+section.pulse .content .detail-pane span.string {
+    font-size: 16px;
+}
+
+section.pulse footer.pagination {
+    display: table;
+    margin:10px auto;
+}
+section.pulse footer ul {
+    display: inline;
+}
+section.pulse footer.pagination ul.withBorder {
+    border: 1px solid #888;
+    min-width: 25px;
+}
+
+section.pulse footer.pagination ul li {
+    display: inline;
+    margin: 3px;
+}
