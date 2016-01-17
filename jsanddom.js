@@ -176,6 +176,29 @@ function meet(greeting){
 // .addColumns('column1', 'column2', 'column3');
 // .addRow('value1A', 'value1B', 'value1C');
 // .addRow('value2A', 'value2B', 'value2C');
+function DataTable(){
+  this.rows = [];
+  this.columns = [];
+  this.addRows = function(){
+    for(var i = 0; i < arguments.length; i++){
+      this.rows.push(arguments[i]);
+    };
+  };
+  this.addColumns = function(){
+    for(var i = 0; i < arguments.length; i++){
+      this.columns.push(arguments[i]);
+    };
+  };
+  this.getData = function(elId){
+    if(elId !== null){
+      var elementId = document.getElementById(elId);
+      elementId.innerText = JSON.stringify(this);
+    } else {
+      console.log(JSON.stringify(this));
+    }
+  }
+}
+DataTable.getData();
 
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
