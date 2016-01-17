@@ -32,10 +32,22 @@ test( "findDistinctValues Test", function() {
     ok( findDistinctValues([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), 'Expected 3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity as the result, the result was: ' + findDistinctValues([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]) );
 });
 
+
 // the fizz buzz test only prints to the console, as instructed in the text of the test. therefore there is not way to programmatically set assertions against this
+
 
 module( "removeFruits Unit Test" );
 test( "removeFruits Test", function() {
     equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
     ok( removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), 'Expected apple,orange,kiwi,plum,strawberry as the result, the result was: ' + removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']) );
 });
+
+
+module( "pushOntoArray Unit Test" );
+test( "pushOntoArray Test", function() {
+    equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' );
+    ok( pushOntoArray([1, 2, 3, 4, 5], 6), 'Expected 1,2,3,4,5,6 as the result, the result was: ' + pushOntoArray([1, 2, 3, 4, 5], 6) );
+    ok( pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]), 'Expected 1,2,3,4,5,7,8,9 as the result, the result was: ' + pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]) );
+});
+
+
