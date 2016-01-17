@@ -31,3 +31,5 @@ test( "findDistinctValues Test", function() {
     equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
     ok( findDistinctValues([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), 'Expected 3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity as the result, the result was: ' + findDistinctValues([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]) );
 });
+
+// the fizz buzz test only prints to the console, as instructed in the text of the test. therefore there is not way to programmatically set assertions against this
