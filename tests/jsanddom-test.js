@@ -66,3 +66,10 @@ test( "sum Test", function() {
     equal( typeof sum, 'function', 'Must contain a sum function' );
     ok( sum(1, 1, 2, 3, 5, 7), 'Expected 19 as the result, the result was: ' + sum(1, 1, 2, 3, 5, 7) );
 });
+
+
+module( "isOnlyWhitespace Unit Test" );
+test( "isOnlyWhitespace Test", function() {
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
+    ok( isOnlyWhitespace("      "), 'Expected true as the result, the result was: ' + isOnlyWhitespace("      ") );
+});
