@@ -19,3 +19,9 @@ test( "reverseString Test", function() {
     equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
     ok( reverseString("Subscribers rock"), "kcor srebircsbuS", 'Expected "kcor srebircsbuS" as the result, the result was: ' + reverseString("Subscribers rock") );
 });
+
+module( "findMinValue Unit Test" );
+test( "findMinValue Test", function() {
+    equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
+    ok( findMinValue([1, 10, 100]), 1, 'Expected 1 as the result, the result was: ' + findMinValue([1, 10, 100]) );
+});

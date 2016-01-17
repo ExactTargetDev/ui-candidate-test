@@ -17,9 +17,6 @@ function reverseString(str) {
 function findMinValue(values) {
   if(Object.prototype.toString.call(values) === "[object Array]"){
     return Math.min.apply(null, values);
-  } else {
-    console.log("Type of value passed in must be an array.");
-    return false;
   }
 }
 
