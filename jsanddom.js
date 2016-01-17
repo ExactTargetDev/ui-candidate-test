@@ -42,6 +42,7 @@ function doFizzBuzz() {
      console.log( (++i % 3 ? '' : 'Fizz') + (i % 5 ? '' : 'Buzz') || i);
    }
 }
+doFizzBuzz();
 
 // You have a master array of strings, where each element is a fruit name.
 // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
@@ -227,6 +228,7 @@ function addSelectEl(elId){
     return false;
   }
 }
+addSelectEl("div1");
 
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
@@ -253,25 +255,24 @@ function addFiveItemsToList(){
     list.appendChild(listItem);
   }
 }
+addFiveItemsToList();
 
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
 function addChecks(){
-  var el = document.getElementById("text"), i = 1, j = 0;
+  var el = document.getElementById("foobar"), i = 1, j = 0;
   while(i < 3){
     var link = document.createElement("a");
     if(i === 1){
       link.innerText = "check all";
       $(link).click(function(){
-        console.log("clicked link to check all");
         $(".checkbox").prop("checked", true);
       });
     } else {
       link.innerText = "uncheck all";
       $(link).click(function(){
-        console.log("clicked link to uncheck all");
         $(".checkbox").prop("checked", false);
       });
     }
@@ -288,3 +289,4 @@ function addChecks(){
     j++;
   }
 }
+addChecks();

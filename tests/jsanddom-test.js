@@ -82,3 +82,28 @@ test( "closure Test", function() {
     var endConvo = startConvo("I've forgotten how to speak most Spanish.");
     ok( endConvo, 'Expected "Como esta, what I\'d like to say is that I\'ve forgotten how to speak most Spanish" as the result, the result was: ' + endConvo );
 });
+
+
+// explanation for lack of unit test for created json object in the commit logs, but basically i didn't find a json validator in the qunit suite
+
+
+module( "dataTable Unit Test" );
+test( "dataTable Test", function() {
+    equal( typeof DataTable, 'function', 'Must contain a DataTable function' );
+    
+    var dt = new DataTable();
+    dt.addRows('value1A', 'value1B', 'value1C');
+    dt.addRows('value2A', 'value2B', 'value2C');
+    dt.addColumns('column1', 'column2', 'column3');
+
+    ok( dt.rows, 'Expected "value1A, value1B, value1C, value2A, value2B, value2C" as the result, the result was: ' + dt.rows );
+    ok( dt.columns, 'Expected "column1, column2, column3" as the result, the result was: ' + dt.columns );
+});
+
+
+
+
+
+
+
+
