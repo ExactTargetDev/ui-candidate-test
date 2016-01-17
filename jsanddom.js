@@ -25,7 +25,15 @@ function findMinValue(values) {
 
 // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
 function findDistinctValues(values) {
-   // FILL THIS IN
+  if(Object.prototype.toString.call(values) === "[object Array]"){
+    var unique = values.filter(function(elem, pos) {
+      return values.indexOf(elem) == pos;
+    });
+    return unique;
+  } else {
+    console.log("Type of value passed in must be an array.");
+    return false;
+  }
 }
 
 // Write a function that logs the numbers from 1 to 100 to the console.
