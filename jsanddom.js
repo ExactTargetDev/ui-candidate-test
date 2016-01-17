@@ -111,6 +111,11 @@ function isOnlyWhitespace(sourceStr) {
 }
 
 // write an example of a javascript closure
+function meet(greeting){
+  return function expressThought(thought){
+    return greeting + ", what I'd like to say is " + thought;
+  }
+}
 
 // define a json object that represents a collection of people.
 // each person should have the following properties
