@@ -145,7 +145,7 @@ var smithFamily = {
       "mobile": "991-573-8917"
     }
   },
-  "Person 2": {
+  "Person 3": {
     "firstName": "Joe Jr.",
     "lastName": "Smith",
     "city": "Atlanta",
@@ -157,7 +157,7 @@ var smithFamily = {
       "mobile": null
     }
   }
-}
+};
 
 
 // Create a javascript object (DataTable) with the following:
