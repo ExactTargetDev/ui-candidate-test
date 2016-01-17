@@ -17,7 +17,5 @@ Please create your tests below...
 module( "reverseString Unit Test" );
 test( "reverseString Test", function() {
     equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
-    var revString = reverseString("test");
-    // assert.equal( revString, "tset", "reverse of test is tset" );
-    ok( reverseString("test"), "tset", 'Expected "tset" as the result, the result was: ' + reverseString("test") );
+    ok( reverseString("Subscribers rock"), "kcor srebircsbuS", 'Expected "kcor srebircsbuS" as the result, the result was: ' + reverseString("Subscribers rock") );
 });
