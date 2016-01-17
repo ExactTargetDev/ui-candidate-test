@@ -87,7 +87,18 @@ function splitListStrUsingComma(sourceStr) {
 
 // Write a function that will take any number of arguments and return their sum
 function sum() {
-   // FILL THIS IN
+  var numsInArg = [], total = 0;
+  for(var i = 0; i < arguments.length; i++){
+    for(var j = 0; j < arguments[i].length; j++){
+      if(typeof arguments[i][j] === "number"){
+        numsInArg.push(arguments[i][j]);
+      }
+    }
+  }
+  for(var k = 0; k < numsInArg.length; k++){
+    total += numsInArg[k];
+  }
+  return total;
 }
 
 // Write a function that will return true if a specified string consists of only whitespace.
