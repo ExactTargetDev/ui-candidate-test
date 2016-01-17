@@ -42,7 +42,6 @@ function doFizzBuzz() {
      console.log( (++i % 3 ? '' : 'Fizz') + (i % 5 ? '' : 'Buzz') || i);
    }
 }
-doFizzBuzz();
 
 // You have a master array of strings, where each element is a fruit name.
 // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
@@ -228,7 +227,6 @@ function addSelectEl(elId){
     return false;
   }
 }
-addSelectEl("div1");
 
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
@@ -255,7 +253,6 @@ function addFiveItemsToList(){
     list.appendChild(listItem);
   }
 }
-addFiveItemsToList();
 
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
@@ -289,4 +286,3 @@ function addChecks(){
     j++;
   }
 }
-addChecks();

@@ -1,30 +1,16 @@
-/********************************
-Unit Test Example
-********************************/
-// module( "Example Unit Test" );
-// test( "Example Test", 2, function() {
-//     // Verify the method exists
-//     equal( typeof divide, 'function', 'Must contain a divide function' ); 
-
-//     // Make sure the result from the divide function is valid
-//     ok( divide( 4, 2 ), 2, 'Expected 2 as the result, the result was: ' + divide( 4, 2 ) );
-// });
-
-/********************************
-Please create your tests below...
-********************************/
-
 module( "reverseString Unit Test" );
 test( "reverseString Test", function() {
     equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
     ok( reverseString("Subscribers rock"), 'Expected kcor srebircsbuS as the result, the result was: ' + reverseString("Subscribers rock") );
 });
 
+
 module( "findMinValue Unit Test" );
 test( "findMinValue Test", function() {
     equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
     ok( findMinValue([1, 10, 100]), 'Expected 1 as the result, the result was: ' + findMinValue([1, 10, 100]) );
 });
+
 
 module( "findDistinctValues Unit Test" );
 test( "findDistinctValues Test", function() {
@@ -99,11 +85,3 @@ test( "dataTable Test", function() {
     ok( dt.rows, 'Expected "value1A, value1B, value1C, value2A, value2B, value2C" as the result, the result was: ' + dt.rows );
     ok( dt.columns, 'Expected "column1, column2, column3" as the result, the result was: ' + dt.columns );
 });
-
-
-
-
-
-
-
-
