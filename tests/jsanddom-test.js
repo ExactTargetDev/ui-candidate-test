@@ -61,3 +61,8 @@ test( "splitListStrUsingComma Test", function() {
 });
 
 
+module( "sum Unit Test" );
+test( "sum Test", function() {
+    equal( typeof sum, 'function', 'Must contain a sum function' );
+    ok( sum(1, 1, 2, 3, 5, 7), 'Expected 19 as the result, the result was: ' + sum(1, 1, 2, 3, 5, 7) );
+});

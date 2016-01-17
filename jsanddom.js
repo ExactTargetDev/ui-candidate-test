@@ -86,10 +86,8 @@ function splitListStrUsingComma(sourceStr) {
 function sum() {
   var numsInArg = [], total = 0;
   for(var i = 0; i < arguments.length; i++){
-    for(var j = 0; j < arguments[i].length; j++){
-      if(typeof arguments[i][j] === "number"){
-        numsInArg.push(arguments[i][j]);
-      }
+    if(typeof arguments[i] === "number"){
+      numsInArg.push(arguments[i]);
     }
   }
   for(var k = 0; k < numsInArg.length; k++){
