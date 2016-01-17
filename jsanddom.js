@@ -190,7 +190,7 @@ function DataTable(){
     };
   };
   this.getData = function(elId){
-    if(elId !== null){
+    if(elId !== undefined){
       var elementId = document.getElementById(elId);
       elementId.innerText = JSON.stringify(this);
     } else {
@@ -198,17 +198,66 @@ function DataTable(){
     }
   }
 }
-DataTable.getData();
 
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
+function addSelectEl(elId){
+  if(elId !== undefined){
+    var el = document.getElementById(elId);
+    var selectEl = document.createElement("select");
+    selectEl.id = "selectEl";
+    el.appendChild(selectEl);
+
+    // psuedo-polyfill for older browsers / IE
+    if (selectEl.addEventListener) {
+      selectEl.addEventListener("change", function(){
+        console.log(this.options[this.selectedIndex].value);
+      }, false);
+    }
+    else {
+      selectEl.attachEvent("onchange", function(){
+        console.log(this.options[this.selectedIndex].value);
+      });
+    }
+    
+    var selectOpts = [1, 2, 3, 4, 5];
+    for(var i = 0; i < selectOpts.length; i++){
+      var selectOpt = document.createElement("option");
+      selectOpt.value = selectOpts[i];
+      selectOpt.text = selectOpts[i];
+      selectEl.appendChild(selectOpt);
+    }
+  } else {
+    return false;
+  }
+}
 
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
+$("#foo a");
+$(".bar a");
+$("#foo.bar a");
+$("#foo .buzz a");
+$(".bar #fizz a");
+$("#fizz a");
+$(".buzz a");
+$("#fizz.buzz a");
+$("a.link");
+$("a[href='#']")
+$("a");
+
 
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
+function addFiveItemsToList(){
+  var list = document.getElementById("list1");
+  for(var i = 0; i < 6; i++){
+    var listItem = document.createElement("li");
+    listItem.innerText = parseInt(Math.random() * 100);
+    list.appendChild(listItem);
+  }
+}
 
 // Use javascript to add a list of checkboxes and 2 links
 // to the div with an id of "foobar"
