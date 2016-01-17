@@ -51,3 +51,13 @@ test( "pushOntoArray Test", function() {
 });
 
 
+module( "splitListStrUsingComma Unit Test" );
+test( "splitListStrUsingComma Test", function() {
+    equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
+    ok( splitListStrUsingComma('The, quick, brown, fox jumped over'), 'Expected 1 as the result, the result was: ' + splitListStrUsingComma('The, quick, brown, fox jumped over') );
+    deepEqual(splitListStrUsingComma('The, quick, brown, fox jumped over'), ["The", " quick", " brown", " fox jumped over"]);
+    ok( splitListStrUsingComma(''), 'Expected "" as the result, the result was: ' + splitListStrUsingComma('') );
+    deepEqual(splitListStrUsingComma(''), []);
+});
+
+
