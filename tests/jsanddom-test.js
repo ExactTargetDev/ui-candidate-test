@@ -9,6 +9,15 @@ test( "Example Test", 2, function() {
     // Make sure the result from the divide function is valid
     ok( divide( 4, 2 ), 2, 'Expected 2 as the result, the result was: ' + divide( 4, 2 ) );
 });
+
 /********************************
 Please create your tests below...
 ********************************/
+
+module( "reverseString Unit Test" );
+test( "reverseString Test", function() {
+    equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
+    var revString = reverseString("test");
+    // assert.equal( revString, "tset", "reverse of test is tset" );
+    ok( reverseString("test"), "tset", 'Expected "tset" as the result, the result was: ' + reverseString("test") );
+});
