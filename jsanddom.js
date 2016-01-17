@@ -125,6 +125,44 @@ function meet(greeting){
 // - state
 // - zip
 // - a collection of phone numbers (home, work, mobile)
+{
+  "Person 1": {
+    "firstName": "Joe",
+    "lastName": "Smith",
+    "city": "Atlanta",
+    "state": "Georgia",
+    "zip": 12537,
+    "contact": {
+      "home": "317-551-4418",
+      "work": "378-381-4821",
+      "mobile": "382-718-6731"
+    }
+  },
+  "Person 2": {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "city": "Atlanta",
+    "state": "Georgia",
+    "zip": 12537,
+    "contact": {
+      "home": "317-551-4418",
+      "work": "382-348-5787",
+      "mobile": "991-573-8917"
+    }
+  },
+  "Person 2": {
+    "firstName": "Joe Jr.",
+    "lastName": "Smith",
+    "city": "Atlanta",
+    "state": "Georgia",
+    "zip": 12537,
+    "contact": {
+      "home": "317-551-4418",
+      "work": null,
+      "mobile": null
+    }
+  }
+}
 
 
 // Create a javascript object (DataTable) with the following:
