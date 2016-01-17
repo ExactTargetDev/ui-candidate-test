@@ -41,7 +41,9 @@ function findDistinctValues(values) {
 // For multiples of five print "Buzz".
 // For numbers which are multiples of both three and five print "FizzBuzz".
 function doFizzBuzz() {
-   // FILL THIS IN
+   for(i = 0; i < 100;){
+     console.log( (++i % 3 ? '' : 'Fizz') + (i % 5 ? '' : 'Buzz') || i);
+   }
 }
 
 // You have a master array of strings, where each element is a fruit name.
