@@ -73,3 +73,12 @@ test( "isOnlyWhitespace Test", function() {
     equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
     ok( isOnlyWhitespace("      "), 'Expected true as the result, the result was: ' + isOnlyWhitespace("      ") );
 });
+
+
+module( "closure Unit Test" );
+test( "closure Test", function() {
+    equal( typeof meet, 'function', 'Must contain a meet function' );
+    var startConvo = meet("Como esta");
+    var endConvo = startConvo("I've forgotten how to speak most Spanish.");
+    ok( endConvo, 'Expected "Como esta, what I\'d like to say is that I\'ve forgotten how to speak most Spanish" as the result, the result was: ' + endConvo );
+});
