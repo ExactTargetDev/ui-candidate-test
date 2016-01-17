@@ -33,3 +33,9 @@ test( "findDistinctValues Test", function() {
 });
 
 // the fizz buzz test only prints to the console, as instructed in the text of the test. therefore there is not way to programmatically set assertions against this
+
+module( "removeFruits Unit Test" );
+test( "removeFruits Test", function() {
+    equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
+    ok( removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), 'Expected apple,orange,kiwi,plum,strawberry as the result, the result was: ' + removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']) );
+});
