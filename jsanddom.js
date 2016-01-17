@@ -263,3 +263,33 @@ function addFiveItemsToList(){
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+function addChecks(){
+  var el = document.getElementById("text"), i = 1, j = 0;
+  while(i < 3){
+    var link = document.createElement("a");
+    if(i === 1){
+      link.innerText = "check all";
+      $(link).click(function(){
+        console.log("clicked link to check all");
+        $(".checkbox").prop("checked", true);
+      });
+    } else {
+      link.innerText = "uncheck all";
+      $(link).click(function(){
+        console.log("clicked link to uncheck all");
+        $(".checkbox").prop("checked", false);
+      });
+    }
+    link.style.cssText = "display: block; margin: 5px;";
+    el.appendChild(link);
+    i++;
+  }
+  while(j < 9){
+    var checkbox = document.createElement("input");
+    checkbox.setAttribute("type", "checkbox");
+    checkbox.className = "checkbox";
+    checkbox.style.cssText = "display: block; margin: 5px;";
+    el.appendChild(checkbox);
+    j++;
+  }
+}
