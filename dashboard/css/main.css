@@ -2,6 +2,10 @@ body {
   background-color: #fefffd;
 }
 
+a {
+  text-decoration: none;
+}
+
 .cf:before,
 .cf:after {
     content: " "; /* 1 */
@@ -49,10 +53,21 @@ header ul p {
 
 header ul li {
   display: inline-block;
-  color: #99cce1;
-  font-size: 11px;
   border-right: 1px solid #adaeaf;
   padding: 0 6px 0 0;
+}
+
+header ul li a {
+  color: #99cce1;
+  font-size: 11px;
+}
+
+header ul li a:hover {
+  color: #4fb7e2;
+}
+
+header ul li a:active {
+  color: #eee;
 }
 
 header ul li:first-child {
@@ -123,6 +138,14 @@ header ul li:last-child {
   font-size: 12px;
   color: #888;
   margin-left: 5px;
+}
+
+#sidebar #sb-bottom ul li p:hover {
+  color: #fba73c;
+}
+
+#sidebar #sb-bottom ul li p:active {
+  color: #e78202;
 }
 
 #sidebar #sb-bottom ul:last-child li p {
@@ -289,7 +312,7 @@ header ul li:last-child {
   font-weight: 100;
 }
 
-#content #pulse #pulse-bubbles .bubble.last h3 #parentheses {
+#content #pulse #pulse-bubbles .bubble.different h3 #parentheses {
   color: #93afc0;
   font-size: 20px;
 }
