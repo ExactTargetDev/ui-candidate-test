@@ -59,7 +59,17 @@
      }
 
      // write an example of a javascript closure
-
+          var x = "global";
+ 
+          function outer() {
+                 var y = "outer";    
+ 
+                     function inner() {
+                          var x = "inner";    
+                    }
+          }
+          
+          
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -69,6 +79,18 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
+"people":[
+    {"firstName":"John", 
+    "lastName":"Doe" , 
+    "city":"Atlanta",
+    "state" : "GA" ,
+    "zip" : "30281" , 
+    "phone numbers" :
+    [
+         {"name" : "home","number" : "123-123-1234"},
+         {"name" : "work","number" : "123-123-1234"},
+         {"name" : "mobile","number" : "123-123-1234"}] 
+]
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
@@ -81,6 +103,8 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+
+   
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
