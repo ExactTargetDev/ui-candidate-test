@@ -204,7 +204,6 @@ header ul li:last-child {
 }
 
 #content #pulse {
-  height: 265px;
   margin: 20px 0 0 0;
   -moz-box-shadow:    inset 0 0 10px #000000;
   -webkit-box-shadow: inset 0 0 10px #000000;
@@ -246,6 +245,97 @@ header ul li:last-child {
 #content #pulse #pulse-tools {
   float: right;
   margin: 6px -3px 0 0;
+}
+
+#content #pulse #pulse-bubbles {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#content #pulse #pulse-bubbles ul {
+  padding: 0;
+  margin: 0;
+}
+
+#content #pulse #pulse-bubbles .bubble {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 0 65px 0;
+  vertical-align: middle;
+}
+
+#content #pulse #pulse-bubbles .bubble h2 {
+  color: #7f91a3;
+  text-align: center;
+  font-size: 11px;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+#content #pulse #pulse-bubbles .bubble h3 {
+  margin: 0;
+  padding: 8px 0 0 0;
+  color: #34bbf3;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 100;
+}
+
+#content #pulse #pulse-bubbles .bubble.last h3 #parentheses {
+  color: #93afc0;
+  font-size: 20px;
+}
+
+#content #pulse #pulse-bubbles .bubble .shape {
+  background: rgb(249,249,249); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(249,249,249,1) 0%, rgba(211,225,236,1) 65%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(249,249,249,1) 0%,rgba(211,225,236,1) 65%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(249,249,249,1) 0%,rgba(211,225,236,1) 65%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#d3e1ec',GradientType=0 ); /* IE6-9 */
+  border-radius: 5px;
+  margin: 0 0 0 8px;
+  border: 1px solid #dfe9ee;
+}
+
+#content #pulse #pulse-bubbles .bubble .small {
+  width: 160px;
+}
+
+#content #pulse #pulse-bubbles .bubble .small p {
+  font-size: 16px;
+  color: #93afc0;
+  text-align: center;
+  margin: 5px 0 0 0;
+  padding: 0;
+  font-weight: 100;
+}
+
+#content #pulse #pulse-bubbles .bubble .small p:last-child {
+  font-size: 11px;
+  color: #93afc0;
+  text-align: center;
+  margin: 10px 0 15px 0;
+}
+
+#content #pulse #pulse-bubbles .bubble .large {
+  display: none;
+  margin: 10px 15px;
+}
+
+#content #pulse #pulse-bubbles .bubble .large p {
+  color: #666666;
+  display: inline-block;
+  font-size: 12px;
+  margin: 0;
+  float: left;
+}
+
+#content #pulse #pulse-bubbles .bubble .large p.last {
+  float: right;
+}
+
+#content #pulse #pulse-bubbles .bubble .large img {
+  display: block;
 }
 
 
