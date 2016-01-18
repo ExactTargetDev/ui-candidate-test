@@ -12,13 +12,21 @@
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
   </head>
   <body>
+    <div id="help-modal">
+      <div id="blackout"></div>
+      <div id="modal-bubble">
+        <img id="modal-exit" src="img/icon-exit.png" />
+        <h1>Exact Target Help</h1>
+        <p>Follow any of these links for more information</p>
+      </div>
+    </div>
     <header>
       <img src="img/et-logo.png" />
       <div id="user-tools" class="cf">
         <ul>
           <p>Welcome John!</p>
           <li><a href="#">Account</a></li>
-          <li><a href="#">Help</a></li>
+          <li><a href="#" id="help-button">Help</a></li>
           <li><a href="#">Logout</a></li>
         </ul>
       </div>
@@ -87,7 +95,10 @@
     </section>
     <section id="content">
       <div id="calendar">
-        <p id="month">September 2010</p>
+        <div id="calendar-top-bar">
+          <p id="month">September 2010</p>
+          <img src="img/icon-calendar-tools.png" id="icon-calendar-tools" />
+        </div>
         <ul>
           <li id="first-date">
             <p class="day cf">Sat</p>
@@ -272,6 +283,7 @@
               </div>
             </li>
           </ul>
+          <img src="img/icon-pagination.png" id="icon-pagination" />
         </section>
       </div>
     </section>

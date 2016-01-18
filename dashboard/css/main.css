@@ -165,10 +165,26 @@ header ul li:last-child {
   overflow: hidden;
 }
 
-#content #calendar #month {
+#content #calendar #calendar-top-bar {
+  padding: 9px;
+  margin: 0;
+  position: relative;
+}
+
+#content #calendar #calendar-top-bar #month {
   font-size: 11px;
   color: #99abb6;
-  margin: 9px 0 7px 9px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+#content #calendar #calendar-top-bar img {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 8px;
 }
 
 #content #calendar ul {
@@ -283,6 +299,11 @@ header ul li:last-child {
   overflow: hidden;
 }
 
+#content #pulse #pulse-bubbles #icon-pagination {
+  margin: -47px auto 10px;
+  display: block;
+}
+
 #content #pulse #pulse-bubbles ul {
   padding: 0;
   margin: 0;
@@ -369,10 +390,65 @@ header ul li:last-child {
   display: block;
 }
 
+#help-modal {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
 
+#help-modal #blackout {
+  background-color: rgba(0,0,0,.5);
+  height: 100%;
+  width: 100%;
+}
 
+#help-modal #modal-bubble {
+  position: relative;
+  top: -85%;
+  left: 50%;
+  width: 350px;
+  margin-left: -175px;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 12px #464646;
+}
 
+#help-modal #modal-bubble h1 {
+  color: #fba73c;
+  margin: 0;
+  padding: 0;
+}
 
+#help-modal #modal-bubble p {
+  font-size: 14px;
+}
+
+#help-modal #modal-bubble a {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+#help-modal #modal-bubble a:hover {
+  color: #fba73c;
+  text-decoration: underline;
+}
+
+#help-modal #modal-bubble a:active {
+  color: #e78202;
+}
+
+#help-modal #modal-bubble #modal-exit {
+  color: red;
+  position: absolute;
+  width: 35px;
+  top: -15px;
+  right: -15px;
+}
 
 
 
