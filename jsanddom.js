@@ -104,19 +104,104 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+var myobj = {
+            __columns: [],
+            __rows: [],
+            addRow: function(x) {
+                this.__rows.push(x);
+                console.log("Added to Row: " + x);
+            },
+            addColumn: function(y) {
+                this.__columns.push(y);
+                console.log("Added to Column: " + y);
+            },
+            getData: function() {
+
+                var retObj = [];
+                for(var i = 0; i< this.__rows.length; i++) {
+                    retObj.push({ 'Column' : this.__columns[i] , 'Row' : this.__rows[i] });
+                }
+
+                return JSON.stringify(retObj);
+            }
+        };
+
+        myobj.addRow(10);
+        myobj.addRow(20);
+        myobj.addRow(30);
+        myobj.addRow(40);
+
+        myobj.addColumn(100);
+        myobj.addColumn(200);
+        myobj.addColumn(300);
+        myobj.addColumn(400);
+
+        console.log(myobj.getData());
+
    
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
+var numbersString = "1,2,3,4,5,6";
+        var data = numbersString.split(',');
+
+        function printOut(){
+            console.log("name = "+$("#selectId option:selected").text());
+            console.log("Value = "+$("#selectId option:selected").val());
+            
+        }
+        var s = $("<select id=\"selectId\" name=\"selectName\" onchange=\"printOut()\"/>");
+        for(var val in data) {
+            $("<option />", {value: val, text: data[val]}).appendTo(s);
+        }
+        s.appendTo("#div1");
+
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
-
-     // Programatically create an array with 5 items.  Create a list item for each item in the array
+     
+       // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     
+      var myArray = [];
+     for(var i=0;i<=5;i++){
+        myArray.push(i);
+     }
+     var myString = "";
+     for(var j=0;j<myArray.length;j++){
+        var x = "<li>"+myArray[j]+"</li>";
+        myString = myString+x;
+     }
+        $("#list1").html(myString);
+
+   
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+
+var myArray=[];
+     for(var i=0;i<=5;i++){
+        myArray.push("<input type='checkbox'/>");
+     }
+
+     $("#foobar").html(myArray);
+
+     function checkAll(){
+         $("#foobar input[type=checkbox]").each(function () {
+                    $(this).attr("checked", true);
+         });
+         return false;
+     }
+     function uncheckAll(){
+         $("#foobar input[type=checkbox]").each(function () {
+                    $(this).attr("checked", false);
+         });
+      return false;
+     }
+     $("#foobar").append("<a href=\"#\" onclick=\"javascript:checkAll();\">CheckAll</a> <br> <a href=\"#\" onclick=\"javascript:uncheckAll();\">uncheckAll</a>");
+
