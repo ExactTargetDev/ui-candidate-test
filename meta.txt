@@ -1,0 +1,55 @@
+Timestamps and elapsed times
+
+	Start time of JS / unit-test tasks
+		
+		new Date()		// human-readable: Sun Jan 17 2016 11:07:01 GMT-0500 (EST)
+		new Date.now()	// timestamp: 1453046824231
+
+
+		Completion of JS / unit-test tasks
+		new Date()		// human-readable: Sun Jan 17 2016 15:44:35 GMT-0500 (EST)
+		new Date.now()	// timestamp: 1453063477712
+
+	time-elapse of JS / unit-test tasks
+	4:37 hrs
+
+	
+	Start time of dashboard UI buildout
+		
+		new Date()		// human-readable: Sun Jan 17 2016 19:29:49 GMT-0500 (EST)
+		new Date.now()	// timestamp: 1453076987579
+
+		last commit of the evening was at: Mon Jan 18 2016 01:04:27 GMT-0500 (EST)
+		first commit of the next morning was at: Mon Jan 18 2016 10:31:17 GMT-0500 (EST)
+
+
+		Completion of dashboard UI buildout
+		new Date()		// human-readable: Mon Jan 18 2016 13:43:34 GMT-0500 (EST)
+		new Date.now()	// timestamp: 1453142613276
+
+	time-elapse of dashboard UI buildout
+	8:45 hrs
+
+	total time for all tasks
+	13:22
+
+
+
+Browsers tested
+
+	- Chrome ( latest )
+	  - all tests passed
+
+	- Firefox ( latest )
+	  - all tests passed
+
+	- IE on Windows 7
+
+	  - 8
+	    - Noticed issues: when testing in browserstack virtual environment, some of the elements / javascript act a bit funky on first load. It appears that I have to open the developer tools and navigate to the 'scripts' tab that somehow jogs the browser into recognizing the JSON parseing and placement into the help modal.
+
+	  - 9
+	  	- Same as IE 8, the help modal doesn't initially load the JSON link data correctly. I have to navigate to scripts in the dev tools to jog the browser. I'm not seeing any information on why this might occur on the forums, so I'm starting to think it might be a browserstack issue? As soon as I can jog the browser the first time, I have no issues on successive reloads of the page with seeing the data show up and the click handler on the exit sequence working correctly.
+
+	  - 10
+	    - no visual issues with layout or javascript noticed.
