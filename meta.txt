@@ -1,3 +1,26 @@
-Start time
-new Date()     // human-readable: Sun Jan 17 2016 11:07:01 GMT-0500 (EST)
-new Date.now() // timestamp: 1453046824231
+Start time of JS / unit-test tasks
+new Date()		// human-readable: Sun Jan 17 2016 11:07:01 GMT-0500 (EST)
+new Date.now()	// timestamp: 1453046824231
+
+
+Completion of JS / unit-test tasks
+new Date()		// human-readable: Sun Jan 17 2016 15:44:35 GMT-0500 (EST)
+new Date.now()	// timestamp: 1453063477712
+
+time-elapse of JS / unit-test tasks
+04.37 hrs
+
+
+
+
+
+Start time of dashboard UI buildout
+new Date()		// human-readable: Sun Jan 17 2016 19:29:49 GMT-0500 (EST)
+new Date.now()	// timestamp: 1453076987579
+
+
+Completion of dashboard UI buildout
+new Date()		// human-readable: 
+new Date.now()	// timestamp: 
+
+time-elapse of dashboard UI buildout
