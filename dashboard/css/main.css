@@ -2,6 +2,20 @@ body {
   background-color: #fefffd;
 }
 
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
 header {
   height: 32px;
   width: 100%;
@@ -19,6 +33,7 @@ header img {
 
 header #user-tools {
   float: right;
+  max-height: 30px;
 }
 
 header ul {
@@ -56,7 +71,7 @@ header ul li:last-child {
   padding: 10px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-  width: 159px;
+  width: 11%;
   height: 30px;
   background-color: #fba73c;
 }
@@ -89,8 +104,6 @@ header ul li:last-child {
   padding: 10px;
   border: 1px solid #fff;
   border-top: 1px solid #e1e1e2;
-  
-
 }
 
 #sidebar #sb-bottom ul li img, #sidebar #sb-bottom ul li p {
@@ -108,11 +121,88 @@ header ul li:last-child {
   font-size: 11px;
 }
 
+#content {
+  width: 84%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#content #calendar {
+  background-color: #f5f5f5;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+}
+
+#content #calendar #month {
+  font-size: 11px;
+  color: #99abb6;
+  margin: 9px 0 5px 5px;
+}
+
+#content #calendar ul {
+  border-bottom: 1px solid #ddd;
+  margin: 0 9px;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#content #calendar li {
+  list-style-type: none;
+  width: 137px;
+  height: 78px;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #ddd;
+  display: inline-block;
+  margin: 0 -4px -4px 0;
+  padding: 0;
+  position: relative;
+}
+
+#content #calendar li .day {
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  margin: 0;
+  padding: 0 0 0 5px;
+  font-size: 11px;
+  color: #999;
+}
+
+#content #calendar li .date {
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+  margin: 0;
+  padding: 0 5px 0 0;
+  font-size: 11px;
+  color: #999;
+}
+
+#content #calendar #today {
+  position: relative;
+  width: 139px;
+  height: 13px;
+  background-color: #fba73b;
+  text-align: center;
+  font-size: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  right: -35.41%;
+}
+
+#content #calendar li #today-overlay {
+  position: absolute;
+  top: 0;
+  width: 139px;
+  height: 78px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffedd5+100&0+15,1+100 */
+background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,252,249,0) 15%, rgba(255,237,213,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,252,249,0) 15%,rgba(255,237,213,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,252,249,0) 15%,rgba(255,237,213,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffedd5',GradientType=0 ); /* IE6-9 */
 
 
-
-
-
-
-
+}
 
