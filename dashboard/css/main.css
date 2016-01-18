@@ -1,3 +1,7 @@
+body {
+  background-color: #fefffd;
+}
+
 header {
   height: 32px;
   width: 100%;
@@ -45,3 +49,70 @@ header ul li:last-child {
   border-right: 0px;
   padding: 0 10px 0 0;
 }
+
+#sidebar {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  width: 159px;
+  height: 30px;
+  background-color: #fba73c;
+}
+
+#sidebar h1 {
+  color: #fff;
+  font-size: 14px;
+  text-shadow: 1px 1px #5b5b5b;
+  margin: -4px 0 0 33px;
+}
+
+#sidebar #sb-top img {
+  float: left;
+  margin-top: 6px;
+}
+
+#sidebar #sb-bottom {
+  background-color: #f4f4f5;
+  padding: 0;
+  margin: 12px 0 0 -10px;
+  width: 177px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid #e6e6e6;
+}
+
+#sidebar #sb-bottom ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-top: 1px solid #e1e1e2;
+  
+
+}
+
+#sidebar #sb-bottom ul li img, #sidebar #sb-bottom ul li p {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#sidebar #sb-bottom ul li p {
+  font-size: 12px;
+  color: #888;
+  margin-left: 5px;
+}
+
+#sidebar #sb-bottom ul:last-child li p {
+  font-size: 11px;
+}
+
+
+
+
+
+
+
+
+
