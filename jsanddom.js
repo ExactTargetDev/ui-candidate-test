@@ -188,42 +188,42 @@ var DataTable = function(){
 // within div1, programatically create a
 // SELECT element (with multiple items) and a button.
 // when the button is clicked write out the name and value of the selected item to the console.
-var div = document.getElementById("div1");
-var select = document.createElement("select");
-var options = [1,2,3,4,5];
-var button = document.createElement("button");
-for(var i=0; i < options.length; i++){
-   var option = document.createElement("option");
-   option.value = i;
-   option.setAttribute("name", "option" + i);
-   option.textContent = "Option " + options[i];
-   select.appendChild(option);
-}
-button.addEventListener("click", function() {
-   var selectedOption = select[select.selectedIndex];
-   console.log("Name:: ", selectedOption.getAttribute("name"), "  Value:: ", selectedOption.value);
-});
-div.appendChild(select);
-div.appendChild(button);
+// var div = document.getElementById("div1");
+// var select = document.createElement("select");
+// var options = [1,2,3,4,5];
+// var button = document.createElement("button");
+// for(var i=0; i < options.length; i++){
+//    var option = document.createElement("option");
+//    option.value = i;
+//    option.setAttribute("name", "option" + i);
+//    option.textContent = "Option " + options[i];
+//    select.appendChild(option);
+// }
+// button.addEventListener("click", function() {
+//    var selectedOption = select[select.selectedIndex];
+//    console.log("Name:: ", selectedOption.getAttribute("name"), "  Value:: ", selectedOption.value);
+// });
+// div.appendChild(select);
+// div.appendChild(button);
 
 
 // Write 5 different jQuery selectors to retrieve the
 // sample anchor in the markup below.
-$("a");
-$(".link");
-$("[href]");
-$("#fizz>:eq(0)");
-$(".buzz>:eq(0)");
+// $("a");
+// $(".link");
+// $("[href]");
+// $("#fizz>:eq(0)");
+// $(".buzz>:eq(0)");
 
 // Programatically create an array with 5 items.  Create a list item for each item in the array
 // and add the list items to the unordered list with an id of "list1".
-var ul = document.getElementById("list1");
-var arr = [1,2,3,4,5];
-for(var i=0; i < arr.length; i++){
-   var li = document.createElement("li");
-   li.textContent = "List Item: " + arr[i];
-   ul.appendChild(li);
-}
+// var ul = document.getElementById("list1");
+// var arr = [1,2,3,4,5];
+// for(var i=0; i < arr.length; i++){
+//    var li = document.createElement("li");
+//    li.textContent = "List Item: " + arr[i];
+//    ul.appendChild(li);
+// }
 
 
 
@@ -231,31 +231,31 @@ for(var i=0; i < arr.length; i++){
 // to the div with an id of "foobar"
 // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
 // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
-var div = document.getElementById("foobar");
-var checkboxElements = [];
-var checkboxes = [1,2,3,4,5];
-for(var i=0; i < checkboxes.length; i++){
-   var checkbox = document.createElement("input");
-   checkbox.value = i;
-   checkbox.setAttribute("type", "checkbox");
-   checkboxElements.push(checkbox);
-   div.appendChild(checkbox);
-}
-var link1 = document.createElement("a");
-var link2 = document.createElement("a");
-link1.textContent = "Check All";
-link2.textContent = "Uncheck All";
-link1.addEventListener("click", function() {
-   for(var i=0; i < checkboxElements.length; i++){
-       if(!checkboxElements[i].checked)
-           checkboxElements[i].checked = true;
-   }
-});
-link2.addEventListener("click", function() {
-   for(var i=0; i < checkboxElements.length; i++){
-       if(checkboxElements[i].checked)
-           checkboxElements[i].checked = false;
-   }
-});
-div.appendChild(link1);
-div.appendChild(link2);
+// var div = document.getElementById("foobar");
+// var checkboxElements = [];
+// var checkboxes = [1,2,3,4,5];
+// for(var i=0; i < checkboxes.length; i++){
+//    var checkbox = document.createElement("input");
+//    checkbox.value = i;
+//    checkbox.setAttribute("type", "checkbox");
+//    checkboxElements.push(checkbox);
+//    div.appendChild(checkbox);
+// }
+// var link1 = document.createElement("a");
+// var link2 = document.createElement("a");
+// link1.textContent = "Check All";
+// link2.textContent = "Uncheck All";
+// link1.addEventListener("click", function() {
+//    for(var i=0; i < checkboxElements.length; i++){
+//        if(!checkboxElements[i].checked)
+//            checkboxElements[i].checked = true;
+//    }
+// });
+// link2.addEventListener("click", function() {
+//    for(var i=0; i < checkboxElements.length; i++){
+//        if(checkboxElements[i].checked)
+//            checkboxElements[i].checked = false;
+//    }
+// });
+// div.appendChild(link1);
+// div.appendChild(link2);
