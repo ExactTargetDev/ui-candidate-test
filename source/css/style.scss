@@ -6,10 +6,10 @@ LAYOUT SETUP
 /* Base Styles - Opinionated Defaults
 -----------------------------------------------
 /////////////////////////////////////////////// */
-body                                             { background:#fff; }
+body                                             { background-image:$site-bg-image; background-color:$site-bg-color; }
                                                    /* Default body styling */
 
-::selection                                      { background:#b3d4fc; text-shadow:none; }
+::selection                                      { background:$def-font-highlight; text-shadow:none; }
                                                    /* Custom background color for highlighted text, also removes text-shadow */
 
 img                                              { max-width:100%; }
@@ -45,7 +45,7 @@ hr                                               { display:block; height:1px; bo
 
 span.amp                                         { font-family:Baskerville,"Palatino Linotype",Times New Roman,serif; font-style:italic; font-weight:400; line-height:normal; }
                                                    /* Styles ampersands to appear badass. */
-                                                   /* http://simplebits.com/notebook/2008/08/14/ampersands-2/ for reference*/
+                                                   /* Reference: http://simplebits.com/notebook/2008/08/14/ampersands-2/ */
 
 
 
@@ -62,18 +62,18 @@ html                                             { color:$def-font-color; font-f
 p                                                { font-size:em($def-font-size); line-height:$def-line-height; }
                                                    /* Default paragraph font-styling */
 
-a                                                { color:$def-anchor-color; text-decoration:none; }
-a:hover                                          { }
+a                                                { color:$def-anchor-color; text-decoration:$def-anchor-deco; }
+a:hover                                          { color:$def-anchor-hover; }
 a:active                                         { }
 a:visited                                        { }
                                                    /* Default anchor font-styling */
 
-h1                                               { font-size:em($def-h1-size); font-family:$def-font-family; font-style:normal; font-weight:700; line-height:1; }
-h2                                               { font-size:em($def-h2-size); font-family:$def-font-family; font-style:normal; font-weight:700; line-height:1; }
-h3                                               { font-size:em($def-h3-size); font-family:$def-font-family; font-style:normal; font-weight:700; line-height:1; }
-h4                                               { font-size:em($def-h4-size); font-family:$def-font-family; font-style:normal; font-weight:700; line-height:1; }
-h5                                               { font-size:em($def-h5-size); font-family:$def-font-family; font-style:normal; font-weight:700; line-height:1; }
-h6                                               { font-size:em($def-h6-size); font-family:$def-font-family; font-style:normal; font-weight:700; line-height:1; }
+h1                                               { font-size:em($def-h1-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h2                                               { font-size:em($def-h2-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h3                                               { font-size:em($def-h3-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h4                                               { font-size:em($def-h4-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h5                                               { font-size:em($def-h5-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h6                                               { font-size:em($def-h6-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
                                                    /* Default header font-styling */
 
 
@@ -151,25 +151,26 @@ LAYOUT STYLES
                                                    /* I like this more than display:inline-block for FontAwesome icons */
 
 
-/* Layout Section - Navigation
------------------------------------------------
-/////////////////////////////////////////////// */
-nav                                              { display:block; }
-
-
-/* Layout Section - Header (Banner)
+/* Layout Section - <header>
 -----------------------------------------------
 /////////////////////////////////////////////// */
 header                                           { }
 
 
-/* Layout Section - Content
+/* Layout Section - <nav>
 -----------------------------------------------
 /////////////////////////////////////////////// */
+nav                                              { display:block; }
+
+
+/* Layout Section - <section class="main">
+-----------------------------------------------
+/////////////////////////////////////////////// */
+.main                                            { }
 .content                                         { }
 
 
-/* Layout Section - Footer
+/* Layout Section - <footer>
 -----------------------------------------------
 /////////////////////////////////////////////// */
 footer                                           { }
