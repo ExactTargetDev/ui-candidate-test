@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* -------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////
+MASTER.SCSS - Tells Grunt the SCSS files to compile, and the order in which to compile them.
+////////////////////////////////////////////////////////////////////////////////////////////////////
+Author:  @BryanLeewood
+Email:   bryan.a.leewood@gmail.com
+Website: http://xenostar.net/(homebase)
+Credits: Normalize.css, Twitter Boostrap, HTML5 Boilerplate, NoDivs, Elliot Jay Stocks, Bryan Veloso
+////////////////////////////////////////////////////////////////////////////////////////////////////
+------------------------------------------------------------------------------------------------- */
+@import 'functions.scss';     // 01 - SCSS Functions
+@import 'vars.scss';          // 02 - SCSS Variables
+@import 'mixins.scss';        // 03 - SCSS Mixins
+@import 'fonts.scss';         // 03 - Font Definitions
+@import 'reset.scss';         // 04 - Reset Stylesheet
+@import 'grids.scss';         // 05 - Grid Stylesheet
+@import 'keyframes.scss';     // 06 - Animation Keyframes
+@import 'style.scss';         // 07 - Main Site Stylesheet
+@import 'media.scss';         // 08 - Media Stylesheet

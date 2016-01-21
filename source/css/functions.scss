@@ -1,0 +1,37 @@
+/* -------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////
+FUNCTIONS.SCSS
+////////////////////////////////////////////////////////////////////////////////////////////////////
+------------------------------------------------------------------------------------------------- */
+/**
+ * Converts a pixel unit to ems
+ *
+ * @param  px    The pixel value you'd like to convert
+ * @param  base  The base font size to calculate the em with, usually 16 by default
+ *
+*/
+@function em($px, $base: 16px) {
+    @return ($px / $base) * 1em;
+}
+
+/**
+ * Converts a pixel unit to rems
+ *
+ * @param  px    The pixel value you'd like to convert
+ * @param  base  The base font size to calculate the em with, usually 16 by default
+ *
+*/
+@function rem($px, $base: 16px) {
+    @return ($px / $base) * 1rem;
+}
+
+
+/**
+ * Strips a value of its unit
+ *
+ * @param   number  The number we are removing the unit from
+ *
+*/
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
