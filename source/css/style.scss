@@ -12,7 +12,7 @@ body                                             { background-image:$site-bg-ima
 ::selection                                      { background:$def-font-highlight; text-shadow:none; }
                                                    /* Custom background color for highlighted text, also removes text-shadow */
 
-img                                              { max-width:100%; }
+img                                              { display:block; max-width:100%; }
                                                    /* Responsive images */
 
 audio,canvas,iframe,
@@ -48,7 +48,8 @@ span.amp                                         { font-family:Baskerville,"Pala
                                                    /* Reference: http://simplebits.com/notebook/2008/08/14/ampersands-2/ */
 
 
-/* Global Class Helpers (Might below to plugins/frameworks i.e. Typekit)
+/* Global Class Helpers
+ * Might below to plugins/frameworks i.e. Typekit
 -----------------------------------------------
 /////////////////////////////////////////////// */
 .img                                             { position:relative; padding-top:75%; overflow:hidden; }
@@ -147,6 +148,12 @@ option                                           { padding:0; margin:0; }
 LAYOUT STYLES
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ------------------------------------------------------------------------------------------------- */
+/* Image Sprites
+-----------------------------------------------
+/////////////////////////////////////////////// */
+.img_logo                                        { background-image:url('../img/sprite_sheet.png'); background-position:0 0; height:16px; width:86px; }
+
+
 /* Layout Section - <wrapper>
 -----------------------------------------------
 /////////////////////////////////////////////// */
@@ -156,7 +163,7 @@ LAYOUT STYLES
 /* Layout Section - <header>
 -----------------------------------------------
 /////////////////////////////////////////////// */
-header                                           { }
+header                                           { background:#000; }
 
 
 /* Layout Section - <nav>
