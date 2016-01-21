@@ -8,10 +8,12 @@ Use http://www.pearsonified.com/typography/ to find Golden Ratio font size setti
 ------------------------------------------------------------------------------------------------- */
 /* Site Colors */
 $site-bg-image:      url('');
-$site-bg-color:      #fff;
-$site-color-1:       #ff0;
-$site-color-2:       #f0f;
-$site-color-3:       #0ff;
+$site-bg-color:      #fefffd;                  // Milky White
+$site-color-1:       #99cce1;                  // Light Blue
+$site-color-2:       #34bbf3;                  // Sky Blue
+$site-color-3:       #000;
+$white:              #fff;
+$black:              #000;
 
 
 /* Anchor Settings */
@@ -29,7 +31,7 @@ $def-border-size:     2px;
 /* Font Settings */
 $def-font-color:      #222;                    // CONFIGURE: Global font-color
 $def-font-highlight:  #b3d4fc;                 // CONFIGURE: Global ::selection color for fonts
-$def-font-family:     'Lato', sans-serif;      // CONFIGURE: Global font-family
+$def-font-family:     Arial, Helvetica, sans-serif; // CONFIGURE: Global font-family
 $def-font-size:       20px;                    // CONFIGURE: Equivalent to 'Font Size' on Pearsonified
 $def-font-lh:         32px;                    // CONFIGURE: Equivalent to 'Line Height' on Pearsonified
 

@@ -6,10 +6,10 @@ LAYOUT SETUP
 /* Base Styles - Opinionated Defaults
 -----------------------------------------------
 /////////////////////////////////////////////// */
-body                                             { background-image:$site-bg-image; background-color:$site-bg-color; }
+body                                             { background-color:$site-bg-color; }
                                                    /* Default body styling */
 
-::selection                                      { background:$def-font-highlight; text-shadow:none; }
+::selection                                      { background-color:$def-font-highlight; text-shadow:none; }
                                                    /* Custom background color for highlighted text, also removes text-shadow */
 
 img                                              { display:block; max-width:100%; }
@@ -111,7 +111,7 @@ h6                                               { font-size:em($def-h6-size); f
 FORM DEFAULTS
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ------------------------------------------------------------------------------------------------- */
-form                                             { background:#fff; border-radius:$def-border-radius; padding:rem($def-padding); }
+form                                             { background:$white; border-radius:$def-border-radius; padding:rem($def-padding); }
 /* form > *:last-child                              { margin-bottom:0; } */
 
 form > div                                       { @extend %clearfix; display:block; position:relative; }
@@ -132,7 +132,7 @@ textarea                                         { background:transparent; borde
 textarea:focus                                   { background:rgba(0,0,0,0.05); }
 
 .select                                          { @include unselectable(); background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; cursor:pointer; font-size:em($def-font-size); padding:rem(9px) rem(15px) rem(11px) rem(14px); }
-.options                                         { @include absolute(auto,0,auto,0); background:#fff; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; display:none; z-index:50; }
+.options                                         { @include absolute(auto,0,auto,0); background:$white; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; display:none; z-index:50; }
 .options li                                      {  }
 
 select                                           { background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; font-size:em($def-font-size); padding:rem(8px) rem(0px) rem(10px) rem(10px); }
@@ -163,7 +163,13 @@ LAYOUT STYLES
 /* Layout Section - <header>
 -----------------------------------------------
 /////////////////////////////////////////////// */
-header                                           { background:#000; }
+header                                           { background:$black; color:$white; }
+
+header a                                         { display:block; color:$site-color-1; }
+header .img_logo                                 { float:left; }
+
+header nav ul                                    { @extend %clearfix; float:right; }
+header nav li                                    { float:left; }
 
 
 /* Layout Section - <nav>
