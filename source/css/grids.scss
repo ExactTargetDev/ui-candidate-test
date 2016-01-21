@@ -5,66 +5,66 @@ GRID SETUP
 ------------------------------------------------------------------------------------------------- */
 /* Base Grid Classes
 -----------------------------------------------
-/////////////////////////////////////////////// */
-body                                             { overflow-x:hidden; }
+//////////////////////////////////////////////// */
+body                                              { overflow-x:hidden; }
 
-#app-menu                                        { height:100%; overflow:hidden; position:fixed; top:0; width:0; z-index:9999; }
-                                                 /* A mobile-friendly menu section that sits inline-block next to the .wrapper
-                                                    !!! There is usually only one app-menu per page */
+#app-menu                                         { height:100%; overflow:hidden; position:fixed; top:0; width:0; z-index:9999; }
+                                                  /* A mobile-friendly menu section that sits inline-block next to the .wrapper
+                                                     !!! There is usually only one app-menu per page */
 
-.wrapper                                         { display:block; position:relative; margin:0 auto; overflow:hidden; text-align:left; }
-                                                 /* The .wrapper defines the overall boundary of the site. All content appears inside the .wrapper
-                                                    !!! There is usually only one .wrapper per page */
+.wrapper                                          { display:block; position:relative; margin:0 auto; overflow:hidden; text-align:left; }
+                                                  /* The .wrapper defines the overall boundary of the site. All content appears inside the .wrapper
+                                                     !!! There is usually only one .wrapper per page */
 
 header,
 nav,
 section,
 aside,
-footer                                           { display:block; position:relative; }
-                                                 /* A section defines an area of the site with it's own functionality, i.e.: Header Section, Nav Section, Content Section, Footer Section
-                                                    The section should usually have 20 pixels of left/right padding for mobile views. Good for content sections where text shouldn't touch screen edge.
-                                                    !!! There must be at least one section per .wrapper */
+footer                                            { display:block; position:relative; }
+                                                  /* A section defines an area of the site with it's own functionality, i.e.: Header Section, Nav Section, Content Section, Footer Section
+                                                     The section should usually have 20 pixels of left/right padding for mobile views. Good for content sections where text shouldn't touch screen edge.
+                                                     !!! There must be at least one section per .wrapper */
 
-.row                                             { @extend %clearfix; margin:0 auto; position:relative; max-width:em(1000px); }
-                                                 /* The .row defines a horizontal space in a section in which columns are inserted.
-                                                    !!! There must be at least one .row per .section */
+.row                                              { @extend %clearfix; margin:0 auto; position:relative; max-width:em(1000px); }
+                                                  /* The .row defines a horizontal space in a section in which columns are inserted.
+                                                     !!! There must be at least one .row per .section */
 
-.row.full                                        { max-width:none; }
+.row.full                                         { max-width:none; }
 
-[class^="col_"]                                  { @extend %clearfix; }
+[class^="col_"]                                   { @extend %clearfix; }
 
 /*
-.row:after                                       { display:block; clear:both; content:"."; font-size:0; height:0; visibility:hidden; }
+.row:after                                        { display:block; clear:both; content:"."; font-size:0; height:0; visibility:hidden; }
 */
 
 
 /* Percentage-Based Gutterless Grids - Must be flush
 -----------------------------------------------
-/////////////////////////////////////////////// */
-.col_p100                                        { float:left; margin:0; position:relative; vertical-align:top; width:100%; }
-.col_p80                                         { float:left; margin:0; position:relative; vertical-align:top; width:80%; }
-.col_p75                                         { float:left; margin:0; position:relative; vertical-align:top; width:75%; }
-.col_p50                                         { float:left; margin:0; position:relative; vertical-align:top; width:50%; }
-.col_p25                                         { float:left; margin:0; position:relative; vertical-align:top; width:25%; }
-.col_p20                                         { float:left; margin:0; position:relative; vertical-align:top; width:20%; }
+//////////////////////////////////////////////// */
+.col_p100                                         { float:left; margin:0; position:relative; vertical-align:top; width:100%; }
+.col_p80                                          { float:left; margin:0; position:relative; vertical-align:top; width:80%; }
+.col_p75                                          { float:left; margin:0; position:relative; vertical-align:top; width:75%; }
+.col_p50                                          { float:left; margin:0; position:relative; vertical-align:top; width:50%; }
+.col_p25                                          { float:left; margin:0; position:relative; vertical-align:top; width:25%; }
+.col_p20                                          { float:left; margin:0; position:relative; vertical-align:top; width:20%; }
 
 
 /* Gutterless Grids
 -----------------------------------------------
-/////////////////////////////////////////////// */
-.col_06                                          { float:left; margin:0; position:relative; vertical-align:top; width:100%; }
-.col_04                                          { float:left; margin:0; position:relative; vertical-align:top; width:66.6%; }
-.col_04:first-child                              { width:66.7%; }
-.col_03                                          { float:left; margin:0; position:relative; vertical-align:top; width:50%; }
-.col_02                                          { float:left; margin:0; position:relative; vertical-align:top; width:33.3%; }
-.col_02:first-child                              { width:33.4%; }
+//////////////////////////////////////////////// */
+.col_06                                           { float:left; margin:0; position:relative; vertical-align:top; width:100%; }
+.col_04                                           { float:left; margin:0; position:relative; vertical-align:top; width:66.6%; }
+.col_04:first-child                               { width:66.7%; }
+.col_03                                           { float:left; margin:0; position:relative; vertical-align:top; width:50%; }
+.col_02                                           { float:left; margin:0; position:relative; vertical-align:top; width:33.3%; }
+.col_02:first-child                               { width:33.4%; }
 
 
 /* 2% Width Guttered Grids
 -----------------------------------------------
-/////////////////////////////////////////////// */
-.gut .col_06                                     { float:left; margin-left:2%; position:relative; vertical-align:top; width:100%; }
-.gut .col_04                                     { float:left; margin-left:2%; position:relative; vertical-align:top; width:66%; }
-.gut .col_03                                     { float:left; margin-left:2%; position:relative; vertical-align:top; width:49%; }
-.gut .col_02                                     { float:left; margin-left:2%; position:relative; vertical-align:top; width:32%; }
-.gut .row > [class^="col_"]:first-child          { margin-left:0; } /* Removes left margin from first .col_0X of each .row so everything adds up to 100% width */
+//////////////////////////////////////////////// */
+.gut .col_06                                      { float:left; margin-left:2%; position:relative; vertical-align:top; width:100%; }
+.gut .col_04                                      { float:left; margin-left:2%; position:relative; vertical-align:top; width:66%; }
+.gut .col_03                                      { float:left; margin-left:2%; position:relative; vertical-align:top; width:49%; }
+.gut .col_02                                      { float:left; margin-left:2%; position:relative; vertical-align:top; width:32%; }
+.gut .row > [class^="col_"]:first-child           { margin-left:0; } /* Removes left margin from first .col_0X of each .row so everything adds up to 100% width */

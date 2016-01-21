@@ -5,74 +5,74 @@ LAYOUT SETUP
 ------------------------------------------------------------------------------------------------- */
 /* Base Styles - Opinionated Defaults
 -----------------------------------------------
-/////////////////////////////////////////////// */
-body                                             { background-color:$site-bg-color; }
-                                                   /* Default body styling */
+//////////////////////////////////////////////// */
+body                                              { background-color:$site-bg-color; }
+                                                    /* Default body styling */
 
-::selection                                      { background-color:$def-font-highlight; text-shadow:none; }
-                                                   /* Custom background color for highlighted text, also removes text-shadow */
+::selection                                       { background-color:$def-font-highlight; text-shadow:none; }
+                                                    /* Custom background color for highlighted text, also removes text-shadow */
 
-img                                              { display:block; max-width:100%; }
-                                                   /* Responsive images */
+img                                               { display:block; max-width:100%; }
+                                                    /* Responsive images */
 
 audio,canvas,iframe,
-img,svg,video                                    { vertical-align:middle; }
-                                                   /* Remove the gap between audio, canvas, iframes, images, videos and the bottom of their containers */
+img,svg,video                                     { vertical-align:middle; }
+                                                    /* Remove the gap between audio, canvas, iframes, images, videos and the bottom of their containers */
 
-ol,ul                                            { list-style-position:inside; list-style-type:none; }
-                                                   /* Removes default list styles */
+ol,ul                                             { list-style-position:inside; list-style-type:none; }
+                                                    /* Removes default list styles */
 
 html,body,div,ol,ul,iframe,
 header,nav,section,aside,footer,
 h1,h2,h3,h4,h5,h6,p,
-button,fieldset,input,label,select,textarea      { display:block; border:0; margin:0; outline:0; padding:0; vertical-align:top; }
-                                                   /* Removes default styles, normalize alignment for commonly used elements */
+button,fieldset,input,label,select,textarea       { display:block; border:0; margin:0; outline:0; padding:0; vertical-align:top; }
+                                                    /* Removes default styles, normalize alignment for commonly used elements */
 
-button,input,select,textarea                     { box-sizing:border-box; width:100%; }
-                                                   /* Makes forms much easier to style */
+button,input,select,textarea                      { box-sizing:border-box; width:100%; }
+                                                    /* Makes forms much easier to style */
 
-textarea                                         { resize:vertical; }
-                                                   /* Allow only vertical resizing of textareas. */
+textarea                                          { resize:vertical; }
+                                                    /* Allow only vertical resizing of textareas. */
 
-label                                            { cursor:pointer; }
-                                                   /* Indicates labels should be clicked on */
+label                                             { cursor:pointer; }
+                                                    /* Indicates labels should be clicked on */
 
-fieldset                                         { border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; padding:rem($def-padding); margin-bottom:rem($def-margin); }
-                                                   /* Better default fieldset */
+fieldset                                          { border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; padding:rem($def-padding); margin-bottom:rem($def-margin); }
+                                                    /* Better default fieldset */
 
-hr                                               { display:block; height:1px; border:0; border-top:1px solid $def-border-color; margin:1em 0; padding:0; }
-                                                   /* Better default horizontal rule */
+hr                                                { display:block; height:1px; border:0; border-top:1px solid $def-border-color; margin:1em 0; padding:0; }
+                                                    /* Better default horizontal rule */
 
-span.amp                                         { font-family:Baskerville,"Palatino Linotype",Times New Roman,serif; font-style:italic; font-weight:400; line-height:normal; }
-                                                   /* Styles ampersands to appear badass. */
-                                                   /* Reference: http://simplebits.com/notebook/2008/08/14/ampersands-2/ */
+span.amp                                          { font-family:Baskerville,"Palatino Linotype",Times New Roman,serif; font-style:italic; font-weight:400; line-height:normal; }
+                                                    /* Styles ampersands to appear badass. */
+                                                    /* Reference: http://simplebits.com/notebook/2008/08/14/ampersands-2/ */
 
 
 /* Global Class Helpers
  * Might below to plugins/frameworks i.e. Typekit
 -----------------------------------------------
-/////////////////////////////////////////////// */
-.img                                             { position:relative; padding-top:75%; overflow:hidden; }
-.img img                                         { position:absolute; top:0; opacity:0; width:100%; transition:opacity 1s ease; }
-.img.loaded img                                  { opacity:1; }
+//////////////////////////////////////////////// */
+.img                                              { position:relative; padding-top:75%; overflow:hidden; }
+.img img                                          { position:absolute; top:0; opacity:0; width:100%; transition:opacity 1s ease; }
+.img.loaded img                                   { opacity:1; }
 
-.imgc                                            { display:inline-block; overflow:hidden; }
-.imgc img                                        { opacity:0; transition:opacity 1s ease; }
-.imgc.loaded img                                 { opacity:1; }
+.imgc                                             { display:inline-block; overflow:hidden; }
+.imgc img                                         { opacity:0; transition:opacity 1s ease; }
+.imgc.loaded img                                  { opacity:1; }
 
-.fade-in                                         { opacity:1 !important; }
-.fade-out                                        { opacity:0 !important; }
+.fade-in                                          { opacity:1 !important; }
+.fade-out                                         { opacity:0 !important; }
 
 /*
-.wf-loading                                      { }
-.wf-active                                       { opacity:1 !important; } */
+.wf-loading                                       { }
+.wf-active                                        { opacity:1 !important; } */
 
-.wf-loading .title                               { opacity:0; }
-.wf-active .title                                { @include animation(fadeIn, 1.0s, 1.0s); }
-                                                   /* Handles Typekit Loading Events */
+.wf-loading .title                                { opacity:0; }
+.wf-active .title                                 { @include animation(fadeIn, 1.0s, 1.0s); }
+                                                    /* Handles Typekit Loading Events */
 
-.fa                                              { display:block; }
-                                                   /* I like this more than display:inline-block for FontAwesome icons */
+.fa                                               { display:block; }
+                                                    /* I like this more than display:inline-block for FontAwesome icons */
 
 
 
@@ -82,25 +82,25 @@ span.amp                                         { font-family:Baskerville,"Pala
 TYPOGRAPHY DEFAULTS
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ------------------------------------------------------------------------------------------------- */
-html                                             { color:$def-font-color; font-family:$def-font-family; font-size:$def-font-scale; font-style:$def-font-style; font-weight:$def-font-weight; }
-                                                   /* Default global font-styling */
+html                                              { color:$def-font-color; font-family:$def-font-family; font-size:$def-font-scale; font-style:$def-font-style; font-weight:$def-font-weight; }
+                                                    /* Default global font-styling */
 
-p                                                { font-size:em($def-font-size); line-height:$def-line-height; }
-                                                   /* Default paragraph font-styling */
+p                                                 { font-size:em($def-font-size); line-height:$def-line-height; }
+                                                    /* Default paragraph font-styling */
 
-a                                                { color:$def-anchor-color; text-decoration:$def-anchor-deco; }
-a:hover                                          { color:$def-anchor-hover; }
-a:active                                         { }
-a:visited                                        { }
-                                                   /* Default anchor font-styling */
+a                                                 { color:$def-anchor-color; text-decoration:$def-anchor-deco; }
+a:hover                                           { color:$def-anchor-hover; }
+a:active                                          { }
+a:visited                                         { }
+                                                    /* Default anchor font-styling */
 
-h1                                               { font-size:em($def-h1-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
-h2                                               { font-size:em($def-h2-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
-h3                                               { font-size:em($def-h3-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
-h4                                               { font-size:em($def-h4-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
-h5                                               { font-size:em($def-h5-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
-h6                                               { font-size:em($def-h6-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
-                                                   /* Default header font-styling */
+h1                                                { font-size:em($def-h1-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h2                                                { font-size:em($def-h2-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h3                                                { font-size:em($def-h3-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h4                                                { font-size:em($def-h4-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h5                                                { font-size:em($def-h5-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h6                                                { font-size:em($def-h6-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+                                                    /* Default header font-styling */
 
 
 
@@ -111,32 +111,32 @@ h6                                               { font-size:em($def-h6-size); f
 FORM DEFAULTS
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ------------------------------------------------------------------------------------------------- */
-form                                             { background:$white; border-radius:$def-border-radius; padding:rem($def-padding); }
-/* form > *:last-child                              { margin-bottom:0; } */
+form                                              { background:$white; border-radius:$def-border-radius; padding:rem($def-padding); }
+/* form > *:last-child                               { margin-bottom:0; } */
 
-form > div                                       { @extend %clearfix; display:block; position:relative; }
-form > div > span                                { float:left; margin-left:2%; margin-bottom:rem($def-margin); position:relative; width:100%; }
-form > div > span.c_03                           { width:49%; }
-form > div > span.c_02                           { width:32%; }
-form > div > span:first-child                    { margin-left:0; }
-form > div:last-child > span                     { margin-bottom:0; }
+form > div                                        { @extend %clearfix; display:block; position:relative; }
+form > div > span                                 { float:left; margin-left:2%; margin-bottom:rem($def-margin); position:relative; width:100%; }
+form > div > span.c_03                            { width:49%; }
+form > div > span.c_02                            { width:32%; }
+form > div > span:first-child                     { margin-left:0; }
+form > div:last-child > span                      { margin-bottom:0; }
 
-label                                            { font-size:em($def-font-size); padding-bottom:rem($def-margin / 2); }
+label                                             { font-size:em($def-font-size); padding-bottom:rem($def-margin / 2); }
 
-input                                            { background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; font-size:em($def-font-size); padding:rem(9px) rem(0px) rem(11px) rem(14px); transition:0.3s all ease; }
-input[type="button"]                             { padding:rem(9px) rem(14px) rem(11px) rem(14px); }
-input[type="button"]:hover                       { background:rgba(0,0,0,0.05); }
-input:focus                                      { background:rgba(0,0,0,0.05); }
+input                                             { background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; font-size:em($def-font-size); padding:rem(9px) rem(0px) rem(11px) rem(14px); transition:0.3s all ease; }
+input[type="button"]                              { padding:rem(9px) rem(14px) rem(11px) rem(14px); }
+input[type="button"]:hover                        { background:rgba(0,0,0,0.05); }
+input:focus                                       { background:rgba(0,0,0,0.05); }
 
-textarea                                         { background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; font-size:em($def-font-size); padding:rem(9px) rem(15px) rem(11px) rem(14px); min-height:rem(150px); transition:0.3s background ease; }
-textarea:focus                                   { background:rgba(0,0,0,0.05); }
+textarea                                          { background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; font-size:em($def-font-size); padding:rem(9px) rem(15px) rem(11px) rem(14px); min-height:rem(150px); transition:0.3s background ease; }
+textarea:focus                                    { background:rgba(0,0,0,0.05); }
 
-.select                                          { @include unselectable(); background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; cursor:pointer; font-size:em($def-font-size); padding:rem(9px) rem(15px) rem(11px) rem(14px); }
-.options                                         { @include absolute(auto,0,auto,0); background:$white; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; display:none; z-index:50; }
-.options li                                      {  }
+.select                                           { @include unselectable(); background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; cursor:pointer; font-size:em($def-font-size); padding:rem(9px) rem(15px) rem(11px) rem(14px); }
+.options                                          { @include absolute(auto,0,auto,0); background:$white; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; display:none; z-index:50; }
+.options li                                       {  }
 
-select                                           { background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; font-size:em($def-font-size); padding:rem(8px) rem(0px) rem(10px) rem(10px); }
-option                                           { padding:0; margin:0; }
+select                                            { background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; font-size:em($def-font-size); padding:rem(8px) rem(0px) rem(10px) rem(10px); }
+option                                            { padding:0; margin:0; }
 
 
 
@@ -150,46 +150,56 @@ LAYOUT STYLES
 ------------------------------------------------------------------------------------------------- */
 /* Image Sprites
 -----------------------------------------------
-/////////////////////////////////////////////// */
-.img_logo                                        { background-image:url('../img/sprite_sheet.png'); background-position:0 0; height:16px; width:86px; }
+//////////////////////////////////////////////// */
+img.logo                                          { background-image:url('../img/sprite_sheet.png'); background-position:0 0; height:16px; width:86px; }
 
 
 /* Layout Section - <wrapper>
 -----------------------------------------------
-/////////////////////////////////////////////// */
-.wrapper                                         { }
+//////////////////////////////////////////////// */
+.wrapper                                          { }
 
 
 /* Layout Section - <header>
 -----------------------------------------------
-/////////////////////////////////////////////// */
-header                                           { background:$black; color:$white; }
+//////////////////////////////////////////////// */
+header                                            { color:$white;
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45525c+0,2a2f33+100 */
+                                                    background: #45525c; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #45525c 0%, #2a2f33 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #45525c 0%,#2a2f33 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #45525c 0%,#2a2f33 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45525c', endColorstr='#2a2f33',GradientType=0 ); /* IE6-9 */ }
 
-header a                                         { display:block; color:$site-color-1; }
-header .img_logo                                 { float:left; }
+header a.logo                                     { display:inline-block; float:left; padding:rem(9px) rem(20px) rem(7px) rem(20px); }
+header a.logo img                                 { transition:0.2s all ease; }
+header a.logo:hover img                           { opacity:0.75; }
 
-header nav ul                                    { @extend %clearfix; float:right; }
-header nav li                                    { float:left; }
+header nav                                        { @extend %clearfix; float:right; }
+header nav div                                    { color:#eee; }
+header nav a                                      { display:block; color:$site-color-1; }
+header nav ul                                     { @extend %clearfix; }
+header nav li                                     { float:left; }
 
 
 /* Layout Section - <nav>
 -----------------------------------------------
-/////////////////////////////////////////////// */
-nav                                              { }
+//////////////////////////////////////////////// */
+nav                                               { }
 
 
 /* Layout Section - <section class="main">
 -----------------------------------------------
-/////////////////////////////////////////////// */
-section.main                                     { }
+//////////////////////////////////////////////// */
+section.main                                      { }
 
-.content                                         { }
+.content                                          { }
 
 
 /* Layout Section - <footer>
 -----------------------------------------------
-/////////////////////////////////////////////// */
-footer                                           { }
+//////////////////////////////////////////////// */
+footer                                            { }
 
 
 
@@ -202,17 +212,17 @@ PAGE STYLES
 ------------------------------------------------------------------------------------------------- */
 /* Page - Home
 -----------------------------------------------
-/////////////////////////////////////////////// */
-.home                                            { }
+//////////////////////////////////////////////// */
+.home                                             { }
 
 
 /* Page - About
 -----------------------------------------------
-/////////////////////////////////////////////// */
-.about                                           { }
+//////////////////////////////////////////////// */
+.about                                            { }
 
 
 /* Page - Contact
 -----------------------------------------------
-/////////////////////////////////////////////// */
-.contact                                         { }
+//////////////////////////////////////////////// */
+.contact                                          { }
