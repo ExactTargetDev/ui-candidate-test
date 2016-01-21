@@ -22,11 +22,11 @@ img,svg,video                                    { vertical-align:middle; }
 ol,ul                                            { list-style-position:inside; list-style-type:none; }
                                                    /* Removes default list styles */
 
-html,body,div,ol,ul,
+html,body,div,ol,ul,iframe,
 header,nav,section,aside,footer,
 h1,h2,h3,h4,h5,h6,p,
 button,fieldset,input,label,select,textarea      { display:block; border:0; margin:0; outline:0; padding:0; vertical-align:top; }
-                                                   /* Removes default styles, normalize alignment */
+                                                   /* Removes default styles, normalize alignment for commonly used elements */
 
 button,input,select,textarea                     { box-sizing:border-box; width:100%; }
                                                    /* Makes forms much easier to style */
@@ -47,6 +47,31 @@ span.amp                                         { font-family:Baskerville,"Pala
                                                    /* Styles ampersands to appear badass. */
                                                    /* Reference: http://simplebits.com/notebook/2008/08/14/ampersands-2/ */
 
+
+/* Global Class Helpers (Might below to plugins/frameworks i.e. Typekit)
+-----------------------------------------------
+/////////////////////////////////////////////// */
+.img                                             { position:relative; padding-top:75%; overflow:hidden; }
+.img img                                         { position:absolute; top:0; opacity:0; width:100%; transition:opacity 1s ease; }
+.img.loaded img                                  { opacity:1; }
+
+.imgc                                            { display:inline-block; overflow:hidden; }
+.imgc img                                        { opacity:0; transition:opacity 1s ease; }
+.imgc.loaded img                                 { opacity:1; }
+
+.fade-in                                         { opacity:1 !important; }
+.fade-out                                        { opacity:0 !important; }
+
+/*
+.wf-loading                                      { }
+.wf-active                                       { opacity:1 !important; } */
+
+.wf-loading .title                               { opacity:0; }
+.wf-active .title                                { @include animation(fadeIn, 1.0s, 1.0s); }
+                                                   /* Handles Typekit Loading Events */
+
+.fa                                              { display:block; }
+                                                   /* I like this more than display:inline-block for FontAwesome icons */
 
 
 
@@ -122,33 +147,10 @@ option                                           { padding:0; margin:0; }
 LAYOUT STYLES
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ------------------------------------------------------------------------------------------------- */
-/* Global Classes
+/* Layout Section - <wrapper>
 -----------------------------------------------
 /////////////////////////////////////////////// */
 .wrapper                                         { box-shadow:0 0 15px rgba(0,0,0,0.5); max-width:rem(1700px); }
-
-.img                                             { position:relative; padding-top:75%; overflow:hidden; }
-.img img                                         { position:absolute; top:0; opacity:0; width:100%; transition:opacity 1s ease; }
-.img.loaded img                                  { opacity:1; }
-
-.imgc                                            { display:inline-block; overflow:hidden; }
-.imgc img                                        { opacity:0; transition:opacity 1s ease; }
-.imgc.loaded img                                 { opacity:1; }
-
-.fade-in                                         { opacity:1 !important; }
-.fade-out                                        { opacity:0 !important; }
-
-/*
-.wf-loading                                      { }
-.wf-active                                       { opacity:1 !important; }
-*/
-
-.wf-loading .title                               { opacity:0; }
-.wf-active .title                                { @include animation(fadeIn, 1.0s, 1.0s); }
-                                                   /* Handles Typekit Loading Events */
-
-.fa                                              { display:block; }
-                                                   /* I like this more than display:inline-block for FontAwesome icons */
 
 
 /* Layout Section - <header>
@@ -160,13 +162,14 @@ header                                           { }
 /* Layout Section - <nav>
 -----------------------------------------------
 /////////////////////////////////////////////// */
-nav                                              { display:block; }
+nav                                              { }
 
 
 /* Layout Section - <section class="main">
 -----------------------------------------------
 /////////////////////////////////////////////// */
-.main                                            { }
+section.main                                     { }
+
 .content                                         { }
 
 
