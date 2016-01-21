@@ -31,7 +31,9 @@ require.config({
 
       "jasminejquery": "../libs/plugins/jasmine-jquery",
 
-      "slick": "../libs/plugins/slick"
+      "slick": "../libs/plugins/slick",
+
+      "bowser": "../libs/plugins/bowser"
 
   },
 

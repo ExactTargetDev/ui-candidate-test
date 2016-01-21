@@ -1,8 +1,8 @@
 // Pulse.js
 // -------
-define(["jquery", "backbone", "slick", "models/Pulse", "text!templates/Pulse.html"],
+define(["jquery", "backbone", "slick", "bowser", "models/Pulse", "text!templates/Pulse.html"],
 
-    function($, Backbone, Slick, PulseModel, template){
+    function($, Backbone, Slick, Bowser, PulseModel, template){
 
         var PulseView = Backbone.View.extend({
 
@@ -16,19 +16,44 @@ define(["jquery", "backbone", "slick", "models/Pulse", "text!templates/Pulse.htm
                 // Calls the view's render method
                 this.render();
 
-                $('#pulse>.content').slick({
-                  centerMode: true,
-                  centerPadding: '0',
-                  slidesToShow: 4,
-                  focusOnSelect: true,
-                  dots: true
-                });
+                this.initSlick();
 
             },
 
             // View Event Handlers
             events: {
+                "click, drag": "animate"
+            },
 
+            animate: function(e) {
+                $('.slick-slide:not(.slick-current) .slide-content').animate(
+                    {
+                        height: "60%"
+                    },
+                    {
+                        duration: 200
+                    }
+                );
+                $('.slick-current .slide-content').animate(
+                    {
+                        height: "100%"
+                    },
+                    {
+                        duration: 200
+                    }
+                );
+            },
+
+            initSlick: function() {
+                $('#pulse>.content').slick({
+                  centerMode: true,
+                  infinite: false,
+                  centerPadding: '0',
+                  slidesToShow: 4,
+                  focusOnSelect: true,
+                  dots: true,
+                  arrows: false
+                });
             },
 
             // Renders the view's template to the UI
