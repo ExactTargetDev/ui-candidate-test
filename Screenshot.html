@@ -1,8 +1,87 @@
-﻿<!DOCTYPE html>
-<html>
+<!doctype html>
+<!--[if IE 6]>      <html class="ie6"> <![endif]-->
+<!--[if IE 7]>      <html class="ie7"> <![endif]-->
+<!--[if IE 8]>      <html class="ie8"> <![endif]-->
+<!--[if IE 9]><!--> <html class="ie9"> <!--<![endif]-->
 <head>
-    <title>Screenshot.html</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Salesforce Dashboard</title>
+
+    <meta name="description" content="Site Description" />
+    <meta name="author" content="Xenostar Studios" />
+    <meta name="keywords" content="key, words, here" />
+    <meta name="rating" content="general" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="content-language" content="english">
+    <meta name="audience" content="all" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://website.com/" />
+    <meta property="og:image" content="http://website.com/assets/img/xeno-og.png" />
+    <meta property="og:title" content="Website Name" />
+    <meta property="og:description" content="Website description here." />
+    <meta property="og:street-address" content="Company Address" />
+    <meta property="og:locality" content="Company City Here" />
+    <meta property="og:region" content="State" />
+    <meta property="og:postal-code" content="55555" />
+    <meta property="og:country-name" content="USA" />
+    <meta property="og:email" content="client@email.com" />
+    <meta property="og:phone_number" content="555-555-5555" />
+
+    <!-- Disables Scaling on multi-touch interfaces -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/master.min.css" />
+
+    <!-- Polyfills -->
+    <!--[if lt IE 9]>
+        <script src="assets/libs/html5shiv/dist/html5shiv.min.js"></script>
+        <script src="assets/libs/REM-unit-polyfill/js/rem.min.js"></script>
+    <![endif]-->
+
+    <!-- Header Scripts -->
+    <script>
+        function imgLoaded(img){
+            img.parentNode.className += ' loaded';
+        };
+        var imagePreload = [
+            //'/uploads/hero_about.jpg',
+        ];
+    </script>
+
 </head>
-<body>
+<body id="top">
+<div class="wrapper">
+
+    <header>
+        <div class="row">
+            <div class="col_06">
+                <h1 class="title">ExactTarget</h1>
+            </div>
+        </div>
+    </header>
+    <section class="main">
+        <div class="row">
+            <div class="col_02">
+                <p>Sidebar</p>
+            </div>
+            <div class="col_04">
+                <p>Main Content Area</p>
+            </div>
+        </div>
+    </section>
+
+</div><!-- /wrapper -->
+
+<!-- Load Frameworks -->
+<script type="text/javascript" src="assets/libs/jquery/dist/jquery.js"></script>
+
+<!-- Start Application -->
+<script type="text/javascript" src="assets/scripts/app.min.js"></script>
+
 </body>
 </html>
