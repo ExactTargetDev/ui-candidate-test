@@ -163,7 +163,7 @@ img.logo                                          { background-image:url('../img
 /* Layout Section - <header>
 -----------------------------------------------
 //////////////////////////////////////////////// */
-header                                            { color:$white;
+header                                            { color:$white; box-shadow:0 1px 2px rgba(0,0,0,0.3); 
                                                     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45525c+0,2a2f33+100 */
                                                     background: #45525c; /* Old browsers */
                                                     background: -moz-linear-gradient(top,  #45525c 0%, #2a2f33 100%); /* FF3.6-15 */
@@ -175,10 +175,11 @@ header a.logo                                     { display:inline-block; float:
 header a.logo img                                 { transition:0.2s all ease; }
 header a.logo:hover img                           { opacity:0.75; }
 
-header nav                                        { @extend %clearfix; float:right; }
-header nav div                                    { color:#eee; }
-header nav a                                      { display:block; color:$site-color-1; }
-header nav ul                                     { @extend %clearfix; }
+header nav                                        { @extend %clearfix; color:#ccc; font-size:em(11px); float:right; line-height:rem(32px); }
+header nav .welcome                               { color:#eee; margin-right: rem(3px); }
+header nav .divider                               { cursor:default;  }
+header nav a                                      { display:block; color:$site-color-1; padding:0 rem(6px); }
+header nav ul                                     { @extend %clearfix; padding-right:rem(4px); }
 header nav li                                     { float:left; }
 
 
