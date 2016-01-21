@@ -1,9 +1,25 @@
-    // shim
+    // shims
     if (!Array.isArray) {
         Array.isArray = function(arg) {
             return Object.prototype.toString.call(arg) === '[object Array]';
         };
     }
+
+    if(typeof String.prototype.trim !== 'function') {
+        String.prototype.trim = function() {
+            return this.replace(/^\s+|\s+$/g, '');
+        }
+    }
+
+    function registerEvent(element, event, func) {
+        if (element.addEventListener) {
+            element.addEventListener(event, func, false);
+        }
+        else {
+            element.attachEvent(event, func);
+        }
+    }
+
 
      // Example unit test function
      function divide( a, b ) {
@@ -206,7 +222,7 @@
             option.textContent = "Option " + options[i];
             select.appendChild(option);
         }
-        button.addEventListener("click", function() {
+        registerEvent(button, "click", function() {
             var selectedOption = select[select.selectedIndex];
             console.log("Name:: ", selectedOption.getAttribute("name"), "  Value:: ", selectedOption.value);
         });
@@ -256,13 +272,13 @@
         var link2 = document.createElement("a");
         link1.textContent = "Check All";
         link2.textContent = "Uncheck All";
-        link1.addEventListener("click", function() {
+        registerEvent(link1, "click", function() {
             for(var i=0; i < checkboxElements.length; i++){
                 if(!checkboxElements[i].checked)
                     checkboxElements[i].checked = true;
             }
         });
-        link2.addEventListener("click", function() {
+        registerEvent(link2, "click", function() {
             for(var i=0; i < checkboxElements.length; i++){
                 if(checkboxElements[i].checked)
                     checkboxElements[i].checked = false;
