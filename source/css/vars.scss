@@ -2,31 +2,48 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 GLOBAL SCSS VARIABLES
 
-Use http://www.pearsonified.com/typography/ to find proper font sizes
+Use http://www.pearsonified.com/typography/ to Golden Ratio font sizes.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ------------------------------------------------------------------------------------------------- */
-$def-anchor-color:  #00A0B0;
+/* Default Site Colors */
+$site-color-1:       #ff0;
+$site-color-2:       #f0f;
+$site-color-3:       #0ff;
 
-$def-border-color:  #bbb;
-$def-border-radius: 5px;
-$def-border-size:   2px;
 
-$def-font-color:    #222;                // Global font color for the site
-$def-font-family:   'Lato', sans-serif;  // Global font-family for the site
-$def-font-scale:    1em;                 // Site-wide font scaling, leave this at 1em
-$def-font-size:     20px;                // Equivalent to Font Size on Pearsonified
-$def-font-style:    normal;              // Leave this at normal
-$def-font-margin:   32px;                // Equivalent to Line Height on Pearsonified
-$def-font-weight:   400;                 // Global font-weight for the site
+/* Default Font Colors */
+$def-anchor-color:    #000;
+$def-anchor-hover:    #eee;
 
-$def-h1-size:       52px;
-$def-h2-size:       32px;
-$def-h3-size:       25px;
-$def-h4-size:       20px;
-$def-h5-size:       16px;
-$def-h6-size:       13px;
 
-$def-line-height:   strip-units($def-font-margin / $def-font-size);
-$def-margin:        $def-font-margin;
-$def-padding:       $def-font-margin;
+/* Default Border Settings */
+$def-border-color:    #bbb;
+$def-border-radius:   5px;
+$def-border-size:     2px;
+
+
+/* Default Font Set  tings */
+$def-font-color:      #222;                    // CONFIGURE: Global font-color
+$def-font-family:     'Lato', sans-serif;      // CONFIGURE: Global font-family
+$def-font-size:       20px;                    // CONFIGURE: Equivalent to 'Font Size' on Pearsonified
+$def-font-lh:         32px;                    // CONFIGURE: Equivalent to 'Line Height' on Pearsonified
+
+$def-font-scale:      1em;                     // Usually do not touch. Site-wide font scaling. Essentially equals 1em = 16px
+$def-font-weight:     400;                     // Usually do not touch. Global font-weight
+$def-font-style:      normal;                  // Usually do not touch. Global font-style
+
+
+/* Headers */
+$def-h1-size:         52px;                    // CONFIGURE: Equivalent to 'Title' on Pearsonified
+$def-h2-size:         32px;                    // CONFIGURE: Equivalent to 'Headlines' on Pearsonified
+$def-h3-size:         25px;                    // CONFIGURE: Equivalent to 'Sub-headlines' on Pearsonified
+$def-h4-size:         20px;                    // CONFIGURE: Equivalent to 'Primary Text' on Pearsonified
+$def-h5-size:         16px;                    // CONFIGURE: Equivalent to 'Secondary Text' on Pearsonified
+$def-h6-size:         13px;                    // CONFIGURE: Equivalent to 'Secondary Text' minus 2-3 pixels. User preference. Usually never used.
+
+
+/* Helper functions */
+$def-line-height:     strip-units($def-font-lh / $def-font-size);
+$def-margin:          $def-font-lh;
+$def-padding:         $def-font-lh;
