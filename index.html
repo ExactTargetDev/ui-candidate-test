@@ -33,14 +33,11 @@
     <!-- Disables Scaling on multi-touch interfaces -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 
-    <!-- Apple Touch Icon -->
-    <!-- link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" -->
-
     <!-- CSS -->
     <link rel="stylesheet" href="assets/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/master.min.css" />
 
-    <!-- HTML5shiv, for IE6-8 support of HTML5 elements -->
+    <!-- Polyfills -->
     <!--[if lt IE 9]>
         <script src="/assets/libs/html5shiv/dist/html5shiv-printshiv.min.js"></script>
         <script src="/assets/libs/REM-unit-polyfill/js/rem.min.js"></script>
@@ -54,13 +51,6 @@
         var imagePreload = [
             //'/uploads/hero_about.jpg',
         ];
-        (function(d) {
-            var config = {
-                kitId: 'kitid',
-                scriptTimeout: 3000
-            },
-            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-        })(document);
     </script>
 
 </head>
@@ -138,13 +128,6 @@
 
         </div>
     </section>
-    <footer>
-        <div class="row">
-
-            <div class="col_06"><div class="pad">Footer</div></div>
-
-        </div>
-    </footer>
 
 </div><!-- /wrapper -->
 
@@ -154,7 +137,7 @@
 </script>
 
 <!-- Load Frameworks -->
-<script src="assets/libs/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="assets/libs/jquery/dist/jquery.js"></script>
 
 <!-- Start Application -->
 <script type="text/javascript" src="assets/scripts/app.min.js"></script>
