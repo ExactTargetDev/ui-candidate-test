@@ -4,11 +4,12 @@
 
     <span>
     <% _.each(menuItems,function(item,key,arr) { %>
-        <span class="menu-item menu-item-<%=item.name %>"
+        <a class="menu-item menu-item-<%=item.name %>"
+                <% if(item.url){ %> href="<%=item.url %>" <% } %>
                 <% if(item.triggerModal === true){ %> data-toggle="modal" data-target="#myModal" <% } %>
             >
             <%=item.text %>
-        </span>
+        </a>
 
     <% }); %>
     </span>

@@ -16,8 +16,9 @@ define(["jquery", "backbone"],
             defaults: {
                 menuItems: [
                     {
-                        text: "Account",
-                        name: "account"
+                        text: "Unit Test",
+                        name: "unittest",
+                        url: "JsAndDom-UnitTest-Runner.html"
                     },
                     {
                         text: "Help",
@@ -25,8 +26,9 @@ define(["jquery", "backbone"],
                         triggerModal: true
                     },
                     {
-                        text: "Logout",
-                        name: "logout"
+                        text: "JS & DOM",
+                        name: "jsanddom",
+                        url: "JsAndDom.html"
                     }
                 ]
             },
