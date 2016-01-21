@@ -6,9 +6,6 @@ LAYOUT SETUP
 /* Base Styles - Opinionated Defaults
 -----------------------------------------------
 //////////////////////////////////////////////// */
-body                                              { background-color:$site-bg-color; }
-                                                    /* Default body styling */
-
 ::selection                                       { background-color:$def-font-highlight; text-shadow:none; }
                                                     /* Custom background color for highlighted text, also removes text-shadow */
 
@@ -148,22 +145,19 @@ option                                            { padding:0; margin:0; }
 LAYOUT STYLES
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ------------------------------------------------------------------------------------------------- */
-/* Image Sprites
------------------------------------------------
-//////////////////////////////////////////////// */
-img.logo                                          { background-image:url('../img/sprite_sheet.png'); background-position:0 0; height:16px; width:86px; }
-
+html                                              { overflow:hidden; }
+body                                              { background-color:$site-bg-color; overflow:hidden; position:relative; }
 
 /* Layout Section - <wrapper>
 -----------------------------------------------
 //////////////////////////////////////////////// */
-.wrapper                                          { }
+.wrapper                                          { @include absolute(rem(32px),0,0,0); overflow-y:auto; }
 
 
 /* Layout Section - <header>
 -----------------------------------------------
 //////////////////////////////////////////////// */
-header                                            { color:$white; box-shadow:0 1px 2px rgba(0,0,0,0.3); 
+header                                            { color:$white; box-shadow:0 1px 2px rgba(0,0,0,0.3);
                                                     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45525c+0,2a2f33+100 */
                                                     background: #45525c; /* Old browsers */
                                                     background: -moz-linear-gradient(top,  #45525c 0%, #2a2f33 100%); /* FF3.6-15 */
@@ -173,7 +167,7 @@ header                                            { color:$white; box-shadow:0 1
 
 header a.logo                                     { display:inline-block; float:left; padding:rem(9px) rem(20px) rem(7px) rem(20px); }
 header a.logo img                                 { transition:0.2s all ease; }
-header a.logo:hover img                           { opacity:0.75; }
+header a.logo:hover img                           { opacity:0.7; }
 
 header nav                                        { @extend %clearfix; color:#ccc; font-size:em(11px); float:right; line-height:rem(32px); }
 header nav .welcome                               { color:#eee; margin-right: rem(3px); }
@@ -183,24 +177,81 @@ header nav ul                                     { @extend %clearfix; padding-r
 header nav li                                     { float:left; }
 
 
-/* Layout Section - <nav>
+/* Layout Section - Sidebar
 -----------------------------------------------
 //////////////////////////////////////////////// */
 nav                                               { }
 
 
-/* Layout Section - <section class="main">
+/* Layout Section - Main Content Area
 -----------------------------------------------
 //////////////////////////////////////////////// */
-section.main                                      { }
-
 .content                                          { }
 
 
-/* Layout Section - <footer>
+/* Layout Section - Sidebar
 -----------------------------------------------
 //////////////////////////////////////////////// */
-footer                                            { }
+.sidebar                                          { padding:rem(20px); }
+.sidebar aside                                    { background:#f4f4f5; border:1px solid #e6e6e6; border-radius:rem(5px); box-shadow:inset 0 0 0 1px $white, 0 2px 3px rgba(0,0,0,0.1); }
+.sidebar aside .header                            { box-shadow:inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
+                                                    @extend %clearfix; border:1px solid #f8981d; border-radius:rem(5px) rem(5px) 0 0; margin:-1px -1px 0 -1px; position:relative;
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdaf4b+25,f8981d+100 */
+                                                    background: #fdaf4b; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #fdaf4b 25%, #f8981d 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #fdaf4b 25%,#f8981d 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #fdaf4b 25%,#f8981d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 ); /* IE6-9 */ }
+.sidebar aside .header img                        { float:left; }
+.sidebar aside .header div                        { color:$white; cursor:default; font-size:em(14px); font-weight:700; float:left; text-shadow:0 1px 1px rgba(0,0,0,0.1); line-height:1.2; padding-top:rem(8px); }
+
+.sidebar aside a                                  { @extend %clearfix; display:block; padding:rem(4px) rem(8px); }
+.sidebar aside a.first                            { margin-top:rem(6px); }
+.sidebar aside a.last                             { padding:rem(3px) rem(8px); margin-bottom:rem(6px); }
+.sidebar aside a img                              { float:left; margin-left:1px; }
+.sidebar aside a span                             { color:#888; font-size:em(12px); float:left; line-height:rem(24px); margin-left:rem(9px); }
+.sidebar aside a small                            { color:#888; font-size:em(11px); float:left; line-height:rem(13px); margin-left:rem(7px); }
+.sidebar aside a .block                           { box-shadow:inset 0 -1px 0 0px #848d96,inset 0 0 0 1px #b2b6bd, inset 0 1px 3px rgba(255,255,255,0.85),0 1px 2px rgba(0,0,0,0.15);
+                                                    border-radius:rem(4px); float:left; height:rem(24px); width:rem(24px);
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#afb8bf+24,8b949f+100 */
+                                                    background: #afb8bf; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #afb8bf 24%, #8b949f 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #afb8bf 24%,#8b949f 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #afb8bf 24%,#8b949f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+.sidebar aside a:hover .block                     { box-shadow:inset 0 0 0 1px #f8981d,inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
+                                                    border-radius:rem(4px);
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdaf4b+25,f8981d+100 */
+                                                    background: #fdaf4b; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #fdaf4b 25%, #f8981d 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #fdaf4b 25%,#f8981d 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #fdaf4b 25%,#f8981d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 ); /* IE6-9 */ }
+.sidebar aside a:hover                            { background:#e9e9ea; background:rgba(0,0,0,0.05); }
+.sidebar aside a:active                           { background:rgba(0,0,0,0.15); }
+.sidebar aside a:active span,
+.sidebar aside a:active small                     { color:#444; }
+
+.sidebar aside .divider                           { display:block; border-top:1px solid #fefffd; border-bottom:1px solid #e1e1e2; margin:rem(6px) 0; }
+
+.sidebar aside .icon                              { width:24px; height:24px; }
+.sidebar aside .icon.exacttarget-email            { background-image:url('../img/sprite_sheet.png'); background-position:-128px 0; }
+.sidebar aside .icon.exacttarget-mobile           { background-image:url('../img/sprite_sheet.png'); background-position:-224px 0; }
+.sidebar aside .icon.cotweet-social               { background-image:url('../img/sprite_sheet.png'); background-position:-176px 0; }
+.sidebar aside .icon.exacttarget-sites            { background-image:url('../img/sprite_sheet.png'); background-position:-152px 0; }
+.sidebar aside .icon.automation-studio            { background-image:url('../img/sprite_sheet.png'); background-position:-248px 0; }
+.sidebar aside .icon.audience-builder             { background-image:url('../img/sprite_sheet.png'); background-position:-200px 0; }
+.sidebar aside .icon.report-builder               { background-image:url('../img/sprite_sheet.png'); background-position:-272px 0; }
+.sidebar aside .icon.partner-applications         { background-image:url('../img/sprite_sheet.png'); background-position:0 0; }
+
+
+
+
+/* Image Sprites
+-----------------------------------------------
+//////////////////////////////////////////////// */
+img.logo                                          { background-image:url('../img/sprite_sheet.png'); background-position:0 0; height:16px; width:86px; }
+img.sidebarlogo                                   { background-image:url('../img/sprite_sheet.png'); background-position:-86px 0; height:48px; width:42px; }
+img.smallarrow                                    { background-image:url('../img/sprite_sheet.png'); background-position:-296px 0; height:13px; width:13px; }
 
 
 

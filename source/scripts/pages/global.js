@@ -20,15 +20,25 @@ function js_global(routeName)
      */
     this.start = function()
     {
-        this.foo();
+        this.sizeWrapper();
     };
 
     /**
      * @desc Basic function demo
      *
      */
-    this.foo = function()
+    this.sizeWrapper = function()
     {
-        console.log("01 - Hello world, GLOCAL application logic loaded!");
+        var body    = $('body');
+        var header  = $('header');
+        var wrapper = $('section.wrapper');
+
+        if(wrapper.length === 0){
+            return;
+        }
+
+        $(window).on('scroll resize load', function() {
+            body.css('height', bInfo.winHeight());
+        });
     };
 }

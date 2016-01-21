@@ -6,13 +6,7 @@ GRID SETUP
 /* Base Grid Classes
 -----------------------------------------------
 //////////////////////////////////////////////// */
-body                                              { overflow-x:hidden; }
-
-#app-menu                                         { height:100%; overflow:hidden; position:fixed; top:0; width:0; z-index:9999; }
-                                                  /* A mobile-friendly menu section that sits inline-block next to the .wrapper
-                                                     !!! There is usually only one app-menu per page */
-
-.wrapper                                          { display:block; position:relative; margin:0 auto; overflow:hidden; text-align:left; }
+.wrapper                                          { display:block; position:relative; margin:0 auto; text-align:left; }
                                                   /* The .wrapper defines the overall boundary of the site. All content appears inside the .wrapper
                                                      !!! There is usually only one .wrapper per page */
 
