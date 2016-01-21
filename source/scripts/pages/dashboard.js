@@ -25,6 +25,6 @@ function js_dashboard()
      */
     this.foo = function()
     {
-        console.log("02 - Hello world, LOCAL application logic loaded!");
+        //console.log("02 - Hello world, LOCAL application logic loaded!");
     };
 }
