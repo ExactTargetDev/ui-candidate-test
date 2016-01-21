@@ -53,10 +53,10 @@ footer                                           { display:block; position:relat
 /////////////////////////////////////////////// */
 .col_06                                          { float:left; margin:0; position:relative; vertical-align:top; width:100%; }
 .col_04                                          { float:left; margin:0; position:relative; vertical-align:top; width:66.6%; }
-.col_04:last-child                               { width:66.4%; }
+.col_04:first-child                              { width:66.7%; }
 .col_03                                          { float:left; margin:0; position:relative; vertical-align:top; width:50%; }
 .col_02                                          { float:left; margin:0; position:relative; vertical-align:top; width:33.3%; }
-.col_02:last-child                               { width:33.4%; }
+.col_02:first-child                              { width:33.4%; }
 
 
 /* 2% Width Guttered Grids
