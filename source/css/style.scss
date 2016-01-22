@@ -181,14 +181,14 @@ header nav li                                     { float:left; }
 /* Layout Section - Pulse Module
 -----------------------------------------------
 //////////////////////////////////////////////// */
-.pulse                                            { margin-top:rem(20px); border-radius:rem(6px); height:rem(265px); box-shadow:inset 0 0 4px 3px rgba(0,0,0,0.15); position:relative; }
+.pulse                                            { box-sizing:border-box; margin-top:rem(20px); border-radius:rem(6px); height:rem(265px); box-shadow:inset 0 0 4px 3px rgba(0,0,0,0.15); padding:rem(57px) rem(20px) rem(43px) rem(20px); position:relative; }
 .pulse                                            { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bac8d1+0,e3edf5+89,d2dee6+100 */
                                                     background: #bac8d1; /* Old browsers */
                                                     background: -moz-linear-gradient(top,  #bac8d1 0%, #e3edf5 89%, #d2dee6 100%); /* FF3.6-15 */
                                                     background: -webkit-linear-gradient(top,  #bac8d1 0%,#e3edf5 89%,#d2dee6 100%); /* Chrome10-25,Safari5.1-6 */
                                                     background: linear-gradient(to bottom,  #bac8d1 0%,#e3edf5 89%,#d2dee6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-.pulse .title                                     { @include absolute(0,auto,auto,0); background-image:url('../img/sprite_sheet.png'); background-position:-463px 0; height:rem(48px); width:rem(116px); z-index:10; }
-.pulse .title > div                               { color:$white; cursor:default; font-weight:em(20px); font-weight:700; letter-spacing:1px; text-shadow:0 1px 1px rgba(88,139,172,0.6); margin-left:rem(15px); line-height:rem(33px); }
+.pulse > .logo                                    { @include absolute(0,auto,auto,0); background-image:url('../img/sprite_sheet.png'); background-position:-463px 0; height:rem(48px); width:rem(116px); z-index:10; }
+.pulse > .logo > div                              { color:$white; cursor:default; font-weight:em(20px); font-weight:700; letter-spacing:1px; text-shadow:0 1px 1px rgba(88,139,172,0.6); margin-left:rem(15px); line-height:rem(33px); }
 
 .pulse .tools                                     { z-index:10; }
 .pulse .tools.one                                 { @include absolute(6px,8px,auto,auto); }
@@ -208,6 +208,36 @@ header nav li                                     { float:left; }
 .pulse nav li div span                            { background:#c8d0d6; display:block; cursor:pointer; height:rem(3px); width:rem(4px); }
 .pulse nav li div.active span                     { background:#8fa9bc; border-radius:rem(2px); }
 .pulse nav li div:hover span                      { background:#8fa9bc; }
+
+.pulse .module-window                             { @extend %clearfix; }
+
+.pulse .module                                    { transition:0.2s all ease; height:rem(95px); border-radius:rem(5px); box-shadow:inset 0px -1px 1px 0 rgba(0,0,0,0.4),inset 0px 1px 0px 0px #fff,inset 0px 0px 0px 1px #d1dfe7,inset 0px 5px 8px rgba(255,255,255,1),0 2px 3px rgba(0,0,0,0.2); }
+.pulse .module:first-child                        { margin-left:0; }
+.pulse .module                                    { cursor:pointer; float:left; margin-left:2.5%; margin-top:rem(51px); width:17%; position:relative;
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f9f9+35,d3e1ec+100 */
+                                                    background: #dfeaf1; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #f9f9f9 35%, #d3e1ec 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #f9f9f9 35%,#d3e1ec 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #f9f9f9 35%,#d3e1ec 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+.pulse .module .title                             { @include absolute(auto,0,100%,0); color:#7f91a3; font-size:em(11px); margin-bottom:rem(10px); text-align:center; }
+.pulse .module ul                                 { @include absolute(0,0,0,0); background:rgba(231,239,244,0.4); box-sizing:border-box; border-radius:rem(5px); padding:rem(10px); transition:0.2s all ease; }
+.pulse .module li                                 { display:block; text-align:center; }
+.pulse .module p                                  { color:$site-color-4; font-size:em(16px); transition:0.2s all ease; }
+.pulse .module small                              { color:$site-color-4; font-size:em(12px); transition:0.2s all ease; }
+.pulse .module h2                                 { color:$site-color-2; font-size:em(32px); font-weight:400; transition:0.2s all ease; }
+.pulse .module h2 span                            { color:$site-color-4; font-size:em(9px); }
+
+.pulse .module ul.map                             { }
+.pulse .module ul.map .map-stats                  { @include absolute(0,15px,auto,15px); }
+.pulse .module ul.map .map-stats p                { color:#666; font-size:em(12px); font-weight:700; line-height:rem(28px); float:left; }
+.pulse .module ul.map .map-stats small            { color:#666; font-size:em(12px); font-weight:700; line-height:rem(28px); float:right; }
+.pulse .module ul.map .canvas                     { @include absolute(28px,15px,15px,15px); border:1px solid #c5d5e0; border-radius:rem(5px); box-shadow:inset 0 0 3px rgba(0,0,0,0.3); background:url('../img/map.png') center center; background-size:cover; }
+
+.pulse .module.active                             { height:rem(165px); margin-top:0; width:22%; }
+.pulse .module.active .title                      { color:#5e717e; }
+.pulse .module.active ul                          { background:none; margin-top:rem(20px); }
+.pulse .module.active ul.map                      { background:none; margin-top:0; }
+.pulse .module.active h2                          { font-size:rem(64px); text-shadow:0 2px 5px rgba(0,0,0,0.3); }
 
 
 /* Layout Section - Sidebar Module

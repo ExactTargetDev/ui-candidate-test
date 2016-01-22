@@ -94,5 +94,5 @@ $(window).load(function()
      * array found in the header template in Laravel.
      *
      */
-    preCache();
+    // preCache();
 });

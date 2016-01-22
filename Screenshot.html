@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Salesforce Dashboard</title>
+    <title>ExactTarget Dashboard</title>
 
     <!-- Disables Scaling on multi-touch interfaces -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
@@ -22,23 +22,15 @@
         <script src="assets/libs/REM-unit-polyfill/js/rem.min.js"></script>
     <![endif]-->
 
-    <!-- Header Scripts -->
-    <script>
-        function imgLoaded(img){
-            img.parentNode.className += ' loaded';
-        };
-        var imagePreload = [
-            //'/uploads/hero_about.jpg',
-        ];
-    </script>
-
 </head>
 <body id="top">
 <header>
-    <div class="row full">
-        <div class="col_p100">
+    <section class="row full">
+        <section class="col_p100">
 
+            <!-- ExactTarget Logo -->
             <a href="#" class="logo"><div class="home">Home</div><img src="assets/img/trans.png" class="logo" alt="ExactTarget" /></a>
+            <!-- Mini Top Right Nav -->
             <nav>
                 <ul>
                     <li><div class="welcome">Welcome John!</div></li>
@@ -50,15 +42,17 @@
                 </ul>
             </nav>
 
-        </div>
-    </div>
+        </section>
+    </section>
 </header>
 <section class="wrapper">
     <section class="main">
-        <div class="row full">
-            <div class="col_p20 sidebar">
+        <section class="row full">
+            <section class="col_p20 sidebar">
 
+                <!-- Sidebar -->
                 <aside>
+                    <!-- Orange header -->
                     <div class="header">
                         <img src="assets/img/trans.png" class="sidebarlogo" alt="Interactive Marketing Hub" /><div>Interactive <br>Marketing Hub</div>
                     </div>
@@ -85,23 +79,29 @@
                         <div class="block"><div class="icon report-builder"></div></div><span>Report Builder</span>
                     </a>
                     <div class="divider"></div>
+                    <!-- Tiny button -->
                     <a href="#partner-applications" class="last">
                         <img src="assets/img/trans.png" class="smallarrow" alt="" /><small>Partner Applications</small>
                     </a>
                 </aside>
 
-            </div>
-            <div class="col_p80 content">
+            </section>
+            <section class="col_p80 content">
 
+                <!-- Calendar -->
                 <div class="calendar">
+                    <!-- Month Year -->
                     <div class="month"></div>
+                    <!-- Tools 1 -->
                     <div class="tools one">
                         <div><img src="assets/img/trans.png" class="gear" alt="Options" /></div>
                         <div><img src="assets/img/trans.png" class="fs" alt="Go Fullscreen" /></div>
                     </div>
+                    <!-- Tools 2 -->
                     <div class="tools two">
                         <div><img src="assets/img/trans.png" class="arrow_up" alt="Minimize" /></div>
                     </div>
+                    <!-- Months, should be dynamic eventually w/ Angular -->
                     <ul>
                         <li class="day" data-day="day_1"><div class="week_day">Fri</div> <div class="num_day">1</div></li>
                         <li class="day" data-day="day_2"><div class="week_day">Sat</div> <div class="num_day">2</div></li>
@@ -136,14 +136,18 @@
                         <li class="day" data-day="day_31"><div class="week_day">Sun</div> <div class="num_day">31</div></li>
                     </ul>
                 </div>
+                <!-- Pulse -->
                 <div class="pulse">
-                    <div class="title"><div>Pulse</div></div>
+                    <!-- Title --->
+                    <div class="logo"><div>Pulse</div></div>
+                    <!-- Tools -->
                     <div class="tools one">
                         <div><img src="assets/img/trans.png" class="gear2" alt="Options" /></div>
                         <div><img src="assets/img/trans.png" class="mini" alt="Minimize" /></div>
                         <div><img src="assets/img/trans.png" class="fs2" alt="Go Fullscreen" /></div>
                         <div><img src="assets/img/trans.png" class="close" alt="Close Screen" /></div>
                     </div>
+                    <!-- Mini nav -->
                     <nav>
                         <div class="holder">
                             <ul>
@@ -158,10 +162,52 @@
                             <div class="selected"></div>
                         </div>
                     </nav>
+                    <!-- Pulse Windows - Each module should eventually by dynamically generated w/ Angular -->
+                    <div class="module-window">
+                        <div class="module">
+                            <div class="title">Followers</div>
+                            <ul>
+                                <li><h2>310</h2></li>
+                                <li><p>added today</p></li>
+                                <li><small>2,393,905 total</small></li>
+                            </ul>
+                        </div>
+                        <div class="module">
+                            <div class="title">Fans</div>
+                            <ul>
+                                <li><h2>73</h2></li>
+                                <li><p>added today</p></li>
+                                <li><small>91,675 total</small></li>
+                            </ul>
+                        </div>
+                        <div class="module">
+                            <div class="title">Subscribers</div>
+                            <ul>
+                                <li><h2>56</h2></li>
+                                <li><p>added today</p></li>
+                                <li><small>189,405 total</small></li>
+                            </ul>
+                        </div>
+                        <div class="module active">
+                            <div class="title">foursquare</div>
+                            <ul class="map">
+                                <li class="map-stats"><p>Worldwide Checkins</p><small>3,905</small></li>
+                                <li class="canvas"></li>
+                            </ul>
+                        </div>
+                        <div class="module">
+                            <div class="title">Landing Pages</div>
+                            <ul>
+                                <li><p>Visitors Today</p></li>
+                                <li><h2>397<span> / 355</span></h2></li>
+                                <li><small>Soulja Boy V.I.P</small></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-            </div>
-        </div>
+            </section>
+        </section>
     </section>
 
 </section><!-- /wrapper -->

@@ -16,8 +16,9 @@ function Js_dashboard()
      */
     this.start = function()
     {
-        this.sizeBody();
         this.doCalendar();
+        this.doPulse();
+        this.sizeBody();
     };
 
     /**
@@ -76,6 +77,30 @@ function Js_dashboard()
                 $cal.css('left', -Math.abs(move_left));
             }
         }
+    };
+
+    /**
+     * @desc Size the body tag to be the window height
+     *
+     */
+    this.doPulse = function()
+    {
+        var bInfo      = new BrowserInfo();
+        var pulse      = $('div.pulse');
+        var mod_window = pulse.find('.module-window');
+        var modules    = mod_window.find('.module');
+
+        if(pulse.length === 0){
+            return;
+        }
+
+        modules.on('click', function() {
+            modules.removeClass('active');
+
+            if(!$(this).hasClass('active')) {
+                $(this).addClass('active');
+            }
+        });
     };
 
     /**
