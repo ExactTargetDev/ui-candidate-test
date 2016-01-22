@@ -1,30 +1,98 @@
 /*
 |--------------------------------------------------------------------------
-| Foo Page Logic i.e. website.com/foo
+| Dashboard Page Logic i.e. website.com/dashboad
 |--------------------------------------------------------------------------
 |
-| The javascript logic that should apply to the Foo Page.
+| The javascript logic that should apply to the Dashboard
 |
 */
-function js_dashboard()
+function Js_dashboard()
 {
-    var bInfo   = new browserInfo();
+    "use strict";
 
     /**
-     * Load functions in order
+     * Load needed functions in order
      *
      */
     this.start = function()
     {
-        this.foo();
+        this.sizeBody();
+        this.doCalendar();
     };
 
     /**
-     * @desc Basic function demo
+     * @desc Calendar module logic
      *
      */
-    this.foo = function()
+    this.doCalendar = function()
     {
-        //console.log("02 - Hello world, LOCAL application logic loaded!");
+        var date     = new Date();
+        var calendar = $('div.calendar');
+
+        if(calendar.length === 0){
+            return;
+        }
+
+        // We only run this once, once the DOM is ready.
+        $(document).ready(function(){
+            setupData();
+        });
+
+        // This needs to run any time the user changes the view size at all
+        $(window).on('load scroll resize', function() {
+            tagToday();
+        });
+
+        // Update the current month and year
+        function setupData() {
+            var months    = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var month     = months[date.getMonth()];
+            var year      = date.getFullYear();
+            var $month    = calendar.find('div.month');
+
+            $month.html(month + " " + year);
+        }
+
+        // Mark and position the correct day
+        function tagToday() {
+            var day         = "day_" + date.getDate();
+            var $cal        = calendar.find('ul');
+            var $day        = calendar.find("[data-day='" + day + "']");
+            var cal_mid     = Math.round(calendar.outerWidth() / 2);
+            var day_mid     = Math.round($day.position().left + ($day.outerWidth() / 2));
+            var move_left   = Math.round(day_mid - cal_mid);
+
+            // Tag the active day
+            if(!$day.hasClass('active')){
+                $day.addClass('active')
+                .append('<div class="today">Today</div>');
+            }
+
+            // Move calendar to active day
+            if(move_left <= 0){
+                $cal.css('left', Math.abs(move_left));
+            }
+            else if(move_left > 0){
+                $cal.css('left', -Math.abs(move_left));
+            }
+        }
+    };
+
+    /**
+     * @desc Size the body tag to be the window height
+     *
+     */
+    this.sizeBody = function()
+    {
+        var bInfo = new BrowserInfo();
+        var body  = $('body');
+
+        if(body.length === 0){
+            return;
+        }
+
+        $(window).on('scroll resize load', function() {
+            body.css('height', bInfo.winHeight());
+        });
     };
 }

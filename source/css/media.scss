@@ -11,7 +11,7 @@ MEDIA QUERY SETUP
     /* Layout */
     section.main [class^="col_"]                  { width:100%; }
     .content                                      { padding-left:rem(20px); }
-    .content .calendar                            { border-radius:rem($def-border-radius); border-top:1px solid $def-border-color; }
+    .calendar                                     { border-radius:rem($def-border-radius); border-top:1px solid $def-border-color; }
 
 }
 /* Portrait Tablets
@@ -23,7 +23,7 @@ MEDIA QUERY SETUP
     /* Layout */
     section.main [class^="col_"]                  { width:100%; }
     .content                                      { padding-left:rem(20px); }
-    .content .calendar                            { border-radius:rem($def-border-radius); border-top:1px solid $def-border-color; }
+    .calendar                                     { border-radius:rem($def-border-radius); border-top:1px solid $def-border-color; }
 
 }
 /* Landscape Tablets

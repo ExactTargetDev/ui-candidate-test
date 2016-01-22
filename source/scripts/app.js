@@ -8,6 +8,8 @@
 */
 function appStart()
 {
+    "use strict";
+
     /**
      * Your CMS page/route name should be echo'd into the
      * HTML tag as the first class on each page so the app
@@ -26,7 +28,7 @@ function appStart()
      *
      */
     try {
-        var site = new js_global(routeName);
+        var site = new Js_global(routeName);
         site.start();
     }
     catch(error) {
@@ -44,7 +46,7 @@ function appStart()
      *
      */
     try {
-        var page = new window['js_' + routeName]();
+        var page = new window['Js_' + routeName]();
         page.start();
     }
     catch(error) {

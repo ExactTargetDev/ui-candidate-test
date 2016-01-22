@@ -103,42 +103,6 @@ h6                                                { font-size:em($def-h6-size); 
 
 
 
-/* -------------------------------------------------------------------------------------------------
-////////////////////////////////////////////////////////////////////////////////////////////////////
-FORM DEFAULTS
-////////////////////////////////////////////////////////////////////////////////////////////////////
-------------------------------------------------------------------------------------------------- */
-form                                              { background:$white; border-radius:$def-border-radius; padding:rem($def-padding); }
-/* form > *:last-child                               { margin-bottom:0; } */
-
-form > div                                        { @extend %clearfix; display:block; position:relative; }
-form > div > span                                 { float:left; margin-left:2%; margin-bottom:rem($def-margin); position:relative; width:100%; }
-form > div > span.c_03                            { width:49%; }
-form > div > span.c_02                            { width:32%; }
-form > div > span:first-child                     { margin-left:0; }
-form > div:last-child > span                      { margin-bottom:0; }
-
-label                                             { font-size:em($def-font-size); padding-bottom:rem($def-margin / 2); }
-
-input                                             { background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; font-size:em($def-font-size); padding:rem(9px) rem(0px) rem(11px) rem(14px); transition:0.3s all ease; }
-input[type="button"]                              { padding:rem(9px) rem(14px) rem(11px) rem(14px); }
-input[type="button"]:hover                        { background:rgba(0,0,0,0.05); }
-input:focus                                       { background:rgba(0,0,0,0.05); }
-
-textarea                                          { background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; font-size:em($def-font-size); padding:rem(9px) rem(15px) rem(11px) rem(14px); min-height:rem(150px); transition:0.3s background ease; }
-textarea:focus                                    { background:rgba(0,0,0,0.05); }
-
-.select                                           { @include unselectable(); background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; cursor:pointer; font-size:em($def-font-size); padding:rem(9px) rem(15px) rem(11px) rem(14px); }
-.options                                          { @include absolute(auto,0,auto,0); background:$white; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; display:none; z-index:50; }
-.options li                                       {  }
-
-select                                            { background:transparent; border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; font-size:em($def-font-size); padding:rem(8px) rem(0px) rem(10px) rem(10px); }
-option                                            { padding:0; margin:0; }
-
-
-
-
-
 
 /* -------------------------------------------------------------------------------------------------
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -180,29 +144,26 @@ header nav ul                                     { @extend %clearfix; padding-r
 header nav li                                     { float:left; }
 
 
-/* Layout Section - Sidebar
------------------------------------------------
-//////////////////////////////////////////////// */
-nav                                               { }
-
-
 /* Layout Section - Main Content Area
 -----------------------------------------------
 //////////////////////////////////////////////// */
-.content                                          { padding-right:rem(20px); }
+.content                                          { padding-bottom:rem(20px); padding-right:rem(20px); }
 
+
+/* Layout Section - Calendar Module
+-----------------------------------------------
+//////////////////////////////////////////////// */
 .calendar                                         { background:#f5f5f5; border:1px solid $def-border-color; border-top:0; border-radius:0 0 rem($def-border-radius) rem($def-border-radius); box-shadow:0 1px 2px rgba(0,0,0,0.15); height:rem(112px); overflow:hidden; position: relative; }
 .calendar .month                                  { @include absolute(0,auto,auto,9px); font-size:em(11px); color:#99abb6; cursor:default; line-height:rem(20px); }
+
 .calendar .tools.one                              { @include absolute(0,6px,auto,auto); }
 .calendar .tools.two                              { @include absolute(auto,6px,0,auto); }
-.calendar .tools img.gear                         { margin:rem(4px) rem(3px) 0 rem(3px); }
-.calendar .tools img.fs                           { margin:rem(6px) rem(3px) 0 rem(3px); }
-.calendar .tools img.arrow_up                     { margin:rem(4px) rem(3px) 0 rem(3px); }
 .calendar .tools.one > div                        { height:rem(20px); float:left; cursor:pointer; }
 .calendar .tools.two > div                        { height:rem(13px); float:left; cursor:pointer; }
-.calendar .tools > div:hover img.gear             { background-position:-340px 0; }
-.calendar .tools > div:hover img.fs               { background-position:-319px 0; }
-.calendar .tools > div:hover img.arrow_up         { background-position:-360px 0; }
+.calendar .tools img.gear                         { margin:rem(4px) rem(3px) 0 rem(3px); }
+.calendar .tools img.fs                           { margin:rem(5px) rem(3px) 0 rem(3px); }
+.calendar .tools img.arrow_up                     { margin:rem(4px) rem(3px) 0 rem(3px); }
+
 
 .calendar ul                                      { @extend %clearfix; @include absolute(20px,auto,auto,0); background:#f5f5f5; border-bottom:1px solid #ddd; border-left:1px solid #ddd; width:rem(9999px); }
 .calendar li.day                                  { border-left:1px solid $white; border-right:1px solid #ddd; float:left; height:rem(78px); position:relative; width:rem(137px); }
@@ -217,13 +178,44 @@ nav                                               { }
 .calendar li.day .today                           { @include absolute(auto,-1px,-14px,-1px); background:#fcac45; box-shadow:0 1px 2px rgba(0,0,0,0.4); color:$white; cursor:default; font-size:em(10px); font-weight:700; line-height:rem(13px); text-align:center; text-transform:uppercase; }
 
 
+/* Layout Section - Pulse Module
+-----------------------------------------------
+//////////////////////////////////////////////// */
+.pulse                                            { margin-top:rem(20px); border-radius:rem(6px); height:rem(265px); box-shadow:inset 0 0 4px 3px rgba(0,0,0,0.15); position:relative; }
+.pulse                                            { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bac8d1+0,e3edf5+89,d2dee6+100 */
+                                                    background: #bac8d1; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #bac8d1 0%, #e3edf5 89%, #d2dee6 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #bac8d1 0%,#e3edf5 89%,#d2dee6 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #bac8d1 0%,#e3edf5 89%,#d2dee6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+.pulse .title                                     { @include absolute(0,auto,auto,0); background-image:url('../img/sprite_sheet.png'); background-position:-463px 0; height:rem(48px); width:rem(116px); z-index:10; }
+.pulse .title > div                               { color:$white; cursor:default; font-weight:em(20px); font-weight:700; letter-spacing:1px; text-shadow:0 1px 1px rgba(88,139,172,0.6); margin-left:rem(15px); line-height:rem(33px); }
 
-/* Layout Section - Sidebar
+.pulse .tools                                     { z-index:10; }
+.pulse .tools.one                                 { @include absolute(6px,8px,auto,auto); }
+.pulse .tools.one > div                           { height:rem(20px); float:left; cursor:pointer; }
+.pulse .tools img.gear2                           { margin:rem(4px) rem(4px) 0 rem(4px); }
+.pulse .tools img.mini                            { margin:rem(6px) rem(4px) 0 rem(4px); }
+.pulse .tools img.fs2                             { margin:rem(5px) rem(4px) 0 rem(4px); }
+.pulse .tools img.close                           { margin:rem(5px) rem(4px) 0 rem(4px); }
+
+.pulse nav                                        { @include absolute(auto,0,15px,0); font-size:0; text-align:center; }
+.pulse nav .holder                                { display:inline-block; position:relative; z-index:1; }
+.pulse nav .holder .selected                      { @include absolute(0,auto,auto,14px); background:#d7e3ec; border:1px solid #b7c6d1; border-radius:rem(3px); height:rem(11px); width:rem(46px); z-index:-1; }
+.pulse nav ul                                     { @extend %clearfix; }
+.pulse nav li                                     { float:left; margin-left:rem(5px); }
+.pulse nav li:first-child                         { margin-left:0; }
+.pulse nav li div                                 { cursor:pointer; padding:rem(5px) 0; }
+.pulse nav li div span                            { background:#c8d0d6; display:block; cursor:pointer; height:rem(3px); width:rem(4px); }
+.pulse nav li div.active span                     { background:#8fa9bc; border-radius:rem(2px); }
+.pulse nav li div:hover span                      { background:#8fa9bc; }
+
+
+/* Layout Section - Sidebar Module
 -----------------------------------------------
 //////////////////////////////////////////////// */
 .sidebar                                          { padding:rem(20px); }
 .sidebar aside                                    { background:#f4f4f5; border:1px solid #e6e6e6; border-radius:rem(5px); box-shadow:inset 0 0 0 1px $white, 0 2px 3px rgba(0,0,0,0.1); }
-.sidebar aside .header                            { box-shadow:inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
+.sidebar .header                                  { box-shadow:inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
                                                     @extend %clearfix; border:1px solid #f8981d; border-radius:rem(5px) rem(5px) 0 0; margin:-1px -1px 0 -1px; position:relative;
                                                     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdaf4b+25,f8981d+100 */
                                                     background: #fdaf4b; /* Old browsers */
@@ -231,23 +223,23 @@ nav                                               { }
                                                     background: -webkit-linear-gradient(top,  #fdaf4b 25%,#f8981d 100%); /* Chrome10-25,Safari5.1-6 */
                                                     background: linear-gradient(to bottom,  #fdaf4b 25%,#f8981d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
                                                     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 ); /* IE6-9 */ }
-.sidebar aside .header img                        { float:left; }
-.sidebar aside .header div                        { color:$white; cursor:default; font-size:em(14px); font-weight:700; float:left; text-shadow:0 1px 1px rgba(0,0,0,0.1); line-height:1.2; padding-top:rem(8px); }
+.sidebar .header img                              { float:left; }
+.sidebar .header div                              { color:$white; cursor:default; font-size:em(14px); font-weight:700; float:left; text-shadow:0 1px 1px rgba(0,0,0,0.1); line-height:1.2; padding-top:rem(8px); }
 
-.sidebar aside a                                  { @extend %clearfix; display:block; padding:rem(4px) rem(8px); }
-.sidebar aside a.first                            { margin-top:rem(6px); }
-.sidebar aside a.last                             { padding:rem(3px) rem(8px); margin-bottom:rem(6px); }
-.sidebar aside a img                              { float:left; margin-left:1px; }
-.sidebar aside a span                             { color:#888; font-size:em(12px); float:left; line-height:rem(24px); margin-left:rem(9px); }
-.sidebar aside a small                            { color:#888; font-size:em(11px); float:left; line-height:rem(13px); margin-left:rem(7px); }
-.sidebar aside a .block                           { box-shadow:inset 0 -1px 0 0px #848d96,inset 0 0 0 1px #b2b6bd, inset 0 1px 3px rgba(255,255,255,0.85),0 1px 2px rgba(0,0,0,0.15);
+.sidebar a                                        { @extend %clearfix; display:block; padding:rem(4px) rem(8px); }
+.sidebar a.first                                  { margin-top:rem(6px); }
+.sidebar a.last                                   { padding:rem(3px) rem(8px); margin-bottom:rem(6px); }
+.sidebar a img                                    { float:left; margin-left:1px; }
+.sidebar a span                                   { color:#888; font-size:em(12px); float:left; line-height:rem(24px); margin-left:rem(9px); }
+.sidebar a small                                  { color:#888; font-size:em(11px); float:left; line-height:rem(13px); margin-left:rem(7px); }
+.sidebar a .block                                 { box-shadow:inset 0 -1px 0 0px #848d96,inset 0 0 0 1px #b2b6bd, inset 0 1px 3px rgba(255,255,255,0.85),0 1px 2px rgba(0,0,0,0.15);
                                                     border-radius:rem(4px); float:left; height:rem(24px); width:rem(24px);
                                                     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#afb8bf+24,8b949f+100 */
                                                     background: #afb8bf; /* Old browsers */
                                                     background: -moz-linear-gradient(top,  #afb8bf 24%, #8b949f 100%); /* FF3.6-15 */
                                                     background: -webkit-linear-gradient(top,  #afb8bf 24%,#8b949f 100%); /* Chrome10-25,Safari5.1-6 */
                                                     background: linear-gradient(to bottom,  #afb8bf 24%,#8b949f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-.sidebar aside a:hover .block                     { box-shadow:inset 0 0 0 1px #f8981d,inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
+.sidebar a:hover .block                           { box-shadow:inset 0 0 0 1px #f8981d,inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
                                                     border-radius:rem(4px);
                                                     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdaf4b+25,f8981d+100 */
                                                     background: #fdaf4b; /* Old browsers */
@@ -255,13 +247,18 @@ nav                                               { }
                                                     background: -webkit-linear-gradient(top,  #fdaf4b 25%,#f8981d 100%); /* Chrome10-25,Safari5.1-6 */
                                                     background: linear-gradient(to bottom,  #fdaf4b 25%,#f8981d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
                                                     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 ); /* IE6-9 */ }
-.sidebar aside a:hover                            { background:#e9e9ea; background:rgba(0,0,0,0.05); }
-.sidebar aside a:active                           { background:rgba(0,0,0,0.15); }
-.sidebar aside a:active span,
-.sidebar aside a:active small                     { color:#444; }
+.sidebar a:hover                                  { background:#e9e9ea; background:rgba(0,0,0,0.05); }
+.sidebar a:active                                 { background:rgba(0,0,0,0.15); }
+.sidebar a:active span,
+.sidebar a:active small                           { color:#444; }
 
-.sidebar aside .divider                           { display:block; border-top:1px solid #fefffd; border-bottom:1px solid #e1e1e2; margin:rem(6px) 0; }
+.sidebar .divider                                 { display:block; border-top:1px solid #fefffd; border-bottom:1px solid #e1e1e2; margin:rem(6px) 0; }
 
+
+/* Image Sprites
+-----------------------------------------------
+//////////////////////////////////////////////// */
+/* Sidebar Sprites */
 .sidebar aside .icon                              { width:24px; height:24px; }
 .sidebar aside .icon.exacttarget-email            { background-image:url('../img/sprite_sheet.png'); background-position:-128px 0; }
 .sidebar aside .icon.exacttarget-mobile           { background-image:url('../img/sprite_sheet.png'); background-position:-224px 0; }
@@ -272,16 +269,32 @@ nav                                               { }
 .sidebar aside .icon.report-builder               { background-image:url('../img/sprite_sheet.png'); background-position:-272px 0; }
 .sidebar aside .icon.partner-applications         { background-image:url('../img/sprite_sheet.png'); background-position:0 0; }
 
-
-/* Image Sprites
------------------------------------------------
-//////////////////////////////////////////////// */
 img.logo                                          { background-image:url('../img/sprite_sheet.png'); background-position:0 0; height:16px; width:86px; }
 img.sidebarlogo                                   { background-image:url('../img/sprite_sheet.png'); background-position:-86px 0; height:48px; width:42px; }
 img.smallarrow                                    { background-image:url('../img/sprite_sheet.png'); background-position:-296px 0; height:13px; width:13px; }
-img.gear                                          { background-image:url('../img/sprite_sheet.png'); background-position:-329px 0; height:11px; width:11px; }
+
 img.fs                                            { background-image:url('../img/sprite_sheet.png'); background-position:-309px 0; height:8px; width:10px; }
+*:hover > img.fs                                  { background-position:-319px 0; }
+
+img.fs2                                           { background-image:url('../img/sprite_sheet.png'); background-position:-413px 0; height:10px; width:12px; }
+*:hover > img.fs2                                 { background-position:-425px 0; }
+
+img.gear                                          { background-image:url('../img/sprite_sheet.png'); background-position:-329px 0; height:11px; width:11px; }
+*:hover > img.gear                                { background-position:-340px 0; }
+
+img.gear2                                         { background-image:url('../img/sprite_sheet.png'); background-position:-437px 0; height:13px; width:13px; }
+*:hover > img.gear2                               { background-position:-450px 0; }
+
 img.arrow_up                                      { background-image:url('../img/sprite_sheet.png'); background-position:-351px 0; height:5px; width:9px; }
+*:hover > img.arrow_up                            { background-position:-360px 0; }
+
+img.close                                         { background-image:url('../img/sprite_sheet.png'); background-position:-369px 0; height:10px; width:9px; }
+*:hover > img.close                               { background-position:-378px 0; }
+
+img.mini                                          { background-image:url('../img/sprite_sheet.png'); background-position:-387px 0; height:8px; width:13px; }
+*:hover > img.mini                                { background-position:-400px 0; }
+
+
 
 
 

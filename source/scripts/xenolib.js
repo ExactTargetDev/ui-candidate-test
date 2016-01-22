@@ -68,7 +68,7 @@ function validateEmail($email)
 
 /* Browser Info
 ----------------------------------------------- */
-function browserInfo()
+function BrowserInfo()
 {
     this.winHeight = function()
     {
