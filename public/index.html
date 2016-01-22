@@ -1,0 +1,171 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ui-mobile-rendering" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ui-mobile-rendering" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 ui-mobile-rendering" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js ui-mobile-rendering" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Backbone-Require Boilerplate</title>
+  <meta name="description" content="Backbone.js and Require.js Boilerplate Library">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick-theme.css"/>
+
+  <!--Detect if the browser is a mobile browser or a desktop browser and conditionally include your JavaScript -->
+  <script>
+
+      // Mobile/Desktop Detection script
+      (function(ua, w, d, undefined) {
+
+        // App Environment
+        // ---------------
+        //  Tip: Set to true to turn on "production" mode
+        var production = false,
+          filesToLoad,
+          //BoilerplateMVC Helper Methods
+          boilerplateMVC = {
+            loadCSS: function(url, callback) {
+              var link = d.createElement("link");
+              link.type = "text/css";
+              link.rel = "stylesheet";
+              link.href = url;
+              d.getElementsByTagName("head")[0].appendChild(link);
+              if(callback) {
+                callback();
+              }
+            },
+            loadJS: function(file, callback) {
+              var script = d.createElement("script");
+              script.type = "text/javascript";
+              if (script.readyState) {  // IE
+                script.onreadystatechange = function() {
+                  if (script.readyState == "loaded" || script.readyState == "complete") {
+                    script.onreadystatechange = null;
+                    callback();
+                  }
+                };
+              } else {  // Other Browsers
+                script.onload = function() {
+                  callback();
+                };
+              }
+              if(((typeof file).toLowerCase()) === "object" && file["data-main"] !== undefined) {
+                script.setAttribute("data-main", file["data-main"]);
+                script.async = true;
+                script.src = file.src;
+              } else {
+                script.src = file;
+              }
+              d.getElementsByTagName("head")[0].appendChild(script);
+            },
+            loadFiles: function(production, obj, callback) {
+              var self = this;
+              if(production) {
+                // Loads the production CSS file(s)
+                self.loadCSS(obj["prod-css"], function() {
+                  // If there are production JavaScript files to load
+                  if(obj["prod-js"]) {
+                    // Loads the correct initialization file (which includes Almond.js)
+                    self.loadJS(obj["prod-js"], callback);
+                  }
+                });
+              } else {
+                // Loads the development CSS file(s)
+                self.loadCSS(obj["dev-css"], function() {
+                  // If there are development Javascript files to load
+                  if(obj["dev-js"]) {
+                    // Loads Require.js and tells Require.js to find the correct intialization file
+                    self.loadJS(obj["dev-js"], callback);
+                  }
+                });
+              }
+            }
+          };
+
+          // Mobile/Tablet Logic
+          if((/iPhone|iPod|iPad|Android|BlackBerry|Opera Mini|IEMobile/).test(ua)) {
+
+            // Mobile/Tablet CSS and JavaScript files to load
+            filesToLoad = {
+              // CSS file that is loaded when in development mode
+              "dev-css": "css/mobile.css",
+              // CSS file that is loaded when in production mode
+              "prod-css": "css/mobile.min.css",
+              // Require.js configuration file that is loaded when in development mode
+              "dev-js": { "data-main": "js/app/config/config.js", "src": "js/libs/require.js" },
+              // JavaScript initialization file that is also loaded when in development mode
+              "dev-init": "js/app/init/MobileInit.js",
+              // JavaScript file that is loaded when in production mode
+              "prod-js": "js/app/init/MobileInit.min.js",
+            };
+
+          }
+
+          // Desktop Logic
+          else {
+
+            // Desktop CSS and JavaScript files to load
+            filesToLoad = {
+              // CSS file that is loaded when in development mode
+              "dev-css": "css/desktop.css",
+              // CSS file that is loaded when in production mode
+              "prod-css": "css/desktop.min.css",
+              // Require.js configuration file that is also loaded when in development mode
+              "dev-js": { "data-main": "js/app/config/config.js", "src": "js/libs/require.js" },
+              // JavaScript initialization file that is loaded when in development mode
+              "dev-init": "js/app/init/DesktopInit.js",
+              // JavaScript file that is loaded when in production mode
+              "prod-js": "js/app/init/DesktopInit.min.js"
+            };
+
+          }
+
+          boilerplateMVC.loadFiles(production, filesToLoad, function() {
+            if(!production && window.require) {
+              require([filesToLoad["dev-init"]]);
+            }
+          });
+
+      })(navigator.userAgent || navigator.vendor || window.opera, window, document);
+
+  </script>
+
+</head>
+<body>
+
+  <div data-role="page">
+
+    <header data-role="header" class="navbar nav navbar-inner" id="header">
+    </header> <!-- /header -->
+
+    <div class="container-fluid" data-role="content">
+
+      <div class="row-fluid">
+        <div id="app-launcher"></div>
+        <div id="calendar"></div>
+        <div id="pulse"></div>
+      </div>
+
+    </div>
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <!-- Dynamically Inject Modal Content -->
+    </div>
+
+    <footer class="footer navbar navbar-fixed-bottom" data-role="footer">
+        <p>Created by <a href="#" target="_blank">Mohammed Siddeeq</a></p>
+    </footer><!-- /footer -->
+
+  </div> <!-- /page -->
+
+</body>
+</html>

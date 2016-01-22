@@ -1,0 +1,11 @@
+<!-- AppLauncher Template -->
+<div class="content">
+    <div class="list-group">
+          <% _.each(items,function(item,key,arr) { %>
+              <a href="#" class="list-group-item">
+                  <span class="cust-btn cust-btn-<%=item.icon %>"></span>
+                  <span class="item-text"><%=item.text %></span>
+              </a>
+           <% }); %>
+    </div>
+</div>
