@@ -113,13 +113,13 @@ html                                              { overflow:hidden; }
 body                                              { background-color:$site-bg-color; overflow:hidden; position:relative; }
 
 
-/* Layout Section - <wrapper>
+/* Layout Section - <section.wrapper>
 -----------------------------------------------
 //////////////////////////////////////////////// */
 .wrapper                                          { @include absolute(rem(32px),0,0,0); overflow-y:auto; }
 
 
-/* Layout Section - <header>
+/* Layout Section - Top Bar
 -----------------------------------------------
 //////////////////////////////////////////////// */
 header                                            { color:$white; box-shadow:0 1px 2px rgba(0,0,0,0.3); z-index:10;
@@ -144,10 +144,56 @@ header nav ul                                     { @extend %clearfix; padding-r
 header nav li                                     { float:left; }
 
 
+/* Layout Section - Sidebar Module
+-----------------------------------------------
+//////////////////////////////////////////////// */
+.main section.sidebar                             { padding:rem(20px); }
+
+.sidebar aside                                    { background:#f4f4f5; border:1px solid #e6e6e6; border-radius:rem(5px); box-shadow:inset 0 0 0 1px $white, 0 2px 3px rgba(0,0,0,0.1); }
+.sidebar .header                                  { box-shadow:inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
+                                                    @extend %clearfix; border:1px solid #f8981d; border-radius:rem(5px) rem(5px) 0 0; margin:-1px -1px 0 -1px; position:relative;
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdaf4b+25,f8981d+100 */
+                                                    background: #fdaf4b; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #fdaf4b 25%, #f8981d 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #fdaf4b 25%,#f8981d 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #fdaf4b 25%,#f8981d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 ); /* IE6-9 */ }
+.sidebar .header img                              { float:left; }
+.sidebar .header div                              { color:$white; cursor:default; font-size:em(14px); font-weight:700; float:left; text-shadow:0 1px 1px rgba(0,0,0,0.1); line-height:1.2; padding-top:rem(8px); }
+
+.sidebar a                                        { @extend %clearfix; display:block; padding:rem(4px) rem(8px); }
+.sidebar a.first                                  { margin-top:rem(6px); }
+.sidebar a.last                                   { padding:rem(3px) rem(8px); margin-bottom:rem(6px); }
+.sidebar a img                                    { float:left; margin-left:1px; }
+.sidebar a span                                   { color:#888; font-size:em(12px); float:left; line-height:rem(24px); margin-left:rem(9px); }
+.sidebar a small                                  { color:#888; font-size:em(11px); float:left; line-height:rem(13px); margin-left:rem(7px); }
+.sidebar a .block                                 { box-shadow:inset 0 -1px 0 0px #848d96,inset 0 0 0 1px #b2b6bd, inset 0 1px 3px rgba(255,255,255,0.85),0 1px 2px rgba(0,0,0,0.15);
+                                                    border-radius:rem(4px); float:left; height:rem(24px); width:rem(24px);
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#afb8bf+24,8b949f+100 */
+                                                    background: #afb8bf; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #afb8bf 24%, #8b949f 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #afb8bf 24%,#8b949f 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #afb8bf 24%,#8b949f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+.sidebar a:hover .block                           { box-shadow:inset 0 0 0 1px #f8981d,inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
+                                                    border-radius:rem(4px);
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdaf4b+25,f8981d+100 */
+                                                    background: #fdaf4b; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #fdaf4b 25%, #f8981d 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #fdaf4b 25%,#f8981d 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #fdaf4b 25%,#f8981d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 ); /* IE6-9 */ }
+.sidebar a:hover                                  { background:#e9e9ea; background:rgba(0,0,0,0.05); }
+.sidebar a:active                                 { background:rgba(0,0,0,0.15); }
+.sidebar a:active span,
+.sidebar a:active small                           { color:#444; }
+
+.sidebar .divider                                 { display:block; border-top:1px solid #fefffd; border-bottom:1px solid #e1e1e2; margin:rem(6px) 0; }
+
+
 /* Layout Section - Main Content Area
 -----------------------------------------------
 //////////////////////////////////////////////// */
-.content                                          { padding-bottom:rem(20px); padding-right:rem(20px); }
+.main section.content                             { padding-bottom:rem(20px); padding-right:rem(20px); }
 
 
 /* Layout Section - Calendar Module
@@ -240,12 +286,15 @@ header nav li                                     { float:left; }
 .pulse .module.active h2                          { font-size:rem(64px); text-shadow:0 2px 5px rgba(0,0,0,0.3); }
 
 
-/* Layout Section - Sidebar Module
+/* Layout Section - Modal Help Dialogue
 -----------------------------------------------
 //////////////////////////////////////////////// */
-.sidebar                                          { padding:rem(20px); }
-.sidebar aside                                    { background:#f4f4f5; border:1px solid #e6e6e6; border-radius:rem(5px); box-shadow:inset 0 0 0 1px $white, 0 2px 3px rgba(0,0,0,0.1); }
-.sidebar .header                                  { box-shadow:inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
+.modal                                            { display:none; }
+.modal.active                                     { display:block; }
+.modal.overlay                                    { @include absolute(0,0,0,0); @include animation(fadeIn, 0.3s, ease-in-out); background:#444; background:rgba(0,0,0,0.5); z-index:999; }
+
+.modal aside                                      { @include animation(slideUp, 0.3s, ease-in-out); background:#f4f4f5; border:1px solid #e6e6e6; border-radius:rem(5px); box-shadow:inset 0 0 0 1px $white, 0 2px 3px rgba(0,0,0,0.1); width:20%; margin:rem(60px) auto 0 auto; }
+.modal .header                                    { box-shadow:inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
                                                     @extend %clearfix; border:1px solid #f8981d; border-radius:rem(5px) rem(5px) 0 0; margin:-1px -1px 0 -1px; position:relative;
                                                     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdaf4b+25,f8981d+100 */
                                                     background: #fdaf4b; /* Old browsers */
@@ -253,36 +302,11 @@ header nav li                                     { float:left; }
                                                     background: -webkit-linear-gradient(top,  #fdaf4b 25%,#f8981d 100%); /* Chrome10-25,Safari5.1-6 */
                                                     background: linear-gradient(to bottom,  #fdaf4b 25%,#f8981d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
                                                     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 ); /* IE6-9 */ }
-.sidebar .header img                              { float:left; }
-.sidebar .header div                              { color:$white; cursor:default; font-size:em(14px); font-weight:700; float:left; text-shadow:0 1px 1px rgba(0,0,0,0.1); line-height:1.2; padding-top:rem(8px); }
-
-.sidebar a                                        { @extend %clearfix; display:block; padding:rem(4px) rem(8px); }
-.sidebar a.first                                  { margin-top:rem(6px); }
-.sidebar a.last                                   { padding:rem(3px) rem(8px); margin-bottom:rem(6px); }
-.sidebar a img                                    { float:left; margin-left:1px; }
-.sidebar a span                                   { color:#888; font-size:em(12px); float:left; line-height:rem(24px); margin-left:rem(9px); }
-.sidebar a small                                  { color:#888; font-size:em(11px); float:left; line-height:rem(13px); margin-left:rem(7px); }
-.sidebar a .block                                 { box-shadow:inset 0 -1px 0 0px #848d96,inset 0 0 0 1px #b2b6bd, inset 0 1px 3px rgba(255,255,255,0.85),0 1px 2px rgba(0,0,0,0.15);
-                                                    border-radius:rem(4px); float:left; height:rem(24px); width:rem(24px);
-                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#afb8bf+24,8b949f+100 */
-                                                    background: #afb8bf; /* Old browsers */
-                                                    background: -moz-linear-gradient(top,  #afb8bf 24%, #8b949f 100%); /* FF3.6-15 */
-                                                    background: -webkit-linear-gradient(top,  #afb8bf 24%,#8b949f 100%); /* Chrome10-25,Safari5.1-6 */
-                                                    background: linear-gradient(to bottom,  #afb8bf 24%,#8b949f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-.sidebar a:hover .block                           { box-shadow:inset 0 0 0 1px #f8981d,inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
-                                                    border-radius:rem(4px);
-                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdaf4b+25,f8981d+100 */
-                                                    background: #fdaf4b; /* Old browsers */
-                                                    background: -moz-linear-gradient(top,  #fdaf4b 25%, #f8981d 100%); /* FF3.6-15 */
-                                                    background: -webkit-linear-gradient(top,  #fdaf4b 25%,#f8981d 100%); /* Chrome10-25,Safari5.1-6 */
-                                                    background: linear-gradient(to bottom,  #fdaf4b 25%,#f8981d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-                                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 ); /* IE6-9 */ }
-.sidebar a:hover                                  { background:#e9e9ea; background:rgba(0,0,0,0.05); }
-.sidebar a:active                                 { background:rgba(0,0,0,0.15); }
-.sidebar a:active span,
-.sidebar a:active small                           { color:#444; }
-
-.sidebar .divider                                 { display:block; border-top:1px solid #fefffd; border-bottom:1px solid #e1e1e2; margin:rem(6px) 0; }
+.modal .header img                                { float:left; }
+.modal .header div                                { color:$white; cursor:default; font-size:em(14px); font-weight:700; float:left; text-shadow:0 1px 1px rgba(0,0,0,0.1); line-height:rem(48px); }
+.modal .content                                   { padding:rem(20px); }
+.modal .content p                                 { margin-top:rem(10px); }
+.modal .content p:first-child                     { margin-top:0; }
 
 
 /* Image Sprites

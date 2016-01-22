@@ -18,6 +18,7 @@ function Js_dashboard()
     {
         this.doCalendar();
         this.doPulse();
+        this.helpModal();
         this.sizeBody();
     };
 
@@ -102,6 +103,31 @@ function Js_dashboard()
             }
         });
     };
+
+    /**
+     * @desc Toggle and populate the Help Modal window
+     *
+     */
+    this.helpModal = function()
+    {
+        var $body   = $('body');
+        var $modal  = $('section.modal');
+        var $window = $modal.find('aside');
+        var $help   = $('nav a.help');
+
+        $help.on('click', function(){
+            if(!$modal.hasClass('active')) {
+                $modal.addClass('active');
+            }
+        });
+
+        $modal.on('click', function(event){
+            if($(event.target).hasClass('active')){
+                $modal.removeClass('active');
+            }
+        });
+    };
+
 
     /**
      * @desc Size the body tag to be the window height
