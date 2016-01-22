@@ -110,22 +110,42 @@ function Js_dashboard()
      */
     this.helpModal = function()
     {
-        var $body   = $('body');
-        var $modal  = $('section.modal');
-        var $window = $modal.find('aside');
-        var $help   = $('nav a.help');
+        var $body    = $('body');
+        var $modal   = $('section.modal');
+        var $window  = $modal.find('aside');
+        var $help    = $('nav a.help');
+        var $content = $modal.find('.content');
 
+        // Open help window
         $help.on('click', function(){
             if(!$modal.hasClass('active')) {
                 $modal.addClass('active');
             }
         });
 
+        // Close window if not clicked on
         $modal.on('click', function(event){
             if($(event.target).hasClass('active')){
                 $modal.removeClass('active');
             }
         });
+
+        // Populate help window
+        $(document).ready(function(){
+            $.getJSON(
+                './data/help.json',
+                function(json){
+                    var help_data = $('<ul/>');
+                    for (var i = 0; i < json.help.length; i++) {
+                        help_data.append('<li class="top">' + json.help[i].title + '</li>');
+                        help_data.append('<li><a href="' + json.help[i].URL + '" target="_blank">' + json.help[i].URL + '</a></li>');
+
+                        $content.append(help_data);
+                    }
+                }
+            );
+        });
+
     };
 
 

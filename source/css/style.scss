@@ -293,7 +293,7 @@ header nav li                                     { float:left; }
 .modal.active                                     { display:block; }
 .modal.overlay                                    { @include absolute(0,0,0,0); @include animation(fadeIn, 0.3s, ease-in-out); background:#444; background:rgba(0,0,0,0.5); z-index:999; }
 
-.modal aside                                      { @include animation(slideUp, 0.3s, ease-in-out); background:#f4f4f5; border:1px solid #e6e6e6; border-radius:rem(5px); box-shadow:inset 0 0 0 1px $white, 0 2px 3px rgba(0,0,0,0.1); width:20%; margin:rem(60px) auto 0 auto; }
+.modal aside                                      { @include animation(slideUp, 0.3s, ease-in-out); background:#f4f4f5; border:1px solid #e6e6e6; border-radius:rem(5px); box-shadow:inset 0 0 0 1px $white, 0 2px 3px rgba(0,0,0,0.1); width:rem(600px); margin:rem(60px) auto 0 auto; }
 .modal .header                                    { box-shadow:inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
                                                     @extend %clearfix; border:1px solid #f8981d; border-radius:rem(5px) rem(5px) 0 0; margin:-1px -1px 0 -1px; position:relative;
                                                     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdaf4b+25,f8981d+100 */
@@ -305,8 +305,11 @@ header nav li                                     { float:left; }
 .modal .header img                                { float:left; }
 .modal .header div                                { color:$white; cursor:default; font-size:em(14px); font-weight:700; float:left; text-shadow:0 1px 1px rgba(0,0,0,0.1); line-height:rem(48px); }
 .modal .content                                   { padding:rem(20px); }
-.modal .content p                                 { margin-top:rem(10px); }
-.modal .content p:first-child                     { margin-top:0; }
+.modal .content li                                { line-height:1.5; }
+.modal .content li.top                            { font-weight:700; margin-top:rem(15px); }
+.modal .content li:first-child                    { margin-top:0; }
+.modal .content a                                 { color:$site-color-3; }
+.modal .content a:hover                           { border-bottom:1px dotted #444; }
 
 
 /* Image Sprites
