@@ -52,7 +52,8 @@ define(["jquery", "backbone", "slick", "bowser", "models/Pulse", "text!templates
                   slidesToShow: 4,
                   focusOnSelect: true,
                   dots: true,
-                  arrows: false
+                  arrows: false,
+                  initialSlide: 3
                 });
             },
 
