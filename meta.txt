@@ -1,1 +1,16 @@
-Start Time: 1453337844
+Start Time:
+    1453337844
+
+End Time:
+    ###
+
+Total Time:
+    ###
+
+BrowserTesting:
+    IE8
+    IE9
+    IE10
+    IE-Edge
+    Firefox
+    Chrome
