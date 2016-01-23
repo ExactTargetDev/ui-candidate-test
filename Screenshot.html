@@ -1,8 +1,231 @@
-﻿<!DOCTYPE html>
-<html>
+<!doctype html>
+<!--[if IE 6]>      <html class="dashboard ie6"> <![endif]-->
+<!--[if IE 7]>      <html class="dashboard ie7"> <![endif]-->
+<!--[if IE 8]>      <html class="dashboard ie8"> <![endif]-->
+<!--[if IE 9]><!--> <html class="dashboard ie9"> <!--<![endif]-->
 <head>
-    <title>Screenshot.html</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>ExactTarget Dashboard</title>
+
+    <!-- Disables Scaling on multi-touch interfaces -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/master.min.css" />
+
+    <!-- Polyfills -->
+    <!--[if lt IE 9]>
+        <script src="assets/libs/html5shiv/dist/html5shiv-printshiv.min.js"></script>
+        <script src="assets/libs/REM-unit-polyfill/js/rem.min.js"></script>
+    <![endif]-->
+
 </head>
-<body>
+<body id="top">
+<section class="modal overlay">
+    <aside id="test">
+        <div class="header">
+            <img src="assets/img/trans.png" class="sidebarlogo" alt="Interactive Marketing Hub" /><div>ExactTarget Help</div>
+        </div>
+        <div class="content">
+        </div>
+    </aside>
+</section>
+<header>
+    <section class="row full">
+        <section class="col_p100">
+
+            <!-- ExactTarget Logo -->
+            <a href="#" class="logo"><div class="home">Home</div><img src="assets/img/trans.png" class="logo" alt="ExactTarget" /></a>
+            <!-- Mini Top Right Nav -->
+            <nav>
+                <ul>
+                    <li><div class="welcome">Welcome John!</div></li>
+                    <li><a href="#about" class="about">Account</a></li>
+                    <li><div class="divider">|</div></li>
+                    <li><a href="#help" class="help">Help</a></li>
+                    <li><div class="divider">|</div></li>
+                    <li><a href="#logout" class="logout">Logout</a></li>
+                </ul>
+            </nav>
+
+        </section>
+    </section>
+</header>
+<section class="wrapper">
+    <section class="main">
+        <section class="row full">
+            <section class="col_p20 sidebar">
+
+                <!-- Sidebar -->
+                <aside>
+                    <!-- Orange header -->
+                    <div class="header">
+                        <img src="assets/img/trans.png" class="sidebarlogo" alt="Interactive Marketing Hub" /><div>Interactive <br>Marketing Hub</div>
+                    </div>
+                    <a href="#exacttarget-email" class="first">
+                        <div class="block"><div class="icon exacttarget-email"></div></div><span>ExactTarget Email</span>
+                    </a>
+                    <a href="#exacttarget-mobile">
+                        <div class="block"><div class="icon exacttarget-mobile"></div></div><span>ExactTarget Mobile</span>
+                    </a>
+                    <a href="#cotweet-social">
+                        <div class="block"><div class="icon cotweet-social"></div></div><span>CoTweet Social</span>
+                    </a>
+                    <a href="#exacttarget-sites">
+                        <div class="block"><div class="icon exacttarget-sites"></div></div><span>ExactTarget Sites</span>
+                    </a>
+                    <div class="divider"></div>
+                    <a href="#automation-studio">
+                        <div class="block"><div class="icon automation-studio"></div></div><span>Automation Studio</span>
+                    </a>
+                    <a href="#audience-builder">
+                        <div class="block"><div class="icon audience-builder"></div></div><span>Audience Builder</span>
+                    </a>
+                    <a href="#report-builder">
+                        <div class="block"><div class="icon report-builder"></div></div><span>Report Builder</span>
+                    </a>
+                    <div class="divider"></div>
+                    <!-- Tiny button -->
+                    <a href="#partner-applications" class="last">
+                        <img src="assets/img/trans.png" class="smallarrow" alt="" /><small>Partner Applications</small>
+                    </a>
+                </aside>
+
+            </section>
+            <section class="col_p80 content">
+
+                <!-- Calendar -->
+                <div class="calendar">
+                    <!-- Month Year -->
+                    <div class="month"></div>
+                    <!-- Tools 1 -->
+                    <div class="tools one">
+                        <div><img src="assets/img/trans.png" class="gear" alt="Options" /></div>
+                        <div><img src="assets/img/trans.png" class="fs" alt="Go Fullscreen" /></div>
+                    </div>
+                    <!-- Tools 2 -->
+                    <div class="tools two">
+                        <div><img src="assets/img/trans.png" class="arrow_up" alt="Minimize" /></div>
+                    </div>
+                    <!-- Months, should be dynamic eventually w/ Angular -->
+                    <ul>
+                        <li class="day" data-day="day_1"><div class="week_day">Fri</div> <div class="num_day">1</div></li>
+                        <li class="day" data-day="day_2"><div class="week_day">Sat</div> <div class="num_day">2</div></li>
+                        <li class="day" data-day="day_3"><div class="week_day">Sun</div> <div class="num_day">3</div></li>
+                        <li class="day" data-day="day_4"><div class="week_day">Mon</div> <div class="num_day">4</div></li>
+                        <li class="day" data-day="day_5"><div class="week_day">Tue</div> <div class="num_day">5</div></li>
+                        <li class="day" data-day="day_6"><div class="week_day">Wed</div> <div class="num_day">6</div></li>
+                        <li class="day" data-day="day_7"><div class="week_day">Thu</div> <div class="num_day">7</div></li>
+                        <li class="day" data-day="day_8"><div class="week_day">Fri</div> <div class="num_day">8</div></li>
+                        <li class="day" data-day="day_9"><div class="week_day">Sat</div> <div class="num_day">9</div></li>
+                        <li class="day" data-day="day_10"><div class="week_day">Sun</div> <div class="num_day">10</div></li>
+                        <li class="day" data-day="day_11"><div class="week_day">Mon</div> <div class="num_day">11</div></li>
+                        <li class="day" data-day="day_12"><div class="week_day">Tue</div> <div class="num_day">12</div></li>
+                        <li class="day" data-day="day_13"><div class="week_day">Wed</div> <div class="num_day">13</div></li>
+                        <li class="day" data-day="day_14"><div class="week_day">Thu</div> <div class="num_day">14</div></li>
+                        <li class="day" data-day="day_15"><div class="week_day">Fri</div> <div class="num_day">15</div></li>
+                        <li class="day" data-day="day_16"><div class="week_day">Sat</div> <div class="num_day">16</div></li>
+                        <li class="day" data-day="day_17"><div class="week_day">Sun</div> <div class="num_day">17</div></li>
+                        <li class="day" data-day="day_18"><div class="week_day">Mon</div> <div class="num_day">18</div></li>
+                        <li class="day" data-day="day_19"><div class="week_day">Tue</div> <div class="num_day">19</div></li>
+                        <li class="day" data-day="day_20"><div class="week_day">Wed</div> <div class="num_day">20</div></li>
+                        <li class="day" data-day="day_21"><div class="week_day">Thu</div> <div class="num_day">21</div></li>
+                        <li class="day" data-day="day_22"><div class="week_day">Fri</div> <div class="num_day">22</div></li>
+                        <li class="day" data-day="day_23"><div class="week_day">Sat</div> <div class="num_day">23</div></li>
+                        <li class="day" data-day="day_24"><div class="week_day">Sun</div> <div class="num_day">24</div></li>
+                        <li class="day" data-day="day_25"><div class="week_day">Mon</div> <div class="num_day">25</div></li>
+                        <li class="day" data-day="day_26"><div class="week_day">Tue</div> <div class="num_day">26</div></li>
+                        <li class="day" data-day="day_27"><div class="week_day">Wed</div> <div class="num_day">27</div></li>
+                        <li class="day" data-day="day_28"><div class="week_day">Thu</div> <div class="num_day">28</div></li>
+                        <li class="day" data-day="day_29"><div class="week_day">Fri</div> <div class="num_day">29</div></li>
+                        <li class="day" data-day="day_30"><div class="week_day">Sat</div> <div class="num_day">30</div></li>
+                        <li class="day" data-day="day_31"><div class="week_day">Sun</div> <div class="num_day">31</div></li>
+                    </ul>
+                </div>
+                <!-- Pulse -->
+                <div class="pulse">
+                    <!-- Title --->
+                    <div class="logo"><div>Pulse</div></div>
+                    <!-- Tools -->
+                    <div class="tools one">
+                        <div><img src="assets/img/trans.png" class="gear2" alt="Options" /></div>
+                        <div><img src="assets/img/trans.png" class="mini" alt="Minimize" /></div>
+                        <div><img src="assets/img/trans.png" class="fs2" alt="Go Fullscreen" /></div>
+                        <div><img src="assets/img/trans.png" class="close" alt="Close Screen" /></div>
+                    </div>
+                    <!-- Mini nav -->
+                    <nav>
+                        <div class="holder">
+                            <ul>
+                                <li><div><span></span></div></li>
+                                <li><div><span></span></div></li>
+                                <li><div><span></span></div></li>
+                                <li><div><span></span></div></li>
+                                <li><div><span></span></div></li>
+                                <li><div class="active"><span></span></div></li>
+                                <li><div><span></span></div></li>
+                            </ul>
+                            <div class="selected"></div>
+                        </div>
+                    </nav>
+                    <!-- Pulse Windows - Each module should eventually by dynamically generated w/ Angular -->
+                    <div class="module-window">
+                        <div class="module">
+                            <div class="title">Followers</div>
+                            <ul>
+                                <li><h2>310</h2></li>
+                                <li><p>added today</p></li>
+                                <li><small>2,393,905 total</small></li>
+                            </ul>
+                        </div>
+                        <div class="module">
+                            <div class="title">Fans</div>
+                            <ul>
+                                <li><h2>73</h2></li>
+                                <li><p>added today</p></li>
+                                <li><small>91,675 total</small></li>
+                            </ul>
+                        </div>
+                        <div class="module">
+                            <div class="title">Subscribers</div>
+                            <ul>
+                                <li><h2>56</h2></li>
+                                <li><p>added today</p></li>
+                                <li><small>189,405 total</small></li>
+                            </ul>
+                        </div>
+                        <div class="module active">
+                            <div class="title">foursquare</div>
+                            <ul class="map">
+                                <li class="map-stats"><p>Worldwide Checkins</p><small>3,905</small></li>
+                                <li class="canvas"></li>
+                            </ul>
+                        </div>
+                        <div class="module">
+                            <div class="title">Landing Pages</div>
+                            <ul>
+                                <li><p>Visitors Today</p></li>
+                                <li><h2>397<span> / 355</span></h2></li>
+                                <li><small>Soulja Boy V.I.P</small></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </section>
+    </section>
+
+</section><!-- /wrapper -->
+
+<!-- Load Frameworks -->
+<script type="text/javascript" src="assets/libs/jquery/dist/jquery.min.js"></script>
+
+<!-- Start Application -->
+<script type="text/javascript" src="assets/scripts/app.min.js"></script>
+
 </body>
 </html>

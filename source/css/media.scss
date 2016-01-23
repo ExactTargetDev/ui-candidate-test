@@ -1,0 +1,123 @@
+/* -------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////
+MEDIA QUERY SETUP
+////////////////////////////////////////////////////////////////////////////////////////////////////
+------------------------------------------------------------------------------------------------- */
+/* Smartphones
+-----------------------------------------------
+//////////////////////////////////////////////// */
+@media (max-width:em(480px))                      {
+
+    /* Layout */
+    section.main [class^="col_"]                  { width:100%; }
+    .content                                      { padding-left:rem(20px); }
+    .calendar                                     { border-radius:rem($def-border-radius); border-top:1px solid $def-border-color; }
+
+}
+/* Portrait Tablets
+-----------------------------------------------
+//////////////////////////////////////////////// */
+@media (min-width:em(480px)) and (max-width:em(768px))
+{
+
+    /* Layout */
+    section.main [class^="col_"]                  { width:100%; }
+    .content                                      { padding-left:rem(20px); }
+    .calendar                                     { border-radius:rem($def-border-radius); border-top:1px solid $def-border-color; }
+
+}
+/* Landscape Tablets
+-----------------------------------------------
+//////////////////////////////////////////////// */
+@media (min-width:em(768px)) and (max-width:em(979px))
+{
+
+    /* Layout */
+    .sidebar                                      { width:30%; }
+    .content                                      { width:70%; }
+
+}
+/* Default
+-----------------------------------------------
+/////////////////////////////////////////////// */
+@media (min-width:em(980px)) and (max-width:em(1199px))
+{
+    // Something here
+}
+@media (min-width:em(1200px))
+{
+    // Something here
+}
+/* Print
+-----------------------------------------------
+//////////////////////////////////////////////// */
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

@@ -1,0 +1,380 @@
+/* -------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////
+LAYOUT SETUP
+////////////////////////////////////////////////////////////////////////////////////////////////////
+------------------------------------------------------------------------------------------------- */
+/* Base Styles - Opinionated Defaults
+-----------------------------------------------
+//////////////////////////////////////////////// */
+::selection                                       { background-color:$def-font-highlight; text-shadow:none; }
+                                                    /* Custom background color for highlighted text, also removes text-shadow */
+
+img                                               { display:block; max-width:100%; }
+                                                    /* Responsive images */
+
+audio,canvas,iframe,
+img,svg,video                                     { vertical-align:middle; }
+                                                    /* Remove the gap between audio, canvas, iframes, images, videos and the bottom of their containers */
+
+ol,ul                                             { list-style-position:inside; list-style-type:none; }
+                                                    /* Removes default list styles */
+
+html,body,div,ol,ul,iframe,
+header,nav,section,aside,footer,
+h1,h2,h3,h4,h5,h6,p,
+button,fieldset,input,label,select,textarea       { display:block; border:0; margin:0; outline:0; padding:0; vertical-align:top; }
+                                                    /* Removes default styles, normalize alignment for commonly used elements */
+
+button,input,select,textarea                      { box-sizing:border-box; width:100%; }
+                                                    /* Makes forms much easier to style */
+
+textarea                                          { resize:vertical; }
+                                                    /* Allow only vertical resizing of textareas. */
+
+label                                             { cursor:pointer; }
+                                                    /* Indicates labels should be clicked on */
+
+fieldset                                          { border:$def-border-size solid $def-border-color; border-radius:$def-border-radius; padding:rem($def-padding); margin-bottom:rem($def-margin); }
+                                                    /* Better default fieldset */
+
+hr                                                { display:block; height:1px; border:0; border-top:1px solid $def-border-color; margin:1em 0; padding:0; }
+                                                    /* Better default horizontal rule */
+
+span.amp                                          { font-family:Baskerville,"Palatino Linotype",Times New Roman,serif; font-style:italic; font-weight:400; line-height:normal; }
+                                                    /* Styles ampersands to appear badass. */
+                                                    /* Reference: http://simplebits.com/notebook/2008/08/14/ampersands-2/ */
+
+
+/* Global Class Helpers
+ * Might below to plugins/frameworks i.e. Typekit
+-----------------------------------------------
+//////////////////////////////////////////////// */
+.img                                              { position:relative; padding-top:75%; overflow:hidden; }
+.img img                                          { position:absolute; top:0; opacity:0; width:100%; transition:opacity 1s ease; }
+.img.loaded img                                   { opacity:1; }
+
+.imgc                                             { display:inline-block; overflow:hidden; }
+.imgc img                                         { opacity:0; transition:opacity 1s ease; }
+.imgc.loaded img                                  { opacity:1; }
+
+.fade-in                                          { opacity:1 !important; }
+.fade-out                                         { opacity:0 !important; }
+
+/*
+.wf-loading                                       { }
+.wf-active                                        { opacity:1 !important; } */
+
+.wf-loading .title                                { opacity:0; }
+.wf-active .title                                 { @include animation(fadeIn, 1.0s, 1.0s); }
+                                                    /* Handles Typekit Loading Events */
+
+.fa                                               { display:block; }
+                                                    /* I like this more than display:inline-block for FontAwesome icons */
+
+
+
+
+/* -------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////
+TYPOGRAPHY DEFAULTS
+////////////////////////////////////////////////////////////////////////////////////////////////////
+------------------------------------------------------------------------------------------------- */
+html                                              { color:$def-font-color; font-family:$def-font-family; font-size:$def-font-scale; font-style:$def-font-style; font-weight:$def-font-weight; }
+                                                    /* Default global font-styling */
+
+p                                                 { font-size:em($def-font-size); line-height:$def-line-height; }
+                                                    /* Default paragraph font-styling */
+
+a                                                 { color:$def-anchor-color; text-decoration:$def-anchor-deco; }
+a:hover                                           { color:$def-anchor-hover; }
+a:active                                          { }
+a:visited                                         { }
+                                                    /* Default anchor font-styling */
+
+h1                                                { font-size:em($def-h1-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h2                                                { font-size:em($def-h2-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h3                                                { font-size:em($def-h3-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h4                                                { font-size:em($def-h4-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h5                                                { font-size:em($def-h5-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+h6                                                { font-size:em($def-h6-size); font-family:$def-font-family; font-style:$def-header-style; font-weight:$def-header-weight; line-height:1; }
+                                                    /* Default header font-styling */
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////
+LAYOUT STYLES
+////////////////////////////////////////////////////////////////////////////////////////////////////
+------------------------------------------------------------------------------------------------- */
+html                                              { overflow:hidden; }
+body                                              { background-color:$site-bg-color; overflow:hidden; position:relative; }
+
+
+/* Layout Section - <section.wrapper>
+-----------------------------------------------
+//////////////////////////////////////////////// */
+.wrapper                                          { @include absolute(rem(32px),0,0,0); overflow-y:auto; }
+
+
+/* Layout Section - Top Bar
+-----------------------------------------------
+//////////////////////////////////////////////// */
+header                                            { color:$white; box-shadow:0 1px 2px rgba(0,0,0,0.3); z-index:10;
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45525c+0,2a2f33+100 */
+                                                    background: #45525c; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #45525c 0%, #2a2f33 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #45525c 0%,#2a2f33 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #45525c 0%,#2a2f33 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45525c', endColorstr='#2a2f33',GradientType=0 ); /* IE6-9 */ }
+
+header a.logo                                     { display:inline-block; float:left; padding:rem(9px) rem(20px) rem(7px) rem(20px); position:relative; }
+header a.logo .home                               { @include absolute(0,auto,auto,100%); background: rgba(0,0,0,0.2); border-radius:rem(3px); font-size:em(9px); line-height:22px; margin:rem(5px); padding:0 rem(5px); text-transform:uppercase; opacity:0; transition:0.2s all ease; }
+header a.logo img                                 { transition:0.2s all ease; }
+header a.logo:hover img                           { opacity:0.7; }
+header a.logo:hover .home                         { opacity:1; margin-left:-10px; }
+
+header nav                                        { @extend %clearfix; color:#ccc; font-size:em(11px); float:right; line-height:rem(32px); }
+header nav .welcome                               { color:#eee; margin-right: rem(3px); }
+header nav .divider                               { cursor:default;  }
+header nav a                                      { display:block; color:$site-color-1; padding:0 rem(6px); }
+header nav ul                                     { @extend %clearfix; padding-right:rem(4px); }
+header nav li                                     { float:left; }
+
+
+/* Layout Section - Sidebar Module
+-----------------------------------------------
+//////////////////////////////////////////////// */
+.main section.sidebar                             { padding:rem(20px); }
+
+.sidebar aside                                    { background:#f4f4f5; border:1px solid #e6e6e6; border-radius:rem(5px); box-shadow:inset 0 0 0 1px $white, 0 2px 3px rgba(0,0,0,0.1); }
+.sidebar .header                                  { box-shadow:inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
+                                                    @extend %clearfix; border:1px solid #f8981d; border-radius:rem(5px) rem(5px) 0 0; margin:-1px -1px 0 -1px; position:relative;
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdaf4b+25,f8981d+100 */
+                                                    background: #fdaf4b; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #fdaf4b 25%, #f8981d 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #fdaf4b 25%,#f8981d 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #fdaf4b 25%,#f8981d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 ); /* IE6-9 */ }
+.sidebar .header img                              { float:left; }
+.sidebar .header div                              { color:$white; cursor:default; font-size:em(14px); font-weight:700; float:left; text-shadow:0 1px 1px rgba(0,0,0,0.1); line-height:1.2; padding-top:rem(8px); }
+
+.sidebar a                                        { @extend %clearfix; display:block; padding:rem(4px) rem(8px); }
+.sidebar a.first                                  { margin-top:rem(6px); }
+.sidebar a.last                                   { padding:rem(3px) rem(8px); margin-bottom:rem(6px); }
+.sidebar a img                                    { float:left; margin-left:1px; }
+.sidebar a span                                   { color:#888; font-size:em(12px); float:left; line-height:rem(24px); margin-left:rem(9px); }
+.sidebar a small                                  { color:#888; font-size:em(11px); float:left; line-height:rem(13px); margin-left:rem(7px); }
+.sidebar a .block                                 { box-shadow:inset 0 -1px 0 0px #848d96,inset 0 0 0 1px #b2b6bd, inset 0 1px 3px rgba(255,255,255,0.85),0 1px 2px rgba(0,0,0,0.15);
+                                                    border-radius:rem(4px); float:left; height:rem(24px); width:rem(24px);
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#afb8bf+24,8b949f+100 */
+                                                    background: #afb8bf; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #afb8bf 24%, #8b949f 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #afb8bf 24%,#8b949f 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #afb8bf 24%,#8b949f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+.sidebar a:hover .block                           { box-shadow:inset 0 0 0 1px #f8981d,inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
+                                                    border-radius:rem(4px);
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdaf4b+25,f8981d+100 */
+                                                    background: #fdaf4b; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #fdaf4b 25%, #f8981d 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #fdaf4b 25%,#f8981d 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #fdaf4b 25%,#f8981d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 ); /* IE6-9 */ }
+.sidebar a:hover                                  { background:#e9e9ea; background:rgba(0,0,0,0.05); }
+.sidebar a:active                                 { background:rgba(0,0,0,0.15); }
+.sidebar a:active span,
+.sidebar a:active small                           { color:#444; }
+
+.sidebar .divider                                 { display:block; border-top:1px solid #fefffd; border-bottom:1px solid #e1e1e2; margin:rem(6px) 0; }
+
+
+/* Layout Section - Main Content Area
+-----------------------------------------------
+//////////////////////////////////////////////// */
+.main section.content                             { padding-bottom:rem(20px); padding-right:rem(20px); }
+
+
+/* Layout Section - Calendar Module
+-----------------------------------------------
+//////////////////////////////////////////////// */
+.calendar                                         { background:#f5f5f5; border:1px solid $def-border-color; border-top:0; border-radius:0 0 rem($def-border-radius) rem($def-border-radius); box-shadow:0 1px 2px rgba(0,0,0,0.15); height:rem(112px); overflow:hidden; position: relative; }
+.calendar .month                                  { @include absolute(0,auto,auto,9px); font-size:em(11px); color:#99abb6; cursor:default; line-height:rem(20px); }
+
+.calendar .tools.one                              { @include absolute(0,6px,auto,auto); }
+.calendar .tools.two                              { @include absolute(auto,6px,0,auto); }
+.calendar .tools.one > div                        { height:rem(20px); float:left; cursor:pointer; }
+.calendar .tools.two > div                        { height:rem(13px); float:left; cursor:pointer; }
+.calendar .tools img.gear                         { margin:rem(4px) rem(3px) 0 rem(3px); }
+.calendar .tools img.fs                           { margin:rem(5px) rem(3px) 0 rem(3px); }
+.calendar .tools img.arrow_up                     { margin:rem(4px) rem(3px) 0 rem(3px); }
+
+
+.calendar ul                                      { @extend %clearfix; @include absolute(20px,auto,auto,0); background:#f5f5f5; border-bottom:1px solid #ddd; border-left:1px solid #ddd; width:rem(9999px); }
+.calendar li.day                                  { border-left:1px solid $white; border-right:1px solid #ddd; float:left; height:rem(78px); position:relative; width:rem(137px); }
+.calendar li.day.active                           { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ebf1f5+11,ffedd5+100 */
+                                                    background: #ebf1f5; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #ebf1f5 11%, #ffedd5 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #ebf1f5 11%,#ffedd5 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #ebf1f5 11%,#ffedd5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f5', endColorstr='#ffedd5',GradientType=0 ); /* IE6-9 */ }
+.calendar li.day .week_day                        { float:left; font-size:em(11px); color:#999; cursor:default; margin:rem(4px) 0  0 rem(5px); }
+.calendar li.day .num_day                         { float:right; font-size:em(11px); color:#666; cursor:default; margin:rem(4px) rem(5px) 0 0; }
+.calendar li.day .today                           { @include absolute(auto,-1px,-14px,-1px); background:#fcac45; box-shadow:0 1px 2px rgba(0,0,0,0.4); color:$white; cursor:default; font-size:em(10px); font-weight:700; line-height:rem(13px); text-align:center; text-transform:uppercase; }
+
+
+/* Layout Section - Pulse Module
+-----------------------------------------------
+//////////////////////////////////////////////// */
+.pulse                                            { box-sizing:border-box; margin-top:rem(20px); border-radius:rem(6px); height:rem(265px); box-shadow:inset 0 0 4px 3px rgba(0,0,0,0.15); padding:rem(57px) rem(20px) rem(43px) rem(20px); position:relative; }
+.pulse                                            { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bac8d1+0,e3edf5+89,d2dee6+100 */
+                                                    background: #bac8d1; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #bac8d1 0%, #e3edf5 89%, #d2dee6 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #bac8d1 0%,#e3edf5 89%,#d2dee6 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #bac8d1 0%,#e3edf5 89%,#d2dee6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+.pulse > .logo                                    { @include absolute(0,auto,auto,0); background-image:url('../img/sprite_sheet.png'); background-position:-463px 0; height:rem(48px); width:rem(116px); z-index:10; }
+.pulse > .logo > div                              { color:$white; cursor:default; font-weight:em(20px); font-weight:700; letter-spacing:1px; text-shadow:0 1px 1px rgba(88,139,172,0.6); margin-left:rem(15px); line-height:rem(33px); }
+
+.pulse .tools                                     { z-index:10; }
+.pulse .tools.one                                 { @include absolute(6px,8px,auto,auto); }
+.pulse .tools.one > div                           { height:rem(20px); float:left; cursor:pointer; }
+.pulse .tools img.gear2                           { margin:rem(4px) rem(4px) 0 rem(4px); }
+.pulse .tools img.mini                            { margin:rem(6px) rem(4px) 0 rem(4px); }
+.pulse .tools img.fs2                             { margin:rem(5px) rem(4px) 0 rem(4px); }
+.pulse .tools img.close                           { margin:rem(5px) rem(4px) 0 rem(4px); }
+
+.pulse nav                                        { @include absolute(auto,0,15px,0); font-size:0; text-align:center; }
+.pulse nav .holder                                { display:inline-block; position:relative; z-index:1; }
+.pulse nav .holder .selected                      { @include absolute(0,auto,auto,14px); background:#d7e3ec; border:1px solid #b7c6d1; border-radius:rem(3px); height:rem(11px); width:rem(46px); z-index:-1; }
+.pulse nav ul                                     { @extend %clearfix; }
+.pulse nav li                                     { float:left; margin-left:rem(5px); }
+.pulse nav li:first-child                         { margin-left:0; }
+.pulse nav li div                                 { cursor:pointer; padding:rem(5px) 0; }
+.pulse nav li div span                            { background:#c8d0d6; display:block; cursor:pointer; height:rem(3px); width:rem(4px); }
+.pulse nav li div.active span                     { background:#8fa9bc; border-radius:rem(2px); }
+.pulse nav li div:hover span                      { background:#8fa9bc; }
+
+.pulse .module-window                             { @extend %clearfix; }
+
+.pulse .module                                    { transition:0.2s all ease; height:rem(95px); border-radius:rem(5px); box-shadow:inset 0px -1px 1px 0 rgba(0,0,0,0.4),inset 0px 1px 0px 0px #fff,inset 0px 0px 0px 1px #d1dfe7,inset 0px 5px 8px rgba(255,255,255,1),0 2px 3px rgba(0,0,0,0.2); }
+.pulse .module:first-child                        { margin-left:0; }
+.pulse .module                                    { cursor:pointer; float:left; margin-left:2.5%; margin-top:rem(51px); width:17%; position:relative;
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f9f9+35,d3e1ec+100 */
+                                                    background: #dfeaf1; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #f9f9f9 35%, #d3e1ec 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #f9f9f9 35%,#d3e1ec 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #f9f9f9 35%,#d3e1ec 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+.pulse .module .title                             { @include absolute(auto,0,100%,0); color:#7f91a3; font-size:em(11px); margin-bottom:rem(10px); text-align:center; }
+.pulse .module ul                                 { @include absolute(0,0,0,0); background:rgba(231,239,244,0.4); box-sizing:border-box; border-radius:rem(5px); padding:rem(10px); transition:0.2s all ease; }
+.pulse .module li                                 { display:block; text-align:center; }
+.pulse .module p                                  { color:$site-color-4; font-size:em(16px); transition:0.2s all ease; }
+.pulse .module small                              { color:$site-color-4; font-size:em(12px); transition:0.2s all ease; }
+.pulse .module h2                                 { color:$site-color-2; font-size:em(32px); font-weight:400; transition:0.2s all ease; }
+.pulse .module h2 span                            { color:$site-color-4; font-size:em(9px); }
+
+.pulse .module ul.map                             { }
+.pulse .module ul.map .map-stats                  { @include absolute(0,15px,auto,15px); }
+.pulse .module ul.map .map-stats p                { color:#666; font-size:em(12px); font-weight:700; line-height:rem(28px); float:left; }
+.pulse .module ul.map .map-stats small            { color:#666; font-size:em(12px); font-weight:700; line-height:rem(28px); float:right; }
+.pulse .module ul.map .canvas                     { @include absolute(28px,15px,15px,15px); border:1px solid #c5d5e0; border-radius:rem(5px); box-shadow:inset 0 0 3px rgba(0,0,0,0.3); background:url('../img/map.png') center center; background-size:cover; }
+
+.pulse .module.active                             { height:rem(165px); margin-top:0; width:22%; }
+.pulse .module.active .title                      { color:#5e717e; }
+.pulse .module.active ul                          { background:none; margin-top:rem(20px); }
+.pulse .module.active ul.map                      { background:none; margin-top:0; }
+.pulse .module.active h2                          { font-size:rem(64px); text-shadow:0 2px 5px rgba(0,0,0,0.3); }
+
+
+/* Layout Section - Modal Help Dialogue
+-----------------------------------------------
+//////////////////////////////////////////////// */
+.modal                                            { display:none; }
+.modal.active                                     { display:block; }
+.modal.overlay                                    { @include absolute(0,0,0,0); @include animation(fadeIn, 0.3s, ease-in-out); background:#444; background:rgba(0,0,0,0.5); z-index:999; }
+
+.modal aside                                      { @include animation(slideUp, 0.3s, ease-in-out); background:#f4f4f5; border:1px solid #e6e6e6; border-radius:rem(5px); box-shadow:inset 0 0 0 1px $white, 0 2px 3px rgba(0,0,0,0.1); width:rem(600px); margin:rem(60px) auto 0 auto; }
+.modal .header                                    { box-shadow:inset 0 2px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25);
+                                                    @extend %clearfix; border:1px solid #f8981d; border-radius:rem(5px) rem(5px) 0 0; margin:-1px -1px 0 -1px; position:relative;
+                                                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdaf4b+25,f8981d+100 */
+                                                    background: #fdaf4b; /* Old browsers */
+                                                    background: -moz-linear-gradient(top,  #fdaf4b 25%, #f8981d 100%); /* FF3.6-15 */
+                                                    background: -webkit-linear-gradient(top,  #fdaf4b 25%,#f8981d 100%); /* Chrome10-25,Safari5.1-6 */
+                                                    background: linear-gradient(to bottom,  #fdaf4b 25%,#f8981d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdaf4b', endColorstr='#f8981d',GradientType=0 ); /* IE6-9 */ }
+.modal .header img                                { float:left; }
+.modal .header div                                { color:$white; cursor:default; font-size:em(14px); font-weight:700; float:left; text-shadow:0 1px 1px rgba(0,0,0,0.1); line-height:rem(48px); }
+.modal .content                                   { padding:rem(20px); }
+.modal .content li                                { line-height:1.5; }
+.modal .content li.top                            { font-weight:700; margin-top:rem(15px); }
+.modal .content li:first-child                    { margin-top:0; }
+.modal .content a                                 { color:$site-color-3; }
+.modal .content a:hover                           { border-bottom:1px dotted #444; }
+
+
+/* Image Sprites
+-----------------------------------------------
+//////////////////////////////////////////////// */
+/* Sidebar Sprites */
+.sidebar aside .icon                              { width:24px; height:24px; }
+.sidebar aside .icon.exacttarget-email            { background-image:url('../img/sprite_sheet.png'); background-position:-128px 0; }
+.sidebar aside .icon.exacttarget-mobile           { background-image:url('../img/sprite_sheet.png'); background-position:-224px 0; }
+.sidebar aside .icon.cotweet-social               { background-image:url('../img/sprite_sheet.png'); background-position:-176px 0; }
+.sidebar aside .icon.exacttarget-sites            { background-image:url('../img/sprite_sheet.png'); background-position:-152px 0; }
+.sidebar aside .icon.automation-studio            { background-image:url('../img/sprite_sheet.png'); background-position:-248px 0; }
+.sidebar aside .icon.audience-builder             { background-image:url('../img/sprite_sheet.png'); background-position:-200px 0; }
+.sidebar aside .icon.report-builder               { background-image:url('../img/sprite_sheet.png'); background-position:-272px 0; }
+.sidebar aside .icon.partner-applications         { background-image:url('../img/sprite_sheet.png'); background-position:0 0; }
+
+img.logo                                          { background-image:url('../img/sprite_sheet.png'); background-position:0 0; height:16px; width:86px; }
+img.sidebarlogo                                   { background-image:url('../img/sprite_sheet.png'); background-position:-86px 0; height:48px; width:42px; }
+img.smallarrow                                    { background-image:url('../img/sprite_sheet.png'); background-position:-296px 0; height:13px; width:13px; }
+
+img.fs                                            { background-image:url('../img/sprite_sheet.png'); background-position:-309px 0; height:8px; width:10px; }
+*:hover > img.fs                                  { background-position:-319px 0; }
+
+img.fs2                                           { background-image:url('../img/sprite_sheet.png'); background-position:-413px 0; height:10px; width:12px; }
+*:hover > img.fs2                                 { background-position:-425px 0; }
+
+img.gear                                          { background-image:url('../img/sprite_sheet.png'); background-position:-329px 0; height:11px; width:11px; }
+*:hover > img.gear                                { background-position:-340px 0; }
+
+img.gear2                                         { background-image:url('../img/sprite_sheet.png'); background-position:-437px 0; height:13px; width:13px; }
+*:hover > img.gear2                               { background-position:-450px 0; }
+
+img.arrow_up                                      { background-image:url('../img/sprite_sheet.png'); background-position:-351px 0; height:5px; width:9px; }
+*:hover > img.arrow_up                            { background-position:-360px 0; }
+
+img.close                                         { background-image:url('../img/sprite_sheet.png'); background-position:-369px 0; height:10px; width:9px; }
+*:hover > img.close                               { background-position:-378px 0; }
+
+img.mini                                          { background-image:url('../img/sprite_sheet.png'); background-position:-387px 0; height:8px; width:13px; }
+*:hover > img.mini                                { background-position:-400px 0; }
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////
+PAGE STYLES
+////////////////////////////////////////////////////////////////////////////////////////////////////
+------------------------------------------------------------------------------------------------- */
+/* Page - Home
+-----------------------------------------------
+//////////////////////////////////////////////// */
+.home                                             { }
+
+
+/* Page - About
+-----------------------------------------------
+//////////////////////////////////////////////// */
+.about                                            { }
+
+
+/* Page - Contact
+-----------------------------------------------
+//////////////////////////////////////////////// */
+.contact                                          { }
