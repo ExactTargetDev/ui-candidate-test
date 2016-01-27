@@ -175,6 +175,47 @@
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
+/*
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to make a BUTTON element with text.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+
+function showSelected(){
+	alert(document.getElementById('myList').value);
+}
+
+function myFunction() {
+	
+	var choices = ["one", "two"];
+	
+	var newDiv = document.createElement('div');
+    var selectHTML = "";
+    selectHTML="<select id='myList'>";
+    for(i = 0; i < choices.length; i = i + 1) {
+        selectHTML += "<option value='" + choices[i] + "'>" + choices[i] + "</option>";
+    }
+    selectHTML += "</select>";
+    newDiv.innerHTML = selectHTML;
+    document.getElementById('dynamicInput').appendChild(newDiv);
+
+    var newDiv2 = document.createElement('div');
+    newDiv2.innerHTML='<input type="button" value="Show Selected" onclick="showSelected()" />';
+    document.getElementById('dynamicInput').appendChild(newDiv2);
+}
+</script>
+	<form class="new" method="post" action="/jobs">
+	    <div id="dynamicInput"></div>
+	    
+	</form>
+</body>
+</html>
+*/
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
