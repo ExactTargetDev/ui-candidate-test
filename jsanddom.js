@@ -21,7 +21,7 @@
         distinctValues = values.filter(function(elem, pos) {
           return values.indexOf(elem) == pos;
         });
-        
+
         return distinctValues
      }
 
@@ -30,7 +30,17 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+        for(var i = 1, i <= 100, i++){
+            if (i%15 === 0){
+                console.log("FizzBuzz");
+                continue;
+            } else if(i%3 === 0){
+                console.log("Fizz");
+                continue;
+            } else if(i%5 === 0){
+                console.log("Buzz");
+            }
+        }
      }
 
      // You have a master array of strings, where each element is a fruit name.
