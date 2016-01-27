@@ -142,3 +142,18 @@ test( "isOnlyWhitespace Test", 4, function() {
 	equal( actualResult2, expectedResult2, "Expected " + expectedResult2 + " as the result, the result was: " + actualResult2);
 	equal( actualResult3, expectedResult3, "Expected " + expectedResult3 + " as the result, the result was: " + actualResult3);
 });
+
+/********************************
+Test sayHello
+********************************/
+module( "sayHello Unit Test" );
+test( "sayHello Test", 2, function() {
+ 	// Verify the method exists
+	equal( typeof sayHello, 'function', 'Must contain a sayHello function' );
+
+    var hello = sayHello("Hello");
+    var name = hello("Jeremy");
+
+	// Make sure the result from the sayHello function is valid
+	equal( name, "Hello Jeremy", "Expected " + "Hello Jeremy" + " as the result, the result was: " + name);
+});

@@ -102,7 +102,11 @@
      }
 
      // write an example of a javascript closure
-
+     function sayHello(hello){
+        return function sayMyName(name){
+            return hello + " " + name
+        }
+     }
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
