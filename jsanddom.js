@@ -67,6 +67,7 @@
         	array.push(toPush[i]);  
      	}  
 	console.log(array);
+	return array;
      }
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
