@@ -35,3 +35,18 @@ test( "findMinValue Test", 2, function() {
 	// Make sure the result from the findMinValue function is valid
 	equal( findMinValue(testData), -1.1, "Expected -1.1 as the result, the result was: " + findMinValue(testData));
 });
+
+/********************************
+Test findDistinctValues
+********************************/
+module( "findDistinctValues Unit Test" );
+test( "findDistinctValues Test", 2, function() {
+ 	// Verify the method exists
+ 	equal( typeof findDistinctValues, "function", "Must contain a findDistinctValues function" );
+
+	var testData = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+	var expectedResult = [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity];
+	
+	// Make sure the result from the findDistinctValues function is valid
+	deepEqual( findDistinctValues(testData), expectedResult, "Expected [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity] as the result, the result was: " + findDistinctValues(testData));
+});
