@@ -234,3 +234,41 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+    function addCheckboxes(){
+        var foobar = document.getElementById("foobar");
+        var checkdiv = document.createElement("div");
+        var uncheckdiv = document.createElement("div");
+
+        for(var i=0; i < 5; i++){
+           var checkbox = document.createElement("input");
+           checkbox.setAttribute("type", "checkbox");
+           checkbox.id = "checkbox-" + i;
+           foobar.appendChild(checkbox);
+        }
+
+        var check = document.createElement("a");
+        check.innerHTML = "Check All";
+        check.href = "#foobar";
+        check.addEventListener("click", function(){
+            for(var j=0; j<5; j++){
+                var cb = document.getElementById("checkbox-" + j);
+                cb.checked = true;
+            }
+        })
+
+        var uncheck = document.createElement("a");
+        uncheck.innerHTML = "Uncheck All";
+        uncheck.href = "#foobar";
+        uncheck.addEventListener("click", function(){
+            for(var k=0; k<5; k++){
+                var cb = document.getElementById("checkbox-" + k);
+                cb.checked = false;
+            }
+        })
+
+        foobar.appendChild(checkdiv);
+        checkdiv.appendChild(check);
+        foobar.appendChild(uncheckdiv);
+        uncheckdiv.appendChild(uncheck);
+
+    }
