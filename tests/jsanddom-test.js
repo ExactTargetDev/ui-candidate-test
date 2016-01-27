@@ -104,3 +104,19 @@ test( "splitListStrUsingComma Test", 3, function() {
 	deepEqual( actualResult1, expectedResult1, "Expected " + expectedResult1 + " as the result, the result was: " + actualResult1);
 	deepEqual( actualResult2, expectedResult2, "Expected " + expectedResult2 + " as the result, the result was: " + actualResult2);
 });
+
+/********************************
+Test sum
+********************************/
+module( "sum Unit Test" );
+test( "sum Test", 2, function() {
+ 	// Verify the method exists
+ 	equal( typeof sum, "function", "Must contain a sum function" );
+
+	var testData = [1, 1, 2, 3, 5, 7];
+	var expectedResult = 19;
+	
+	// Make sure the result from the sum function is valid
+	equal( sum(testData), expectedResult, "Expected " + expectedResult + " as the result, the result was: " + sum(testData));
+
+});
