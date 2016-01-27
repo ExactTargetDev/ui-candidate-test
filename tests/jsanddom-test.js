@@ -12,3 +12,9 @@ test( "Example Test", 2, function() {
 /********************************
 Please create your tests below...
 ********************************/
+test( "sum Test",function() {
+    // Verify the method exists
+    equal( typeof sum, 'function', 'Must contain a sum function' ); 
+    ok(sum(3,6,3,10), 22, 'the result was: ' + sum(3,6,3,10));
+    ok(sum(5,4,7,20,40), 76, 'the result was: ' + sum(5,4,7,20,40));
+});
