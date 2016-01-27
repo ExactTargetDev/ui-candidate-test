@@ -57,3 +57,12 @@ test( "closureFunc Test",function() {
     ok(closureFunc(), 2, 'the result was: ' + closureFunc());
     ok(closureFunc(), 3, 'the result was: ' + closureFunc());
 });
+
+test( "pushOntoArray Test",function() {  
+	equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' );   
+	var pushArr1 = ['push1','push2', 'push3', 'push4'];  
+	var pushArr2 = ['push5', 'push6', 'push7'];  
+	ok(pushOntoArray(pushArr1, pushArr2),['push1','push2', 'push3', 'push4','push5', 'push6', 'push7'], 'the result was: ' + removeFruits(pushArr1, pushArr2)  );
+	//pushOntoArray(pushArr1,pushArr2)  
+	ok(pushArr1.length, 7, 'the result was: ' + pushArr1.length);  
+});  
