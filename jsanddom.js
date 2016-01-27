@@ -154,6 +154,33 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     function DataTable(){
+        this.columns = [];
+        this.rows = [];
+
+        // add rows
+        this.addRows = function(){
+            for(var i = 0; i < arguments.length; i++){
+              this.rows.push(arguments[i]);
+            };
+        };
+
+        // add columns
+        this.addColumns = function(){
+            for(var i = 0; i < arguments.length; i++){
+                this.columns.push(arguments[i]);
+            };
+        }
+
+        // get data
+        this.getData = function(){
+            return {
+                "rows": rows,
+                "columns": columns
+            };
+        };
+
+     }
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.

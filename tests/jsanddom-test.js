@@ -157,3 +157,25 @@ test( "sayHello Test", 2, function() {
 	// Make sure the result from the sayHello function is valid
 	equal( name, "Hello Jeremy", "Expected " + "Hello Jeremy" + " as the result, the result was: " + name);
 });
+
+/********************************
+Test DataTable
+********************************/
+module( "DataTable Unit Test" );
+test( "DataTable Test", 3, function() {
+ 	// Verify the method exists
+	equal( typeof DataTable, 'function', 'Must contain a DataTable function' );
+
+    var dataTable = new DataTable();
+    dataTable.addRows("value1A", "value1B", "value1C");
+    dataTable.addRows("value2A", "value2B", "value2C");
+    dataTable.addColumns("column1", "column2", "column3");
+
+    var expectedRows = ["value1A", "value1B", "value1C", "value2A", "value2B", "value2C"];
+    var expectedColumns = ["column1", "column2", "column3"]
+
+	// Make sure the result from the DataTable function is valid
+	deepEqual( dataTable.rows, expectedRows, "Expected " + expectedRows + " as the result, the result was: " +dataTable.rows);
+	deepEqual( dataTable.columns, expectedColumns, "Expected " + expectedColumns + " as the result, the result was: " +dataTable.columns);
+
+});
