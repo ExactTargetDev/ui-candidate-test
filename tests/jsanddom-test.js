@@ -120,3 +120,25 @@ test( "sum Test", 2, function() {
 	equal( sum(testData), expectedResult, "Expected " + expectedResult + " as the result, the result was: " + sum(testData));
 
 });
+
+/********************************
+Test isOnlyWhitespace
+********************************/
+module( "isOnlyWhitespace Unit Test" );
+test( "isOnlyWhitespace Test", 4, function() {
+ 	// Verify the method exists
+ 	equal( typeof isOnlyWhitespace, "function", "Must contain a isOnlyWhitespace function" );
+
+ 	var actualResult1 = isOnlyWhitespace("   exacttarget");
+ 	var actualResult2 = isOnlyWhitespace(" ");
+    var actualResult3 = isOnlyWhitespace("");
+
+    var expectedResult1 = false;
+    var expectedResult2 = true;
+    var expectedResult3 = true;
+	
+	// Make sure the result from the isOnlyWhitespace function is valid
+	equal( actualResult1, expectedResult1, "Expected " + expectedResult1 + " as the result, the result was: " + actualResult1);
+	equal( actualResult2, expectedResult2, "Expected " + expectedResult2 + " as the result, the result was: " + actualResult2);
+	equal( actualResult3, expectedResult3, "Expected " + expectedResult3 + " as the result, the result was: " + actualResult3);
+});
