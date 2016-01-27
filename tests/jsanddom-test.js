@@ -66,3 +66,19 @@ test( "pushOntoArray Test",function() {
 	//pushOntoArray(pushArr1,pushArr2)  
 	ok(pushArr1.length, 7, 'the result was: ' + pushArr1.length);  
 });  
+
+test( "isOnlyWhitespace Test",function() {
+    // Verify the method exists
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' ); 
+    ok(isOnlyWhitespace("   "), true, 'the result was: ' + isOnlyWhitespace("   "));
+    ok(isOnlyWhitespace(" d  "), false, 'the result was: ' + isOnlyWhitespace(" d  "));
+});
+
+
+test( "splitListStrUsingComma Test",function() {  
+	equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );   
+	var str = "today,is,a,bright,day";  
+	ok(splitListStrUsingComma(str), ["today","is","a","bright","day"], 'the result was: ' + splitListStrUsingComma(str));  
+	var str1 = null;   
+	ok(splitListStrUsingComma(str1), [], 'the result was: ' + splitListStrUsingComma(str1));  
+}); 
