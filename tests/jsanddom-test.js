@@ -85,3 +85,22 @@ test( "pushOntoArray Test", 3, function() {
 	deepEqual( actualResult1, expectedResult1, "Expected " + expectedResult1 + " as the result, the result was: " + actualResult1);
 	deepEqual( actualResult2, expectedResult2, "Expected " + expectedResult2 + " as the result, the result was: " + actualResult2);
 });
+
+/********************************
+Test splitListStrUsingComma
+********************************/
+module( "splitListStrUsingComma Unit Test" );
+test( "splitListStrUsingComma Test", 3, function() {
+ 	// Verify the method exists
+ 	equal( typeof splitListStrUsingComma, "function", "Must contain a splitListStrUsingComma function" );
+
+ 	var actualResult1 = splitListStrUsingComma("The, quick, brown, fox jumped over");
+    var actualResult2 = splitListStrUsingComma("");
+
+    var expectedResult1 = ["The", " quick", " brown", " fox jumped over"];
+    var expectedResult2 = [];
+	
+	// Make sure the result from the splitListStrUsingComma function is valid
+	deepEqual( actualResult1, expectedResult1, "Expected " + expectedResult1 + " as the result, the result was: " + actualResult1);
+	deepEqual( actualResult2, expectedResult2, "Expected " + expectedResult2 + " as the result, the result was: " + actualResult2);
+});
