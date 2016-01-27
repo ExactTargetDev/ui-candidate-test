@@ -66,3 +66,22 @@ test( "removeFruits Test", 2, function() {
 	// Make sure the result from the removeFruits function is valid
 	deepEqual( removeFruits(testFruits, testFruitsToRemove), expectedResult, "Expected " + expectedResult + " as the result, the result was: " + removeFruits(testFruits, testFruitsToRemove));
 });
+
+/********************************
+Test pushOntoArray
+********************************/
+module( "pushOntoArray Unit Test" );
+test( "pushOntoArray Test", 3, function() {
+ 	// Verify the method exists
+ 	equal( typeof pushOntoArray, "function", "Must contain a pushOntoArray function" );
+
+ 	var actualResult1 = pushOntoArray([1, 2, 3, 4, 5], 6);
+ 	var actualResult2 = pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]);
+
+	var expectedResult1 = [1, 2, 3, 4, 5, 6];
+	var expectedResult2 = [1, 2, 3, 4, 5, 7, 8, 9];
+	
+	// Make sure the result from the pushOntoArray function is valid
+	deepEqual( actualResult1, expectedResult1, "Expected " + expectedResult1 + " as the result, the result was: " + actualResult1);
+	deepEqual( actualResult2, expectedResult2, "Expected " + expectedResult2 + " as the result, the result was: " + actualResult2);
+});
