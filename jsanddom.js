@@ -6,17 +6,28 @@
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+         var res = '';
+          for (var i = str.length - 1; i >= 0; i--){
+                res += str[i];
+          }
+          return res;
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+         return Math.min.apply(Math, values); 
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
-     function findDistinctValues(values) {
-         // FILL THIS IN
+     function findDistinctValues(arr) {
+          var distinctArr = [];
+          for (var i=0, l=arr.length; i<l; i++){
+               if (distinctArr.indexOf(arr[i]) === -1 && arr[i] !== ''){
+                    distinctArr.push(arr[i]);
+               }
+          }
+               console.log(distinctArr);
+               return distinctArr;
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,7 +35,10 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+          for (var i = 1; i <= 100; i++) {
+               var res = i % 3 == 0, b = i % 5 == 0;
+               console.log(res ? b ? "FizzBuzz" : "Fizz" : b ? "Buzz" : i);
+          }
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -32,7 +46,16 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+         for (var i = 0; i < fruits.length; i++) {  
+     		for (var j = 0; j < fruitsToRemove.length; j++) {  
+     			if (fruits[i] == fruitsToRemove[j]) {  
+     				fruits.splice(i,1); 
+     				
+     			}
+     		}  
+     	}
+	     console.log(fruits);
+	     return fruits;  
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -64,7 +87,14 @@
      }
 
      // write an example of a javascript closure
-
+     function closureFunc() {
+          var count = 0;
+          function counter() {  
+               count = count + 1;
+               return count;
+          }
+          return counter; 
+    }
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
