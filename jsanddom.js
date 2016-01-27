@@ -30,8 +30,8 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-        for(var i = 1, i <= 100, i++){
-            if (i%15 === 0){
+        for(var i = 0; i <= 100; i++){
+            if(i%15 === 0){
                 console.log("FizzBuzz");
                 continue;
             } else if(i%3 === 0){
@@ -48,7 +48,14 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+        for(var i = 0; i < fruits.length; i++){
+            for(var j = 0; j < fruitsToRemove.length; j++){
+                if(fruits[i] === fruitsToRemove[j]){
+                    fruits.splice(i, 1);
+                }
+            }
+        }
+        return fruits
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.

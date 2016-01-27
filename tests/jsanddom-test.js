@@ -46,7 +46,23 @@ test( "findDistinctValues Test", 2, function() {
 
 	var testData = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
 	var expectedResult = [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity];
-	
+
 	// Make sure the result from the findDistinctValues function is valid
 	deepEqual( findDistinctValues(testData), expectedResult, "Expected [3, 5, 7, 20, .18, 1, -1.1, 12, Infinity] as the result, the result was: " + findDistinctValues(testData));
+});
+
+/********************************
+Test removeFruits
+********************************/
+module( "removeFruits Unit Test" );
+test( "removeFruits Test", 2, function() {
+ 	// Verify the method exists
+ 	equal( typeof removeFruits, "function", "Must contain a removeFruits function" );
+
+	var testFruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+	var testFruitsToRemove = ['pear', 'banana'];
+	var expectedResult = ['apple', 'orange', 'kiwi', 'plum', 'strawberry'];
+	
+	// Make sure the result from the removeFruits function is valid
+	deepEqual( removeFruits(testFruits, testFruitsToRemove), expectedResult, "Expected " + expectedResult + " as the result, the result was: " + removeFruits(testFruits, testFruitsToRemove));
 });
