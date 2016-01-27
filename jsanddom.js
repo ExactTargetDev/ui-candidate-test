@@ -123,6 +123,40 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+/*
+
+{
+    "people": {
+           {
+                "firstName": "Kumar",
+                "lastName":"Nag",
+                "City":"New York",
+                "State":"NY",
+                "Zip":"123456",
+                "PhoneNumbers": {
+                    "home":"1231235678",
+                    "work":"2312356780",
+                    "mobile":"3123567890"			
+                }   
+           },
+           {
+                "firstName": "Manoj",
+                "lastName":"Kumar",
+                "City":"Atlanta",
+                "State":"tx",
+                "Zip":"343434",
+                "PhoneNumbers": {
+                    "home":"5555555555",
+                    "work":"4444444444",
+                    "mobile":"7777777777"			
+                }   
+           }
+        
+    }
+}
+
+
+*/
 
 
      // Create a javascript object (DataTable) with the following:
