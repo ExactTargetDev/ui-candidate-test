@@ -115,6 +115,32 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+    var people = {
+        "First": {
+            "firstName": "Jeremy",
+            "lastName": "Wagner",
+            "city": "Indianapolis",
+            "state": "IndianaGeorgia",
+            "zip": 46204,
+            "contact": {
+              "home": "812-528-4875",
+              "work": "812-528-4875",
+              "mobile": "812-528-4875"
+            }
+          },
+          "TSecond": {
+            "firstName": "Monette",
+            "lastName": "Wagner",
+            "city": "Indianapolis",
+            "state": "Indiana",
+            "zip": 46204,
+            "contact": {
+              "home": "812-528-4875",
+              "work": "812-528-4875",
+              "mobile": "812-528-4875"
+            }
+        }
+    }
 
 
      // Create a javascript object (DataTable) with the following:
