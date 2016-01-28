@@ -5,3 +5,23 @@
 	background: linear-gradient(to bottom,  #2a2f32 0%,#45525c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a2f32', endColorstr='#45525c',GradientType=0 ); /* IE6-9 */
 }
+
+.navbar-right {
+   padding-right: 15px;
+}
+
+.pipes {
+  color:white;
+  margin-top:14px;
+}
+
+.nav-welcome,
+.nav-welcome:hover{
+	color: white !important;
+}
+
+.nav-link,
+.nav-link:hover{
+	color: #66c1ff !important;
+	cursor: pointer
+}

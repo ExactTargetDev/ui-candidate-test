@@ -24,15 +24,33 @@
 	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container-fluid">
 
-	  		<!-- Logo -->
+	  		<!-- Logo & Collapsed Button-->
 		  	<div class="navbar-header">
+			  	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
 	      		<a class="navbar-brand">
 	        		<img src="images/logo.png">
 	     		 </a>
 	    	</div>
 
+	    	<div class="collapse navbar-collapse">
+		    	<ul class="nav navbar-nav navbar-right">
+		    		<li class="nav"><a class="nav-welcome">Welcome John!</a></li>
+		    		<li class="nav"><a class="nav-link">Account</a></li>
+		    		<li class="nav hidden-xs"><p class="pipes">|</p></li>
+		    		<li class="nav"><a class="nav-link">Help</a></li>
+		    		<li class="nav hidden-xs"><p class="pipes">|</p></li>
+		    		<li class="nav"><a class="nav-link">Logout</a></li>
+		    	</ul>
+		    </div>
+
 	  </div>
 	</nav>
+
+
 
 	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
