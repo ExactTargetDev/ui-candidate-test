@@ -45,7 +45,7 @@
 		    		<li class="nav"><a class="nav-welcome">Welcome John!</a></li>
 		    		<li class="nav"><a class="nav-link">Account</a></li>
 		    		<li class="nav hidden-xs"><p class="pipes">|</p></li>
-		    		<li class="nav"><a class="nav-link">Help</a></li>
+		    		<li class="nav"><a class="nav-link" onclick="showHelp()">Help</a></li>
 		    		<li class="nav hidden-xs"><p class="pipes">|</p></li>
 		    		<li class="nav"><a class="nav-link">Logout</a></li>
 		    	</ul>
@@ -157,7 +157,7 @@
 
 		 					<div class="row">
 		 						<div class="container-fluid">
-			 						<div id="con-1" class="col-md-2 text-center bubble-container inactive-container" onClick="setActiveBubble('con-1')">
+			 						<div id="con-1" class="col-md-2 text-center bubble-container inactive-container" onclick="setActiveBubble('con-1')">
 			 							<p class="bubble-title">Followers</p>
 			 							<div class="bubble">
 			 								<p class="text-center blue-top">310</p>
@@ -172,7 +172,7 @@
 			 								</div>
 			 							</div>
 			 						</div>
-			 						<div id="con-2" class="col-md-2 text-center bubble-container active-container" onClick="setActiveBubble('con-2')">
+			 						<div id="con-2" class="col-md-2 text-center bubble-container active-container" onclick="setActiveBubble('con-2')">
 			 							<p class="bubble-title">Fans</p>
 			 							<div class="bubble">
 			 								<p class="text-center blue-top">73</p>
@@ -187,7 +187,7 @@
 			 								</div>
 			 							</div>
 			 						</div>
-			 						<div id="con-3" class="col-md-2 text-center bubble-container inactive-container" onClick="setActiveBubble('con-3')">
+			 						<div id="con-3" class="col-md-2 text-center bubble-container inactive-container" onclick="setActiveBubble('con-3')">
 			 							<p class="bubble-title">Subscribers</p>
 			 							<div class="bubble">
 			 								<p class="text-center blue-top">56</p>
@@ -202,7 +202,7 @@
 			 								</div>
 			 							</div>
 			 						</div>
-			 						<div id="con-4" class="col-md-2 text-center bubble-container inactive-container" onClick="setActiveBubble('con-4')">
+			 						<div id="con-4" class="col-md-2 text-center bubble-container inactive-container" onclick="setActiveBubble('con-4')">
 			 							<p class="bubble-title">foursquare</p>
 			 							<div class="bubble">
 			 								<p class="text-center blue-top">3,905</p>
@@ -217,7 +217,7 @@
 			 								</div>
 			 							</div>
 			 						</div>
-			 						<div id="con-5" class="col-md-2 text-center bubble-container inactive-container" onClick="setActiveBubble('con-5')">
+			 						<div id="con-5" class="col-md-2 text-center bubble-container inactive-container" onclick="setActiveBubble('con-5')">
 			 							<p class="bubble-title">Landing Pages</p>
 			 							<div class="bubble">
 			 								<p class="text-center md-top">Visitors Today</p>
@@ -249,10 +249,30 @@
 	</div>
 
 
+
+	<!-- Modal -->
+	<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">ExactTarget Help</h4>
+	      </div>
+	      <div id="help-body" class="modal-body">
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
 	<!-- Scripts -->
 	<script src="scripts/jquery-1.12.0.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script src="scripts/pulse.js"></script>
+	<script src="scripts/help.js"></script>
 	
 </body>
 </html>
