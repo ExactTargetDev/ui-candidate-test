@@ -1,0 +1,65 @@
+.hub-heading{
+	background: #ff7b0d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ff7b0d 0%, #ffa84c 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #ff7b0d 0%,#ffa84c 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #ff7b0d 0%,#ffa84c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7b0d', endColorstr='#ffa84c',GradientType=0 ); /* IE6-9 */
+	font-size: 16px;
+	color: white;
+	font-weight: bold;
+}
+
+
+.panel-body{
+	background-color: #f5f5f5 !important;
+}
+
+.hub-logo{
+	position: absolute;
+   	left: 50%;
+   	margin-top:25%;
+}
+
+.list-group-item{
+	border-bottom: none;
+	border-top: none;
+	background-color: #f5f5f5;
+}
+
+.edge-item{
+	border: 1px solid #ddd;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 10px;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.list-group-item:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.middle-item{
+	border-top: 1px solid #ddd;
+}
+
+.hub-link {
+	color: #888;
+}
+
+.hub-link:hover {
+	color: #888;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.hub-link:focus,
+.hub-link:active {
+	color: #ff7b0d;
+}
