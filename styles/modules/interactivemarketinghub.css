@@ -9,9 +9,12 @@
 	font-weight: bold;
 }
 
+.marketing-hub {
+	margin-top: 20px;
+}
 
 .panel-body{
-	background-color: #f5f5f5 !important;
+	background-color: #f5f5f5;
 }
 
 .hub-logo{
