@@ -254,8 +254,6 @@
      createSelect();
 
 
-
-
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
      $(function(){
@@ -268,8 +266,55 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     function createList(){
+          var newArray = new Array('First Item', 'Second Item', 'Third Item', 'Fourth Item'),
+              list1 = $('#list1');
+
+          for(var i = 0; i < newArray.length; ++i){
+               $(list1).append('<li>' + newArray[i] + '</li>')
+          }
+     }
+
+     createList();
+
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     function createCheckboxes(){
+          var checkbox1 = document.createElement('input'),
+              checkbox2 = document.createElement('input'),
+              checkAll = document.createElement('button'),
+              unCheckAll = document.createElement('button'),
+              list = document.createElement('ul');
+
+
+          list.id = 'checkboxes';
+          checkbox1.type = 'checkbox';
+          checkbox2.type = 'checkbox';
+          checkAll.innerText = 'Check All';
+          unCheckAll.innerText = 'Uncheck All';
+
+          $('#foobar').append(list);
+          $(list).append('<li>' + checkbox1.outerHTML + '</li>');
+          $(list).append('<li>' + checkbox2.outerHTML + '</li>');
+          $('#foobar').append(checkAll);
+          $('#foobar').append(unCheckAll);
+
+          $('#checkAll').click(function(){
+               var checkboxes = $('#checkboxes').find('input');
+               $(checkboxes).each(function(){
+                    this.checked = true
+               })
+          });
+
+          $('#unCheckAll').click(function(){
+               var checkboxes = $('#checkboxes').find('input');
+               $(checkboxes).each(function(){
+                    this.checked = false
+               })
+          });
+     }
+
+     createCheckboxes();

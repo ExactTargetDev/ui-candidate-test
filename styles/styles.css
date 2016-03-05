@@ -1,0 +1,70 @@
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+#container{
+    height: 100%;
+    width: 1240px;
+    margin: auto;
+}
+
+
+#left, #right {
+    height: 100%;
+    float: left;
+}
+
+#left {
+    width: 220px;
+}
+
+#right {
+    width: 1015px;
+}
+
+/*Header Styles*/
+
+header {
+    height: 46px;
+
+    background: #44525c; /* Old browsers */
+    background: -moz-linear-gradient(top,  #44525c 0%, #2b3135 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #44525c 0%,#2b3135 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #44525c 0%,#2b3135 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44525c', endColorstr='#2b3135',GradientType=0 ); /* IE6-9 */
+}
+
+header #main-logo {
+    position: relative;
+    left: 17px;
+    top: 16px;
+    display: block;
+    width: 95px;
+    height: 20px;
+    background: url('../img/sprites.png') -11px -73px;
+}
+
+#user-controls {
+    position: relative;
+    right: 13px;
+    font-size: 11px;
+    float: right;
+    color: #fff;
+}
+
+#user-controls span {
+    color: #fff;
+    margin-right: 5px;
+}
+
+#user-controls a {
+    color: #99cce1;
+    margin: 0 5px 0 1px;
+}
