@@ -485,3 +485,40 @@ header #main-logo {
     right:10px;
     border-radius:100px / 10px;
 }
+
+#modal {
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+#modal.active {
+    background-color: #000;
+    opacity: 0.7;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#help-text {
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+}
+
+#help-text.active {
+    background-color: #fff;
+    opacity: 1;
+    width: 500px;
+    height: 300px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
