@@ -2,11 +2,12 @@
 <html>
 <head>
     <title>Screenshot.html</title>
-    <link rel="stylesheet" href="styles/styles.css">
 </head>
+<link rel="stylesheet" href="styles/styles.css">
 <body>
+
 <div id="container">
-    <header>
+    <header id="main-header">
         <span id="main-logo"></span>
         <div id="user-controls">
             <span>Welcome John!</span>
@@ -15,8 +16,114 @@
             <a href="#">Logout</a>
         </div>
     </header>
+    <section id="left">
+        <div id="app-launcher">
+            <div id="app-launcher-header">
+                <span>Interactive Marketing Hub</span>
+            </div>
+            <div class="list-container">
+                <ul>
+                    <li class="et_email">ExactTarget Email</li>
+                    <li class="et_mobile">ExactTarget Mobile</li>
+                    <li class="ct_social">CoTweet Social</li>
+                    <li class="et_sites">ExactTarget Sites</li>
+                </ul>
+            </div>
+            <div class="list-container">
+                <ul>
+                    <li class="am_studio">Automation Studio</li>
+                    <li class="aud_builder">Audience Builder</li>
+                    <li class="rpt_builder">Report Builder</li>
+                </ul>
+            </div>
+            <div class="list-container">
+                <span class="extra-link">Partner Applications</span>
+            </div>
+        </div>
+    </section>
+    <section id="right">
+        <div id="calendar-container">
+            <div class="month-name">September 2010</div>
+            <div class="day-container">
+                <div class="day-container-inner">
+                    <div class="day-container-inner-border">
+                        <span class="day-name day-header">Sat</span>
+                        <span class="day-date day-header">11</span>
+                    </div>
+                </div>
+                <span class="today-container"></span>
+            </div>
+            <div class="day-container">
+                <div class="day-container-inner">
+                    <div class="day-container-inner-border">
+                        <span class="day-name day-header">Sun</span>
+                        <span class="day-date day-header">12</span>
+                    </div>
+                </div>
+                <span class="today-container"></span>
+            </div>
+            <div class="day-container">
+                <div class="day-container-inner">
+                    <div class="day-container-inner-border">
+                        <span class="day-name day-header">Mon</span>
+                        <span class="day-date day-header">13</span>
+                    </div>
+                </div>
+                <span class="today-container"></span>
+            </div>
+            <div class="day-container today">
+                <div class="day-container-inner">
+                    <div class="day-container-inner-border">
+                        <span class="day-name day-header">Tue</span>
+                        <span class="day-date day-header">14</span>
+                    </div>
+                </div>
+                <span class="today-container">TODAY</span>
+            </div>
+            <div class="day-container">
+                <div class="day-container-inner">
+                    <div class="day-container-inner-border">
+                        <span class="day-name day-header">Wed</span>
+                        <span class="day-date day-header">15</span>
+                    </div>
+                </div>
+                <span class="today-container"></span>
+            </div>
+            <div class="day-container">
+                <div class="day-container-inner">
+                    <div class="day-container-inner-border">
+                        <span class="day-name day-header">Thu</span>
+                        <span class="day-date day-header">16</span>
+                    </div>
+                </div>
+                <span class="today-container"></span>
+            </div>
+            <div class="day-container">
+                <div class="day-container-inner">
+                    <div class="day-container-inner-border">
+                        <span class="day-name day-header">Fri</span>
+                        <span class="day-date day-header">17</span>
+                    </div>
+                </div>
+                <span class="today-container"></span>
+            </div>
+        </div>
+        <div id="pulse-container">
+            <header id="pulse-header">
+                <span class="pulse-title">Pulse</span>
+                <div class="user-controls">
+                    <span class="icon-1 icons"></span>
+                    <span class="icon-2 icons"></span>
+                    <span class="icon-3 icons"></span>
+                    <span class="icon-4 icons"></span>
+                </div>
+            </header>
+        </div>
+    </section>
 </div>
 
-<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
 </body>
+
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+<!--<script src="script.js"></script>-->
 </html>

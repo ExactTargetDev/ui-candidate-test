@@ -31,7 +31,7 @@ html, body {
 
 /*Header Styles*/
 
-header {
+#main-header {
     height: 46px;
 
     background: #44525c; /* Old browsers */
@@ -67,4 +67,297 @@ header #main-logo {
 #user-controls a {
     color: #99cce1;
     margin: 0 5px 0 1px;
+}
+
+/*App Launcher Styles*/
+
+#app-launcher {
+    margin: 20px auto 0;
+    width: 180px;
+    background-color: #f4f4f5;
+    border-radius: 0 0 6px 6px;
+
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
+}
+
+#app-launcher-header {
+    border-radius: 6px 6px 0 0;
+    border: 1px solid #f8991e;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+
+    /*Box Shadow*/
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
+
+    /*Gradient*/
+    border-top: 1px solid #f5c78e;
+    background: #f89b21;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fdb658), to(#f89b21));
+    background: -webkit-linear-gradient(top, #fdb658, #f89b21);
+    background: -moz-linear-gradient(top, #fdb658, #f89b21);
+    background: -ms-linear-gradient(top, #fdb658, #f89b21);
+    background: -o-linear-gradient(top, #fdb658, #f89b21);
+}
+
+#app-launcher-header span {
+    display: block;
+    width: 110px;
+    line-height: 17px;
+    position: relative;
+    left: 45px;
+    margin: 9px 0;
+}
+
+#app-launcher-header span:before {
+    content: '';
+    background: url('../img/sprites.png') -44px -37px no-repeat;
+    display: block;
+    width: 32px;
+    height: 37px;
+    position: absolute;
+    left: -37px;
+    top: 2px;
+}
+
+#app-launcher li {
+    position: relative;
+    list-style: none;
+    height: 32px;
+    font-size: 12px;
+}
+
+#app-launcher ul {
+    width: 95%;
+    margin: 17px auto 0;
+}
+
+#app-launcher li:before {
+    content: '';
+    display: block;
+    width: 26px;
+    height: 27px;
+    position: absolute;
+    left: -36px;
+    top: -6px;
+}
+
+#app-launcher li.et_email:before {
+    background: url('../img/sprites.png') -145px -8px no-repeat;
+}
+
+#app-launcher li.et_mobile:before {
+    background: url('../img/sprites.png') -110px -8px no-repeat;
+}
+
+#app-launcher li.ct_social:before {
+    background: url('../img/sprites.png') -179px -8px no-repeat;
+}
+
+#app-launcher li.et_sites:before {
+    background: url('../img/sprites.png') -76px -8px no-repeat;
+}
+
+#app-launcher li.am_studio:before {
+    background: url('../img/sprites.png') -254px -8px no-repeat;
+}
+
+#app-launcher li.aud_builder:before {
+    background: url('../img/sprites.png') -216px -8px no-repeat;
+}
+
+#app-launcher li.rpt_builder:before {
+    background: url('../img/sprites.png') -42px -8px no-repeat;
+}
+
+#app-launcher .list-container {
+    border: 1px solid #fff;
+    border-top: 1px solid #e0e0e1;
+}
+
+#app-launcher .extra-link {
+    display: block;
+    position: relative;
+    list-style: none;
+    font-size: 12px;
+    padding: 9px 0 9px 33px;
+}
+
+#app-launcher .extra-link:before {
+    background: url('../img/sprites.png') -14px -42px no-repeat;
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 12px;
+    top: 9px;
+}
+
+#app-launcher .list-container:last-child {
+    border-radius: 0 0 6px 6px;
+}
+
+/*Calendar Styles*/
+
+#calendar-container {
+    background-color: #f5f5f5;
+    border-radius: 0 0 6px 6px;
+    margin-bottom: 20px;
+
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
+}
+
+#calendar-container .month-name {
+    font-size: 11px;
+    color: #99abb6;
+    padding: 5px 0 5px 10px;
+}
+
+#calendar-container .day-container {
+    width: 142px;
+    height: 115px;
+
+    display: inline-block;
+    margin-right: -6px;
+    position: relative;
+}
+
+#calendar-container .day-container-inner {
+    height: 100px;
+    margin: auto;
+
+    border: 1px solid #d7d7d7;
+    border-top: 0;
+    border-left: 1px solid #fff;
+    position: relative;
+}
+
+#calendar-container .day-container-inner-border {
+    height: 101px;
+    width: 142px;
+    margin: auto;
+
+    border: 1px solid #fff;
+    border-top: 0;
+    border-left: 1px solid #d7d7d7;
+    position: absolute;
+    left: 0;
+}
+
+#calendar-container .day-header {
+    font-size: 11px;
+    position: absolute;
+}
+
+#calendar-container .day-name {
+    left: 8px;
+    color: #999999;
+}
+
+#calendar-container .day-date {
+    right: 8px;
+    color: #666666;
+}
+
+#calendar-container .today {
+
+    background: #ebf1f5; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ebf1f5 0%, #feedd6 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #ebf1f5 0%,#feedd6 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #ebf1f5 0%,#feedd6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f5', endColorstr='#feedd6',GradientType=0 ); /* IE6-9 */
+
+}
+
+#calendar-container .today .today-container {
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+    display: block;
+    padding: 4px 0;
+    position: absolute;
+    bottom: -4px;
+    left: 1px;
+    width: 140px;
+
+    background: #fcd29f; /* Old browsers */
+    background: -moz-linear-gradient(top,  #fcd29f 1%, #f99c24 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #fcd29f 1%,#f99c24 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #fcd29f 1%,#f99c24 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcd29f', endColorstr='#f99c24',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+/*Pulse Styles*/
+
+#pulse-container {
+    height: 265px;
+    border-radius: 5px;
+    border: 1px solid #a8b4bd;
+
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#afbcc4+1,e3edf5+96,cdd8e0+100 */
+    background: #afbcc4; /* Old browsers */
+    background: -moz-linear-gradient(top,  #afbcc4 1%, #e3edf5 96%, #cdd8e0 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #afbcc4 1%,#e3edf5 96%,#cdd8e0 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #afbcc4 1%,#e3edf5 96%,#cdd8e0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#afbcc4', endColorstr='#cdd8e0',GradientType=0 ); /* IE6-9 */
+}
+
+#pulse-container #pulse-header {
+    color: #fff;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+    font-size: 20px;
+    position: relative;
+}
+
+#pulse-container .pulse-title {
+    position: relative;
+    top: 8px;
+    left: 9px;
+}
+
+#pulse-container .pulse-title:before {
+    background: url('../img/sprites.png') -173px -124px no-repeat;
+    content: '';
+    display: block;
+    width: 117px;
+    height: 45px;
+    position: absolute;
+    left: -14px;
+    top: 6px;
+}
+
+#pulse-container .icons {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    left: 12px;
+    top: 9px;
+}
+
+#pulse-container .icon-1 {
+    background: url('../img/sprites.png') -14px -98px no-repeat;
+}
+
+#pulse-container .icon-2 {
+    background: url('../img/sprites.png') -40px -98px no-repeat;
+}
+
+#pulse-container .icon-3 {
+    background: url('../img/sprites.png') -67px -98px no-repeat;
+}
+
+#pulse-container .icon-4 {
+    background: url('../img/sprites.png') -92px -98px no-repeat;
 }
