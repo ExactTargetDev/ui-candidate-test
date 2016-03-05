@@ -48,3 +48,46 @@ test( "Fizz Buzz Multiples", 2, function() {
 
     ok( doFizzBuzz(), 'The result was: ' + doFizzBuzz());
 });
+
+/********************************
+ Removing Fruit
+ ********************************/
+test( "Removes Fruit", 2, function() {
+    equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
+
+    var fruits = ['Banana', 'Apple', 'Peach', 'Orange'];
+    var fruitsToRemove = ['Orange','Apple'];
+
+    ok( removeFruits(fruits, fruitsToRemove), 'Expected Banana,Peach as the result, The result was: ' + removeFruits(fruits, fruitsToRemove));
+});
+
+
+/********************************
+ To Push Array
+ ********************************/
+test( "To Push Array", 2, function() {
+    equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' );
+    var array = [1,2,3],
+        toPush = [4,5,6];
+
+    ok( pushOntoArray(array, toPush), 'Expected 1,2,3,4,5,6 as the result, The result was: ' + pushOntoArray(array, toPush));
+});
+
+/********************************
+ Split String
+ ********************************/
+test( "Split String", 2, function() {
+    equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
+    var str = 'I am splitting, this string';
+
+    ok( splitListStrUsingComma(str), 'Expected as "this string", The result was: ' + splitListStrUsingComma(str));
+});
+
+/********************************
+ Sum Of All Arguements
+ ********************************/
+test( "Sum Of All Arguements ", 2, function() {
+    equal( typeof sum, 'function', 'Must contain a sum function' );
+
+    ok( sum(1,2,3), 6, 'Expected as 6, The result was: ' + sum(1,2,3));
+});
