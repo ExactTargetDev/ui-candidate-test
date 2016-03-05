@@ -1,22 +1,25 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-         // FILL THIS IN
+          return str.split('').reverse().join('');
      }
+
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         // FILL THIS IN
+          return Math.min.apply( Math, values );
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         // FILL THIS IN
+          return values.filter(function(elem, pos) {
+               values.indexOf(elem) == pos;
+          });
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -24,7 +27,29 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-         // FILL THIS IN
+          var fizzBuzzString = "",
+              multiple3,
+              multiple5,
+              i;
+
+          for (i = 1; i <= 100; i++){
+
+               multiple3 = i%3 ==0;
+               multiple5 = i%5 ==0;
+
+               if(multiple3){
+                    fizzBuzzString += "Fizz"
+               }
+               if (multiple5){
+                    fizzBuzzString += "Buzz"
+               }
+               if (!(multiple3||multiple5)){
+                    fizzBuzzString += i;
+               }
+               fizzBuzzString+="\n"
+          }
+
+          return fizzBuzzString
      }
 
      // You have a master array of strings, where each element is a fruit name.
