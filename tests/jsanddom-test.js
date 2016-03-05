@@ -4,7 +4,7 @@ Unit Test Example
 module( "Example Unit Test" );
 test( "Example Test", 2, function() {
     // Verify the method exists
-    equal( typeof divide, 'function', 'Must contain a divide function' ); 
+    equal( typeof divide, 'function', 'Must contain a divide function' );
 
     // Make sure the result from the divide function is valid
     ok( divide( 4, 2 ), 2, 'Expected 2 as the result, the result was: ' + divide( 4, 2 ) );
@@ -90,4 +90,23 @@ test( "Sum Of All Arguements ", 2, function() {
     equal( typeof sum, 'function', 'Must contain a sum function' );
 
     ok( sum(1,2,3), 6, 'Expected as 6, The result was: ' + sum(1,2,3));
+});
+
+/********************************
+ Check Whitespace
+ ********************************/
+test( "Check Whitespace", 2, function() {
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
+    var str = '    ';
+
+    ok( isOnlyWhitespace(str), true, 'Expected as true, The result was: ' +  isOnlyWhitespace(str));
+});
+
+/********************************
+ Test Closure
+ ********************************/
+test( "Check Closure", 2, function() {
+    equal( typeof outerFunc, 'function', 'Must contain a outerFunc function' );
+
+    ok( outerFunc(1,2), 3, 'Expected as false, The result was: ' +  outerFunc(1,2));
 });

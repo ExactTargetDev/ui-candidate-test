@@ -104,10 +104,22 @@
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+          if(/\S/.test(sourceStr)){
+               return false
+          } else {
+               return true
+          }
      }
 
      // write an example of a javascript closure
+     function outerFunc(one,two){
+          var outVar1 = one,
+              outVar2 = two;
+
+          return function innerFunc(){
+               outVar1 + outVar2;
+          }
+     }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
@@ -117,6 +129,38 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     var peopleJSON = {"people":
+         [
+              {
+                   "firstName":"John",
+                   "lastName":"Doe",
+                   "city":"Indianapolis",
+                   "state":"Indiana",
+                   "zip": "46260",
+                   "numbers": [
+                        {
+                             "home" : "1234456",
+                             "work" : "1234456",
+                             "mobile" : "1234456"
+                        }
+                   ]
+              },
+              {
+                   "firstName":"Jane",
+                   "lastName":"Doe",
+                   "city":"Indianapolis",
+                   "state":"Indiana",
+                   "zip": "46260",
+                   "numbers": [
+                        {
+                             "home" : "1234456",
+                             "work" : "1234456",
+                             "mobile" : "1234456"
+                        }
+                   ]
+              }
+         ]
+     };
 
 
      // Create a javascript object (DataTable) with the following:
@@ -131,12 +175,96 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+     var DataTable = function(){
+          var columns = [],
+              rows = {};
+
+          this.addRows = function(item){
+               if(Object.keys(rows).length > 0){
+                    for (var i = 0; i < arguments.length; i++) {
+                         var itemToAdd =  arguments[i];
+                         rows[columns[i]].push(itemToAdd);
+                         return rows
+                    }
+               } else {
+                    for (var i = 0; i < arguments.length; i++) {
+                         var newArr =  [arguments[i]];
+                         rows[columns[i]] = newArr;
+                         return columns
+                    }
+               }
+          };
+
+          this.addColumns = function(item){
+               for (var i=0; i < arguments.length; i++) {
+                    columns.push(arguments[i]);
+               }
+          };
+
+          this.getData = function(){
+               return rows
+          }
+     };
+
+     var dataTable = new DataTable();
+
+     dataTable.addColumns('first','second','third');
+     dataTable.addRows('value1A','value2A','value3A');
+     dataTable.addRows('value1B','value2B','value3B');
+     dataTable.addRows('value1C','value2C','value3C');
+     dataTable.getData();
+
+
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     function createSelect(){
+          var div1 = document.getElementById('div1'),
+              myOptions = ["First","Second","Third"],
+              optionList = document.createElement("select"),
+              button = document.createElement("button"),
+              selected = myOptions[0];
+
+          button.id = 'getValues';
+          button.innerText = 'Log Values';
+
+          div1.appendChild(optionList);
+          div1.appendChild(button);
+
+          function createOptions(arr){
+               for (var i = 0; i < arr.length; i++) {
+                    var option = document.createElement("option");
+                    option.value = arr[i];
+                    option.text = arr[i];
+                    optionList.appendChild(option);
+               }
+          }
+
+          createOptions(myOptions);
+
+          optionList.onchange = function(){
+               selected = optionList.options[optionList.selectedIndex].value;
+          };
+
+          $('#getValues').click(function(){
+               console.log(selected)
+          });
+     }
+
+     createSelect();
+
+
+
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     $(function(){
+          $('.link');
+          $('#fizz').find('.link');
+          $('#fizz').children();
+          $('#fizz a');
+          $('a').first();
+     });
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
