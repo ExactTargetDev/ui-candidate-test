@@ -130,6 +130,16 @@ header #main-logo {
     list-style: none;
     height: 32px;
     font-size: 12px;
+    color: #888888;
+    cursor: pointer;
+}
+
+#app-launcher li:hover {
+    text-decoration: underline;
+}
+
+#app-launcher li:active {
+    color: #fdae49;
 }
 
 #app-launcher ul {
@@ -186,6 +196,7 @@ header #main-logo {
     list-style: none;
     font-size: 12px;
     padding: 9px 0 9px 33px;
+    color: #888888;
 }
 
 #app-launcher .extra-link:before {
