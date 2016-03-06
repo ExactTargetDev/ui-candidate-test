@@ -226,7 +226,7 @@
               selected = myOptions[0];
 
           button.id = 'getValues';
-          button.innerText = 'Log Values';
+          button.textContent = 'Log Values';
 
           div1.appendChild(optionList);
           div1.appendChild(button);
@@ -289,12 +289,13 @@
               unCheckAll = document.createElement('button'),
               list = document.createElement('ul');
 
-
           list.id = 'checkboxes';
           checkbox1.type = 'checkbox';
           checkbox2.type = 'checkbox';
-          checkAll.innerText = 'Check All';
-          unCheckAll.innerText = 'Uncheck All';
+          checkAll.id = 'checkAll';
+          checkAll.textContent = 'Check All';
+          unCheckAll.id = 'unCheckAll';
+          unCheckAll.textContent = 'Uncheck All';
 
           $('#foobar').append(list);
           $(list).append('<li>' + checkbox1.outerHTML + '</li>');
@@ -303,6 +304,7 @@
           $('#foobar').append(unCheckAll);
 
           $('#checkAll').click(function(){
+               console.log(checkbox1.outerHTML)
                var checkboxes = $('#checkboxes').find('input');
                $(checkboxes).each(function(){
                     this.checked = true
