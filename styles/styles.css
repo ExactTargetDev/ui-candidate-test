@@ -379,8 +379,9 @@ header #main-logo {
 }
 
 #pulse-container #pulse-data-containers {
-    margin: 65px 0 0 0;
+    margin: 65px auto 0;
     padding: 0 15px;
+    width: 970px;
 }
 
 #pulse-container .pulse-item-container {
@@ -390,6 +391,8 @@ header #main-logo {
     cursor: pointer;
     max-height: 95px;
     height: 164px;
+    position: relative;
+    top: 0;
 
     transition: all 0.5s;
 }
@@ -397,6 +400,35 @@ header #main-logo {
 #pulse-container .pulse-item-container.active {
     width: 278px;
     max-height: 130px;
+    top: -33px;
+}
+
+
+.pulse-shadow:before, .pulse-shadow:after
+{
+    content:"";
+    position:absolute;
+    z-index:1;
+    box-shadow:0 0 20px rgba(0,0,0,0.1);
+    top:50%;
+    bottom:0;
+    left:10px;
+    right:10px;
+    border-radius:100px / 10px;
+
+    transition: all 0.5s;
+}
+
+.pulse-item-container.active .pulse-shadow:before, .pulse-item-container.active .pulse-shadow:active {
+    content:"";
+    position:absolute;
+    z-index:1;
+    box-shadow:0 0 26px rgba(0,0,0,0.9);
+    top:50%;
+    bottom:0;
+    left:10px;
+    right:10px;
+    border-radius:100px / 10px;
 }
 
 #pulse-container .pulse-item-title {
@@ -471,19 +503,6 @@ header #main-logo {
     display: block;
     margin: 10px 0 -6px 0;
     color: #93afc0;
-}
-
-.pulse-shadow:before, .pulse-shadow:after
-{
-    content:"";
-    position:absolute;
-    z-index:1;
-    box-shadow:0 0 20px rgba(0,0,0,0.1);
-    top:50%;
-    bottom:0;
-    left:10px;
-    right:10px;
-    border-radius:100px / 10px;
 }
 
 #modal {
