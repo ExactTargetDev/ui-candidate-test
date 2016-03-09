@@ -103,6 +103,26 @@ test("Remove Fruits", function() {
     deepEqual( removeFruits([{hello:true}, {hello:false}, {bob:true}, {bob:false, x:true}, {bob:false}], [{hello:false}, {bob:false}]), [{hello:true}, {bob:true}, {bob:false, x:true}], expectedResultText([{hello:true}, {bob:true}, {bob:false, x:true}],removeFruits([{hello:true}, {hello:false}, {bob:true}, {bob:false, x:true}, {bob:false}],[{hello:false}, {bob:false}])));
 });
 
+test("Push Onto Array", function() {
+    // Verify the method exists
+    equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' );
+
+    // Verify simple provided single element case
+    deepEqual( pushOntoArray([1,2,3,4,5], 6), [1,2,3,4,5,6], expectedResultText([1,2,3,4,5,6], pushOntoArray([1,2,3,4,5], 6)));
+
+    // Verify simple provided array element case
+    deepEqual( pushOntoArray([1,2,3,4,5], [7,8,9]), [1,2,3,4,5,7,8,9], expectedResultText([1,2,3,4,5,7,8,9], pushOntoArray([1,2,3,4,5], [7,8,9])));
+
+    // Verify null first argument case
+    equal( pushOntoArray(null, [6,7,8]), undefined, expectedResultText(undefined, pushOntoArray(null, [6,7,8])));
+
+    // Verify null second argument case
+    deepEqual( pushOntoArray([6,7,8], null), [6,7,8,null], expectedResultText([6,7,8,null], pushOntoArray([6,7,8], null)));
+
+    // Verify falsy second arugment case
+    deepEqual( pushOntoArray([6,7,8], false), [6,7,8, false], expectedResultText([6,7,8,false], pushOntoArray([6,7,8], false)));
+});
+
 module( "Misc Operations" );
 test("FizzBuzz", function() {
     // Verify the method exists
