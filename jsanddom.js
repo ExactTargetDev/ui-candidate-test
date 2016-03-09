@@ -88,8 +88,12 @@
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
+     // Doc: Null, undefined, and non-strings return false, empty strings return true
      function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+        if (_.isNil(sourceStr) || !_.isString(sourceStr)) { return false; }
+        if (sourceStr.length === 0) { return true; }
+        var wsReg = /^\s*$/
+        return !!wsReg.exec(sourceStr);
      }
 
      // write an example of a javascript closure

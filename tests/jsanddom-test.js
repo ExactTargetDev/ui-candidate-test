@@ -53,6 +53,32 @@ test("Split String with Comma", function() {
     deepEqual( splitListStrUsingComma(null), [], expectedResultText([], splitListStrUsingComma(null)));
 });
 
+test("Is Only Whitespace", function() {
+    // Verify the method exists
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
+
+    // Verify simple empty string case return true
+    ok( isOnlyWhitespace(''), expectedResultText(true, isOnlyWhitespace('')));
+
+    // Verify returns false with letters in a string
+    notOk( isOnlyWhitespace('Subscribers rock'), expectedResultText(false, isOnlyWhitespace('Subscribers rock')));
+
+    // Verify returns true with only spaces and tabs in a string
+    ok( isOnlyWhitespace('        '), expectedResultText(true, isOnlyWhitespace('        ')));
+
+    // Verify returns true with only spaces, tabs, and line breaks in a string
+    ok( isOnlyWhitespace('   \n     '), expectedResultText(true, isOnlyWhitespace('   \n     ')));
+
+    // Verify returns false with null argument
+    notOk( isOnlyWhitespace(null), expectedResultText(false, isOnlyWhitespace(null)));
+
+    // Verify returns false with no argument
+    notOk( isOnlyWhitespace(), expectedResultText(false, isOnlyWhitespace()));
+
+    // Verify returns false with non-string argument
+    notOk( isOnlyWhitespace(42), expectedResultText(false, isOnlyWhitespace(42)));
+});
+
 module( "Array Operations" );
 test("Find Min Value", function() {
     // Verify the method exists
