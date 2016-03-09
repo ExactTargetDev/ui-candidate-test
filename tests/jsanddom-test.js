@@ -57,3 +57,20 @@ test("Find Min Value", function() {
     // Verify non-array case
     equal( findMinValue('not an array'), undefined, expectedResultText(undefined, findMinValue('not an array')));
 });
+
+test("Find Distinct Values", function() {
+    // Verify the method exists
+    equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
+
+    // Verify simple full number array case
+    deepEqual( findDistinctValues([2,4,7,2,7,5]), [2,4,7,5], expectedResultText([2,4,7,5], findDistinctValues([2,4,7,2,7,5])));
+
+    // Verify mixed object type case
+    deepEqual( findDistinctValues([2,{hello:true},'hi',null,2,null,7,undefined, {hello: 'true'}, {hello: true},'hi','terra']), [2,{hello:true},'hi',null,7,undefined,{hello:'true'},'terra'], expectedResultText([2,{hello:true},'hi',null,7,undefined,{hello:'true'},'terra'], findDistinctValues([2,{hello:true},'hi',null,2,null,7,undefined,{hello: 'true'}, {hello: true},'hi','terra'])));
+
+    // Verify null argument handling
+    deepEqual( findDistinctValues(null), undefined, expectedResultText(undefined, findDistinctValues(null)));
+
+    // Verify non-array case
+    equal( findDistinctValues('not an array'), undefined, expectedResultText(undefined, findDistinctValues('not an array')));
+});

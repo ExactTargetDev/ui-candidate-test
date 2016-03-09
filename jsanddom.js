@@ -22,8 +22,12 @@
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
+     // Note: Not implemented because it isn't in the directions, but it seems like this type of function would benefit from initially stripping
+     // out 'null' and 'undefined' values
      function findDistinctValues(values) {
-         // FILL THIS IN
+        if (!values || !_.isArray(values)) {return undefined; }
+        // Use _.isEqual as comparator for deep compare of values
+        return _.uniqWith(values, _.isEqual);
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
