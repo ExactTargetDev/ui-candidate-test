@@ -33,6 +33,26 @@ test("Reverse String", function() {
     notEqual( reverseString( 'hello \u041E \u0306 sir' ), 'ris \u041E \u0306 olleh', expectedResultText('ris \u041E \u0306 olleh', reverseString('hello \u041E \u0306 sir')));
 });
 
+test("Split String with Comma", function() {
+    // Verify the method exists
+    equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
+
+    // Verify provided simple no comma string case
+    deepEqual( splitListStrUsingComma( 'Subscribers rock'  ), ['Subscribers rock'], expectedResultText(['Subscribers rock'], splitListStrUsingComma('Subscribers rock')));
+
+    // Verify provided multi-comma string case
+    deepEqual( splitListStrUsingComma('The, quick, brown, fox jumped over'), ['The', ' quick', ' brown', ' fox jumped over'], expectedResultText(['The', ' quick', ' brown', ' fox jumped over'], splitListStrUsingComma('The, quick, brown, fox jumped over')));
+
+    // Verify empty string case
+    deepEqual( splitListStrUsingComma(''), [], expectedResultText([], splitListStrUsingComma('')));
+
+    // Verify not-a-string case
+    deepEqual( splitListStrUsingComma(42), [], expectedResultText([], splitListStrUsingComma(42)));
+
+    // Verify null case
+    deepEqual( splitListStrUsingComma(null), [], expectedResultText([], splitListStrUsingComma(null)));
+});
+
 module( "Array Operations" );
 test("Find Min Value", function() {
     // Verify the method exists
