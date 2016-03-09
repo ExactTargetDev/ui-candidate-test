@@ -52,8 +52,11 @@
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
+     // Doc: fruits is required, but not passing in 'fruitsToRemove' makes this a noop that returns 'fruits'
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+        if (!fruits || !_.isArray(fruits)) { return undefined; }
+        if (!fruitsToRemove || !_.isArray(fruitsToRemove)) { return fruits; }
+        return _.pullAllWith(fruits, fruitsToRemove, _.isEqual);
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.

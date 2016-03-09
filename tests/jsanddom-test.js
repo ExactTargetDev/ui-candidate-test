@@ -18,8 +18,8 @@ test("Reverse String", function() {
     // Verify the method exists
     equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
 
-    // Verify simple string reverse case
-    equal( reverseString( 'hello world'  ), 'dlrow olleh', expectedResultText('dlrow olleh', reverseString('hello world')));
+    // Verify provided simple string reverse case
+    equal( reverseString( 'Subscribers rock'  ), 'kcor srebircsbuS', expectedResultText('kcor srebircsbuS', reverseString('Subscribers rock')));
 
     // Verify empty string case
     equal( reverseString( ''  ), '', expectedResultText('', reverseString('')));
@@ -64,6 +64,9 @@ test("Find Distinct Values", function() {
     // Verify the method exists
     equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
 
+    // Verify provided duplicates test case
+    deepEqual( findDistinctValues([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]), [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity], expectedResultText([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity], findDistinctValues([3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12])));
+
     // Verify simple full number array case
     deepEqual( findDistinctValues([2,4,7,2,7,5]), [2,4,7,5], expectedResultText([2,4,7,5], findDistinctValues([2,4,7,2,7,5])));
 
@@ -71,10 +74,33 @@ test("Find Distinct Values", function() {
     deepEqual( findDistinctValues([2,{hello:true},'hi',null,2,null,7,undefined, {hello: 'true'}, {hello: true},'hi','terra']), [2,{hello:true},'hi',null,7,undefined,{hello:'true'},'terra'], expectedResultText([2,{hello:true},'hi',null,7,undefined,{hello:'true'},'terra'], findDistinctValues([2,{hello:true},'hi',null,2,null,7,undefined,{hello: 'true'}, {hello: true},'hi','terra'])));
 
     // Verify null argument handling
-    deepEqual( findDistinctValues(null), undefined, expectedResultText(undefined, findDistinctValues(null)));
+    equal( findDistinctValues(null), undefined, expectedResultText(undefined, findDistinctValues(null)));
 
     // Verify non-array case
     equal( findDistinctValues('not an array'), undefined, expectedResultText(undefined, findDistinctValues('not an array')));
+});
+
+test("Remove Fruits", function() {
+    // Verify the method exists
+    equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
+
+    // Verify provided fruit string test case
+    deepEqual( removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ['apple', 'orange', 'kiwi', 'plum', 'strawberry'], expectedResultText(['apple', 'orange', 'kiwi', 'plum', 'strawberry'], removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana'])));
+
+    // Verify null first argument handling
+    equal( removeFruits(null, ['banana', 'pear']), undefined, expectedResultText(undefined, removeFruits(null, ['banana', 'pear']))); 
+
+    // Verify null second argument handling
+    deepEqual( removeFruits(['banana', 'pear'], null), ['banana', 'pear'], expectedResultText(['banana', 'pear'], removeFruits(['banana', 'pear'], null))); 
+
+    // Verify we keep non-removed duplicates
+    deepEqual( removeFruits(['pear','banana', 'pear'], ['banana']), ['pear', 'pear'], expectedResultText(['pear', 'pear'], removeFruits(['pear', 'banana', 'pear'], null))); 
+
+    // Verify that numbers are basically fruits
+    deepEqual( removeFruits([1,2,3,4,5,6], [2,4,6]), [1,3,5], expectedResultText([1,3,5], removeFruits([1,2,3,4,5,6], [2,4,6]))); 
+
+    // Verfify deep compare removal of objects (also a type of fruit)
+    deepEqual( removeFruits([{hello:true}, {hello:false}, {bob:true}, {bob:false, x:true}, {bob:false}], [{hello:false}, {bob:false}]), [{hello:true}, {bob:true}, {bob:false, x:true}], expectedResultText([{hello:true}, {bob:true}, {bob:false, x:true}],removeFruits([{hello:true}, {hello:false}, {bob:true}, {bob:false, x:true}, {bob:false}],[{hello:false}, {bob:false}])));
 });
 
 module( "Misc Operations" );
