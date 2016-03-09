@@ -97,6 +97,7 @@
      }
 
      // write an example of a javascript closure
+     // Doc: Simple closure that counts the number of times the wrapped function is called
      function closed() {
         var callCount = 0;
         return function() {
@@ -113,6 +114,20 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
+     function Person(firstName, lastName, city, state, zip, phoneNumbers) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this. city = city;
+        this.state = state;
+        this.zipCode = zip;
+        this.phoneNumbers = phoneNumbers;
+     }
+
+     var people = {
+        'Mike': new Person('Mike', 'Wazowski', 'Emeryville', 'CA', '94608', {cellPhone: '555-555-5555', homePhone: '555-555-5554'}),
+        'Anya': new Person('Anastasia', 'Nikolaevna', 'St. Petersburg', 'FL', '33701', {cellPhone: '555-444-2233', homePhone: '+7 840 555-4444'}),
+        'Tip': new Person('Gratuity', 'Tucci', 'New York', 'NY', '10001', {cellPhone: '555-887-9573'})
+     };
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)

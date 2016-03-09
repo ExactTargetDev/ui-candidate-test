@@ -204,6 +204,7 @@ test("Sum", function() {
 test("Closure", function() {
     // Verify the method exists
     equal( typeof closed, 'function', 'Must contain a closed function' );
+
     // Start first closure
     var closureFunction = closed();
     var callResult = closureFunction();
@@ -227,5 +228,17 @@ test("Closure", function() {
     // Show first closure still has state
     callResult = closureFunction();
     equal(callResult, 4, expectedResultText(4, callResult));
+
+});
+
+test("People", function() {
+    // Verify the method exists
+    equal( typeof Person, 'function', 'Must contain a Person constructor function' );
+
+    // Verify people were constructed
+    equal(people['Mike'].lastName, 'Wazowski', expectedResultText('Wazowski', people['Mike'].lastName));
+
+    // Verify phone prop access
+    equal(people['Tip'].phoneNumbers.cellPhone, '555-887-9573', expectedResultText('555-887-9573', people['Tip'].phoneNumbers.cellPhone));
 
 });
