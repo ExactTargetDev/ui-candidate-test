@@ -13,6 +13,7 @@ test( "Example Test", 2, function() {
 Please create your tests below...
 ********************************/
 
+module( "String Operations" );
 test("Reverse String", function() {
     // Verify the method exists
     equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
@@ -32,6 +33,7 @@ test("Reverse String", function() {
     notEqual( reverseString( 'hello \u041E \u0306 sir' ), 'ris \u041E \u0306 olleh', expectedResultText('ris \u041E \u0306 olleh', reverseString('hello \u041E \u0306 sir')));
 });
 
+module( "Array Operations" );
 test("Find Min Value", function() {
     // Verify the method exists
     equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
@@ -73,4 +75,13 @@ test("Find Distinct Values", function() {
 
     // Verify non-array case
     equal( findDistinctValues('not an array'), undefined, expectedResultText(undefined, findDistinctValues('not an array')));
+});
+
+module( "Misc Operations" );
+test("FizzBuzz", function() {
+    // Verify the method exists
+    equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' );
+
+    // Verify the function runs without exceptions
+    ok( doFizzBuzz() );
 });
