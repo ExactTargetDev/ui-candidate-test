@@ -31,3 +31,29 @@ test("Reverse String", function() {
     // Verify failure of combination unicode case (breve)
     notEqual( reverseString( 'hello \u041E \u0306 sir' ), 'ris \u041E \u0306 olleh', expectedResultText('ris \u041E \u0306 olleh', reverseString('hello \u041E \u0306 sir')));
 });
+
+test("Find Min Value", function() {
+    // Verify the method exists
+    equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
+
+    // Verify simple full array case
+    equal( findMinValue([2,4,7,11,1,14]), 1, expectedResultText(1, findMinValue([2,4,7,11,1,14])));
+
+    // Verify negative number case
+    equal( findMinValue([2,4,7,-11,1,14]), -11, expectedResultText(-11, findMinValue([2,4,7,-11,1,14])));
+
+    // Verify missing value array case
+    equal( findMinValue([2,null,7,11,null,14]), 2, expectedResultText(2, findMinValue([2,null,7,11,null,14])));
+
+    // Verify some values not number array case
+    equal( findMinValue([2,'i\'m a string',7,11,{hello: true},14]), 2, expectedResultText(2, findMinValue([2,null,7,11,null,14])));
+
+    // Verify decimal value array case
+    equal( findMinValue([2,0.1,7,11,4.6,14]), 0.1, expectedResultText(0.1, findMinValue([2,0.1,7,11,4.6,14])));
+
+    // Verify null argument handling
+    equal( findMinValue(null), undefined, expectedResultText(undefined, findMinValue(null)));
+
+    // Verify non-array case
+    equal( findMinValue('not an array'), undefined, expectedResultText(undefined, findMinValue('not an array')));
+});
