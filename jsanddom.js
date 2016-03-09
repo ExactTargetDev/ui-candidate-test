@@ -132,6 +132,7 @@
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
      // A private rows property (string array)
+// Note: This line is inconsisten with the .addRow examples below. Given how the data is represented, I went with 'addRow'
      // A public method addRows that adds an item to the rows array
      // A public method addColumns that adds an item to the columns array
      // A public method getData that returns the a json object representation of the DataTable
@@ -140,6 +141,40 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+
+     // Doc: There is a tradeoff here between store speed and retrieval speed.
+     //      If it is expected that you will call 'addRow' much less than 'getData', then you should
+     //      perform data normalization in the 'addRow' function.
+     function DataTable() {
+        var columns = [];
+        var rows = [];
+
+        Object.defineProperties(DataTable.prototype, {
+            addColumns: {value: function() {
+                pushOntoArray(columns, Array.prototype.slice.call(arguments));
+            }},
+            addRow: {value: function() {
+                var rowArray = Array.prototype.slice.call(arguments);
+                rows.push(rowArray);
+            }},
+            getData: {value: function() {
+                var data = {};
+                var curRow = 1;
+                _.each(rows, function(row) {
+                    var rowData = {}
+                    for(var colIdx = 0; colIdx < columns.length; colIdx++) {
+                        if (colIdx < row.length) {
+                            rowData[columns[colIdx]] = row[colIdx];
+                        } else {
+                            rowData[columns[colIdx]] = undefined;
+                        }
+                    }
+                    data['row'+curRow++] = rowData;
+                });
+                return data;
+            }}
+        });
+     }
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.

@@ -240,5 +240,22 @@ test("People", function() {
 
     // Verify phone prop access
     equal(people['Tip'].phoneNumbers.cellPhone, '555-887-9573', expectedResultText('555-887-9573', people['Tip'].phoneNumbers.cellPhone));
+});
 
+test("Data Table", function() {
+    // Verify the method exists
+    equal( typeof DataTable, 'function', 'Must contain a DataTable constructor function' );
+
+    var dataTable = new DataTable(); 
+    dataTable.addColumns('column1', 'column2', 'column3');
+    dataTable.addRow('value1A', 'value1B', 'value1C');
+    dataTable.addRow('value2A', 'value2B', 'value2C');
+
+    var data = dataTable.getData();
+
+    // Check a single row1 value
+    equal(data.row1.column1, 'value1A', expectedResultText('value1A', data.row1.column1));
+
+    // Check the full second row
+    deepEqual(data.row2, {column1: 'value2A', column2:'value2B', column3: 'value2C'}, expectedResultText({column1: 'value2A', column2:'value2B', column3: 'value2C'}, data.row2));
 });
