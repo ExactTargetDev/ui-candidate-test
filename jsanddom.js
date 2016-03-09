@@ -97,6 +97,12 @@
      }
 
      // write an example of a javascript closure
+     function closed() {
+        var callCount = 0;
+        return function() {
+            return ++callCount;
+        }
+     }
 
      // define a json object that represents a collection of people.
      // each person should have the following properties

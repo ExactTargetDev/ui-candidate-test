@@ -200,3 +200,32 @@ test("Sum", function() {
     // Verify string argument is ignored
     equal( sum(1,'3',2,3), 6, expectedResultText(6, sum(1,'3',2,3)));
 });
+
+test("Closure", function() {
+    // Verify the method exists
+    equal( typeof closed, 'function', 'Must contain a closed function' );
+    // Start first closure
+    var closureFunction = closed();
+    var callResult = closureFunction();
+
+    equal(callResult, 1, expectedResultText(1, callResult));
+    callResult = closureFunction();
+    equal(callResult, 2, expectedResultText(2, callResult));
+    callResult = closureFunction();
+    equal(callResult, 3, expectedResultText(3, callResult));
+
+    // Start second closure
+    var newClosureFunction = closed();
+    callResult = newClosureFunction();
+
+    equal(callResult, 1, expectedResultText(1, callResult));
+    callResult = newClosureFunction();
+    equal(callResult, 2, expectedResultText(2, callResult));
+    callResult = newClosureFunction();
+    equal(callResult, 3, expectedResultText(3, callResult));
+
+    // Show first closure still has state
+    callResult = closureFunction();
+    equal(callResult, 4, expectedResultText(4, callResult));
+
+});
