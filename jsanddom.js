@@ -80,8 +80,11 @@
      }
 
      // Write a function that will take any number of arguments and return their sum
+     // Doc: It was not defined how this would handle decimal precision. I will sound to 5 digits
      function sum() {
-         // FILL THIS IN
+        var toSum = Array.prototype.slice.call(arguments);
+        toSum = _.filter(toSum, _.isNumber);
+        return _.round(_.sum(toSum), 5);
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.

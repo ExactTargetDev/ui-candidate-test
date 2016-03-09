@@ -151,3 +151,26 @@ test("FizzBuzz", function() {
     // Verify the function runs without exceptions
     ok( doFizzBuzz() );
 });
+
+test("Sum", function() {
+    // Verify the method exists
+    equal( typeof sum, 'function', 'Must contain a sum function' );
+
+    // Verify provided simple full number list
+    equal( sum(1,1,2,3,5,7), 19, expectedResultText(19, sum(1,1,2,3,5,7)));
+
+    // Verify argument list with an undefined argument
+    equal( sum(1,undefined,2,3), 6, expectedResultText(6, sum(1,undefined,2,3)));
+
+    // Verify calling with empty argument list
+    equal( sum(), 0, expectedResultText(0, sum()));
+
+    // Verify argument list with decimal arguments
+    equal( sum(1.3,2.4,3.3), 7, expectedResultText(7, sum(1.3,2.4,3.3)));
+
+    // Verify argument list with negative arguments
+    equal( sum(1.3,2.4,-3.3, -1), -.6, expectedResultText(-.6, sum(1.3,2.4,-3.3,-1)));
+
+    // Verify string argument is ignored
+    equal( sum(1,'3',2,3), 6, expectedResultText(6, sum(1,'3',2,3)));
+});
