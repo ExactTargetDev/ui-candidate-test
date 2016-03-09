@@ -1,4 +1,4 @@
-# ExactTarget UI Candidates 
+# Salesforce UI Candidates
 
 This is the candaidate test for Salesforce Marketing Cloud UI developers. It is **NOT** pass/fail. It is intended to provide insight into the range of your skill set. Please do what you can.
 
