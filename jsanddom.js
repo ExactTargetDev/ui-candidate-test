@@ -179,9 +179,52 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     function makeSelect() {
+        // Make select and options
+        var div1 = $('#div1');
+        var newSelect = $('<select>');
+        var options = ['English', 'Italiano', 'Esperanto'];
+        var curVal = 'English';
+
+        function onSelectChange(event, val) {
+            var selected = newSelect.find($('option:selected'));
+            curVal = selected.text();
+        }
+        
+        _.each(options, function(curOption) {
+            newSelect.append($(sprintf('<option value=\'%s\'>%s</option>', curOption, curOption)));
+        });
+        newSelect.change(onSelectChange);
+        div1.append(newSelect);
+
+        // Make alert button
+        var newButton = $('<button>Alert Selection</button>');
+        function outputVal() {
+            console.log(curVal);
+        }
+        newButton.click(outputVal);
+        div1.append(newButton);
+     }
+     $(makeSelect);
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     function findTheLink() {
+        var one = $('.link');
+        var two = $('#fizz .link');
+        var three = $('#foo .link');
+        var four = $('.buzz .link');
+        var five = $('.buzz a');
+
+        var test1 = one.text() === 'sample anchor';
+        var test2 = two.text() === 'sample anchor';
+        var test3 = three.text() === 'sample anchor';
+        var test4 = four.text() === 'sample anchor';
+        var test5 = five.text() === 'sample anchor';
+
+        console.log([test1,test2,test3,test4,test5]);
+     }
+     $(findTheLink);
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
