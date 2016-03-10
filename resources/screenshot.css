@@ -1,0 +1,43 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+body {
+  margin: 0;
+  font: Arial;
+}
+.navbar {
+  position: relative;
+  height: 40px;
+  background: black;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #2A2F33), color-stop(1, #45525C));
+  background: -ms-linear-gradient(bottom, #2A2F33, #45525C);
+  background: -moz-linear-gradient(center bottom, #2A2F33 0%, #45525C 100%);
+  background: -o-linear-gradient(#45525C, #2A2F33);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#45525C', endColorstr='#2A2F33', GradientType=0);
+}
+.navbar .primary-logo {
+  position: relative;
+  float: left;
+  background-image: url('images/logo.png');
+  height: 17px;
+  width: 86px;
+  margin-top: 12px;
+  margin-left: 20px;
+}
+.navbar .control-container {
+  position: relative;
+  float: right;
+  padding: 10px;
+}
+.navbar .control-container :not(:last-child) {
+  margin-right: 5px;
+}
+.navbar .control-container .welcome {
+  color: white;
+}
+.navbar .control-container a {
+  color: #99CCE1;
+}

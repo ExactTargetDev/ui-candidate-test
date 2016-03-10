@@ -1,0 +1,40 @@
+@import "elements.less";
+
+body {
+    margin: 0;
+    font: Arial;
+}
+
+.navbar {
+    position: relative;
+    height: 40px;
+    .gradient(black, #2A2F33, #45525C);
+
+    .primary-logo {
+        position: relative;
+        float: left;
+        background-image: url('images/logo.png');
+        height: 17px;
+        width: 86px;
+        margin-top: 12px;
+        margin-left: 20px;
+    }
+
+    .control-container {
+        position: relative;
+        float: right;
+        padding: 10px;
+
+        :not(:last-child) {
+            margin-right: 5px;
+        }
+
+        .welcome {
+            color: white;
+        }
+
+        a {
+            color: #99CCE1;
+        }
+    }
+}
