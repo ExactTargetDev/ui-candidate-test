@@ -1,7 +1,8 @@
 @import "elements.less";
 
-body {
+html, body {
     margin: 0;
+    height: 100%;
     font: Arial;
 }
 
@@ -36,5 +37,47 @@ body {
         a {
             color: #99CCE1;
         }
+    }
+}
+
+.flex-container {
+    display: flex;
+}
+
+.left-container {
+    float: left;
+    height: 100%;
+    flex: 0 1 auto;
+
+    .marketing-hub-container {
+        width: 185px;
+        height: 335px;
+        display: inline-block;
+        margin: 20px;
+        background-color: red;
+        .border-radius(5px,5px,5px,5px);
+    }
+}
+
+.right-container {
+    float: left;
+    height: 100%;
+    margin-right: 20px;
+    background-color: orange;
+    display: inline-block;
+    flex: 10 1 auto;
+    .border-radius(5px,5px,5px,5px);
+
+    .calendar-container {
+        height: 115px;
+        margin-bottom: 20px;
+        background-color: blue;
+        .border-radius(0,5px,5px,0);
+    }
+
+    .pulse-container {
+        height: 265px;
+        background-color: yellow;
+        .border-radius(5px,5px,5px,5px);
     }
 }
