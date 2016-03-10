@@ -175,8 +175,39 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
-     //var dataTable = 
-
+    function myDataTable() {
+        var cols = [];
+        var rows = [];
+        this.addRow = function() {
+            var curRow = [];
+            for (var i = 0; i < arguments.length; i++) {
+                curRow.push(arguments[i]);
+            }
+            rows.push(curRow);
+        };
+        this.addColumns = function() {
+            for (var i = 0; i < arguments.length; i++) {
+                cols.push(arguments[i]);
+            }
+        };
+        this.getData = function () {
+            var out = '{"rows":[';
+            for (var r=0; r < rows.length; r++) {
+                if (r>0) out += ',';
+                out += '{';
+                var curRow = rows[r]; //array
+                for (var c=0; c < cols.length; c++) {
+                    if (c>0 && c<cols.length) out += ',';
+                    out += '"' + cols[c] + '":"' + curRow[c] + '"';
+                } 
+                out += '}';
+            }
+            out += ']}';
+            return out;
+            //console.log(out);
+        };
+    }
+    
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
@@ -252,6 +283,7 @@
             chk.id = "checkbox" + i;
             chk.className = "chk";
             chk.name = "checkbox" + i;
+            chk.textContent = "checkbox" + i;
             div.appendChild(chk);
         }
         var href1 = document.createElement("a");

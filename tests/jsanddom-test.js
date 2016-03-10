@@ -131,3 +131,18 @@ test( "Whitespace Tests", function() {
     deepEqual( testRslt, false, 'Expected false as the result, the result was: ' + testRslt);
         
 });
+test( "DataTable Tests", function() {
+    // Verify the method exists
+    equal( typeof myDataTable, 'function', 'Must contain an myDataTable function' ); 
+    
+    var expRslt = '{"rows":[{"COL1":"R1V1","COL2":"R1V2","COL3":"R1V3"},{"COL1":"R2V1","COL2":"R2V2","COL3":"R2V3"},{"COL1":"R3V1","COL2":"R3V2","COL3":"R3V3"}]}';
+    var dt = new myDataTable();
+    dt.addColumns('COL1', 'COL2', 'COL3');
+    dt.addRow('R1V1', 'R1V2', 'R1V3');
+    dt.addRow('R2V1', 'R2V2', 'R2V3');
+    dt.addRow('R3V1', 'R3V2', 'R3V3');
+    var dtJSON = dt.getData();
+    
+    deepEqual( dtJSON, expRslt, 'Expected ' + expRslt + ' as the result, the result was: ' + dtJSON);
+    
+});
