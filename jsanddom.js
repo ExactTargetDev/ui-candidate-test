@@ -229,7 +229,37 @@
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
 
+     function addListItems() {
+        var list1 = $('#list1');
+        var itemsToList = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];
+
+        _.each(itemsToList, function(curItem) {
+            list1.append($(sprintf('<li>%s</option>', curItem)));
+        });
+     }
+     $(addListItems);
+
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     function addCheckboxes() {
+        var foobar = $('#foobar');
+        var labels = ['check1', 'check2', 'check3'];
+        _.each(labels, function(label) {
+            foobar.append($(sprintf('<div><label><input type="checkbox" class="checkbox">%s</label></div>', label)));
+        });
+
+        var checkAllButton = $('<button>Check All</button>');
+        var uncheckAllButton = $('<button>Un-check All</button>');
+        checkAllButton.click(function() {
+            foobar.find('.checkbox').prop('checked', true);
+        });
+
+        uncheckAllButton.click(function() {
+            foobar.find('.checkbox').prop('checked', false);
+        });
+        foobar.append(checkAllButton);
+        foobar.append(uncheckAllButton);
+     } 
+     $(addCheckboxes);
