@@ -1,5 +1,7 @@
 @import "elements.less";
 
+@textGray: #878787;
+
 html, body {
     margin: 0;
     height: 100%;
@@ -40,6 +42,16 @@ html, body {
     }
 }
 
+.email-png { background-image: url('images/email.png'); }
+.mobile-png { background-image: url('images/phone.png'); }
+.co-tweet-png { background-image: url('images/cotweet.png'); }
+.sites-png { background-image: url('images/calendar.png'); }
+.automation-png { background-image: url('images/automation.png'); }
+.audience-png { background-image: url('images/audience.png'); }
+.report-png { background-image: url('images/report.png'); }
+.orb-star-png { background-image: url('images/orbStar.png'); }
+.arrow-png {background-image: url('images/arrowButton.png'); }
+
 .flex-container {
     display: flex;
 }
@@ -56,6 +68,65 @@ html, body {
         margin: 20px;
         background-color: red;
         .border-radius(5px,5px,5px,5px);
+
+        .hub-item {
+            position: relative;
+            cursor: pointer;
+
+            .hub-item-image {
+                height: 25px;
+                width: 25px;
+                display: inline-block;
+                margin: 5px 10px;
+            }
+
+            .hub-item-text {
+                position: absolute;
+                top: 11px;
+                font-size: 12px;
+                color: @textGray;
+            }
+        }
+
+        .marketing-hub-title {
+            height: 50px;
+            .gradient(orange, #F8991C, #F8BC69);
+
+            .orb-star-png {
+                height: 26px;
+                width: 26px;
+                display: inline-block;
+                margin: 12px 10px;
+                float: left;
+            }
+
+            .hub-title {
+                position: relative;
+                color: white;
+                top: 8px;
+            }
+        }
+
+        .small-hub-item {
+            position: relative;
+            
+            .hub-item-image {
+                height: 13px;
+                width: 13px;
+                float: left;
+            }
+
+            .hub-item-text {
+                position: absolute;
+                top: 8px;
+                font-size: 12px;
+            }
+        }
+
+        .marketing-hub-section {
+            background-color: #F4F4F5;
+
+        }
     }
 }
 

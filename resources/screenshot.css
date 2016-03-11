@@ -43,6 +43,33 @@ body {
 .navbar .control-container a {
   color: #99CCE1;
 }
+.email-png {
+  background-image: url('images/email.png');
+}
+.mobile-png {
+  background-image: url('images/phone.png');
+}
+.co-tweet-png {
+  background-image: url('images/cotweet.png');
+}
+.sites-png {
+  background-image: url('images/calendar.png');
+}
+.automation-png {
+  background-image: url('images/automation.png');
+}
+.audience-png {
+  background-image: url('images/audience.png');
+}
+.report-png {
+  background-image: url('images/report.png');
+}
+.orb-star-png {
+  background-image: url('images/orbStar.png');
+}
+.arrow-png {
+  background-image: url('images/arrowButton.png');
+}
 .flex-container {
   display: flex;
 }
@@ -72,6 +99,59 @@ body {
   -moz-background-clip: padding-box;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+}
+.left-container .marketing-hub-container .hub-item {
+  position: relative;
+  cursor: pointer;
+}
+.left-container .marketing-hub-container .hub-item .hub-item-image {
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  margin: 5px 10px;
+}
+.left-container .marketing-hub-container .hub-item .hub-item-text {
+  position: absolute;
+  top: 11px;
+  font-size: 12px;
+  color: #878787;
+}
+.left-container .marketing-hub-container .marketing-hub-title {
+  height: 50px;
+  background: orange;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #F8991C), color-stop(1, #F8BC69));
+  background: -ms-linear-gradient(bottom, #F8991C, #F8BC69);
+  background: -moz-linear-gradient(center bottom, #F8991C 0%, #F8BC69 100%);
+  background: -o-linear-gradient(#F8BC69, #F8991C);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F8BC69', endColorstr='#F8991C', GradientType=0);
+}
+.left-container .marketing-hub-container .marketing-hub-title .orb-star-png {
+  height: 26px;
+  width: 26px;
+  display: inline-block;
+  margin: 12px 10px;
+  float: left;
+}
+.left-container .marketing-hub-container .marketing-hub-title .hub-title {
+  position: relative;
+  color: white;
+  top: 8px;
+}
+.left-container .marketing-hub-container .small-hub-item {
+  position: relative;
+}
+.left-container .marketing-hub-container .small-hub-item .hub-item-image {
+  height: 13px;
+  width: 13px;
+  float: left;
+}
+.left-container .marketing-hub-container .small-hub-item .hub-item-text {
+  position: absolute;
+  top: 8px;
+  font-size: 12px;
+}
+.left-container .marketing-hub-container .marketing-hub-section {
+  background-color: #F4F4F5;
 }
 .right-container {
   float: left;
