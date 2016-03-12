@@ -56,3 +56,5 @@ lowerCollection.add(reportItem);
 
 var upperCollectionView = new MarketingHubCollectionView({el: '.marketing-hub-upper', collection: upperCollection});
 var lowerCollectionView = new MarketingHubCollectionView({el: '.marketing-hub-lower', collection: lowerCollection});
+var smallSingleItem = new MarketingHubItemModel({text: 'Partner Applications', imgClass: 'arrow-png'});
+var smallSingleItemView = new MarketingHubItemView({el: '.small-hub-item', model: smallSingleItem});

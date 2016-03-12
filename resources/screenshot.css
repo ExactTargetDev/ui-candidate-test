@@ -80,10 +80,9 @@ body {
 }
 .left-container .marketing-hub-container {
   width: 185px;
-  height: 335px;
   display: inline-block;
   margin: 20px;
-  background-color: red;
+  background-color: #F4F4F5;
   -webkit-border-top-right-radius: 5px;
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -124,6 +123,21 @@ body {
   background: -moz-linear-gradient(center bottom, #F8991C 0%, #F8BC69 100%);
   background: -o-linear-gradient(#F8BC69, #F8991C);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F8BC69', endColorstr='#F8991C', GradientType=0);
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 5px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 .left-container .marketing-hub-container .marketing-hub-title .orb-star-png {
   height: 26px;
@@ -149,9 +163,6 @@ body {
   position: absolute;
   top: 8px;
   font-size: 12px;
-}
-.left-container .marketing-hub-container .marketing-hub-section {
-  background-color: #F4F4F5;
 }
 .right-container {
   float: left;
