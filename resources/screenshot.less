@@ -1,6 +1,7 @@
 @import "elements.less";
 
 @textGray: #878787;
+@backgroundGray: #F5F5F5;
 
 html, body {
     margin: 0;
@@ -51,6 +52,8 @@ html, body {
 .report-png { background-image: url('images/report.png'); }
 .orb-star-png { background-image: url('images/orbStar.png'); }
 .arrow-png {background-image: url('images/arrowButton.png'); }
+.gear-png {background-image: url('images/gear.png'); }
+.windows-png {background-image: url('images/windows.png'); }
 
 .flex-container {
     display: flex;
@@ -66,7 +69,7 @@ html, body {
         // height: 335px;
         display: inline-block;
         margin: 20px;
-        background-color: #F4F4F5;
+        background-color: @backgroundGray;
         .border-radius(5px,5px,5px,5px);
 
         .hub-item {
@@ -142,8 +145,36 @@ html, body {
     .calendar-container {
         height: 115px;
         margin-bottom: 20px;
-        background-color: blue;
+        background-color: @backgroundGray;
+        overflow: hidden;
         .border-radius(0,5px,5px,0);
+
+        .calendar-month-year {
+            float: left;
+        }
+
+        .calendar-title {
+            height: 20px;
+        }
+
+        .gear-png, .windows-png{
+            width: 13px;
+            height: 14px;
+            float: right;
+            margin-right: 3px;
+        }
+
+        .day-container {
+            margin-left: -133px;
+            .calendar-day {
+                width: 140px;
+                height: 85px;
+                display: inline-block;
+                .calendar-day-num {
+                    float: right;
+                }
+            }
+        }
     }
 
     .pulse-container {

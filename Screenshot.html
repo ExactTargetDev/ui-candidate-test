@@ -35,6 +35,12 @@
         </div>
         <div class="right-container">
             <div class="calendar-container">
+                <div class="calendar-title">
+                    <span class="calendar-month-year">September 2010</span>
+                    <span class="gear-png "></span><span class="windows-png"></span>
+                </div>
+                <div class="day-container">
+                </div>
             </div>
             <div class="pulse-container">
             </div>
@@ -48,6 +54,11 @@
             <span class="hub-item-text"><%= text %></span>
         </div>
     </script>
-    <script type="text/javascript" src="resources/screenshot.js"></script>
+    <script type="text/template" id="calendar-day-template">
+        <span class="calendar-day-text"><%= dayText %></span>
+        <span class="calendar-day-num"><%= dayNum %></span>
+    </script>
+    <script type="text/javascript" src="resources/marketingHub.js"></script>
+    <script type="text/javascript" src="resources/calendar.js"></script>
 </body>
 </html>

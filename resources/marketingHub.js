@@ -33,7 +33,7 @@ var MarketingHubCollectionView = Backbone.View.extend({
     });
     return self;
   }
-})
+});
 
 var emailItem = new MarketingHubItemModel({text: 'ExactTarget Email', imgClass: 'email-png'});
 var mobileItem = new MarketingHubItemModel({text: 'ExactTarget Mobile', imgClass: 'mobile-png'});

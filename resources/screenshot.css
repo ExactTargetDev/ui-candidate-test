@@ -70,6 +70,12 @@ body {
 .arrow-png {
   background-image: url('images/arrowButton.png');
 }
+.gear-png {
+  background-image: url('images/gear.png');
+}
+.windows-png {
+  background-image: url('images/windows.png');
+}
 .flex-container {
   display: flex;
 }
@@ -82,7 +88,7 @@ body {
   width: 185px;
   display: inline-block;
   margin: 20px;
-  background-color: #F4F4F5;
+  background-color: #F5F5F5;
   -webkit-border-top-right-radius: 5px;
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -190,7 +196,8 @@ body {
 .right-container .calendar-container {
   height: 115px;
   margin-bottom: 20px;
-  background-color: blue;
+  background-color: #F5F5F5;
+  overflow: hidden;
   -webkit-border-top-right-radius: 0;
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -206,6 +213,30 @@ body {
   -moz-background-clip: padding-box;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+}
+.right-container .calendar-container .calendar-month-year {
+  float: left;
+}
+.right-container .calendar-container .calendar-title {
+  height: 20px;
+}
+.right-container .calendar-container .gear-png,
+.right-container .calendar-container .windows-png {
+  width: 13px;
+  height: 14px;
+  float: right;
+  margin-right: 3px;
+}
+.right-container .calendar-container .day-container {
+  margin-left: -133px;
+}
+.right-container .calendar-container .day-container .calendar-day {
+  width: 140px;
+  height: 85px;
+  display: inline-block;
+}
+.right-container .calendar-container .day-container .calendar-day .calendar-day-num {
+  float: right;
 }
 .right-container .pulse-container {
   height: 265px;
