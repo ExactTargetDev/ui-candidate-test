@@ -54,6 +54,10 @@ html, body {
 .arrow-png {background-image: url('images/arrowButton.png'); }
 .gear-png {background-image: url('images/gear.png'); }
 .windows-png {background-image: url('images/windows.png'); }
+.minimize-png {background-image: url('images/minimize.png'); }
+.cancel-png {background-image: url('images/cancel.png'); }
+.pulse-png {background-image: url('images/pulse-logo.png'); }
+.map-png {background-image: url('images/map.png'); }
 
 .flex-container {
     display: flex;
@@ -137,7 +141,6 @@ html, body {
     float: left;
     height: 100%;
     margin-right: 20px;
-    background-color: orange;
     display: inline-block;
     flex: 10 1 auto;
     .border-radius(5px,5px,5px,5px);
@@ -147,6 +150,8 @@ html, body {
         margin-bottom: 20px;
         background-color: @backgroundGray;
         overflow: hidden;
+        border: 1px solid darken(@backgroundGray, 20%);
+        box-shadow: 2px 2px 2px darken(@backgroundGray, 20%);
         .border-radius(0,5px,5px,0);
 
         .calendar-month-year {
@@ -180,6 +185,81 @@ html, body {
     .pulse-container {
         height: 265px;
         background-color: yellow;
+        position: relative;
         .border-radius(5px,5px,5px,5px);
+        .gradient(gray, #DDE7EF, #BAC8D0);
+
+        .pulse-header {
+            .pulse-title {
+                position: absolute;
+                top: 10px;
+                left: 15px;
+            }
+
+            .pulse-logo {
+                .pulse-png;
+                position: absolute;
+                top: 20px;
+                left: -1px;
+                height: 38px;
+                width: 118px;
+            }
+
+            .right-image {
+                margin-right: 3px;
+                float: right;
+            }
+            .gear-png, .windows-png {
+                width: 13px;
+                height: 14px;
+                .right-image;
+            }
+
+            .cancel-png{
+                width: 12px;
+                height: 12px;
+                .right-image;
+            }
+
+            .minimize-png {
+                margin-top: 2px;
+                width: 12px;
+                height: 10px;
+                .right-image;
+            }
+        }
+        .pulse-panel-container.small {
+            width: 160px;
+            height: 120px;
+        }
+
+        .pulse-panel-container {
+            padding-top: 65px;
+            .pulse-panel {
+                position: relative;
+                display: inline-block;
+                &.small {
+                    width: 160px;
+                    height: 120px;
+                }
+                &.medium {
+                    width: 280px;
+                    height: 190px;
+                }
+
+                .pulse-title {
+
+                }
+
+                .pulse-data-container {
+                    
+
+                    background-color: white;
+                    position: absolute;
+                    left: 0; right: 0; bottom: 0; top: 30px;
+
+                }
+            }
+        }
     }
 }

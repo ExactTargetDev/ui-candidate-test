@@ -3,7 +3,8 @@ Start Time: 1457535165
 TotalTime: TBD
 time segments: 9:30-11:30, 2:30-6, 7-7:30 8:15-9
 8:45-9:30
-3-
+3-4:30
+9-10
 BrowserTesting: 
  * Mac-Chrome 48.0.2564.116
  * Mac-Firefox 45.0

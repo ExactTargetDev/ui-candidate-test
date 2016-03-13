@@ -76,6 +76,18 @@ body {
 .windows-png {
   background-image: url('images/windows.png');
 }
+.minimize-png {
+  background-image: url('images/minimize.png');
+}
+.cancel-png {
+  background-image: url('images/cancel.png');
+}
+.pulse-png {
+  background-image: url('images/pulse-logo.png');
+}
+.map-png {
+  background-image: url('images/map.png');
+}
 .flex-container {
   display: flex;
 }
@@ -174,7 +186,6 @@ body {
   float: left;
   height: 100%;
   margin-right: 20px;
-  background-color: orange;
   display: inline-block;
   flex: 10 1 auto;
   -webkit-border-top-right-radius: 5px;
@@ -198,6 +209,8 @@ body {
   margin-bottom: 20px;
   background-color: #F5F5F5;
   overflow: hidden;
+  border: 1px solid #c2c2c2;
+  box-shadow: 2px 2px 2px #c2c2c2;
   -webkit-border-top-right-radius: 0;
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -241,6 +254,7 @@ body {
 .right-container .pulse-container {
   height: 265px;
   background-color: yellow;
+  position: relative;
   -webkit-border-top-right-radius: 5px;
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -256,4 +270,74 @@ body {
   -moz-background-clip: padding-box;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+  background: gray;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #DDE7EF), color-stop(1, #BAC8D0));
+  background: -ms-linear-gradient(bottom, #DDE7EF, #BAC8D0);
+  background: -moz-linear-gradient(center bottom, #DDE7EF 0%, #BAC8D0 100%);
+  background: -o-linear-gradient(#BAC8D0, #DDE7EF);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#BAC8D0', endColorstr='#DDE7EF', GradientType=0);
+}
+.right-container .pulse-container .pulse-header .pulse-title {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+.right-container .pulse-container .pulse-header .pulse-logo {
+  background-image: url('images/pulse-logo.png');
+  position: absolute;
+  top: 20px;
+  left: -1px;
+  height: 38px;
+  width: 118px;
+}
+.right-container .pulse-container .pulse-header .right-image {
+  margin-right: 3px;
+  float: right;
+}
+.right-container .pulse-container .pulse-header .gear-png,
+.right-container .pulse-container .pulse-header .windows-png {
+  width: 13px;
+  height: 14px;
+  margin-right: 3px;
+  float: right;
+}
+.right-container .pulse-container .pulse-header .cancel-png {
+  width: 12px;
+  height: 12px;
+  margin-right: 3px;
+  float: right;
+}
+.right-container .pulse-container .pulse-header .minimize-png {
+  margin-top: 2px;
+  width: 12px;
+  height: 10px;
+  margin-right: 3px;
+  float: right;
+}
+.right-container .pulse-container .pulse-panel-container.small {
+  width: 160px;
+  height: 120px;
+}
+.right-container .pulse-container .pulse-panel-container {
+  padding-top: 65px;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel {
+  position: relative;
+  display: inline-block;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel.small {
+  width: 160px;
+  height: 120px;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel.medium {
+  width: 280px;
+  height: 190px;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container {
+  background-color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 30px;
 }
