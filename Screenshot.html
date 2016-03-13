@@ -66,32 +66,36 @@
         <span class="calendar-day-num"><%= dayNum %></span>
     </script>
     <script type="text/template" id="pulse-panel-template">
-        <span class="pulse-title"><%= title %></span>
+        <div class="pulse-title"><%= title %></div>
         <div class="pulse-data-container small">
-            <% if (upperLeft) { %>
-                <span class="pulse-upper-left-text"> <%= upperLeft %> </span>
-            <% } %>
-            <% if (upperRight) { %>
-                <span class="pulse-upper-right-text"> <%= upperRight %> </span>
-            <% } %>
-            <% if (innerTitle) { %>
-                <span class="pulse-inner-title-text"> <%= innerTitle %> </span>
-            <% } %>
-            <% if (blueNumber) { %>
-                <span class="pulse-blue-number-text"> <%= blueNumber%> </span>
-            <% } %>
-            <% if (lowerNumber) { %>
-                <span class="pulse-lower-number-text"> <%= lowerNumber %> </span>
-            <% } %>
-            <% if (numberTitle) { %>
-                <span class="pulse-number-title-text"> <%= numberTitle %> </span>
-            <% } %>
-            <% if (bottomText) { %>
-                <span class="pulse-bottom-text"> <%= bottomText %> </span>
-            <% } %>
-            <% if (imgClass) { %>
-                <span class="pulse-image <%= imgClass %>"></span>
-            <% } %>
+            <div class="pulse-data-table">
+                <% if (upperLeft) { %>
+                    <p class="pulse-upper-left-text"> <%= upperLeft %> </p>
+                <% } %>
+                <% if (upperRight) { %>
+                    <p class="pulse-upper-right-text"> <%= upperRight %> </p>
+                <% } %>
+                <% if (innerTitle) { %>
+                    <p class="pulse-inner-title-text"> <%= innerTitle %> </p>
+                <% } %>
+                    <div class="pulse-number-container">
+                        <% if (blueNumber) { %>
+                            <p class="pulse-blue-number-text"> <%= blueNumber %> </p>
+                        <% } %>
+                        <% if (lowerNumber) { %>
+                            <p class="pulse-lower-number-text"> / <%= lowerNumber %> </p>
+                        <% } %>
+                    </div>
+                <% if (numberTitle) { %>
+                    <p class="pulse-number-title-text"> <%= numberTitle %> </p>
+                <% } %>
+                <% if (bottomText) { %>
+                    <p class="pulse-bottom-text"> <%= bottomText %> </p>
+                <% } %>
+                <% if (imgSrc) { %>
+                    <img src="<%= imgSrc %>">
+                <% } %>
+            </div>
         </div>
     </script>
     <script type="text/javascript" src="resources/marketingHub.js"></script>

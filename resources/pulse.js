@@ -4,11 +4,11 @@ var PulseItemModel= Backbone.Model.extend({
     upperLeft: null,
     upperRight: null,
     innerTitle: null,
-    blueNumber: 360,
-    lowerNumber: 355,
+    blueNumber: null,
+    lowerNumber: null,
     numberTitle: 'added today',
     bottomText: 'Don\'t look at me!',
-    imgClass: null
+    imgSrc: null
   }
 });
 
@@ -83,11 +83,11 @@ pulseCollection.add(new PulseItemModel({
   upperLeft: 'Worldwide Checkins',
   upperRight: '3,905',
   innerTitle: null,
-  blueNumber: 310,
+  blueNumber: null,
   lowerNumber: null,
   numberTitle: null,
   bottomText: null,
-  imgClass: 'map-png'
+  imgSrc: 'resources/images/map.png'
 }));
 pulseCollection.add(new PulseItemModel({
   title: 'Landing Pages',

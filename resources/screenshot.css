@@ -4,6 +4,16 @@
     A set of useful LESS mixins
     More info at: http://lesselements.com
   ---------------------------------------------------*/
+.flex-container {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -ms-flexbox;
+  /* IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+, iOS 7.1+ */
+  display: flex;
+  /* NEW - FF, Chrome, Opera */
+}
 html,
 body {
   margin: 0;
@@ -87,9 +97,6 @@ body {
 }
 .map-png {
   background-image: url('images/map.png');
-}
-.flex-container {
-  display: flex;
 }
 .left-container {
   float: left;
@@ -187,7 +194,14 @@ body {
   height: 100%;
   margin-right: 20px;
   display: inline-block;
+  -webkit-box-flex: 10 1 auto;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -webkit-flex: 10 1 auto;
+  /* NEW - Safari 6.1+, iOS 7.1+ */
+  -ms-flex: 10 1 auto;
+  /* IE 10 */
   flex: 10 1 auto;
+  /* NEW - FF, Chrome, Opera */
   -webkit-border-top-right-radius: 5px;
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -320,24 +334,133 @@ body {
 }
 .right-container .pulse-container .pulse-panel-container {
   padding-top: 65px;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -ms-flexbox;
+  /* IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+, iOS 7.1+ */
+  display: flex;
+  /* NEW - FF, Chrome, Opera */
 }
 .right-container .pulse-container .pulse-panel-container .pulse-panel {
   position: relative;
   display: inline-block;
+  margin: 0 5px;
+  -webkit-box-flex: 1 1 auto;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -webkit-flex: 1 1 auto;
+  /* NEW - Safari 6.1+, iOS 7.1+ */
+  -ms-flex: 1 1 auto;
+  /* IE 10 */
+  flex: 1 1 auto;
+  /* NEW - FF, Chrome, Opera */
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 .right-container .pulse-container .pulse-panel-container .pulse-panel.small {
   width: 160px;
-  height: 120px;
+  height: 130px;
 }
 .right-container .pulse-container .pulse-panel-container .pulse-panel.medium {
   width: 280px;
   height: 190px;
 }
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-title {
+  text-align: center;
+  padding-top: 5px;
+  font-size: small;
+  color: #7e8c99;
+}
 .right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container {
-  background-color: white;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   top: 30px;
+  padding: 5px;
+  background: gray;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dee9f0), color-stop(1, #fafafa));
+  background: -ms-linear-gradient(bottom, #dee9f0, #fafafa);
+  background: -moz-linear-gradient(center bottom, #dee9f0 0%, #fafafa 100%);
+  background: -o-linear-gradient(#fafafa, #dee9f0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#dee9f0', GradientType=0);
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table {
+  display: table;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table p {
+  display: inline;
+  margin: 0;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-upper-left-text {
+  font-size: x-small;
+  float: left;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-upper-right-text {
+  font-size: x-small;
+  float: right;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-inner-title-text {
+  color: #c2c2c2;
+  margin-top: 5px;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-number-container {
+  text-align: center;
+  margin-top: 5px;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-blue-number-text {
+  font-size: x-large;
+  color: #3c93f0;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-lower-number-text {
+  color: #a9a9a9;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-number-title-text {
+  color: #c2c2c2;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-bottom-text {
+  display: table-row;
+  vertical-align: bottom;
+  height: 19px;
+  color: #c2c2c2;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table img {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
