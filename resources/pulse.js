@@ -22,6 +22,13 @@ var PulseItemView = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template(this.model.attributes));
     return this;
+  },
+  events: {
+    'click': 'makeMedium'
+  },
+  makeMedium: function() {
+    $('.pulse-panel').removeClass('medium');
+    $(this.$el).addClass('medium');
   }
 });
 

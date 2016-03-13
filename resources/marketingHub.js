@@ -7,12 +7,20 @@ var MarketingHubItemModel = Backbone.Model.extend({
 
 var MarketingHubItemView = Backbone.View.extend({
   template: _.template($('#hub-item-template').html()),
+  className: 'hub-item',
   initialize: function() {
     this.render();
   },
   render: function() {
     this.$el.html(this.template(this.model.attributes));
     return this;
+  },
+  events: {
+    'click': 'selectItem'
+  },
+  selectItem: function() {
+    $('.hub-item').removeClass('selected');
+    $(this.$el).addClass('selected');
   }
 });
 

@@ -89,6 +89,13 @@ html, body {
         .hub-item {
             position: relative;
             cursor: pointer;
+            &:hover {
+                background: lighten(#D4D4D4, 5%);
+            }
+
+            &.selected {
+                background: #D4D4D4 !important;
+            }
 
             .hub-item-image {
                 height: 25px;
