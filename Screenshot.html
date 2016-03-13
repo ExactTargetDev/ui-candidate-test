@@ -9,12 +9,13 @@
     <title>Screenshot.html</title>
 </head>
 <body>
+    <div class="overlay"></div>
     <header class="navbar">
         <div class="primary-logo"></div>
         <div class="control-container">
             <span class="welcome">Welcome John!</span>
             <a>Account</a>|
-            <a>Help</a>|
+            <a class="help-link">Help</a>|
             <a>Logout</a>
         </div>   
     </header>
@@ -29,7 +30,7 @@
                 </div>
                 <div class="marketing-hub-lower marketing-hub-section">
                 </div>
-                <div class="hub-item small-hub-item">
+                <div class="small-hub-item hub-item marketing-hub-section">
                 </div>
             </div>
         </div>
@@ -37,7 +38,7 @@
             <div class="calendar-container">
                 <div class="calendar-title">
                     <span class="calendar-month-year">September 2010</span>
-                    <span class="gear-png"></span><span class="windows-png"></span>
+                    <span class="windows-png"></span><span class="gear-png"></span>
                 </div>
                 <div class="day-container">
                 </div>
@@ -60,8 +61,11 @@
         <span class="hub-item-text"><%= text %></span>
     </script>
     <script type="text/template" id="calendar-day-template">
-        <span class="calendar-day-text"><%= dayText %></span>
-        <span class="calendar-day-num"><%= dayNum %></span>
+        <div class="calendar-day <%= isToday %>">
+            <span class="calendar-day-text"><%= dayText %></span>
+            <span class="calendar-day-num"><%= dayNum %></span>
+        </div>
+        <div class="calendar-bottom <%= isToday %>"><%= isToday %></div>
     </script>
     <script type="text/template" id="pulse-panel-template">
         <div class="pulse-title"><%= title %></div>
@@ -99,5 +103,6 @@
     <script type="text/javascript" src="resources/marketingHub.js"></script>
     <script type="text/javascript" src="resources/calendar.js"></script>
     <script type="text/javascript" src="resources/pulse.js"></script>
+    <script type="text/javascript" src="resources/help.js"></script>
 </body>
 </html>

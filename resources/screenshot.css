@@ -20,6 +20,21 @@ body {
   height: 100%;
   font: Arial;
 }
+.overlay {
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  width: auto;
+  height: 0;
+  background: white;
+}
+.overlay.visible {
+  height: auto;
+  z-index: 100;
+}
+.overlay .help-list {
+  margin: 5px;
+}
 .navbar {
   position: relative;
   height: 40px;
@@ -43,6 +58,9 @@ body {
   position: relative;
   float: right;
   padding: 10px;
+}
+.navbar .control-container a {
+  cursor: pointer;
 }
 .navbar .control-container :not(:last-child) {
   margin-right: 5px;
@@ -169,6 +187,10 @@ body {
   -moz-background-clip: padding-box;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1px;
 }
 .left-container .marketing-hub-container .marketing-hub-title .orb-star-png {
   height: 26px;
@@ -184,6 +206,23 @@ body {
 }
 .left-container .marketing-hub-container .small-hub-item {
   position: relative;
+  height: 30px;
+  padding-top: 3px;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 .left-container .marketing-hub-container .small-hub-item .hub-item-image {
   height: 13px;
@@ -191,9 +230,12 @@ body {
   float: left;
 }
 .left-container .marketing-hub-container .small-hub-item .hub-item-text {
-  position: absolute;
-  top: 8px;
   font-size: 12px;
+}
+.left-container .marketing-hub-container .marketing-hub-section {
+  border-bottom: #dcdcdc solid 1px;
+  border-left: #dcdcdc solid 1px;
+  border-right: #dcdcdc solid 1px;
 }
 .right-container {
   float: left;
@@ -225,7 +267,6 @@ body {
   background-clip: padding-box;
 }
 .right-container .calendar-container {
-  height: 115px;
   margin-bottom: 20px;
   background-color: #F5F5F5;
   overflow: hidden;
@@ -248,6 +289,7 @@ body {
   background-clip: padding-box;
 }
 .right-container .calendar-container .calendar-month-year {
+  color: #878787;
   float: left;
 }
 .right-container .calendar-container .calendar-title {
@@ -263,13 +305,46 @@ body {
 .right-container .calendar-container .day-container {
   margin-left: -133px;
 }
-.right-container .calendar-container .day-container .calendar-day {
+.right-container .calendar-container .day-container .calendar-day-container {
   width: 140px;
-  height: 85px;
   display: inline-block;
 }
-.right-container .calendar-container .day-container .calendar-day .calendar-day-num {
+.right-container .calendar-container .day-container .calendar-day-container .calendar-day {
+  width: 140px;
+  height: 85px;
+  border-bottom: #C5C5C5 solid 1px;
+  border-right: #C5C5C5 solid 1px;
+}
+.right-container .calendar-container .day-container .calendar-day-container .calendar-day .calendar-day-text {
+  margin: 2px;
+  font-size: small;
+  color: #878787;
+}
+.right-container .calendar-container .day-container .calendar-day-container .calendar-day .calendar-day-num {
   float: right;
+  font-size: small;
+  color: #878787;
+  margin: 2px;
+}
+.right-container .calendar-container .day-container .calendar-day-container .calendar-day.Today {
+  background: gray;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fdedd7), color-stop(1, #ebf1f5));
+  background: -ms-linear-gradient(bottom, #fdedd7, #ebf1f5);
+  background: -moz-linear-gradient(center bottom, #fdedd7 0%, #ebf1f5 100%);
+  background: -o-linear-gradient(#ebf1f5, #fdedd7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebf1f5', endColorstr='#fdedd7', GradientType=0);
+  border-left: #C5C5C5 solid 1px;
+}
+.right-container .calendar-container .day-container .calendar-day-container .calendar-bottom {
+  height: 20px;
+  width: 140px;
+  text-align: center;
+  display: table-cell;
+}
+.right-container .calendar-container .day-container .calendar-day-container .calendar-bottom.Today {
+  margin-top: 3px;
+  color: white;
+  background-color: orange;
 }
 .right-container .pulse-container {
   height: 265px;
@@ -384,6 +459,7 @@ body {
 .right-container .pulse-container .pulse-panel-container .pulse-panel.medium {
   width: 280px;
   height: 190px;
+  margin-top: -28px;
 }
 .right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-title {
   text-align: center;

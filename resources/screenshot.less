@@ -23,6 +23,24 @@ html, body {
     font: Arial;
 }
 
+.overlay {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    width: auto;
+    height: 0;
+    background: white;
+
+    &.visible {
+        height: auto; 
+        z-index: 100;
+    }
+
+    .help-list {
+        margin: 5px;
+    }
+}
+
 .navbar {
     position: relative;
     height: 40px;
@@ -42,6 +60,10 @@ html, body {
         position: relative;
         float: right;
         padding: 10px;
+
+        a {
+            cursor: pointer;
+        }
 
         :not(:last-child) {
             margin-right: 5px;
@@ -116,6 +138,8 @@ html, body {
             height: 50px;
             .gradient(orange, #F8991C, #F8BC69);
             .border-radius(5px,0,0,5px);
+            .drop-shadow(0px, 1px, 2px, 0.4);
+            margin-bottom: 1px;
 
             .orb-star-png {
                 height: 26px;
@@ -134,6 +158,9 @@ html, body {
 
         .small-hub-item {
             position: relative;
+            height: 30px;
+            padding-top: 3px;
+            .border-radius(0, 3px, 3px, 0);
             
             .hub-item-image {
                 height: 13px;
@@ -142,14 +169,14 @@ html, body {
             }
 
             .hub-item-text {
-                position: absolute;
-                top: 8px;
                 font-size: 12px;
             }
         }
 
         .marketing-hub-section {
-
+            border-bottom: darken(@backgroundGray, 10%) solid 1px;
+            border-left: darken(@backgroundGray, 10%) solid 1px;
+            border-right: darken(@backgroundGray, 10%) solid 1px;
         }
     }
 }
@@ -163,7 +190,6 @@ html, body {
     .border-radius(5px,5px,5px,5px);
 
     .calendar-container {
-        height: 115px;
         margin-bottom: 20px;
         background-color: @backgroundGray;
         overflow: hidden;
@@ -172,6 +198,7 @@ html, body {
         .border-radius(0,5px,5px,0);
 
         .calendar-month-year {
+            color: @textGray;
             float: left;
         }
 
@@ -188,12 +215,48 @@ html, body {
 
         .day-container {
             margin-left: -133px;
-            .calendar-day {
+
+            .calendar-day-container {
                 width: 140px;
-                height: 85px;
                 display: inline-block;
-                .calendar-day-num {
-                    float: right;
+
+                .calendar-day {
+                    width: 140px;
+                    height: 85px;
+                    border-bottom: #C5C5C5 solid 1px;
+                    border-right: #C5C5C5 solid 1px;
+                    &.today {
+
+                    }
+                    .calendar-day-text {
+                        margin: 2px;
+                        font-size: small;
+                        color: @textGray;
+                    }
+                    .calendar-day-num {
+                        float: right;
+                        font-size: small;
+                        color: @textGray;
+                        margin: 2px;
+                    }
+
+                    &.Today {
+                        .gradient(gray, rgb(253,237,215), rgb(235,241,245));
+                        border-left: #C5C5C5 solid 1px;
+                    }
+                }
+
+                .calendar-bottom {
+                    height: 20px;
+                    width: 140px;
+                    text-align: center;
+                    display: table-cell;
+
+                    &.Today {
+                        margin-top: 3px;
+                        color: white;
+                        background-color: orange;
+                    }
                 }
             }
         }
@@ -266,6 +329,7 @@ html, body {
                 &.medium {
                     width: 280px;
                     height: 190px;
+                    margin-top: -28px;
                 }
 
                 .pulse-title {
