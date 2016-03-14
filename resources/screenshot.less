@@ -194,8 +194,9 @@ html, body {
         background-color: @backgroundGray;
         overflow: hidden;
         border: 1px solid darken(@backgroundGray, 20%);
-        box-shadow: 2px 2px 2px darken(@backgroundGray, 20%);
+        box-shadow: 1px 1px 1px darken(@backgroundGray, 20%);
         .border-radius(0,5px,5px,0);
+        max-height: 126px;
 
         .calendar-month-year {
             color: @textGray;
@@ -264,22 +265,50 @@ html, body {
 
     .pulse-container {
         height: 265px;
-        background-color: yellow;
         position: relative;
         .border-radius(5px,5px,5px,5px);
         .gradient(gray, #DDE7EF, #BAC8D0);
+        .inner-shadow(0px, 1px, 2px, .4);
 
         .pulse-header {
+            height: 65px;
             .pulse-title {
+                color: white;
                 position: absolute;
                 top: 10px;
                 left: 15px;
             }
 
+            .pulse-button-container {
+                float: right;
+                margin: 5px 5px 0 0;
+
+                .gear-png, .windows-png {
+                    width: 13px;
+                    height: 14px;
+                    .right-image;
+                }
+
+                .cancel-png{
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    .right-image;
+                }
+
+                .minimize-png {
+                    margin-top: 2px;
+                    width: 12px;
+                    height: 10px;
+                    .right-image;
+                }
+            }
+
             .pulse-logo {
                 .pulse-png;
+                text-shadow: 1px 1px @textGray;
                 position: absolute;
-                top: 20px;
+                top: 10px;
                 left: -1px;
                 height: 38px;
                 width: 118px;
@@ -287,26 +316,10 @@ html, body {
 
             .right-image {
                 margin-right: 3px;
+                margin-top: 5px;
                 float: right;
             }
-            .gear-png, .windows-png {
-                width: 13px;
-                height: 14px;
-                .right-image;
-            }
-
-            .cancel-png{
-                width: 12px;
-                height: 12px;
-                .right-image;
-            }
-
-            .minimize-png {
-                margin-top: 2px;
-                width: 12px;
-                height: 10px;
-                .right-image;
-            }
+            
         }
         .pulse-panel-container.small {
             width: 160px;
@@ -314,7 +327,6 @@ html, body {
         }
 
         .pulse-panel-container {
-            padding-top: 65px;
             .flex-container;
             .pulse-panel {
                 position: relative;
@@ -400,6 +412,7 @@ html, body {
                             position: absolute;
                             width: 100%;
                             left: 0; right: 0; bottom: 0;
+                            max-height: 80%;
                         }
                     }
 

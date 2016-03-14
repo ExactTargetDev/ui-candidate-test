@@ -41,7 +41,7 @@ var CalendarDaysView = Backbone.View.extend({
 
 var weekdays = ['Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu'];
 var dayCollection = new CalendarDaysModel();
-_.each(_.range(10,18), function(dayNum) { 
+_.each(_.range(10,20), function(dayNum) { 
     dayCollection.add(new CalendarDayModel({dayNum: dayNum, dayText: weekdays[(dayNum - 10) % 7], useBorder: dayNum > 10 && dayNum < 18, isToday: dayNum === 14 ? 'Today' : ''}));
 });
 
