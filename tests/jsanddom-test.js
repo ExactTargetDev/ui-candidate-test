@@ -12,3 +12,9 @@ test("Example Test", 2, function () {
 /********************************
  Please create your tests below...
  ********************************/
+
+test('reverseString Test', 2, function () {
+    equal(typeof reverseString, 'function', 'Must contain a reverseString function');
+
+    equal(reverseString('Felicia Winters'), 'sretniW aicileF', 'Expected \'sretniW aicileF\' as the result, the result was: ' + reverseString('Felicia Winters'));
+});

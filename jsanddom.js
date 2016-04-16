@@ -6,7 +6,8 @@
 
     // Write a function that takes a single argument (a string) and returns the string reversed.
     function reverseString(str) {
-         // FILL THIS IN
+        // Split to array, reverse array, join back to string
+        return str.split('').reverse().join('');
     }
 
     // Write a function that takes an array of numbers and returns the minimum value
