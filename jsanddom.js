@@ -23,9 +23,18 @@
      // For multiples of three print "Fizz" instead of the number.
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
-     function doFizzBuzz() {
-         // FILL THIS IN
-     }
+ function doFizzBuzz() {
+   for (var counter = 1; counter <= 100; counter++) {
+     var msg = '';
+     if (counter % 15 === 0) output = 'FizzBuzz';
+     else if (counter % 3 === 0) output = 'Fizz';
+     else if (counter % 5 === 0) output = 'Buzz';
+     else output = counter;
+     console.log(output);
+   }
+ }
+ doFizzBuzz();
+
 
      // You have a master array of strings, where each element is a fruit name.
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.

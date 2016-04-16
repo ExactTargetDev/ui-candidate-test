@@ -34,7 +34,13 @@ test("Find numeric minimum values", 7, function () {
 });
 
 module("findDistictValues");
-test("Find distict values in an array", 1, function () {
+test("Find distict values in an array", 2, function () {
   equal(typeof findDistinctValues, "function", "Must contain the findDistinctValues function");
+  deepEqual( findDistinctValues([1, 2, 0, 2, 4 , 5, 1, 1, 2, 2, 6, 1]), [1, 2, 0, 4, 5, 6]);
+});
+
+module("fizzBuzz");
+test("Make sure FizzBuzz function works", 1, function() {
 
 });
+
