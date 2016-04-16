@@ -24,3 +24,11 @@ test('findMinValue Test', 2, function () {
 
     equal(findMinValue([64, -128, 256]), -128, 'Expected -128 as the result, the result was: ' + findMinValue([64, -128, 256]));
 });
+
+test('findDistinctValues Test', 2, function () {
+    var units = ['Marine', 'Siege Tank', 'Vulture', 'Siege Tank', 'Marine', 'Banshee'];
+
+    equal(typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function');
+
+    deepEqual(findDistinctValues(units), ['Marine', 'Siege Tank', 'Vulture', 'Banshee'], 'Expected [Marine, Siege Tank, Vulture, Banshee] as the result, the result was: ' + findDistinctValues(units));
+});

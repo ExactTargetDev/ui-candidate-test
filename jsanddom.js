@@ -20,7 +20,10 @@
 
     // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
     function findDistinctValues(values) {
-         // FILL THIS IN
+        // Since indexOf returns the first position of an element in an array, filter the array by those elements whose index matches indexOf
+        return values.filter(function(value, index) {
+            return values.indexOf(value) === index;
+        });
     }
 
     // Write a function that logs the numbers from 1 to 100 to the console.
