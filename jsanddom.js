@@ -12,7 +12,10 @@
 
     // Write a function that takes an array of numbers and returns the minimum value
     function findMinValue(values) {
-         // FILL THIS IN
+        // Apply array of numbers as arguments to Math.min, which only accepts parameters
+        // Could have also have iterated through array and tracked minimum
+        // Could have also used the ES6 spread operator, but I've elected not to use Babel here
+        return Math.min.apply(null, values);
     }
 
     // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)

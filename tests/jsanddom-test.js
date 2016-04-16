@@ -18,3 +18,9 @@ test('reverseString Test', 2, function () {
 
     equal(reverseString('Felicia Winters'), 'sretniW aicileF', 'Expected \'sretniW aicileF\' as the result, the result was: ' + reverseString('Felicia Winters'));
 });
+
+test('findMinValue Test', 2, function () {
+    equal(typeof findMinValue, 'function', 'Must contain a findMinValue function');
+
+    equal(findMinValue([64, -128, 256]), -128, 'Expected -128 as the result, the result was: ' + findMinValue([64, -128, 256]));
+});
