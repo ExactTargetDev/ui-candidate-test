@@ -1,4 +1,13 @@
 
 .navbar {
   margin-bottom: 0;
+  background: #2a2f32;
+}
+
+.navlink {
+  color: blue !important;
+}
+
+.nav--white {
+  color: white !important;
 }
