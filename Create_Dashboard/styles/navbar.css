@@ -1,11 +1,12 @@
 
 .navbar {
   margin-bottom: 0;
-  background: #2a2f32;
+  background: #414d56;
+  background: linear-gradient(to bottom, #414d56, #2d3336);
 }
 
 .navlink {
-  color: blue !important;
+  color: #7DABBE !important;
 }
 
 .nav--white {
