@@ -40,6 +40,12 @@ test("Find distict values in an array", 2, function () {
 });
 
 module("fizzBuzz");
-test("Make sure FizzBuzz function works", 1, function () {
+test("Make sure FizzBuzz function works", 0, function () {
 
+});
+
+module("removeFruits");
+test("Remove fruits from an array", 2, function() {
+  equal(typeof removeFruits, "function", "Must contain the removeFruits function");
+  equal(removeFruits(['apple', 'pear'], ['pear']), 'apple', "must return apple");
 });

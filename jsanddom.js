@@ -31,6 +31,7 @@
          else if (counter % 5 === 0) output = 'Buzz';
          else output = counter;
          console.log(output);
+
        }
      }
      doFizzBuzz();
@@ -41,9 +42,11 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-       // FILL THIS IN
+        _.pullAll(fruits, fruitsToRemove);
+       console.log(fruits);
+       return fruits;
      }
-
+removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],['pear', 'banana']);
      // Write a function to push either a simple value or an array of values onto a specified array.
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
      // If toPush is a simple value, it should be pushed onto array as an element.
