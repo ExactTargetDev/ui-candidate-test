@@ -106,3 +106,19 @@ test('removeFruits Test', 2, function () {
 
     deepEqual(removeFruits(fruits, fruitsToRemove), expected, 'Expected [' + expected.toString() + '] as the result, the result was: [' + removeFruits(fruits, fruitsToRemove) + ']');
 });
+
+test('pushOntoArray Test', 3, function () {
+    equal(typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function');
+
+    var array = [2, 4, 8];
+    var toPush = 16;
+    var expected = [2, 4, 8, 16];
+
+    deepEqual(pushOntoArray(array, toPush), expected , 'A simple element can be pushed onto the array');
+
+    array = [2, 4, 8, 16];
+    toPush = [32, 64];
+    expected = [2, 4, 8, 16, 32, 64];
+
+    deepEqual(pushOntoArray(array, toPush), expected , 'An array of elements can be pushed onto the array');
+});
