@@ -45,15 +45,23 @@ test("Make sure FizzBuzz function works", 0, function () {
 });
 
 module("removeFruits");
-test("Remove fruits from an array", 2, function() {
+test("Remove fruits from an array", 2, function () {
   equal(typeof removeFruits, "function", "Must contain the removeFruits function");
   equal(removeFruits(['apple', 'pear'], ['pear']), 'apple', "must return apple");
 });
 
-module("pushOntoArray")
-test("Push values onto an array", 3, function() {
+module("pushOntoArray");
+test("Push values onto an array", 3, function () {
   equal(typeof pushOntoArray, "function", "Mush contain the pushOntoArray function");
-  deepEqual(pushOntoArray([1, 2, 3, 4, 5],[7,8,9]), [1, 2, 3, 4, 5, 7, 8, 9], "must add 7 8 9 to the array");
-  deepEqual(pushOntoArray([1, 2, 3, 4, 5],6), [1, 2, 3, 4, 5, 6], "must add 6 to the array");
+  deepEqual(pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]), [1, 2, 3, 4, 5, 7, 8, 9], "must add 7 8 9 to the array");
+  deepEqual(pushOntoArray([1, 2, 3, 4, 5], 6), [1, 2, 3, 4, 5, 6], "must add 6 to the array");
+});
 
+
+module("isOnlyWhitespace");
+test("Test to see if string has only white spaces", 4, function () {
+  equal(isOnlyWhitespace('    '), true, "a string of white spaces returns true");
+  equal(isOnlyWhitespace('asdf'), false, "a string of no spaces returns false");
+  equal(isOnlyWhitespace('asdf  d  d'), false, "a string of mixed space and nonspace returns false");
+  equal(isOnlyWhitespace(''), false, "an empty string returns false");
 });

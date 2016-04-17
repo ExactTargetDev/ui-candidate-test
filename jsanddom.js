@@ -74,8 +74,20 @@ splitListStrUsingComma("ksjdkdjdk");
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
-       // FILL THIS IN
-     }
+
+       if (_.isEmpty(sourceStr) ) {
+         console.log("empty");
+         return(false);
+        };
+       if (!sourceStr.replace(/^\s+|\s+$/g,"")) {
+          console.log('string is only whitespace');
+        return(true);
+        } else {
+          console.log('string has non white spaces');
+          return(false);
+        }
+     };
+   isOnlyWhitespace("sdf d");
 
      // write an example of a javascript closure
 
