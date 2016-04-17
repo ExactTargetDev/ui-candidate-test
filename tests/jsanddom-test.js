@@ -96,3 +96,13 @@ test('doFizzBuzz Test', 2, function () {
 
     deepEqual(mockConsole.output, expected, 'Expected [' + expected.toString() + '] as the result, the result was: [' + mockConsole.output + ']');
 });
+
+test('removeFruits Test', 2, function () {
+    var fruits = ['apple', 'orange', 'banana', 'kiwi'];
+    var fruitsToRemove = ['orange', 'banana'];
+    var expected = ['apple', 'kiwi'];
+
+    equal(typeof removeFruits, 'function', 'Must contain a removeFruits function');
+
+    deepEqual(removeFruits(fruits, fruitsToRemove), expected, 'Expected [' + expected.toString() + '] as the result, the result was: [' + removeFruits(fruits, fruitsToRemove) + ']');
+});
