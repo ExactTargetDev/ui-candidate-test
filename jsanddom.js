@@ -60,8 +60,12 @@ removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry']
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-
+       console.log(sourceStr);
+       console.log("direct" + sourceStr.split(","));
+       console.log(_.split(sourceStr[3], ',', [30]));
+//       console.log(splited);
      }
+splitListStrUsingComma("ksjdkdjdk");
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {

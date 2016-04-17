@@ -1,1 +1,2 @@
-- in tests how to test for distint values that are not in order?
+- in tests, how to test for distint values that are not in order?
+- string spiter not working??
