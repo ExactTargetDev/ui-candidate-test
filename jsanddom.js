@@ -289,3 +289,46 @@
     // to the div with an id of "foobar"
     // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
     // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+    function addCheckboxesToFoobar(items) {
+        var fooBar = document.querySelector('#foobar');
+
+        var ul = document.createElement('ul');
+
+        // Add the list of checkboxes
+        items.forEach(function(element, index) {
+            var li = document.createElement('li');
+            var checkbox = document.createElement('input');
+            var label = document.createElement('label');
+
+            checkbox.type = 'checkbox';
+            checkbox.id = 'foobar-' + index;
+
+            label.appendChild(document.createTextNode(element));
+            label.htmlFor = 'foobar-' + index;
+
+            li.appendChild(checkbox);
+            li.appendChild(label);
+
+            ul.appendChild(li);
+        });
+
+        fooBar.appendChild(ul);
+
+        // Create checkboxes based on 0/1 values
+        // The structure for each is essentially the same; we're just flipping values
+        [true, false].forEach(function(checkState) {
+            var anchor = document.createElement('a');
+            anchor.href = '#';
+            anchor.style = 'margin-right: 5px';
+            anchor.appendChild(document.createTextNode(checkState ? 'Check all' : 'Uncheck all'));
+
+            anchor.addEventListener('click', function() {
+               Array.prototype.slice.call(document.querySelectorAll('#foobar input')).forEach(function (checkbox) {
+                  checkbox.checked = checkState;
+               });
+            });
+
+            fooBar.appendChild(anchor);
+        });
+    }

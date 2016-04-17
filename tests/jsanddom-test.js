@@ -232,3 +232,29 @@ test('addItemsToUnorderedList Test', 3, function () {
 
     deepEqual(unorderedListItems, rawItems, 'Must output the items supplied');
 });
+
+test('addCheckboxesToFoobar Test', 5, function () {
+    var rawItems = ['Oceania', 'Eurasia', 'Eastasia'];
+
+    equal(typeof addCheckboxesToFoobar, 'function', 'Must contain a addCheckboxesToFoobar function');
+
+    // Create container in dom and invoke function
+    $('#dom-test-area').append('<div id="foobar">');
+    addCheckboxesToFoobar(rawItems);
+
+    equal($('#foobar input').length, rawItems.length, 'Must create three 1984 superstates');
+
+    var labelItems = $('#foobar label').toArray().map(function (label) {
+        return label.textContent;
+    });
+
+    deepEqual(labelItems, rawItems, 'Must output the items supplied');
+
+    // Trigger check all
+    $('#foobar a')[0].click();
+    equal($('#foobar input:checked').length, rawItems.length, 'First button must check all items');
+
+    // Trigger uncheck all
+    $('#foobar a')[1].click();
+    equal($('#foobar input:checked').length, 0, 'Second button must uncheck all items');
+});
