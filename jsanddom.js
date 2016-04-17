@@ -136,6 +136,39 @@
     // - zip
     // - a collection of phone numbers (home, work, mobile)
 
+    // JavaScript objects are a bit more flexible than the JSON spec
+    // The following example below, in order to be JSON-compliant, would actually use double quotes and have the keys also quoted
+    // We can always take a JavaScript object and convert to JSON using JSON.stringify
+
+    var people = [{
+        firstName: 'Jim',
+        lastName: 'Raynor',
+        city: 'Badlands',
+        state: 'Mar Sara',
+        zip: 46123,
+        phoneNumbers: [{
+            type: 'home',
+            number: '317-555-5555',
+        }, {
+            type: 'work',
+            number: '317-444-4444',
+        }],
+    }, {
+        firstName: 'Sarah',
+        lastName: 'Kerrigan',
+        city: 'New Gettysburg',
+        state: 'Tarsonis',
+        zip: 46122,
+        phoneNumbers: [{
+            type: 'work',
+            number: '111-111-1111',
+        }, {
+            type: 'mobile',
+            number: '111-111-1112',
+        }],
+    }];
+
+    JSON.stringify(people);  // If we really wanted proper JavaScript Object Notation
 
     // Create a javascript object (DataTable) with the following:
     // A private columns property (string array)
