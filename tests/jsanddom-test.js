@@ -40,6 +40,36 @@ test("Find distict values in an array", 2, function () {
 });
 
 module("fizzBuzz");
-test("Make sure FizzBuzz function works", 1, function () {
+test("Make sure FizzBuzz function works", 0, function () {
 
 });
+
+module("removeFruits");
+test("Remove fruits from an array", 2, function () {
+  equal(typeof removeFruits, "function", "Must contain the removeFruits function");
+  equal(removeFruits(['apple', 'pear'], ['pear']), 'apple', "must return apple");
+});
+
+module("pushOntoArray");
+test("Push values onto an array", 3, function () {
+  equal(typeof pushOntoArray, "function", "Mush contain the pushOntoArray function");
+  deepEqual(pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]), [1, 2, 3, 4, 5, 7, 8, 9], "must add 7 8 9 to the array");
+  deepEqual(pushOntoArray([1, 2, 3, 4, 5], 6), [1, 2, 3, 4, 5, 6], "must add 6 to the array");
+});
+
+module("sum");
+test("Test of adding numbers", 3, function () {
+  equal(sum([1, 2, 3, 4, 5]), 15, "an array of 1,2,3,4,5 returns 15");
+  equal(sum([55]), 55, "an array of 55 returns 55");
+  equal(sum([-7,4]), -3, "an array of postive and negative numbers returns the correct value");
+});
+
+module("isOnlyWhitespace");
+test("Test to see if string has only white spaces", 4, function () {
+  equal(isOnlyWhitespace('    '), true, "a string of white spaces returns true");
+  equal(isOnlyWhitespace('asdf'), false, "a string of no spaces returns false");
+  equal(isOnlyWhitespace('asdf  d  d'), false, "a string of mixed space and nonspace returns false");
+  equal(isOnlyWhitespace(''), false, "an empty string returns false");
+});
+
+

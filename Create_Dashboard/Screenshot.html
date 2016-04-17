@@ -34,7 +34,7 @@
           <li><a class="nav--white" href="#">Welcome John!</a></li>
           <li class="navlink"><a class="navlink" href="#">Account</a></li>
           <li><a class="navlink" href="#">|</a></li>
-          <li><a class="navlink" href="#">Help</a></li>
+          <li><a class="nav-link" onclick="showHelp()">Help</a></li>
           <li><a class="navlink" href="#">|</a></li>
           <li><a class="navlink" href="#">Logout</a></li>
         </ul>
@@ -177,7 +177,7 @@
                     </div>
                   </div>
                 </div>
-                <div id="con-2" class="col-md-2 text-center card-container active-container" onclick="setActivecard('con-2')">
+                <div id="con-2" class="col-md-2 text-center card-container inactive-container" onclick="setActivecard('con-2')">
                   <p class="card-title">Fans</p>
                   <div class="card">
                     <p class="text-center blue-top">73</p>
@@ -207,7 +207,7 @@
                     </div>
                   </div>
                 </div>
-                <div id="con-4" class="col-md-2 text-center card-container inactive-container" onclick="setActivecard('con-4')">
+                <div id="con-4" class="col-md-2 text-center card-container active-container" onclick="setActivecard('con-4')">
                   <p class="card-title">foursquare</p>
                   <div class="card">
                     <p class="text-center blue-top">3,905</p>
@@ -250,10 +250,6 @@
       </div>
     </div>
   </div>
-  </div>
-  </div>
-
-
 
   <!-- Modal -->
   <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel">
@@ -273,11 +269,10 @@
   </div>
 
 
-
-
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.1/lodash.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
