@@ -1,0 +1,262 @@
+html {
+  font-size: 10px;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background: #414d56;
+  background: linear-gradient(to bottom, #414d56, #2d3336);
+}
+
+.navlink {
+  color: #7DABBE !important;
+}
+
+.nav--white {
+  color: white !important;
+}
+
+.hub__item {
+  border-bottom: none;
+  border-top: none;
+  background-color: #e0e0e0;
+}
+
+.hub {
+  margin-top: 2.2rem;
+}
+
+.hub__logo {
+  position: absolute;
+  left: 50%;
+  margin-top: 25%;
+}
+
+.list__item {
+  border-bottom: none;
+  border-top: none;
+  background-color: #f2f2f2;
+}
+
+.hub--heading {
+  background: #ff7b0d;
+  background: linear-gradient(to bottom, #ffB254 0%, #FE9D37 100%);
+  font-size: 1.6rem;
+  color: #f2f2f2;
+  font-weight: bold;
+}
+
+.list-group__item {
+  border-bottom: none;
+  border-top: none;
+  background-color: #f5f5f5;
+}
+
+.list__item--extratop {
+  border-top: 1rem solid #f5f5f5;
+}
+
+.hub-link__color {
+  color: #898989;
+}
+
+.calendar {
+  height: 13rem;
+  background-color: #f5f5f5;
+  border-bottom: 0.1rem solid #ddd;
+  border-left: 0.1rem solid #ddd;
+  border-right: 0.1rem solid #ddd;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.col-md-1.day {
+  width: 14%;
+  border-bottom: 0.1rem solid #ddd;
+  height: 9rem;
+}
+
+.day {
+  border-left: 0.1rem solid #ddd;
+}
+
+.day.last {
+  border-right: 0.1rem solid #ddd;
+}
+
+.calendar__day--top {
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  margin-left: -0.8rem;
+  color: #888;
+}
+
+.calendar__date--top {
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+  margin-right: -0.8rem;
+  color: #888;
+}
+
+.col-md-1.bottom-day {
+  width: 14%;
+  height: 2rem;
+}
+
+.top-row {
+  height: 2rem;
+}
+
+.month-year {
+  vertical-align: top;
+  float: left;
+  margin-left: -0.8rem;
+  color: #888;
+}
+
+.calendar__icons-top {
+  float: right;
+  vertical-align: top;
+  margin-right: -0.8rem;
+}
+
+.pulse {
+  margin-top: 2rem;
+  padding: 0;
+}
+
+.pulse-container {
+  height: 40rem;
+  border: 0.1rem solid #ddd;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border: 0.2rem solid #ACBBC3;
+  background: #BAC8D0;
+  background: linear-gradient(to bottom, #BAC8D0, #D9E4EC);
+}
+
+.pulse-heading {
+  color: white;
+  vertical-align: top;
+  float: left;
+}
+
+.pulse__title {
+  margin-left: 1rem;
+  margin-top: 0.2rem;
+  margin-bottom: -1rem;
+}
+
+.pulse-tools {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  vertical-align: top;
+  float: right;
+}
+
+.card-title {
+  color: #888;
+  font-weight: bold;
+}
+
+.card {
+  border: 0.1rem solid #ddd;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background: rgb(233, 246, 253);
+  height: 10rem;
+  box-shadow: 0 4px 2px -0px gray;
+  background: linear-gradient(to bottom, #F3F6F8, #DEE8F0);
+}
+
+.card-container {
+  margin-top: 5rem;
+}
+
+.active-container {
+  margin-top: 0px;
+  width: 32%;
+}
+
+.active-container .card {
+  height: 20rem;
+}
+
+.blue-top {
+  color: #34bbf3;
+  font-size: 2.8rem;
+  margin-bottom: 0;
+}
+
+.md-text {
+  color: #888;
+  font-size: 1.6rem;
+}
+
+.sm-text {
+  color: #888;
+}
+
+.md-top {
+  color: #888;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.mid-blue {
+  color: #34bbf3;
+  font-size: 2.8rem;
+  display: inline-block;
+  margin-bottom: 0rem;
+}
+
+.mid-grey {
+  color: #888;
+  font-size: 2rem;
+  display: inline-block;
+  margin-bottom: 0rem;
+}
+
+.bot-grey {
+  margin-top: 0rem;
+}
+
+.map {
+  margin-top: 5rem;
+}
+
+.active-container .card p {
+  display: none;
+}
+
+.card-top {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: #666666;
+  font-weight: bold;
+}
+
+.inactive-container .map {
+  display: none;
+}
+
+.inactive-container .card-top {
+  display: none;
+}
+
+.pagination-icon {
+  margin-top: 9rem;
+}
+
+.calendar--today-indicator {
+  background: #F89F2E;
+  color: white;
+  font-weight: bold;
+}
