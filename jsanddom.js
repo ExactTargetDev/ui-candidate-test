@@ -97,12 +97,19 @@
 
     // Write a function that will take any number of arguments and return their sum
     function sum() {
-         // FILL THIS IN
+        // Simply convert arguments into an array and then do a summation using Array.reduce
+        // As a side note, I generally do not like having variable arguments, and would usually opt for an array as an argument
+
+       return [].slice.call(arguments).reduce(function(left, right) {
+           return left + right;
+       });
     }
 
     // Write a function that will return true if a specified string consists of only whitespace.
     function isOnlyWhitespace(sourceStr) {
-         // FILL THIS IN
+        // Use a regular expression to test if the sourceStr is only whitespace characters
+        // This will return true in the event that the string is empty too
+        return /^\s*$/.test(sourceStr);
     }
 
     // write an example of a javascript closure

@@ -136,3 +136,21 @@ test('splitListStrUsingComma Test', 3, function () {
 
     deepEqual(splitListStrUsingComma(input), expected , 'A comma-delimited string will return an array of elements');
 });
+
+test('sum Test', 2, function () {
+    equal(typeof sum, 'function', 'Must contain a sum function');
+
+    var expected = 16 + 32 + 64;
+
+    equal(sum(16, 32, 64), expected , 'A list of arguments will return their summed value');
+});
+
+test('isOnlyWhitespace Test', 4, function () {
+    equal(typeof sum, 'function', 'Must contain a isOnlyWhitespace function');
+
+    ok(isOnlyWhitespace('\n\t '), 'A string of only whitespace will return true');
+
+    ok(isOnlyWhitespace(''), 'An empty string will return true');
+
+    notOk(isOnlyWhitespace(' + '), 'A string with any non-whitespace character will return false');
+});
