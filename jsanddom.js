@@ -230,8 +230,6 @@
     // SELECT element (with multiple items) and a button.
     // when the button is clicked write out the name and value of the selected item to the console.
 
-    // I could use plain JavaScript or jQuery
-    // Since you explicitly list jQuery in the problem immediately following this, I shall due this problem in plain JavaScript
     // Note that my actual preferred method would be to create a React component, mount it onto div1, render the select/button, and add an onClick event to the button
     function createSelectAndButton(consoleInterface) {
         var div1 = document.querySelector('#div1');  // Could also have used document.getElementById('div1'))
