@@ -12,3 +12,9 @@
 .nav--white {
   color: white !important;
 }
+
+.hub__item {
+  border-bottom: none;
+  border-top: none;
+  background-color: #f5f5f5;
+}
