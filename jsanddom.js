@@ -273,6 +273,17 @@
     // Programatically create an array with 5 items.  Create a list item for each item in the array
     // and add the list items to the unordered list with an id of "list1".
 
+    function addItemsToUnorderedList(items) {
+        var ul = document.querySelector('#list1');
+
+        items.forEach(function(element) {
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(element));
+
+            ul.appendChild(li);
+        });
+    }
+
     // Use javascript to add a list of checkboxes and 2 links
     // to the div with an id of "foobar"
     // When the first link is clicked, all the checkboxes should be checked (i.e. check all)

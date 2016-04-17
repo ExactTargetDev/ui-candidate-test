@@ -214,3 +214,21 @@ test('createSelectAndButton Test', 3, function () {
     $('#div1 button')[0].click();  // Trigger click
     equal(mockConsole.output, 'Selected value: Apples', 'Must output the selected value to the console');
 });
+
+test('addItemsToUnorderedList Test', 3, function () {
+    var rawItems = ['Hydrogen', 'Helium', 'Lithium', 'Beryllium', 'Boron'];
+
+    equal(typeof addItemsToUnorderedList, 'function', 'Must contain a addItemsToUnorderedList function');
+
+    // Create container in dom and invoke function
+    $('#dom-test-area').append('<ul id="list1">');
+    addItemsToUnorderedList(rawItems);
+
+    equal($('#list1 li').length, 5, 'Must create five periodic list items');
+
+    var unorderedListItems = $('#list1 li').toArray().map(function (element) {
+        return element.textContent;
+    });
+
+    deepEqual(unorderedListItems, rawItems, 'Must output the items supplied');
+});
