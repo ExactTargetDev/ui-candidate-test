@@ -57,6 +57,12 @@ test("Push values onto an array", 3, function () {
   deepEqual(pushOntoArray([1, 2, 3, 4, 5], 6), [1, 2, 3, 4, 5, 6], "must add 6 to the array");
 });
 
+module("sum");
+test("Test of adding numbers", 3, function () {
+  equal(sum([1, 2, 3, 4, 5]), 15, "an array of 1,2,3,4,5 returns 15");
+  equal(sum([55]), 55, "an array of 55 returns 55");
+  equal(sum([-7,4]), -3, "an array of postive and negative numbers returns the correct value");
+});
 
 module("isOnlyWhitespace");
 test("Test to see if string has only white spaces", 4, function () {

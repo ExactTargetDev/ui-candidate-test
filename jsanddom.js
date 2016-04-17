@@ -68,8 +68,8 @@ removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry']
 splitListStrUsingComma("ksjdkdjdk");
 
      // Write a function that will take any number of arguments and return their sum
-     function sum() {
-       // FILL THIS IN
+     function sum(anArraytoSum) {
+       return(_.sum(anArraytoSum));
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
