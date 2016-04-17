@@ -162,3 +162,25 @@ test('getHelloFunc Test', 2, function () {
 
     equal(sayHelloToRinoa(), 'Hello, Rinoa', 'Supplied name must be used in the returned closure');
 });
+
+test('DataTable Test', 3, function () {
+    equal(typeof DataTable, 'function', 'Must contain a DataTable function');
+
+    var table = new DataTable;
+    table.addColumns('first_name', 'last_name');
+    table.addRow('Harry', 'Truman');
+
+    var expected = [{ first_name: 'Harry', last_name: 'Truman' }];
+
+    deepEqual(table.getData(), expected, 'getData must returned an array of key/value rows');
+
+    table.addColumns('religion');
+    table.addRow('John', 'Kennedy', 'Catholic');
+
+    expected = [
+        { first_name: 'Harry', last_name: 'Truman', religion: undefined },
+        { first_name: 'John', last_name: 'Kennedy', religion: 'Catholic' },
+    ];
+
+    deepEqual(table.getData(), expected, 'Rows with missing values should returned undefined');
+});

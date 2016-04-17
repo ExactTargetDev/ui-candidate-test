@@ -182,6 +182,50 @@
     // .addRow('value1A', 'value1B', 'value1C');
     // .addRow('value2A', 'value2B', 'value2C');
 
+    // It should be noted that in real code, I would no longer use the pre-ES6 version of creating class-like objects
+    // However, ES6 classes do not support private properties or methods (although there are proposals for them)
+    // See unit tests for examples
+
+    function DataTable() {
+        // Local variables are effectively "private"
+        // Anything added to "this" is public
+
+        var columns = [];
+        var rows = [];
+
+        this.addRow = function() {
+            var cells = [].slice.call(arguments);
+
+            if (rows.length <= columns.length) {
+                rows.push(cells);
+            } else {
+                throw new Error('Item contains more values than the columns in the DataTable');
+            }
+        };
+
+        this.addColumns = function() {
+            var newColumns = [].slice.call(arguments);
+
+            newColumns.forEach(function (column) {
+                columns.push(column);
+            });
+        };
+
+        this.getData = function() {
+            // Map each row into a hash of the column names and values
+            return rows.map(function(rowValues) {
+                var row = {};
+
+                // Each row will be a hash map of key: value
+                columns.forEach(function (column, index) {
+                    row[column] = rowValues[index];
+                });
+
+                return row;
+            });
+        };
+    }
+
     // within div1, programatically create a
     // SELECT element (with multiple items) and a button.
     // when the button is clicked write out the name and value of the selected item to the console.
