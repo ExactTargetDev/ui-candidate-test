@@ -171,7 +171,7 @@ html {
   border-top-right-radius: 1rem;
   background: rgb(233, 246, 253);
   height: 10rem;
-  box-shadow: 0 4px 2px -0px gray;
+  box-shadow: 0 0.4rem 0.2rem -0rem gray;
   background: linear-gradient(to bottom, #F3F6F8, #DEE8F0);
 }
 
@@ -180,7 +180,7 @@ html {
 }
 
 .active-container {
-  margin-top: 0px;
+  margin-top: 0rem;
   width: 32%;
 }
 
