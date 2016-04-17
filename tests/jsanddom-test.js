@@ -122,3 +122,17 @@ test('pushOntoArray Test', 3, function () {
 
     deepEqual(pushOntoArray(array, toPush), expected , 'An array of elements can be pushed onto the array');
 });
+
+test('splitListStrUsingComma Test', 3, function () {
+    equal(typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function');
+
+    var input = '';
+    var expected = [];
+
+    deepEqual(splitListStrUsingComma(input), expected , 'An empty string will return an empty array');
+
+    input = 'Terran,Zerg';
+    expected = ['Terran', 'Zerg'];
+
+    deepEqual(splitListStrUsingComma(input), expected , 'A comma-delimited string will return an array of elements');
+});
