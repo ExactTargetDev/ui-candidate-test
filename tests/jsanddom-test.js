@@ -154,3 +154,11 @@ test('isOnlyWhitespace Test', 4, function () {
 
     notOk(isOnlyWhitespace(' + '), 'A string with any non-whitespace character will return false');
 });
+
+test('getHelloFunc Test', 2, function () {
+    equal(typeof getHelloFunc, 'function', 'Must contain a getHelloFunc function');
+
+    var sayHelloToRinoa = getHelloFunc('Rinoa');
+
+    equal(sayHelloToRinoa(), 'Hello, Rinoa', 'Supplied name must be used in the returned closure');
+});

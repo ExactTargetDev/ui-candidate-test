@@ -114,6 +114,19 @@
 
     // write an example of a javascript closure
 
+    // Closures are nothing more than functions that remember the environment in which they were created
+    // For example, in the below code, the closure is created using the 'name' argument of its parent
+    function getHelloFunc(name) {
+        function hello() {
+            return 'Hello, ' + name;
+        }
+
+        return hello;
+    }
+
+    var sayHelloToMalfurion = getHelloFunc('Malfurion');
+    sayHelloToMalfurion();  // Returns 'Hello, Malfurion'
+
     // define a json object that represents a collection of people.
     // each person should have the following properties
     // - first name
