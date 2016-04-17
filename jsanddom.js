@@ -264,11 +264,12 @@
     // sample anchor in the markup below.
 
     // It should be noted that these are not necessarily specific to jQuery
-    $('#fizz .link');
-    $('#foo [href="#"]');
-    $('#foo > #fizz > a');
-    $('.bar #fizz a');
-    $('#foo > .buzz .link');
+    // NOTE: these are commented out because JsAndDom.html does not have jQuery loaded
+    // $('#fizz .link');
+    // $('#foo [href="#"]');
+    // $('#foo > #fizz > a');
+    // $('.bar #fizz a');
+    // $('#foo > .buzz .link');
 
     // Programatically create an array with 5 items.  Create a list item for each item in the array
     // and add the list items to the unordered list with an id of "list1".
