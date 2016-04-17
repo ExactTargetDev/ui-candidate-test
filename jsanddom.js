@@ -42,11 +42,11 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-        _.pullAll(fruits, fruitsToRemove);
+       _.pullAll(fruits, fruitsToRemove);
        console.log(fruits);
        return fruits;
      }
-removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'],['pear', 'banana']);
+     removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']);
 
      // Write a function to push either a simple value or an array of values onto a specified array.
      // For the purpose of the exercise, we will call the target array simply array and the stuff to push onto it (either a simple value or array) simply toPush.
@@ -63,45 +63,45 @@ removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry']
        console.log(sourceStr);
        console.log("direct" + sourceStr.split(","));
        console.log(_.split(sourceStr[3], ',', [30]));
-//       console.log(splited);
+       //       console.log(splited);
      }
-splitListStrUsingComma("ksjdkdjdk");
+     splitListStrUsingComma("ksjdkdjdk");
 
      // Write a function that will take any number of arguments and return their sum
      function sum(anArraytoSum) {
-       return(_.sum(anArraytoSum));
+       return (_.sum(anArraytoSum));
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
 
-       if (_.isEmpty(sourceStr) ) {
+       if (_.isEmpty(sourceStr)) {
          console.log("empty");
-         return(false);
-        };
-       if (!sourceStr.replace(/^\s+|\s+$/g,"")) {
-          console.log('string is only whitespace');
-        return(true);
-        } else {
-          console.log('string has non white spaces');
-          return(false);
-        }
+         return (false);
+       };
+       if (!sourceStr.replace(/^\s+|\s+$/g, "")) {
+         console.log('string is only whitespace');
+         return (true);
+       } else {
+         console.log('string has non white spaces');
+         return (false);
+       }
      };
-   isOnlyWhitespace("sdf d");
+     isOnlyWhitespace("sdf d");
 
      // write an example of a javascript closure
 
-function makeAdder(x) {
-  return function(y) {
-    return x + y;
-  };
-}
+     function makeAdder(x) {
+       return function (y) {
+         return x + y;
+       };
+     }
 
-var add5 = makeAdder(5);
-var add10 = makeAdder(10);
+     var add5 = makeAdder(5);
+     var add10 = makeAdder(10);
 
-console.log(add5(2));  // 7
-console.log(add10(2)); // 12
+     console.log(add5(2)); // 7
+     console.log(add10(2)); // 12
 
 
 
@@ -113,6 +113,55 @@ console.log(add10(2)); // 12
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+
+     var contacts = [
+		{
+         "first_name": "Brian",
+         "last_name": "Hill",
+         "city": "Albany",
+         "state": "New York",
+         "zip": "12210",
+         "phones": {"phone-home": "1-(518)662-8333",
+         "phone-work": "1-(713)227-7208",
+         "phone-mobile": "1-(801)215-3943"}
+}, {
+         "first_name": "Howard",
+         "last_name": "Boyd",
+         "city": "Miami",
+         "state": "Florida",
+         "zip": "33245",
+         "phones": {"phone-home": "1-(786)829-5822",
+         "phone-work": "1-(402)188-2617",
+         "phone-mobile": "1-(412)752-6649"}
+}, {
+         "first_name": "Robin",
+         "last_name": "Owens",
+         "city": "Minneapolis",
+         "state": "Minnesota",
+         "zip": "55402",
+         "phones": {"phone-home": "1-(763)203-7580",
+         "phone-work": "1-(732)374-9569",
+         "phone-mobile": "1-(713)518-6243"}
+}, {
+         "first_name": "Mark",
+         "last_name": "Hanson",
+         "city": "Modesto",
+         "state": "California",
+         "zip": "95397",
+         "phones": {"phone-home": "1-(209)172-7582",
+         "phone-work": "1-(361)820-6957",
+         "phone-mobile": "1-(757)989-3031"}
+}, {
+         "first_name": "Marie",
+         "last_name": "Lewis",
+         "city": "Providence",
+         "state": "Rhode Island",
+         "zip": "02905",
+         "phones": {"phone - home": "1-(401)344-6359",
+         "phone-work": "1-(772)594-3999",
+         "phone-mobile": "1-(305)996-2162"}
+}
+     ];
 
 
      // Create a javascript object (DataTable) with the following:
