@@ -1,7 +1,17 @@
 /********************************
  Unit Test Example
  ********************************/
-module("Example Unit Test");
+module("Example Unit Test", {
+    // Clean up any test area changes after each test
+    afterEach: function() {
+        var domTestArea = document.querySelector('#dom-test-area');
+
+        while (domTestArea.hasChildNodes()) {
+            domTestArea.removeChild(domTestArea.lastChild);
+        }
+    }
+});
+
 test("Example Test", 2, function () {
     // Verify the method exists
     equal(typeof divide, 'function', 'Must contain a divide function');
@@ -183,4 +193,24 @@ test('DataTable Test', 3, function () {
     ];
 
     deepEqual(table.getData(), expected, 'Rows with missing values should returned undefined');
+});
+
+test('createSelectAndButton Test', 3, function () {
+    var mockConsole = {
+        output: '',
+        log: function(output) {
+            this.output = output;
+        }
+    };
+
+    equal(typeof createSelectAndButton, 'function', 'Must contain a createSelectAndButton function');
+
+    // Create container in dom and invoke function
+    $('#dom-test-area').append('<div id="div1">');
+    createSelectAndButton(mockConsole);
+
+    equal($('#div1 option').length, 3, 'Must create three fruity options');
+
+    $('#div1 button')[0].click();  // Trigger click
+    equal(mockConsole.output, 'Selected value: Apples', 'Must output the selected value to the console');
 });

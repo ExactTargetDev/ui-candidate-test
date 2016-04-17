@@ -230,6 +230,36 @@
     // SELECT element (with multiple items) and a button.
     // when the button is clicked write out the name and value of the selected item to the console.
 
+    // I could use plain JavaScript or jQuery
+    // Since you explicitly list jQuery in the problem immediately following this, I shall due this problem in plain JavaScript
+    // Note that my actual preferred method would be to create a React component, mount it onto div1, render the select/button, and add an onClick event to the button
+    function createSelectAndButton(consoleInterface) {
+        var div1 = document.querySelector('#div1');  // Could also have used document.getElementById('div1'))
+        var select = document.createElement('select');
+        var button = document.createElement('button');
+
+        // Add options to select
+        ['Apples', 'Grapes', 'Mangos'].forEach(function(fruit) {
+            var option = document.createElement('option');
+            option.appendChild(document.createTextNode(fruit));
+
+            select.appendChild(option);
+        });
+
+        // Append select
+        div1.appendChild(select);
+
+        // Append button
+        button.type = 'button';
+        button.appendChild(document.createTextNode('Log items to console'));
+
+        div1.appendChild(button);
+
+        button.addEventListener('click', function() {
+            consoleInterface.log('Selected value: ' + select.value);
+        })
+    }
+
     // Write 5 different jQuery selectors to retrieve the
     // sample anchor in the markup below.
 
