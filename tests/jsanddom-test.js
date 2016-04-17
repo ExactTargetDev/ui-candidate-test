@@ -71,3 +71,5 @@ test("Test to see if string has only white spaces", 4, function () {
   equal(isOnlyWhitespace('asdf  d  d'), false, "a string of mixed space and nonspace returns false");
   equal(isOnlyWhitespace(''), false, "an empty string returns false");
 });
+
+
