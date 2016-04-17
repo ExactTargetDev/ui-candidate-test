@@ -1,0 +1,23 @@
+{
+	"name": "react-checkbox-tree",
+	"version": "0.0.5",
+	"description": "React component for checkbox trees.",
+	"author": "Jake Zatecky",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jakezatecky/react-checkbox-tree"
+	},
+	"bugs": "https://github.com/jakezatecky/react-checkbox-tree/issues",
+	"main": "lib/index.js",
+	"scripts": {
+		"examples": "gulp build-examples && http-server"
+	},
+	"devDependencies": {
+		"gulp": "^3.9.0",
+		"gulp-sass": "^2.1.1",
+		"gulp-scss-lint": "^0.3.9",
+		"webpack": "^1.12.12",
+		"webpack-stream": "^3.1.0"
+	}
+}
