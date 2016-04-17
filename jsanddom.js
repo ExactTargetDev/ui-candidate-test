@@ -30,8 +30,28 @@
     // For multiples of three print "Fizz" instead of the number.
     // For multiples of five print "Buzz".
     // For numbers which are multiples of both three and five print "FizzBuzz".
-    function doFizzBuzz() {
-         // FILL THIS IN
+    function doFizzBuzz(consoleInterface) {
+        // Note that this function has been modified to accept a parameter as the console interface
+        // This would be easily replaceable with the console object
+
+        var i;
+        var buffer;
+
+        for (i = 1; i <= 100; i++) {
+            buffer = '';
+
+            if (i % 3 === 0) {
+                buffer += 'Fizz';
+            }
+
+            if (i % 5 === 0) {
+                buffer += 'Buzz';
+            }
+
+            if (buffer !== '') {
+                consoleInterface.log(i + ': ' + buffer);
+            }
+        }
     }
 
     // You have a master array of strings, where each element is a fruit name.
