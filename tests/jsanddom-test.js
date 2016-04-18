@@ -154,3 +154,19 @@ test( "Find Sum Test", 4, function() {
   // Make sure the sum value of 6 is returned
   equal( sum(1,2,3), 6, 'Expected 6 as the result, the result was: ' + sum(1,2,3) );
 });
+
+/********************************
+ Unit Test for isOnlyWhitespace
+ ********************************/
+module( "Is Only Whitespace Unit Test" );
+test( "isOnlyWhitespace Test", 3, function() {
+  // Verify the method exists
+  equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' );
+
+  // Make sure the the number was pushed to the array
+  equal(isOnlyWhitespace(''), true, 'Expected empty string, the result was: ' + isOnlyWhitespace(''));
+
+  // Make sure the the array was pushed to the array
+  equal(isOnlyWhitespace('The, quick, brown, fox jumped over'), false, 'Expected non-empty string, the result was: ' + isOnlyWhitespace('The, quick, brown, fox jumped over'));
+
+});
