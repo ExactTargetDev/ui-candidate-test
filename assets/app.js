@@ -30,4 +30,14 @@
             },
         });
     });
+
+    // Pulse panels
+    $('.pulse-panel').click(function(event) {
+        var $panel = $(event.currentTarget);
+
+        // Remove previous active state
+        $panel.parent().find('.pulse-panel').removeClass('active');
+        // Set this panel as active
+        $panel.addClass('active');
+    });
 })();
