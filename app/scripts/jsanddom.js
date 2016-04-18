@@ -27,17 +27,29 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
+       var results = {
+         fizzbuzz: [],
+         buzz:     [],
+         fizz:     [],
+         other:    []
+       };
        for (var n = 1, total = 100; n <= 100; n++) {
          if (((n % 3) === 0) && ((n % 5) === 0)) {
+           results.fizzbuzz.push(n);
            console.log('FizzBuzz');
          } else if ((n % 5) === 0) {
+           results.buzz.push(n);
            console.log('Buzz');
          } else if ((n % 3) === 0) {
+           results.fizz.push(n);
            console.log('Fizz');
          } else {
+           results.other.push(n);
            console.log(n);
          }
        }
+
+       return results;
 
      }
 

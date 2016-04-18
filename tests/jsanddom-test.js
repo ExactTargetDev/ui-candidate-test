@@ -68,13 +68,26 @@ test( "Find Distinct Values Test", 3, function() {
 /********************************
  Unit Test for doFizzBuzz
  ********************************/
+module( "FizzBuzz Unit Test" );
+test( "doFizzBuzz Test", 5, function() {
+  // Verify the method exists
+  equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' );
 
-module( "Find doFizzBuzz Test" );
-test( "doFizzBuzz Test", 2, function() {
-    // Verify the method exists
-    equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' );
+  var results = doFizzBuzz();
 
-    // Make sure the result from the findDistinctValues function is valid
-    ok( findDistinctValues(["one", 1, "1", "One"]), '["one", "1", "One"]', 'Expected ["one", "1", "One"] as the result, the result was: ' + findDistinctValues(["one", 1, "1", "One"]) );
-  });
+  // Make sure the correct number of fizzbuzz numbers are found
+  var totalFizzBuzz = results.fizzbuzz.length;
+  equal(totalFizzBuzz , 6, 'Expected 6 numbers that are multiples of both three and five, the result was: ' + totalFizzBuzz );
 
+  // Make sure the correct number of fizz numbers are found
+  var totalFizz = results.fizz.length;
+  equal( totalFizz, 27, 'Expected 27 numbers that are multiples of three, the result was: ' + totalFizz );
+
+  // Make sure the correct number of buzz numbers are found
+  var totalBuzz = results.buzz.length;
+  equal( totalBuzz, 14, 'Expected 14 numbers that are multiples of five, the result was: ' + totalBuzz );
+
+  // Make sure the correct number of nonfizzbuzz, nonfizz and nonbuzz numbers are found
+  var totalOther = results.other.length;
+  equal( totalOther, 53, 'Expected 53 numbers that are not multiples of five or three or three and five, the result was: ' + totalOther );
+});
