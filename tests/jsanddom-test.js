@@ -170,3 +170,29 @@ test( "isOnlyWhitespace Test", 3, function() {
   equal(isOnlyWhitespace('The, quick, brown, fox jumped over'), false, 'Expected non-empty string, the result was: ' + isOnlyWhitespace('The, quick, brown, fox jumped over'));
 
 });
+
+/********************************
+ Unit Test for counter
+ ********************************/
+module( "Counter Test" );
+test( "counter Test", 4, function() {
+  // Verify the method exists
+  equal( typeof counter, 'object', 'Must contain a counter object' );
+
+  // check the default value which should be 0
+  equal(counter.value(), 0, 'Expected zero, the result was: ' + counter.value());
+
+  // increase the counter by 2
+  counter.increment();
+  counter.increment();
+
+  // check the value of counter, which should be 2
+  equal(counter.value(), 2, 'Expected 2, the result was: ' + counter.value());
+
+  // decrease the counter value by 1
+  counter.decrement();
+
+  // check the counter value, which should be 1
+  equal(counter.value(), 1, 'Expected 1, the result was: ' + counter.value());
+
+});

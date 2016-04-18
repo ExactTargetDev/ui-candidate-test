@@ -107,6 +107,25 @@
      }
 
      // write an example of a javascript closure
+     var counter =(function (window) {
+       var privateCounter = 0;
+
+       function changeBy(val) {
+         privateCounter += val;
+       }
+
+       return {
+         increment: function() {
+           changeBy(1);
+         },
+         decrement: function() {
+           changeBy(-1);
+         },
+         value: function() {
+           return privateCounter;
+         }
+       };
+     })(window);
 
      // define a json object that represents a collection of people.
      // each person should have the following properties
