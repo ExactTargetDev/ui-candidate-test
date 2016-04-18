@@ -106,7 +106,6 @@
 
   li {
     padding: 10px;
-    color: $sidenav-links-color;
     cursor: pointer;
 
     &:hover {
@@ -141,7 +140,7 @@
     .fa {
       border-color: $sidenav-links-border-color;
       background: transparent;
-      color: $sidenav-links-color;
+      color: $text-color;
     }
   }
 }
