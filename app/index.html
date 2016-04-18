@@ -1,103 +1,281 @@
-<!doctype html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title>ui candidate test fork</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
-    <script>
-      window.location = "JsAndDom.html";
-    </script>
-  </head>
-  <body>
-    <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>test</title>
+  <title>Dashboard</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="/favicon.ico">
 
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  @@ -17,87 +17,257 @@
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+<body>
 
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">ui candidate test fork</h3>
-      </div>
-
-      <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid! <span class="glyphicon glyphicon-ok"></span></a></p>
-      </div>
-
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>HTML5 Boilerplate</h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-
-          <h4>Sass</h4>
-          <p>Sass is a mature, stable, and powerful professional grade CSS extension language.</p>
-
-
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-
-          <h4>Modernizr</h4>
-          <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-
+    <header class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">ExactTarget.</a>
         </div>
+        <nav id="navbar" class="navbar-collapse collapse">
+          <div class="navbar-right">
+            <ul>
+              <li class="user">Welcom John!</li>
+              <li><a href="#account">account</a></li>
+              <li><a href="#help">help</a></li>
+              <li><a href="#logout">logout</a></li>
+            </ul>
+          </div>
+        </nav><!--/.navbar-collapse -->
       </div>
+    </header>
+    <main>
+      <div class="row">
+        <aside class="col-md-3">
+          <nav>
+            <ul>
+              <li class="active">
+                <div><i></i>Interactive Marketing Hub</div>
+              </li>
+              <li>
+                <a href=""><i></i> ExactTarget Email</a>
+              </li>
+              <li>
+                <a href=""><i></i> ExactTarget Mobile</a>
+              </li>
+              <li>
+                <a href=""><i></i> CoTweet Social</a>
+              </li>
+              <li>
+                <a href=""><i></i> ExactTarget Sites</a>
+              </li>
+            </ul>
+            <hr>
+            <ul>
+              <li>
+                <a href=""><i></i> Automation</a>
+              </li>
+              <li>
+                <a href=""><i></i> Audience Builder</a>
+              </li>
+              <li>
+                <a href=""><i></i> Report Builder</a>
+              </li>
+            </ul>
+            <hr>
+            <div class="containerotherLinks">
+              <a href=""><i></i> Partner Applications</a>
+            </div>
+          </nav>
+        </aside>
+        <div class="col-md-9">
+          <div class="container-dashboard">
+            <section class="container-calendar">
+              <div class="txt-month">Septmber 2010</div>
+              <ol>
+                <li>
+                  <div class="container-date">
+                    <div class="txt-date">
+                      <span>Sun</span>
+                      <span>12</span>
+                    </div>
+                    <div class="txt-alert">today</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="container-date">
+                    <div class="txt-date">
+                      <span>Sun</span>
+                      <span>12</span>
+                    </div>
+                    <div class="txt-alert">today</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="container-date">
+                    <div class="txt-date">
+                      <span>Sun</span>
+                      <span>12</span>
+                    </div>
+                    <div class="txt-alert">today</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="container-date">
+                    <div class="txt-date">
+                      <span>Sun</span>
+                      <span>12</span>
+                    </div>
+                    <div class="txt-alert">today</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="container-date">
+                    <div class="txt-date">
+                      <span>Sun</span>
+                      <span>12</span>
+                    </div>
+                    <div class="txt-alert">today</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="container-date">
+                    <div class="txt-date">
+                      <span>Sun</span>
+                      <span>12</span>
+                    </div>
+                    <div class="txt-alert">today</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="container-date">
+                    <div class="txt-date">
+                      <span>Sun</span>
+                      <span>12</span>
+                    </div>
+                    <div class="txt-alert">today</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="container-date">
+                    <div class="txt-date">
+                      <span>Sun</span>
+                      <span>12</span>
+                    </div>
+                    <div class="txt-alert">today</div>
+                  </div>
+                </li>
+              </ol>
+              <ul class="list-controls">
+                <li><a href=""><i></i></a></li>
+                <li><a href=""><i></i></a></li>
+              </ul>
+            </section>
+                <section class="container-pulse">
+                  <h1>Pulse</h1>
+                  <ul>
+                    <li><a href=""><i></i></a></li>
+                    <li><a href=""><i></i></a></li>
+                    <li><a href=""><i></i></a></li>
+                    <li><a href=""><i></i></a></li>
+                  </ul>
+                  <div class="container-carousel">
+                    <div class="container-carouselContent">
+                      <ul>
+                        <li>
+                          <div class="card">
+                            <h2>title</h2>
+                            <div class="container-content">
+                              <div class="txt-number">###</div>
+                              <div class="txt-label">text</div>
+                              <div class="txt-secondaryLabel"> text</div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="card">
+                            <h2>title</h2>
+                            <div class="container-content">
+                              <div class="txt-number">###</div>
+                              <div class="txt-label">text</div>
+                              <div class="txt-secondaryLabel"> text</div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="card">
+                            <h2>title</h2>
+                            <div class="container-content">
+                              <div class="txt-number">###</div>
+                              <div class="txt-label">text</div>
+                              <div class="txt-secondaryLabel"> text</div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="card">
+                            <h2>title</h2>
+                            <div class="container-content">
+                              <div class="txt-number">###</div>
+                              <div class="txt-label">text</div>
+                              <div class="txt-secondaryLabel"> text</div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="card">
+                            <h2>title</h2>
+                            <div class="container-content">
+                              <div class="txt-number">###</div>
+                              <div class="txt-label">text</div>
+                              <div class="txt-secondaryLabel"> text</div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="card">
+                            <h2>title</h2>
+                            <div class="container-content">
+                              <div class="txt-number">###</div>
+                              <div class="txt-label">text</div>
+                              <div class="txt-secondaryLabel"> text</div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="card">
+                            <h2>title</h2>
+                            <div class="container-content">
+                              <div class="txt-number">###</div>
+                              <div class="txt-label">text</div>
+                              <div class="txt-secondaryLabel"> text</div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+    </main>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-
-    </div>
+  </div>
 
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+  <!-- build:js({app,.tmp}) scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
 </body>
 </html>
