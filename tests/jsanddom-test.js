@@ -74,3 +74,28 @@ test( "Find Min Value Test 3", 2, function() {
   // Make sure the result from the findMinValue function is valid
   ok( findMinValue([7,6,6,6,6,7.10,66,99,6]), '6', 'Expected 6 as the result, the result was: ' + findMinValue([7,6,6,6,6,7.10,66,99,6]) );
 });
+
+
+/********************************
+ Unit Test 1 for findDistinctValues
+ ********************************/
+module( "Find Distinct Values Unit Test 1" );
+test( "Find Distinct Values Test 1", 2, function() {
+  // Verify the method exists
+  equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
+
+  // Make sure the result from the findDistinctValues function is valid
+  ok( findDistinctValues(["Mike","Matt","Nancy","Adam","Jenny","Nancy","Carl"]), '["Mike","Matt","Adam","Jenny","Nancy","Carl"]', 'Expected ["Mike","Matt","Adam","Jenny","Nancy","Carl"] as the result, the result was: ' + findDistinctValues(["Mike","Matt","Nancy","Adam","Jenny","Nancy","Carl"]) );
+});
+
+/********************************
+ Unit Test 2 for findDistinctValues
+ ********************************/
+module( "Find Distinct Values Unit Test 2" );
+test( "Find Distinct Values Test 2", 2, function() {
+  // Verify the method exists
+  equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
+
+  // Make sure the result from the findDistinctValues function is valid
+  ok( findDistinctValues(["one", 1, "1", "One"]), '["one", "1", "One"]', 'Expected ["one", "1", "One"] as the result, the result was: ' + findDistinctValues(["one", 1, "1", "One"]) );
+});
