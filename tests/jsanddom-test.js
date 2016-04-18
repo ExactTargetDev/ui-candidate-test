@@ -64,7 +64,6 @@ test( "Find Distinct Values Test", 3, function() {
 });
 
 
-
 /********************************
  Unit Test for doFizzBuzz
  ********************************/
@@ -92,7 +91,6 @@ test( "doFizzBuzz Test", 5, function() {
   equal( totalOther, 53, 'Expected 53 numbers that are not multiples of five or three or three and five, the result was: ' + totalOther );
 });
 
-
 /********************************
  Unit Test for removeFruits
  ********************************/
@@ -101,7 +99,23 @@ test( "removeFruits Test", 2, function() {
   // Verify the method exists
   equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
 
-  // Make sure the correct number of fizzbuzz numbers are found
-  ok( removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), '["apple", "orange", "kiwi", "plum", "strawberry"]', 'Expected ["apple", "orange", "kiwi", "plum", "strawberry"], the result was: ' + removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']) );
+  // Make sure the fruits are removed from the array
+  deepEqual( removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), ["apple", "orange", "kiwi", "plum", "strawberry"], 'Expected ["apple", "orange", "kiwi", "plum", "strawberry"], the result was: ' + removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']) );
+
+});
+
+/********************************
+ Unit Test for pushOntoArray
+ ********************************/
+module( "Push Onto Array Unit Test" );
+test( "pushOntoArray Test", 3, function() {
+  // Verify the method exists
+  equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' );
+
+  // Make sure the the number was pushed to the array
+  deepEqual(pushOntoArray([1, 2, 3, 4, 5], 6), [1, 2, 3, 4, 5, 6], 'Expected [1, 2, 3, 4, 5, 6], the result was: ' + pushOntoArray([1, 2, 3, 4, 5], 6));
+
+  // Make sure the the array was pushed to the array
+  deepEqual(pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]), [1, 2, 3, 4, 5, 7, 8, 9], 'Expected [1, 2, 3, 4, 5, 7, 8, 9], the result was: ' + pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]));
 
 });
