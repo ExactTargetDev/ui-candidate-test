@@ -7,6 +7,7 @@ $navbar-padding-horizontal: 10px;
 $navbar-padding-vertical: 10px;
 $navbar-height: 40px;
 
+// Side navigation
 $sidenav-header-border-color: #f89a20;
 $sidenav-header-bg: linear-gradient(#fdaf4b, #f89a20);
 $sidenav-header-color: #fff;
@@ -18,3 +19,10 @@ $sidenav-links-active-bg: darken($sidenav-links-bg, 10%);
 $sidenav-links-color: #555;
 $sidenav-icon-bg: linear-gradient(#afb8bf, #848d96);
 $sidenav-icon-color: #fff;
+
+// Calendar
+$calendar-bg: #f4f4f5;
+$calendar-border-color: #ddd;
+$calendar-day-active-body-bg: linear-gradient($calendar-bg, #feedd6);
+$calendar-day-active-footer-bg: #f89a20;
+$calendar-footer-text-color: #fff;
