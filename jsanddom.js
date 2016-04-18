@@ -58,14 +58,20 @@
      }
 
 
-     // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
+//      Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-       console.log(sourceStr);
-       console.log("direct" + sourceStr.split(","));
-       console.log(_.split(sourceStr[3], ',', [30]));
-       //       console.log(splited);
-     }
-     splitListStrUsingComma("ksjdkdjdk");
+       if (_.isEmpty(sourceStr)) {
+         console.log("nullerstring");
+         return([]);
+       } else {
+         console.log(sourceStr);
+       splited = _.split(sourceStr, ',', [30]);
+       console.log(splited);
+       return splited;
+     }}
+     splitListStrUsingComma("ks,jd,kdjdk");
+     splitListStrUsingComma('');
+
 
      // Write a function that will take any number of arguments and return their sum
      function sum(anArraytoSum) {
@@ -176,17 +182,120 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+
+function DataTable() {
+        var columns = [],
+            rows = [];
+
+        return {
+            addColumns: function() {
+                var newCol = [],
+                    i;
+                for(i=0; i<arguments.length; i++) {
+                    if(typeof arguments[i] === 'string') {
+                        columns.push(arguments[i]);
+                    }
+                }
+                return columns;
+            },
+
+            addRow: function() {
+                var i;
+
+                for(i=0; i<columns.length; i++) {
+                    if(i<arguments.length && (typeof arguments[i] === 'string')) {
+                        rows.push(arguments[i]);
+                    } else {
+                        rows.push('');
+                    }
+                }
+            },
+
+            getData: function() {
+                var table = [],
+                    index = 0,
+                    row, c;
+
+                while(index < rows.length) {
+                    row = {};
+                    for(c=0; c<columns.length; c++) {
+                        row[columns[c]] = rows[index++];
+                    }
+                    table.push(row);
+                }
+                return table;
+            }
+        };
+    }
+
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
 
+    $(document).ready(function() {
+        $('#div1').append('What flavor of shake do you want?<select id="MyOptions"><option>Strawberry</option><option>chocolate</option><option>Vanilla</option></select>');
+        $('#div1').append('<button id="LogButton">Log Option</button>');
+        $('#LogButton').on('click', function() {
+            console.log($('#MyOptions :selected').val());
+        });
+    });
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+
+	 function selectAnchor(){
+        console.log("Count the ways that jQuery can find sample anchor...")
+		console.log('1.', jQuery('#fizz a.link').attr('href'));
+		console.log('2.', jQuery('a.link:eq(0)').attr('href'));
+		console.log('3.', jQuery('#fizz > a').filter('.link').attr('href'));
+		console.log('4.', jQuery('.bar .buzz a.link').attr('href'));
+		console.log('5.', jQuery('#fizz a').filter('.link').attr('href'));
+        console.log('6.', jQuery('a:contains("sample")').attr('href'));
+	 }
+  selectAnchor();
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
 
+     function createFiveItems(){
+        var ul = document.getElementById("list1");
+        _.times(5, function(index){
+            var li = document.createElement("li");
+            li.innerText = index;
+            ul.appendChild(li);
+        });
+     }
+createFiveItems();
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+	 function toggleCheck(){
+		var fooBar = jQuery('#foobar');
+
+		fooBar.append(
+			jQuery(	'<div class="control">' +
+						'<a href="#" class="check">Check All</a>' +
+						'<a href="#" class="uncheck">Uncheck All</a>' +
+					'</div>').on('click', '.check, .uncheck', function(e){
+						if(e.target.className == 'check'){
+							fooBar.find('input:checkbox').attr('checked', true);
+						}
+						else if(e.target.className == 'uncheck'){
+							fooBar.find('input:checkbox').attr('checked', false)
+						}
+
+						e.preventDefault();
+					})
+		);
+      _.times(5, function(i){
+			var name = 'item' + i;
+			jQuery(	'<div class="row">' +
+						'<label for="' + name + '">' + name + '</label>' +
+						'<input type="checkbox" id="' + name + '" name="' + name + '" />' +
+					'</div>')
+					.appendTo(fooBar);
+		})
+	 }
+toggleCheck();
+

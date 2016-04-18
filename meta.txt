@@ -1,1 +1,9 @@
 Start Time: 1460780368
+End Time: 1460951113
+
+Browsers tested On:
+ Chrome/50.0.2661.75
+ Chrome/52.0.2709.0
+ Safari/601.5.17
+ Firefox/44.0
+ Firefox/48.0
