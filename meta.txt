@@ -1,1 +1,3 @@
 Start Time: 1460848936
+TotalTime: 102921
+BrowserTesting: Chrome 49, Firefox 45, Microsoft Edge 20
