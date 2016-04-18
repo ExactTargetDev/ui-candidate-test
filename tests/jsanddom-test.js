@@ -229,6 +229,9 @@ test( "createGetInteger Test", 4, function() {
   equal( typeof createGetInteger, 'function', 'Must contain a createGetInteger function' );
   equal( typeof logSelectedValue, 'function', 'Must contain a logSelectedValue function' );
 
+  // clear container to prevent issues from other test
+  document.getElementById('qunit-fixture').innerHTML = '';
+
   // run the function
   createGetInteger('qunit-fixture', logSelectedValue);
 
@@ -252,7 +255,9 @@ test( "addToList Test", 2, function() {
   equal( typeof addToList, 'function', 'Must contain a addToList function' );
 
   // create list element and add it to qunit-fixtures element
-  var container = document.getElementById('qunit-fixture')
+  var container = document.getElementById('qunit-fixture');
+  // clear container to prevent issues from other test
+  container.innerHTML = '';
   var list = document.createElement("ul");
   list.id = 'list1';
   container.appendChild(list);
@@ -264,5 +269,52 @@ test( "addToList Test", 2, function() {
   var items = document.getElementById('list1').getElementsByTagName("li");
 
   equal(items.length, 5, 'Expected 5 list items, the result was: ' + items.length);
+
+});
+
+
+/********************************
+ Unit Test for createControls & updateCheckboxState
+ ********************************/
+module( "Create Controls Test" );
+test( "createControls Test", 7, function() {
+  // Verify the method exists
+  equal( typeof createControls, 'function', 'Must contain a createControls function' );
+  equal( typeof updateCheckboxState, 'function', 'Must contain a updateCheckboxState function' );
+
+  // clear container to prevent issues from other test
+  document.getElementById('qunit-fixture').innerHTML = '';
+
+  var container = document.createElement('div');
+  container.id = 'foobar';
+  document.getElementById('qunit-fixture').appendChild(container);
+
+  // run the function
+  createControls();
+
+  var inputs = document.getElementById('foobar').getElementsByTagName('input');
+
+  // test for the checkboxes
+  equal(inputs.length, 4, 'Expected 4 checkboxes, the result was: ' + inputs.length);
+
+  // test for the activate link element
+  equal(typeof document.getElementById("link-activate"), 'object', 'Expected activate link element, the result was: ' + document.getElementById("link-activate"));
+
+  // test for the deactivate link element
+  equal(typeof document.getElementById("link-deactivate"), 'object', 'Expected deactivate link element, the result was: ' + document.getElementById("link-deactivate"));
+
+  // create test data off of the elements created for the previous test
+  var currentTarget = document.getElementById('link-activate');
+
+  // test the updateing checkboxes to be active
+  updateCheckboxState({ currentTarget: currentTarget, preventDefault: function () {} });
+  equal($("#foobar input[type=checkbox]:checked").length, 4, 'Expected 4 checked inputs, the result was: ' + $("#foobar input[type=checkbox]:checked").length);
+
+  // create test data off of the elements created for the previous test
+  var currentTarget = document.getElementById('link-deactivate');
+
+  // test the updateing checkboxes to be deactivate
+  updateCheckboxState({ currentTarget: currentTarget, preventDefault: function () {} });
+  equal($("#foobar input[type=checkbox]:checked").length, 0, 'Expected 0 checked inputs, the result was: ' + $("#foobar input[type=checkbox]:checked").length);
 
 });

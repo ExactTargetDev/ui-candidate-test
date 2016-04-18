@@ -311,3 +311,64 @@
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     function updateCheckboxState (e) {
+       e.preventDefault();
+
+       var currentTarget = e.currentTarget;
+       var checkbox = document.getElementsByName(currentTarget.getAttribute('data-checkboxName'));
+
+       for (var i = 0, total = checkbox.length; i < total; i++) {
+         if (currentTarget.id === 'link-activate') {
+           checkbox[i].checked = true;
+         } else {
+           checkbox[i].checked = false;
+         }
+       }
+     }
+
+     function createControls () {
+       var container = document.getElementById('foobar');
+       var numOfCheckboxes = 4;
+       var form = document.createElement('form');
+       var input;
+       var label;
+       var inputName = 'options';
+       var activateLink = document.createElement('a');
+       var deactivateLink = document.createElement('a');
+
+       // create the checkboxes and add them to a parent container then add the container to the form
+       for (var i = 0; i < numOfCheckboxes; i++) {
+
+         input = document.createElement('input');
+         input.type = 'checkbox';
+         input.name = inputName;
+         input.value = i;
+
+         label = document.createElement('label');
+
+         label.appendChild(input);
+         label.appendChild(document.createTextNode(i));
+
+         form.appendChild(label);
+
+         form.appendChild(document.createElement('br'));
+       }
+
+       activateLink.href = '#';
+       activateLink.id = 'link-activate';
+       activateLink.setAttribute('data-checkboxName', inputName);
+       activateLink.appendChild(document.createTextNode('activate'));
+       activateLink.onclick = updateCheckboxState;
+       form.appendChild(activateLink);
+
+       form.appendChild(document.createTextNode(' | '));
+
+       deactivateLink.href = '#';
+       deactivateLink.id = 'link-deactivate';
+       deactivateLink.setAttribute('data-checkboxName', inputName);
+       deactivateLink.appendChild(document.createTextNode('deactivate'));
+       deactivateLink.onclick = updateCheckboxState;
+       form.appendChild(deactivateLink);
+
+       container.appendChild(form);
+     }
