@@ -1,0 +1,44 @@
+.container-contentNav {
+  padding: 20px;
+
+  nav {
+    border-radius: 6px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  hr {
+    margin: 0;
+  }
+
+  ul,
+  .container-otherLinks {
+    list-style: none;
+    padding: 0;
+    margin: 1px;
+    background: #f4f4f5;
+  }
+
+  li {
+    display: table;
+    width: 100%;
+  }
+
+  .active, a {
+    display: table-row;
+    width: 100%;
+    font-size: 12px;
+    color: #888;
+    i, span {
+      display: table-cell;
+      padding: 9px;
+    }
+    i {
+      height: 25px;
+      width: 25px;
+    }
+    span {
+      padding-left: 0;
+    }
+  }
+}
