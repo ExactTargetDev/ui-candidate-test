@@ -37,3 +37,40 @@ test( "Reverse String Test 2", 2, function() {
   // Make sure the result from the divide function is valid
   ok( reverseString('Happy Birthday to you!'), '!uoy ot yadhtriB yppaH', 'Expected !uoy ot yadhtriB yppaH as the result, the result was: ' + reverseString('Happy Birthday to you!') );
 });
+
+
+/********************************
+ Unit Test 1 for findMinValue
+ ********************************/
+module( "Find Min Value Unit Test 1" );
+test( "Find Min Value Test 1", 2, function() {
+  // Verify the method exists
+  equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
+
+  // Make sure the result from the findMinValue function is valid
+  ok( findMinValue([1,2,3,4,5,6]), '1', 'Expected 1 as the result, the result was: ' + findMinValue([1,2,3,4,5,6]) );
+});
+
+/********************************
+ Unit Test 2 for findMinValue
+ ********************************/
+module( "Find Min Value Unit Test 2" );
+test( "Find Min Value Test 2", 2, function() {
+  // Verify the method exists
+  equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
+
+  // Make sure the result from the findMinValue function is valid
+  ok( findMinValue([6,5,4,3,2,1]), '1', 'Expected 1 as the result, the result was: ' + findMinValue([6,5,4,3,2,1]) );
+});
+
+/********************************
+ Unit Test 3 for findMinValue
+ ********************************/
+module( "Find Min Value Unit Test 3" );
+test( "Find Min Value Test 3", 2, function() {
+  // Verify the method exists
+  equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
+
+  // Make sure the result from the findMinValue function is valid
+  ok( findMinValue([7,6,6,6,6,7.10,66,99,6]), '6', 'Expected 6 as the result, the result was: ' + findMinValue([7,6,6,6,6,7.10,66,99,6]) );
+});
