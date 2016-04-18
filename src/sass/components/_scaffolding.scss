@@ -1,0 +1,11 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+body {
+  padding-top: 40px;
+}
+
+.main {
+  @include container-fixed();
+}

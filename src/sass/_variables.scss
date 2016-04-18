@@ -1,0 +1,41 @@
+// Scaffolding
+$text-color: #666;
+
+// Main navbar
+$navbar-bg: linear-gradient(#44515a, #2a2f33);
+$navbar-text-color: #fff;
+$navbar-link-color: #92c2d6;
+// Decrease navbar to ExactTarget specifications
+$navbar-padding-horizontal: 10px;
+$navbar-padding-vertical: 10px;
+$navbar-height: 40px;
+
+// Side navigation
+$sidenav-header-border-color: #f89a20;
+$sidenav-header-bg: linear-gradient(#fdaf4b, #f89a20);
+$sidenav-header-color: #fff;
+$sidenav-header-icon-color: #555;
+$sidenav-links-border-color: #ddd;
+$sidenav-links-bg: #f4f4f5;
+$sidenav-links-hover-bg: darken($sidenav-links-bg, 5%);
+$sidenav-links-active-bg: darken($sidenav-links-bg, 10%);
+$sidenav-icon-bg: linear-gradient(#afb8bf, #848d96);
+$sidenav-icon-color: #fff;
+
+// Calendar
+$calendar-bg: #f4f4f5;
+$calendar-border-color: #ddd;
+$calendar-day-active-body-bg: linear-gradient($calendar-bg, #feedd6);
+$calendar-day-active-footer-bg: #f89a20;
+$calendar-footer-text-color: #fff;
+
+// Pulse
+$pulse-bg: linear-gradient(#b9c6cf, #e1ebf3, #d4e0e8);
+$pulse-header-text-color: #fff;
+$pulse-box-bg: linear-gradient(#fff, #dee9f0);
+$pulse-box-bg-active: #e5f5fe;
+$pulse-text-color: #93afc0;
+$pulse-strong-text-color: #34bbf3;
+$pulse-box-shadow-color: #aaa;
+$pulse-box-shadow-color-active: #555;
+$pulse-image-border-color: #aaa;

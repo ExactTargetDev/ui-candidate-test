@@ -1,0 +1,74 @@
+//
+// Calendar
+// --------------------------------------------------
+
+.calendar {
+  border: 1px solid $calendar-border-color;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: $calendar-bg;
+}
+
+.calendar-header {
+  display: flex;
+  margin: 5px 10px;
+
+  .month-label {
+    flex: 1 1 auto;
+
+    h1 {
+      margin: 0;
+      font-size: 12px;
+    }
+  }
+
+  .controls {
+    flex: 0 0 auto;
+    font-size: 12px;
+  }
+}
+
+.calendar-days {
+  display: flex;
+  padding: 0;
+  margin: 0 10px;
+  list-style: none;
+
+  li {
+    flex: 1;
+
+    &.today {
+      .day-body {
+        background: $calendar-day-active-body-bg;
+      }
+
+      .day-footer {
+        background: $calendar-day-active-footer-bg;
+      }
+    }
+  }
+
+  .day-label {
+    margin: 0;
+    font-size: 12px;
+
+    .day-num {
+      float: right;
+    }
+  }
+
+  .day-body {
+    height: 120px;
+    padding: 5px;
+    border: 1px solid $calendar-border-color;
+    border-top: 0;
+  }
+
+  .day-footer {
+    color: $calendar-footer-text-color;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
