@@ -1,4 +1,4 @@
-// Generated on 2016-04-18 using
+// Generated on 2016-04-15 using
 // generator-webapp 0.5.1
 'use strict';
 
@@ -90,12 +90,14 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          open: false,
+          open: true,
           port: 9001,
+          hostname: 'localhost',
+          keepalive: true,
           middleware: function(connect) {
             return [
               connect.static('.tmp'),
-              connect.static('test'),
+              connect.static('tests'),
               connect().use('/bower_components', connect.static('./bower_components')),
               connect.static(config.app)
             ];
@@ -137,16 +139,6 @@ module.exports = function (grunt) {
         '!<%= config.app %>/scripts/vendor/*',
         'test/spec/{,*/}*.js'
       ]
-    },
-
-    // Mocha testing framework configuration options
-    mocha: {
-      all: {
-        options: {
-          run: true,
-          urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
-        }
-      }
     },
 
     // Compiles Sass to CSS and generates necessary files if requested
@@ -414,8 +406,7 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'connect:test',
-      'mocha'
+      'connect:test'
     ]);
   });
 
