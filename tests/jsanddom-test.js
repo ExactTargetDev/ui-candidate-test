@@ -72,4 +72,36 @@ test("Test to see if string has only white spaces", 4, function () {
   equal(isOnlyWhitespace(''), false, "an empty string returns false");
 });
 
+module("DataTable");
+test("DataTable Test", 7, function(){
+    equal(typeof DataTable, 'function', 'Verify DataTable constructor');
+
+    var table = DataTable();
+
+    // Check private properties
+    equal(table.columns, undefined, 'Check columns is private');
+    equal(table.rows, undefined, 'Check rows is private');
+
+    // Check publis methods
+    equal(typeof table.addColumns, 'function', 'Check addColumns is public method');
+    equal(typeof table.addRow, 'function', 'Check addRow is public method');
+    equal(typeof table.getData, 'function', 'Check getData is public method');
+
+    // Add our data
+    table.addColumns('column1', 'column2', 'column3');
+    table.addRow('value1A', 'value1B', 'value1C');
+    table.addRow('value2A', 'value2B', 'value2C');
+
+    var result = [{
+        column1: 'value1A',
+        column2: 'value1B',
+        column3: 'value1C'
+    }, {
+        column1: 'value2A',
+        column2: 'value2B',
+        column3: 'value2C'
+    }];
+
+    deepEqual(table.getData(), result, 'Check that we get valid table object');
+});
 

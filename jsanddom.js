@@ -176,9 +176,63 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
+
+function DataTable() {
+        var columns = [],
+            rows = [];
+
+        return {
+            addColumns: function() {
+                var newCol = [],
+                    i;
+                for(i=0; i<arguments.length; i++) {
+                    if(typeof arguments[i] === 'string') {
+                        columns.push(arguments[i]);
+                    }
+                }
+                return columns;
+            },
+
+            addRow: function() {
+                var i;
+
+                for(i=0; i<columns.length; i++) {
+                    if(i<arguments.length && (typeof arguments[i] === 'string')) {
+                        rows.push(arguments[i]);
+                    } else {
+                        rows.push('');
+                    }
+                }
+            },
+
+            getData: function() {
+                var table = [],
+                    index = 0,
+                    row, c;
+
+                while(index < rows.length) {
+                    row = {};
+                    for(c=0; c<columns.length; c++) {
+                        row[columns[c]] = rows[index++];
+                    }
+                    table.push(row);
+                }
+                return table;
+            }
+        };
+    }
+
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+
+    $(document).ready(function() {
+        $('#div1').append('What flavor of shake do you want?<select id="MyOptions"><option>Strawberry</option><option>chocolate</option><option>Vanilla</option></select>');
+        $('#div1').append('<button id="LogButton">Log Option</button>');
+        $('#LogButton').on('click', function() {
+            console.log($('#MyOptions :selected').val());
+        });
+    });
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
