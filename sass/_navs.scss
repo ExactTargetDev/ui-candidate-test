@@ -1,0 +1,61 @@
+//
+// Navigation
+// --------------------------------------------------
+
+.navbar {
+  background: $navbar-bg;
+
+  .navbar-brand {
+    color: $navbar-text-color;
+  }
+}
+
+.navbar-header {
+  float: left;
+  padding-left: 10px;
+}
+
+.navbar-nav {
+  > li {
+    padding: $navbar-padding-vertical $navbar-padding-horizontal;
+
+    // Welcome message
+    &.welcome {
+      color: $navbar-text-color;
+    }
+
+    // Navbar links
+    &.link {
+      padding-right: 0;
+
+      // Pipe separator after links
+      &::after {
+        content: '|';
+        margin-left: 10px;
+        color: $navbar-text-color;
+      }
+
+      // Remove last pipe
+      &:last-child::after {
+        content: '';
+      }
+    }
+
+    // Reverse Bootstrap nav items
+    > a {
+      display: inline-block;
+      padding: 0;
+      background: transparent;
+      color: $navbar-link-color;
+
+      &:hover {
+        background: none;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.navbar-collapse {
+  float: right;
+}
