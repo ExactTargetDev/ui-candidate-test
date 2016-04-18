@@ -287,6 +287,25 @@
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
+     function addToList () {
+       var list = document.getElementById('list1');
+       var item;
+       var numberOfItems = 5;
+       var itemArray = [];
+
+       // create array of 5 random string values
+       for (var i = 0; i < numberOfItems; i++) {
+         itemArray.push(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5));
+       }
+
+       for (i = 0; i < numberOfItems; i++) {
+         item = document.createElement('li');
+         item.appendChild(document.createTextNode(itemArray[i]));
+         list.appendChild(item);
+       }
+     }
+
+
 
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"

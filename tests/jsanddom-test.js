@@ -229,12 +229,40 @@ test( "createGetInteger Test", 4, function() {
   equal( typeof createGetInteger, 'function', 'Must contain a createGetInteger function' );
   equal( typeof logSelectedValue, 'function', 'Must contain a logSelectedValue function' );
 
+  // run the function
   createGetInteger('qunit-fixture', logSelectedValue);
 
+  // test for the select element
   equal(typeof document.getElementById("select-integer"), 'object', 'Expected select box element, the result was: ' + document.getElementById("select-integer"));
 
+  // create test data off of the elements created for the previous test
   var currentTarget = document.getElementById('button-action');
 
+  // test the return value which is the same as the log value
   equal(logSelectedValue({ currentTarget: currentTarget}), '0', 'Expected select box value of 0, the result was: ' + logSelectedValue({ currentTarget: currentTarget}));
+
+});
+
+/********************************
+ Unit Test for addToList
+ ********************************/
+module( "Add To List Test" );
+test( "addToList Test", 2, function() {
+  // Verify the method exists
+  equal( typeof addToList, 'function', 'Must contain a addToList function' );
+
+  // create list element and add it to qunit-fixtures element
+  var container = document.getElementById('qunit-fixture')
+  var list = document.createElement("ul");
+  list.id = 'list1';
+  container.appendChild(list);
+
+  // run the function
+  addToList();
+
+  // get the new list items
+  var items = document.getElementById('list1').getElementsByTagName("li");
+
+  equal(items.length, 5, 'Expected 5 list items, the result was: ' + items.length);
 
 });
