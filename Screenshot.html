@@ -22,7 +22,7 @@
 				<ul class="nav navbar-nav">
 					<li class="welcome">Welcome John!</li>
 					<li class="link"><a href="#account">Account</a></li>
-					<li class="link"><a href="#help">Help</a></li>
+					<li class="link"><a id="launch-help" href="#help">Help</a></li>
 					<li class="link"><a href="#logout">Logout</a></li>
 				</ul>
 			</div>
@@ -92,5 +92,25 @@
 
 			</div>
 		</section>
+		<div class="modal fade" id="help-modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Help</h4>
+					</div>
+					<div class="modal-body">
+						...
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="assets/app.js"></script>
 	</body>
 </html>
