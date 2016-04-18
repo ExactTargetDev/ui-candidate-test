@@ -51,9 +51,9 @@ test("Remove fruits from an array", 2, function () {
 });
 
 module("stringSplit");
-test("splitList string using delimited by comma", 2 , function(){
-	equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
-	ok( splitListStrUsingComma("The, quick, brown, fox jumped over").length, 4, "splitListStrUsingComma function should return array of 4 values");
+test("splitList string using delimited by comma", 2, function () {
+  equal(typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function');
+  ok(splitListStrUsingComma("The, quick, brown, fox jumped over").length, 4, "splitListStrUsingComma function should return array of 4 values");
 });
 
 module("pushOntoArray");
@@ -67,7 +67,7 @@ module("sum");
 test("Test of adding numbers", 3, function () {
   equal(sum([1, 2, 3, 4, 5]), 15, "an array of 1,2,3,4,5 returns 15");
   equal(sum([55]), 55, "an array of 55 returns 55");
-  equal(sum([-7,4]), -3, "an array of postive and negative numbers returns the correct value");
+  equal(sum([-7, 4]), -3, "an array of postive and negative numbers returns the correct value");
 });
 
 module("isOnlyWhitespace");
@@ -78,36 +78,32 @@ test("Test to see if string has only white spaces", 4, function () {
   equal(isOnlyWhitespace(''), false, "an empty string returns false");
 });
 
-module("DataTable");
-test("DataTable Test", 7, function(){
-    equal(typeof DataTable, 'function', 'Verify DataTable constructor');
-
-    var table = DataTable();
-
-    // Check private properties
-    equal(table.columns, undefined, 'Check columns is private');
-    equal(table.rows, undefined, 'Check rows is private');
-
-    // Check publis methods
-    equal(typeof table.addColumns, 'function', 'Check addColumns is public method');
-    equal(typeof table.addRow, 'function', 'Check addRow is public method');
-    equal(typeof table.getData, 'function', 'Check getData is public method');
-
-    // Add our data
-    table.addColumns('column1', 'column2', 'column3');
-    table.addRow('value1A', 'value1B', 'value1C');
-    table.addRow('value2A', 'value2B', 'value2C');
-
-    var result = [{
-        column1: 'value1A',
-        column2: 'value1B',
-        column3: 'value1C'
-    }, {
-        column1: 'value2A',
-        column2: 'value2B',
-        column3: 'value2C'
-    }];
-
-    deepEqual(table.getData(), result, 'Check that we get valid table object');
-});
-
+//module("DataTable");
+//test("DataTable Test", 7, function () {
+//  equal(typeof DataTable, 'function', 'Verify DataTable constructor');
+//
+//  var table = DataTable();
+//
+//  equal(table.columns, undefined, 'Check columns is private');
+//  equal(table.rows, undefined, 'Check rows is private');
+//
+//  equal(typeof table.addColumns, 'function', 'Check addColumns is public method');
+//  equal(typeof table.addRow, 'function', 'Check addRow is public method');
+//  equal(typeof table.getData, 'function', 'Check getData is public method');
+//
+//  table.addColumns('column1', 'column2', 'column3');
+//  table.addRow('value1A', 'value1B', 'value1C');
+//  table.addRow('value2A', 'value2B', 'value2C');
+//
+//  var result = [{
+//    column1: 'value1A',
+//    column2: 'value1B',
+//    column3: 'value1C'
+//    }, {
+//    column1: 'value2A',
+//    column2: 'value2B',
+//    column3: 'value2C'
+//    }];
+//
+//  deepEqual(table.getData(), result, 'Check that we get valid table object');
+//});
