@@ -1,0 +1,63 @@
+.container-contentNav {
+  padding: 20px;
+
+  nav {
+    border-radius: 6px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  hr {
+    margin: 0;
+  }
+
+  ul,
+  .container-otherLinks {
+    list-style: none;
+    padding: 0;
+    margin: 1px;
+    background: #f4f4f5;
+  }
+
+  li {
+    width: 100%;
+  }
+
+  .active, a {
+    -js-display: flex;
+    display: flex;
+    width: 100%;
+    font-size: 12px;
+    color: #888;
+    i, span {
+      padding: 9px;
+    }
+    i {
+      height: 25px;
+      width: 25px;
+    }
+    span {
+      padding-left: 0;
+    }
+  }
+
+  .active {
+    background: #fdbc69; /* Old browsers */
+    background: -moz-linear-gradient(top,  #fdbc69 0%, #f8991e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #fdbc69 0%,#f8991e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #fdbc69 0%,#f8991e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdbc69', endColorstr='#f8991e',GradientType=0 ); /* IE6-9 */
+    color: #fff;
+    margin: -2px -2px 0;
+    border: 1px solid #f8981d;
+    width: calc(100% + 4px);
+  }
+
+  .endcap.top .active {
+    border-radius: 6px 6px 0 0;
+  }
+
+  .endcap.bottom .active {
+    border-radius: 6px 6px 0 0;
+  }
+}

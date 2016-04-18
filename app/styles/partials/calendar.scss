@@ -1,0 +1,110 @@
+.container-calendar {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-top: none;
+  width: 994px;
+  position: relative;
+
+  .txt-month {
+    color: #99abb6;
+    font-size: 11px;
+    padding: 5px 9px;
+  }
+
+  .container-calendarDates {
+    overflow: hidden;
+    ol {
+      -js-display: flex;
+      display: flex;
+      padding: 0 0 18px;
+      margin: 0;
+      list-style: none;
+    }
+  }
+
+  .txt-date {
+    font-size: 11px;
+    color: #999;
+    -js-display: flex;
+    display: flex;
+
+    span {
+      width: 50%;
+      text-align: right;
+      padding-right: 3px;
+    }
+    span:first-child {
+      text-align: left;
+      padding-right: 0;
+      padding-left: 3px;
+    }
+  }
+
+  li:first-child .container-date {
+    border-left: 1px solid #ddd;
+    border-bottom: none;
+    margin-left: -152px;
+  }
+  li:last-child .container-date {
+    border-bottom: none;
+  }
+
+  .container-date {
+    width: 162px;
+    height: 90px;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-left: none;
+  }
+
+  .container-date.today {
+    position: relative;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ebf1f5+15,eedec9+100 */
+    background: #ebf1f5; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ebf1f5 15%, #eedec9 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #ebf1f5 15%,#eedec9 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #ebf1f5 15%,#eedec9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f5', endColorstr='#eedec9',GradientType=0 ); /* IE6-9 */
+
+
+    .txt-alert {
+      position: absolute;
+      right: 0;
+      bottom: -20px;
+      left: 0;
+      padding: 1px 0;
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 13px;
+      background: #fba73b;
+    }
+  }
+
+  .controls {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    li {
+      display:  inline-block;
+    }
+  }
+
+  .container-collapse {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    button {
+      background: transparent;
+      border: none;
+      padding: 0;
+      height: 14px;
+    }
+  }
+}

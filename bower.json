@@ -1,0 +1,11 @@
+{
+  "name": "ui-candidate-test-fork",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass-official": "~3.2.0",
+    "modernizr": "~2.8.2",
+    "jquery": "^2.2.3",
+    "flexibility": "^1.0.6",
+    "font-awesome": "Font-Awesome#^4.6.1"
+  }
+}
