@@ -135,7 +135,36 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
+     var people = {
+       'collection': [
+         {
+           'id': 0,
+           'first_name': 'Scott',
+           'last_name': 'Daniels',
+           'city': 'Ypsilanti',
+           'state': 'MI',
+           'zip': '48198', // is a string becuase zip codes can be formatted like 48198 or 48198-1236
+           'phone_number': [
+             { 'type': 'home', 'value': '517-263-7644' },
+             { 'type': 'work', 'value': '' },
+             { 'type': 'mobile', 'value': '734-678-1339' }
+           ]
+         },
+         {
+           'id': 1,
+           'first_name': 'Joe',
+           'last_name': 'Smith',
+           'city': 'Ann Arbor',
+           'state': 'MI',
+           'zip': '48104-1232', // is a string becuase zip codes can be formatted like 48198 or 48198-1236
+           'phone_number': [
+             { 'type': 'home', 'value': '517-264-5511' },
+             { 'type': 'work', 'value': '' },
+             { 'type': 'mobile', 'value': '734-678-6000' }
+           ]
+         }
+       ]
+     };
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
