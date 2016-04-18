@@ -91,3 +91,17 @@ test( "doFizzBuzz Test", 5, function() {
   var totalOther = results.other.length;
   equal( totalOther, 53, 'Expected 53 numbers that are not multiples of five or three or three and five, the result was: ' + totalOther );
 });
+
+
+/********************************
+ Unit Test for removeFruits
+ ********************************/
+module( "Remove Fruits Unit Test" );
+test( "removeFruits Test", 2, function() {
+  // Verify the method exists
+  equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
+
+  // Make sure the correct number of fizzbuzz numbers are found
+  ok( removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']), '["apple", "orange", "kiwi", "plum", "strawberry"]', 'Expected ["apple", "orange", "kiwi", "plum", "strawberry"], the result was: ' + removeFruits(['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'], ['pear', 'banana']) );
+
+});
