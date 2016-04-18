@@ -219,3 +219,22 @@ test( "DataTable Test", 4, function() {
 
   equal(tableData['column3']['column3-value2C'], 'value2C', 'Expected value2C, the result was: ', tableData['column3']['column3-value2C']);
 });
+
+/********************************
+ Unit Test for createGetInteger & logSelectedValue
+ ********************************/
+module( "Create Get Integer Test" );
+test( "createGetInteger Test", 4, function() {
+  // Verify the method exists
+  equal( typeof createGetInteger, 'function', 'Must contain a createGetInteger function' );
+  equal( typeof logSelectedValue, 'function', 'Must contain a logSelectedValue function' );
+
+  createGetInteger('qunit-fixture', logSelectedValue);
+
+  equal(typeof document.getElementById("select-integer"), 'object', 'Expected select box element, the result was: ' + document.getElementById("select-integer"));
+
+  var currentTarget = document.getElementById('button-action');
+
+  equal(logSelectedValue({ currentTarget: currentTarget}), '0', 'Expected select box value of 0, the result was: ' + logSelectedValue({ currentTarget: currentTarget}));
+
+});

@@ -237,6 +237,45 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     function logSelectedValue (e) {
+       var input = document.getElementById(e.currentTarget.getAttribute('data-inputId')).value;
+       console.log(input);
+
+       return input;
+     }
+
+     function createGetInteger (containerId, func) {
+       var container = document.getElementById(containerId);
+       var form = document.createElement('form');
+       var select =  document.createElement('select');
+       var selectId = 'select-integer';
+       var totalOptions = 4;
+       var option;
+       var button = document.createElement('button');
+       var buttonText = document.createTextNode('Submit');
+
+       button.type = 'button';
+       button.id = 'button-action';
+       button.appendChild(buttonText);
+       button.setAttribute('data-inputId', selectId);
+       button.onclick = func;
+
+       for (var i = 0; i < totalOptions; i++) {
+         option = document.createElement('option');
+         option.text = i;
+         option.value = i;
+         option.name = 'integer';
+         select.add(option);
+       }
+
+       select.id = selectId;
+
+       form.appendChild(select);
+       form.appendChild(button);
+       container.appendChild(form);
+
+     }
+
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
