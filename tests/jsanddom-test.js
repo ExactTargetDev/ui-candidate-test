@@ -135,3 +135,22 @@ test( "splitListStrUsingComma Test", 3, function() {
   deepEqual(splitListStrUsingComma('The, quick, brown, fox jumped over'), ["The", " quick", " brown", " fox jumped over"], 'Expected "The", " quick", " brown", " fox jumped over", the result was: ' + splitListStrUsingComma('The, quick, brown, fox jumped over'));
 
 });
+
+
+/********************************
+ Unit Test for sum
+ ********************************/
+module( "Find Sum Unit Test" );
+test( "Find Sum Test", 4, function() {
+  // Verify the method exists
+  equal( typeof sum, 'function', 'Must contain a sum function' );
+
+  // Make sure the sum value of 0 is returned
+  equal( sum(), 0, 'Expected 0 as the result, the result was: ' + sum() );
+
+  // Make sure the sum value of 1 is returned
+  equal( sum(1), 1, 'Expected 1 as the result, the result was: ' + sum(1) );
+
+  // Make sure the sum value of 6 is returned
+  equal( sum(1,2,3), 6, 'Expected 6 as the result, the result was: ' + sum(1,2,3) );
+});
