@@ -13,6 +13,7 @@
   @@ -17,87 +17,257 @@
   <!-- build:js scripts/vendor/modernizr.js -->
   <script src="bower_components/modernizr/modernizr.js"></script>
+  <script src="bower_components/flexibility/dist/flexibility.js"></script>
   <!-- endbuild -->
 </head>
 <body>
@@ -41,8 +42,8 @@
       </div>
     </header>
     <main id="content">
-      <div class="row">
-        <aside class="col-md-3">
+      <div class="flex-container container-2col">
+        <aside>
           <nav>
             <ul>
               <li class="active">
@@ -79,7 +80,7 @@
             </div>
           </nav>
         </aside>
-        <div class="col-md-9">
+        <div class="container-content">
           <div class="container-dashboard">
             <section class="container-calendar">
               <div class="txt-month">Septmber 2010</div>
