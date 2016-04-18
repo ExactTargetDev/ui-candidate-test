@@ -58,14 +58,20 @@
      }
 
 
-     // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
+//      Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-       console.log(sourceStr);
-       console.log("direct" + sourceStr.split(","));
-       console.log(_.split(sourceStr[3], ',', [30]));
-       //       console.log(splited);
-     }
-     splitListStrUsingComma("ksjdkdjdk");
+       if (_.isEmpty(sourceStr)) {
+         console.log("nullerstring");
+         return([]);
+       } else {
+         console.log(sourceStr);
+       splited = _.split(sourceStr, ',', [30]);
+       console.log(splited);
+       return splited;
+     }}
+     splitListStrUsingComma("ks,jd,kdjdk");
+     splitListStrUsingComma('');
+
 
      // Write a function that will take any number of arguments and return their sum
      function sum(anArraytoSum) {
@@ -236,6 +242,17 @@ function DataTable() {
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+
+	 function selectAnchor(){
+        console.log("Count the ways that jQuery can find sample anchor...")
+		console.log('1.', jQuery('#fizz a.link').attr('href'));
+		console.log('2.', jQuery('a.link:eq(0)').attr('href'));
+		console.log('3.', jQuery('#fizz > a').filter('.link').attr('href'));
+		console.log('4.', jQuery('.bar .buzz a.link').attr('href'));
+		console.log('5.', jQuery('#fizz a').filter('.link').attr('href'));
+        console.log('6.', jQuery('a:contains("sample")').attr('href'));
+	 }
+  selectAnchor();
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".

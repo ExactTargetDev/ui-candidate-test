@@ -50,6 +50,12 @@ test("Remove fruits from an array", 2, function () {
   equal(removeFruits(['apple', 'pear'], ['pear']), 'apple', "must return apple");
 });
 
+module("stringSplit");
+test("splitList string using delimited by comma", 2 , function(){
+	equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
+	ok( splitListStrUsingComma("The, quick, brown, fox jumped over").length, 4, "splitListStrUsingComma function should return array of 4 values");
+});
+
 module("pushOntoArray");
 test("Push values onto an array", 3, function () {
   equal(typeof pushOntoArray, "function", "Mush contain the pushOntoArray function");
