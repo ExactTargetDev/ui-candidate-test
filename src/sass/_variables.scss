@@ -6,3 +6,15 @@ $navbar-link-color: #92c2d6;
 $navbar-padding-horizontal: 10px;
 $navbar-padding-vertical: 10px;
 $navbar-height: 40px;
+
+$sidenav-header-border-color: #f89a20;
+$sidenav-header-bg: linear-gradient(#fdaf4b, #f89a20);
+$sidenav-header-color: #fff;
+$sidenav-header-icon-color: #555;
+$sidenav-links-border-color: #ddd;
+$sidenav-links-bg: #f4f4f5;
+$sidenav-links-hover-bg: darken($sidenav-links-bg, 5%);
+$sidenav-links-active-bg: darken($sidenav-links-bg, 10%);
+$sidenav-links-color: #555;
+$sidenav-icon-bg: linear-gradient(#afb8bf, #848d96);
+$sidenav-icon-color: #fff;
