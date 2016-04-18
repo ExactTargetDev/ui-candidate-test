@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var webpack = require('webpack-stream');
 var sass = require('gulp-sass');
 
 gulp.task('build-style', function () {
