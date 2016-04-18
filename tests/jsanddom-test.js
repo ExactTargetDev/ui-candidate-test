@@ -119,3 +119,19 @@ test( "pushOntoArray Test", 3, function() {
   deepEqual(pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]), [1, 2, 3, 4, 5, 7, 8, 9], 'Expected [1, 2, 3, 4, 5, 7, 8, 9], the result was: ' + pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]));
 
 });
+
+/********************************
+ Unit Test for splitListStrUsingComma
+ ********************************/
+module( "Split List Str Using Comma Unit Test" );
+test( "splitListStrUsingComma Test", 3, function() {
+  // Verify the method exists
+  equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' );
+
+  // Make sure the the number was pushed to the array
+  deepEqual(splitListStrUsingComma(''), [], 'Expected empty array, the result was: ' + splitListStrUsingComma(''));
+
+  // Make sure the the array was pushed to the array
+  deepEqual(splitListStrUsingComma('The, quick, brown, fox jumped over'), ["The", " quick", " brown", " fox jumped over"], 'Expected "The", " quick", " brown", " fox jumped over", the result was: ' + splitListStrUsingComma('The, quick, brown, fox jumped over'));
+
+});
