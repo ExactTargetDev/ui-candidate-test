@@ -196,3 +196,26 @@ test( "counter Test", 4, function() {
   equal(counter.value(), 1, 'Expected 1, the result was: ' + counter.value());
 
 });
+
+
+/********************************
+ Unit Test for DataTable
+ ********************************/
+module( "Data Table Test" );
+test( "DataTable Test", 4, function() {
+  // Verify the method exists
+  equal( typeof DataTable, 'function', 'Must contain a DataTable function' );
+
+  var table = new DataTable();
+  table.addColumns('column1', 'column2', 'column3');
+  table.addRow('value1A', 'value1B', 'value1C');
+  table.addRow('value2A', 'value2B', 'value2C');
+
+  var tableData = table.getData();
+
+  equal(tableData['column1']['column1-value1A'], 'value1A', 'Expected value1A, the result was: ', tableData['column1']['column1-value1A']);
+
+  equal(tableData['column2']['column2-value2B'], 'value2B', 'Expected value2B, the result was: ', tableData['column2']['column2-value2B']);
+
+  equal(tableData['column3']['column3-value2C'], 'value2C', 'Expected value2C, the result was: ', tableData['column3']['column3-value2C']);
+});

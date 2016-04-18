@@ -177,6 +177,62 @@
      // .addColumns('column1', 'column2', 'column3');
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
+     var DataTable = function () {
+       var columns = [];
+       var rows = [];
+
+       this.addRow = function () {
+         var totalRows = arguments.length;
+         var totalColumns = columns.length;
+         var diff = totalRows < totalColumns ? totalColumns - totalRows : 0;
+
+         for (var i = 0; i < totalRows; i++) {
+           // can't add more row cells then there are columns
+           if (i < totalColumns) {
+             rows.push(arguments[i]);
+           }
+         }
+
+         // if total rows less then total columns, add placeholder values to row values
+         if (diff) {
+           while (diff) {
+             rows.push('blank');
+           }
+         }
+       };
+
+       this.addColumns = function () {
+         for (var i = 0, total = arguments.length; i < total; i++) {
+           columns.push(arguments[i]);
+         }
+       };
+
+       this.getData = function () {
+         var data = {};
+         var numberOfRows = rows.length / columns.length;
+         var arrayOfRows = [];
+         var start = 0;
+         var end = columns.length;
+
+         // break the rows data into separate row sections (i.e. row 1, row 2)
+         for (var i = 0; i < numberOfRows; i++) {
+           arrayOfRows.push(rows.slice(start, end));
+           start = end;
+           end = end + columns.length;
+         }
+         // create the hash map of table data
+         columns.forEach(function (column, cIndex) {
+           data[column] = {};
+
+           arrayOfRows.forEach(function (row) {
+             data[column][column + '-' + row[cIndex]] = row[cIndex];
+           });
+
+         });
+
+         return data;
+       };
+     };
 
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
