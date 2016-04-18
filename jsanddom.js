@@ -270,5 +270,32 @@ createFiveItems();
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+	 function toggleCheck(){
+		var fooBar = jQuery('#foobar');
 
+		fooBar.append(
+			jQuery(	'<div class="control">' +
+						'<a href="#" class="check">Check All</a>' +
+						'<a href="#" class="uncheck">Uncheck All</a>' +
+					'</div>').on('click', '.check, .uncheck', function(e){
+						if(e.target.className == 'check'){
+							fooBar.find('input:checkbox').attr('checked', true);
+						}
+						else if(e.target.className == 'uncheck'){
+							fooBar.find('input:checkbox').attr('checked', false)
+						}
+
+						e.preventDefault();
+					})
+		);
+      _.times(5, function(i){
+			var name = 'item' + i;
+			jQuery(	'<div class="row">' +
+						'<label for="' + name + '">' + name + '</label>' +
+						'<input type="checkbox" id="' + name + '" name="' + name + '" />' +
+					'</div>')
+					.appendTo(fooBar);
+		})
+	 }
+toggleCheck();
 
