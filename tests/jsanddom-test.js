@@ -61,3 +61,16 @@ test( "FizzBuzz",  function() {
 
     
 });
+
+test( "Fruit Array",  function() {
+    // Verify the method exists
+    equal( typeof removeFruits, 'function', 'Must contain a doFizzBuzz function' ); 
+
+    var fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
+    var fruitsToRemove = ['pear', 'banana'];
+
+    deepEqual( removeFruits(fruits, fruitsToRemove), ["apple", "orange", "kiwi", "plum", "strawberry"], 'Expected as the result: apple,orange,kiwi,plum,strawberry, the result was: ' + removeFruits(fruits, fruitsToRemove) );
+    //deepEqual( removeFruits(15), , 'Expected as the result, the result was: ' + removeFruits(15) );
+
+    
+});

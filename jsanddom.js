@@ -41,7 +41,6 @@
             else{whatTheBuzz = i}
             a.push(whatTheBuzz);
             console.log(whatTheBuzz);
-            console.log(a);
         }
         return a;
      };
@@ -53,7 +52,27 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-         // FILL THIS IN
+        // naah. let's do it differently.
+       /* var fruitLength = fruits.length;
+        var fruitsToRemoveLength = fruitsToRemove.length;
+         for (var i = 0; i < fruitLength; i++) {
+             for (var j = 0; j < fruitsToRemoveLength; j++) {
+                 if(fruits[i] == fruitsToRemove[j]){
+                    console.log(fruits[i])
+                 }
+             };
+         }; */
+
+         fruits.forEach(function(fruitElement){
+            fruitsToRemove.forEach(function(fruitRemoveElement){
+                if(fruitElement == fruitRemoveElement){
+                    fruits.splice(fruits.indexOf(fruitElement), 1);
+                }
+            });
+            
+         });
+         return fruits;
+
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
