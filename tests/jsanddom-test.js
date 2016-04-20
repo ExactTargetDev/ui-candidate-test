@@ -64,13 +64,26 @@ test( "FizzBuzz",  function() {
 
 test( "Fruit Array",  function() {
     // Verify the method exists
-    equal( typeof removeFruits, 'function', 'Must contain a doFizzBuzz function' ); 
+    equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' ); 
 
     var fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry'];
     var fruitsToRemove = ['pear', 'banana'];
 
-    deepEqual( removeFruits(fruits, fruitsToRemove), ["apple", "orange", "kiwi", "plum", "strawberry"], 'Expected as the result: apple,orange,kiwi,plum,strawberry, the result was: ' + removeFruits(fruits, fruitsToRemove) );
+    deepEqual( removeFruits(fruits, fruitsToRemove), ["apple", "orange", "kiwi", "plum", "strawberry"], 'Expected as the result: apple,orange,kiwi,plum,strawberry the result was: ' + removeFruits(fruits, fruitsToRemove) );
     //deepEqual( removeFruits(15), , 'Expected as the result, the result was: ' + removeFruits(15) );
 
+    
+});
+
+test( "Push Array",  function() {
+    // Verify the method exists
+    equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' ); 
+
+    // check the function with two arrays
+    deepEqual( pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]), [1, 2, 3, 4, 5, 7, 8, 9], 'Expected as the result: 1,2,3,4,5,7,8,9 the result was: ' + pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]));
+    // check the functions with an integer
+    deepEqual( pushOntoArray([1, 2, 3, 4, 5], 6), [1, 2, 3, 4, 5, 6], 'Expected as the result: 1,2,3,4,5,6 the result was: ' + pushOntoArray([1, 2, 3, 4, 5], 6));
+    // check the function with another type of value, let's say a string!
+    deepEqual( pushOntoArray([1, 2, 3, 4, 5], 'delicioius pie'), [1, 2, 3, 4, 5, 'delicioius pie'], 'Expected as the result: 1,2,3,4,5,delicioius pie the result was: ' + pushOntoArray([1, 2, 3, 4, 5], 'delicioius pie'));
     
 });
