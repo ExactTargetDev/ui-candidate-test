@@ -45,9 +45,9 @@ test( "Distinct Values",  function() {
     equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' ); 
 
     // Make sure the result from the findMinValue function is valid
-    var args = [1, 1, 2, 3, 5, 7];
-    equal( findDistinctValues(args), [2, 3, 5, 7], 'Expected [2, 3, 5, 7] as the result, the result was: ' + findDistinctValues(args) );
-    //equal( findDistinctValues([1, 2, 3, 4, 5]), 1, 'Expected 1 as the result, the result was: ' + findDistinctValues([1, 2, 3, 4, 5]) );
+    var args = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
+    deepEqual( findDistinctValues(args), [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity], 'Expected 3,5,7,20,0.18,1,1.1,12, Infinity as the result, the result was: ' + findDistinctValues(args) );
+    deepEqual( findDistinctValues([1, 1, 2, 3, 4, 5]), [1 ,2, 3, 4, 5], 'Expected 1,2,3,4,5 as the result, the result was: ' + findDistinctValues([1, 1, 2, 3, 4, 5]) );
 
     
 });

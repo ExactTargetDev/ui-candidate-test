@@ -15,17 +15,14 @@
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
-     var arr = [1, 1, 2, 3, 4, 5]
-     function findDistinctValues() {
-              var a = [];
-              var l = this.length;
-        for(var i=0; i<l; i++) {
-          for(var j=i+1; j<l; j++)
-                if (this[i] === this[j]) j = ++i;
-          a.push(this[i]);
-        }
+     function findDistinctValues(arr) {
+        var a = [];
+        var l = arr.length;
+        for (var i=0; i<l; i++)
+            if (a.indexOf(arr[i]) === -1 )
+                a.push(arr[i]);
         return a;
-
+        
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
