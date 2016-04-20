@@ -87,3 +87,15 @@ test( "Push Array",  function() {
     deepEqual( pushOntoArray([1, 2, 3, 4, 5], 'delicioius pie'), [1, 2, 3, 4, 5, 'delicioius pie'], 'Expected as the result: 1,2,3,4,5,delicioius pie the result was: ' + pushOntoArray([1, 2, 3, 4, 5], 'delicioius pie'));
     
 });
+
+test( "Comma Split String",  function() {
+    // Verify the method exists
+    equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' ); 
+
+    // check the functions...function
+    var thisString = "Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.";
+    
+    deepEqual( splitListStrUsingComma(thisString), ["Given a string", " sourceStr", " write some code that will split this string using comma as your delimiter", " and producing an empty array if the string is empty."], splitListStrUsingComma(thisString));
+    deepEqual(splitListStrUsingComma(" "), [], "An empty string converts to an empty array");
+
+});
