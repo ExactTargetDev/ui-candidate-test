@@ -95,7 +95,26 @@ test( "Comma Split String",  function() {
     // check the functions...function
     var thisString = "Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.";
     
-    deepEqual( splitListStrUsingComma(thisString), ["Given a string", " sourceStr", " write some code that will split this string using comma as your delimiter", " and producing an empty array if the string is empty."], splitListStrUsingComma(thisString));
+    deepEqual( splitListStrUsingComma(thisString), ["Given a string", " sourceStr", " write some code that will split this string using comma as your delimiter", " and producing an empty array if the string is empty."]);
     deepEqual(splitListStrUsingComma(" "), [], "An empty string converts to an empty array");
+
+});
+
+test( "Sum from Arguments",  function() {
+    // Verify the method exists
+    equal( typeof sum, 'function', 'Must contain a sum function' ); 
+
+    ok( sum(3, 5), 8);
+    ok( sum(5, 5, 10), 20);
+    equal( sum(3,5,7,20,0), 35, 'expecting result of 35, actual result is '+ sum(3,5,7,20,0) );
+
+});
+
+test( "Whitespace",  function() {
+    // Verify the method exists
+    equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' ); 
+
+    ok( isOnlyWhitespace("   "));
+    equal( isOnlyWhitespace("this is stuff"), false, 'This test is false, but that makes it true. Hmmmm.');
 
 });
