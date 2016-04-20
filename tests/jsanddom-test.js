@@ -44,10 +44,20 @@ test( "Distinct Values",  function() {
     // Verify the method exists
     equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' ); 
 
-    // Make sure the result from the findMinValue function is valid
+    // Make sure the result from the findDistinctValues function is valid
     var args = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12];
     deepEqual( findDistinctValues(args), [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity], 'Expected 3,5,7,20,0.18,1,1.1,12, Infinity as the result, the result was: ' + findDistinctValues(args) );
     deepEqual( findDistinctValues([1, 1, 2, 3, 4, 5]), [1 ,2, 3, 4, 5], 'Expected 1,2,3,4,5 as the result, the result was: ' + findDistinctValues([1, 1, 2, 3, 4, 5]) );
+
+    
+});
+
+test( "FizzBuzz",  function() {
+    // Verify the method exists
+    equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' ); 
+
+    deepEqual( doFizzBuzz(30), [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz", 16, 17, "Fizz", 19, "Buzz", "Fizz", 22, 23, "Fizz", "Buzz", 26, "Fizz", 28, 29, "FizzBuzz"], 'Expected 1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz,16,17,Fizz,19,Buzz,Fizz,22,23,Fizz,Buzz,26,Fizz,28,29,FizzBuzz as the result, the result was: ' + doFizzBuzz(30) );
+    deepEqual( doFizzBuzz(15), [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"], 'Expected 1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz as the result, the result was: ' + doFizzBuzz(15) );
 
     
 });
