@@ -145,7 +145,7 @@ body {
 }
 
 .marketHubText{
-	padding:1rem;
+	padding:.5rem;
 }
 
 .marketHubText:first-child{
@@ -155,6 +155,7 @@ body {
 	border-left:1px solid #f8981d;
 	border-right:1px solid #f8981d;
 	box-shadow:0px 1px 1px #e6e6e6;
+	padding:1rem;
 }
 
 .bottomText {
@@ -182,14 +183,19 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bbc8d2', endColorstr='#bbc8d2', GradientType=0 );
 	margin-top: 20px;
     border-radius: 5px;
+    height:300px;
 }
 
 .sliderContent {
 	width:200px;
 	height:100px;
 	background-color:blue;
-	margin:2rem;
+	margin:4rem 2rem 2rem 2rem;
 	border-radius:6px;
+}
+
+.slick-list {
+	top: 5rem;
 }
 
 
