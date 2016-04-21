@@ -25,6 +25,11 @@ time, mark, audio, video {
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 20px;
+
+}
+
+a{
+	color:#888888;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -144,8 +149,17 @@ body {
 	padding:0;
 }
 
-.marketHubText{
+.marketHubText a{
+	display: block;
 	padding:.5rem;
+	color:#888888;
+}
+
+.marketHubText a:hover{
+	display: block;
+	font-size:1.1rem;
+	background-color:#888888;
+	color:white;
 }
 
 .marketHubText:first-child{
@@ -155,7 +169,7 @@ body {
 	border-left:1px solid #f8981d;
 	border-right:1px solid #f8981d;
 	box-shadow:0px 1px 1px #e6e6e6;
-	padding:1rem;
+	padding: 1rem 1rem 1rem .5rem;
 }
 
 .bottomText {
