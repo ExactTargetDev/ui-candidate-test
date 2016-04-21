@@ -31,6 +31,10 @@ time, mark, audio, video {
 a{
 	color:#888888;
 }
+
+h1{
+	color:#888888;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {

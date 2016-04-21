@@ -24,8 +24,8 @@ $(document).ready(function(){
 	$("#helpData").click(function(){
 		$.getJSON( "data/help.json", function( data ) {
 		  var items = [];
-		  $.each( data, function( key, val ) {
-		    items.push( "<li id='" + key + "'>" + val + "</li>" );
+		  $.each( data.help, function() {
+		    items.push( "<li><a href=" + this.URL + "><h1>" + this.title + "</h1></a></li>");
 		  });
 		 
 		  $( "<ul/>", {
@@ -35,5 +35,10 @@ $(document).ready(function(){
 		});
 		$('#myModal').modal();
 	});
+
+	 $('#myModal').on('hidden.bs.modal', function(e)
+    { 
+        $(".modal-body").empty();
+    }) ;
 
 });

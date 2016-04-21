@@ -138,8 +138,10 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-    /* var info = {
-        "persons1" : { 
+
+/*  a json object defined SS   
+{ "people " : [
+        {"persons1" : { 
             "first name" : "Sam",
             "last name" : "Smith",
             "city": "Austin",
@@ -151,8 +153,8 @@
                 "mobile" : "123-456-789"
             }
 
-        }
-       "persons2" : { 
+        },
+       {"persons2" : { 
             "first name" : "Alison",
             "last name" : "Kippee",
             "city": "Indianapolis",
@@ -165,7 +167,8 @@
             }
 
         }
-    } */
+    ]
+}*/
 
 
 
