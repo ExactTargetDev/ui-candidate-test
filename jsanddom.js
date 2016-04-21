@@ -116,6 +116,20 @@
 
      // write an example of a javascript closure
 
+     /*
+     let's come back to this one
+     function pushOntoArrayWithClosure(array, toPush) {
+
+        return function lockThemArrays(){
+
+         Array.isArray(toPush) ? toPush.forEach(function(element){ array.push(element) }) :  array.push(toPush);
+
+        };
+
+         
+         //return array;
+     }*/
+
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -124,6 +138,35 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
+     var info = {
+        'persons1' : { 
+            'first name' : 'Sam',
+            'last name' : 'Smith',
+            'city”': 'Austin',
+            'state' : 'Texas',
+            'zip' : '12345',
+            'phone numbers' : {
+                'home' : '123-456-789',
+                'work' : '123-456-789',
+                'mobile' : '123-456-789',
+            }
+
+        }
+        'persons2' : { 
+            'first name' : 'Alison',
+            'last name' : 'Kippee',
+            'city”': 'Indianapolis',
+            'state' : 'Indiana',
+            'zip' : '23456',
+            'phone numbers' : {
+                'home' : '123-456-789',
+                'work' : '123-456-789',
+                'mobile' : '123-456-789',
+            }
+
+        }
+    }
+
 
 
      // Create a javascript object (DataTable) with the following:

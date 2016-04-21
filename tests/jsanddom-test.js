@@ -118,3 +118,20 @@ test( "Whitespace",  function() {
     equal( isOnlyWhitespace("this is stuff"), false, 'This test is false, but that makes it true. Hmmmm.');
 
 });
+
+/* we'll come back to this one
+test( "Closure Example",  function() {
+    // Verify the method exists
+    equal( typeof pushOntoArrayWithClosure, 'function', 'Must contain a pushOntoArrayWithClosure function' ); 
+
+    var mainArray = pushOntoArrayWithClosure();
+    var pushArray = pushOntoArrayWithClosure
+
+    // check the function with two arrays
+    deepEqual( pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]), [1, 2, 3, 4, 5, 7, 8, 9], 'Expected as the result: 1,2,3,4,5,7,8,9 the result was: ' + pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]));
+    // check the functions with an integer
+    deepEqual( pushOntoArray([1, 2, 3, 4, 5], 6), [1, 2, 3, 4, 5, 6], 'Expected as the result: 1,2,3,4,5,6 the result was: ' + pushOntoArray([1, 2, 3, 4, 5], 6));
+    // check the function with another type of value, let's say a string!
+    deepEqual( pushOntoArray([1, 2, 3, 4, 5], 'delicioius pie'), [1, 2, 3, 4, 5, 'delicioius pie'], 'Expected as the result: 1,2,3,4,5,delicioius pie the result was: ' + pushOntoArray([1, 2, 3, 4, 5], 'delicioius pie'));
+    
+});*/
