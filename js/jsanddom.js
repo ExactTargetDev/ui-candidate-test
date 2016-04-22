@@ -43,7 +43,7 @@
             console.log(whatTheBuzz);
         }
         return a;
-     };
+     }
 
      doFizzBuzz(100);
 
@@ -52,16 +52,6 @@
      // For the purpose of the exercise, we will call the master array fruits and the second array fruitsToRemove.
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
-        // naah. let's do it differently.
-       /* var fruitLength = fruits.length;
-        var fruitsToRemoveLength = fruitsToRemove.length;
-         for (var i = 0; i < fruitLength; i++) {
-             for (var j = 0; j < fruitsToRemoveLength; j++) {
-                 if(fruits[i] == fruitsToRemove[j]){
-                    console.log(fruits[i])
-                 }
-             };
-         }; */
 
          fruits.forEach(function(fruitElement){
             fruitsToRemove.forEach(function(fruitRemoveElement){
@@ -116,8 +106,8 @@
 
      // write an example of a javascript closure
 
-     /*
-     let's come back to this one
+     
+     //let's come back to this one
      function pushOntoArrayWithClosure(array, toPush) {
 
         return function lockThemArrays(){
@@ -126,52 +116,7 @@
 
         };
 
-         
-         //return array;
-     }*/
-
-     // define a json object that represents a collection of people.
-     // each person should have the following properties
-     // - first name
-     // - last name
-     // - city
-     // - state
-     // - zip
-     // - a collection of phone numbers (home, work, mobile)
-
-/*  a json object defined SS   
-{ "people " : [
-        {"persons1" : { 
-            "first name" : "Sam",
-            "last name" : "Smith",
-            "city": "Austin",
-            "state" : "Texas",
-            "zip" : "12345",
-            "phone numbers" : {
-                "home" : "123-456-789",
-                "work" : "123-456-789",
-                "mobile" : "123-456-789"
-            }
-
-        },
-       {"persons2" : { 
-            "first name" : "Alison",
-            "last name" : "Kippee",
-            "city": "Indianapolis",
-            "state" : "Indiana",
-            "zip" : "45678",
-            "phone numbers" : {
-                "home" : "456-789-1011",
-                "work" : "456-789-1011",
-                "mobile" : "456-789-1011"
-            }
-
-        }
-    ]
-}*/
-
-
-
+     }
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
      // A private rows property (string array)
@@ -184,23 +129,76 @@
      // .addRow('value1A', 'value1B', 'value1C');
      // .addRow('value2A', 'value2B', 'value2C');
 
-     // within div1, programatically create a
-     // SELECT element (with multiple items) and a button.
-     // when the button is clicked write out the name and value of the selected item to the console.
-     
+   
      $(document).ready(function(){
-        
-        var text = "<select><option value='harley'>Harley</option><option value='suzuki'>Suzuki</option><option value='bmw'>BMW</option><option value='ducati'>Ducati</option></select><button id='logButton'>Log Selection!</button>" ;
-     $("#div1").append(text);
-     $("#logButton").click(function(){
-         console.log($("#div1 select").val());
-         console.log($("#div1 select option:selected").html());
-     })
 
- });
+        // within div1, programatically create a
+        // SELECT element (with multiple items) and a button.
+        // when the button is clicked write out the name and value of the selected item to the console.
 
-     // Write 5 different jQuery selectors to retrieve the
-     // sample anchor in the markup below.
+        var a = 1;
+        var text = "<select>";
+        text += "<option value='harley'>Harley</option>";
+        text += "<option value='suzuki'>Suzuki</option>";
+        text += "<option value='bmw'>BMW</option>";
+        text += "<option value='ducati'>Ducati</option>";
+        text += "</select><button id='logButton'>Log Selection!</button>";
+        $("#div1").append(text);
+        $("#logButton").click(function(){
+            console.log($("#div1 select").val() + " " + $("#div1 select option:selected").html());
+        })
+
+        // Write 5 different jQuery selectors to retrieve the
+        // sample anchor in the markup below.
+
+        $(".link")
+        $("[href='#]")
+        $("a.link")
+        $("a:first")
+        $("#fizz > a")
+
+        // define a json object that represents a collection of people.
+         // each person should have the following properties
+         // - first name
+         // - last name
+         // - city
+         // - state
+         // - zip
+         // - a collection of phone numbers (home, work, mobile)
+
+         /*{ "people " : [
+                {"persons1" : { 
+                    "first name" : "Sam",
+                    "last name" : "Smith",
+                    "city": "Austin",
+                    "state" : "Texas",
+                    "zip" : "12345",
+                    "phone numbers" : {
+                        "home" : "123-456-789",
+                        "work" : "123-456-789",
+                        "mobile" : "123-456-789"
+                    }
+                },
+               {"persons2" : { 
+                    "first name" : "Alison",
+                    "last name" : "Kippee",
+                    "city": "Indianapolis",
+                    "state" : "Indiana",
+                    "zip" : "45678",
+                    "phone numbers" : {
+                        "home" : "456-789-1011",
+                        "work" : "456-789-1011",
+                        "mobile" : "456-789-1011"
+                    }
+                }
+            ]
+        }*/
+
+     });
+     
+
+
+     
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
