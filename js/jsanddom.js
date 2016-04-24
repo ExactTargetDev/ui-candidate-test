@@ -117,17 +117,7 @@
         };
 
      }
-     // Create a javascript object (DataTable) with the following:
-     // A private columns property (string array)
-     // A private rows property (string array)
-     // A public method addRows that adds an item to the rows array
-     // A public method addColumns that adds an item to the columns array
-     // A public method getData that returns the a json object representation of the DataTable
-     // Note: the row object should be a hash of the column name and row item value
-     // Example:
-     // .addColumns('column1', 'column2', 'column3');
-     // .addRow('value1A', 'value1B', 'value1C');
-     // .addRow('value2A', 'value2B', 'value2C');
+     
 
    
      $(document).ready(function(){
@@ -157,7 +147,7 @@
         $("a:first")
         $("#fizz > a")
 
-        // define a json object that represents a collection of people.
+         // define a json object that represents a collection of people.
          // each person should have the following properties
          // - first name
          // - last name
@@ -194,16 +184,97 @@
             ]
         }*/
 
-     });
+         // Create a javascript object (DataTable) with the following:
+         // A private columns property (string array)
+         // A private rows property (string array)
+         // A public method addRows that adds an item to the rows array
+         // A public method addColumns that adds an item to the columns array
+         // A public method getData that returns the a json object representation of the DataTable
+         // Note: the row object should be a hash of the column name and row item value
+         // Example:
+         // .addColumns('column1', 'column2', 'column3');
+         // .addRow('value1A', 'value1B', 'value1C');
+         // .addRow('value2A', 'value2B', 'value2C');
+
+         // Programatically create an array with 5 items.  Create a list item for each item in the array
+        // and add the list items to the unordered list with an id of "list1".
+
+        //Let's do this one in straight javascript
+        function addItemstoList(){
+
+            var listOne = document.querySelector("#list1")
+            var node;
+            var textnode;
+            var i;
+            for ( i = 0; i < arguments.length; i++) {
+                node = document.createElement("li");
+                textnode = document.createTextNode(arguments[i]);
+                if(textnode && listOne){
+                node.appendChild(textnode);
+                listOne.appendChild(node);
+                }
+            }
+        }
+
+        addItemstoList("dog", "cat", "mouse", 1, 3);
+
+        // Use javascript to add a list of checkboxes and 2 links
+         // to the div with an id of "foobar"
+         // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
+         // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+// writing this one as a self-evoking function in pure javascript. I'll pas one arguments that is the number of checkboxes to be created. 
+// then created a closure function that access the checkboxes array for the check/uncheck feature. Then call the closure function after the checkboxes are created.
+         (function clickAndLink(listNumber){
+            var fooDiv = document.querySelector("#foobar");
+            var fooList = document.createElement("ul");
+            var node;
+            var checkers = [];
+            var check1;
+            var check2;
+
+            function checkAndUncheck(){
+                check1 = document.createElement("a");
+                check2 = document.createElement("a");
+                check1.href = "#"
+                check2.href = "#"
+                check1.innerHTML = "Check all boxes ";
+                check2.innerHTML = "Uncheck all boxes";
+                fooDiv.appendChild(check1);
+                fooDiv.appendChild(check2);
+                check1.addEventListener("click", function(){
+                    checkers.forEach(function(value, index){
+                        checkers[index].checked = true;
+                    })
+                })
+                check2.addEventListener("click", function(){
+                    checkers.forEach(function(value, index){
+                        checkers[index].checked = false;
+                    })
+
+                })
+            }
+
+            for (var i = 0; i < listNumber; i++) {
+                    node = document.createElement("li");
+                    checkers[i] = document.createElement("input");
+                    checkers[i].type = "checkbox";
+                    node.appendChild(checkers[i])
+                    fooList.appendChild(node);
+            };
+
+            fooDiv.appendChild(fooList);
+
+            checkAndUncheck();
+
+         })(3);
+
+});
      
 
 
      
 
-     // Programatically create an array with 5 items.  Create a list item for each item in the array
-     // and add the list items to the unordered list with an id of "list1".
+     
 
-     // Use javascript to add a list of checkboxes and 2 links
-     // to the div with an id of "foobar"
-     // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
-     // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+     
