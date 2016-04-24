@@ -156,12 +156,11 @@
          // - zip
          // - a collection of phone numbers (home, work, mobile)
 
-          var peopleColl = {
-            "people" : {
-                "person1" : 
+          var peopleColl = {"people" : 
+                [ 
                     { 
-                        "first name" : "Sam",
-                        "last name" : "Smith",
+                        "first_name" : "Sam",
+                        "last_name" : "Smith",
                         "city": "Austin",
                         "state" : "Texas",
                         "zip" : "12345",
@@ -170,13 +169,11 @@
                             "work" : "123-456-789",
                             "mobile" : "123-456-789"
                         }
-                    }
-                },
-               
-                "person2" : 
+                    },
+                 
                     { 
-                        "first name" : "Alison",
-                        "last name" : "Kippee",
+                        "first_name" : "Alison",
+                        "last_name" : "Kippee",
                         "city": "Indianapolis",
                         "state" : "Indiana",
                         "zip" : "45678",
@@ -186,9 +183,10 @@
                             "mobile" : "456-789-1011"
                         }
                     }
-                }
+                ]
+            }
             
-                console.log(peopleColl.people.person1.phone_numbers)
+                console.log(peopleColl.people[1].phone_numbers.home);
         
 
          // Create a javascript object (DataTable) with the following:
