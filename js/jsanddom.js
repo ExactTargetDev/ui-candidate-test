@@ -262,10 +262,12 @@
                     node.appendChild(checkers[i])
                     fooList.appendChild(node);
             };
+            if(fooDiv){
+                fooDiv.appendChild(fooList);
+                checkAndUncheck();
+            }
 
-            fooDiv.appendChild(fooList);
-
-            checkAndUncheck();
+            
 
          })(3);
 
