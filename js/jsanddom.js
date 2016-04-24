@@ -156,33 +156,40 @@
          // - zip
          // - a collection of phone numbers (home, work, mobile)
 
-         /*{ "people " : [
-                {"persons1" : { 
-                    "first name" : "Sam",
-                    "last name" : "Smith",
-                    "city": "Austin",
-                    "state" : "Texas",
-                    "zip" : "12345",
-                    "phone numbers" : {
-                        "home" : "123-456-789",
-                        "work" : "123-456-789",
-                        "mobile" : "123-456-789"
+          var peopleColl = {
+            "people" : {
+                "person1" : 
+                    { 
+                        "first name" : "Sam",
+                        "last name" : "Smith",
+                        "city": "Austin",
+                        "state" : "Texas",
+                        "zip" : "12345",
+                        "phone_numbers" : {
+                            "home" : "123-456-789",
+                            "work" : "123-456-789",
+                            "mobile" : "123-456-789"
+                        }
                     }
                 },
-               {"persons2" : { 
-                    "first name" : "Alison",
-                    "last name" : "Kippee",
-                    "city": "Indianapolis",
-                    "state" : "Indiana",
-                    "zip" : "45678",
-                    "phone numbers" : {
-                        "home" : "456-789-1011",
-                        "work" : "456-789-1011",
-                        "mobile" : "456-789-1011"
+               
+                "person2" : 
+                    { 
+                        "first name" : "Alison",
+                        "last name" : "Kippee",
+                        "city": "Indianapolis",
+                        "state" : "Indiana",
+                        "zip" : "45678",
+                        "phone_numbers" : {
+                            "home" : "456-789-1011",
+                            "work" : "456-789-1011",
+                            "mobile" : "456-789-1011"
+                        }
                     }
                 }
-            ]
-        }*/
+            
+                console.log(peopleColl.people.person1.phone_numbers)
+        
 
          // Create a javascript object (DataTable) with the following:
          // A private columns property (string array)
@@ -269,7 +276,7 @@
 
             
 
-         })(3);
+         })(7);
 
 });
      
