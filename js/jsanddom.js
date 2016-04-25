@@ -110,79 +110,85 @@
         return firstName + " " + lastName;
       };
     }
-     
 
-   
-     $(document).ready(function(){
+    // Programatically create an array with 5 items.  Create a list item for each item in the array
+        // and add the list items to the unordered list with an id of "list1".
 
-        // within div1, programatically create a
-        // SELECT element (with multiple items) and a button.
-        // when the button is clicked write out the name and value of the selected item to the console.
+        //Let's do this one in straight javascript
+        function addItemstoList(){
 
-        var a = 1;
-        var text = "<select>";
-        text += "<option value='harley'>Harley</option>";
-        text += "<option value='suzuki'>Suzuki</option>";
-        text += "<option value='bmw'>BMW</option>";
-        text += "<option value='ducati'>Ducati</option>";
-        text += "</select><button id='logButton'>Log Selection!</button>";
-        $("#div1").append(text);
-        $("#logButton").click(function(){
-            console.log($("#div1 select").val() + " " + $("#div1 select option:selected").html());
-        })
-
-        // Write 5 different jQuery selectors to retrieve the
-        // sample anchor in the markup below.
-        
-            $(".link")
-            $("[href='#]")
-            $("a.link")
-            $("a:first")
-            $("#fizz > a")
-        
-         // define a json object that represents a collection of people.
-         // each person should have the following properties
-         // - first name
-         // - last name
-         // - city
-         // - state
-         // - zip
-         // - a collection of phone numbers (home, work, mobile)
-
-          var peopleColl = {"people" : 
-                [ 
-                    { 
-                        "first_name" : "Sam",
-                        "last_name" : "Smith",
-                        "city": "Austin",
-                        "state" : "Texas",
-                        "zip" : "12345",
-                        "phone_numbers" : {
-                            "home" : "123-456-789",
-                            "work" : "123-456-789",
-                            "mobile" : "123-456-789"
-                        }
-                    },
-                 
-                    { 
-                        "first_name" : "Alison",
-                        "last_name" : "Kippee",
-                        "city": "Indianapolis",
-                        "state" : "Indiana",
-                        "zip" : "45678",
-                        "phone_numbers" : {
-                            "home" : "456-789-1011",
-                            "work" : "456-789-1011",
-                            "mobile" : "456-789-1011"
-                        }
-                    }
-                ]
+            var listOne = document.querySelector("#list1")
+            var node;
+            var textnode;
+            var i;
+            for ( i = 0; i < arguments.length; i++) {
+                node = document.createElement("li");
+                textnode = document.createTextNode(arguments[i]);
+                if(textnode && listOne){
+                node.appendChild(textnode);
+                listOne.appendChild(node);
+                }
             }
-            
-            console.log(peopleColl.people[1].phone_numbers.home);
-        
+        }
 
-         // Create a javascript object (DataTable) with the following:
+        addItemstoList("dog", "cat", "mouse", 1, 3);
+
+    // Use javascript to add a list of checkboxes and 2 links
+         // to the div with an id of "foobar"
+         // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
+         // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
+
+//I'll pas one arguments that is the number of checkboxes to be created. 
+// then created a closure function that access the checkboxes array for the check/uncheck feature. Then call the closure function after the checkboxes are created.
+         function clickAndLink(listNumber){
+            var fooDiv = document.querySelector("#foobar");
+            var fooList = document.createElement("ul");
+            var node;
+            var checkers = [];
+            var check1;
+            var check2;
+
+            function checkAndUncheck(){
+                check1 = document.createElement("a");
+                check2 = document.createElement("a");
+                check1.href = "#"
+                check2.href = "#"
+                check1.innerHTML = "Check all boxes ";
+                check2.innerHTML = "Uncheck all boxes";
+                fooDiv.appendChild(check1);
+                fooDiv.appendChild(check2);
+                check1.addEventListener("click", function(){
+                    checkers.forEach(function(value, index){
+                        checkers[index].checked = true;
+                    })
+                })
+                check2.addEventListener("click", function(){
+                    checkers.forEach(function(value, index){
+                        checkers[index].checked = false;
+                    })
+
+                })
+            }
+
+            for (var i = 0; i < listNumber; i++) {
+                    node = document.createElement("li");
+                    checkers[i] = document.createElement("input");
+                    checkers[i].type = "checkbox";
+                    node.appendChild(checkers[i])
+                    fooList.appendChild(node);
+            };
+            if(fooDiv){
+                fooDiv.appendChild(fooList);
+                checkAndUncheck();
+            }
+
+            
+
+         };
+
+         clickAndLink(7);
+
+     // Create a javascript object (DataTable) with the following:
          // A private columns property (string array)
          // A private rows property (string array)
          // A public method addRows that adds an item to the rows array
@@ -243,93 +249,78 @@
 
         }
 
-         var x = new createTable();
-         x.addColumns('column1', 'column2', 'column3');
-         x.addRow('value1A', 'value2A', 'value3A');
-         x.addRow('value2A', 'value2B', 'value2C');
-         x.getData();
+        var x = new createTable();
+        x.addColumns('column1', 'column2', 'column3');
+        x.addRow('value1A', 'value2A', 'value3A');
+        x.addRow('value2A', 'value2B', 'value2C');
+        x.getData();
 
-         // Programatically create an array with 5 items.  Create a list item for each item in the array
-        // and add the list items to the unordered list with an id of "list1".
+        // define a json object that represents a collection of people.
+         // each person should have the following properties
+         // - first name
+         // - last name
+         // - city
+         // - state
+         // - zip
+         // - a collection of phone numbers (home, work, mobile)
 
-        //Let's do this one in straight javascript
-        function addItemstoList(){
-
-            var listOne = document.querySelector("#list1")
-            var node;
-            var textnode;
-            var i;
-            for ( i = 0; i < arguments.length; i++) {
-                node = document.createElement("li");
-                textnode = document.createTextNode(arguments[i]);
-                if(textnode && listOne){
-                node.appendChild(textnode);
-                listOne.appendChild(node);
-                }
-            }
-        }
-
-        addItemstoList("dog", "cat", "mouse", 1, 3);
-
-        // Use javascript to add a list of checkboxes and 2 links
-         // to the div with an id of "foobar"
-         // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
-         // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
-
-// writing this one as a self-evoking function in pure javascript. I'll pas one arguments that is the number of checkboxes to be created. 
-// then created a closure function that access the checkboxes array for the check/uncheck feature. Then call the closure function after the checkboxes are created.
-         (function clickAndLink(listNumber){
-            var fooDiv = document.querySelector("#foobar");
-            var fooList = document.createElement("ul");
-            var node;
-            var checkers = [];
-            var check1;
-            var check2;
-
-            function checkAndUncheck(){
-                check1 = document.createElement("a");
-                check2 = document.createElement("a");
-                check1.href = "#"
-                check2.href = "#"
-                check1.innerHTML = "Check all boxes ";
-                check2.innerHTML = "Uncheck all boxes";
-                fooDiv.appendChild(check1);
-                fooDiv.appendChild(check2);
-                check1.addEventListener("click", function(){
-                    checkers.forEach(function(value, index){
-                        checkers[index].checked = true;
-                    })
-                })
-                check2.addEventListener("click", function(){
-                    checkers.forEach(function(value, index){
-                        checkers[index].checked = false;
-                    })
-
-                })
+          var peopleColl = {"people" : 
+                [ 
+                    { 
+                        "first_name" : "Sam",
+                        "last_name" : "Smith",
+                        "city": "Austin",
+                        "state" : "Texas",
+                        "zip" : "12345",
+                        "phone_numbers" : {
+                            "home" : "123-456-789",
+                            "work" : "123-456-789",
+                            "mobile" : "123-456-789"
+                        }
+                    },
+                 
+                    { 
+                        "first_name" : "Alison",
+                        "last_name" : "Kippee",
+                        "city": "Indianapolis",
+                        "state" : "Indiana",
+                        "zip" : "45678",
+                        "phone_numbers" : {
+                            "home" : "456-789-1011",
+                            "work" : "456-789-1011",
+                            "mobile" : "456-789-1011"
+                        }
+                    }
+                ]
             }
 
-            for (var i = 0; i < listNumber; i++) {
-                    node = document.createElement("li");
-                    checkers[i] = document.createElement("input");
-                    checkers[i].type = "checkbox";
-                    node.appendChild(checkers[i])
-                    fooList.appendChild(node);
-            };
-            if(fooDiv){
-                fooDiv.appendChild(fooList);
-                checkAndUncheck();
-            }
+         
 
-            
-
-         })(7);
-
-});
+         // Write 5 different jQuery selectors to retrieve the
+        // sample anchor in the markup below.
+        
+        $(".link")
+        $("[href='#]")
+        $("a.link")
+        $("a:first")
+        $("#fizz > a")
      
+      // within div1, programatically create a
+        // SELECT element (with multiple items) and a button.
+        // when the button is clicked write out the name and value of the selected item to the console.
 
+        var a = 1;
+        var text = "<select>";
+        text += "<option value='harley'>Harley</option>";
+        text += "<option value='suzuki'>Suzuki</option>";
+        text += "<option value='bmw'>BMW</option>";
+        text += "<option value='ducati'>Ducati</option>";
+        text += "</select><button id='logButton'>Log Selection!</button>";
+        $("#div1").append(text);
+        $("#logButton").click(function(){
+            console.log($("#div1 select").val() + " " + $("#div1 select option:selected").html());
+        })
 
-     
-
-     
-
-     
+        console.log(peopleColl.people[1].phone_numbers.home);
+   
+    

@@ -128,10 +128,19 @@ test( "Closure Example", 2,  function() {
     
 });
 
-test( "List Array 5",  function() {
+test( "List Array 5", 2,  function() {
     // Verify the method exists
-    equal( typeof addItemstoList, 'function', 'Must contain a addItemstoList function' ); 
+    equal( typeof addItemstoList, 'function', 'Must contain an addItemstoList function' );
+    var bazText = $("#baz").html().trim();
+    equal(bazText, "<ul id=\"list1\"><li>dog</li><li>cat</li><li>mouse</li><li>1</li><li>3</li></ul>", "expecting an unordered list, actual result is ul" );
 
-    addItemstoList("dog", "cat", "mouse", 1, 3);
+});
+
+test( "Click and Link", 2,  function() {
+    // Verify the method exists
+    equal( typeof clickAndLink, 'function', 'Must contain an clickAndLink function' );
+    var fooBarText = $("#foobar").html().trim();
+    console.log(fooBarText)
+    equal(fooBarText , "<ul><li><input type=\"checkbox\"></li><li><input type=\"checkbox\"></li><li><input type=\"checkbox\"></li><li><input type=\"checkbox\"></li><li><input type=\"checkbox\"></li><li><input type=\"checkbox\"></li><li><input type=\"checkbox\"></li></ul><a href=\"#\">Check all boxes </a><a href=\"#\">Uncheck all boxes</a>");
 
 });
