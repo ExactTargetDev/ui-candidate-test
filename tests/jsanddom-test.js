@@ -13,7 +13,7 @@ test( "Example Test", 2, function() {
 Please create your tests below...
 ********************************/
 module( "Sam's Function Tests" );
-test( "String reverse",  function() {
+test( "String reverse", 3,  function() {
     // Verify the method exists
     equal( typeof reverseString, 'function', 'Must contain a reverseString function' ); 
 
@@ -27,7 +27,7 @@ test( "String reverse",  function() {
     equal(reverseString('aabbcc'), 'ccbbaa', 'Expected ccbbaa as the result, the result was: ' + reverseString('aabbcc'));
 });
 
-test( "Smallest Value",  function() {
+test( "Smallest Value", 3,  function() {
     // Verify the method exists
     equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' ); 
 
@@ -40,7 +40,7 @@ test( "Smallest Value",  function() {
     
 });
 
-test( "Distinct Values",  function() {
+test( "Distinct Values", 3, function() {
     // Verify the method exists
     equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' ); 
 
@@ -52,7 +52,7 @@ test( "Distinct Values",  function() {
     
 });
 
-test( "FizzBuzz",  function() {
+test( "FizzBuzz", 3,  function() {
     // Verify the method exists
     equal( typeof doFizzBuzz, 'function', 'Must contain a doFizzBuzz function' ); 
 
@@ -62,7 +62,7 @@ test( "FizzBuzz",  function() {
     
 });
 
-test( "Fruit Array",  function() {
+test( "Fruit Array", 2,  function() {
     // Verify the method exists
     equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' ); 
 
@@ -75,7 +75,7 @@ test( "Fruit Array",  function() {
     
 });
 
-test( "Push Array",  function() {
+test( "Push Array", 4,  function() {
     // Verify the method exists
     equal( typeof pushOntoArray, 'function', 'Must contain a pushOntoArray function' ); 
 
@@ -88,7 +88,7 @@ test( "Push Array",  function() {
     
 });
 
-test( "Comma Split String",  function() {
+test( "Comma Split String", 3,  function() {
     // Verify the method exists
     equal( typeof splitListStrUsingComma, 'function', 'Must contain a splitListStrUsingComma function' ); 
 
@@ -100,7 +100,7 @@ test( "Comma Split String",  function() {
 
 });
 
-test( "Sum from Arguments",  function() {
+test( "Sum from Arguments", 4,  function() {
     // Verify the method exists
     equal( typeof sum, 'function', 'Must contain a sum function' ); 
 
@@ -110,7 +110,7 @@ test( "Sum from Arguments",  function() {
 
 });
 
-test( "Whitespace",  function() {
+test( "Whitespace", 3,  function() {
     // Verify the method exists
     equal( typeof isOnlyWhitespace, 'function', 'Must contain a isOnlyWhitespace function' ); 
 
@@ -119,19 +119,19 @@ test( "Whitespace",  function() {
 
 });
 
-/* we'll come back to this one
-test( "Closure Example",  function() {
+test( "Closure Example", 2,  function() {
     // Verify the method exists
-    equal( typeof pushOntoArrayWithClosure, 'function', 'Must contain a pushOntoArrayWithClosure function' ); 
+    equal( typeof helloName, 'function', 'Must contain a helloName function' ); 
+    var sam = helloName("Sam");
 
-    var mainArray = pushOntoArrayWithClosure();
-    var pushArray = pushOntoArrayWithClosure
-
-    // check the function with two arrays
-    deepEqual( pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]), [1, 2, 3, 4, 5, 7, 8, 9], 'Expected as the result: 1,2,3,4,5,7,8,9 the result was: ' + pushOntoArray([1, 2, 3, 4, 5], [7, 8, 9]));
-    // check the functions with an integer
-    deepEqual( pushOntoArray([1, 2, 3, 4, 5], 6), [1, 2, 3, 4, 5, 6], 'Expected as the result: 1,2,3,4,5,6 the result was: ' + pushOntoArray([1, 2, 3, 4, 5], 6));
-    // check the function with another type of value, let's say a string!
-    deepEqual( pushOntoArray([1, 2, 3, 4, 5], 'delicioius pie'), [1, 2, 3, 4, 5, 'delicioius pie'], 'Expected as the result: 1,2,3,4,5,delicioius pie the result was: ' + pushOntoArray([1, 2, 3, 4, 5], 'delicioius pie'));
+    equal( sam("Sneddon"), "Sam Sneddon", 'expecting result of Sam Sneddon, actual result is ' + sam("Sneddon") );
     
-});*/
+});
+
+test( "List Array 5",  function() {
+    // Verify the method exists
+    equal( typeof addItemstoList, 'function', 'Must contain a addItemstoList function' ); 
+
+    addItemstoList("dog", "cat", "mouse", 1, 3);
+
+});

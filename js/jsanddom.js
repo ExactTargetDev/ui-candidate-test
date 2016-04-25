@@ -105,18 +105,11 @@
      }
 
      // write an example of a javascript closure
-
-     
-     //let's come back to this one
-     function pushOntoArrayWithClosure(array, toPush) {
-
-        return function lockThemArrays(){
-
-         Array.isArray(toPush) ? toPush.forEach(function(element){ array.push(element) }) :  array.push(toPush);
-
-        };
-
-     }
+    function helloName(firstName) {
+      return function(lastName) {
+        return firstName + " " + lastName;
+      };
+    }
      
 
    
@@ -140,13 +133,13 @@
 
         // Write 5 different jQuery selectors to retrieve the
         // sample anchor in the markup below.
-
-        $(".link")
-        $("[href='#]")
-        $("a.link")
-        $("a:first")
-        $("#fizz > a")
-
+        
+            $(".link")
+            $("[href='#]")
+            $("a.link")
+            $("a:first")
+            $("#fizz > a")
+        
          // define a json object that represents a collection of people.
          // each person should have the following properties
          // - first name
@@ -186,7 +179,7 @@
                 ]
             }
             
-                console.log(peopleColl.people[1].phone_numbers.home);
+            console.log(peopleColl.people[1].phone_numbers.home);
         
 
          // Create a javascript object (DataTable) with the following:
@@ -200,6 +193,61 @@
          // .addColumns('column1', 'column2', 'column3');
          // .addRow('value1A', 'value1B', 'value1C');
          // .addRow('value2A', 'value2B', 'value2C');
+
+         function createTable(){
+            var columns = [];
+            var rows = [];
+
+            //'this' refers to the global object
+            this.addRow  = function(){
+                var rowArgs = [];
+                var columnCount = columns.length;
+                var i;
+                if(arguments.length > 0){
+                    for (i = 0; i < arguments.length; i++) {
+                        rowArgs.push(arguments[i]);
+                    };
+                }
+               
+                if(rowArgs.length <= columns.length){
+                    rows.push(rowArgs)
+                }
+
+            }
+
+            this.addColumns = function(){
+                var colArgs = [];
+                var j;
+                if(arguments.length > 0){
+                    for (j = 0; j < arguments.length; j++) {
+                        colArgs.push(arguments[j]);
+                    };
+                }
+                colArgs.forEach(function(createdCol){
+                    columns.push(createdCol);
+                })
+            }
+
+            this.getData = function(){
+                return rows.map(function(rowValues) {
+                    var row = {};
+
+                    columns.forEach(function (element, index) {
+                        row[element] = rowValues[index];
+                    })
+
+                    console.log(row)
+                })
+                
+             }
+
+        }
+
+         var x = new createTable();
+         x.addColumns('column1', 'column2', 'column3');
+         x.addRow('value1A', 'value2A', 'value3A');
+         x.addRow('value2A', 'value2B', 'value2C');
+         x.getData();
 
          // Programatically create an array with 5 items.  Create a list item for each item in the array
         // and add the list items to the unordered list with an id of "list1".
