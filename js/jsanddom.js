@@ -139,7 +139,7 @@
          // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
 
 //I'll pas one arguments that is the number of checkboxes to be created. 
-// then created a closure function that access the checkboxes array for the check/uncheck feature. Then call the closure function after the checkboxes are created.
+// then created a function that access the checkboxes array for the check/uncheck feature. Then call the  function after the checkboxes are created.
          function clickAndLink(listNumber){
             var fooDiv = document.querySelector("#foobar");
             var fooList = document.createElement("ul");
@@ -235,15 +235,7 @@
             }
 
             this.getData = function(){
-                return rows.map(function(rowValues) {
-                    var row = {};
-
-                    columns.forEach(function (element, index) {
-                        row[element] = rowValues[index];
-                    })
-
-                    console.log(row)
-                })
+                
                 
              }
 
@@ -294,7 +286,7 @@
                 ]
             }
 
-         
+        console.log(peopleColl.people[1].phone_numbers.home);
 
          // Write 5 different jQuery selectors to retrieve the
         // sample anchor in the markup below.
@@ -321,6 +313,6 @@
             console.log($("#div1 select").val() + " " + $("#div1 select option:selected").html());
         })
 
-        console.log(peopleColl.people[1].phone_numbers.home);
+        
    
     
