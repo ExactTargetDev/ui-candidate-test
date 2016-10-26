@@ -1,0 +1,298 @@
+Note: I accidentally created a branch that would not push commits, so I've
+created a new branch and I have marked all of the commits I made here. Sorry
+about that.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+commit 8991d384779b0708cd9164bcdeecb879afc7a618
+Author: ekisner <exk0730@gmail.com> 2014-01-24 14:56:42
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 14:56:42
+Parent: 1b1e78e97583109d120709ec31b034cff27cb656 (Update README.md)
+Child: 24767fa35603378930e5df133b50e8c0794f8294 (-Tests structure + util folder -Make sure quint runs correctly for first two functions)
+Branches: devleop-erickisner
+
+initial commit
+
+_________________________________________________________________________________________________________________________________________________________
+commit 24767fa35603378930e5df133b50e8c0794f8294
+Author: ekisner <exk0730@gmail.com> 2014-01-24 15:12:28
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 15:12:28
+Parent: 8991d384779b0708cd9164bcdeecb879afc7a618 (initial commit)
+Child: 98aab6df060b0f6d7f9c2e9202aaf5ce8a5efcbc (-Finished implementation and tests for findMinValue and findDistinctValues. -Refactor test structure so there's only one method which returns result of call to qunit.ok)
+Branches: devleop-erickisner
+
+-Tests structure + util folder
+-Make sure quint runs correctly for first two functions
+_________________________________________________________________________________________________________________________________________________________
+
+
+commit 98aab6df060b0f6d7f9c2e9202aaf5ce8a5efcbc
+Author: ekisner <exk0730@gmail.com> 2014-01-24 15:29:06
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 15:29:06
+Parent: 24767fa35603378930e5df133b50e8c0794f8294 (-Tests structure + util folder -Make sure quint runs correctly for first two functions)
+Child: 70d673f5e6b026137e125e77d36bfb161f8a1f8d (-Change appearance of main file - my white-space looked ugly. -Implement and test FizzBuzz method.)
+Branches: devleop-erickisner
+
+-Finished implementation and tests for findMinValue and
+findDistinctValues.
+-Refactor test structure so there's only one method which returns result
+of call to qunit.ok
+
+_________________________________________________________________________________________________________________________________________________________
+
+commit 70d673f5e6b026137e125e77d36bfb161f8a1f8d
+Author: ekisner <exk0730@gmail.com> 2014-01-24 15:35:15
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 15:35:15
+Parent: 98aab6df060b0f6d7f9c2e9202aaf5ce8a5efcbc (-Finished implementation and tests for findMinValue and findDistinctValues. -Refactor test structure so there's only one method which returns result of call to qunit.ok)
+Child: 6e753d10e2bee2b9ebd45066e2d37ebb389fc211 (-Add "filter" utility method (implementation can be found online since older browsers do not support it) -Use testdata.txt in tests -Implement removeFruits)
+Branches: devleop-erickisner
+
+-Change appearance of main file - my white-space looked ugly.
+-Implement and test FizzBuzz method.
+_________________________________________________________________________________________________________________________________________________________
+
+
+commit 6e753d10e2bee2b9ebd45066e2d37ebb389fc211
+Author: ekisner <exk0730@gmail.com> 2014-01-24 15:46:00
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 15:46:00
+Parent: 70d673f5e6b026137e125e77d36bfb161f8a1f8d (-Change appearance of main file - my white-space looked ugly. -Implement and test FizzBuzz method.)
+Child: fd12687674216b38ec5ccc1fe2ba44fa43cfe654 (Implemented the rest of the functions and their tests. Updated totaltime.)
+Branches: devleop-erickisner
+
+-Add "filter" utility method (implementation can be found online since
+older browsers do not support it)
+-Use testdata.txt in tests
+-Implement removeFruits
+_________________________________________________________________________________________________________________________________________________________
+
+
+commit fd12687674216b38ec5ccc1fe2ba44fa43cfe654
+Author: ekisner <exk0730@gmail.com> 2014-01-24 16:01:56
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 16:01:56
+Parent: 6e753d10e2bee2b9ebd45066e2d37ebb389fc211 (-Add "filter" utility method (implementation can be found online since older browsers do not support it) -Use testdata.txt in tests -Implement removeFruits)
+Child: 6c181bfdcd8109d29ab59bdd51830d0a64568b3a (Closure code, json object, and DataTable object.)
+Branches: devleop-erickisner
+
+Implemented the rest of the functions and their tests. Updated
+totaltime.
+_________________________________________________________________________________________________________________________________________________________
+
+
+
+commit 6c181bfdcd8109d29ab59bdd51830d0a64568b3a
+Author: ekisner <exk0730@gmail.com> 2014-01-24 16:31:40
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 16:31:40
+Parent: fd12687674216b38ec5ccc1fe2ba44fa43cfe654 (Implemented the rest of the functions and their tests. Updated totaltime.)
+Child: adc567d6763929889046618925913c9447f07b00 (Complete jsanddom portion of test.)
+Branches: devleop-erickisner
+
+Closure code, json object, and DataTable object.
+_________________________________________________________________________________________________________________________________________________________
+
+
+commit adc567d6763929889046618925913c9447f07b00
+Author: ekisner <exk0730@gmail.com> 2014-01-24 17:25:38
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 17:25:38
+Parent: 6c181bfdcd8109d29ab59bdd51830d0a64568b3a (Closure code, json object, and DataTable object.)
+Child: 5f516f43fda9a292ec36a962c74285f25bcae780 (-Refactor file structure -Add my utility files from other projects -Add libraries: bootstrap, jquery, underscore.)
+Branches: devleop-erickisner
+
+Complete jsanddom portion of test.
+_________________________________________________________________________________________________________________________________________________________
+
+
+
+commit 5f516f43fda9a292ec36a962c74285f25bcae780
+Author: ekisner <exk0730@gmail.com> 2014-01-24 17:49:34
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 17:49:34
+Parent: adc567d6763929889046618925913c9447f07b00 (Complete jsanddom portion of test.)
+Child: 758f1fcfff4e0f0c52edc13cb6509312344fe775 (Completed header css + page layout.)
+Branches: devleop-erickisner
+
+-Refactor file structure
+-Add my utility files from other projects
+-Add libraries: bootstrap, jquery, underscore.
+_________________________________________________________________________________________________________________________________________________________
+
+
+
+commit 758f1fcfff4e0f0c52edc13cb6509312344fe775
+Author: ekisner <exk0730@gmail.com> 2014-01-24 18:10:43
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 18:10:43
+Parent: 5f516f43fda9a292ec36a962c74285f25bcae780 (-Refactor file structure -Add my utility files from other projects -Add libraries: bootstrap, jquery, underscore.)
+Child: c59354c73b23be5f7d5b49541e64bcc01b624f5d (Interactive hub left-side menu looking good. Need images.)
+Branches: devleop-erickisner
+
+Completed header css + page layout.
+_________________________________________________________________________________________________________________________________________________________
+
+
+
+
+commit c59354c73b23be5f7d5b49541e64bcc01b624f5d
+Author: ekisner <exk0730@gmail.com> 2014-01-24 18:50:20
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 18:50:20
+Parent: 758f1fcfff4e0f0c52edc13cb6509312344fe775 (Completed header css + page layout.)
+Child: d974954bc23e8b3da3587a3eeda56e832886bc2f (-Added initial page load js to connect a) the pulse widget, which controls the pulse boxes (sizing) and b) the bootstrapJS modal window that will be displayed when the user clicks help. -Completed Pulse pane css and layout. Need images.)
+Branches: devleop-erickisner
+
+Interactive hub left-side menu looking good. Need images.
+_________________________________________________________________________________________________________________________________________________________
+
+
+
+commit d974954bc23e8b3da3587a3eeda56e832886bc2f
+Author: ekisner <exk0730@gmail.com> 2014-01-24 19:42:39
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 19:42:39
+Parent: c59354c73b23be5f7d5b49541e64bcc01b624f5d (Interactive hub left-side menu looking good. Need images.)
+Child: 2dc16a58a553e6002b76b05d5d7290c114766506 (-Calendar pane almost completed, just needs images.)
+Branches: devleop-erickisner
+
+-Added initial page load js to connect a) the pulse widget, which
+controls the pulse boxes (sizing) and b) the bootstrapJS modal window
+that will be displayed when the user clicks help.
+-Completed Pulse pane css and layout. Need images.
+_________________________________________________________________________________________________________________________________________________________
+
+
+
+commit 2dc16a58a553e6002b76b05d5d7290c114766506
+Author: ekisner <exk0730@gmail.com> 2014-01-24 20:38:43
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 20:38:43
+Parent: d974954bc23e8b3da3587a3eeda56e832886bc2f (-Added initial page load js to connect a) the pulse widget, which controls the pulse boxes (sizing) and b) the bootstrapJS modal window that will be displayed when the user clicks help. -Completed Pulse pane css and layout. Need images.)
+Child: d0a48464138e3ff1e0270bf22d9fc677b98ecc17 (-Sliced images from .psd file -Pulse images / logo / footer connected in CSS)
+Branches: devleop-erickisner
+
+-Calendar pane almost completed, just needs images.
+_________________________________________________________________________________________________________________________________________________________
+
+
+commit d0a48464138e3ff1e0270bf22d9fc677b98ecc17
+Author: ekisner <exk0730@gmail.com> 2014-01-24 21:25:04
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 21:25:04
+Parent: 2dc16a58a553e6002b76b05d5d7290c114766506 (-Calendar pane almost completed, just needs images.)
+Child: ad4aa4ed90bf45a26c15296a5856d54a2ce0cfc2 (Update total time)
+Branches: devleop-erickisner
+
+-Sliced images from .psd file
+-Pulse images / logo / footer connected in CSS
+_________________________________________________________________________________________________________________________________________________________
+
+
+commit ad4aa4ed90bf45a26c15296a5856d54a2ce0cfc2
+Author: ekisner <exk0730@gmail.com> 2014-01-24 21:26:27
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 21:26:27
+Parent: d0a48464138e3ff1e0270bf22d9fc677b98ecc17 (-Sliced images from .psd file -Pulse images / logo / footer connected in CSS)
+Child: 85d90bc2cd03678aa1faa36f934bd18b25c0cf0e (CSS for interactive hub menu images.)
+Branches: devleop-erickisner
+
+Update total time
+_________________________________________________________________________________________________________________________________________________________
+
+
+
+commit 85d90bc2cd03678aa1faa36f934bd18b25c0cf0e
+Author: ekisner <exk0730@gmail.com> 2014-01-24 21:41:18
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 21:41:18
+Parent: ad4aa4ed90bf45a26c15296a5856d54a2ce0cfc2 (Update total time)
+Child: 1c18baf370dcb6a360ed1e842bf557ad112b0587 (Update time)
+Branches: devleop-erickisner
+
+CSS for interactive hub menu images.
+_________________________________________________________________________________________________________________________________________________________
+
+
+commit 1c18baf370dcb6a360ed1e842bf557ad112b0587
+Author: ekisner <exk0730@gmail.com> 2014-01-24 21:41:43
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 21:41:43
+Parent: 85d90bc2cd03678aa1faa36f934bd18b25c0cf0e (CSS for interactive hub menu images.)
+Child: b6f46661cb9f9602d844b4abeda5ccac3588780d (-Pulse and calendar final images -Parse help.json for the Help modal window)
+Branches: devleop-erickisner
+
+Update time
+_________________________________________________________________________________________________________________________________________________________
+
+
+
+commit b6f46661cb9f9602d844b4abeda5ccac3588780d
+Author: ekisner <exk0730@gmail.com> 2014-01-24 22:00:35
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 22:00:35
+Parent: 1c18baf370dcb6a360ed1e842bf557ad112b0587 (Update time)
+Child: 88b5596b548e67e5d696a08a6e1ef3c5b1a5ae64 (Add a calendar widget which will scroll the calendar. Almost done. This is not needed to complete the test but I wanted to experiment...)
+Branches: devleop-erickisner
+
+-Pulse and calendar final images
+-Parse help.json for the Help modal window
+_________________________________________________________________________________________________________________________________________________________
+
+
+
+commit 88b5596b548e67e5d696a08a6e1ef3c5b1a5ae64
+Author: ekisner <exk0730@gmail.com> 2014-01-24 22:54:30
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 22:54:30
+Parent: b6f46661cb9f9602d844b4abeda5ccac3588780d (-Pulse and calendar final images -Parse help.json for the Help modal window)
+Child: 7842c9a1987c7e5e2fa576cda30fb97d156cca6c (Update time)
+Branches: devleop-erickisner
+
+Add a calendar widget which will scroll the calendar. Almost done. This
+is not needed to complete the test but I wanted to experiment...
+_________________________________________________________________________________________________________________________________________________________
+
+
+
+commit 7842c9a1987c7e5e2fa576cda30fb97d156cca6c
+Author: ekisner <exk0730@gmail.com> 2014-01-24 22:56:57
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 22:56:57
+Parent: 88b5596b548e67e5d696a08a6e1ef3c5b1a5ae64 (Add a calendar widget which will scroll the calendar. Almost done. This is not needed to complete the test but I wanted to experiment...)
+Child: 8fe08cb7f651ea1a589f288ead493a54b4bff653 (-Calendar Widget working correctly -Fixed some HTML)
+Branches: devleop-erickisner
+
+Update time
+_________________________________________________________________________________________________________________________________________________________
+
+
+
+commit 8fe08cb7f651ea1a589f288ead493a54b4bff653
+Author: ekisner <exk0730@gmail.com> 2014-01-24 23:29:05
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 23:29:05
+Parent: 7842c9a1987c7e5e2fa576cda30fb97d156cca6c (Update time)
+Child: d5dd9bb9f528b86be3d3db6e3bf3ab8c6f04350c (Added a comment about IE8 and it's wacky background-size filter. I had tried this earlier, but deleted it when it wouldn't work. IE8 looks alright other than this one issue.)
+Branches: devleop-erickisner
+
+-Calendar Widget working correctly
+-Fixed some HTML
+_________________________________________________________________________________________________________________________________________________________
+
+
+
+commit d5dd9bb9f528b86be3d3db6e3bf3ab8c6f04350c
+Author: ekisner <exk0730@gmail.com> 2014-01-24 23:32:54
+Committer: ekisner <exk0730@gmail.com> 2014-01-24 23:32:54
+Parent: 8fe08cb7f651ea1a589f288ead493a54b4bff653 (-Calendar Widget working correctly -Fixed some HTML)
+Branches: devleop-erickisner
+
+Added a comment about IE8 and it's wacky background-size filter. I had
+tried this earlier, but deleted it when it wouldn't work. IE8 looks
+alright other than this one issue.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,132 @@
+@CHARSET "ISO-8859-1";
+
+* {
+   -moz-user-select: -moz-none;
+   x-moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+input[type=text],
+input[type=check],
+input[type=radio],
+textarea{
+   -moz-user-select: text;
+   -webkit-user-select: text;
+   -khtml-user-select: text;
+   -ms-user-select: text;   
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    font-size:16px;
+    padding: 0 16px;
+    background-color: #fefffd;
+    color: #333333;
+    font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+    min-width: 944px;
+    line-height: 1;
+    overflow: hidden;
+}
+.is-hidden {
+	display: none;
+}
+.template {
+	display: none;
+}
+
+/*
+ * icons
+ */
+ .icon {
+ 	background-repeat: no-repeat;
+ 	display: inline-block;
+ }
+#calendar .gear > .icon {
+	background-image : url('../images/calendar_gear.png');
+	height: 11px;
+	width: 11px;
+}
+#calendar .popout > .icon {
+	background-image: url('../images/calendar_popout.png');
+	height: 11px;
+	width: 10px;
+}
+.calendar-next {
+	background-image: url('../images/calendar_next.png');
+	height: 9px;
+	width: 5px;
+	display: inline-block;
+	margin-top: 2px;
+	margin-left: 8px;
+}
+.calendar-previous {
+	background-image: url('../images/calendar_previous.png');
+	height: 9px;
+	width: 5px;
+	display: inline-block;
+	margin-top: 2px;
+	margin-right: 8px;
+}
+#pulse .gear > .icon {
+	background-image: url('../images/pulse_gear.png');
+	height: 13px;
+	width: 13px;
+}
+#pulse .minimize > .icon {
+	background-image: url('../images/pulse_minimize.png');
+	height: 6px;
+	width: 12px;
+	margin-bottom: 2px;
+}
+#pulse .popout > .icon {
+	background-image: url('../images/pulse_popout.png');
+	height: 10px;
+	width: 11px;
+}
+#pulse .exit > .icon {
+	background-image: url('../images/pulse_exit.png');
+	height: 9px;
+	width: 8px;
+}
+#imhub .icon {
+	height: 24px;
+	width: 24px;
+	vertical-align: -5px;
+}
+#imhub .hub .icon {
+	background-image: url('../images/hub_logo.png');
+	margin-top: 15px;
+}
+#imhub .email .icon {
+	background-image: url('../images/hub_email.png');
+}
+#imhub .mobile .icon {
+	background-image: url('../images/hub_mobile.png');
+}
+#imhub .cotweet .icon {
+	background-image: url('../images/hub_cotweet.png');
+}
+#imhub .sites .icon {
+	background-image: url('../images/hub_sites.png');
+}
+#imhub .automation .icon {
+	background-image: url('../images/hub_automation.png');
+}
+#imhub .audience .icon {
+	background-image: url('../images/hub_audience.png');
+}
+#imhub .report .icon {
+	background-image: url('../images/hub_report.png');
+}
+#imhub .apps > .icon {
+    background-image: url("../images/arrow_right.png");
+    height: 13px;
+    width: 13px;
+    vertical-align: 0;
+}
