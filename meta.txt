@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function timeStamp(){
+var unix = new Date();
+unix = unix.getTime();
+document.write("StartTime:"+unix1);
+}
+</script>
+</head>
+<body onload="javascript:timeS()">
+</body>
+</html> 
