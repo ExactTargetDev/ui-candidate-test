@@ -1,0 +1,6 @@
+- in tests, how to test for distint values that are not in order?
+
+- should we test inside closure?
+- does a json object need to be unit tested?  no function.  but could check if valid with something like https://jsonformatter.curiousconcept.com/ is their an API/package for that?
+
+- unit tests for adding 5 li

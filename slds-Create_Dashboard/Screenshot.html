@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Screenshot.html</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles/my.css">
+<!--  <link rel="stylesheet" type="text/css" href="/assets/styles/slds.css">-->
+</head>
+
+<body>
+  <!--  //the header stuff-->
+ <div class="slds">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand nav--white" href="#">ExactTarget.</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="nav--white" href="#">Welcome John!</a></li>
+          <li class="navlink"><a class="navlink" href="#">Account</a></li>
+          <li><a class="navlink" href="#">|</a></li>
+          <li><a class="nav-link" onclick="showHelp()">Help</a></li>
+          <li><a class="navlink" href="#">|</a></li>
+          <li><a class="navlink" href="#">Logout</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+  <!--  //Sidbar stuff-->
+  <div class="col-md-2">
+    <ul class="hub">
+      <li class="list__item hub--heading edge-item">
+        <div class="row">
+          <div class="col-md-2">
+            <img class="hub__logo" src="images/hub.png" />
+          </div>
+          <div class="col-md-10">
+            <p class="list-group-item-heading">Interactive</p>
+            <p class="list-group-item-text">Marketing Hub</p>
+          </div>
+        </div>
+
+      </li>
+      <li class="list-group__item">
+        <a href="#" class="hub-link__color"><img src="images/email.png" /> ExactTarget Email</a>
+      </li>
+      <li class="list-group__item">
+        <a href="#" class="hub-link__color"><img src="images/phone.png" /> ExactTarget Mobile</a>
+      </li>
+      <li class="list-group__item">
+        <a href="#" class="hub-link__color"><img src="images/co.png" /> CoTweet Social</a>
+      </li>
+      <li class="list-group__item">
+        <a href="#" class="hub-link__color"><img src="images/sites.png" /> ExactTarget Sites</a>
+      </li>
+      <li class="list-group__item list__item--extratop">
+        <a href="#" class="hub-link__color"><img src="images/studio.png" /> Automation Studio</a>
+      </li>
+      <li class="list-group__item">
+        <a href="#" class="hub-link__color"><img src="images/audience.png" /> Audience Builder</a>
+      </li>
+      <li class="list-group__item">
+        <a href="#" class="hub-link__color"><img src="images/report.png" /> Report Builder</a>
+      </li>
+      <li class="list-group__item edge-item">
+        <a href="#" class="hub-link__color"><img src="images/arrow.png" /> Partner Applications</a>
+      </li>
+    </ul>
+
+  </div>
+  <!--  //Calendar stuff-->
+
+
+  <div class="col-md-10">
+    <div class="container-fluid">
+      <div class="row calendar">
+        <div class="col-md-12 top-row">
+          <span class="month-year">September 2010</span>
+          <span class="calendar__icons-top"><img src="images/gear-window.png" /></span>
+        </div>
+        <div class="col-md-12">
+          <div class="col-md-1 day">
+            <p class="calendar__day--top">Sat</p>
+            <p class="calendar__date--top">11</p>
+          </div>
+          <div class="col-md-1 day">
+            <p class="calendar__day--top">Sun</p>
+            <p class="calendar__date--top">12</p>
+          </div>
+          <div class="col-md-1 day">
+            <p class="calendar__day--top">Mon</p>
+            <p class="calendar__date--top">13</p>
+          </div>
+          <div class="col-md-1 day calendar__day--selected">
+            <p class="calendar__day--top">Tue</p>
+            <p class="calendar__date--top">14</p>
+          </div>
+          <div class="col-md-1 day">
+            <p class="calendar__day--top">Wed</p>
+            <p class="calendar__date--top">15</p>
+          </div>
+          <div class="col-md-1 day">
+            <p class="calendar__day--top">Thu</p>
+            <p class="calendar__date--top">16</p>
+          </div>
+          <div class="col-md-1 day last">
+            <p class="calendar__day--top">Fri</p>
+            <p class="calendar__date--top">17</p>
+          </div>
+          <div class="col-md-1 bottom-day">
+          </div>
+          <div class="col-md-1 bottom-day">
+          </div>
+          <div class="col-md-1 bottom-day">
+          </div>
+          <div class="col-md-1 bottom-day calendar--today-indicator text-center">
+            TODAY
+          </div>
+          <div class="col-md-1 bottom-day">
+          </div>
+          <div class="col-md-1 bottom-day">
+          </div>
+          <div class="col-md-1 bottom-day">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 pulse">
+          <div class="pulse-container">
+
+            <div class="row">
+              <div class="col-md-1">
+                <div class="pulse-heading">
+                  <h3 class="pulse__title">Pulse</h3>
+                  <img src="images/pulse.png" />
+                </div>
+              </div>
+              <div class="col-md-offset-10 col-md-1">
+                <img class="pulse-tools" src="images/tools.png" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="container-fluid">
+                <div id="con-1" class="col-md-2 text-center card-container inactive-container" onclick="setActivecard('con-1')">
+                  <p class="card-title">Followers</p>
+                  <div class="card">
+                    <p class="text-center blue-top">310</p>
+                    <p class="text-center md-text">added today</p>
+                    <p class="text-center sm-text">2,393,905 total</p>
+                    <div class="card-top">
+                      <span class="checkins pull-left">Worldwide Checkins</span>
+                      <span class="checkins pull-right">3,905</span>
+                    </div>
+                    <div class="map">
+                      <img src="images/pulse-map.png" />
+                    </div>
+                  </div>
+                </div>
+                <div id="con-2" class="col-md-2 text-center card-container inactive-container" onclick="setActivecard('con-2')">
+                  <p class="card-title">Fans</p>
+                  <div class="card">
+                    <p class="text-center blue-top">73</p>
+                    <p class="text-center md-text">added today</p>
+                    <p class="text-center sm-text">91,765 total</p>
+                    <div class="card-top">
+                      <span class="checkins pull-left">Worldwide Checkins</span>
+                      <span class="checkins pull-right">3,905</span>
+                    </div>
+                    <div class="map">
+                      <img src="images/pulse-map.png" />
+                    </div>
+                  </div>
+                </div>
+                <div id="con-3" class="col-md-2 text-center card-container inactive-container" onclick="setActivecard('con-3')">
+                  <p class="card-title">Subscribers</p>
+                  <div class="card">
+                    <p class="text-center blue-top">56</p>
+                    <p class="text-center md-text">added today</p>
+                    <p class="text-center sm-text">189,405 total</p>
+                    <div class="card-top">
+                      <span class="checkins pull-left">Worldwide Checkins</span>
+                      <span class="checkins pull-right">3,905</span>
+                    </div>
+                    <div class="map">
+                      <img src="images/pulse-map.png" />
+                    </div>
+                  </div>
+                </div>
+                <div id="con-4" class="col-md-2 text-center card-container active-container" onclick="setActivecard('con-4')">
+                  <p class="card-title">foursquare</p>
+                  <div class="card">
+                    <p class="text-center blue-top">3,905</p>
+                    <p class="text-center md-text">added today</p>
+                    <p class="text-center sm-text">2,393,905 total</p>
+                    <div class="card-top">
+                      <span class="checkins pull-left">Worldwide Checkins</span>
+                      <span class="checkins pull-right">3,905</span>
+                    </div>
+                    <div class="map">
+                      <img src="images/pulse-map.png" />
+                    </div>
+                  </div>
+                </div>
+                <div id="con-5" class="col-md-2 text-center card-container inactive-container" onclick="setActivecard('con-5')">
+                  <p class="card-title">Landing Pages</p>
+                  <div class="card">
+                    <p class="text-center md-top">Visitors Today</p>
+                    <span class="mid-count"><p class="mid-blue">397&nbsp;</p><p class="mid-grey">/&nbsp;355</p></span>
+                    <p class="text-center sm-text bot-grey">Soulda Boy V.I.P</p>
+                    <div class="card-top">
+                      <span class="checkins pull-left">Worldwide Checkins</span>
+                      <span class="checkins pull-right">3,905</span>
+                    </div>
+                    <div class="map">
+                      <img src="images/pulse-map.png" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row text-center">
+              <div>
+                <img class="pagination-icon" src="images/pagination.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">ExactTarget Help</h4>
+        </div>
+        <div id="help-body" class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.1/lodash.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
