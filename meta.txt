@@ -1,0 +1,10 @@
+Start Time: 1457535165
+
+TotalTime: 10h
+BrowserTesting: 
+ * Mac-Chrome 48.0.2564.116
+ * Mac-Firefox 45.0
+ * Mac-Opera 35.0.2066.92
+ * Windows-IE V.10+, Edge (because v.9- does not support Flexbox, which I used in several places)
+ * Windows-Chrome 48.0.2564.116 m
+ * Windows-Firefox 41.0.1 and  45.0

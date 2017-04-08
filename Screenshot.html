@@ -1,8 +1,110 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sprintf/1.0.3/sprintf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.1/backbone-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="resources/screenshot.css">
     <title>Screenshot.html</title>
 </head>
 <body>
+    <div class="overlay"></div>
+    <header class="navbar">
+        <div class="primary-logo"></div>
+        <div class="control-container">
+            <span class="welcome">Welcome John!</span>
+            <a>Account</a>|
+            <a class="help-link">Help</a>|
+            <a>Logout</a>
+        </div>   
+    </header>
+    <div class="flex-container">
+        <div class="left-container">
+            <div class="marketing-hub-container">
+                <div class="marketing-hub-title">
+                    <span class="hub-item-image orb-star-png"></span>
+                    <span class="hub-title">Interactive Marketing Hub</span>
+                </div>
+                <div class="marketing-hub-upper marketing-hub-section">
+                </div>
+                <div class="marketing-hub-lower marketing-hub-section">
+                </div>
+                <div class="small-hub-item hub-item marketing-hub-section">
+                </div>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="calendar-container">
+                <div class="calendar-title">
+                    <span class="calendar-month-year">September 2010</span>
+                    <span class="windows-png"></span><span class="gear-png"></span>
+                </div>
+                <div class="day-container">
+                </div>
+            </div>
+            <div class="pulse-container">
+                <div class="pulse-header">
+                    <span class="pulse-title">Pulse</span>
+                    <span class="pulse-logo"></span>
+                    <span class="pulse-button-container">
+                        <span class="cancel-png"></span><span class="windows-png"></span><span class="minimize-png"></span><span class="gear-png"></span>
+                    </span>
+                </div>
+                <div class="pulse-panel-container">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/template" id="hub-item-template">
+        <span class="hub-item-image <%= imgClass %>"></span>
+        <span class="hub-item-text"><%= text %></span>
+    </script>
+    <script type="text/template" id="calendar-day-template">
+        <div class="calendar-day <%= isToday %>">
+            <span class="calendar-day-text"><%= dayText %></span>
+            <span class="calendar-day-num"><%= dayNum %></span>
+        </div>
+        <div class="calendar-bottom <%= isToday %>"><%= isToday %></div>
+    </script>
+    <script type="text/template" id="pulse-panel-template">
+        <div class="pulse-title"><%= title %></div>
+        <div class="pulse-data-container small">
+            <div class="pulse-data-table">
+                <% if (upperLeft) { %>
+                    <p class="pulse-upper-left-text"> <%= upperLeft %> </p>
+                <% } %>
+                <% if (upperRight) { %>
+                    <p class="pulse-upper-right-text"> <%= upperRight %> </p>
+                <% } %>
+                <% if (innerTitle) { %>
+                    <p class="pulse-inner-title-text"> <%= innerTitle %> </p>
+                <% } %>
+                    <div class="pulse-number-container">
+                        <% if (blueNumber) { %>
+                            <p class="pulse-blue-number-text"> <%= blueNumber %> </p>
+                        <% } %>
+                        <% if (lowerNumber) { %>
+                            <p class="pulse-lower-number-text"> / <%= lowerNumber %> </p>
+                        <% } %>
+                    </div>
+                <% if (numberTitle) { %>
+                    <p class="pulse-number-title-text"> <%= numberTitle %> </p>
+                <% } %>
+                <% if (bottomText) { %>
+                    <p class="pulse-bottom-text"> <%= bottomText %> </p>
+                <% } %>
+                <% if (imgSrc) { %>
+                    <img src="<%= imgSrc %>">
+                <% } %>
+            </div>
+        </div>
+    </script>
+    <script type="text/javascript" src="resources/marketingHub.js"></script>
+    <script type="text/javascript" src="resources/calendar.js"></script>
+    <script type="text/javascript" src="resources/pulse.js"></script>
+    <script type="text/javascript" src="resources/help.js"></script>
 </body>
 </html>

@@ -1,0 +1,565 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.flex-container {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -ms-flexbox;
+  /* IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+, iOS 7.1+ */
+  display: flex;
+  /* NEW - FF, Chrome, Opera */
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font: Arial;
+}
+.overlay {
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  width: auto;
+  height: 0;
+  background: white;
+}
+.overlay.visible {
+  height: auto;
+  z-index: 100;
+}
+.overlay .help-list {
+  margin: 5px;
+}
+.navbar {
+  position: relative;
+  height: 40px;
+  background: black;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #2A2F33), color-stop(1, #45525C));
+  background: -ms-linear-gradient(bottom, #2A2F33, #45525C);
+  background: -moz-linear-gradient(center bottom, #2A2F33 0%, #45525C 100%);
+  background: -o-linear-gradient(#45525C, #2A2F33);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#45525C', endColorstr='#2A2F33', GradientType=0);
+}
+.navbar .primary-logo {
+  position: relative;
+  float: left;
+  background-image: url('images/logo.png');
+  height: 17px;
+  width: 86px;
+  margin-top: 12px;
+  margin-left: 20px;
+}
+.navbar .control-container {
+  position: relative;
+  float: right;
+  padding: 10px;
+}
+.navbar .control-container a {
+  cursor: pointer;
+}
+.navbar .control-container :not(:last-child) {
+  margin-right: 5px;
+}
+.navbar .control-container .welcome {
+  color: white;
+}
+.navbar .control-container a {
+  color: #99CCE1;
+}
+.email-png {
+  background-image: url('images/email.png');
+}
+.mobile-png {
+  background-image: url('images/phone.png');
+}
+.co-tweet-png {
+  background-image: url('images/cotweet.png');
+}
+.sites-png {
+  background-image: url('images/calendar.png');
+}
+.automation-png {
+  background-image: url('images/automation.png');
+}
+.audience-png {
+  background-image: url('images/audience.png');
+}
+.report-png {
+  background-image: url('images/report.png');
+}
+.orb-star-png {
+  background-image: url('images/orbStar.png');
+}
+.arrow-png {
+  background-image: url('images/arrowButton.png');
+}
+.gear-png {
+  background-image: url('images/gear.png');
+}
+.windows-png {
+  background-image: url('images/windows.png');
+}
+.minimize-png {
+  background-image: url('images/minimize.png');
+}
+.cancel-png {
+  background-image: url('images/cancel.png');
+}
+.pulse-png {
+  background-image: url('images/pulse-logo.png');
+}
+.map-png {
+  background-image: url('images/map.png');
+}
+.left-container {
+  float: left;
+  height: 100%;
+  flex: 0 1 auto;
+}
+.left-container .marketing-hub-container {
+  width: 185px;
+  display: inline-block;
+  margin: 20px;
+  background-color: #F5F5F5;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.left-container .marketing-hub-container .hub-item {
+  position: relative;
+  cursor: pointer;
+}
+.left-container .marketing-hub-container .hub-item:hover {
+  background: #e1e1e1;
+}
+.left-container .marketing-hub-container .hub-item.selected {
+  background: #D4D4D4 !important;
+}
+.left-container .marketing-hub-container .hub-item .hub-item-image {
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  margin: 5px 10px;
+}
+.left-container .marketing-hub-container .hub-item .hub-item-text {
+  position: absolute;
+  top: 11px;
+  font-size: 12px;
+  color: #878787;
+}
+.left-container .marketing-hub-container .marketing-hub-title {
+  height: 50px;
+  background: orange;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #F8991C), color-stop(1, #F8BC69));
+  background: -ms-linear-gradient(bottom, #F8991C, #F8BC69);
+  background: -moz-linear-gradient(center bottom, #F8991C 0%, #F8BC69 100%);
+  background: -o-linear-gradient(#F8BC69, #F8991C);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F8BC69', endColorstr='#F8991C', GradientType=0);
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 5px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1px;
+}
+.left-container .marketing-hub-container .marketing-hub-title .orb-star-png {
+  height: 26px;
+  width: 26px;
+  display: inline-block;
+  margin: 12px 10px;
+  float: left;
+}
+.left-container .marketing-hub-container .marketing-hub-title .hub-title {
+  position: relative;
+  color: white;
+  top: 8px;
+}
+.left-container .marketing-hub-container .small-hub-item {
+  position: relative;
+  height: 30px;
+  padding-top: 3px;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.left-container .marketing-hub-container .small-hub-item .hub-item-image {
+  height: 13px;
+  width: 13px;
+  float: left;
+}
+.left-container .marketing-hub-container .small-hub-item .hub-item-text {
+  font-size: 12px;
+}
+.left-container .marketing-hub-container .marketing-hub-section {
+  border-bottom: #dcdcdc solid 1px;
+  border-left: #dcdcdc solid 1px;
+  border-right: #dcdcdc solid 1px;
+}
+.right-container {
+  float: left;
+  height: 100%;
+  margin-right: 20px;
+  display: inline-block;
+  -webkit-box-flex: 10 1 auto;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -webkit-flex: 10 1 auto;
+  /* NEW - Safari 6.1+, iOS 7.1+ */
+  -ms-flex: 10 1 auto;
+  /* IE 10 */
+  flex: 10 1 auto;
+  /* NEW - FF, Chrome, Opera */
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.right-container .calendar-container {
+  margin-bottom: 20px;
+  background-color: #F5F5F5;
+  overflow: hidden;
+  border: 1px solid #c2c2c2;
+  box-shadow: 1px 1px 1px #c2c2c2;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  max-height: 126px;
+}
+.right-container .calendar-container .calendar-month-year {
+  color: #878787;
+  float: left;
+}
+.right-container .calendar-container .calendar-title {
+  height: 20px;
+}
+.right-container .calendar-container .gear-png,
+.right-container .calendar-container .windows-png {
+  width: 13px;
+  height: 14px;
+  float: right;
+  margin-right: 3px;
+}
+.right-container .calendar-container .day-container {
+  margin-left: -133px;
+}
+.right-container .calendar-container .day-container .calendar-day-container {
+  width: 140px;
+  display: inline-block;
+}
+.right-container .calendar-container .day-container .calendar-day-container .calendar-day {
+  width: 140px;
+  height: 85px;
+  border-bottom: #C5C5C5 solid 1px;
+  border-right: #C5C5C5 solid 1px;
+}
+.right-container .calendar-container .day-container .calendar-day-container .calendar-day .calendar-day-text {
+  margin: 2px;
+  font-size: small;
+  color: #878787;
+}
+.right-container .calendar-container .day-container .calendar-day-container .calendar-day .calendar-day-num {
+  float: right;
+  font-size: small;
+  color: #878787;
+  margin: 2px;
+}
+.right-container .calendar-container .day-container .calendar-day-container .calendar-day.Today {
+  background: gray;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fdedd7), color-stop(1, #ebf1f5));
+  background: -ms-linear-gradient(bottom, #fdedd7, #ebf1f5);
+  background: -moz-linear-gradient(center bottom, #fdedd7 0%, #ebf1f5 100%);
+  background: -o-linear-gradient(#ebf1f5, #fdedd7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebf1f5', endColorstr='#fdedd7', GradientType=0);
+  border-left: #C5C5C5 solid 1px;
+}
+.right-container .calendar-container .day-container .calendar-day-container .calendar-bottom {
+  height: 20px;
+  width: 140px;
+  text-align: center;
+  display: table-cell;
+}
+.right-container .calendar-container .day-container .calendar-day-container .calendar-bottom.Today {
+  margin-top: 3px;
+  color: white;
+  background-color: orange;
+}
+.right-container .pulse-container {
+  height: 265px;
+  position: relative;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: gray;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #DDE7EF), color-stop(1, #BAC8D0));
+  background: -ms-linear-gradient(bottom, #DDE7EF, #BAC8D0);
+  background: -moz-linear-gradient(center bottom, #DDE7EF 0%, #BAC8D0 100%);
+  background: -o-linear-gradient(#BAC8D0, #DDE7EF);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#BAC8D0', endColorstr='#DDE7EF', GradientType=0);
+  -webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.4);
+}
+.right-container .pulse-container .pulse-header {
+  height: 65px;
+}
+.right-container .pulse-container .pulse-header .pulse-title {
+  color: white;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+.right-container .pulse-container .pulse-header .pulse-button-container {
+  float: right;
+  margin: 5px 5px 0 0;
+}
+.right-container .pulse-container .pulse-header .pulse-button-container .gear-png,
+.right-container .pulse-container .pulse-header .pulse-button-container .windows-png {
+  width: 13px;
+  height: 14px;
+  margin-right: 3px;
+  margin-top: 5px;
+  float: right;
+}
+.right-container .pulse-container .pulse-header .pulse-button-container .cancel-png {
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  margin-right: 3px;
+  margin-top: 5px;
+  float: right;
+}
+.right-container .pulse-container .pulse-header .pulse-button-container .minimize-png {
+  margin-top: 2px;
+  width: 12px;
+  height: 10px;
+  margin-right: 3px;
+  margin-top: 5px;
+  float: right;
+}
+.right-container .pulse-container .pulse-header .pulse-logo {
+  background-image: url('images/pulse-logo.png');
+  text-shadow: 1px 1px #878787;
+  position: absolute;
+  top: 10px;
+  left: -1px;
+  height: 38px;
+  width: 118px;
+}
+.right-container .pulse-container .pulse-header .right-image {
+  margin-right: 3px;
+  margin-top: 5px;
+  float: right;
+}
+.right-container .pulse-container .pulse-panel-container.small {
+  width: 160px;
+  height: 120px;
+}
+.right-container .pulse-container .pulse-panel-container {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -ms-flexbox;
+  /* IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+, iOS 7.1+ */
+  display: flex;
+  /* NEW - FF, Chrome, Opera */
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  -webkit-box-flex: 1 1 auto;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -webkit-flex: 1 1 auto;
+  /* NEW - Safari 6.1+, iOS 7.1+ */
+  -ms-flex: 1 1 auto;
+  /* IE 10 */
+  flex: 1 1 auto;
+  /* NEW - FF, Chrome, Opera */
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel.small {
+  width: 160px;
+  height: 130px;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel.medium {
+  width: 280px;
+  height: 190px;
+  margin-top: -28px;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-title {
+  text-align: center;
+  padding-top: 5px;
+  font-size: small;
+  color: #7e8c99;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 30px;
+  padding: 5px;
+  background: gray;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dee9f0), color-stop(1, #fafafa));
+  background: -ms-linear-gradient(bottom, #dee9f0, #fafafa);
+  background: -moz-linear-gradient(center bottom, #dee9f0 0%, #fafafa 100%);
+  background: -o-linear-gradient(#fafafa, #dee9f0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#dee9f0', GradientType=0);
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table {
+  display: table;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table p {
+  display: inline;
+  margin: 0;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-upper-left-text {
+  font-size: x-small;
+  float: left;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-upper-right-text {
+  font-size: x-small;
+  float: right;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-inner-title-text {
+  color: #c2c2c2;
+  margin-top: 5px;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-number-container {
+  text-align: center;
+  margin-top: 5px;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-blue-number-text {
+  font-size: x-large;
+  color: #3c93f0;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-lower-number-text {
+  color: #a9a9a9;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-number-title-text {
+  color: #c2c2c2;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table .pulse-bottom-text {
+  display: table-row;
+  vertical-align: bottom;
+  height: 19px;
+  color: #c2c2c2;
+}
+.right-container .pulse-container .pulse-panel-container .pulse-panel .pulse-data-container .pulse-data-table img {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 80%;
+}

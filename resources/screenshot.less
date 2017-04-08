@@ -1,0 +1,423 @@
+@import "elements.less";
+
+.flex-container {
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -ms-flexbox; /* IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+, iOS 7.1+ */
+    display: flex; /* NEW - FF, Chrome, Opera */
+}
+
+.flex (@flexGrow: 0, @flexShrink: 1, @flexBasis: auto) {
+    -webkit-box-flex: @flexGrow @flexShrink @flexBasis; /* OLD - iOS 6-, Safari 3.1-6 */
+    -webkit-flex: @flexGrow @flexShrink @flexBasis; /* NEW - Safari 6.1+, iOS 7.1+ */
+    -ms-flex: @flexGrow @flexShrink @flexBasis; /* IE 10 */
+    flex: @flexGrow @flexShrink @flexBasis; /* NEW - FF, Chrome, Opera */
+}
+
+@textGray: #878787;
+@backgroundGray: #F5F5F5;
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font: Arial;
+}
+
+.overlay {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    width: auto;
+    height: 0;
+    background: white;
+
+    &.visible {
+        height: auto; 
+        z-index: 100;
+    }
+
+    .help-list {
+        margin: 5px;
+    }
+}
+
+.navbar {
+    position: relative;
+    height: 40px;
+    .gradient(black, #2A2F33, #45525C);
+
+    .primary-logo {
+        position: relative;
+        float: left;
+        background-image: url('images/logo.png');
+        height: 17px;
+        width: 86px;
+        margin-top: 12px;
+        margin-left: 20px;
+    }
+
+    .control-container {
+        position: relative;
+        float: right;
+        padding: 10px;
+
+        a {
+            cursor: pointer;
+        }
+
+        :not(:last-child) {
+            margin-right: 5px;
+        }
+
+        .welcome {
+            color: white;
+        }
+
+        a {
+            color: #99CCE1;
+        }
+    }
+}
+
+.email-png { background-image: url('images/email.png'); }
+.mobile-png { background-image: url('images/phone.png'); }
+.co-tweet-png { background-image: url('images/cotweet.png'); }
+.sites-png { background-image: url('images/calendar.png'); }
+.automation-png { background-image: url('images/automation.png'); }
+.audience-png { background-image: url('images/audience.png'); }
+.report-png { background-image: url('images/report.png'); }
+.orb-star-png { background-image: url('images/orbStar.png'); }
+.arrow-png {background-image: url('images/arrowButton.png'); }
+.gear-png {background-image: url('images/gear.png'); }
+.windows-png {background-image: url('images/windows.png'); }
+.minimize-png {background-image: url('images/minimize.png'); }
+.cancel-png {background-image: url('images/cancel.png'); }
+.pulse-png {background-image: url('images/pulse-logo.png'); }
+.map-png {background-image: url('images/map.png'); }
+
+.left-container {
+    float: left;
+    height: 100%;
+    flex: 0 1 auto;
+
+    .marketing-hub-container {
+        width: 185px;
+        // height: 335px;
+        display: inline-block;
+        margin: 20px;
+        background-color: @backgroundGray;
+        .border-radius(5px,5px,5px,5px);
+
+        .hub-item {
+            position: relative;
+            cursor: pointer;
+            &:hover {
+                background: lighten(#D4D4D4, 5%);
+            }
+
+            &.selected {
+                background: #D4D4D4 !important;
+            }
+
+            .hub-item-image {
+                height: 25px;
+                width: 25px;
+                display: inline-block;
+                margin: 5px 10px;
+            }
+
+            .hub-item-text {
+                position: absolute;
+                top: 11px;
+                font-size: 12px;
+                color: @textGray;
+            }
+        }
+
+        .marketing-hub-title {
+            height: 50px;
+            .gradient(orange, #F8991C, #F8BC69);
+            .border-radius(5px,0,0,5px);
+            .drop-shadow(0px, 1px, 2px, 0.4);
+            margin-bottom: 1px;
+
+            .orb-star-png {
+                height: 26px;
+                width: 26px;
+                display: inline-block;
+                margin: 12px 10px;
+                float: left;
+            }
+
+            .hub-title {
+                position: relative;
+                color: white;
+                top: 8px;
+            }
+        }
+
+        .small-hub-item {
+            position: relative;
+            height: 30px;
+            padding-top: 3px;
+            .border-radius(0, 3px, 3px, 0);
+            
+            .hub-item-image {
+                height: 13px;
+                width: 13px;
+                float: left;
+            }
+
+            .hub-item-text {
+                font-size: 12px;
+            }
+        }
+
+        .marketing-hub-section {
+            border-bottom: darken(@backgroundGray, 10%) solid 1px;
+            border-left: darken(@backgroundGray, 10%) solid 1px;
+            border-right: darken(@backgroundGray, 10%) solid 1px;
+        }
+    }
+}
+
+.right-container {
+    float: left;
+    height: 100%;
+    margin-right: 20px;
+    display: inline-block;
+    .flex(10, 1, auto);
+    .border-radius(5px,5px,5px,5px);
+
+    .calendar-container {
+        margin-bottom: 20px;
+        background-color: @backgroundGray;
+        overflow: hidden;
+        border: 1px solid darken(@backgroundGray, 20%);
+        box-shadow: 1px 1px 1px darken(@backgroundGray, 20%);
+        .border-radius(0,5px,5px,0);
+        max-height: 126px;
+
+        .calendar-month-year {
+            color: @textGray;
+            float: left;
+        }
+
+        .calendar-title {
+            height: 20px;
+        }
+
+        .gear-png, .windows-png{
+            width: 13px;
+            height: 14px;
+            float: right;
+            margin-right: 3px;
+        }
+
+        .day-container {
+            margin-left: -133px;
+
+            .calendar-day-container {
+                width: 140px;
+                display: inline-block;
+
+                .calendar-day {
+                    width: 140px;
+                    height: 85px;
+                    border-bottom: #C5C5C5 solid 1px;
+                    border-right: #C5C5C5 solid 1px;
+                    &.today {
+
+                    }
+                    .calendar-day-text {
+                        margin: 2px;
+                        font-size: small;
+                        color: @textGray;
+                    }
+                    .calendar-day-num {
+                        float: right;
+                        font-size: small;
+                        color: @textGray;
+                        margin: 2px;
+                    }
+
+                    &.Today {
+                        .gradient(gray, rgb(253,237,215), rgb(235,241,245));
+                        border-left: #C5C5C5 solid 1px;
+                    }
+                }
+
+                .calendar-bottom {
+                    height: 20px;
+                    width: 140px;
+                    text-align: center;
+                    display: table-cell;
+
+                    &.Today {
+                        margin-top: 3px;
+                        color: white;
+                        background-color: orange;
+                    }
+                }
+            }
+        }
+    }
+
+    .pulse-container {
+        height: 265px;
+        position: relative;
+        .border-radius(5px,5px,5px,5px);
+        .gradient(gray, #DDE7EF, #BAC8D0);
+        .inner-shadow(0px, 1px, 2px, .4);
+
+        .pulse-header {
+            height: 65px;
+            .pulse-title {
+                color: white;
+                position: absolute;
+                top: 10px;
+                left: 15px;
+            }
+
+            .pulse-button-container {
+                float: right;
+                margin: 5px 5px 0 0;
+
+                .gear-png, .windows-png {
+                    width: 13px;
+                    height: 14px;
+                    .right-image;
+                }
+
+                .cancel-png{
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    .right-image;
+                }
+
+                .minimize-png {
+                    margin-top: 2px;
+                    width: 12px;
+                    height: 10px;
+                    .right-image;
+                }
+            }
+
+            .pulse-logo {
+                .pulse-png;
+                text-shadow: 1px 1px @textGray;
+                position: absolute;
+                top: 10px;
+                left: -1px;
+                height: 38px;
+                width: 118px;
+            }
+
+            .right-image {
+                margin-right: 3px;
+                margin-top: 5px;
+                float: right;
+            }
+            
+        }
+        .pulse-panel-container.small {
+            width: 160px;
+            height: 120px;
+        }
+
+        .pulse-panel-container {
+            .flex-container;
+            .pulse-panel {
+                position: relative;
+                display: inline-block;
+                margin: 0 5px;
+                .flex(1, 1, auto);
+                .border-radius(5px,5px,5px,5px);
+                &.small {
+                    width: 160px;
+                    height: 130px;
+                }
+                &.medium {
+                    width: 280px;
+                    height: 190px;
+                    margin-top: -28px;
+                }
+
+                .pulse-title {
+                    text-align: center;
+                    padding-top: 5px;
+                    font-size: small;
+                    color: rgb(126, 140, 153);
+                }
+
+                .pulse-data-container {
+                    position: absolute;
+                    left: 0; right: 0; bottom: 0; top: 30px;
+                    padding: 5px;
+                    .gradient(gray, rgb(222, 233, 240), rgb(250, 250, 250));
+                    .border-radius(5px, 5px, 5px, 5px);
+
+                    .pulse-data-table {
+                        display: table;
+                        height: 100%;
+                        width: 100%;
+                        text-align: center;
+                        position: relative;
+                        p {
+                            display: inline;
+                            margin: 0;
+                        }
+                        .pulse-upper-left-text {
+                            font-size: x-small;
+                            float: left;
+                        }
+
+                        .pulse-upper-right-text {
+                            font-size: x-small;
+                            float: right;
+                        }
+
+                        .pulse-inner-title-text {
+                            color: darken(@backgroundGray, 20%);
+                            margin-top: 5px;
+                        }
+
+                        .pulse-number-container {
+                            text-align: center;
+                            margin-top: 5px;
+                        }
+
+                        .pulse-blue-number-text {
+                            font-size: x-large;
+                            color: rgb(60, 147,240);
+                        }
+
+                        .pulse-lower-number-text {
+                            color: darken(@backgroundGray, 30%);
+                        }
+
+                        .pulse-number-title-text {
+                            color: darken(@backgroundGray, 20%);
+                        }
+                        
+                        .pulse-bottom-text {
+                            display: table-row;
+                            vertical-align: bottom;
+                            height: 19px;
+                            color: darken(@backgroundGray, 20%);
+                        }
+
+                        img {
+                            position: absolute;
+                            width: 100%;
+                            left: 0; right: 0; bottom: 0;
+                            max-height: 80%;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

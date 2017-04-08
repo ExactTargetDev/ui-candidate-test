@@ -5,11 +5,11 @@
             "URL": "http://en.wikipedia.org/wiki/JSON"
         },
         {
-            "title": "What is ExactTarget?",
-            "URL": "http://en.wikipedia.org/wiki/ExactTarget"
+            "title": "What is Salesforce?",
+            "URL": "https://en.wikipedia.org/wiki/Salesforce_Marketing_Cloud"
         },
         {
-            "title": "More info about ExactTarget REST APIs",
+            "title": "More info about Salesforce Marketing Cloud REST APIs",
             "URL": "http://code.exacttarget.com/question/rest-api-authentication"
         }
     ]
