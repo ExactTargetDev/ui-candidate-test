@@ -16,7 +16,14 @@
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-         return Array.from(new Set(values))
+        //  return [...new Set(values)]
+        arr = []
+        values.forEach( function(value){
+          if (!arr.includes(value)) {
+            arr.push(value)
+          }
+        })
+        return arr
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
