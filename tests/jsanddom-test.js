@@ -12,3 +12,9 @@ QUnit.test( "Example Test", function(assert) {
 /********************************
 Please create your tests below...
 ********************************/
+QUnit.module( "Function Tests" );
+QUnit.test( "Reverse String Test", function(assert) {
+    assert.equal( typeof reverseString, 'function', 'Must contain a reverse string function' );
+
+    assert.ok( reverseString('Subscribers rock'), 'kcor srebircsbuS', 'Expected kcor srebircsbuS as the result, the result was: ' + reverseString('Subscribers rock') );
+});
