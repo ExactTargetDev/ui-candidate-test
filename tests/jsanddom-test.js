@@ -18,3 +18,10 @@ QUnit.test( "Reverse String Test", function(assert) {
 
     assert.ok( reverseString('Subscribers rock'), 'kcor srebircsbuS', 'Expected kcor srebircsbuS as the result, the result was: ' + reverseString('Subscribers rock') );
 });
+
+QUnit.test( "Minimum Value Test", function(assert) {
+    arr = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]
+    assert.equal( typeof findMinValue, 'function', 'Must contain a minimum value function' );
+
+    assert.ok( findMinValue(arr), -1.1, 'Expected -1.1 as the result, the result was: ' + findMinValue(arr) );
+});
