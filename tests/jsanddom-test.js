@@ -25,3 +25,10 @@ QUnit.test( "Minimum Value Test", function(assert) {
 
     assert.ok( findMinValue(arr), -1.1, 'Expected -1.1 as the result, the result was: ' + findMinValue(arr) );
 });
+
+QUnit.test( "Distinct Values Test", function(assert) {
+    arr = [3, 5, 7, 20, .18, 01, -1.1, 12, Infinity, Infinity, 0.18, -1.1, 12]
+    assert.equal( typeof findDistinctValues, 'function', 'Must contain a distinct values function' );
+
+    assert.ok( findDistinctValues(arr), [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity], 'Expected [3, 5, 7, 20, 0.18, 1, -1.1, 12, Infinity] as the result, the result was: ' + findDistinctValues(arr) );
+});
