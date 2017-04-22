@@ -79,3 +79,9 @@ QUnit.test( "Split String Test", function(assert) {
 
     assert.ok( splitListStrUsingComma(sourceStr), '', 'Expected [] as the result, the result was: ' + splitListStrUsingComma(sourceStr) );
 });
+
+QUnit.test( "Sum Test", function(assert) {
+    assert.equal( typeof sum, 'function', 'Must contain a sum function' );
+
+    assert.ok( sum(1, 1, 2, 3, 5, 7), 19, 'Expected 19 as the result, the result was: ' + sum(1, 1, 2, 3, 5, 7) );
+});

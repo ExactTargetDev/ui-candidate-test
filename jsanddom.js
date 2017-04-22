@@ -84,7 +84,10 @@
 
      // Write a function that will take any number of arguments and return their sum
      function sum() {
-         // FILL THIS IN
+         args = Array.prototype.slice.call(arguments)
+         return args.reduce(function (a, b) {
+           return a + b;
+         }, 0)
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
