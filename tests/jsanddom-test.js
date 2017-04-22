@@ -46,3 +46,13 @@ QUnit.test( "FizzBuzz Test", function(assert) {
 
     assert.ok( doFizzBuzz(25), 26, 'Expected 26 as the result, the result was: ' + doFizzBuzz(25) );
 });
+
+QUnit.test( "Remove Fruits Test", function(assert) {
+    fruits = ['apple', 'banana', 'orange', 'kiwi', 'pear', 'plum', 'strawberry']
+    fruitsToRemove = ['pear', 'banana']
+    arr = ["apple", "orange", "kiwi", "plum", "strawberry"]
+
+    assert.equal( typeof removeFruits, 'function', 'Must contain a remove fruits function' );
+
+    assert.ok( removeFruits(fruits, fruitsToRemove), arr, 'Expected ["apple", "orange", "kiwi", "plum", "strawberry"] as the result, the result was: ' + removeFruits(fruits, fruitsToRemove) );
+});
