@@ -85,3 +85,10 @@ QUnit.test( "Sum Test", function(assert) {
 
     assert.ok( sum(1, 1, 2, 3, 5, 7), 19, 'Expected 19 as the result, the result was: ' + sum(1, 1, 2, 3, 5, 7) );
 });
+
+QUnit.test( "Is Only Whitespace Test", function(assert) {
+    sourceStr = '      '
+    assert.equal( typeof isOnlyWhitespace, 'function', 'Must contain a whitespace function' );
+
+    assert.ok( isOnlyWhitespace(sourceStr), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace(sourceStr) );
+});
