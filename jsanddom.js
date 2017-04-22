@@ -1,29 +1,29 @@
      // Example unit test function
      function divide( a, b ) {
-        // To see the test pass, uncomment the following line
-        return a / b;
+          // To see the test pass, uncomment the following line
+          return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
-        return str.split("").reverse().join("");
+          return str.split("").reverse().join("");
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
-         return Math.min.apply(Math, values);
+          return Math.min.apply(Math, values);
      }
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
      function findDistinctValues(values) {
-        //  return [...new Set(values)]
-        arr = []
-        values.forEach(function(value) {
-          if (arr.indexOf(value) === -1) {
-            arr.push(value)
-          }
-        })
-        return arr
+          //  return [...new Set(values)]
+          arr = []
+          values.forEach(function(value) {
+            if (arr.indexOf(value) === -1) {
+              arr.push(value)
+            }
+          })
+          return arr
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -31,23 +31,23 @@
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
-       arr = []
-       for (var i = 1; i <= 100; i++) {
-         if (i % 15 === 0) {
-           arr.push("FizzBuzz")
-           console.log("FizzBuzz")
-         }else if (i % 3 === 0) {
-           arr.push("Fizz")
-           console.log("Fizz")
-         }else if (i % 5 === 0) {
-           arr.push("Buzz")
-           console.log("Buzz")
-         }else {
-           arr.push(i)
-           console.log(i)
+         arr = []
+         for (var i = 1; i <= 100; i++) {
+           if (i % 15 === 0) {
+             arr.push("FizzBuzz")
+             console.log("FizzBuzz")
+           }else if (i % 3 === 0) {
+             arr.push("Fizz")
+             console.log("Fizz")
+           }else if (i % 5 === 0) {
+             arr.push("Buzz")
+             console.log("Buzz")
+           }else {
+             arr.push(i)
+             console.log(i)
+           }
          }
-       }
-       return arr
+         return arr
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -69,7 +69,7 @@
      // If toPush is a simple value, it should be pushed onto array as an element.
      // If toPush is an array, all of its elements should be pushed onto array. Your solution should modify array (ie. not return a new array).
      function pushOntoArray(array, toPush) {
-         if (toPush.constructor === Array) {
+         if (toPush.typeof === Array) {
            Array.prototype.push.apply(array, toPush)
          } else {
            array.push(toPush)
@@ -79,7 +79,7 @@
 
      // Given a string, sourceStr, write some code that will split this string using comma as your delimiter, and producing an empty array if the string is empty.
      function splitListStrUsingComma(sourceStr) {
-         // FILL THIS IN
+         return sourceStr.trim() ? sourceStr.split(",") : []
      }
 
      // Write a function that will take any number of arguments and return their sum

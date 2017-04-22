@@ -57,7 +57,7 @@ QUnit.test( "Remove Fruits Test", function(assert) {
     assert.ok( removeFruits(fruits, fruitsToRemove), arr, 'Expected ["apple", "orange", "kiwi", "plum", "strawberry"] as the result, the result was: ' + removeFruits(fruits, fruitsToRemove) );
 });
 
-QUnit.test( "Push Onto Array", function(assert) {
+QUnit.test( "Push Onto Array Test", function(assert) {
     array = [1, 2, 3, 4, 5]
     toPush = 6
     toPushAgain = [7, 8, 9]
@@ -67,4 +67,15 @@ QUnit.test( "Push Onto Array", function(assert) {
     assert.ok( pushOntoArray(array, toPush), [1, 2, 3, 4, 5, 6], 'Expected [1, 2, 3, 4, 5, 6] as the result, the result was: ' + pushOntoArray(array, toPush) );
 
     assert.ok( pushOntoArray(array, toPushAgain), [1, 2, 3, 4, 5, 7, 8, 9], 'Expected [1, 2, 3, 4, 5, 7, 8, 9] as the result, the result was: ' + pushOntoArray(array, toPushAgain) );
+});
+
+QUnit.test( "Split String Test", function(assert) {
+    sourceStr = 'The, quick, brown, fox jumped over'
+    sourceStrTwo = ''
+
+    assert.equal( typeof splitListStrUsingComma, 'function', 'Must contain a split string function' );
+
+    assert.ok( splitListStrUsingComma(sourceStr), ["The", " quick", " brown", " fox jumped over"], 'Expected ["The", " quick", " brown", " fox jumped over"] as the result, the result was: ' + splitListStrUsingComma(sourceStr) );
+
+    assert.ok( splitListStrUsingComma(sourceStr), '', 'Expected [] as the result, the result was: ' + splitListStrUsingComma(sourceStr) );
 });
