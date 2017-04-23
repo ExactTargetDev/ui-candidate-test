@@ -97,6 +97,20 @@
 
      // write an example of a javascript closure
 
+     function likes() {
+       name = 'demetra'
+       function addLike(like) {
+         return name + ' likes ' + like
+       }
+       return addLike
+     }
+
+     myLike = likes()
+     myOtherLike = likes()
+
+     myLike('sparkles')
+     myOtherLike('glitter')
+
      // define a json object that represents a collection of people.
      // each person should have the following properties
      // - first name
@@ -105,7 +119,6 @@
      // - state
      // - zip
      // - a collection of phone numbers (home, work, mobile)
-
 
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
