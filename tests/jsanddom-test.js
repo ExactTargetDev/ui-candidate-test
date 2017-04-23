@@ -18,3 +18,9 @@ QUnit.test( "reverseString test", function(assert) {
 
     assert.ok( reverseString("Hello"), "olleH", "Expected olleH as the result, the result was: " + reverseString("Hello"))
 })
+
+QUnit.test( "findMinValue test", function(assert) {
+  assert.equal( typeof findMinValue, 'function', 'Must contain a findMinValue function' );
+
+  assert.ok( findMinValue([8,3,2,4,5]), 2, "Expected 2 as the result, the result was: " + findMinValue([8,3,2,4,5]))
+})
