@@ -120,6 +120,29 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
+     {
+      "people": [
+        {
+          "firstName": "first",
+          "lastName": "last",
+          "city": "city",
+          "state": "state",
+          "zip": "zip",
+          "phoneNumbers": [
+            {
+              "home": "home"
+            },
+            {
+              "work": "work"
+            },
+            {
+              "mobile": "mobile"
+            }
+          ]
+        }
+      ]
+    }
+
      // Create a javascript object (DataTable) with the following:
      // A private columns property (string array)
      // A private rows property (string array)
