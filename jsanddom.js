@@ -177,29 +177,29 @@
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
 
-     console.log($('.link').text())
-     console.log($('#fizz .link').text())
-     console.log($('#fizz a').text())
-     console.log($('.bar a').text())
-     console.log($('.bar #fizz a').text())
+       console.log($('.link').text())
+       console.log($('#fizz .link').text())
+       console.log($('#fizz a').text())
+       console.log($('.bar a').text())
+       console.log($('.bar #fizz a').text())
 
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
 
-     booksArray = []
+       booksArray = []
 
-     booksArray.push("Hyperion")
-     booksArray.push("Ubik")
-     booksArray.push("The Great Hunt")
-     booksArray.push("Good Omens")
-     booksArray.push("The Fireman")
+       booksArray.push("Hyperion")
+       booksArray.push("Ubik")
+       booksArray.push("The Great Hunt")
+       booksArray.push("Good Omens")
+       booksArray.push("The Fireman")
 
-     console.log(booksArray)
+       console.log(booksArray)
 
-     list = document.querySelector("#list1")
-     booksArray.forEach(function(title){
-       list.innerHTML += "<li>" + title + "</li>"
-     })
+       list = document.querySelector("#list1")
+       booksArray.forEach(function(title){
+         list.innerHTML += "<li>" + title + "</li>"
+       })
 
 
 
@@ -208,6 +208,18 @@
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
 
+       Array(5).fill().forEach(function(){
+         $('#foobar').append($('<p><input type="checkbox"></p>'))
+       })
+
+       $('#foobar').append($('<p><a href="#" id="check">Check</a></p>'))
+       $('#foobar').append($('<p><a href="#" id="uncheck">Uncheck</a></p>'))
+       $('#check').on('click', function(){
+          $('input:checkbox').prop('checked', true)
+       })
+       $('#uncheck').on('click', function(){
+         $('input:checkbox').prop('checked', false)
+       })
 
 
-      })
+     })
