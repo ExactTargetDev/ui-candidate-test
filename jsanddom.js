@@ -120,7 +120,7 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
-     collection = {
+     collectionOfPeople = {
       "people": [
         {
           "firstName": "first",
@@ -158,6 +158,22 @@
      // within div1, programatically create a
      // SELECT element (with multiple items) and a button.
      // when the button is clicked write out the name and value of the selected item to the console.
+     $(document).ready(function(){
+       select = document.createElement("select")
+       $('#div1').append($('<select id="selectable">'))
+       $('select').append($('<option>', {
+         value: 1,
+         text: 'First Option'
+       }))
+       $('select').append($('<option>', {
+         value: 2,
+         text: 'Second Option'
+       }))
+       $('#div1').append($('<input type="button" value="click me" id="target">'))
+       $('#target').on('click', function(){
+         console.log($("#selectable option:selected").text())
+       })
+     })
 
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
