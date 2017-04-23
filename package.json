@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "qunitjs": "^2.3.2"
+  }
+}
