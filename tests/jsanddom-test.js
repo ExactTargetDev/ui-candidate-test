@@ -12,3 +12,9 @@ QUnit.test( "Example Test", function(assert) {
 /********************************
 Please create your tests below...
 ********************************/
+
+QUnit.test( "reverseString test", function(assert) {
+    assert.equal( typeof reverseString, 'function', 'Must contain a reverseString function' );
+
+    assert.ok( reverseString("Hello"), "olleH", "Expected olleH as the result, the result was: " + reverseString("Hello"))
+})
