@@ -92,3 +92,15 @@ QUnit.test( "Is Only Whitespace Test", function(assert) {
 
     assert.ok( isOnlyWhitespace(sourceStr), true, 'Expected true as the result, the result was: ' + isOnlyWhitespace(sourceStr) );
 });
+
+QUnit.module( "JS Closure Test" );
+QUnit.test( "Closure Test", function(assert) {
+    myLike = likes()
+    myOtherLike = likes()
+
+    assert.equal( typeof likes, 'function', 'Must contain a likes function' );
+
+    assert.ok( myLike('sparkles'), 'demetra likes sparkles', 'Expected demetra likes sparkles as the result, the result was: ' + myLike('sparkles') );
+
+    assert.ok( myOtherLike('glitter'), 'demetra likes glitter', 'Expected demetra likes glitter as the result, the result was: ' + myOtherLike('glitter') );
+});

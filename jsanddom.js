@@ -120,7 +120,7 @@
      // - zip
      // - a collection of phone numbers (home, work, mobile)
 
-     {
+     collection = {
       "people": [
         {
           "firstName": "first",
