@@ -1,26 +1,35 @@
-.header {
+.navbar {
   background-color: #3d4951;
   background-image: linear-gradient(#3d4951, #2a2f32);
-
+  color: white;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  border-radius: 0px;
 }
 
 #heading {
-  color: white;
   font-size: 18px;
   padding: 10px;
+  color: white;
 }
 
 .hub {
   background-color: #f0f0f1;
-  height: 40px;
 }
 
+.hub-li {
+  list-style-type: none;
+}
+
+.week {
+  display: inline-block;
+}
 .calendar {
   background-color: #f0f0f1;
-  height: 60px;
 }
 
 .pulse {
   background-color: #f0f0f1;
-  height: 50px;
+  display: inline-block;
 }
