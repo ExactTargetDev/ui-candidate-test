@@ -1,8 +1,58 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html>
 <head>
     <title>Screenshot.html</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,fetch,Array.prototype.includes"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/global.css" />
 </head>
 <body>
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>ExactTarget.</h3>
+            </div>
+            <div class="col-sm-6  nav-links">
+                <ul class="list-inline pull-right">
+                    <li>Welcome John!</li>
+                    <li><a href="#">Account</a> &nbsp; |</li>
+                    <li><a href="#"> Help</a>  &nbsp; |</li>
+                    <li><a href="#"> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="row">
+            <div class="col-sm-2">
+                <ul class="list-unstyled sidebar-left well">
+                    <li id="list-header"><strong>Interactive<br/>Marketing Hub</strong></li>
+                    <li>ExacTarget Email</li>
+                    <li>ExacTarget Mobile</li>
+                    <li>CoTweet Social</li>
+                    <li>ExacTarget Sites</li>
+                    <hr/>
+                    <li>Automation Studio</li>
+                    <li>Audience Builder</li>
+                    <li>Report Builder</li>
+                    <hr/>
+                    <li>Partner Applications</li>
+                </ul>
+            </div>
+            <div class="col-sm-10">
+                <div class="row well calender">
+                    <p>September 2010</p>
+                </div>
+                <div class="row well pulse">
+                    <h4 id="pulse-text">Pulse</h4>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/global.js"></script>
 </body>
 </html>

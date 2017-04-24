@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+img {
+    width: 100%;
+}
+
+header {
+    background: rgb(43, 50, 56);
+    color: white;
+}
+
+.nav-links {
+    margin-top: 25px;
+}
+
+.nav-links a {
+    color: lightblue;
+}
+
+.sidebar-left {
+    border: .5px solid grey;
+    border-radius: 4px;
+    padding: 15px; 
+    margin: 20px 20px;
+    /*background: rgb(241, 241, 243);*/
+    color: grey;
+}
+
+.sidebar-left li {
+    margin-bottom: 5px;
+}
+
+/*#list-header {
+    background:rgb(248, 156, 30);
+}*/
+
+.calender {
+    margin-right: 10px;
+}
+
+.pulse {
+    background: rgb(180, 195, 207);
+    margin-right: 10px;
+}
+
+#pulse-text {
+    color: white;
+    text-shadow: 5px;
+}
