@@ -1,31 +1,50 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
-     function reverseString(str) {
-         // FILL THIS IN
-     }
+    var x = 'hello'
+    function reverseString(str) {
+        var splitStr = str.split('')
+        var reverseStr = splitStr.reverse()
+        var joinStr = reverseStr.join()
+        return joinStr
+    }
+    reverseString(x)
+
 
      // Write a function that takes an array of numbers and returns the minimum value
+     var x = [1, 2, 3, 4, 5]
      function findMinValue(values) {
-         // FILL THIS IN
-     }
+        return Math.min(...values)
+    }
+    findMinValue(x)     
 
      // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
-     function findDistinctValues(values) {
-         // FILL THIS IN
-     }
+    var a = ["1", "1", "2", "3", "3", "1"];
+    var unique = a.filter(function(item, i, ar){ return ar.indexOf(item) === i; });
+
+    console.log(unique)
+
+   
 
      // Write a function that logs the numbers from 1 to 100 to the console.
      // For multiples of three print "Fizz" instead of the number.
      // For multiples of five print "Buzz".
      // For numbers which are multiples of both three and five print "FizzBuzz".
-     function doFizzBuzz() {
-         // FILL THIS IN
-     }
+    function doFizzBuzz() {
+        var boom = '';
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 === 0 && i % 5 === 0) { boom += 'FizzBuzz'; }
+            else if (i % 3 === 0) { boom += 'Fizz' }
+            else if (i % 5 === 0) { boom += 'Buzz' }
+            else { boom = boom + i }
+        }
+        return boom;
+    }
+    doFizzBuzz();
 
      // You have a master array of strings, where each element is a fruit name.
      // You have a second array of fruit name strings, that is a list of fruits that should be removed from the fruits specified in the master array.

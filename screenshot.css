@@ -1,0 +1,33 @@
+.nav {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background: black;
+}
+.logo {
+    font-size: 20px;
+    color: white;
+    margin-left: 20px;
+}
+
+.welcome {
+    font-size: 15px;
+    color: white;
+    margin-right: -100px;
+    
+}
+.list-group.well{
+    margin-top: 15px;
+}
+a {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.date {
+    display: inline-block;   
+}
+
+
+.row.well {
+    margin-right: 10px;
+}
