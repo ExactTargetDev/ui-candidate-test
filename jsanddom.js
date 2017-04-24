@@ -23,7 +23,7 @@
     //  Write a function that takes an array and returns the distinct values only (i.e. removes duplicates
      function findDistinctValues(values) {
          // FILL THIS IN
-         return values.filter( (v,i) => values.indexOf(v) === i)
+         return values.filter( (v,i) => values.indexOf(v) === i).join(' ')
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -41,8 +41,8 @@
          }
          for(var i = 1; i <= 100; i++) { result.push(fb(i)) }
 
-         console.log(...result)
-         return result
+         console.log(...result)// logging to the console.
+         return result.join(' ')
      }
 
      // You have a master array of strings, where each element is a fruit name.
