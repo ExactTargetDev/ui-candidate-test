@@ -41,5 +41,5 @@ QUnit.test( "doFizzBuzz test", function(assert) {
 QUnit.test( "removeFruits test", function(assert) {
   assert.equal( typeof removeFruits, 'function', 'Must contain a removeFruits function' );
 
-  assert.ok( removeFruits([8,5,3,3,2,4,4,5]), [8,5,3,2,4,5], "Expected [8,5,3,2,4,5] as the result, the result was: " + removeFruits([8,5,3,3,2,4,4,5]))
+  assert.equal( removeFruits(["apple", "orange", "berry", "banana"], ["berry", "banana"]), "apple orange", "Expected apple orange as the result, the result was: " + removeFruits(["apple", "orange", "berry", "banana"], ["berry", "banana"]))
 })

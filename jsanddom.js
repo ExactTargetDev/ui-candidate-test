@@ -51,6 +51,7 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+         return fruits.filter((f) => !fruitsToRemove.includes(f)).join(' ')
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
