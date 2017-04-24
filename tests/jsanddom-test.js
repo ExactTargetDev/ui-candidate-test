@@ -24,3 +24,10 @@ QUnit.test( "findMinValue test", function(assert) {
 
   assert.ok( findMinValue([8,3,2,4,5]), 2, "Expected 2 as the result, the result was: " + findMinValue([8,3,2,4,5]))
 })
+
+QUnit.test( "findDistinctValues test", function(assert) {
+  assert.equal( typeof findDistinctValues, 'function', 'Must contain a findDistinctValues function' );
+
+  assert.ok( findDistinctValues([8,5,3,3,2,4,4,5]), [8,5,3,2,4,5], "Expected [8,5,3,2,4,5] as the result, the result was: " + findDistinctValues([8,5,3,3,2,4,4,5]))
+})
+// 

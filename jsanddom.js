@@ -17,12 +17,13 @@
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
-         return Math.min(...values)
+         return Math.min(...values);
      }
 
-     // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
+    //  Write a function that takes an array and returns the distinct values only (i.e. removes duplicates
      function findDistinctValues(values) {
          // FILL THIS IN
+         return values.filter( (v,i) => values.indexOf(v) === i)
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
