@@ -1,0 +1,13 @@
+.nav {
+  background-color: rgb(66, 66, 66);
+  color: white;
+  margin-bottom: 0px;
+}
+
+.nav ul {
+  padding: 10px;
+}
+
+.nav ul a {
+  color: rgb(121, 183, 249);
+}

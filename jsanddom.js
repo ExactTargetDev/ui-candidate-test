@@ -1,22 +1,29 @@
      // Example unit test function
      function divide( a, b ) {
         // To see the test pass, uncomment the following line
-        //return a / b;
+        return a / b;
      }
 
      // Write a function that takes a single argument (a string) and returns the string reversed.
      function reverseString(str) {
          // FILL THIS IN
+         var r = "";
+         for (var i = str.length - 1; i >= 0; i--){
+           r += str[i]
+         }
+         return r
      }
 
      // Write a function that takes an array of numbers and returns the minimum value
      function findMinValue(values) {
          // FILL THIS IN
+         return Math.min(...values);
      }
 
-     // Write a function that takes an array and returns the distinct values only (i.e. removes duplicates)
+    //  Write a function that takes an array and returns the distinct values only (i.e. removes duplicates
      function findDistinctValues(values) {
          // FILL THIS IN
+         return values.filter( (v,i) => values.indexOf(v) === i).join(' ')
      }
 
      // Write a function that logs the numbers from 1 to 100 to the console.
@@ -25,6 +32,17 @@
      // For numbers which are multiples of both three and five print "FizzBuzz".
      function doFizzBuzz() {
          // FILL THIS IN
+         var result = []
+         function fb(n) {
+          if (n%15 === 0) { return "FizzBuzz" }
+          if (n%5 === 0)  { return "Buzz" }
+          if (n%3 === 0)  { return "Fizz" }
+          return n
+         }
+         for(var i = 1; i <= 100; i++) { result.push(fb(i)) }
+
+         console.log(...result)// logging to the console.
+         return result.join(' ')
      }
 
      // You have a master array of strings, where each element is a fruit name.
@@ -33,6 +51,7 @@
      // Write the function that will remove the values contained in fruitsToRemove from the array fruits.
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
+         return fruits.filter((f) => !fruitsToRemove.includes(f)).join(' ')
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
