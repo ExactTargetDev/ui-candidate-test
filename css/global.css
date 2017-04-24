@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+img {
+    width: 100%;
+}
+
+header {
+    background: rgb(43, 50, 56);
+    color: white;
+}
+
+.nav-links {
+    margin-top: 25px;
+}
